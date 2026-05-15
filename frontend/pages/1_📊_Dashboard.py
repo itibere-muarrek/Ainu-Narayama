@@ -3,33 +3,23 @@ import pandas as pd
 import os
 from dotenv import load_dotenv
 
-from services.auth import auth_manager
+from components.auth import redirecionar_se_nao_logado
 from services.api_client import AIAClient
-from components.ainu_theme import header_ainu, sidebar_ainu, stat_box, status_badge, tabela_formatada, alert
+from components.ainu_theme import stat_box, status_badge, tabela_formatada, alert
+
+# PROTEÇÃO: Esta deve ser a primeira linha de páginas autenticadas!
+redirecionar_se_nao_logado()
 
 # Config
 load_dotenv()
 st.set_page_config(page_title="Dashboard - AINU", page_icon="📊", layout="wide")
 
 BACKEND_URL = os.getenv("BACKEND_API_URL", "http://localhost:8000/api/v1")
-
-# Check auth
-if not auth_manager.esta_autenticado():
-    st.error("❌ Você precisa estar logado para acessar o Dashboard")
-    st.stop()
-
-if not auth_manager.esta_aprovado():
-    st.warning("⚠️ Sua conta ainda não foi aprovada pelo admin")
-    st.stop()
-
-api_client = AIAClient(BACKEND_URL, auth_manager.obter_token())
-
-# Layout
-header_ainu()
-sidebar_ainu(auth_manager)
+api_client = AIAClient(BACKEND_URL, st.session_state.get('jwt_token'))
 
 st.markdown(f"## 📊 Dashboard")
-st.caption(f"Olá {auth_manager.nome_usuario()}! Visão geral dos 29 países.")
+user_name = st.session_state.get("user_data", {}).get("nome", "Usuário")
+st.caption(f"Olá {user_name}! Visão geral dos 29 países.")
 
 # Carregar países
 paises = api_client.get_paises()

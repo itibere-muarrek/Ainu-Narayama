@@ -2,14 +2,10 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 
-from services.auth import auth_manager
-from components.ainu_theme import header_ainu, sidebar_ainu, AINU_COLORS, expandir_secao
+from components.ainu_theme import AINU_COLORS, expandir_secao
 
 load_dotenv()
 st.set_page_config(page_title="Metodologia - AINU", page_icon="📖", layout="wide")
-
-header_ainu()
-sidebar_ainu(auth_manager)
 
 st.markdown("## 📖 Metodologia AINU")
 st.caption("Documentação técnica dos índices e fórmulas")

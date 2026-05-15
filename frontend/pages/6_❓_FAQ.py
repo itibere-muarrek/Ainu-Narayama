@@ -2,14 +2,10 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 
-from components.ainu_theme import header_ainu, sidebar_ainu, expandir_secao
-from services.auth import auth_manager
+from components.ainu_theme import expandir_secao
 
 load_dotenv()
 st.set_page_config(page_title="FAQ - AINU", page_icon="❓", layout="wide")
-
-header_ainu()
-sidebar_ainu(auth_manager)
 
 st.markdown("## ❓ Perguntas Frequentes")
 

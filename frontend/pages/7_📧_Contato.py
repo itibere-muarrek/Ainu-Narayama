@@ -2,14 +2,10 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 
-from components.ainu_theme import header_ainu, sidebar_ainu, alert, AINU_COLORS
-from services.auth import auth_manager
+from components.ainu_theme import alert, AINU_COLORS
 
 load_dotenv()
 st.set_page_config(page_title="Contato - AINU", page_icon="📧", layout="wide")
-
-header_ainu()
-sidebar_ainu(auth_manager)
 
 st.markdown("## 📧 Fale Conosco")
 st.caption("Envie mensagens, críticas ou sugestões para o pesquisador")
