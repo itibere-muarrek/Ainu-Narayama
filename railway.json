@@ -1,0 +1,56 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "dockerfile",
+    "context": "./backend"
+  },
+  "deploy": {
+    "startCommand": "gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:$PORT",
+    "restartPolicyMaxRetries": 5,
+    "restartPolicyWindowMs": 60000,
+    "healthchecks": {
+      "readiness": {
+        "interval": 10,
+        "timeout": 5,
+        "initialDelay": 5,
+        "successThreshold": 1,
+        "failureThreshold": 3,
+        "httpPath": "/health"
+      }
+    }
+  },
+  "variables": {
+    "ENVIRONMENT": {
+      "value": "production",
+      "description": "Environment"
+    },
+    "DATABASE_URL": {
+      "description": "PostgreSQL connection string"
+    },
+    "SECRET_KEY": {
+      "description": "JWT secret key"
+    },
+    "ADMIN_EMAIL": {
+      "value": "narayama.live@gmail.com",
+      "description": "Admin email for notifications"
+    },
+    "SMTP_SERVER": {
+      "value": "smtp.gmail.com",
+      "description": "SMTP server"
+    },
+    "SMTP_PORT": {
+      "value": "587",
+      "description": "SMTP port"
+    },
+    "SMTP_USER": {
+      "description": "SMTP username"
+    },
+    "SMTP_PASSWORD": {
+      "description": "SMTP password or app password"
+    },
+    "SCHEDULER_TIMEZONE": {
+      "value": "America/Sao_Paulo",
+      "description": "Timezone for scheduler"
+    }
+  }
+}
