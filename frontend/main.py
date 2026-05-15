@@ -6,7 +6,7 @@ from services.auth import auth_manager
 from services.api_client import AIAClient
 from services.cache import paises_cache
 from components.ainu_theme import (
-    header_ainu, sidebar_ainu, card, stat_box, alert, footer_ainu,
+    topbar_ainu, header_ainu, sidebar_ainu, card, stat_box, alert, footer_ainu,
     AINU_COLORS
 )
 
@@ -25,6 +25,7 @@ api_client = AIAClient(BACKEND_URL, auth_manager.obter_token())
 
 # ===== LAYOUT =====
 
+topbar_ainu(auth_manager)
 header_ainu()
 sidebar_ainu(auth_manager)
 

@@ -24,6 +24,45 @@ STATUS_COLORS = {
 }
 
 
+def topbar_ainu(auth_manager):
+    """Barra superior com idiomas, críticas e perfil"""
+    col1, col2, col3 = st.columns([2, 3, 2])
+
+    with col1:
+        st.markdown(
+            f"<p style='color: {AINU_COLORS['azul_profundo']}; font-size: 0.85rem; margin: 0;'>"
+            "🌐 <b>PT</b> | EN | ES"
+            "</p>",
+            unsafe_allow_html=True
+        )
+
+    with col2:
+        st.markdown(
+            f"<p style='color: {AINU_COLORS['terracota']}; font-size: 0.85rem; text-align: center; margin: 0;'>"
+            "💬 Críticas são bem-vindas, colabore com o projeto."
+            "</p>",
+            unsafe_allow_html=True
+        )
+
+    with col3:
+        if auth_manager.esta_autenticado():
+            st.markdown(
+                f"<p style='color: {AINU_COLORS['azul_profundo']}; font-size: 0.85rem; text-align: right; margin: 0;'>"
+                f"👤 Olá, {auth_manager.nome_usuario()}"
+                "</p>",
+                unsafe_allow_html=True
+            )
+        else:
+            st.markdown(
+                f"<p style='color: {AINU_COLORS['cinza_claro']}; font-size: 0.85rem; text-align: right; margin: 0;'>"
+                "👤 Visitante"
+                "</p>",
+                unsafe_allow_html=True
+            )
+
+    st.divider()
+
+
 def header_ainu():
     """Cabeçalho AINU com logo e título"""
     col1, col2 = st.columns([1, 4])
@@ -51,8 +90,15 @@ def header_ainu():
 def sidebar_ainu(auth_manager):
     """Sidebar com identidade AINU"""
     with st.sidebar:
+        # Logo na sidebar
         st.markdown(
-            f"<p style='text-align: center; color: {AINU_COLORS['dourado']}; font-weight: bold;'>🌿 AINU v3.1.0</p>",
+            f"""
+            <div style='text-align: center; padding: 1rem 0;'>
+                <h2 style='color: {AINU_COLORS['dourado']}; margin: 0; font-size: 2rem;'>🌍</h2>
+                <h3 style='color: {AINU_COLORS['azul_profundo']}; margin: 0.5rem 0 0 0; font-size: 1.2rem;'>AINU</h3>
+                <p style='color: {AINU_COLORS['terracota']}; margin: 0; font-size: 0.75rem;'>v3.1.0</p>
+            </div>
+            """,
             unsafe_allow_html=True
         )
         st.divider()
