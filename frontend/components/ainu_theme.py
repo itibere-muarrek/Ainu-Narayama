@@ -78,7 +78,6 @@ def sidebar_ainu(auth_manager):
             "Tese: Economia Política<br>"
             "narayama.live@gmail.com"
             "</p>",
-            unsafe_allow_html=True,
             unsafe_allow_html=True
         )
 
