@@ -74,9 +74,8 @@ def sidebar_ainu(auth_manager):
 
         st.markdown(
             f"<p style='color: {AINU_COLORS['cinza_claro']}; font-size: 0.8rem;'>"
-            "© 2024 Itiberê L G C Muarrek (USP)<br>"
-            "Tese: Economia Política<br>"
-            "narayama.live@gmail.com"
+            "AINU-Narayama v3.1.0<br>"
+            "Sistema de Medição Socioeconômica"
             "</p>",
             unsafe_allow_html=True
         )
