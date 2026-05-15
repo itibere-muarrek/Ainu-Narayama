@@ -20,6 +20,14 @@ st.set_page_config(
 )
 
 BACKEND_URL = os.getenv("BACKEND_API_URL", "http://localhost:8000/api/v1")
+
+# ===== VALIDAÇÃO DE TOKEN =====
+# Verifica se token expirou ou é inválido, se sim, faz logout automático
+if auth_manager.obter_token():
+    api_client_temp = AIAClient(BACKEND_URL, auth_manager.obter_token())
+    if not api_client_temp.me():  # Se /auth/me falhar, token é inválido
+        auth_manager.logout()
+
 api_client = AIAClient(BACKEND_URL, auth_manager.obter_token())
 
 
