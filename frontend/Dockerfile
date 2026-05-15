@@ -16,6 +16,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copiar código
 COPY . .
 
+# Copiar entrypoint script
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
 # Criar usuário não-root
 RUN useradd -m streamlit && chown -R streamlit:streamlit /app
 USER streamlit
@@ -27,4 +31,4 @@ EXPOSE 8501
 HEALTHCHECK CMD python -c "import requests; requests.get('http://localhost:8501')" || exit 1
 
 # Comando de inicialização
-CMD ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["/app/entrypoint.sh"]
