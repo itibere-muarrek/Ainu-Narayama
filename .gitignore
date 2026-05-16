@@ -9,6 +9,9 @@ __pycache__/
 *$py.class
 *.so
 .Python
+env/
+venv/
+ENV/
 build/
 develop-eggs/
 dist/
@@ -21,20 +24,15 @@ parts/
 sdist/
 var/
 wheels/
-pip-wheel-metadata/
-share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 
 # Virtual environments
-venv/
-ENV/
-env/
 .venv
-env.bak/
-venv.bak/
+.virtualenv
+venv
+ENV
 
 # IDE
 .vscode/
@@ -43,41 +41,48 @@ venv.bak/
 *.swo
 *~
 .DS_Store
-*.sublime-project
-*.sublime-workspace
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-.tox/
-
-# Logs
-logs/
-*.log
 
 # Database
 *.db
 *.sqlite
 *.sqlite3
+postgres_data/
 
-# Node (if frontend exists)
+# Streamlit
+.streamlit/
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+__pycache__/
+.pytest_cache/
+
+# Node modules (if using any frontend tools)
 node_modules/
 npm-debug.log
-yarn-error.log
-dist/
+
+# Docker
+docker-compose.override.yml
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Temporary files
-*.tmp
-*.bak
-*.swp
+# Testing
+.coverage
+htmlcov/
+.pytest_cache
 
-# Rail way
-.railway/
+# Build files
+build/
+dist/
 
-# Local development
+# Local development files
+.env.local
 local_settings.py
+
+# Railway
+.railway

@@ -1,0 +1,234 @@
+[
+  {
+    "id": 1, "pais": "Nigeria",
+    "pop_base": 92, "pop_topo": 8.5, "nasc": 5.8, "mortes": 1.9,
+    "tfr_atual": 4.8, "tfr_1999": 6.0, "ncii": 0.82, "L": 0.45, "A_ext": 0.38,
+    "T": 0.08, "U": 0.12, "M": 0.10, "I": 0.02,
+    "n_star": 26.432, "status_n": "PROMISSOR",
+    "nih": 0.85, "nsii": 0.6385, "ies": 1.164, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 2, "pais": "Ethiopia",
+    "pop_base": 78, "pop_topo": 7.2, "nasc": 4.9, "mortes": 1.6,
+    "tfr_atual": 4.3, "tfr_1999": 5.8, "ncii": 0.78, "L": 0.48, "A_ext": 0.42,
+    "T": 0.10, "U": 0.15, "M": 0.12, "I": 0.03,
+    "n_star": 24.597, "status_n": "PROMISSOR",
+    "nih": 0.85, "nsii": 0.6565, "ies": 1.234, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 3, "pais": "DRCongo",
+    "pop_base": 68, "pop_topo": 5.1, "nasc": 4.2, "mortes": 1.3,
+    "tfr_atual": 5.9, "tfr_1999": 6.8, "ncii": 0.72, "L": 0.40, "A_ext": 0.35,
+    "T": 0.12, "U": 0.18, "M": 0.14, "I": 0.05,
+    "n_star": 37.376, "status_n": "PROMISSOR",
+    "nih": 0.82, "nsii": 0.6015, "ies": 1.075, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 4, "pais": "Vietnam",
+    "pop_base": 28, "pop_topo": 12, "nasc": 1.65, "mortes": 0.85,
+    "tfr_atual": 2.08, "tfr_1999": 2.70, "ncii": 1.22, "L": 0.52, "A_ext": 0.58,
+    "T": 0.04, "U": 0.06, "M": 0.05, "I": 0.01,
+    "n_star": 3.489, "status_n": "PROMISSOR",
+    "nih": 0.68, "nsii": 0.6124, "ies": 0.827, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 5, "pais": "India",
+    "pop_base": 380, "pop_topo": 95, "nasc": 24.5, "mortes": 10.2,
+    "tfr_atual": 2.0, "tfr_1999": 3.1, "ncii": 1.10, "L": 0.55, "A_ext": 0.48,
+    "T": 0.06, "U": 0.09, "M": 0.07, "I": 0.02,
+    "n_star": 6.199, "status_n": "PROMISSOR",
+    "nih": 0.68, "nsii": 0.5792, "ies": 1.063, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 6, "pais": "Indonesia",
+    "pop_base": 82, "pop_topo": 28, "nasc": 4.8, "mortes": 2.1,
+    "tfr_atual": 2.3, "tfr_1999": 2.6, "ncii": 1.15, "L": 0.58, "A_ext": 0.55,
+    "T": 0.05, "U": 0.07, "M": 0.06, "I": 0.01,
+    "n_star": 5.922, "status_n": "PROMISSOR",
+    "nih": 0.70, "nsii": 0.6185, "ies": 1.024, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 7, "pais": "Iran",
+    "pop_base": 25, "pop_topo": 9.5, "nasc": 1.4, "mortes": 0.65,
+    "tfr_atual": 2.5, "tfr_1999": 2.8, "ncii": 1.08, "L": 0.50, "A_ext": 0.52,
+    "T": 0.07, "U": 0.10, "M": 0.08, "I": 0.02,
+    "n_star": 5.061, "status_n": "PROMISSOR",
+    "nih": 0.67, "nsii": 0.5985, "ies": 0.813, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 8, "pais": "SaudiArabia",
+    "pop_base": 12, "pop_topo": 3.2, "nasc": 0.65, "mortes": 0.18,
+    "tfr_atual": 2.8, "tfr_1999": 4.1, "ncii": 1.25, "L": 0.62, "A_ext": 0.48,
+    "T": 0.03, "U": 0.04, "M": 0.03, "I": 0.01,
+    "n_star": 9.248, "status_n": "PROMISSOR",
+    "nih": 0.65, "nsii": 0.5685, "ies": 1.402, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 9, "pais": "Morocco",
+    "pop_base": 11, "pop_topo": 4.8, "nasc": 0.62, "mortes": 0.22,
+    "tfr_atual": 2.5, "tfr_1999": 3.1, "ncii": 1.05, "L": 0.58, "A_ext": 0.50,
+    "T": 0.06, "U": 0.08, "M": 0.07, "I": 0.02,
+    "n_star": 5.208, "status_n": "PROMISSOR",
+    "nih": 0.70, "nsii": 0.5985, "ies": 0.971, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 10, "pais": "Thailand",
+    "pop_base": 14, "pop_topo": 18, "nasc": 0.55, "mortes": 0.65,
+    "tfr_atual": 1.6, "tfr_1999": 2.1, "ncii": 1.18, "L": 0.48, "A_ext": 0.55,
+    "T": 0.04, "U": 0.06, "M": 0.05, "I": 0.01,
+    "n_star": 0.501, "status_n": "CRÍTICO",
+    "nih": 0.64, "nsii": 0.5970, "ies": 0.395, "status_ies": "CRÍTICO"
+  },
+  {
+    "id": 11, "pais": "Mexico",
+    "pop_base": 38, "pop_topo": 18, "nasc": 2.1, "mortes": 0.85,
+    "tfr_atual": 1.74, "tfr_1999": 2.65, "ncii": 1.12, "L": 0.58, "A_ext": 0.52,
+    "T": 0.05, "U": 0.07, "M": 0.06, "I": 0.01,
+    "n_star": 3.425, "status_n": "PROMISSOR",
+    "nih": 0.58, "nsii": 0.5540, "ies": 0.928, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 12, "pais": "Egypt",
+    "pop_base": 42, "pop_topo": 12, "nasc": 2.4, "mortes": 0.65,
+    "tfr_atual": 3.0, "tfr_1999": 3.8, "ncii": 0.95, "L": 0.52, "A_ext": 0.45,
+    "T": 0.08, "U": 0.11, "M": 0.09, "I": 0.02,
+    "n_star": 10.202, "status_n": "PROMISSOR",
+    "nih": 0.66, "nsii": 0.5565, "ies": 1.050, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 13, "pais": "Poland",
+    "pop_base": 6.8, "pop_topo": 11.5, "nasc": 0.28, "mortes": 0.48,
+    "tfr_atual": 1.3, "tfr_1999": 1.85, "ncii": 1.35, "L": 0.55, "A_ext": 0.62,
+    "T": 0.02, "U": 0.03, "M": 0.02, "I": 0.01,
+    "n_star": 0.242, "status_n": "COLAPSO",
+    "nih": 0.60, "nsii": 0.6110, "ies": 0.387, "status_ies": "CRÍTICO"
+  },
+  {
+    "id": 14, "pais": "Kazakhstan",
+    "pop_base": 7.2, "pop_topo": 3.1, "nasc": 0.42, "mortes": 0.18,
+    "tfr_atual": 3.0, "tfr_1999": 2.8, "ncii": 1.02, "L": 0.48, "A_ext": 0.50,
+    "T": 0.06, "U": 0.08, "M": 0.07, "I": 0.02,
+    "n_star": 5.806, "status_n": "PROMISSOR",
+    "nih": 0.65, "nsii": 0.5785, "ies": 0.751, "status_ies": "ESTÁVEL"
+  },
+  {
+    "id": 15, "pais": "Brazil",
+    "pop_base": 52.8, "pop_topo": 37.4, "nasc": 2.52, "mortes": 1.48,
+    "tfr_atual": 1.60, "tfr_1999": 2.35, "ncii": 1.15, "L": 0.55, "A_ext": 0.58,
+    "T": 0.04, "U": 0.06, "M": 0.05, "I": 0.01,
+    "n_star": 1.637, "status_n": "PROMISSOR",
+    "nih": 0.62, "nsii": 0.5945, "ies": 0.695, "status_ies": "ESTÁVEL"
+  },
+  {
+    "id": 16, "pais": "UnitedStates",
+    "pop_base": 82, "pop_topo": 68, "nasc": 3.65, "mortes": 3.45,
+    "tfr_atual": 1.85, "tfr_1999": 2.10, "ncii": 1.42, "L": 0.60, "A_ext": 0.65,
+    "T": 0.02, "U": 0.03, "M": 0.02, "I": 0.01,
+    "n_star": 1.124, "status_n": "EQUILÍBRIO",
+    "nih": 0.55, "nsii": 0.6025, "ies": 0.667, "status_ies": "ESTÁVEL"
+  },
+  {
+    "id": 17, "pais": "China",
+    "pop_base": 280, "pop_topo": 280, "nasc": 9.0, "mortes": 11.5,
+    "tfr_atual": 1.70, "tfr_1999": 2.50, "ncii": 1.38, "L": 0.48, "A_ext": 0.52,
+    "T": 0.03, "U": 0.04, "M": 0.03, "I": 0.01,
+    "n_star": 0.532, "status_n": "CRÍTICO",
+    "nih": 0.54, "nsii": 0.5330, "ies": 0.438, "status_ies": "FRÁGIL"
+  },
+  {
+    "id": 18, "pais": "France",
+    "pop_base": 15.2, "pop_topo": 18.5, "nasc": 0.68, "mortes": 0.68,
+    "tfr_atual": 1.67, "tfr_1999": 1.85, "ncii": 1.40, "L": 0.58, "A_ext": 0.72,
+    "T": 0.02, "U": 0.03, "M": 0.02, "I": 0.01,
+    "n_star": 0.742, "status_n": "CRÍTICO",
+    "nih": 0.57, "nsii": 0.6485, "ies": 0.562, "status_ies": "FRÁGIL"
+  },
+  {
+    "id": 19, "pais": "Argentina",
+    "pop_base": 11.2, "pop_topo": 8.1, "nasc": 0.68, "mortes": 0.38,
+    "tfr_atual": 1.60, "tfr_1999": 2.35, "ncii": 1.10, "L": 0.52, "A_ext": 0.55,
+    "T": 0.04, "U": 0.06, "M": 0.05, "I": 0.01,
+    "n_star": 1.685, "status_n": "PROMISSOR",
+    "nih": 0.60, "nsii": 0.5785, "ies": 0.649, "status_ies": "ESTÁVEL"
+  },
+  {
+    "id": 20, "pais": "Japan",
+    "pop_base": 10, "pop_topo": 35, "nasc": 0.7, "mortes": 1.2,
+    "tfr_atual": 1.20, "tfr_1999": 1.44, "ncii": 1.45, "L": 0.62, "A_ext": 0.68,
+    "T": 0.01, "U": 0.02, "M": 0.01, "I": 0.01,
+    "n_star": 0.139, "status_n": "COLAPSO",
+    "nih": 0.52, "nsii": 0.6016, "ies": 0.355, "status_ies": "CRÍTICO"
+  },
+  {
+    "id": 21, "pais": "Germany",
+    "pop_base": 13, "pop_topo": 32, "nasc": 0.55, "mortes": 1.05,
+    "tfr_atual": 1.35, "tfr_1999": 1.58, "ncii": 1.42, "L": 0.60, "A_ext": 0.70,
+    "T": 0.02, "U": 0.03, "M": 0.02, "I": 0.01,
+    "n_star": 0.182, "status_n": "COLAPSO",
+    "nih": 0.58, "nsii": 0.6410, "ies": 0.371, "status_ies": "CRÍTICO"
+  },
+  {
+    "id": 22, "pais": "SouthKorea",
+    "pop_base": 12, "pop_topo": 22, "nasc": 0.42, "mortes": 0.68,
+    "tfr_atual": 0.72, "tfr_1999": 1.47, "ncii": 1.48, "L": 0.58, "A_ext": 0.65,
+    "T": 0.01, "U": 0.02, "M": 0.01, "I": 0.01,
+    "n_star": 0.165, "status_n": "COLAPSO",
+    "nih": 0.50, "nsii": 0.5750, "ies": 0.420, "status_ies": "FRÁGIL"
+  },
+  {
+    "id": 23, "pais": "Pakistan",
+    "pop_base": 68, "pop_topo": 8.2, "nasc": 3.8, "mortes": 0.95,
+    "tfr_atual": 3.5, "tfr_1999": 5.2, "ncii": 0.88, "L": 0.50, "A_ext": 0.42,
+    "T": 0.10, "U": 0.13, "M": 0.11, "I": 0.03,
+    "n_star": 22.326, "status_n": "PROMISSOR",
+    "nih": 0.72, "nsii": 0.6016, "ies": 1.338, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 24, "pais": "Bangladesh",
+    "pop_base": 58, "pop_topo": 12, "nasc": 2.85, "mortes": 0.88,
+    "tfr_atual": 2.1, "tfr_1999": 3.3, "ncii": 0.92, "L": 0.52, "A_ext": 0.50,
+    "T": 0.08, "U": 0.10, "M": 0.08, "I": 0.02,
+    "n_star": 9.961, "status_n": "PROMISSOR",
+    "nih": 0.65, "nsii": 0.5785, "ies": 1.119, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 25, "pais": "Russia",
+    "pop_base": 12, "pop_topo": 22, "nasc": 0.62, "mortes": 1.48,
+    "tfr_atual": 1.50, "tfr_1999": 1.38, "ncii": 1.15, "L": 0.45, "A_ext": 0.50,
+    "T": 0.04, "U": 0.06, "M": 0.05, "I": 0.02,
+    "n_star": 0.248, "status_n": "COLAPSO",
+    "nih": 0.56, "nsii": 0.5330, "ies": 0.255, "status_ies": "CRÍTICO"
+  },
+  {
+    "id": 26, "pais": "Kenya",
+    "pop_base": 65, "pop_topo": 6.5, "nasc": 3.5, "mortes": 0.88,
+    "tfr_atual": 3.8, "tfr_1999": 4.9, "ncii": 0.85, "L": 0.50, "A_ext": 0.45,
+    "T": 0.10, "U": 0.12, "M": 0.10, "I": 0.03,
+    "n_star": 30.844, "status_n": "PROMISSOR",
+    "nih": 0.74, "nsii": 0.5965, "ies": 1.415, "status_ies": "SAUDÁVEL"
+  },
+  {
+    "id": 27, "pais": "Australia",
+    "pop_base": 18, "pop_topo": 20, "nasc": 0.72, "mortes": 0.68,
+    "tfr_atual": 1.65, "tfr_1999": 1.79, "ncii": 1.50, "L": 0.65, "A_ext": 0.70,
+    "T": 0.01, "U": 0.02, "M": 0.01, "I": 0.01,
+    "n_star": 0.878, "status_n": "CRÍTICO",
+    "nih": 0.58, "nsii": 0.6410, "ies": 0.675, "status_ies": "ESTÁVEL"
+  },
+  {
+    "id": 28, "pais": "Canada",
+    "pop_base": 15, "pop_topo": 18, "nasc": 0.62, "mortes": 0.58,
+    "tfr_atual": 1.50, "tfr_1999": 1.62, "ncii": 1.48, "L": 0.62, "A_ext": 0.72,
+    "T": 0.01, "U": 0.02, "M": 0.01, "I": 0.01,
+    "n_star": 0.825, "status_n": "CRÍTICO",
+    "nih": 0.58, "nsii": 0.6510, "ies": 0.629, "status_ies": "ESTÁVEL"
+  },
+  {
+    "id": 29, "pais": "Spain",
+    "pop_base": 13, "pop_topo": 20, "nasc": 0.42, "mortes": 0.58,
+    "tfr_atual": 1.36, "tfr_1999": 1.54, "ncii": 1.35, "L": 0.58, "A_ext": 0.68,
+    "T": 0.02, "U": 0.03, "M": 0.02, "I": 0.01,
+    "n_star": 0.416, "status_n": "COLAPSO",
+    "nih": 0.60, "nsii": 0.6410, "ies": 0.458, "status_ies": "FRÁGIL"
+  }
+]

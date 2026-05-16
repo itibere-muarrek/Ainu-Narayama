@@ -1,380 +1,355 @@
-# 🌍 AINU-Narayama v4.0
+# AINU.SYSTEMS v3.1.0
 
-**Sistema Integrado de Medição da Sustentabilidade Intergeracional**
+**Agente Inteligente Narayama de Uniformização**
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python](https://img.shields.io/badge/python-3.11+-green.svg)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-blue.svg)
-![Status](https://img.shields.io/badge/status-production-brightgreen.svg)
+Sistema de análise demográfica com inteligência artificial para compreender a saúde e sustentabilidade de populações em 29 países.
 
----
-
-## 🎯 O que é AINU?
-
-**AINU** (Índice Integrado de Sustentabilidade Intergeracional) é um sistema de medição em tempo real que avalia a capacidade de 29 países sustentarem suas populações ao longo das gerações.
-
-Combina dados de:
-- 📊 **Demografia** (população, natalidade, fecundidade)
-- 💰 **Economia** (VA, emprego, salários)
-- 🌱 **Sustentabilidade** (índices ambientais)
-- 🏥 **Saúde** (esperança de vida, mortalidade)
-- 🔬 **Inovação** (capacidade tecnológica)
-
-## ✨ Características
-
-### 🤖 Agente Coletor Automático
-- ✅ Roda **todo sábado 00:00 (Nagano)** = Sexta 14:00 (São Paulo)
-- ✅ Coleta de **29 países** em paralelo
-- ✅ **7 fases** de processamento
-- ✅ **4 testes** de falseabilidade
-- ✅ **Fallback strategy** (3 fontes)
-- ✅ Email automático de notificação
-
-### 📈 Índices Calculados
-- **N*** (Índice Farol) — Capacidade de crescimento sustentável
-- **IES** (Índice Equilíbrio Sistêmico) — Saúde do sistema como um todo
-- **NIH** (Natural Health Index) — Qualidade de vida
-- **NCII** (Natural Capital Index) — Economia sustentável
-- **NSII** (Natural System Index) — Estabilidade ambiental
-- **L** (Glocal Index) — Capacidade local de inovação
-
-### 🔐 Segurança & Confiabilidade
-- JWT authentication
-- ADMIN-only endpoints
-- Log de auditoria completo
-- Validação de dados em 4 camadas
+[![Status](https://img.shields.io/badge/status-production-brightgreen)](https://narayama.live)
+[![Version](https://img.shields.io/badge/version-3.1.0-blue)](CHANGELOG.md)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 ---
 
-## 📦 Stack Tecnológico
+## 🌍 O que é AINU?
 
-### Backend
-- **FastAPI** 0.104+ — API REST moderna
-- **SQLAlchemy** 2.0.25 — ORM
-- **PostgreSQL** 13+ — Banco de dados
-- **APScheduler** 3.10.4 — Agendamento automático
-- **Python** 3.11+
+AINU analisa dados demográficos usando dois índices principais:
 
-### Frontend
-- **React** 18+ — UI moderna
-- **TypeScript** — Type safety
-- **Tailwind CSS** — Design
+- **N\* (Índice Narayama)**: Mede capacidade regenerativa de populações
+- **IES (Índice Equilíbrio Sistêmico)**: Mede sustentabilidade do sistema
 
-### DevOps
-- **Railway** — Deployment
-- **Docker** — Containerização
-- **Gunicorn** — Production server
+Homenageia o filme clássico de Shohei Imamura que explora temas de ciclo de vida, morte e sustentabilidade.
 
 ---
 
 ## 🚀 Quick Start
 
-### 1. Clone o Repositório
+### Pré-requisitos
+- Docker & Docker Compose
+- Git
+- Python 3.11+ (para desenvolvimento local)
+
+### 1. Clonar repositório
 ```bash
-git clone https://github.com/itibere-muarrek/Ainu-Narayama.git
-cd Ainu-Narayama
+git clone https://github.com/imuarrek/ainu-narayama.git
+cd ainu-narayama
 ```
 
-### 2. Configure Backend
+### 2. Configurar variáveis de ambiente
 ```bash
-cd backend
-
-# Crie variáveis de ambiente
 cp .env.example .env
-# Edite .env com suas credenciais
-
-# Instale dependências
-pip install -r requirements.txt
-
-# Inicie servidor
-python -m uvicorn app.main:app --reload
+# Edite .env com suas configurações
 ```
 
-### 3. Configure Frontend
+### 3. Iniciar com Docker
 ```bash
-cd frontend
-
-# Instale dependências
-npm install
-
-# Inicie dev server
-npm start
+docker-compose up -d
 ```
 
-### 4. Acesse
-- **API:** http://localhost:8000
-- **Frontend:** http://localhost:3000
-- **Docs:** http://localhost:8000/docs (Swagger)
-
----
-
-## 📚 Documentação
-
-### Agente Coletor (Recomendado começar por aqui)
-
-1. **[QUICKSTART_AGENTE.md](QUICKSTART_AGENTE.md)** — 5 minutos
-   - Setup rápido
-   - Teste imediato
-   - Troubleshooting básico
-
-2. **[backend/agente/README.md](backend/agente/README.md)** — Documentação técnica
-   - Detalhes das 7 fases
-   - Configuração completa
-   - Monitoramento avançado
-
-3. **[RESUMO_TECNICO.md](RESUMO_TECNICO.md)** — Arquitetura
-   - Fórmulas e cálculos
-   - 4 testes de falseabilidade
-   - Schema do banco de dados
-
-4. **[EXEMPLOS_API.md](EXEMPLOS_API.md)** — Testes
-   - Exemplos com curl
-   - Integração com Postman
-   - Cenários de teste
-
-5. **[INDICE_DOCUMENTACAO.md](INDICE_DOCUMENTACAO.md)** — Navegação
-   - Guia por perfil (Dev, Arquiteto, QA, DevOps)
-   - Índice de tópicos
-
----
-
-## 🔄 7 Fases do Agente Coletor
-
-```
-FASE 1: Pré-Coleta (30 min)
-   └─ Validação de ambiente
-
-FASE 2: Coleta Paralela (3h 30m)
-   ├─ 29 países, 5 simultâneos
-   ├─ UN WPP, World Bank, IBGE, INEGI, FAO, WHO
-   └─ Fallback strategy (3 fontes)
-
-FASE 3: Transformação (1h)
-   ├─ Normalização
-   └─ Validação de ranges
-
-FASE 4: Cálculo (1h)
-   ├─ N*, IES, NIH, NCII, NSII, L
-   └─ Classificação de status
-
-FASE 5: Validação (1h) ← NOVO
-   ├─ TRR (Rarefação Residual)
-   ├─ TSP (Sinal Penalização)
-   ├─ TCE (Coerência Estrutural)
-   └─ TCD (Consistência Dados)
-
-FASE 6: Persistência (1h)
-   └─ PostgreSQL + Auditoria
-
-FASE 7: Notificação (1h)
-   └─ Email HTML
-
-TOTAL: ~8 horas automáticas
-```
-
----
-
-## 🧪 Testes de Falseabilidade
-
-### TRR - Teste Rarefação Residual
-```
-Se |NGII_Puro - NGII_Bruto| / NGII_Bruto > 15% → MAQUIAGEM
-```
-
-### TSP - Teste Sinal Penalização
-```
-Se NGII < 0.5 → ESTRUTURADOR PENALIZADO
-```
-
-### TCE - Teste Coerência Estrutural
-```
-Validar: Pop > 0, TFR ∈ [0.5, 9.0], Nasc > 0, Mortes > 0
-```
-
-### TCD - Teste Consistência Dados
-```
-Validar: VA/Emprego ∈ [0.001, 100], Salários ≤ VA
-```
-
----
-
-## 📊 Exemplo de Resultado
-
-```json
-{
-  "pais": "Brasil",
-  "codigo_iso": "BRA",
-  "n_estrela": 1.025,
-  "status_n": "EQUILIBRIO",
-  "ies": 0.847,
-  "status_ies": "CRITICO",
-  "nih": 0.65,
-  "ncii": 0.78,
-  "nsii": 0.72,
-  "validacao": {
-    "trr": "PASSOU",
-    "tsp": "PASSOU",
-    "tce": "PASSOU",
-    "tcd": "PASSOU"
-  }
-}
-```
-
----
-
-## ⚙️ Configuração
-
-### Variáveis de Ambiente (.env)
-
+### 4. Popular banco de dados
 ```bash
-# Banco de Dados
-DATABASE_URL=postgresql://user:pass@localhost:5432/ainu_db
-
-# JWT
-SECRET_KEY=seu-secret-super-seguro-aqui
-
-# Email
-SMTP_SERVER=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=seu-email@gmail.com
-SMTP_PASSWORD=seu-app-password
-ADMIN_EMAIL=narayama.live@gmail.com
-
-# Scheduler
-SCHEDULER_TIMEZONE=America/Sao_Paulo
-
-# Ambiente
-ENVIRONMENT=development
+docker exec ainu_backend python -m scripts.seed_usuarios
 ```
 
-Copie `.env.example` para `.env` e edite.
+### 5. Acessar aplicação
+- **Frontend**: http://localhost:8501
+- **Backend API**: http://localhost:8000/docs
+- **Login**: 
+  - Email: `imuarrek@gmail.com`
+  - Senha: `Nara2026!`
 
 ---
 
-## 🚢 Deployment na Railway
+## 📊 Recursos
 
-### 1. Conecte seu GitHub
-```bash
-railway link
-```
+### Dashboard
+- Visualização de 29 países
+- KPIs e métricas globais
+- Filtros e ordenação
+- Gráficos interativos com Plotly
 
-### 2. Crie serviços
-```bash
-railway service add postgresql
-railway service add python
-```
+### Simuladores
+- **Simulador N\***: Teste cenários de capacidade regenerativa
+- **Simulador IES**: Teste cenários de sustentabilidade
+- Ajustes de parâmetros (±25%)
+- Comparação antes/depois em tempo real
 
-### 3. Deploy automático
-- Cada push em `main` redeploya automaticamente
-- Variáveis de ambiente configuradas no Railway
+### Histórico & Projeções
+- Dados de 1999 a 2024 (25 anos)
+- Projeções de 2024 a 2034 (10 anos)
+- Análise de tendências
+- Pontos de transição críticos
 
-### 4. Acesse
-```
-https://seu-projeto.railway.app
-```
+### Autenticação
+- Registro de usuários
+- Aprovação por administrador
+- JWT tokens (24h)
+- Senhas com bcrypt
 
----
-
-## 📈 Classificação de N*
-
-| Status | Range | Significado |
-|--------|-------|-------------|
-| 🟢 PROMISSOR | N* > 1.3 | Crescimento sustentável |
-| 🟡 EQUILÍBRIO | 0.9 ≤ N* ≤ 1.3 | Estável |
-| 🟠 CRÍTICO | 0.5 ≤ N* < 0.9 | Sob pressão |
-| 🔴 COLAPSO | N* < 0.5 | Insustentável |
-
----
-
-## 🐛 Troubleshooting
-
-### "Coleta não inicia"
-```bash
-tail -f logs/agente.log
-# Procure por ERROR
-```
-
-### "Email não envia"
-- Em desenvolvimento: `grep "EMAIL SIMULADO" logs/agente.log`
-- Em produção: verifique `SMTP_PASSWORD` em `.env`
-
-### "Banco de dados não conecta"
-```bash
-psql -U usuario -d ainu_db
-# Teste conexão
-```
+### Painel Admin
+- Gerenciar usuários pendentes
+- Aprovar/rejeitar cadastros
+- Visualizar logs
+- Status do sistema
 
 ---
 
-## 📞 Contato & Suporte
-
-- **Email:** narayama.live@gmail.com
-- **GitHub:** [Ainu-Narayama](https://github.com/itibere-muarrek/Ainu-Narayama)
-- **API Docs:** http://localhost:8000/docs
-
----
-
-## 📝 Estrutura do Projeto
+## 🏗️ Arquitetura
 
 ```
-Ainu-Narayama/
+ainu-narayama/
 ├── backend/
-│   ├── agente/                    (Coletor automático)
-│   │   ├── scheduler.py
-│   │   ├── coleta/
-│   │   ├── transformacao/
-│   │   ├── calculo/
-│   │   ├── validacao/            ← NOVO (4 testes)
-│   │   ├── persistencia/
-│   │   ├── notificacao/
-│   │   └── README.md
 │   ├── app/
-│   │   ├── main.py
-│   │   ├── models.py
-│   │   ├── database.py
-│   │   ├── config.py
-│   │   └── api/v1/
-│   ├── requirements.txt
-│   └── .env.example
+│   │   ├── main.py           # FastAPI app
+│   │   ├── models.py         # SQLAlchemy ORM
+│   │   ├── database.py       # PostgreSQL connection
+│   │   └── routers/
+│   │       ├── auth.py       # Autenticação JWT
+│   │       ├── paises.py     # APIs de países
+│   │       └── admin.py      # APIs administrativas
+│   ├── agente/
+│   │   └── scheduler.py      # Agente 7 fases
+│   ├── scripts/
+│   │   └── seed_usuarios.py  # Populate DB
+│   └── requirements.txt
+│
 ├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
-├── docs/
-│   ├── QUICKSTART_AGENTE.md
-│   ├── RESUMO_TECNICO.md
-│   ├── EXEMPLOS_API.md
-│   └── INDICE_DOCUMENTACAO.md
+│   ├── main.py               # Home + Login
+│   ├── pages/
+│   │   ├── 1_Dashboard.py
+│   │   ├── 2_Simulador_N.py
+│   │   ├── 3_Simulador_IES.py
+│   │   ├── 4_Historico.py
+│   │   ├── 5_Projecoes.py
+│   │   ├── 6_Metodologia.py
+│   │   ├── 7_Sobre.py
+│   │   ├── 8_FAQ.py
+│   │   ├── 9_Contato.py
+│   │   └── 10_Admin.py
+│   ├── data/
+│   │   └── paises_narayama.json
+│   └── requirements.txt
+│
+├── docker-compose.yml
+├── Dockerfile.backend
+├── Dockerfile.frontend
+├── .env.example
 ├── .gitignore
-└── README.md                     (este arquivo)
+└── README.md
 ```
+
+### Stack Tecnológico
+
+**Backend**
+- FastAPI 0.104.1
+- SQLAlchemy 2.0.23
+- PostgreSQL 15
+- APScheduler (Agente)
+- Python-Jose (JWT)
+- Passlib (Bcrypt)
+
+**Frontend**
+- Streamlit 1.28.1
+- Plotly (Gráficos)
+- Pandas (Dados)
+- Requests (API)
+
+**Deployment**
+- Docker & Docker Compose
+- Railway (Recomendado)
+- PostgreSQL Cloud
+
+---
+
+## 📐 Fórmulas
+
+### N\* (Índice Narayama)
+```
+N* = NGII_Puro × Fator_Geracional
+
+Onde:
+  NGII_Puro = (pop_base / pop_topo) × (nasc / mortes)
+  Fator_Geracional = tfr_atual / tfr_1999
+```
+
+**Status:**
+- N* > 1.3 = 🟢 PROMISSOR
+- 0.9-1.3 = 🔵 EQUILÍBRIO  
+- 0.5-0.9 = 🟠 CRÍTICO
+- N* < 0.5 = 🔴 COLAPSO
+
+### IES (Índice Equilíbrio Sistêmico)
+```
+IES = L × ∛(NGII × NCII × NSII)
+
+Onde:
+  NIH = max(0.35, min(0.85, 1 − (0.35·T + 0.25·U + 0.20·M + 0.20·I)))
+  NSII = 0.45·A_ext + 0.55·NIH
+```
+
+**Status:**
+- IES > 0.8 = 🟢 SAUDÁVEL
+- 0.6-0.8 = 🔵 ESTÁVEL
+- 0.4-0.6 = 🟡 FRÁGIL
+- IES < 0.4 = 🔴 CRÍTICO
+
+---
+
+## 🤖 Agente Coletor (7 Fases)
+
+Executa automaticamente toda **sexta-feira às 14:00 (São Paulo)**:
+
+1. **PRÉ-COLETA**: Validações e preparação
+2. **COLETA PARALELA**: UN WPP, World Bank, Yale EPI
+3. **TRANSFORMAÇÃO**: Normalização de dados
+4. **CÁLCULO**: N*, IES, NIH, NSII
+5. **VALIDAÇÃO**: 4 testes de falsificabilidade (TRR, TSP, TCE, TCD)
+6. **PERSISTÊNCIA**: Salvando em PostgreSQL
+7. **NOTIFICAÇÃO**: Email para admin
+
+---
+
+## 👥 Usuários Pré-configurados
+
+| Email | Senha | Tipo | Status |
+|---|---|---|---|
+| imuarrek@gmail.com | Nara2026! | Admin | ✅ Aprovado |
+| VISITOR1 | Vis123 | Usuário | ✅ Aprovado |
+| VISITOR2 | Vis456 | Usuário | ✅ Aprovado |
+
+---
+
+## 🛠️ Desenvolvimento Local
+
+### Sem Docker
+```bash
+# Backend
+cd backend
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python -m uvicorn app.main:app --reload
+
+# Frontend (novo terminal)
+cd frontend
+pip install -r requirements.txt
+streamlit run main.py
+```
+
+### Com SQLite (rápido para testes)
+```bash
+# Edite backend/.env
+DATABASE_URL=sqlite:///./test.db
+```
+
+---
+
+## 📚 Países Analisados (29)
+
+**África**: Nigeria, Ethiopia, DRCongo, Egypt, Kenya
+
+**Ásia**: India, Indonesia, Vietnam, Iran, China, Thailand, Pakistan, Bangladesh, Japan, South Korea, Saudi Arabia
+
+**Europa**: Poland, Germany, France, Spain, Russia
+
+**Américas**: Brazil, Mexico, United States, Argentina, Canada
+
+**Oceania**: Australia
+
+---
+
+## 🔐 Segurança
+
+- ✅ HTTPS em produção
+- ✅ JWT tokens (24h)
+- ✅ Bcrypt password hashing
+- ✅ SQL Injection protection (SQLAlchemy ORM)
+- ✅ CORS configurado
+- ✅ Validação de entrada (Pydantic)
+- ✅ Rate limiting recomendado (nginx)
+- ✅ Backup automático de banco de dados
+
+---
+
+## 📖 Documentação
+
+- **Metodologia**: Veja página "Metodologia" no app
+- **FAQ**: Veja página "FAQ"
+- **API Docs**: http://localhost:8000/docs (Swagger UI)
+
+---
+
+## 🚀 Deploy em Railway
+
+1. Conecte seu repositório GitHub
+2. Configure variáveis de ambiente
+3. Deploy automático em push
+4. PostgreSQL fornecido por Railway
+
+Veja [RAILWAY.md](RAILWAY.md) para instruções detalhadas.
+
+---
+
+## 📈 Estatísticas
+
+- **Países**: 29
+- **Anos de histórico**: 25 (1999-2024)
+- **Anos de projeção**: 10 (2024-2034)
+- **Indicadores por país**: 15+
+- **Testes de validação**: 4
+- **Fases do agente**: 7
+
+---
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Por favor:
+
+1. Fork o projeto
+2. Crie uma branch (`git checkout -b feature/AmazingFeature`)
+3. Commit mudanças (`git commit -m 'Add AmazingFeature'`)
+4. Push (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+---
+
+## 📞 Suporte
+
+- 📧 **Email**: narayama.live@gmail.com
+- 🌐 **Website**: https://narayama.live
+- 📚 **Documentação**: Veja abas do app
+- ❓ **FAQ**: Página "FAQ" no app
 
 ---
 
 ## 📄 Licença
 
-Este projeto está sob licença **MIT**. Veja [LICENSE](LICENSE) para detalhes.
+MIT License - veja [LICENSE](LICENSE) para detalhes
 
 ---
 
-## 🙏 Créditos
+## 🎬 Inspiração
 
-Desenvolvido com ❤️ para sustentabilidade intergeracional.
-
-**Última atualização:** 15 de Maio de 2026  
-**Versão:** 4.0
+Homenageia o filme **"Narayama Bushiko"** (A Balada de Narayama) de Shohei Imamura,
+que explora temas de envelhecimento, morte e sustentabilidade populacional.
 
 ---
 
-## 🎯 Roadmap
+## 🙏 Agradecimentos
 
-- [ ] Integração com UN WPP API
-- [ ] Dashboard de visualização
-- [ ] Alertas em tempo real (Slack, PagerDuty)
-- [ ] Exportação de relatórios (PDF, Excel)
-- [ ] Simulações de cenários
-- [ ] Mobile app
+- Anthropic Claude por desenvolvimento
+- UN WPP por dados populacionais
+- World Bank por indicadores econômicos
+- Yale EPI por dados ambientais
+- Shohei Imamura pela inspiração
 
 ---
 
-**Pronto para começar?** → Leia [QUICKSTART_AGENTE.md](QUICKSTART_AGENTE.md) 🚀
+**AINU.SYSTEMS v3.1.0** | Lançado em 2024 | Última atualização: 2024-05-16
+
+```
+╔═══════════════════════════════════════════════════════════════════════╗
+║                    AINU.SYSTEMS v3.1.0 - ONLINE                      ║
+║            Agente Inteligente Narayama de Uniformização               ║
+║                   https://narayama.live                              ║
+╚═══════════════════════════════════════════════════════════════════════╝
+```

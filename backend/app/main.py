@@ -1,84 +1,60 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from contextlib import asynccontextmanager
+from dotenv import load_dotenv
+import os
+import logging
 
-from app.database import init_db
-from app.api.v1 import auth, paises, calculo, simulacoes, admin
-from app.config import get_settings
-from agente.scheduler import iniciar_scheduler, parar_scheduler
+from .database import init_db
+from .routers import auth, paises, admin
 
-settings = get_settings()
+load_dotenv()
 
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    """Startup e shutdown da aplicação"""
-    # Startup
-    init_db()
-    print("✓ Banco de dados inicializado")
-
-    # Inicia agente coletor automático
-    iniciar_scheduler()
-    print("✓ Agente coletor semanal iniciado")
-
-    yield
-
-    # Shutdown
-    parar_scheduler()
-    print("✓ Agente coletor parado")
-    print("✓ Aplicação encerrada")
-
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = FastAPI(
-    title="AINU-Narayama API",
-    description="Backend para Sistema de Medição Socioeconômica",
-    version="3.1.0",
-    lifespan=lifespan
+    title="AINU.SYSTEMS v3.1.0",
+    description="Agente Inteligente Narayama de Uniformização",
+    version="3.1.0"
 )
 
 # CORS
+ALLOWED_ORIGINS = os.getenv(
+    "ALLOWED_ORIGINS",
+    "http://localhost:8501,http://localhost:3000,https://narayama.live"
+).split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Em produção: ["https://narayama.live", "https://frontend.example.com"]
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Rotas
-app.include_router(auth.router, prefix="/api/v1")
-app.include_router(paises.router, prefix="/api/v1")
-app.include_router(calculo.router, prefix="/api/v1")
-app.include_router(simulacoes.router, prefix="/api/v1")
-app.include_router(admin.router, prefix="/api/v1")
+# Inicializar banco de dados
+init_db()
+
+# Routers
+app.include_router(auth.router, prefix="/api/v1/auth", tags=["Auth"])
+app.include_router(paises.router, prefix="/api/v1/paises", tags=["Paises"])
+app.include_router(admin.router, prefix="/api/v1/admin", tags=["Admin"])
 
 
-@app.get("/", tags=["root"])
+@app.get("/")
 async def root():
-    """Root endpoint"""
     return {
-        "name": "AINU-Narayama API",
-        "version": "3.1.0",
-        "docs": "/docs",
-        "redoc": "/redoc"
+        "message": "AINU.SYSTEMS v3.1.0",
+        "status": "online",
+        "docs": "/docs"
     }
 
 
-@app.get("/health", tags=["health"])
-async def health_check():
-    """Health check endpoint"""
-    return {
-        "status": "ok",
-        "environment": settings.environment
-    }
+@app.get("/health")
+async def health():
+    return {"status": "healthy"}
 
 
 if __name__ == "__main__":
     import uvicorn
-
-    uvicorn.run(
-        "app.main:app",
-        host="0.0.0.0",
-        port=8000,
-        reload=settings.environment == "development"
-    )
+    uvicorn.run(app, host="0.0.0.0", port=8000)

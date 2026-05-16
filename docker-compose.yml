@@ -1,0 +1,77 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: ainu_postgres
+    environment:
+      POSTGRES_USER: ainu
+      POSTGRES_PASSWORD: ainu123
+      POSTGRES_DB: ainu_narayama
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ainu"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ainu_network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: ainu_backend
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://ainu:ainu123@postgres:5432/ainu_narayama
+      SECRET_KEY: ainu-secret-key-very-secure-minimum-32-characters-production
+      ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRE_HOURS: 24
+      ALLOWED_ORIGINS: http://localhost:8501,http://localhost:3000,https://narayama.live
+      BACKEND_URL: http://backend:8000
+      FRONTEND_URL: http://localhost:8501
+      EMAIL_ADMIN: narayama.live@gmail.com
+      EMAIL_PASSWORD: your-app-password-here
+      AGENTE_ATIVO: "true"
+      AGENTE_TIMEZONE: America/Sao_Paulo
+      AGENTE_DIA: friday
+      AGENTE_HORA: 14
+      AGENTE_MINUTO: 0
+    volumes:
+      - ./backend:/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - ainu_network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: ainu_frontend
+    command: streamlit run main.py --server.port=8501 --server.address=0.0.0.0
+    ports:
+      - "8501:8501"
+    environment:
+      BACKEND_URL: http://backend:8000
+      STREAMLIT_SERVER_HEADLESS: "true"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    networks:
+      - ainu_network
+
+volumes:
+  postgres_data:
+
+networks:
+  ainu_network:
+    driver: bridge

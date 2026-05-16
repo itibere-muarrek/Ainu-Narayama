@@ -1,21 +1,27 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
-from app.config import get_settings
+from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.pool import StaticPool
+import os
+from dotenv import load_dotenv
 
-settings = get_settings()
+load_dotenv()
 
-engine = create_engine(
-    settings.database_url,
-    pool_pre_ping=True,
-    echo=False if settings.environment == "production" else False
-)
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./test.db")
+
+if DATABASE_URL.startswith("postgresql"):
+    engine = create_engine(DATABASE_URL, echo=False)
+else:
+    engine = create_engine(
+        DATABASE_URL,
+        connect_args={"check_same_thread": False},
+        poolclass=StaticPool,
+        echo=False
+    )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-Base = declarative_base()
 
-
-def get_db():
+def get_db() -> Session:
     db = SessionLocal()
     try:
         yield db
@@ -24,5 +30,5 @@ def get_db():
 
 
 def init_db():
-    """Cria todas as tabelas"""
+    from .models import Base
     Base.metadata.create_all(bind=engine)
