@@ -4,6 +4,10 @@ set -e
 # Railway provides PORT environment variable
 PORT=${PORT:-8000}
 
+# Run diagnostics
+echo "🔍 Running diagnostics..."
+python diagnostic.py
+
 # Discover and configure database connection
 echo "🔍 Discovering database configuration..."
 python discover_db.py
