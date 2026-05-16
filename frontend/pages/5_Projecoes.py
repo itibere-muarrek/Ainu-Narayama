@@ -8,7 +8,7 @@ load_dotenv()
 
 st.set_page_config(page_title="Projeções", page_icon="🔮", layout="wide")
 
-st.markdown("# 🔮 Projeções - 10 Anos (2024-2034)")
+st.markdown("# 🔮 Projeções - 25 Anos (2024-2049)")
 
 token = st.session_state.get("token")
 if not token:
@@ -39,7 +39,7 @@ with col3:
 
 st.markdown("---")
 
-years = list(range(2024, 2035))
+years = list(range(2024, 2050))
 
 if cenario == "Otimista":
     st.markdown("### 📈 Cenário Otimista (Melhorias Globais)")

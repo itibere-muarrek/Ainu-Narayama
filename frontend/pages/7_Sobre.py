@@ -61,7 +61,7 @@ Cobrimos continentes e economias diversas:
 ## Timeline de Dados
 
 - **1999-2024**: Dados históricos (25 anos)
-- **2024-2034**: Projeções futuras (10 anos)
+- **2024-2049**: Projeções futuras (25 anos)
 - **Total**: 35 anos de cobertura
 
 ---

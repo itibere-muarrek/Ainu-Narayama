@@ -75,7 +75,7 @@ docker exec ainu_backend python -m scripts.seed_usuarios
 
 ### Histórico & Projeções
 - Dados de 1999 a 2024 (25 anos)
-- Projeções de 2024 a 2034 (10 anos)
+- Projeções de 2024 a 2049 (25 anos)
 - Análise de tendências
 - Pontos de transição críticos
 
@@ -293,7 +293,7 @@ Veja [RAILWAY.md](RAILWAY.md) para instruções detalhadas.
 
 - **Países**: 29
 - **Anos de histórico**: 25 (1999-2024)
-- **Anos de projeção**: 10 (2024-2034)
+- **Anos de projeção**: 25 (2024-2049)
 - **Indicadores por país**: 15+
 - **Testes de validação**: 4
 - **Fases do agente**: 7
