@@ -3,7 +3,9 @@
     "allow": [
       "Bash(git add *)",
       "Bash(git commit -m '🚀 Deploy: AINU.SYSTEMS v3.1.0 - Completo e Pronto para Railway *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git pull *)",
+      "Bash(git commit *)"
     ]
   }
 }
