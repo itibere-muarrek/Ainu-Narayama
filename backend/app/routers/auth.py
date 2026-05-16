@@ -1,11 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, field_validator
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 import os
 from dotenv import load_dotenv
+import re
 
 from ..database import get_db
 from ..models import Usuario, Log
@@ -19,6 +20,9 @@ ACCESS_TOKEN_EXPIRE_HOURS = int(os.getenv("ACCESS_TOKEN_EXPIRE_HOURS", 24))
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
+# Simple email regex validation (no external dependency)
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+
 
 class TokenData(BaseModel):
     email: str
@@ -26,13 +30,27 @@ class TokenData(BaseModel):
 
 class UsuarioRegistro(BaseModel):
     nome: str
-    email: EmailStr
+    email: str
     senha: str
+
+    @field_validator('email')
+    @classmethod
+    def validate_email(cls, v):
+        if not EMAIL_REGEX.match(v):
+            raise ValueError('Email inválido')
+        return v
 
 
 class UsuarioLogin(BaseModel):
-    email: EmailStr
+    email: str
     senha: str
+
+    @field_validator('email')
+    @classmethod
+    def validate_email(cls, v):
+        if not EMAIL_REGEX.match(v):
+            raise ValueError('Email inválido')
+        return v
 
 
 class UsuarioResponse(BaseModel):
