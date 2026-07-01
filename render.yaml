@@ -1,0 +1,27 @@
+# Blueprint do Render (https://render.com/docs/blueprint-spec).
+#
+# Define os dois serviços do AINU-Narayama como Web Services
+# independentes, cada um com seu próprio domínio customizado
+# (configurado manualmente no painel do Render após o primeiro
+# deploy — ver README.md, seção "Deploy").
+#
+# Render redesploya automaticamente a cada push para a branch
+# conectada; não é necessário workflow de deploy no GitHub Actions.
+
+services:
+  - type: web
+    name: ainu-systems
+    runtime: python
+    plan: free
+    buildCommand: pip install -r app/requirements.txt
+    startCommand: streamlit run app/ainu_systems/app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: AINU_SYSTEMS_PASSWORD
+        sync: false
+
+  - type: web
+    name: narayama-live
+    runtime: python
+    plan: free
+    buildCommand: pip install -r app/requirements.txt
+    startCommand: streamlit run app/narayama_live/app.py --server.port $PORT --server.address 0.0.0.0

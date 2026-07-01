@@ -1,0 +1,50 @@
+name: CI
+
+# Não faz deploy — Render redesploya sozinho a cada push (ver
+# render.yaml). Este workflow só valida que o código ainda importa
+# corretamente e que os dados de referência (28 países) continuam
+# consistentes antes de qualquer push chegar ao Render.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Instalar dependências
+        run: pip install -r app/requirements.txt
+
+      - name: Checagem de regressão (28 países, config/CSV sincronizados)
+        run: |
+          python -c "
+          import pandas as pd
+          from src.config import PAISES
+          from src.indices import calcular_ngii_puro, calcular_fator_geracional, calcular_n_base, classificar_zona_n_base
+          from src.falseability import aplicar_protocolo_falseabilidade, aplicar_protocolo_falseabilidade_simplificado
+
+          assert len(PAISES) == 28, f'esperado 28 paises, encontrado {len(PAISES)}'
+
+          df = pd.read_csv('docs/paises_perfil.csv')
+          assert set(df['codigo']) == set(PAISES.keys()), 'docs/paises_perfil.csv e src/config.py divergem'
+
+          n = calcular_n_base(
+              calcular_ngii_puro(65.0, 110.0, 2.7, 1.6, 0.75, 0.85),
+              calcular_fator_geracional(1.60, 2.40),
+          )
+          assert classificar_zona_n_base(n) == 'Tensão Acelerada'
+
+          print('Checagem de regressão: OK')
+          "
+
+      - name: Rodar teste de cálculo (Brasil, informativo)
+        run: python test_calculo_brasil.py

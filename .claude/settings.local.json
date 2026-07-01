@@ -1,13 +1,36 @@
 {
   "permissions": {
     "allow": [
-      "Bash(awk '{print $9, \"\\(\" $5 \"\\)\"}')",
-      "Bash(git remote *)",
-      "Bash(git push *)",
-      "Bash(git pull *)",
-      "Bash(git checkout *)",
+      "Bash(python3 -c ' *)",
+      "Bash(python -c ' *)",
+      "Bash(python3 -c \"import docx\")",
+      "Bash(python -c \"import docx\")",
+      "Bash(python -c \"import docx; print\\(docx.__file__\\)\")",
+      "Bash(python -c \"import sys; print\\(sys.version\\)\")",
+      "Bash(pip show *)",
+      "Bash(pip install *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(echo \"exit code: $?\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('app/ainu_systems/app.py', encoding='utf-8'\\).read\\(\\)\\); ast.parse\\(open\\('app/narayama_live/app.py', encoding='utf-8'\\).read\\(\\)\\)\")",
+      "Bash(rm -rf \"C:/Users/LENOVO/Documents/Ainu.Narayama/src/__pycache__\")",
+      "WebSearch",
+      "WebFetch(domain:discuss.streamlit.io)",
+      "Bash(python -c \"import yaml\")",
+      "Bash(curl -sIL \"https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20\\(Standard\\)/CSV_FILES/WPP2024_TotalPopulationBySex.csv.gz\" --max-time 15)",
+      "Bash(curl -sI \"https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20\\(Standard\\)/CSV_FILES/WPP2024_Demographic_Indicators_Medium.csv.gz\" --max-time 15)",
+      "Bash(curl -sI \"https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20\\(Standard\\)/CSV_FILES/WPP2024_PopulationByAge5GroupSex_Medium.csv.gz\" --max-time 15)",
+      "Bash(curl -s -o wpp_indicators.csv.gz \"https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20\\(Standard\\)/CSV_FILES/WPP2024_Demographic_Indicators_Medium.csv.gz\" --max-time 60)",
+      "Bash(curl -s -o wpp_age.csv.gz \"https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20\\(Standard\\)/CSV_FILES/WPP2024_PopulationByAge5GroupSex_Medium.csv.gz\" --max-time 90)",
+      "Bash(gunzip -k wpp_indicators.csv.gz)",
+      "Bash(gunzip -k wpp_age.csv.gz)",
+      "Bash(cp C:/Users/LENOVO/AppData/Local/Temp/claude/C--Users-LENOVO-Documents-Ainu-Narayama/5d4b67e8-6191-4e78-a57b-ed65fdadb586/scratchpad/un_wpp_painel_final.csv C:/Users/LENOVO/Documents/Ainu.Narayama/data/raw/un_wpp.csv)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('app/narayama_live/app.py', encoding='utf-8'\\).read\\(\\)\\)\")",
+      "Bash(powershell -Command \"Get-Process -Id 21484 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,Path\")",
+      "Bash(netstat -ano)",
+      "PowerShell(Stop-Process -Id 21484 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 8501 -ErrorAction SilentlyContinue)",
+      "Bash(git fetch *)",
+      "Bash(git tag *)"
     ]
   }
 }

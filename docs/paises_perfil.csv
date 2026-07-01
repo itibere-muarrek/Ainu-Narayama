@@ -1,0 +1,29 @@
+codigo,nome_pais,regiao,perfil,tfr_2024,prioridade
+NGA,Nigéria,África Subsaariana,A,4.80,1
+ETH,Etiópia,África Subsaariana,A,4.30,1
+COD,República Democrática do Congo,África Subsaariana,A,5.90,1
+VNM,Vietnã,Ásia Sudeste,B,2.08,2
+IND,Índia,Ásia Meridional,B,2.00,2
+IDN,Indonésia,Ásia Sudeste,B,2.30,2
+IRN,Irã,Oriente Médio,B,2.50,2
+SAU,Arábia Saudita,Oriente Médio,B,2.80,2
+MAR,Marrocos,África do Norte,B,2.50,2
+EGY,Egito,África do Norte,B,3.00,2
+THA,Tailândia,Ásia Sudeste,C,1.60,3
+MEX,México,América do Norte,C,1.74,3
+POL,Polônia,Europa Oriental,C,1.30,3
+BRA,Brasil,América do Sul,C,1.60,2
+USA,Estados Unidos,América do Norte,C,1.85,3
+CHN,China,Ásia Oriental,C,1.70,3
+FRA,França,Europa Ocidental,C,1.67,3
+ARG,Argentina,América do Sul,C,1.60,3
+CHL,Chile,América do Sul,C,1.60,3
+SWE,Suécia,Europa Ocidental,C,1.71,3
+GBR,Reino Unido,Europa Ocidental,C,1.70,3
+AUS,Austrália,Oceania,C,1.68,3
+ZAF,África do Sul,África Subsaariana,C,2.00,3
+JPN,Japão,Ásia Oriental,D,1.20,1
+DEU,Alemanha,Europa Ocidental,D,1.34,1
+ITA,Itália,Europa Ocidental,D,1.24,1
+KOR,Coreia do Sul,Ásia Oriental,D,0.72,1
+RUS,Rússia,Eurásia,D,1.61,1
