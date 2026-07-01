@@ -6,8 +6,9 @@ Este documento é a receita técnica exata do projeto AINU-Narayama: contém as
 fórmulas matemáticas usadas no cálculo do Índice de Narayama Sistêmico (N*) e
 seus componentes, conforme definidos na tese de doutorado "Do Dilema de
 Narayama ao Oicoceno Civilizacional" (`V1_EcoPol_062426_v8.0.docx`). Um único
-exemplo ilustrativo (Brasil, valores fictícios) percorre as seções 2 a 5 para
-mostrar a mecânica completa do cálculo.
+exemplo (Brasil, dados reais da UN WPP 2024 — exceto escolaridade, ainda
+neutra/placeholder) percorre as seções 2 a 5 para mostrar a mecânica completa
+do cálculo.
 
 ## 2. N* (Índice de Narayama Sistêmico)
 
@@ -18,11 +19,12 @@ N*(i,t) = NGII_puro(i,t) × Fator_Geracional(i,t)
 Interpretação: capacidade de renovação geracional projetada ao final do
 próximo ciclo de 25 anos.
 
-Exemplo (Brasil, ilustrativo):
+Exemplo (Brasil, dados reais 2024):
 
-- NGII_puro = 0,88
-- Fator_Geracional = 0,67
-- N* = 0,88 × 0,67 = **0,59**
+- NGII_puro = 3,377
+- Fator_Geracional = 0,691
+- N* = 3,377 × 0,691 = **2,334** (zona "Expansão Forte" — ver nota da seção 3
+  sobre o efeito de `Pop_Topo` pequeno em populações jovens)
 
 ## 3. NGII_puro (Potência Geracional — Pilar 1)
 
@@ -32,8 +34,12 @@ NGII_puro = (Pop_Base / Pop_Topo) × (Nascimentos / Mortes) × (Taxa_Escolaridad
 
 Onde:
 
-- Pop_Base = população 0–25 anos ("coortes futuras")
-- Pop_Topo = população 25–65 anos ("provedores atuais" — **não** é a coorte idosa)
+- Pop_Base = população da coorte formadora. Faixa etária por perfil
+  (Seção V.III): **0–25 anos** para Perfis A/B, **0–21 anos** para
+  Perfis C/D/E.
+- Pop_Topo = população da coorte legatária/dependente. Faixa etária
+  por perfil (Seção V.III): **55+** para Perfis A/B, **61+** para
+  Perfis C/D/E.
 - Nascimentos = nascimentos no ano
 - Mortes = mortes no ano
 - Taxa_Escolaridade_0-25 = taxa observada de educação completa (CHR + educação formal) na coorte 0-25
@@ -42,21 +48,29 @@ Onde:
 Interpretação: potência reprodutiva do país no momento atual, ajustada pela
 qualidade da formação da coorte que vai substituir os provedores de hoje.
 
-Exemplo (Brasil, ilustrativo):
+Exemplo (Brasil — Perfil C, dados reais UN WPP 2024):
 
-- Pop_Base ≈ 65 milhões
-- Pop_Topo ≈ 110 milhões
-- Nascimentos ≈ 2,7 milhões
-- Mortes ≈ 1,6 milhões
-- Taxa_Escolaridade_0-25 ≈ 0,75
-- Taxa_Esperada ≈ 0,85
-- NGII_puro = (65/110) × (2,7/1,6) × (0,75/0,85) = 0,591 × 1,688 × 0,882 = **0,88**
+- Pop_Base (0–21) = 62,70 milhões
+- Pop_Topo (61+) = 31,88 milhões
+- Nascimentos = 2,57 milhões
+- Mortes = 1,50 milhões
+- Taxa_Escolaridade_0-25 = 1,0 (neutro — fonte real ainda não integrada, ver seção 8)
+- Taxa_Esperada = 1,0 (idem)
+- NGII_puro = (62,70/31,88) × (2,57/1,50) × (1,0/1,0) = 1,967 × 1,715 = **3,377**
 
-> Esta é a fórmula de 3 componentes do Capítulo 5 da tese (a que inclui o
-> ajuste por escolaridade). A tese também apresenta, na Seção V.III, uma
-> versão resumida de 2 componentes com `Pop_Topo` = coorte idosa (55+/61+) em
-> vez de provedora — as duas versões não foram reconciliadas no texto. Este
-> projeto usa a do Capítulo 5.
+> **Decisão híbrida** (confirmada em 2026-07-01): a tese define
+> Pop_Base/Pop_Topo de duas formas que não foram reconciliadas no
+> texto — o Capítulo 5 usa uma faixa fixa (0-25/25-65, "provedores
+> atuais") para todos os perfis; a Seção V.III usa faixas que variam
+> por perfil (0-25/55+ para A/B, **0-21/61+ para C/D/E**), com
+> `Pop_Topo` = coorte **idosa**, não provedora. Este projeto adota as
+> faixas por perfil da Seção V.III, mantendo o terceiro fator
+> (escolaridade) do Capítulo 5. Isso **infla bastante o NGII_puro de
+> países jovens/alta fecundidade** (ex.: RD Congo, Etiópia, Nigéria
+> chegam a N* > 17 nesta fase), porque `Pop_Topo` (55+/61+) é um
+> denominador muito pequeno nessas populações — um efeito mecânico da
+> fórmula, não uma medida calibrada. Ver `FAIXAS_ETARIAS_POR_PERFIL_V3`
+> em `src/config.py`.
 
 Implementado em [`calcular_ngii_puro`](../src/indices.py).
 
@@ -80,11 +94,11 @@ Valores:
 - = 1,0: estável (fecundidade igual)
 - < 1,0: deterioração (fecundidade caiu)
 
-Exemplo (Brasil, ilustrativo):
+Exemplo (Brasil, dados reais):
 
-- TFR ano corrente = 1,60
-- TFR 25 anos antes = 2,40
-- Fator_Geracional = 1,60 / 2,40 = **0,67** (deterioração)
+- TFR 2024 = 1,6143
+- TFR 1999 = 2,3353
+- Fator_Geracional = 1,6143 / 2,3353 = **0,691** (deterioração)
 
 Implementado em [`calcular_fator_geracional`](../src/indices.py).
 
@@ -174,10 +188,13 @@ Implementado em [`classificar_zona_n_base`](../src/indices.py).
 
 - Tese v8.0, `V1_EcoPol_062426_v8.0.docx`:
   - Seção V.II — Fórmula principal do N*
-  - Seção V.III — Fator_Geracional; versão resumida (2 componentes) do NGII_puro
+  - Seção V.III — Fator_Geracional; faixas etárias de Pop_Base/Pop_Topo por
+    perfil (adotadas neste projeto — ver seção 3); versão resumida (2
+    componentes) do NGII_puro (não adotada, ver seção 3)
   - Seção V.III-bis — Fator_Alocativo e Farol Institucional
   - Capítulo 3 (3.2) — Limiares PEEC-PEA-PEC (convenção alternativa, não adotada)
-  - Capítulo 5 — NGII_puro (3 componentes, adotado neste projeto)
+  - Capítulo 5 — NGII_puro, estrutura de 3 componentes com escolaridade
+    (adotada neste projeto, combinada com as faixas etárias da Seção V.III)
   - Tabela 4 / Anexo 8 — Zonas críticas do N* (convenção adotada)
-  - Tabela 14 — Faixas etárias por Perfil Estrutural
+  - Tabela 14 — Faixas etárias por Perfil Estrutural (referência, não adotada — ver seção 3)
   - Anexo 9 — Protocolo de Falseabilidade (7 testes)

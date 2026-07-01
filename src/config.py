@@ -104,37 +104,53 @@ FORMULAS = {
         "NGII_puro = (Pop_Base / Pop_Topo) x (Nascimentos / Mortes) "
         "x (Taxa_Escolaridade_0-25 / Taxa_Esperada)"
     ),
-    "componente_1": "Razao Geracional = Pop_Base / Pop_Topo (0-25 / 25-65)",
+    "componente_1": "Razao Geracional = Pop_Base / Pop_Topo (faixa etaria varia por perfil, ver FAIXAS_ETARIAS_POR_PERFIL_V3)",
     "componente_2": "Vitalidade = Nascimentos / Mortes",
     "componente_3": "Educacao = Taxa_Escolaridade_0-25 / Taxa_Esperada",
     "fator_geracional": "Fator_Geracional = TFR_atual / TFR_25_anos_atras",
     "n_base": "N* = N_Base = NGII_puro x Fator_Geracional",
     "fator_alocativo": "Fator_Alocativo = NTA(0-25) / NTA(65+)",
     "nota": (
-        "Pop_Base e Pop_Topo sao faixas etarias, nao geracoes. "
-        "Pop_Topo = provedores atuais (25-65), nao idosos (55+/65+). "
-        "Fixo para todos os perfis (Capitulo 5), sem variacao por perfil."
+        "Decisao hibrida (confirmada em 2026-07-01): Pop_Base/Pop_Topo "
+        "usam as faixas etarias por perfil da Secao V.III (nao a faixa "
+        "fixa 0-25/25-65 do Capitulo 5), mas o terceiro fator "
+        "(Taxa_Escolaridade) do Capitulo 5 e mantido. Ver "
+        "FAIXAS_ETARIAS_POR_PERFIL_V3 abaixo."
     ),
 }
 
 # ---------------------------------------------------------------------------
-# Faixas etárias por Perfil Estrutural (Tabela 14)
+# Faixas etárias por Perfil Estrutural — Seção V.III (decisão vigente)
 # ---------------------------------------------------------------------------
+# A tese define as faixas de Pop_Base/Pop_Topo por perfil de duas
+# formas diferentes (V.III, com 2 níveis, vs. Tabela 14, com 5
+# níveis — ver FAIXAS_ETARIAS_POR_PERFIL_TABELA14 abaixo e
+# docs/definitions.md). Decisão confirmada em 2026-07-01: usar as
+# faixas da Seção V.III (2 níveis) para todos os 28 países,
+# combinadas com o terceiro fator de escolaridade do Capítulo 5.
+#
+# Seção V.III: "Pop_Base = coorte 0–25 (Perfis A/B) ou 0–21 (Perfis
+# C/D/E); Pop_Topo = coorte 55+ (Perfis A/B) ou 61+ (Perfis C/D/E)".
+
+FAIXAS_ETARIAS_POR_PERFIL_V3 = {
+    "A": {"pop_base_max": 25, "pop_topo_min": 55},
+    "B": {"pop_base_max": 25, "pop_topo_min": 55},
+    "C": {"pop_base_max": 21, "pop_topo_min": 61},
+    "D": {"pop_base_max": 21, "pop_topo_min": 61},
+    "E": {"pop_base_max": 21, "pop_topo_min": 61},
+}
+
+# ---------------------------------------------------------------------------
+# Faixas etárias por Perfil Estrutural — Tabela 14 (referência, não usada)
+# ---------------------------------------------------------------------------
+# Versão alternativa de 5 níveis, mais granular, que a tese também
+# apresenta (Tabela 14) mas que não foi adotada para o cálculo do
+# NGII_puro. Mantida aqui só como referência/uso futuro.
 # pop_base_max: idade máxima da coorte formadora (Prometidos/Ativo Primário)
 # pop_topo_min: idade mínima da coorte legatária (dependente idosa)
-#
-# IMPORTANTE: a fórmula de NGII_puro implementada em src/indices.py
-# segue o Capítulo 5 da tese, que usa Pop_Base = 0-25 e
-# Pop_Topo = 25-65 (coorte PROVEDORA atual) de forma fixa, sem
-# variação por perfil. As faixas abaixo (coorte Legatária/idosa, que
-# a tese usa em outra definição de Pop_Topo na Seção V.III — ver
-# docs/definitions.md) NÃO são usadas por calcular_ngii_puro(); estão
-# aqui reservadas para uso futuro (ex.: cálculo de NTA(65+) para o
-# Fator_Alocativo, Fase 2+).
-# Nota: nenhum dos 28 países do Anexo 5 é classificado como Perfil E;
-# a faixa é mantida pois consta na Tabela 14.
+# Nenhum dos 28 países do Anexo 5 é classificado como Perfil E.
 
-FAIXAS_ETARIAS_POR_PERFIL = {
+FAIXAS_ETARIAS_POR_PERFIL_TABELA14 = {
     "A": {"pop_base_max": 16, "pop_topo_min": 44, "tfr_min": 4.0, "tfr_max": None},
     "B": {"pop_base_max": 18, "pop_topo_min": 55, "tfr_min": 2.1, "tfr_max": 4.0},
     "C": {"pop_base_max": 21, "pop_topo_min": 60, "tfr_min": 1.2, "tfr_max": 2.1},
@@ -150,27 +166,29 @@ FAIXAS_ETARIAS_POR_PERFIL = {
 # ex. "B→C"; aqui cada país recebe a letra única cuja faixa de TFR o
 # contém). Nenhum país do Anexo 5 é classificado como Perfil E.
 #
-# pop_base_min/max e pop_topo_min/max: fixos para todos os perfis,
-# conforme a fórmula do Capítulo 5 (Pop_Base=0-25, Pop_Topo=25-65 —
-# coorte PROVEDORA atual, não idosa).
+# pop_base_min/max e pop_topo_min/max: derivados de
+# FAIXAS_ETARIAS_POR_PERFIL_V3 conforme o perfil do país.
 #
 # faixa_etaria_farol_min/max: faixa etária da coorte usada no cálculo
 # de NTA(65+) para o Fator_Alocativo (Seção V.III-bis). É fixa em
 # 65-150 para todos os países/perfis — a fórmula do farol usa
 # explicitamente "NTA(65+)", não uma faixa que varia por perfil.
 
-_POP_BASE_TOPO_PADRAO = {
-    "pop_base_min": 0,
-    "pop_base_max": 25,
-    "pop_topo_min": 25,
-    "pop_topo_max": 65,
-    "faixa_etaria_farol_min": 65,
-    "faixa_etaria_farol_max": 150,
-}
+_FAROL_FAIXA_PADRAO = {"faixa_etaria_farol_min": 65, "faixa_etaria_farol_max": 150}
 
 
 def _pais(nome: str, regiao: str, perfil: str) -> dict:
-    return {"nome": nome, "regiao": regiao, "perfil": perfil, **_POP_BASE_TOPO_PADRAO}
+    faixa = FAIXAS_ETARIAS_POR_PERFIL_V3[perfil]
+    return {
+        "nome": nome,
+        "regiao": regiao,
+        "perfil": perfil,
+        "pop_base_min": 0,
+        "pop_base_max": faixa["pop_base_max"],
+        "pop_topo_min": faixa["pop_topo_min"],
+        "pop_topo_max": 150,
+        **_FAROL_FAIXA_PADRAO,
+    }
 
 
 PAISES = {

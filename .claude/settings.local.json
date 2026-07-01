@@ -30,7 +30,14 @@
       "PowerShell(Stop-Process -Id 21484 -Force -ErrorAction SilentlyContinue)",
       "PowerShell(Get-NetTCPConnection -LocalPort 8501 -ErrorAction SilentlyContinue)",
       "Bash(git fetch *)",
-      "Bash(git tag *)"
+      "Bash(git tag *)",
+      "Bash(git push *)",
+      "Bash(curl -s -o wpp_single_hist.csv.gz \"https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20\\(Standard\\)/CSV_FILES/WPP2024_PopulationBySingleAgeSex_Medium_1950-2023.csv.gz\" --max-time 120)",
+      "Bash(curl -s -o wpp_single_proj.csv.gz \"https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20\\(Standard\\)/CSV_FILES/WPP2024_PopulationBySingleAgeSex_Medium_2024-2100.csv.gz\" --max-time 120)",
+      "Bash(gunzip -k wpp_single_hist.csv.gz)",
+      "Bash(gunzip -k wpp_single_proj.csv.gz)",
+      "Bash(cp C:/Users/LENOVO/AppData/Local/Temp/claude/C--Users-LENOVO-Documents-Ainu-Narayama/5d4b67e8-6191-4e78-a57b-ed65fdadb586/scratchpad/un_wpp_painel_v3.csv C:/Users/LENOVO/Documents/Ainu.Narayama/data/raw/un_wpp.csv)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

@@ -5,14 +5,16 @@ Lê os arquivos de origem (UN World Population Prospects e OECD
 Social Expenditure Database) a partir de data/raw/ e prepara os
 DataFrames usados pelo motor de cálculo em src/indices.py.
 
-Nota: as colunas de população usam a convenção do Capítulo 5 da tese
-(Pop_Base = 0-25, Pop_Topo = 25-65 — coorte PROVEDORA atual, não
-idosa). As colunas de escolaridade (`taxa_escolaridade_0_25`,
+Nota: `pop_base` e `pop_topo` já vêm agregadas com o corte etário
+correto por perfil do país (Seção V.III: Perfis A/B = 0-25/55+;
+Perfis C/D/E = 0-21/61+ — ver src.config.FAIXAS_ETARIAS_POR_PERFIL_V3),
+não uma faixa fixa — por isso os nomes das colunas não têm a idade
+embutida. As colunas de escolaridade (`taxa_escolaridade_0_25`,
 `taxa_escolaridade_esperada`), exigidas pela fórmula do NGII_puro
-adotada, foram colocadas na fonte OECD por não serem cobertas pela UN
-WPP; isso é uma aproximação prática desta Fase 1 e deve ser
-confirmado/ajustado quando a fonte de dados real de escolaridade for
-definida (ex.: UNESCO, World Bank).
+adotada (terceiro fator do Capítulo 5), foram colocadas na fonte
+OECD por não serem cobertas pela UN WPP; isso é uma aproximação
+prática desta Fase 1 e deve ser confirmado/ajustado quando a fonte de
+dados real de escolaridade for definida (ex.: UNESCO, World Bank).
 """
 
 from pathlib import Path
@@ -27,8 +29,8 @@ COLUNAS_UN_ESPERADAS = [
     "pais_codigo",
     "ano",
     "pop_total",
-    "pop_0_25",
-    "pop_25_65",
+    "pop_base",
+    "pop_topo",
     "nascimentos",
     "mortes",
     "tfr",
@@ -50,8 +52,9 @@ def carregar_dados_un(arquivo_caminho: Union[str, Path]) -> pd.DataFrame:
     """
     Lê o CSV com dados demográficos da UN World Population Prospects (WPP).
 
-    Colunas esperadas: pais_codigo, ano, pop_total, pop_0_25,
-    pop_25_65, nascimentos, mortes, tfr.
+    Colunas esperadas: pais_codigo, ano, pop_total, pop_base,
+    pop_topo, nascimentos, mortes, tfr (pop_base/pop_topo já
+    agregadas com o corte etário certo por perfil do país).
 
     Args:
         arquivo_caminho: Caminho do arquivo CSV.

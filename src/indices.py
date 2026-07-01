@@ -7,8 +7,14 @@ fundamentação teórica completa, exemplos numéricos e a nota sobre
 inconsistências internas identificadas no texto da tese.
 
 Fonte: V1_EcoPol_062426_v8.0.docx — Capítulo 5 (Pilar 1: Potência
-Geracional / NGII), V.III (Fator_Geracional), V.III-bis
-(Fator_Alocativo).
+Geracional / NGII), V.III (Fator_Geracional; faixas etárias de
+Pop_Base/Pop_Topo por perfil), V.III-bis (Fator_Alocativo).
+
+Decisão híbrida (confirmada em 2026-07-01): Pop_Base/Pop_Topo usam as
+faixas etárias por perfil da Seção V.III (Perfis A/B = 0-25/55+;
+Perfis C/D/E = 0-21/61+ — ver src.config.FAIXAS_ETARIAS_POR_PERFIL_V3),
+não a faixa fixa 0-25/25-65 do Capítulo 5. O terceiro fator do
+NGII_puro (Taxa_Escolaridade) do Capítulo 5 foi mantido.
 
 Tratamento de erro: todas as funções retornam None quando as
 entradas tornam o cálculo indefinido (ex.: divisão por zero) ou
@@ -35,12 +41,16 @@ def calcular_ngii_puro(
     frente à coorte provedora atual, o saldo vegetativo do período e
     a qualidade da formação educacional dessa coorte formadora.
 
-    Fórmula (Capítulo 5.1):
+    Fórmula (Capítulo 5.1, com faixas etárias da Seção V.III):
         NGII_puro = (Pop_Base / Pop_Topo) × (Nascimentos / Mortes) × (Taxa_Escolaridade_0-25 / Taxa_Esperada)
 
     Args:
-        pop_base: População da coorte 0-25 anos ("coortes futuras"), em milhões.
-        pop_topo: População da coorte 25-65 anos ("provedores atuais"), em milhões.
+        pop_base: População da coorte formadora, em milhões. Faixa
+            etária depende do perfil do país (0-25 para A/B, 0-21
+            para C/D/E — ver src.config.FAIXAS_ETARIAS_POR_PERFIL_V3).
+        pop_topo: População da coorte legatária/dependente, em
+            milhões. Faixa etária depende do perfil do país (55+
+            para A/B, 61+ para C/D/E).
         nascimentos: Nascimentos anuais, em milhões.
         mortes: Mortes anuais, em milhões.
         taxa_escolaridade_0_25: Taxa observada de educação completa

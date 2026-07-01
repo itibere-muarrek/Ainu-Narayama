@@ -19,9 +19,17 @@ calcula:
   usa-se 1,0/1,0 (fator neutro, sem efeito sobre o NGII_puro) —
   ver o parâmetro `taxa_escolaridade_neutra` abaixo.
 
+Pop_Base/Pop_Topo (confirmado em 2026-07-01): usam as faixas etárias
+por perfil da Seção V.III (Perfis A/B = 0-25/55+; Perfis C/D/E =
+0-21/61+ — ver src.config.FAIXAS_ETARIAS_POR_PERFIL_V3), já agregadas
+em data/raw/un_wpp.csv (colunas pop_base/pop_topo). Não é a faixa
+fixa 0-25/25-65 do Capítulo 5 — só o terceiro fator (escolaridade) do
+Capítulo 5 foi mantido.
+
 Fonte de dados: UN World Population Prospects 2024
 (population.un.org/wpp), arquivos "Demographic Indicators" e
-"Population by Age (5-year groups)", variante "Medium".
+"Population by Single Age" (não os grupos de 5 anos — os cortes em
+21 e 61 anos exigem idade simples), variante "Medium".
 """
 
 from pathlib import Path
@@ -71,8 +79,8 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
         linha = df_ano.loc[codigo]
 
         ngii_puro = calcular_ngii_puro(
-            pop_base=linha["pop_0_25"],
-            pop_topo=linha["pop_25_65"],
+            pop_base=linha["pop_base"],
+            pop_topo=linha["pop_topo"],
             nascimentos=linha["nascimentos"],
             mortes=linha["mortes"],
             taxa_escolaridade_0_25=TAXA_ESCOLARIDADE_NEUTRA,
