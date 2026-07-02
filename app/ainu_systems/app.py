@@ -206,8 +206,23 @@ else:
 
 st.header("Tabela Principal — N* por País (2024)")
 
+st.caption(
+    "N* é reportado sem normalização: a tese (Anexo 1) não define nenhum "
+    "passo de escala para o N_Base, então países jovens/alta fecundidade "
+    "mostram valores bem acima de 1,0 — é consequência da fórmula, não "
+    "erro de cálculo. `Farol`/`Fator_Aloc` aparecem como \"Pendente (NTA)\" "
+    "porque dependem de National Transfer Accounts, ainda não integrado "
+    "(Fase 2b). Detalhes em "
+    "[docs/definitions.md](../../docs/definitions.md), seções 8 e 9."
+)
+
 if not df_filtrado.empty:
-    df_tabela = df_filtrado.sort_values("n_base").rename(
+    df_tabela = df_filtrado.copy()
+    df_tabela["farol"] = df_tabela["farol"].fillna("Pendente (NTA)")
+    df_tabela["fator_alocativo"] = df_tabela["fator_alocativo"].apply(
+        lambda v: "Pendente (NTA)" if pd.isna(v) else v
+    )
+    df_tabela = df_tabela.sort_values("n_base").rename(
         columns={
             "nome": "País",
             "n_base": "N*",

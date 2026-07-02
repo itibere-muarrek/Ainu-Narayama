@@ -20,9 +20,9 @@ próximo ciclo de 25 anos.
 
 Exemplo (Brasil, dados reais 2024):
 
-- NGII_puro = 3,377
+- NGII_puro = 3,150
 - Fator_Geracional = 0,691
-- N* = 3,377 × 0,691 = **2,334** (zona "Expansão Forte" — ver nota da seção 3
+- N* = 3,150 × 0,691 = **2,178** (zona "Expansão Forte" — ver nota da seção 3
   sobre o efeito de `Pop_Topo` pequeno em populações jovens, e a seção 8
   sobre a ausência de normalização na tese)
 
@@ -35,11 +35,9 @@ NGII_puro = (Pop_Base / Pop_Topo) × (Nascimentos / Mortes)
 Onde:
 
 - Pop_Base = população da coorte formadora. Faixa etária por perfil
-  (Seção V.III): **0–25 anos** para Perfis A/B, **0–21 anos** para
-  Perfis C/D/E.
+  (Tabela 14): **0–16** (A), **0–18** (B), **0–21** (C), **0–23** (D), **0–25** (E).
 - Pop_Topo = população da coorte legatária/dependente. Faixa etária
-  por perfil (Seção V.III): **55+** para Perfis A/B, **61+** para
-  Perfis C/D/E.
+  por perfil (Tabela 14): **44+** (A), **55+** (B), **60+** (C), **62+** (D), **65+** (E).
 - Nascimentos = nascimentos no ano
 - Mortes = mortes no ano
 
@@ -48,28 +46,33 @@ Interpretação: potência reprodutiva do país no momento atual.
 Exemplo (Brasil — Perfil C, dados reais UN WPP 2024):
 
 - Pop_Base (0–21) = 62,70 milhões
-- Pop_Topo (61+) = 31,88 milhões
+- Pop_Topo (60+) = 34,16 milhões
 - Nascimentos = 2,57 milhões
 - Mortes = 1,50 milhões
-- NGII_puro = (62,70/31,88) × (2,57/1,50) = 1,967 × 1,715 = **3,377**
+- NGII_puro = (62,70/34,16) × (2,57/1,50) = 1,835 × 1,715 = **3,150**
 
-> **Decisão vigente** (atualizada em 2026-07-02): a tese define o NGII_puro
+> **Decisão vigente** (atualizada em 2026-07-03): a tese define o NGII_puro
 > de duas formas que não foram reconciliadas no texto — a Seção V.III
 > (resumida) e o Anexo 1 (A1.2, "Formalização Matemática do Modelo",
 > a seção mais formal) usam a fórmula de **2 componentes** acima, sem
 > escolaridade; o Capítulo 5 (capítulo dedicado ao Pilar 1) usa uma
 > versão de 3 componentes com um fator adicional de escolaridade. Como
 > o Anexo 1 é a especificação formal e não inclui escolaridade, este
-> projeto adotou a versão de 2 componentes (decisão anterior, de
-> 2026-07-01, havia mantido o fator de escolaridade — revertida).
+> projeto adotou a versão de 2 componentes (decisão de 2026-07-02).
 >
-> Pop_Base/Pop_Topo usam as faixas por perfil da Seção V.III (0-25/55+
-> para A/B, **0-21/61+ para C/D/E**), com `Pop_Topo` = coorte **idosa**,
-> não provedora. Isso **infla bastante o NGII_puro de países
-> jovens/alta fecundidade** (ex.: RD Congo, Etiópia, Nigéria chegam a
-> N* > 17 nesta fase; ver seção 8 — a tese não define nenhuma
-> normalização para conter isso). Ver `FAIXAS_ETARIAS_POR_PERFIL_V3`
-> em `src/config.py`.
+> Pop_Base/Pop_Topo usam as faixas por perfil da **Tabela 14** (5 níveis —
+> decisão de 2026-07-03, calibração país-a-país solicitada pelo usuário
+> após o deploy inicial), não mais a Seção V.III (2 níveis, usada até
+> 2026-07-02 — ver `FAIXAS_ETARIAS_POR_PERFIL_V3` em `src/config.py`,
+> mantida como referência histórica). `Pop_Topo` continua sendo a
+> coorte **idosa/legatária**, não provedora.
+>
+> A Tabela 14 **reduz, mas não elimina**, a inflação do NGII_puro em
+> países jovens/alta fecundidade: RD Congo caiu de N*>41 (Seção V.III)
+> para N*≈16 (Tabela 14); Arábia Saudita, Egito e Etiópia ainda ficam
+> acima de N*=9. Isso é esperado — nenhuma das duas faixas etárias da
+> tese resolve a ausência de normalização do N_Base (seção 8). Ver
+> `FAIXAS_ETARIAS_POR_PERFIL_TABELA14` em `src/config.py`.
 
 Implementado em [`calcular_ngii_puro`](../src/indices.py).
 
@@ -197,10 +200,13 @@ sem divisão por constante de referência, sem raiz/log, sem limitar a uma
 faixa (ex.: 0-2). As tabelas de interpretação (Tabela 4/Anexo 8, seção 7)
 **presumem implicitamente** que N* fica numa faixa próxima de 1 — mas isso
 não é garantido pela fórmula: para países jovens/alta fecundidade, onde
-`Pop_Topo` (55+/61+) é pequeno frente a `Pop_Base`, o NGII_puro cresce sem
-limite matemático (ex.: RD Congo, Etiópia e Nigéria produzem N* entre 17 e
-41 com dados reais — ver `src/data_pipeline.py`). Isso é uma lacuna real do
-modelo publicado, não um erro de implementação deste projeto.
+`Pop_Topo` é pequeno frente a `Pop_Base`, o NGII_puro cresce sem limite
+matemático (ex.: com os cortes da Tabela 14 — seção 3 —, RD Congo, Arábia
+Saudita, Egito e Etiópia produzem N* entre 9 e 16 com dados reais; com os
+cortes da Seção V.III, usados até 2026-07-02, esses valores chegavam a
+41 — ver `src/data_pipeline.py`). Isso é uma lacuna real do modelo
+publicado, não um erro de implementação deste projeto: nenhuma das duas
+faixas etárias que a tese oferece elimina o problema, só muda a magnitude.
 
 Um documento de simulação de terceiros (produzido com ChatGPT/Grok, trazido
 ao projeto em 2026-07-01) alegava uma "normalização para escala 0-2", mas a
@@ -265,9 +271,9 @@ metodológica trazida pelo usuário.
 
 - Tese v8.0, `V1_EcoPol_062426_v8.0.docx`:
   - Seção V.II — Fórmula principal do N*
-  - Seção V.III — Fator_Geracional; faixas etárias de Pop_Base/Pop_Topo por
-    perfil (adotadas neste projeto — ver seção 3); fórmula resumida (2
-    componentes) do NGII_puro (adotada, ver seção 3)
+  - Seção V.III — Fator_Geracional (adotada); faixas etárias de Pop_Base/Pop_Topo
+    por perfil, 2 níveis (usadas até 2026-07-02, não mais adotadas — ver seção 3);
+    fórmula resumida (2 componentes) do NGII_puro (adotada, ver seção 3)
   - Seção V.III-bis — Fator_Alocativo e Farol Institucional
   - Capítulo 3 (3.2) — Limiares PEEC-PEA-PEC (convenção alternativa, não adotada)
   - Capítulo 5 — NGII_puro, versão alternativa de 3 componentes com
@@ -275,7 +281,8 @@ metodológica trazida pelo usuário.
   - Anexo 1 (A1.2) — Formalização Matemática do Modelo; confirma a fórmula
     de 2 componentes do NGII_puro e a ausência de normalização (seção 8)
   - Tabela 4 / Anexo 8 — Zonas críticas do N* (convenção adotada)
-  - Tabela 14 — Faixas etárias por Perfil Estrutural (referência, não adotada — ver seção 3)
+  - Tabela 14 — Faixas etárias por Perfil Estrutural, 5 níveis (adotada em
+    2026-07-03 — ver seção 3)
   - Anexo 9 — Protocolo de Falseabilidade (7 testes)
 - Documento de terceiros "Aqui está a simulação completa atualizada com os 7
   países destaque..." (ChatGPT/Grok, validado com pesquisadores, trazido em

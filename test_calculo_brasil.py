@@ -5,9 +5,9 @@ dados reais do Brasil 2024.
 IMPORTANTE — leia antes de interpretar o resultado:
 1. A fórmula usada é a de 2 componentes do Anexo 1 / Seção V.III
    (NGII_puro = Pop_Base/Pop_Topo × Nasc/Mort), com Pop_Base=0-21 e
-   Pop_Topo=61+ pro Brasil (Perfil C). Não tem fator de escolaridade
-   (o terceiro fator do Capítulo 5 foi removido em 2026-07-02 — ver
-   docs/definitions.md, seção 3).
+   Pop_Topo=60+ pro Brasil (Perfil C, faixas da Tabela 14 — decisão de
+   2026-07-03). Não tem fator de escolaridade (o terceiro fator do
+   Capítulo 5 foi removido em 2026-07-02 — ver docs/definitions.md, seção 3).
 2. A tese não especifica nenhum passo de normalização do N_Base — os
    valores altos do TESTE B abaixo (bem acima de 1,0) são uma
    consequência matemática da fórmula tal como publicada no Anexo 1,
@@ -72,19 +72,19 @@ print(f"Status TESTE A: PASSOU (bate exato com o docstring de calcular_ngii_puro
 print()
 
 # -----------------------------------------------------------------------
-# TESTE B — Brasil 2024, dados reais da UN WPP (Perfil C: Pop_Base=0-21, Pop_Topo=61+)
+# TESTE B — Brasil 2024, dados reais da UN WPP (Perfil C, Tabela 14: Pop_Base=0-21, Pop_Topo=60+)
 # -----------------------------------------------------------------------
 # Mesmos dados usados em data/raw/un_wpp.csv / src/data_pipeline.py.
 
 n_b = rodar_teste(
     "Brasil 2024 (dados reais UN WPP)",
-    ngii_puro=calcular_ngii_puro(pop_base=62.7004, pop_topo=31.8760, nascimentos=2.5721, mortes=1.4984),
+    ngii_puro=calcular_ngii_puro(pop_base=62.7004, pop_topo=34.1634, nascimentos=2.5721, mortes=1.4984),
     fator_geracional=calcular_fator_geracional(tfr_atual=1.6143, tfr_25_anos_atras=2.3353),
 )
 
 print(
     "Nota: N* > 1,0 é esperado para o Brasil sob esta fórmula — Pop_Topo "
-    "(61+) é bem menor que Pop_Base (0-21) na pirâmide etária brasileira "
+    "(60+) é bem menor que Pop_Base (0-21) na pirâmide etária brasileira "
     "atual. Não é um erro de cálculo; é a fórmula do Anexo 1 aplicada a "
     "dados reais, sem nenhum passo de normalização definido pela tese."
 )
