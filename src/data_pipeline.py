@@ -8,23 +8,22 @@ ano solicitado e em ano-25.
 
 IMPORTANTE — escopo desta fase (confirmado em 2026-07-01): esta
 função usa **apenas UN World Population Prospects**. Ainda não
-calcula:
-- Fator_Alocativo / farol institucional (+/n/-): depende de dados de
-  NTA (National Transfer Accounts) e/ou OECD Social Expenditure
-  Database, que não cobrem boa parte dos 28 países (OCDE só tem ~15
-  membros na nossa lista). Fonte alternativa ainda não definida.
-- O ajuste de escolaridade do NGII_puro (Taxa_Escolaridade_0-25 /
-  Taxa_Esperada, Capítulo 5): não coberto por UN WPP nem OECD SOCX;
-  precisaria de UNESCO ou World Bank Education Statistics. Por ora,
-  usa-se 1,0/1,0 (fator neutro, sem efeito sobre o NGII_puro) —
-  ver o parâmetro `taxa_escolaridade_neutra` abaixo.
+calcula Fator_Alocativo / farol institucional (+/n/-): depende de
+dados de NTA (National Transfer Accounts) e/ou OECD Social
+Expenditure Database, que não cobrem boa parte dos 28 países (OCDE
+só tem ~15 membros na nossa lista). Fonte alternativa ainda não definida.
+
+NGII_puro (atualizado em 2026-07-02): usa a fórmula de 2 componentes
+do Anexo 1 — (Pop_Base/Pop_Topo) × (Nasc/Mort) — sem fator de
+escolaridade (o terceiro fator do Capítulo 5 foi removido, ver
+src/indices.py). O Anexo 1 não especifica normalização do N_Base:
+valores altos em países jovens/alta fecundidade são esperados (ver
+docs/definitions.md, seção 8).
 
 Pop_Base/Pop_Topo (confirmado em 2026-07-01): usam as faixas etárias
 por perfil da Seção V.III (Perfis A/B = 0-25/55+; Perfis C/D/E =
 0-21/61+ — ver src.config.FAIXAS_ETARIAS_POR_PERFIL_V3), já agregadas
-em data/raw/un_wpp.csv (colunas pop_base/pop_topo). Não é a faixa
-fixa 0-25/25-65 do Capítulo 5 — só o terceiro fator (escolaridade) do
-Capítulo 5 foi mantido.
+em data/raw/un_wpp.csv (colunas pop_base/pop_topo).
 
 Fonte de dados: UN World Population Prospects 2024
 (population.un.org/wpp), arquivos "Demographic Indicators" e
@@ -41,7 +40,6 @@ from src.config import DATA_PROCESSED_DIR, DATA_RAW_DIR, PAISES
 from src.data_loader import carregar_dados_un
 from src.indices import calcular_fator_geracional, calcular_n_base, calcular_ngii_puro, classificar_zona_n_base
 
-TAXA_ESCOLARIDADE_NEUTRA = 1.0  # fator = 1,0/1,0 = sem efeito (fonte ainda não integrada)
 CICLO_GERACIONAL_ANOS = 25
 
 
@@ -83,8 +81,6 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
             pop_topo=linha["pop_topo"],
             nascimentos=linha["nascimentos"],
             mortes=linha["mortes"],
-            taxa_escolaridade_0_25=TAXA_ESCOLARIDADE_NEUTRA,
-            taxa_escolaridade_esperada=TAXA_ESCOLARIDADE_NEUTRA,
         )
         fator_geracional = calcular_fator_geracional(
             tfr_atual=linha["tfr"],

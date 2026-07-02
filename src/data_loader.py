@@ -9,12 +9,11 @@ Nota: `pop_base` e `pop_topo` já vêm agregadas com o corte etário
 correto por perfil do país (Seção V.III: Perfis A/B = 0-25/55+;
 Perfis C/D/E = 0-21/61+ — ver src.config.FAIXAS_ETARIAS_POR_PERFIL_V3),
 não uma faixa fixa — por isso os nomes das colunas não têm a idade
-embutida. As colunas de escolaridade (`taxa_escolaridade_0_25`,
-`taxa_escolaridade_esperada`), exigidas pela fórmula do NGII_puro
-adotada (terceiro fator do Capítulo 5), foram colocadas na fonte
-OECD por não serem cobertas pela UN WPP; isso é uma aproximação
-prática desta Fase 1 e deve ser confirmado/ajustado quando a fonte de
-dados real de escolaridade for definida (ex.: UNESCO, World Bank).
+embutida.
+
+A fórmula do NGII_puro (Anexo 1, 2 componentes) não usa escolaridade;
+as colunas de gasto social da OECD abaixo servem apenas para o
+Fator_Alocativo (Fase 2b, ainda não integrado — ver src/data_pipeline.py).
 """
 
 from pathlib import Path
@@ -43,8 +42,6 @@ COLUNAS_OECD_ESPERADAS = [
     "gasto_saude_infantil",
     "gasto_pensao",
     "gasto_saude_geriatrica",
-    "taxa_escolaridade_0_25",
-    "taxa_escolaridade_esperada",
 ]
 
 
@@ -82,8 +79,7 @@ def carregar_dados_oecd(arquivo_caminho: Union[str, Path]) -> pd.DataFrame:
     Lê o CSV com dados de gasto social da OECD Social Expenditure Database (SOCX).
 
     Colunas esperadas: pais_codigo, ano, gasto_educacao,
-    gasto_saude_infantil, gasto_pensao, gasto_saude_geriatrica,
-    taxa_escolaridade_0_25, taxa_escolaridade_esperada.
+    gasto_saude_infantil, gasto_pensao, gasto_saude_geriatrica.
 
     Args:
         arquivo_caminho: Caminho do arquivo CSV.

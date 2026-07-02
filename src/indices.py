@@ -6,15 +6,20 @@ de Narayama Sistêmico (N*). Ver docs/definitions.md para a
 fundamentação teórica completa, exemplos numéricos e a nota sobre
 inconsistências internas identificadas no texto da tese.
 
-Fonte: V1_EcoPol_062426_v8.0.docx — Capítulo 5 (Pilar 1: Potência
-Geracional / NGII), V.III (Fator_Geracional; faixas etárias de
-Pop_Base/Pop_Topo por perfil), V.III-bis (Fator_Alocativo).
+Fonte: V1_EcoPol_062426_v8.0.docx — Anexo 1 (A1.2, Formalização
+Matemática do Modelo — fórmula de referência do NGII_puro), V.III
+(Fator_Geracional; faixas etárias de Pop_Base/Pop_Topo por perfil),
+V.III-bis (Fator_Alocativo).
 
-Decisão híbrida (confirmada em 2026-07-01): Pop_Base/Pop_Topo usam as
-faixas etárias por perfil da Seção V.III (Perfis A/B = 0-25/55+;
-Perfis C/D/E = 0-21/61+ — ver src.config.FAIXAS_ETARIAS_POR_PERFIL_V3),
-não a faixa fixa 0-25/25-65 do Capítulo 5. O terceiro fator do
-NGII_puro (Taxa_Escolaridade) do Capítulo 5 foi mantido.
+Decisão vigente (atualizada em 2026-07-02): NGII_puro usa a fórmula
+de 2 componentes do Anexo 1/V.III — (Pop_Base/Pop_Topo) × (Nasc/Mort)
+— sem o terceiro fator de escolaridade do Capítulo 5, que foi
+removido. O Anexo 1 (seção mais formal da tese) não inclui
+escolaridade na fórmula do NGII_puro, e não especifica nenhum passo
+de normalização — valores muito altos em países jovens/alta
+fecundidade são uma consequência matemática da fórmula tal como
+publicada, não um bug da implementação (ver docs/definitions.md,
+seção 8).
 
 Tratamento de erro: todas as funções retornam None quando as
 entradas tornam o cálculo indefinido (ex.: divisão por zero) ou
@@ -30,19 +35,17 @@ def calcular_ngii_puro(
     pop_topo: float,
     nascimentos: float,
     mortes: float,
-    taxa_escolaridade_0_25: float,
-    taxa_escolaridade_esperada: float,
 ) -> Optional[float]:
     """
     Calcula o NGII_puro (Potência Geracional — Pilar 1 da Flor de Narayama).
 
     Mede a capacidade real de uma sociedade gerar, formar e sustentar
     os futuros provedores: combina o peso relativo da coorte formadora
-    frente à coorte provedora atual, o saldo vegetativo do período e
-    a qualidade da formação educacional dessa coorte formadora.
+    frente à coorte legatária/dependente com o saldo vegetativo do
+    período.
 
-    Fórmula (Capítulo 5.1, com faixas etárias da Seção V.III):
-        NGII_puro = (Pop_Base / Pop_Topo) × (Nascimentos / Mortes) × (Taxa_Escolaridade_0-25 / Taxa_Esperada)
+    Fórmula (Anexo 1, A1.2 — faixas etárias da Seção V.III):
+        NGII_puro = (Pop_Base / Pop_Topo) × (Nascimentos / Mortes)
 
     Args:
         pop_base: População da coorte formadora, em milhões. Faixa
@@ -53,21 +56,15 @@ def calcular_ngii_puro(
             para A/B, 61+ para C/D/E).
         nascimentos: Nascimentos anuais, em milhões.
         mortes: Mortes anuais, em milhões.
-        taxa_escolaridade_0_25: Taxa observada de educação completa
-            (CHR + educação formal) na coorte 0-25 (proporção entre 0 e 1).
-        taxa_escolaridade_esperada: Taxa de escolaridade de referência
-            para o perfil/contexto do país (proporção entre 0 e 1).
 
     Returns:
-        Valor do NGII_puro (adimensional), ou None se pop_topo,
-        mortes ou taxa_escolaridade_esperada forem zero.
+        Valor do NGII_puro (adimensional), ou None se pop_topo ou
+        mortes forem zero.
 
     Exemplo (ilustrativo — não reproduz a calibração oficial da tese,
     cujos dados brutos de entrada não são publicados no texto):
-        >>> calcular_ngii_puro(pop_base=65.0, pop_topo=110.0, nascimentos=2.7,
-        ...                     mortes=1.6, taxa_escolaridade_0_25=0.75,
-        ...                     taxa_escolaridade_esperada=0.85)
-        0.879846256684492
+        >>> calcular_ngii_puro(pop_base=65.0, pop_topo=110.0, nascimentos=2.7, mortes=1.6)
+        0.9971590909090909
 
     Nota:
         O valor de entrada deve ser o NGII já depurado pelo Protocolo
@@ -75,16 +72,14 @@ def calcular_ngii_puro(
         transforma o NGII_Bruto em NGII_Puro removendo distorções
         (imigração compensatória, políticas natalistas temporárias,
         choques conjunturais, inércia demográfica e substituição
-        civilizacional).
+        civilizacional). A tese não especifica nenhum passo de
+        normalização adicional — valores muito altos em países
+        jovens/alta fecundidade são esperados (ver docs/definitions.md).
     """
-    if pop_topo == 0 or mortes == 0 or taxa_escolaridade_esperada == 0:
+    if pop_topo == 0 or mortes == 0:
         return None
 
-    return (
-        (pop_base / pop_topo)
-        * (nascimentos / mortes)
-        * (taxa_escolaridade_0_25 / taxa_escolaridade_esperada)
-    )
+    return (pop_base / pop_topo) * (nascimentos / mortes)
 
 
 def calcular_fator_geracional(tfr_atual: float, tfr_25_anos_atras: float) -> Optional[float]:
@@ -238,7 +233,7 @@ def classificar_zona_n_base(n_base: Optional[float]) -> Optional[str]:
         n_base for None.
 
     Exemplo:
-        >>> classificar_zona_n_base(0.5865641711229947)
+        >>> classificar_zona_n_base(0.6647727272727274)
         'Tensão Acelerada'
     """
     if n_base is None:

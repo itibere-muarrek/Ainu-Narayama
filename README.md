@@ -18,11 +18,21 @@ pip install -r app/requirements.txt
 
 ### 3. Rodar pipeline
 
-Ainda não implementado (Fase 2). O motor de cálculo já existe em
-`src/indices.py` e `src/falseability.py`, mas a orquestração
-completa (ler `data/raw/`, aplicar o Protocolo de Falseabilidade,
-calcular N* para os 28 países e gravar em `data/processed/`) ainda
-não foi construída.
+```python
+from src.data_pipeline import executar_pipeline_completo
+executar_pipeline_completo(2024)  # grava data/processed/n_index_2024.csv
+```
+
+Fase 2a (atual): usa só UN World Population Prospects (já commitado em
+`data/raw/un_wpp.csv`, real, 28 países). Calcula NGII_puro e
+Fator_Geracional (fórmula de 2 componentes, Anexo 1 — ver
+docs/definitions.md). Ainda não calcula Fator_Alocativo/farol nem a
+Versão Expandida com escolaridade (Fase 2b, ver docs/definitions.md
+seção 9 — instruções já preparadas pra quando integrarmos essas fontes).
+
+O Protocolo de Falseabilidade (`src/falseability.py`, 7 testes) existe
+mas ainda não está plugado no pipeline automático — precisa de dados
+históricos/série longa que a Fase 2a não cobre.
 
 ### 4. Rodar website
 
@@ -82,10 +92,14 @@ Actions. `.github/workflows/ci.yml` só roda os testes antes disso
 - `docs/` — Documentação técnica
 
 ## Próximas Fases
-- Fase 2: CHR + NIH
-- Fase 3: EIS + IES
-- Fase 4: IVAT e simulações OLG
-- Fase 5: Agentes computacionais
+- Fase 2a: ✅ pipeline UN WPP, N* (Versão Básica) pros 28 países
+- Fase 2b: Fator_Alocativo real (NTA/OECD) + Versão Expandida com
+  escolaridade real (UNESCO/World Bank) — instruções em
+  docs/definitions.md, seção 9
+- Fase 3: CHR + NIH
+- Fase 4: EIS + IES
+- Fase 5: IVAT e simulações OLG
+- Fase 6: Agentes computacionais
 
 ## Referências
 - Tese v8.0: /docs/

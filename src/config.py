@@ -96,26 +96,25 @@ FATOR_ALOCATIVO_SUPERIOR = FATOR_ALOCATIVO_LIMIARES["superior"]
 FATOR_ALOCATIVO_INFERIOR = FATOR_ALOCATIVO_LIMIARES["inferior"]
 
 # ---------------------------------------------------------------------------
-# Fórmulas (Capítulo 5 — NGII_puro com 3 componentes)
+# Fórmulas (Anexo 1, A1.2 — NGII_puro com 2 componentes)
 # ---------------------------------------------------------------------------
 
 FORMULAS = {
-    "ngii_puro": (
-        "NGII_puro = (Pop_Base / Pop_Topo) x (Nascimentos / Mortes) "
-        "x (Taxa_Escolaridade_0-25 / Taxa_Esperada)"
-    ),
+    "ngii_puro": "NGII_puro = (Pop_Base / Pop_Topo) x (Nascimentos / Mortes)",
     "componente_1": "Razao Geracional = Pop_Base / Pop_Topo (faixa etaria varia por perfil, ver FAIXAS_ETARIAS_POR_PERFIL_V3)",
     "componente_2": "Vitalidade = Nascimentos / Mortes",
-    "componente_3": "Educacao = Taxa_Escolaridade_0-25 / Taxa_Esperada",
     "fator_geracional": "Fator_Geracional = TFR_atual / TFR_25_anos_atras",
     "n_base": "N* = N_Base = NGII_puro x Fator_Geracional",
     "fator_alocativo": "Fator_Alocativo = NTA(0-25) / NTA(65+)",
     "nota": (
-        "Decisao hibrida (confirmada em 2026-07-01): Pop_Base/Pop_Topo "
-        "usam as faixas etarias por perfil da Secao V.III (nao a faixa "
-        "fixa 0-25/25-65 do Capitulo 5), mas o terceiro fator "
-        "(Taxa_Escolaridade) do Capitulo 5 e mantido. Ver "
-        "FAIXAS_ETARIAS_POR_PERFIL_V3 abaixo."
+        "Decisao vigente (atualizada em 2026-07-02): NGII_puro usa a "
+        "formula de 2 componentes do Anexo 1 / Secao V.III, sem o "
+        "terceiro fator de escolaridade do Capitulo 5 (removido). "
+        "Pop_Base/Pop_Topo usam as faixas etarias por perfil da Secao "
+        "V.III (ver FAIXAS_ETARIAS_POR_PERFIL_V3 abaixo). O Anexo 1 nao "
+        "especifica nenhum passo de normalizacao do N_Base — valores "
+        "altos em paises jovens/alta fecundidade sao uma consequencia "
+        "matematica da formula tal como publicada (ver docs/definitions.md)."
     ),
 }
 
@@ -126,8 +125,9 @@ FORMULAS = {
 # formas diferentes (V.III, com 2 níveis, vs. Tabela 14, com 5
 # níveis — ver FAIXAS_ETARIAS_POR_PERFIL_TABELA14 abaixo e
 # docs/definitions.md). Decisão confirmada em 2026-07-01: usar as
-# faixas da Seção V.III (2 níveis) para todos os 28 países,
-# combinadas com o terceiro fator de escolaridade do Capítulo 5.
+# faixas da Seção V.III (2 níveis) para todos os 28 países. A fórmula
+# do NGII_puro usa a versão de 2 componentes do Anexo 1 (atualizado em
+# 2026-07-02) — o terceiro fator de escolaridade do Capítulo 5 foi removido.
 #
 # Seção V.III: "Pop_Base = coorte 0–25 (Perfis A/B) ou 0–21 (Perfis
 # C/D/E); Pop_Topo = coorte 55+ (Perfis A/B) ou 61+ (Perfis C/D/E)".
