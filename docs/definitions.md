@@ -20,9 +20,9 @@ próximo ciclo de 25 anos.
 
 Exemplo (Brasil, dados reais 2024):
 
-- NGII_puro = 3,150
+- NGII_puro = 2,949
 - Fator_Geracional = 0,691
-- N* = 3,150 × 0,691 = **2,178** (zona "Expansão Forte" — ver nota da seção 3
+- N* = 2,949 × 0,691 = **2,039** (zona "Expansão Forte" — ver nota da seção 3
   sobre o efeito de `Pop_Topo` pequeno em populações jovens, e a seção 8
   sobre a ausência de normalização na tese)
 
@@ -41,15 +41,22 @@ Onde:
 - Nascimentos = nascimentos no ano
 - Mortes = mortes no ano
 
+Essas faixas são por perfil-letra. **O corte efetivo de cada país** é a
+média ponderada dessas faixas pela composição do país entre 2-3 perfis
+adjacentes — ver a nota de 2026-07-04 abaixo e
+[`COMPOSICAO_PERFIL_POR_PAIS`](../src/config.py) para a tabela completa
+dos 28 países (não duplicada aqui para não ter uma segunda fonte que pode
+ficar desatualizada).
+
 Interpretação: potência reprodutiva do país no momento atual.
 
-Exemplo (Brasil — Perfil C, dados reais UN WPP 2024):
+Exemplo (Brasil — composição 30% B / 40% C / 30% D, dados reais UN WPP 2024):
 
 - Pop_Base (0–21) = 62,70 milhões
-- Pop_Topo (60+) = 34,16 milhões
+- Pop_Topo (59+) = 36,49 milhões
 - Nascimentos = 2,57 milhões
 - Mortes = 1,50 milhões
-- NGII_puro = (62,70/34,16) × (2,57/1,50) = 1,835 × 1,715 = **3,150**
+- NGII_puro = (62,70/36,49) × (2,57/1,50) = 1,718 × 1,717 = **2,949**
 
 > **Decisão vigente** (atualizada em 2026-07-03): a tese define o NGII_puro
 > de duas formas que não foram reconciliadas no texto — a Seção V.III
@@ -69,10 +76,35 @@ Exemplo (Brasil — Perfil C, dados reais UN WPP 2024):
 >
 > A Tabela 14 **reduz, mas não elimina**, a inflação do NGII_puro em
 > países jovens/alta fecundidade: RD Congo caiu de N*>41 (Seção V.III)
-> para N*≈16 (Tabela 14); Arábia Saudita, Egito e Etiópia ainda ficam
-> acima de N*=9. Isso é esperado — nenhuma das duas faixas etárias da
-> tese resolve a ausência de normalização do N_Base (seção 8). Ver
-> `FAIXAS_ETARIAS_POR_PERFIL_TABELA14` em `src/config.py`.
+> para N*≈16 (Tabela 14, perfil único); Arábia Saudita, Egito e Etiópia
+> ainda ficam acima de N*=9. Isso é esperado — nenhuma das duas faixas
+> etárias da tese resolve a ausência de normalização do N_Base
+> (seção 8). Ver `FAIXAS_ETARIAS_POR_PERFIL_TABELA14` em `src/config.py`.
+
+> **Correção (2026-07-04): país não é um perfil único, é uma composição
+> ponderada.** Até esta data, este projeto atribuía UM perfil (A-E) a
+> cada país (ex.: "Brasil = Perfil C"). Isso estava errado: a **Seção
+> 5.2** do docx v8.0 — verificada diretamente e confirmada país a país
+> com o autor — classifica cada um dos 28 países como uma composição
+> ponderada de 2-3 perfis adjacentes (ex.: Brasil = 30% B + 40% C + 30%
+> D; Japão = 60% D + 40% E). Isso também corrige uma afirmação anterior,
+> incorreta, de que nenhum país é Perfil E.
+>
+> A partir de 2026-07-04, `Pop_Base`/`Pop_Topo` de cada país são a média
+> ponderada dos cortes por perfil (pesos = fração de composição),
+> arredondada ao inteiro mais próximo (round-half-up — só afeta Irã,
+> Arábia Saudita e Polônia, os únicos três países cuja média cai
+> exatamente em ",5"). Exemplo do Brasil: `pop_base_max` =
+> round(0,30×18 + 0,40×21 + 0,30×23) = round(20,7) = 21 (inalterado);
+> `pop_topo_min` = round(0,30×55 + 0,40×60 + 0,30×62) = round(59,1) = 59
+> (antes 60). Países de perfil puro (Chile, Suécia, Austrália — 100% C)
+> não mudam. Japão é o primeiro país a efetivamente usar os cortes do
+> Perfil E (antes um valor morto na tabela, nunca lido por nenhum país).
+>
+> Ver `COMPOSICAO_PERFIL_POR_PAIS` em `src/config.py` para a composição
+> completa dos 28 países e `scripts/build_un_wpp_raw.py` para o script
+> (novo, reprodutível) que reconstruiu `data/raw/un_wpp.csv` com os
+> cortes recalibrados.
 
 Implementado em [`calcular_ngii_puro`](../src/indices.py).
 

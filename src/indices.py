@@ -49,11 +49,13 @@ def calcular_ngii_puro(
 
     Args:
         pop_base: População da coorte formadora, em milhões. Faixa
-            etária depende do perfil do país (0-25 para A/B, 0-21
-            para C/D/E — ver src.config.FAIXAS_ETARIAS_POR_PERFIL_V3).
+            etária é a média ponderada dos cortes por perfil conforme
+            a composição do país (Seção 5.2) — ver
+            src.config.COMPOSICAO_PERFIL_POR_PAIS e src.config.PAISES,
+            não duplicado aqui para evitar uma segunda fonte que pode
+            ficar desatualizada.
         pop_topo: População da coorte legatária/dependente, em
-            milhões. Faixa etária depende do perfil do país (55+
-            para A/B, 61+ para C/D/E).
+            milhões. Mesma fonte de faixa etária que pop_base, acima.
         nascimentos: Nascimentos anuais, em milhões.
         mortes: Mortes anuais, em milhões.
 

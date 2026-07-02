@@ -20,10 +20,11 @@ src/indices.py). O Anexo 1 não especifica normalização do N_Base:
 valores altos em países jovens/alta fecundidade são esperados (ver
 docs/definitions.md, seção 8).
 
-Pop_Base/Pop_Topo (confirmado em 2026-07-01): usam as faixas etárias
-por perfil da Seção V.III (Perfis A/B = 0-25/55+; Perfis C/D/E =
-0-21/61+ — ver src.config.FAIXAS_ETARIAS_POR_PERFIL_V3), já agregadas
-em data/raw/un_wpp.csv (colunas pop_base/pop_topo).
+Pop_Base/Pop_Topo (atualizado em 2026-07-04): cada país usa o corte
+etário da média ponderada de sua composição de perfis (Seção 5.2 —
+ver src.config.COMPOSICAO_PERFIL_POR_PAIS e src.config.PAISES), já
+agregadas em data/raw/un_wpp.csv (colunas pop_base/pop_topo) pelo
+script scripts/build_un_wpp_raw.py.
 
 Fonte de dados: UN World Population Prospects 2024
 (population.un.org/wpp), arquivos "Demographic Indicators" e

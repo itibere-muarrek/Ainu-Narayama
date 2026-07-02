@@ -5,9 +5,13 @@ dados reais do Brasil 2024.
 IMPORTANTE — leia antes de interpretar o resultado:
 1. A fórmula usada é a de 2 componentes do Anexo 1 / Seção V.III
    (NGII_puro = Pop_Base/Pop_Topo × Nasc/Mort), com Pop_Base=0-21 e
-   Pop_Topo=60+ pro Brasil (Perfil C, faixas da Tabela 14 — decisão de
-   2026-07-03). Não tem fator de escolaridade (o terceiro fator do
-   Capítulo 5 foi removido em 2026-07-02 — ver docs/definitions.md, seção 3).
+   Pop_Topo=59+ pro Brasil. O corte não vem mais de um único "Perfil C"
+   (Tabela 14 simplificada) — desde 2026-07-04, Pop_Base/Pop_Topo são a
+   média ponderada dos cortes por perfil conforme a composição real do
+   país na Seção 5.2 da tese (Brasil = 30% B + 40% C + 30% D, não
+   Perfil C puro — ver src.config.COMPOSICAO_PERFIL_POR_PAIS). Não tem
+   fator de escolaridade (o terceiro fator do Capítulo 5 foi removido em
+   2026-07-02 — ver docs/definitions.md, seção 3).
 2. A tese não especifica nenhum passo de normalização do N_Base — os
    valores altos do TESTE B abaixo (bem acima de 1,0) são uma
    consequência matemática da fórmula tal como publicada no Anexo 1,
@@ -72,19 +76,20 @@ print(f"Status TESTE A: PASSOU (bate exato com o docstring de calcular_ngii_puro
 print()
 
 # -----------------------------------------------------------------------
-# TESTE B — Brasil 2024, dados reais da UN WPP (Perfil C, Tabela 14: Pop_Base=0-21, Pop_Topo=60+)
+# TESTE B — Brasil 2024, dados reais da UN WPP (composição B30/C40/D30,
+# Seção 5.2: Pop_Base=0-21, Pop_Topo=59+)
 # -----------------------------------------------------------------------
 # Mesmos dados usados em data/raw/un_wpp.csv / src/data_pipeline.py.
 
 n_b = rodar_teste(
     "Brasil 2024 (dados reais UN WPP)",
-    ngii_puro=calcular_ngii_puro(pop_base=62.7004, pop_topo=34.1634, nascimentos=2.5721, mortes=1.4984),
+    ngii_puro=calcular_ngii_puro(pop_base=62.7004, pop_topo=36.4930, nascimentos=2.5721, mortes=1.4984),
     fator_geracional=calcular_fator_geracional(tfr_atual=1.6143, tfr_25_anos_atras=2.3353),
 )
 
 print(
     "Nota: N* > 1,0 é esperado para o Brasil sob esta fórmula — Pop_Topo "
-    "(60+) é bem menor que Pop_Base (0-21) na pirâmide etária brasileira "
+    "(59+) é bem menor que Pop_Base (0-21) na pirâmide etária brasileira "
     "atual. Não é um erro de cálculo; é a fórmula do Anexo 1 aplicada a "
     "dados reais, sem nenhum passo de normalização definido pela tese."
 )

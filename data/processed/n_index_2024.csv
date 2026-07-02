@@ -1,29 +1,29 @@
 codigo,n_base,farol,ngii_puro,fator_geracional,fator_alocativo,status,populacao
 ARG,1.5699,,2.7582,0.5692,,Expansão Forte,45.696
 AUS,1.7601,,1.8956,0.9285,,Expansão Forte,26.713
-BRA,2.1778,,3.1504,0.6913,,Expansão Forte,211.999
+BRA,2.0387,,2.9493,0.6913,,Expansão Forte,211.999
 CHL,0.9546,,1.7372,0.5495,,Equilíbrio Sustentável (PEA),19.765
-CHN,0.5846,,0.8831,0.662,,Tensão Acelerada,1419.321
-COD,16.2483,,18.1809,0.8937,,Expansão Forte,109.276
+CHN,0.5428,,0.82,0.662,,Tensão Acelerada,1419.321
+COD,21.0049,,23.5033,0.8937,,Expansão Forte,109.276
 DEU,0.5875,,0.5559,1.0567,,Tensão Acelerada,84.552
-EGY,9.5059,,12.5087,0.7599,,Expansão Forte,116.538
-ETH,9.0024,,15.4771,0.5817,,Expansão Forte,132.06
+EGY,10.6494,,14.0135,0.7599,,Expansão Forte,116.538
+ETH,15.9706,,27.4569,0.5817,,Expansão Forte,132.06
 FRA,0.8268,,0.906,0.9126,,Equilíbrio Sustentável (PEA),66.548
 GBR,0.9345,,1.0134,0.9222,,Equilíbrio Sustentável (PEA),69.138
 IDN,3.1743,,3.8544,0.8235,,Expansão Forte,283.488
 IND,2.9304,,5.0524,0.58,,Expansão Forte,1450.936
-IRN,3.5189,,4.3652,0.8061,,Expansão Forte,91.568
-ITA,0.4095,,0.417,0.982,,Colapso de Narayama (PEC),59.343
-JPN,0.2641,,0.2908,0.9083,,Colapso de Narayama (PEC),123.753
-KOR,0.2664,,0.5335,0.4994,,Colapso de Narayama (PEC),51.718
+IRN,4.1907,,5.1987,0.8061,,Expansão Forte,91.568
+ITA,0.3696,,0.3764,0.982,,Colapso de Narayama (PEC),59.343
+JPN,0.2877,,0.3168,0.9083,,Colapso de Narayama (PEC),123.753
+KOR,0.2081,,0.4167,0.4994,,Colapso de Narayama (PEC),51.718
 MAR,4.1595,,5.4304,0.766,,Expansão Forte,38.081
-MEX,5.088,,7.4318,0.6846,,Expansão Forte,130.861
-NGA,6.1,,8.4667,0.7205,,Expansão Forte,232.68
-POL,0.5848,,0.6179,0.9464,,Tensão Acelerada,38.539
-RUS,1.0538,,0.8557,1.2315,,Equilíbrio Sustentável (PEA),144.82
-SAU,12.9416,,24.4146,0.5301,,Expansão Forte,33.963
+MEX,4.2188,,6.1623,0.6846,,Expansão Forte,130.861
+NGA,11.2989,,15.6827,0.7205,,Expansão Forte,232.68
+POL,0.5369,,0.5673,0.9464,,Tensão Acelerada,38.539
+RUS,0.9566,,0.7767,1.2315,,Equilíbrio Sustentável (PEA),144.82
+SAU,16.3986,,30.9364,0.5301,,Expansão Forte,33.963
 SWE,0.924,,0.9672,0.9554,,Equilíbrio Sustentável (PEA),10.607
-THA,0.6489,,0.9532,0.6808,,Tensão Acelerada,71.668
-USA,1.0713,,1.3145,0.815,,Equilíbrio Sustentável (PEA),345.427
-VNM,2.8765,,3.0341,0.9481,,Expansão Forte,100.988
-ZAF,6.337,,7.355,0.8616,,Expansão Forte,64.007
+THA,0.4566,,0.6707,0.6808,,Colapso de Narayama (PEC),71.668
+USA,1.3144,,1.6128,0.815,,Expansão Forte,345.427
+VNM,3.201,,3.3763,0.9481,,Expansão Forte,100.988
+ZAF,4.4532,,5.1685,0.8616,,Expansão Forte,64.007

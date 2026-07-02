@@ -9,6 +9,7 @@ Fonte: V1_EcoPol_062426_v8.0.docx (tese de doutorado, Cap. 3, V.III,
 Capítulo 5, Anexo 5, Anexo 8, Tabela 4, Tabela 14).
 """
 
+import math
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
@@ -160,15 +161,84 @@ FAIXAS_ETARIAS_POR_PERFIL_V3 = {
 }
 
 # ---------------------------------------------------------------------------
-# Cadastro dos 28 países (Anexo 5, dados 2024)
+# Composição de perfis por país — Seção 5.2 (decisão de 2026-07-04)
 # ---------------------------------------------------------------------------
-# perfil: A, B, C ou D, atribuído país a país conforme a faixa de TFR
-# da Tabela 14 (a tese agrupa alguns países em rótulos de transição,
-# ex. "B→C"; aqui cada país recebe a letra única cuja faixa de TFR o
-# contém). Nenhum país do Anexo 5 é classificado como Perfil E.
+# CORREÇÃO: até 2026-07-03 este arquivo atribuía UM único perfil (A-E) a
+# cada país. Isso estava errado — a Seção 5.2 do docx v8.0 (verificada
+# diretamente, e confirmada país a país com o usuário) classifica cada um
+# dos 28 países como uma COMPOSIÇÃO PONDERADA de 2-3 perfis adjacentes
+# (ex.: Brasil = 30% B + 40% C + 30% D — não "Perfil C" puro). Isso também
+# corrige a afirmação (antes nesta seção) de que nenhum país é Perfil E:
+# Japão usa 40% Perfil E.
 #
-# pop_base_min/max e pop_topo_min/max: derivados de
-# FAIXAS_ETARIAS_POR_PERFIL_TABELA14 conforme o perfil do país.
+# pop_base_max/pop_topo_min de cada país (ver _cortes_ponderados) são a
+# média ponderada dos cortes de FAIXAS_ETARIAS_POR_PERFIL_TABELA14 pelos
+# pesos abaixo, arredondada ao inteiro mais próximo (round-half-up, não o
+# banker's rounding padrão do Python — só muda o resultado de IRN, SAU e
+# POL, os três únicos países cuja média cai exatamente em ",5").
+
+COMPOSICAO_PERFIL_POR_PAIS = {
+    "NGA": {"A": 0.35, "B": 0.40, "C": 0.25},
+    "ETH": {"A": 0.40, "B": 0.40, "C": 0.20},
+    "COD": {"A": 0.60, "B": 0.40},
+    "VNM": {"B": 0.80, "C": 0.20},
+    "IND": {"B": 1.00},
+    "IDN": {"B": 1.00},
+    "IRN": {"B": 0.70, "C": 0.30},
+    "SAU": {"B": 0.70, "C": 0.30},
+    "MAR": {"B": 1.00},
+    "THA": {"B": 0.80, "C": 0.20},
+    "MEX": {"B": 0.40, "C": 0.60},
+    "EGY": {"B": 0.80, "C": 0.20},
+    "POL": {"B": 0.30, "C": 0.70},
+    "BRA": {"B": 0.30, "C": 0.40, "D": 0.30},
+    "USA": {"C": 0.20, "D": 0.80},
+    "CHN": {"B": 0.25, "C": 0.60, "D": 0.15},
+    "FRA": {"C": 0.80, "D": 0.20},
+    "ARG": {"C": 0.85, "D": 0.15},
+    "CHL": {"C": 1.00},
+    "SWE": {"C": 1.00},
+    "GBR": {"C": 0.80, "D": 0.20},
+    "AUS": {"C": 1.00},
+    "ZAF": {"B": 0.80, "C": 0.20},
+    "JPN": {"D": 0.60, "E": 0.40},
+    "DEU": {"C": 0.20, "D": 0.80},
+    "ITA": {"C": 0.50, "D": 0.50},
+    "KOR": {"C": 0.80, "D": 0.20},
+    "RUS": {"C": 0.30, "D": 0.70},
+}
+
+for _codigo, _composicao in COMPOSICAO_PERFIL_POR_PAIS.items():
+    assert abs(sum(_composicao.values()) - 1.0) < 1e-9, (
+        f"composição de {_codigo} não soma 1.0: {_composicao}"
+    )
+del _codigo, _composicao
+
+
+def _cortes_ponderados(composicao: dict) -> tuple:
+    """Média ponderada dos cortes por perfil, arredondada (round-half-up)."""
+    base_max = sum(
+        peso * FAIXAS_ETARIAS_POR_PERFIL_TABELA14[perfil]["pop_base_max"]
+        for perfil, peso in composicao.items()
+    )
+    topo_min = sum(
+        peso * FAIXAS_ETARIAS_POR_PERFIL_TABELA14[perfil]["pop_topo_min"]
+        for perfil, peso in composicao.items()
+    )
+    return math.floor(base_max + 0.5), math.floor(topo_min + 0.5)
+
+
+def _rotulo_composicao(composicao: dict) -> str:
+    ordem = "ABCDE"
+    partes = [f"{p}{round(composicao[p] * 100):g}" for p in ordem if p in composicao]
+    return "/".join(partes)
+
+
+# ---------------------------------------------------------------------------
+# Cadastro dos 28 países (Anexo 5 / Seção 5.2, dados 2024)
+# ---------------------------------------------------------------------------
+# pop_base_min/max e pop_topo_min/max: derivados da composição do país em
+# COMPOSICAO_PERFIL_POR_PAIS via _cortes_ponderados (ver seção acima).
 #
 # faixa_etaria_farol_min/max: faixa etária da coorte usada no cálculo
 # de NTA(65+) para o Fator_Alocativo (Seção V.III-bis). É fixa em
@@ -178,52 +248,53 @@ FAIXAS_ETARIAS_POR_PERFIL_V3 = {
 _FAROL_FAIXA_PADRAO = {"faixa_etaria_farol_min": 65, "faixa_etaria_farol_max": 150}
 
 
-def _pais(nome: str, regiao: str, perfil: str) -> dict:
-    faixa = FAIXAS_ETARIAS_POR_PERFIL_TABELA14[perfil]
+def _pais(nome: str, regiao: str, codigo: str) -> dict:
+    composicao = COMPOSICAO_PERFIL_POR_PAIS[codigo]
+    pop_base_max, pop_topo_min = _cortes_ponderados(composicao)
     return {
         "nome": nome,
         "regiao": regiao,
-        "perfil": perfil,
+        "perfil": _rotulo_composicao(composicao),
         "pop_base_min": 0,
-        "pop_base_max": faixa["pop_base_max"],
-        "pop_topo_min": faixa["pop_topo_min"],
+        "pop_base_max": pop_base_max,
+        "pop_topo_min": pop_topo_min,
         "pop_topo_max": 150,
         **_FAROL_FAIXA_PADRAO,
     }
 
 
 PAISES = {
-    "NGA": _pais("Nigéria", "África Subsaariana", "A"),
-    "ETH": _pais("Etiópia", "África Subsaariana", "A"),
-    "COD": _pais("República Democrática do Congo", "África Subsaariana", "A"),
+    "NGA": _pais("Nigéria", "África Subsaariana", "NGA"),
+    "ETH": _pais("Etiópia", "África Subsaariana", "ETH"),
+    "COD": _pais("República Democrática do Congo", "África Subsaariana", "COD"),
 
-    "VNM": _pais("Vietnã", "Ásia Sudeste", "B"),
-    "IND": _pais("Índia", "Ásia Meridional", "B"),
-    "IDN": _pais("Indonésia", "Ásia Sudeste", "B"),
-    "IRN": _pais("Irã", "Oriente Médio", "B"),
-    "SAU": _pais("Arábia Saudita", "Oriente Médio", "B"),
-    "MAR": _pais("Marrocos", "África do Norte", "B"),
-    "EGY": _pais("Egito", "África do Norte", "B"),
+    "VNM": _pais("Vietnã", "Ásia Sudeste", "VNM"),
+    "IND": _pais("Índia", "Ásia Meridional", "IND"),
+    "IDN": _pais("Indonésia", "Ásia Sudeste", "IDN"),
+    "IRN": _pais("Irã", "Oriente Médio", "IRN"),
+    "SAU": _pais("Arábia Saudita", "Oriente Médio", "SAU"),
+    "MAR": _pais("Marrocos", "África do Norte", "MAR"),
+    "EGY": _pais("Egito", "África do Norte", "EGY"),
 
-    "THA": _pais("Tailândia", "Ásia Sudeste", "C"),
-    "MEX": _pais("México", "América do Norte", "C"),
-    "POL": _pais("Polônia", "Europa Oriental", "C"),
-    "BRA": _pais("Brasil", "América do Sul", "C"),
-    "USA": _pais("Estados Unidos", "América do Norte", "C"),
-    "CHN": _pais("China", "Ásia Oriental", "C"),
-    "FRA": _pais("França", "Europa Ocidental", "C"),
-    "ARG": _pais("Argentina", "América do Sul", "C"),
-    "CHL": _pais("Chile", "América do Sul", "C"),
-    "SWE": _pais("Suécia", "Europa Ocidental", "C"),
-    "GBR": _pais("Reino Unido", "Europa Ocidental", "C"),
-    "AUS": _pais("Austrália", "Oceania", "C"),
-    "ZAF": _pais("África do Sul", "África Subsaariana", "C"),
+    "THA": _pais("Tailândia", "Ásia Sudeste", "THA"),
+    "MEX": _pais("México", "América do Norte", "MEX"),
+    "POL": _pais("Polônia", "Europa Oriental", "POL"),
+    "BRA": _pais("Brasil", "América do Sul", "BRA"),
+    "USA": _pais("Estados Unidos", "América do Norte", "USA"),
+    "CHN": _pais("China", "Ásia Oriental", "CHN"),
+    "FRA": _pais("França", "Europa Ocidental", "FRA"),
+    "ARG": _pais("Argentina", "América do Sul", "ARG"),
+    "CHL": _pais("Chile", "América do Sul", "CHL"),
+    "SWE": _pais("Suécia", "Europa Ocidental", "SWE"),
+    "GBR": _pais("Reino Unido", "Europa Ocidental", "GBR"),
+    "AUS": _pais("Austrália", "Oceania", "AUS"),
+    "ZAF": _pais("África do Sul", "África Subsaariana", "ZAF"),
 
-    "JPN": _pais("Japão", "Ásia Oriental", "D"),
-    "DEU": _pais("Alemanha", "Europa Ocidental", "D"),
-    "ITA": _pais("Itália", "Europa Ocidental", "D"),
-    "KOR": _pais("Coreia do Sul", "Ásia Oriental", "D"),
-    "RUS": _pais("Rússia", "Eurásia", "D"),
+    "JPN": _pais("Japão", "Ásia Oriental", "JPN"),
+    "DEU": _pais("Alemanha", "Europa Ocidental", "DEU"),
+    "ITA": _pais("Itália", "Europa Ocidental", "ITA"),
+    "KOR": _pais("Coreia do Sul", "Ásia Oriental", "KOR"),
+    "RUS": _pais("Rússia", "Eurásia", "RUS"),
 }
 
 # ---------------------------------------------------------------------------
