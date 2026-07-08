@@ -12,8 +12,8 @@ restrita a pesquisadores: ainu.systems."
 
 Fontes de dados esperadas (produzidas pelo pipeline da Fase 2+):
 - data/processed/n_index_2024.csv: snapshot 2024, uma linha por país,
-  colunas: codigo, n_base, farol, ngii_puro, fator_geracional,
-  fator_alocativo, status, populacao.
+  colunas: codigo, n_base, farol, ngii_bruto, ngii_puro,
+  fator_geracional, fator_alocativo, status, populacao.
 - data/processed/n_index_historico.csv: série histórica, colunas:
   codigo, ano, n_base.
 
@@ -207,13 +207,18 @@ else:
 st.header("Tabela Principal — N* por País (2024)")
 
 st.caption(
-    "N* é reportado sem normalização: a tese (Anexo 1) não define nenhum "
-    "passo de escala para o N_Base, então países jovens/alta fecundidade "
-    "mostram valores bem acima de 1,0 — é consequência da fórmula, não "
-    "erro de cálculo. `Farol`/`Fator_Aloc` aparecem como \"Pendente (NTA)\" "
-    "porque dependem de National Transfer Accounts, ainda não integrado "
-    "(Fase 2b). Detalhes em "
-    "[docs/definitions.md](../../docs/definitions.md), seções 8 e 9."
+    "NGII_Puro é depurado pelo Protocolo de Falseabilidade quantitativo "
+    "(4 ajustes multiplicativos — migração, inércia demográfica, "
+    "políticas natalistas temporárias, sub-registro/mortalidade — Anexo "
+    "9, v9.0). `NGII_Bruto` é o valor sem esse ajuste, mostrado ao lado "
+    "para transparência. Mesmo assim, N* segue sem normalização: a tese "
+    "(Anexo 1) não define nenhum passo de escala para o N_Base, então "
+    "países jovens/alta fecundidade continuam com valores bem acima de "
+    "1,0 — é consequência da fórmula, não erro de cálculo. "
+    "`Farol`/`Fator_Aloc` aparecem como \"Pendente (NTA)\" porque "
+    "dependem de National Transfer Accounts, ainda não integrado (Fase "
+    "2b). Detalhes em [docs/definitions.md](../../docs/definitions.md), "
+    "seções 6, 8 e 9."
 )
 
 if not df_filtrado.empty:
@@ -227,6 +232,7 @@ if not df_filtrado.empty:
             "nome": "País",
             "n_base": "N*",
             "farol": "Farol",
+            "ngii_bruto": "NGII_Bruto",
             "ngii_puro": "NGII_puro",
             "fator_geracional": "Fator_Ger",
             "fator_alocativo": "Fator_Aloc",
@@ -236,7 +242,7 @@ if not df_filtrado.empty:
 
     colunas_exibidas = [
         c
-        for c in ["País", "N*", "Farol", "NGII_puro", "Fator_Ger", "Fator_Aloc", "Status"]
+        for c in ["País", "N*", "Farol", "NGII_Bruto", "NGII_puro", "Fator_Ger", "Fator_Aloc", "Status"]
         if c in df_tabela.columns
     ]
 

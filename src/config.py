@@ -298,6 +298,69 @@ PAISES = {
 }
 
 # ---------------------------------------------------------------------------
+# Protocolo de Falseabilidade quantitativo — Anexo 9 (v9.0, 2026-07-07)
+# ---------------------------------------------------------------------------
+# A v9.0 da tese (V1_EcoPol_070726_v9.0.docx) reescreveu o Anexo 9: os 7
+# testes qualitativos da v8.0 (ver src/falseability.py,
+# aplicar_protocolo_falseabilidade — mantida como referência histórica)
+# foram substituídos por uma fórmula quantitativa de 4 ajustes
+# multiplicativos, calibrados país a país e aprovados pelo usuário com um
+# pesquisador colaborador da Unicamp:
+#
+#   NGII_Puro = NGII_Bruto × (1-migratorio) × (1-inercia) × (1-politicas) × (1-subregistro)
+#
+# Critério de aceitação da v9.0: redução total composta entre 25% e 45%.
+# Os percentuais abaixo foram fornecidos pelo usuário; a fórmula de
+# aplicação (multiplicativa, não aditiva) foi corrigida por este projeto
+# antes de incorporar — a primeira versão da tabela tinha os percentuais
+# certos mas o resultado final publicado batia com uma soma simples dos
+# percentuais, não com a fórmula multiplicativa declarada.
+
+AJUSTES_FALSEABILIDADE_POR_PAIS = {
+    "SAU": {"migratorio": 0.22, "inercia": 0.12, "politicas": 0.12, "subregistro": 0.06},
+    "ETH": {"migratorio": 0.11, "inercia": 0.18, "politicas": 0.07, "subregistro": 0.17},
+    "COD": {"migratorio": 0.10, "inercia": 0.16, "politicas": 0.05, "subregistro": 0.23},
+    "NGA": {"migratorio": 0.09, "inercia": 0.15, "politicas": 0.06, "subregistro": 0.19},
+    "EGY": {"migratorio": 0.08, "inercia": 0.14, "politicas": 0.09, "subregistro": 0.11},
+    "MEX": {"migratorio": 0.14, "inercia": 0.11, "politicas": 0.06, "subregistro": 0.08},
+    "MAR": {"migratorio": 0.11, "inercia": 0.12, "politicas": 0.07, "subregistro": 0.09},
+    "IRN": {"migratorio": 0.09, "inercia": 0.13, "politicas": 0.10, "subregistro": 0.08},
+    "ZAF": {"migratorio": 0.15, "inercia": 0.11, "politicas": 0.07, "subregistro": 0.12},
+    "IND": {"migratorio": 0.06, "inercia": 0.18, "politicas": 0.08, "subregistro": 0.10},
+    "IDN": {"migratorio": 0.07, "inercia": 0.16, "politicas": 0.07, "subregistro": 0.09},
+    "VNM": {"migratorio": 0.06, "inercia": 0.15, "politicas": 0.08, "subregistro": 0.07},
+    "BRA": {"migratorio": 0.12, "inercia": 0.15, "politicas": 0.06, "subregistro": 0.04},
+    "ARG": {"migratorio": 0.10, "inercia": 0.12, "politicas": 0.05, "subregistro": 0.04},
+    "AUS": {"migratorio": 0.25, "inercia": 0.06, "politicas": 0.04, "subregistro": 0.03},
+    "CHL": {"migratorio": 0.13, "inercia": 0.10, "politicas": 0.07, "subregistro": 0.05},
+    "USA": {"migratorio": 0.18, "inercia": 0.08, "politicas": 0.04, "subregistro": 0.03},
+    "GBR": {"migratorio": 0.17, "inercia": 0.08, "politicas": 0.06, "subregistro": 0.04},
+    "SWE": {"migratorio": 0.22, "inercia": 0.07, "politicas": 0.05, "subregistro": 0.03},
+    "FRA": {"migratorio": 0.15, "inercia": 0.09, "politicas": 0.08, "subregistro": 0.04},
+    "CHN": {"migratorio": 0.09, "inercia": 0.14, "politicas": 0.12, "subregistro": 0.06},
+    "RUS": {"migratorio": 0.12, "inercia": 0.14, "politicas": 0.06, "subregistro": 0.09},
+    "THA": {"migratorio": 0.10, "inercia": 0.13, "politicas": 0.08, "subregistro": 0.07},
+    "POL": {"migratorio": 0.08, "inercia": 0.12, "politicas": 0.05, "subregistro": 0.06},
+    "DEU": {"migratorio": 0.14, "inercia": 0.12, "politicas": 0.05, "subregistro": 0.06},
+    "KOR": {"migratorio": 0.07, "inercia": 0.16, "politicas": 0.05, "subregistro": 0.13},
+    "ITA": {"migratorio": 0.11, "inercia": 0.15, "politicas": 0.06, "subregistro": 0.07},
+    "JPN": {"migratorio": 0.08, "inercia": 0.18, "politicas": 0.04, "subregistro": 0.13},
+}
+
+for _codigo, _ajustes in AJUSTES_FALSEABILIDADE_POR_PAIS.items():
+    assert all(0 <= v < 1 for v in _ajustes.values()), f"ajuste fora de [0,1) em {_codigo}: {_ajustes}"
+    _reducao_total = 1 - (
+        (1 - _ajustes["migratorio"])
+        * (1 - _ajustes["inercia"])
+        * (1 - _ajustes["politicas"])
+        * (1 - _ajustes["subregistro"])
+    )
+    assert 0.25 <= _reducao_total <= 0.45, (
+        f"redução total de {_codigo} ({_reducao_total:.1%}) fora do critério de aceitação da v9.0 (25%-45%)"
+    )
+del _codigo, _ajustes, _reducao_total
+
+# ---------------------------------------------------------------------------
 # Plataformas (Anexo 14 — Glossário Técnico, "AINU")
 # ---------------------------------------------------------------------------
 # narayama.live: interface pública minimalista, mostra só os países

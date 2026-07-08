@@ -2,9 +2,9 @@
 Orquestração do cálculo de N* para os 28 países (Fase 2a).
 
 Lê data/raw/un_wpp.csv (via src.data_loader) e grava
-data/processed/n_index_{ano}.csv com NGII_puro, Fator_Geracional,
-N_Base e a zona de classificação, para todos os países presentes no
-ano solicitado e em ano-25.
+data/processed/n_index_{ano}.csv com NGII_Bruto, NGII_puro (pós
+falseabilidade), Fator_Geracional, N_Base e a zona de classificação,
+para todos os países presentes no ano solicitado e em ano-25.
 
 IMPORTANTE — escopo desta fase (confirmado em 2026-07-01): esta
 função usa **apenas UN World Population Prospects**. Ainda não
@@ -26,6 +26,16 @@ ver src.config.COMPOSICAO_PERFIL_POR_PAIS e src.config.PAISES), já
 agregadas em data/raw/un_wpp.csv (colunas pop_base/pop_topo) pelo
 script scripts/build_un_wpp_raw.py.
 
+Protocolo de Falseabilidade (atualizado em 2026-07-07): a razão
+calculada diretamente de Pop_Base/Pop_Topo/Nasc/Mort é o NGII_Bruto,
+não o NGII_puro — antes desta data, o pipeline tratava um como o
+outro por falta de dado real de falseabilidade. Agora o NGII_Bruto
+passa pelo Protocolo de Falseabilidade quantitativo da v9.0
+(V1_EcoPol_070726_v9.0.docx, Anexo 9 — ver
+src.falseability.aplicar_falseabilidade_quantitativa e
+src.config.AJUSTES_FALSEABILIDADE_POR_PAIS) para se tornar o
+NGII_puro real, que então alimenta o N_Base.
+
 Fonte de dados: UN World Population Prospects 2024
 (population.un.org/wpp), arquivos "Demographic Indicators" e
 "Population by Single Age" (não os grupos de 5 anos — os cortes em
@@ -37,8 +47,9 @@ from typing import Optional
 
 import pandas as pd
 
-from src.config import DATA_PROCESSED_DIR, DATA_RAW_DIR, PAISES
+from src.config import AJUSTES_FALSEABILIDADE_POR_PAIS, DATA_PROCESSED_DIR, DATA_RAW_DIR, PAISES
 from src.data_loader import carregar_dados_un
+from src.falseability import aplicar_falseabilidade_quantitativa
 from src.indices import calcular_fator_geracional, calcular_n_base, calcular_ngii_puro, classificar_zona_n_base
 
 CICLO_GERACIONAL_ANOS = 25
@@ -57,10 +68,10 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
 
     Returns:
         DataFrame com uma linha por país (só os países com dados em
-        ambos os anos), colunas: codigo, n_base, farol, ngii_puro,
-        fator_geracional, fator_alocativo, status, populacao. `farol`
-        e `fator_alocativo` ficam None nesta fase (ver docstring do
-        módulo). Também grava o resultado em
+        ambos os anos), colunas: codigo, n_base, farol, ngii_bruto,
+        ngii_puro, fator_geracional, fator_alocativo, status,
+        populacao. `farol` e `fator_alocativo` ficam None nesta fase
+        (ver docstring do módulo). Também grava o resultado em
         data/processed/n_index_{ano}.csv.
     """
     caminho_un = caminho_un or (DATA_RAW_DIR / "un_wpp.csv")
@@ -74,14 +85,21 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
     for codigo in PAISES:
         if codigo not in df_ano.index or codigo not in df_base.index:
             continue
+        if codigo not in AJUSTES_FALSEABILIDADE_POR_PAIS:
+            continue
 
         linha = df_ano.loc[codigo]
 
-        ngii_puro = calcular_ngii_puro(
+        ngii_bruto = calcular_ngii_puro(
             pop_base=linha["pop_base"],
             pop_topo=linha["pop_topo"],
             nascimentos=linha["nascimentos"],
             mortes=linha["mortes"],
+        )
+        ngii_puro = (
+            aplicar_falseabilidade_quantitativa(ngii_bruto, AJUSTES_FALSEABILIDADE_POR_PAIS[codigo])
+            if ngii_bruto is not None
+            else None
         )
         fator_geracional = calcular_fator_geracional(
             tfr_atual=linha["tfr"],
@@ -94,6 +112,7 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
                 "codigo": codigo,
                 "n_base": round(n_base, 4) if n_base is not None else None,
                 "farol": None,  # Fator_Alocativo pendente (Fase 2b)
+                "ngii_bruto": round(ngii_bruto, 4) if ngii_bruto is not None else None,
                 "ngii_puro": round(ngii_puro, 4) if ngii_puro is not None else None,
                 "fator_geracional": round(fator_geracional, 4) if fator_geracional is not None else None,
                 "fator_alocativo": None,  # pendente (Fase 2b)

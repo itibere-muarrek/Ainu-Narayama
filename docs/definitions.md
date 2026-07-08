@@ -178,11 +178,37 @@ Notação final publicada pela tese: `N*(i,t) = valor_numérico⁺/ⁿ/⁻` (ex.
 Implementado em [`calcular_fator_alocativo`](../src/indices.py) e
 [`classificar_farol_alocativo`](../src/indices.py).
 
-## 6. Protocolo de Falseabilidade (resumo)
+## 6. Protocolo de Falseabilidade
 
-Antes de aceitar um NGII_Bruto como válido, 7 testes (Anexo 9) o "validam"
-para obter o NGII_Puro, removendo distorções que mascaram a real trajetória
-de sustentabilidade intergeracional:
+> **Atualização (2026-07-07): versão quantitativa, v9.0.** A tese v9.0
+> (`V1_EcoPol_070726_v9.0.docx`) reescreveu por completo o Anexo 9. Os 7
+> testes qualitativos da v8.0 (mantidos abaixo como "versão anterior")
+> foram substituídos por uma fórmula fechada de 4 ajustes multiplicativos,
+> calibrados país a país e aprovados pelo usuário com um pesquisador
+> colaborador da Unicamp:
+>
+> ```
+> NGII_Puro = NGII_Bruto × (1-migratorio) × (1-inercia) × (1-politicas) × (1-subregistro)
+> ```
+>
+> Critério de aceitação da v9.0: redução total composta entre 25% e 45%.
+> Os 4 ajustes, por país, estão em
+> [`AJUSTES_FALSEABILIDADE_POR_PAIS`](../src/config.py); a fórmula está em
+> [`aplicar_falseabilidade_quantitativa`](../src/falseability.py) e já
+> alimenta o pipeline (`src/data_pipeline.py`) — deixou de ser lacuna.
+>
+> Exemplo (Brasil, 2024): NGII_Bruto = 2,9493 → ajustes
+> (migratório 12%, inércia 15%, políticas 6%, sub-registro 4%) → NGII_Puro
+> = 1,9908 (redução real de 32,5%).
+>
+> **Nota de correção**: a primeira versão da tabela de calibração que o
+> usuário forneceu tinha os percentuais certos, mas o NGII_Puro final
+> publicado batia com a soma simples dos 4 percentuais, não com a fórmula
+> multiplicativa declarada no texto. A aritmética foi corrigida antes de
+> incorporar aqui — os 28 países recalculados corretamente continuam
+> dentro do critério de aceitação (25%-45%) da v9.0.
+
+### Versão anterior (v8.0, substituída) — 7 testes qualitativos
 
 ```
 NGII_Bruto -> Protocolo de Falseabilidade (7 Testes) -> NGII_Puro -> N*
@@ -196,7 +222,9 @@ NGII_Bruto -> Protocolo de Falseabilidade (7 Testes) -> NGII_Puro -> N*
 6. **Substituição Civilizacional**: a população é estável porque se reproduz, ou porque é substituída por novos grupos com estrutura demográfica diferente? Diferença entre TFR oficial e TFR nativa estimada > 0,25 sinaliza substituição.
 7. **Resistência a Choques**: o N* sinaliza deterioração estrutural pelo menos 5–10 anos antes de um evento visível (validação empírica com casos históricos: Ucrânia, Rússia, Irã, Síria, Japão, Alemanha, Coreia do Sul)?
 
-Implementado em [`aplicar_protocolo_falseabilidade`](../src/falseability.py).
+Mantido como referência histórica em
+[`aplicar_protocolo_falseabilidade`](../src/falseability.py) — não é mais
+a versão usada pelo pipeline.
 
 ## 7. Limiares Críticos (PEEC–PEA–PEC)
 
@@ -233,12 +261,17 @@ faixa (ex.: 0-2). As tabelas de interpretação (Tabela 4/Anexo 8, seção 7)
 **presumem implicitamente** que N* fica numa faixa próxima de 1 — mas isso
 não é garantido pela fórmula: para países jovens/alta fecundidade, onde
 `Pop_Topo` é pequeno frente a `Pop_Base`, o NGII_puro cresce sem limite
-matemático (ex.: com os cortes da Tabela 14 — seção 3 —, RD Congo, Arábia
-Saudita, Egito e Etiópia produzem N* entre 9 e 16 com dados reais; com os
-cortes da Seção V.III, usados até 2026-07-02, esses valores chegavam a
-41 — ver `src/data_pipeline.py`). Isso é uma lacuna real do modelo
-publicado, não um erro de implementação deste projeto: nenhuma das duas
-faixas etárias que a tese oferece elimina o problema, só muda a magnitude.
+matemático. Nem a composição ponderada de perfis (seção 3) nem o Protocolo
+de Falseabilidade quantitativo (seção 6, v9.0) eliminam isso — só reduzem a
+magnitude: RD Congo, Arábia Saudita, Nigéria e Etiópia continuam com N*
+entre 7 e 12 mesmo após a falseabilidade descontar ~32-45% do NGII_Bruto
+desses países (ver `data/processed/n_index_2024.csv`, colunas `ngii_bruto`
+e `ngii_puro`). Isso é uma lacuna real do modelo publicado, não um erro de
+implementação deste projeto: nenhum dos ajustes disponíveis na tese resolve
+o problema, só muda a magnitude. O usuário já sinalizou (2026-07-06) que
+matematicamente nenhum país deveria ficar acima de ~6 ou abaixo de ~0,3 —
+uma normalização/corte explícito ainda está pendente de decisão (ver
+roadmap, seção 9).
 
 Um documento de simulação de terceiros (produzido com ChatGPT/Grok, trazido
 ao projeto em 2026-07-01) alegava uma "normalização para escala 0-2", mas a
@@ -315,7 +348,15 @@ metodológica trazida pelo usuário.
   - Tabela 4 / Anexo 8 — Zonas críticas do N* (convenção adotada)
   - Tabela 14 — Faixas etárias por Perfil Estrutural, 5 níveis (adotada em
     2026-07-03 — ver seção 3)
-  - Anexo 9 — Protocolo de Falseabilidade (7 testes)
+  - Anexo 9 — Protocolo de Falseabilidade (7 testes, substituído — ver v9.0 abaixo)
+- Tese v9.0, `V1_EcoPol_070726_v9.0.docx` (trazida em 2026-07-07):
+  comparação estrutural completa contra a v8.0 confirmou que todas as
+  fórmulas centrais, cortes etários e a composição dos 28 países (Seção
+  5.2/Anexo 5) são idênticas entre as duas versões — a v9.0 não substitui
+  a v8.0 como fonte geral. A única mudança material é:
+  - Anexo 9 — Protocolo de Falseabilidade reescrito: fórmula quantitativa
+    de 4 ajustes multiplicativos (adotada, ver seção 6), substituindo os
+    7 testes qualitativos da v8.0
 - Documento de terceiros "Aqui está a simulação completa atualizada com os 7
   países destaque..." (ChatGPT/Grok, validado com pesquisadores, trazido em
   2026-07-01/02): números não reproduzíveis (seção 8), mas útil para a

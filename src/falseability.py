@@ -1,28 +1,69 @@
 """
-Protocolo de Falseabilidade do Índice de Narayama (AINU-Narayama v8.0).
+Protocolo de Falseabilidade do Índice de Narayama (AINU-Narayama).
 
-Implementa os 7 testes descritos no Anexo 9 da tese, que transformam
-o NGII_Bruto em NGII_Puro removendo fatores que mascaram a real
-trajetória de sustentabilidade intergeracional:
+VERSÃO VIGENTE (2026-07-07): aplicar_falseabilidade_quantitativa(), que
+implementa a fórmula do Anexo 9 conforme reescrito na v9.0 da tese
+(V1_EcoPol_070726_v9.0.docx) — 4 ajustes multiplicativos, calibrados
+país a país e aprovados pelo usuário com um pesquisador colaborador da
+Unicamp:
 
-    NGII Bruto -> Protocolo de Falseabilidade (7 Testes) -> NGII Puro -> N*
+    NGII_Puro = NGII_Bruto × (1-migratorio) × (1-inercia) × (1-politicas) × (1-subregistro)
 
-Cada teste retorna um veredito qualitativo ("aprovado"/"maquiagem
-suspeita") e uma justificativa, já que a maior parte dos critérios do
-Anexo 9 é definida em termos de séries históricas e comparações
-qualitativas, não apenas limiares numéricos de um único ano.
+Percentuais por país em src.config.AJUSTES_FALSEABILIDADE_POR_PAIS.
 
-Fonte: V1_EcoPol_062426_v8.0.docx, Anexo 9 — Protocolo de
-Falseabilidade do Índice de Narayama (7 Testes).
+VERSÃO HISTÓRICA (v8.0, substituída): o restante deste módulo
+(aplicar_protocolo_falseabilidade — 7 testes qualitativos — e
+aplicar_protocolo_falseabilidade_simplificado — 3 testes) implementava
+o Anexo 9 conforme a v8.0 (V1_EcoPol_062426_v8.0.docx), antes da
+fórmula quantitativa existir. Mantido como referência, não é mais a
+versão usada pelo pipeline (ver src/data_pipeline.py).
 
-Este arquivo também contém aplicar_protocolo_falseabilidade_simplificado(),
-uma versão operacional de 3 testes para a Fase 1 do projeto, usada
-enquanto os dados históricos ricos exigidos pelos 7 testes completos
-(séries de 15+ anos, TFR nativa estimada, casos de choque) ainda não
-estão disponíveis no pipeline.
+    NGII Bruto -> Protocolo de Falseabilidade (7 Testes, v8.0) -> NGII Puro -> N*
 """
 
 from typing import Any, Dict, List, Optional, Tuple
+
+
+def aplicar_falseabilidade_quantitativa(ngii_bruto: float, ajustes: Dict[str, float]) -> float:
+    """
+    Aplica o Protocolo de Falseabilidade quantitativo (Anexo 9, v9.0).
+
+    Transforma o NGII_Bruto (razão demográfica calculada diretamente de
+    Pop_Base/Pop_Topo/Nascimentos/Mortes, sem nenhum ajuste) no
+    NGII_Puro, removendo 4 distorções mediante desconto multiplicativo
+    composto — não a soma simples dos percentuais (uma versão anterior
+    da tabela de calibração publicava resultados que só batiam com a
+    soma simples, apesar de descrever a fórmula como multiplicativa;
+    corrigido antes de incorporar aqui).
+
+    Fórmula (Anexo 9, v9.0):
+        NGII_Puro = NGII_Bruto × (1-migratorio) × (1-inercia) × (1-politicas) × (1-subregistro)
+
+    Args:
+        ngii_bruto: NGII calculado sem ajustes de falseabilidade
+            (resultado de calcular_ngii_puro() em src/indices.py).
+        ajustes: dict com as chaves "migratorio", "inercia", "politicas",
+            "subregistro" (frações entre 0 e 1) — ver
+            src.config.AJUSTES_FALSEABILIDADE_POR_PAIS para os valores
+            calibrados dos 28 países.
+
+    Returns:
+        NGII_Puro (adimensional).
+
+    Exemplo (Brasil, dados reais 2024 pós-recalibração de perfis):
+        >>> aplicar_falseabilidade_quantitativa(
+        ...     2.9493,
+        ...     {"migratorio": 0.12, "inercia": 0.15, "politicas": 0.06, "subregistro": 0.04},
+        ... )
+        1.9907633433599998
+    """
+    return (
+        ngii_bruto
+        * (1 - ajustes["migratorio"])
+        * (1 - ajustes["inercia"])
+        * (1 - ajustes["politicas"])
+        * (1 - ajustes["subregistro"])
+    )
 
 
 def teste_1_falseabilidade_migratoria(

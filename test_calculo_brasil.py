@@ -4,7 +4,7 @@ dados reais do Brasil 2024.
 
 IMPORTANTE — leia antes de interpretar o resultado:
 1. A fórmula usada é a de 2 componentes do Anexo 1 / Seção V.III
-   (NGII_puro = Pop_Base/Pop_Topo × Nasc/Mort), com Pop_Base=0-21 e
+   (NGII_Bruto = Pop_Base/Pop_Topo × Nasc/Mort), com Pop_Base=0-21 e
    Pop_Topo=59+ pro Brasil. O corte não vem mais de um único "Perfil C"
    (Tabela 14 simplificada) — desde 2026-07-04, Pop_Base/Pop_Topo são a
    média ponderada dos cortes por perfil conforme a composição real do
@@ -12,18 +12,22 @@ IMPORTANTE — leia antes de interpretar o resultado:
    Perfil C puro — ver src.config.COMPOSICAO_PERFIL_POR_PAIS). Não tem
    fator de escolaridade (o terceiro fator do Capítulo 5 foi removido em
    2026-07-02 — ver docs/definitions.md, seção 3).
-2. A tese não especifica nenhum passo de normalização do N_Base — os
-   valores altos do TESTE B abaixo (bem acima de 1,0) são uma
-   consequência matemática da fórmula tal como publicada no Anexo 1,
-   não um bug. Ver docs/definitions.md, seção 8.
-3. A própria tese publica QUATRO valores diferentes de N* para o
-   Brasil 2024 em pontos distintos do texto: 0,45 (Tabela 3), ~0,605
-   (implícito no Anexo 8), 0,695 (Anexo 12) e 0,72 (notação de farol,
-   Seção V.III-bis: "Brasil 2024: N* = 0,72(-)"). Nenhum é
-   reproduzível sem os dados brutos exatos usados pelo autor (não
-   publicados) — por isso o TESTE B abaixo não é comparado contra
-   nenhum desses quatro valores, só reporta o resultado com dados
-   reais da UN WPP.
+2. Desde 2026-07-07, o NGII_Bruto passa pelo Protocolo de
+   Falseabilidade quantitativo da v9.0 (4 ajustes multiplicativos,
+   Anexo 9 — ver src.falseability.aplicar_falseabilidade_quantitativa e
+   src.config.AJUSTES_FALSEABILIDADE_POR_PAIS) antes de virar o
+   NGII_puro usado no N_Base. Antes dessa data, o pipeline tratava o
+   NGII_Bruto como se já fosse o NGII_puro, por falta de dado real.
+3. A tese não especifica nenhum passo de normalização do N_Base — os
+   valores do TESTE B abaixo continuam acima de 1,0 mesmo após a
+   falseabilidade (ela só reduz ~32%, não elimina a ausência de
+   normalização). Ver docs/definitions.md, seção 8.
+4. A própria tese publica valores de N* divergentes entre si em
+   pontos distintos do texto (ver docs/definitions.md, seção 7, para o
+   histórico completo) — nenhum é reproduzível sem os dados brutos
+   exatos usados pelo autor. O TESTE B abaixo não é comparado contra
+   nenhum valor publicado no texto, só reporta o resultado com dados
+   reais da UN WPP e a calibração de falseabilidade aprovada.
 
 Por isso, este script tem dois testes:
 - TESTE A: reproduz o exemplo do próprio docstring de
@@ -39,6 +43,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from src.config import AJUSTES_FALSEABILIDADE_POR_PAIS
+from src.falseability import aplicar_falseabilidade_quantitativa
 from src.indices import calcular_fator_geracional, calcular_n_base, calcular_ngii_puro, classificar_zona_n_base
 
 
@@ -77,19 +83,26 @@ print()
 
 # -----------------------------------------------------------------------
 # TESTE B — Brasil 2024, dados reais da UN WPP (composição B30/C40/D30,
-# Seção 5.2: Pop_Base=0-21, Pop_Topo=59+)
+# Seção 5.2: Pop_Base=0-21, Pop_Topo=59+), com falseabilidade quantitativa
 # -----------------------------------------------------------------------
 # Mesmos dados usados em data/raw/un_wpp.csv / src/data_pipeline.py.
 
+ngii_bruto_brasil = calcular_ngii_puro(pop_base=62.7004, pop_topo=36.4930, nascimentos=2.5721, mortes=1.4984)
+ngii_puro_brasil = aplicar_falseabilidade_quantitativa(ngii_bruto_brasil, AJUSTES_FALSEABILIDADE_POR_PAIS["BRA"])
+
+print(f"NGII_Bruto (Brasil, pré-falseabilidade): {formatar_br(ngii_bruto_brasil)}")
+
 n_b = rodar_teste(
-    "Brasil 2024 (dados reais UN WPP)",
-    ngii_puro=calcular_ngii_puro(pop_base=62.7004, pop_topo=36.4930, nascimentos=2.5721, mortes=1.4984),
+    "Brasil 2024 (dados reais UN WPP + falseabilidade)",
+    ngii_puro=ngii_puro_brasil,
     fator_geracional=calcular_fator_geracional(tfr_atual=1.6143, tfr_25_anos_atras=2.3353),
 )
 
 print(
-    "Nota: N* > 1,0 é esperado para o Brasil sob esta fórmula — Pop_Topo "
-    "(59+) é bem menor que Pop_Base (0-21) na pirâmide etária brasileira "
-    "atual. Não é um erro de cálculo; é a fórmula do Anexo 1 aplicada a "
-    "dados reais, sem nenhum passo de normalização definido pela tese."
+    "Nota: N* > 1,0 é esperado para o Brasil mesmo pós-falseabilidade — a "
+    "tese não define nenhum passo de normalização do N_Base, e os 4 "
+    "ajustes reduzem o NGII_Bruto em ~32%, não o eliminam. Não é um erro "
+    "de cálculo; é a fórmula do Anexo 1 + Protocolo de Falseabilidade "
+    "(v9.0) aplicada a dados reais, sem nenhum passo de normalização "
+    "definido pela tese."
 )
