@@ -230,14 +230,23 @@ a versão usada pelo pipeline.
 
 A tese define estes limiares de duas formas que se contradizem entre si (ver
 Seção 3.2/Tabela 3 vs. Tabela 4/Anexo 8). Este projeto adota a convenção da
-**Tabela 4 / Anexo 8** ("nova fórmula"), na qual N* alto é melhor:
+**Tabela 4 / Anexo 8** ("nova fórmula"), na qual N* alto é melhor. Desde
+2026-07-09 (ver seção 8), o N* publicado é normalizado (`sqrt(N_Base)`) —
+os limiares abaixo aparecem nas duas escalas:
 
-| Zona | Faixa de N* | Farol |
-|---|---|---|
-| Expansão Forte | N* > 1,10 | +/n |
-| Equilíbrio Sustentável (PEA) | 0,80 ≤ N* ≤ 1,10 | +/n |
-| Tensão Acelerada | 0,50 ≤ N* < 0,80 | − |
-| Colapso de Narayama (PEC) | N* < 0,50 | − |
+| Zona | Faixa de N_Base (bruto) | Faixa de N* (normalizado) | Farol |
+|---|---|---|---|
+| Expansão Forte | N_Base > 1,10 | N* > 1,0488 | +/n |
+| Equilíbrio Sustentável (PEA) | 0,80 ≤ N_Base ≤ 1,10 | 0,8944 ≤ N* ≤ 1,0488 | +/n |
+| Tensão Acelerada | 0,50 ≤ N_Base < 0,80 | 0,7071 ≤ N* < 0,8944 | − |
+| Colapso de Narayama (PEC) | N_Base < 0,50 | N* < 0,7071 | − |
+
+As duas colunas classificam exatamente os mesmos países nas mesmas zonas —
+a raiz quadrada é estritamente monotônica, então não muda nenhuma
+classificação, só a régua usada pra lê-la. `classificar_zona_n_base`
+continua operando sobre o N_Base bruto (menos superfície de código); os
+limiares normalizados (`LIMIARES_SIMPLES_NORMALIZADOS` em `src/config.py`)
+servem só pra colorir a tabela na escala exibida.
 
 **PEEC** (Ponto de Esgotamento por Excesso de Contingente) não é um limiar de
 N* nesta convenção — é diagnosticado diretamente pela TFR: TFR > 2,8 indica
@@ -246,39 +255,53 @@ educá-lo e integrá-lo economicamente (ex.: Nigéria, Etiópia).
 
 Implementado em [`classificar_zona_n_base`](../src/indices.py).
 
-## 8. Nota sobre a ausência de normalização do N*
+## 8. Normalização do N* (raiz quadrada, decisão de 2026-07-09)
 
 A tese não especifica, em nenhuma seção (incluindo o Anexo 1, "Formalização
 Matemática do Modelo" — a seção mais formal), nenhum passo de normalização,
 limitação ou escala para o N_Base. A fórmula é publicada exatamente como:
 
 ```
-N*(i,t) = N_Base(i,t) = NGII_puro(i,t) × Fator_Geracional(i,t)
+N_Base(i,t) = NGII_puro(i,t) × Fator_Geracional(i,t)
 ```
 
 sem divisão por constante de referência, sem raiz/log, sem limitar a uma
-faixa (ex.: 0-2). As tabelas de interpretação (Tabela 4/Anexo 8, seção 7)
-**presumem implicitamente** que N* fica numa faixa próxima de 1 — mas isso
-não é garantido pela fórmula: para países jovens/alta fecundidade, onde
-`Pop_Topo` é pequeno frente a `Pop_Base`, o NGII_puro cresce sem limite
-matemático. Nem a composição ponderada de perfis (seção 3) nem o Protocolo
-de Falseabilidade quantitativo (seção 6, v9.0) eliminam isso — só reduzem a
-magnitude: RD Congo, Arábia Saudita, Nigéria e Etiópia continuam com N*
-entre 7 e 12 mesmo após a falseabilidade descontar ~32-45% do NGII_Bruto
-desses países (ver `data/processed/n_index_2024.csv`, colunas `ngii_bruto`
-e `ngii_puro`). Isso é uma lacuna real do modelo publicado, não um erro de
-implementação deste projeto: nenhum dos ajustes disponíveis na tese resolve
-o problema, só muda a magnitude. O usuário já sinalizou (2026-07-06) que
-matematicamente nenhum país deveria ficar acima de ~6 ou abaixo de ~0,3 —
-uma normalização/corte explícito ainda está pendente de decisão (ver
-roadmap, seção 9).
+faixa. Mesmo após a composição ponderada de perfis (seção 3) e o Protocolo
+de Falseabilidade quantitativo (seção 6, v9.0) — que juntos reduzem, mas
+não eliminam, o problema —, RD Congo, Arábia Saudita, Etiópia, Egito e
+Nigéria continuavam com N_Base entre ~6,6 e ~11,6, sem plausibilidade
+física (o usuário observou, em 2026-07-06, que nenhum país deveria passar
+de ~6 ou ficar abaixo de ~0,3).
+
+**Três métodos foram comparados com os dados reais dos 28 países** antes de
+decidir:
+
+| Método | RD Congo (maior) | Coreia do Sul (menor) | Problema |
+|---|---|---|---|
+| Truncamento (`min(6, max(0.3, N_Base))`) | 6,00 | 0,30 | Empata 5 países no teto e 3 no piso — perde diferenciação real |
+| Divisão pela mediana da amostra | 10,15 | 0,12 | Não limita nada — o problema original persiste |
+| **Raiz quadrada** (`sqrt(N_Base)`) — escolhida | **3,41** | **0,37** | Nenhum — ver abaixo |
+
+A raiz quadrada foi escolhida por preservar a ordenação total dos 28 países
+(sem nenhum empate), não exigir nenhuma constante arbitrária, e manter
+N_Base=1 como ponto fixo (`sqrt(1)=1`). **Diferente de outras lacunas
+documentadas neste projeto, esta normalização está sendo formalizada pelo
+próprio autor como parte da tese — não é uma extensão só do projeto.**
+
+```
+N*(i,t) = sqrt(N_Base(i,t))
+```
+
+Implementado em [`normalizar_n_base`](../src/indices.py). Os limiares de
+zona recalculados na escala normalizada estão na seção 7. `N_Base` (bruto)
+continua disponível ao lado de `N*` em `data/processed/n_index_2024.csv` e
+na tabela do ainu.systems, para transparência.
 
 Um documento de simulação de terceiros (produzido com ChatGPT/Grok, trazido
 ao projeto em 2026-07-01) alegava uma "normalização para escala 0-2", mas a
 verificação numérica linha a linha mostrou que o valor de "N*" publicado
 nesse documento era, na prática, uma cópia do Fator_Alocativo estimado — não
-uma normalização real do N_Base. Não há, portanto, nenhuma fonte confiável
-(nem a tese, nem o documento externo) que defina como conter esses valores.
+uma normalização real do N_Base. Não influenciou a decisão acima.
 
 ## 9. Roadmap Fase 2b — Versão Expandida (escolaridade)
 

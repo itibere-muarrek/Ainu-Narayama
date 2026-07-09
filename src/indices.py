@@ -27,6 +27,7 @@ quando alguma entrada já é None (propagação), em vez de levantar
 exceção.
 """
 
+import math
 from typing import Optional
 
 
@@ -250,3 +251,53 @@ def classificar_zona_n_base(n_base: Optional[float]) -> Optional[str]:
     if n_base >= LIMIAR_TENSAO_INFERIOR:
         return "Tensão Acelerada"
     return "Colapso de Narayama (PEC)"
+
+
+def normalizar_n_base(n_base: Optional[float]) -> Optional[float]:
+    """
+    Normaliza o N_Base para o N* reportado publicamente (decisão de
+    2026-07-09).
+
+    A tese nunca definiu um passo de normalização pro N_Base (ver
+    docs/definitions.md, seção 8) — mesmo após a composição ponderada
+    de perfis e o Protocolo de Falseabilidade quantitativo, países
+    jovens/alta fecundidade (RD Congo, Arábia Saudita, Etiópia, Egito,
+    Nigéria) ainda produziam N_Base entre ~6,6 e ~11,6, sem
+    plausibilidade física.
+
+    Três métodos foram comparados com os dados reais dos 28 países
+    antes de escolher este:
+    - Truncamento (min/max hard-cap): gera empates — 5 países colavam
+      no teto, 3 no piso, perdendo diferenciação real entre eles.
+    - Divisão pela mediana da amostra: não limita nada (o maior
+      permanecia em ~10x a mediana).
+    - Raiz quadrada (escolhida): preserva a ordenação total (nenhum
+      empate), não exige nenhuma constante arbitrária, e mantém
+      N_Base=1 como ponto fixo (sqrt(1)=1).
+
+    Diferente de outras lacunas documentadas neste projeto, esta
+    normalização está sendo formalizada pelo próprio autor como parte
+    da tese (não é uma extensão só do projeto).
+
+    Os limiares de zona (Tabela 4/Anexo 8) foram recalculados na mesma
+    escala — ver src.config.LIMIARES_SIMPLES_NORMALIZADOS. A
+    classificação de zona em si (classificar_zona_n_base) não muda:
+    como a raiz é estritamente monotônica para valores não-negativos,
+    classificar o N_Base bruto contra os limiares brutos dá exatamente
+    a mesma zona que classificar o N* normalizado contra os limiares
+    normalizados.
+
+    Args:
+        n_base: Resultado de calcular_n_base().
+
+    Returns:
+        sqrt(n_base), ou None se n_base for None ou negativo.
+
+    Exemplo:
+        >>> normalizar_n_base(11.6160)
+        3.408225344662527
+    """
+    if n_base is None or n_base < 0:
+        return None
+
+    return math.sqrt(n_base)

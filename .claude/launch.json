@@ -4,13 +4,13 @@
     {
       "name": "ainu-systems",
       "runtimeExecutable": "C:\\Users\\LENOVO\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe",
-      "runtimeArgs": ["-m", "streamlit", "run", "app/ainu_systems/app.py", "--server.headless", "true"],
+      "runtimeArgs": ["-m", "streamlit", "run", "app/ainu_systems/app.py", "--server.headless", "true", "--server.port", "8501"],
       "port": 8501
     },
     {
       "name": "narayama-live",
       "runtimeExecutable": "C:\\Users\\LENOVO\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe",
-      "runtimeArgs": ["-m", "streamlit", "run", "app/narayama_live/app.py", "--server.headless", "true"],
+      "runtimeArgs": ["-m", "streamlit", "run", "app/narayama_live/app.py", "--server.headless", "true", "--server.port", "8502"],
       "port": 8502
     }
   ]

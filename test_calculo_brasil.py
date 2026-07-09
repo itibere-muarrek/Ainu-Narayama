@@ -18,10 +18,11 @@ IMPORTANTE — leia antes de interpretar o resultado:
    src.config.AJUSTES_FALSEABILIDADE_POR_PAIS) antes de virar o
    NGII_puro usado no N_Base. Antes dessa data, o pipeline tratava o
    NGII_Bruto como se já fosse o NGII_puro, por falta de dado real.
-3. A tese não especifica nenhum passo de normalização do N_Base — os
-   valores do TESTE B abaixo continuam acima de 1,0 mesmo após a
-   falseabilidade (ela só reduz ~32%, não elimina a ausência de
-   normalização). Ver docs/definitions.md, seção 8.
+3. Desde 2026-07-09, o N_Base (bruto) é normalizado via raiz quadrada
+   pra virar o N* reportado publicamente (ver
+   src.indices.normalizar_n_base) — decisão que o autor está
+   incorporando na tese, não uma extensão externa. TESTE B abaixo
+   mostra os dois valores, bruto e normalizado.
 4. A própria tese publica valores de N* divergentes entre si em
    pontos distintos do texto (ver docs/definitions.md, seção 7, para o
    histórico completo) — nenhum é reproduzível sem os dados brutos
@@ -45,7 +46,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from src.config import AJUSTES_FALSEABILIDADE_POR_PAIS
 from src.falseability import aplicar_falseabilidade_quantitativa
-from src.indices import calcular_fator_geracional, calcular_n_base, calcular_ngii_puro, classificar_zona_n_base
+from src.indices import (
+    calcular_fator_geracional,
+    calcular_n_base,
+    calcular_ngii_puro,
+    classificar_zona_n_base,
+    normalizar_n_base,
+)
 
 
 def formatar_br(valor: float, casas: int = 4) -> str:
@@ -98,11 +105,15 @@ n_b = rodar_teste(
     fator_geracional=calcular_fator_geracional(tfr_atual=1.6143, tfr_25_anos_atras=2.3353),
 )
 
+n_b_normalizado = normalizar_n_base(n_b)
+print(f"N_Base (bruto): {formatar_br(n_b)}")
+print(f"N* (normalizado, sqrt(N_Base)): {formatar_br(n_b_normalizado)}")
+print()
+
 print(
-    "Nota: N* > 1,0 é esperado para o Brasil mesmo pós-falseabilidade — a "
-    "tese não define nenhum passo de normalização do N_Base, e os 4 "
-    "ajustes reduzem o NGII_Bruto em ~32%, não o eliminam. Não é um erro "
-    "de cálculo; é a fórmula do Anexo 1 + Protocolo de Falseabilidade "
-    "(v9.0) aplicada a dados reais, sem nenhum passo de normalização "
-    "definido pela tese."
+    "Nota: N_Base > 1,0 é esperado para o Brasil mesmo pós-falseabilidade "
+    "— os 4 ajustes reduzem o NGII_Bruto em ~32%, não o eliminam. A raiz "
+    "quadrada (decisão de 2026-07-09) comprime esse valor pro N* "
+    "reportado publicamente, sem alterar a zona de classificação (a raiz "
+    "é monotônica)."
 )

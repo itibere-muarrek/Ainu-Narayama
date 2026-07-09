@@ -36,6 +36,14 @@ src.falseability.aplicar_falseabilidade_quantitativa e
 src.config.AJUSTES_FALSEABILIDADE_POR_PAIS) para se tornar o
 NGII_puro real, que então alimenta o N_Base.
 
+Normalização (atualizada em 2026-07-09): `n_base` é o valor demográfico
+bruto (N_Base = NGII_puro × Fator_Geracional). `n_estrela` é o N*
+reportado publicamente — `sqrt(n_base)`, decisão do autor incorporada
+diretamente na tese (ver src.indices.normalizar_n_base pro racional
+completo). A zona (`status`) continua classificada a partir do
+`n_base` bruto — matematicamente equivalente, já que a raiz é
+monotônica.
+
 Fonte de dados: UN World Population Prospects 2024
 (population.un.org/wpp), arquivos "Demographic Indicators" e
 "Population by Single Age" (não os grupos de 5 anos — os cortes em
@@ -50,7 +58,13 @@ import pandas as pd
 from src.config import AJUSTES_FALSEABILIDADE_POR_PAIS, DATA_PROCESSED_DIR, DATA_RAW_DIR, PAISES
 from src.data_loader import carregar_dados_un
 from src.falseability import aplicar_falseabilidade_quantitativa
-from src.indices import calcular_fator_geracional, calcular_n_base, calcular_ngii_puro, classificar_zona_n_base
+from src.indices import (
+    calcular_fator_geracional,
+    calcular_n_base,
+    calcular_ngii_puro,
+    classificar_zona_n_base,
+    normalizar_n_base,
+)
 
 CICLO_GERACIONAL_ANOS = 25
 
@@ -68,11 +82,11 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
 
     Returns:
         DataFrame com uma linha por país (só os países com dados em
-        ambos os anos), colunas: codigo, n_base, farol, ngii_bruto,
-        ngii_puro, fator_geracional, fator_alocativo, status,
-        populacao. `farol` e `fator_alocativo` ficam None nesta fase
-        (ver docstring do módulo). Também grava o resultado em
-        data/processed/n_index_{ano}.csv.
+        ambos os anos), colunas: codigo, n_base, n_estrela, farol,
+        ngii_bruto, ngii_puro, fator_geracional, fator_alocativo,
+        status, populacao. `farol` e `fator_alocativo` ficam None
+        nesta fase (ver docstring do módulo). Também grava o resultado
+        em data/processed/n_index_{ano}.csv.
     """
     caminho_un = caminho_un or (DATA_RAW_DIR / "un_wpp.csv")
     df = carregar_dados_un(caminho_un)
@@ -106,11 +120,13 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
             tfr_25_anos_atras=df_base.loc[codigo, "tfr"],
         )
         n_base = calcular_n_base(ngii_puro, fator_geracional)
+        n_estrela = normalizar_n_base(n_base)
 
         resultados.append(
             {
                 "codigo": codigo,
                 "n_base": round(n_base, 4) if n_base is not None else None,
+                "n_estrela": round(n_estrela, 4) if n_estrela is not None else None,
                 "farol": None,  # Fator_Alocativo pendente (Fase 2b)
                 "ngii_bruto": round(ngii_bruto, 4) if ngii_bruto is not None else None,
                 "ngii_puro": round(ngii_puro, 4) if ngii_puro is not None else None,

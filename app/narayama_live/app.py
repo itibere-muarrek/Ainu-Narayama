@@ -13,7 +13,11 @@ src.config.PAISES_DESTAQUE_NARAYAMA_LIVE): Argentina, Brasil, China,
 Coreia do Sul, EUA, Itália, Japão.
 
 Fonte de dados esperada (produzida pelo pipeline da Fase 2+):
-data/processed/n_index_2024.csv — colunas: codigo, n_base, farol, status.
+data/processed/n_index_2024.csv — colunas: codigo, n_base, n_estrela,
+farol, status. O N* mostrado aqui é `n_estrela` (sqrt(n_base) —
+normalização de 2026-07-09, ver src.indices.normalizar_n_base), o
+valor comprimido pra faixa plausível, mais adequado pra uma interface
+pública minimalista do que o N_Base bruto.
 
 Convenção de zonas do N* adotada (Tabela 4 / Anexo 8 da tese — ver
 docs/definitions.md, seções 6 e 8): N* alto é melhor.
@@ -67,15 +71,15 @@ def carregar_destaques() -> pd.DataFrame:
 
     df["nome"] = df["codigo"].map(lambda c: PAISES[c]["nome"])
 
-    if "n_base" in df.columns:
+    if "n_estrela" in df.columns:
         def _formatar_n_estrela(linha: pd.Series) -> str | None:
-            if pd.isna(linha["n_base"]):
+            if pd.isna(linha["n_estrela"]):
                 return None
             if "farol" in df.columns and pd.notna(linha.get("farol")):
-                return f"{linha['n_base']:.2f}({linha['farol']})"
+                return f"{linha['n_estrela']:.2f}({linha['farol']})"
             # Farol ainda não calculado nesta fase (Fator_Alocativo
             # pendente — ver src/data_pipeline.py): mostra só o N*.
-            return f"{linha['n_base']:.2f}"
+            return f"{linha['n_estrela']:.2f}"
 
         df["N*"] = df.apply(_formatar_n_estrela, axis=1)
 
@@ -98,7 +102,7 @@ if df.empty:
 
 st.header("N* — 7 Países Destaque (2024)")
 
-df_tabela = df.sort_values("n_base").rename(columns={"nome": "País", "status": "Status"})
+df_tabela = df.sort_values("n_estrela").rename(columns={"nome": "País", "status": "Status"})
 
 colunas_exibidas = [c for c in ["País", "N*", "Status"] if c in df_tabela.columns]
 st.dataframe(df_tabela[colunas_exibidas], use_container_width=True, hide_index=True)
@@ -107,14 +111,14 @@ st.dataframe(df_tabela[colunas_exibidas], use_container_width=True, hide_index=T
 # Gráfico — N* por país
 # -----------------------------------------------------------------------
 
-if "n_base" in df.columns:
+if "n_estrela" in df.columns:
     fig = px.bar(
-        df.sort_values("n_base"),
+        df.sort_values("n_estrela"),
         x="nome",
-        y="n_base",
+        y="n_estrela",
         color="farol" if "farol" in df.columns else None,
         title="N* por país (2024)",
-        labels={"nome": "País", "n_base": "N*"},
+        labels={"nome": "País", "n_estrela": "N*"},
     )
     st.plotly_chart(fig, use_container_width=True)
 

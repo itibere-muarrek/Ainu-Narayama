@@ -1,29 +1,29 @@
-codigo,n_base,farol,ngii_bruto,ngii_puro,fator_geracional,fator_alocativo,status,populacao
-ARG,1.1339,,2.7582,1.9922,0.5692,,Expansão Forte,45.696
-AUS,1.1555,,1.8956,1.2445,0.9285,,Expansão Forte,26.713
-BRA,1.3761,,2.9493,1.9908,0.6913,,Expansão Forte,211.999
-CHL,0.6604,,1.7372,1.2017,0.5495,,Tensão Acelerada,19.765
-CHN,0.3514,,0.82,0.5308,0.662,,Colapso de Narayama (PEC),1419.321
-COD,11.616,,23.5033,12.9976,0.8937,,Expansão Forte,109.276
-DEU,0.397,,0.5559,0.3757,1.0567,,Colapso de Narayama (PEC),84.552
-EGY,6.8241,,14.0135,8.9797,0.7599,,Expansão Forte,116.538
-ETH,8.9968,,27.4569,15.4674,0.5817,,Expansão Forte,132.06
-FRA,0.5648,,0.906,0.6189,0.9126,,Tensão Acelerada,66.548
-GBR,0.6439,,1.0134,0.6983,0.9222,,Tensão Acelerada,69.138
-IDN,2.0986,,3.8544,2.5483,0.8235,,Expansão Forte,283.488
-IND,1.8702,,5.0524,3.2246,0.58,,Expansão Forte,1450.936
-IRN,2.7471,,5.1987,3.4079,0.8061,,Expansão Forte,91.568
-ITA,0.2444,,0.3764,0.2489,0.982,,Colapso de Narayama (PEC),59.343
-JPN,0.1813,,0.3168,0.1996,0.9083,,Colapso de Narayama (PEC),123.753
-KOR,0.1344,,0.4167,0.2691,0.4994,,Colapso de Narayama (PEC),51.718
-MAR,2.757,,5.4304,3.5994,0.766,,Expansão Forte,38.081
-MEX,2.7925,,6.1623,4.0789,0.6846,,Expansão Forte,130.861
-NGA,6.6544,,15.6827,9.2362,0.7205,,Expansão Forte,232.68
-POL,0.3882,,0.5673,0.4102,0.9464,,Colapso de Narayama (PEC),38.539
-RUS,0.6193,,0.7767,0.5028,1.2315,,Tensão Acelerada,144.82
-SAU,9.311,,30.9364,17.5654,0.5301,,Expansão Forte,33.963
-SWE,0.6177,,0.9672,0.6465,0.9554,,Tensão Acelerada,10.607
-THA,0.3059,,0.6707,0.4493,0.6808,,Colapso de Narayama (PEC),71.668
-USA,0.9234,,1.6128,1.133,0.815,,Equilíbrio Sustentável (PEA),345.427
-VNM,2.1883,,3.3763,2.3081,0.9481,,Expansão Forte,100.988
-ZAF,2.7571,,5.1685,3.1999,0.8616,,Expansão Forte,64.007
+codigo,n_base,n_estrela,farol,ngii_bruto,ngii_puro,fator_geracional,fator_alocativo,status,populacao
+ARG,1.1339,1.0649,,2.7582,1.9922,0.5692,,Expansão Forte,45.696
+AUS,1.1555,1.075,,1.8956,1.2445,0.9285,,Expansão Forte,26.713
+BRA,1.3761,1.1731,,2.9493,1.9908,0.6913,,Expansão Forte,211.999
+CHL,0.6604,0.8126,,1.7372,1.2017,0.5495,,Tensão Acelerada,19.765
+CHN,0.3514,0.5928,,0.82,0.5308,0.662,,Colapso de Narayama (PEC),1419.321
+COD,11.616,3.4082,,23.5033,12.9976,0.8937,,Expansão Forte,109.276
+DEU,0.397,0.6301,,0.5559,0.3757,1.0567,,Colapso de Narayama (PEC),84.552
+EGY,6.8241,2.6123,,14.0135,8.9797,0.7599,,Expansão Forte,116.538
+ETH,8.9968,2.9995,,27.4569,15.4674,0.5817,,Expansão Forte,132.06
+FRA,0.5648,0.7515,,0.906,0.6189,0.9126,,Tensão Acelerada,66.548
+GBR,0.6439,0.8025,,1.0134,0.6983,0.9222,,Tensão Acelerada,69.138
+IDN,2.0986,1.4487,,3.8544,2.5483,0.8235,,Expansão Forte,283.488
+IND,1.8702,1.3676,,5.0524,3.2246,0.58,,Expansão Forte,1450.936
+IRN,2.7471,1.6574,,5.1987,3.4079,0.8061,,Expansão Forte,91.568
+ITA,0.2444,0.4944,,0.3764,0.2489,0.982,,Colapso de Narayama (PEC),59.343
+JPN,0.1813,0.4258,,0.3168,0.1996,0.9083,,Colapso de Narayama (PEC),123.753
+KOR,0.1344,0.3666,,0.4167,0.2691,0.4994,,Colapso de Narayama (PEC),51.718
+MAR,2.757,1.6604,,5.4304,3.5994,0.766,,Expansão Forte,38.081
+MEX,2.7925,1.6711,,6.1623,4.0789,0.6846,,Expansão Forte,130.861
+NGA,6.6544,2.5796,,15.6827,9.2362,0.7205,,Expansão Forte,232.68
+POL,0.3882,0.6231,,0.5673,0.4102,0.9464,,Colapso de Narayama (PEC),38.539
+RUS,0.6193,0.7869,,0.7767,0.5028,1.2315,,Tensão Acelerada,144.82
+SAU,9.311,3.0514,,30.9364,17.5654,0.5301,,Expansão Forte,33.963
+SWE,0.6177,0.7859,,0.9672,0.6465,0.9554,,Tensão Acelerada,10.607
+THA,0.3059,0.5531,,0.6707,0.4493,0.6808,,Colapso de Narayama (PEC),71.668
+USA,0.9234,0.9609,,1.6128,1.133,0.815,,Equilíbrio Sustentável (PEA),345.427
+VNM,2.1883,1.4793,,3.3763,2.3081,0.9481,,Expansão Forte,100.988
+ZAF,2.7571,1.6604,,5.1685,3.1999,0.8616,,Expansão Forte,64.007

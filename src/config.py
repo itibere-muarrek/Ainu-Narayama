@@ -76,6 +76,14 @@ LIMIAR_EXPANSAO_FORTE = LIMIARES_SIMPLES["expansao_forte"]
 LIMIAR_PEA_INFERIOR = LIMIARES_SIMPLES["pea"]
 LIMIAR_TENSAO_INFERIOR = LIMIARES_SIMPLES["pec"]
 
+# Limiares na escala normalizada (N* = sqrt(N_Base), decisão de
+# 2026-07-09 — ver src.indices.normalizar_n_base). Derivados
+# dinamicamente de LIMIARES_SIMPLES, nunca hardcoded 2ª vez, pra não
+# ficarem dessincronizados. A classificação de zona em si continua
+# usando os limiares brutos (a raiz é monotônica, dá a mesma zona) —
+# estes aqui servem só pra UI colorir a tabela já na escala exibida.
+LIMIARES_SIMPLES_NORMALIZADOS = {k: math.sqrt(v) for k, v in LIMIARES_SIMPLES.items()}
+
 # ---------------------------------------------------------------------------
 # Farol do Fator_Alocativo (Seção V.III-bis)
 # ---------------------------------------------------------------------------

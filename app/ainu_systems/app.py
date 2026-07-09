@@ -12,7 +12,7 @@ restrita a pesquisadores: ainu.systems."
 
 Fontes de dados esperadas (produzidas pelo pipeline da Fase 2+):
 - data/processed/n_index_2024.csv: snapshot 2024, uma linha por país,
-  colunas: codigo, n_base, farol, ngii_bruto, ngii_puro,
+  colunas: codigo, n_base, n_estrela, farol, ngii_bruto, ngii_puro,
   fator_geracional, fator_alocativo, status, populacao.
 - data/processed/n_index_historico.csv: série histórica, colunas:
   codigo, ano, n_base.
@@ -21,12 +21,20 @@ Nome/perfil/região dos países vêm de src.config.PAISES (não são
 duplicados no CSV) e TFR 2024 vem de docs/paises_perfil.csv, usado só
 para o diagnóstico de PEEC (que é feito pela TFR, não pelo N*).
 
-Convenção de zonas do N* adotada (Tabela 4 / Anexo 8 da tese — ver
-docs/definitions.md, seções 6 e 8): N* alto é melhor.
-    N* > 1.10          -> Expansão Forte
-    0.80 <= N* <= 1.10  -> Equilíbrio Sustentável (PEA)
-    0.50 <= N* < 0.80   -> Tensão Acelerada
-    N* < 0.50           -> Colapso de Narayama (PEC)
+Normalização (decisão de 2026-07-09, ver src.indices.normalizar_n_base):
+`n_base` é o valor demográfico bruto (N_Base); `n_estrela` é o N*
+reportado publicamente (sqrt(n_base)). Os limiares abaixo são os
+brutos, usados pra classificar a zona (`status`) — a UI usa a versão
+normalizada (src.config.LIMIARES_SIMPLES_NORMALIZADOS) só pra colorir
+a tabela na escala exibida; a classificação em si é idêntica nas duas
+escalas (raiz é monotônica).
+
+Convenção de zonas do N_Base adotada (Tabela 4 / Anexo 8 da tese — ver
+docs/definitions.md, seções 6 e 8): N_Base alto é melhor.
+    N_Base > 1.10          -> Expansão Forte
+    0.80 <= N_Base <= 1.10  -> Equilíbrio Sustentável (PEA)
+    0.50 <= N_Base < 0.80   -> Tensão Acelerada
+    N_Base < 0.50           -> Colapso de Narayama (PEC)
 PEEC não é um limiar de N*: é diagnosticado por TFR > 2.8 (Cap. 3.2.1).
 """
 
@@ -40,7 +48,7 @@ import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
-from src.config import DATA_PROCESSED_DIR, DOCS_DIR, LIMIAR_PEEC_TFR, PAISES
+from src.config import DATA_PROCESSED_DIR, DOCS_DIR, LIMIARES_SIMPLES_NORMALIZADOS, LIMIAR_PEEC_TFR, PAISES
 from src.indices import classificar_zona_n_base
 
 # -----------------------------------------------------------------------
@@ -190,9 +198,9 @@ if not df.empty:
         risco_peec = int((df["tfr_2024"] > LIMIAR_PEEC_TFR).sum())
         st.sidebar.write(f"Risco PEEC (TFR > {LIMIAR_PEEC_TFR}): {risco_peec}")
 
-    if "n_base" in df.columns and "perfil" in df.columns:
+    if "n_estrela" in df.columns and "perfil" in df.columns:
         st.sidebar.markdown("**N\\* médio por perfil:**")
-        st.sidebar.dataframe(df.groupby("perfil")["n_base"].mean().round(3))
+        st.sidebar.dataframe(df.groupby("perfil")["n_estrela"].mean().round(3))
 
     if "fator_alocativo" in df.columns and "regiao" in df.columns:
         st.sidebar.markdown("**Fator_Alocativo médio por região:**")
@@ -207,18 +215,18 @@ else:
 st.header("Tabela Principal — N* por País (2024)")
 
 st.caption(
-    "NGII_Puro é depurado pelo Protocolo de Falseabilidade quantitativo "
-    "(4 ajustes multiplicativos — migração, inércia demográfica, "
-    "políticas natalistas temporárias, sub-registro/mortalidade — Anexo "
-    "9, v9.0). `NGII_Bruto` é o valor sem esse ajuste, mostrado ao lado "
-    "para transparência. Mesmo assim, N* segue sem normalização: a tese "
-    "(Anexo 1) não define nenhum passo de escala para o N_Base, então "
-    "países jovens/alta fecundidade continuam com valores bem acima de "
-    "1,0 — é consequência da fórmula, não erro de cálculo. "
-    "`Farol`/`Fator_Aloc` aparecem como \"Pendente (NTA)\" porque "
-    "dependem de National Transfer Accounts, ainda não integrado (Fase "
-    "2b). Detalhes em [docs/definitions.md](../../docs/definitions.md), "
-    "seções 6, 8 e 9."
+    "N* = raiz quadrada do N_Base (decisão de 2026-07-09, sendo "
+    "incorporada pelo autor na tese) — normaliza os casos extremos de "
+    "países jovens/alta fecundidade sem empatar países entre si nem "
+    "usar constante arbitrária. `N_Base` (valor demográfico bruto) "
+    "fica ao lado, pra transparência. `NGII_Puro` já é depurado pelo "
+    "Protocolo de Falseabilidade quantitativo (4 ajustes multiplicativos "
+    "— migração, inércia demográfica, políticas natalistas temporárias, "
+    "sub-registro/mortalidade — Anexo 9, v9.0); `NGII_Bruto` é o valor "
+    "sem esse ajuste. `Farol`/`Fator_Aloc` aparecem como \"Pendente "
+    "(NTA)\" porque dependem de National Transfer Accounts, ainda não "
+    "integrado (Fase 2b). Detalhes em "
+    "[docs/definitions.md](../../docs/definitions.md), seções 6, 7 e 8."
 )
 
 if not df_filtrado.empty:
@@ -230,7 +238,8 @@ if not df_filtrado.empty:
     df_tabela = df_tabela.sort_values("n_base").rename(
         columns={
             "nome": "País",
-            "n_base": "N*",
+            "n_estrela": "N*",
+            "n_base": "N_Base",
             "farol": "Farol",
             "ngii_bruto": "NGII_Bruto",
             "ngii_puro": "NGII_puro",
@@ -242,7 +251,7 @@ if not df_filtrado.empty:
 
     colunas_exibidas = [
         c
-        for c in ["País", "N*", "Farol", "NGII_Bruto", "NGII_puro", "Fator_Ger", "Fator_Aloc", "Status"]
+        for c in ["País", "N*", "N_Base", "Farol", "NGII_Bruto", "NGII_puro", "Fator_Ger", "Fator_Aloc", "Status"]
         if c in df_tabela.columns
     ]
 
@@ -251,9 +260,9 @@ if not df_filtrado.empty:
         n_estrela = linha.get("N*")
         if n_estrela is None or pd.isna(n_estrela):
             cor = ""
-        elif n_estrela < 0.50:
+        elif n_estrela < LIMIARES_SIMPLES_NORMALIZADOS["pec"]:
             cor = "background-color: #f8d7da"  # vermelho claro
-        elif n_estrela < 0.80:
+        elif n_estrela < LIMIARES_SIMPLES_NORMALIZADOS["pea"]:
             cor = "background-color: #fff3cd"  # amarelo claro
         else:
             cor = "background-color: #d4edda"  # verde claro
