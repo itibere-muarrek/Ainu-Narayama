@@ -44,6 +44,12 @@ completo). A zona (`status`) continua classificada a partir do
 `n_base` bruto — matematicamente equivalente, já que a raiz é
 monotônica.
 
+Zonas (atualizado em 2026-07-13): `status` usa
+`src.indices.classificar_zona_5` (5 zonas, revisão do autor de
+12/07/2026), não mais `classificar_zona_n_base` (4 zonas, mantida
+como referência histórica). Principal mudança: PEEC passa a ser
+também um limiar de N_Base/N*, não só diagnosticado por TFR.
+
 Fonte de dados: UN World Population Prospects 2024
 (population.un.org/wpp), arquivos "Demographic Indicators" e
 "Population by Single Age" (não os grupos de 5 anos — os cortes em
@@ -62,7 +68,7 @@ from src.indices import (
     calcular_fator_geracional,
     calcular_n_base,
     calcular_ngii_puro,
-    classificar_zona_n_base,
+    classificar_zona_5,
     normalizar_n_base,
 )
 
@@ -132,7 +138,7 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
                 "ngii_puro": round(ngii_puro, 4) if ngii_puro is not None else None,
                 "fator_geracional": round(fator_geracional, 4) if fator_geracional is not None else None,
                 "fator_alocativo": None,  # pendente (Fase 2b)
-                "status": classificar_zona_n_base(n_base),
+                "status": classificar_zona_5(n_base),
                 "populacao": round(linha["pop_total"], 3),
             }
         )

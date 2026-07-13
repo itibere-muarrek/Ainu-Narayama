@@ -253,6 +253,47 @@ def classificar_zona_n_base(n_base: Optional[float]) -> Optional[str]:
     return "Colapso de Narayama (PEC)"
 
 
+def classificar_zona_5(n_base: Optional[float]) -> Optional[str]:
+    """
+    Classifica o N_Base em uma das cinco zonas da revisão do autor
+    (12/07/2026, Seção 9-A.3/9-A.7), que substitui a convenção de 4
+    zonas (classificar_zona_n_base) como a oficial da tese. Principal
+    mudança: PEEC deixa de ser diagnosticado só por TFR e passa a ser
+    também um limiar de N_Base/N*.
+
+    Limiares (N_Base bruto — ver src.config.LIMIARES_5_ZONAS):
+        N_Base < 0,50                  -> Colapso de Narayama (PEC)
+        0,50 <= N_Base < 0,81          -> Tensão Acelerada
+        0,81 <= N_Base < 1,96          -> Equilíbrio Sustentável (PEA)
+        1,96 <= N_Base < 4,00          -> Tensão Populacional
+        N_Base >= 4,00                 -> Saturação por Overbirths (PEEC)
+
+    Args:
+        n_base: Resultado de calcular_n_base().
+
+    Returns:
+        Uma das 5 zonas acima, ou None se n_base for None.
+
+    Exemplo:
+        >>> classificar_zona_5(1.3761)
+        'Equilíbrio Sustentável (PEA)'
+    """
+    if n_base is None:
+        return None
+
+    from src.config import LIMIARES_5_ZONAS
+
+    if n_base < LIMIARES_5_ZONAS["pec"]:
+        return "Colapso de Narayama (PEC)"
+    if n_base < LIMIARES_5_ZONAS["tensao_acelerada"]:
+        return "Tensão Acelerada"
+    if n_base < LIMIARES_5_ZONAS["pea"]:
+        return "Equilíbrio Sustentável (PEA)"
+    if n_base < LIMIARES_5_ZONAS["tensao_populacional"]:
+        return "Tensão Populacional"
+    return "Saturação por Overbirths (PEEC)"
+
+
 def normalizar_n_base(n_base: Optional[float]) -> Optional[float]:
     """
     Normaliza o N_Base para o N* reportado publicamente (decisão de

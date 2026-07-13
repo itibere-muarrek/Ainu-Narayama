@@ -48,8 +48,7 @@ import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
-from src.config import DATA_PROCESSED_DIR, DOCS_DIR, LIMIARES_SIMPLES_NORMALIZADOS, LIMIAR_PEEC_TFR, PAISES
-from src.indices import classificar_zona_n_base
+from src.config import CORES_5_ZONAS, DATA_PROCESSED_DIR, DOCS_DIR, LIMIAR_PEEC_TFR, PAISES
 
 # -----------------------------------------------------------------------
 # Configuração da página
@@ -128,9 +127,6 @@ def carregar_n_index_2024() -> pd.DataFrame:
     except FileNotFoundError:
         df["tfr_2024"] = None
 
-    if "n_base" in df.columns:
-        df["zona"] = df["n_base"].apply(classificar_zona_n_base)
-
     return df
 
 
@@ -189,9 +185,15 @@ if not df_filtrado.empty:
 st.sidebar.header("Estatísticas")
 
 if not df.empty:
-    contagem_zonas = df["zona"].value_counts()
+    contagem_zonas = df["status"].value_counts()
     st.sidebar.markdown("**Países por zona de N\\*:**")
-    for zona in ["Colapso de Narayama (PEC)", "Tensão Acelerada", "Equilíbrio Sustentável (PEA)", "Expansão Forte"]:
+    for zona in [
+        "Colapso de Narayama (PEC)",
+        "Tensão Acelerada",
+        "Equilíbrio Sustentável (PEA)",
+        "Tensão Populacional",
+        "Saturação por Overbirths (PEEC)",
+    ]:
         st.sidebar.write(f"{zona}: {contagem_zonas.get(zona, 0)}")
 
     if "tfr_2024" in df.columns:
@@ -256,16 +258,10 @@ if not df_filtrado.empty:
     ]
 
     def colorir_por_zona(linha: pd.Series) -> list:
-        """Vermelho = Colapso (PEC), amarelo = Tensão Acelerada, verde = PEA/Expansão Forte."""
-        n_estrela = linha.get("N*")
-        if n_estrela is None or pd.isna(n_estrela):
-            cor = ""
-        elif n_estrela < LIMIARES_SIMPLES_NORMALIZADOS["pec"]:
-            cor = "background-color: #f8d7da"  # vermelho claro
-        elif n_estrela < LIMIARES_SIMPLES_NORMALIZADOS["pea"]:
-            cor = "background-color: #fff3cd"  # amarelo claro
-        else:
-            cor = "background-color: #d4edda"  # verde claro
+        """Cores das 5 zonas (Seção 9-A.7) — mesma fonte que a coluna Status."""
+        status = linha.get("Status")
+        cor_hex = CORES_5_ZONAS.get(status)
+        cor = f"background-color: {cor_hex}" if cor_hex else ""
         return [cor] * len(linha)
 
     st.dataframe(
@@ -335,6 +331,55 @@ else:
         "Série histórica indisponível: `data/processed/n_index_historico.csv` "
         "ainda não foi gerado pelo pipeline (Fase 2+)."
     )
+
+# -----------------------------------------------------------------------
+# Tabela Geracional de Narayama (visualização em formato periódico)
+# -----------------------------------------------------------------------
+
+st.header("Tabela Geracional de Narayama")
+st.caption(
+    "Grade comparativa dos 28 países segundo o N* (Seção 9-A.7 da tese, "
+    "revisão de 12/07/2026), organizada nas 5 zonas da Seção 9-A.3. "
+    "Dentro de cada zona, países ordenados por N* decrescente — mostra "
+    "sempre os 28 países, independente dos filtros de Perfil/Região "
+    "acima. Farol institucional, gerações até estabilização e projeção "
+    "populacional não aparecem aqui: dependem de National Transfer "
+    "Accounts (Fator_Alocativo) ou de um modelo de projeção TFR que "
+    "este projeto ainda não implementa — ver seções 5 e 9 de "
+    "[docs/definitions.md](../../docs/definitions.md)."
+)
+
+_ORDEM_ZONAS = [
+    "Colapso de Narayama (PEC)",
+    "Tensão Acelerada",
+    "Equilíbrio Sustentável (PEA)",
+    "Tensão Populacional",
+    "Saturação por Overbirths (PEEC)",
+]
+
+if not df.empty and {"status", "n_estrela", "codigo"}.issubset(df.columns):
+    _linhas_html = []
+    for _zona in _ORDEM_ZONAS:
+        _paises_zona = df[df["status"] == _zona].sort_values("n_estrela", ascending=False)
+        _cor = CORES_5_ZONAS.get(_zona, "#eeeeee")
+        _tiles = "".join(
+            f'<div style="background:{_cor};border:1px solid rgba(0,0,0,0.2);'
+            f'border-radius:6px;padding:6px 10px;min-width:64px;text-align:center;'
+            f'font-family:monospace;color:#1a1a1a;">'
+            f'<div style="font-weight:700;font-size:0.95em;">{_linha.codigo}</div>'
+            f'<div style="font-size:0.85em;">{_linha.n_estrela:.2f}</div>'
+            f"</div>"
+            for _linha in _paises_zona.itertuples()
+        )
+        _linhas_html.append(
+            f'<div style="margin-bottom:12px;">'
+            f'<div style="font-size:0.85em;font-weight:600;margin-bottom:4px;">{_zona} ({len(_paises_zona)})</div>'
+            f'<div style="display:flex;flex-wrap:wrap;gap:6px;">{_tiles}</div>'
+            f"</div>"
+        )
+    st.markdown("".join(_linhas_html), unsafe_allow_html=True)
+else:
+    st.write("Dados insuficientes para montar a tabela geracional.")
 
 # -----------------------------------------------------------------------
 # Rodapé

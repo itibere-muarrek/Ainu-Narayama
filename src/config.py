@@ -85,6 +85,40 @@ LIMIAR_TENSAO_INFERIOR = LIMIARES_SIMPLES["pec"]
 LIMIARES_SIMPLES_NORMALIZADOS = {k: math.sqrt(v) for k, v in LIMIARES_SIMPLES.items()}
 
 # ---------------------------------------------------------------------------
+# Classificação de 5 zonas (revisão do autor, 12/07/2026)
+# ---------------------------------------------------------------------------
+# A tese passou a definir PEEC como limiar de N* (antes era diagnosticado
+# só por TFR — ver LIMIAR_PEEC_TFR acima, mantido por compatibilidade).
+# Os 4 limiares em N_Base abaixo (0,50/0,81/1,96/4,00) correspondem
+# exatamente às raízes quadradas de N* = 0,71/0,90/1,40/2,00 — 3 deles
+# (0,81=0,9²; 1,96=1,4²; 4,00=2,0²) são quadrados perfeitos; o quarto
+# (0,50) é o limiar original PEC/Tensão Acelerada da Tabela 4/Anexo 8,
+# inalterado (sua raiz, 0,7071, foi só arredondada para 0,71 na escala
+# nova — não é quadrado perfeito, ao contrário do que uma nota do autor
+# na tese afirma).
+#
+# classificar_zona_n_base (4 zonas, Tabela 4/Anexo 8) permanece intacta
+# como referência histórica — não é mais a usada pelo pipeline.
+
+LIMIARES_5_ZONAS = {
+    "pec": 0.50,
+    "tensao_acelerada": 0.81,
+    "pea": 1.96,
+    "tensao_populacional": 4.00,
+}
+
+LIMIARES_5_ZONAS_NORMALIZADOS = {k: math.sqrt(v) for k, v in LIMIARES_5_ZONAS.items()}
+
+# Cores exatas da legenda da tese (Seção 9-A.7).
+CORES_5_ZONAS = {
+    "Colapso de Narayama (PEC)": "#f5c2c7",  # vermelho
+    "Tensão Acelerada": "#ffdba8",  # laranja
+    "Equilíbrio Sustentável (PEA)": "#cfe2ff",  # azul
+    "Tensão Populacional": "#fff3cd",  # amarelo-claro
+    "Saturação por Overbirths (PEEC)": "#ffd60a",  # amarelo forte
+}
+
+# ---------------------------------------------------------------------------
 # Farol do Fator_Alocativo (Seção V.III-bis)
 # ---------------------------------------------------------------------------
 
