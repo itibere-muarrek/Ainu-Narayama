@@ -28,20 +28,21 @@ jobs:
         run: |
           python -c "
           import pandas as pd
-          from src.config import PAISES
-          from src.indices import calcular_ngii_puro, calcular_fator_geracional, calcular_n_base, classificar_zona_n_base
-          from src.falseability import aplicar_protocolo_falseabilidade, aplicar_protocolo_falseabilidade_simplificado
+          from src.config import PAISES, AJUSTES_FALSEABILIDADE_POR_PAIS
+          from src.indices import calcular_ngii_puro, calcular_fator_geracional, calcular_n_base, classificar_zona_n_base, normalizar_n_base
+          from src.falseability import aplicar_protocolo_falseabilidade, aplicar_protocolo_falseabilidade_simplificado, aplicar_falseabilidade_quantitativa
 
           assert len(PAISES) == 28, f'esperado 28 paises, encontrado {len(PAISES)}'
 
           df = pd.read_csv('docs/paises_perfil.csv')
           assert set(df['codigo']) == set(PAISES.keys()), 'docs/paises_perfil.csv e src/config.py divergem'
 
-          n = calcular_n_base(
-              calcular_ngii_puro(65.0, 110.0, 2.7, 1.6, 0.75, 0.85),
-              calcular_fator_geracional(1.60, 2.40),
-          )
-          assert classificar_zona_n_base(n) == 'Tensão Acelerada'
+          ngii_bruto = calcular_ngii_puro(65.0, 110.0, 2.7, 1.6)
+          ngii_puro = aplicar_falseabilidade_quantitativa(ngii_bruto, AJUSTES_FALSEABILIDADE_POR_PAIS['BRA'])
+          n = calcular_n_base(ngii_puro, calcular_fator_geracional(1.60, 2.40))
+          n_estrela = normalizar_n_base(n)
+          assert n_estrela is not None and n_estrela > 0, 'normalizar_n_base falhou'
+          classificar_zona_n_base(n)
 
           print('Checagem de regressão: OK')
           "

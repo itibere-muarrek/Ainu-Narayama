@@ -207,6 +207,17 @@ Implementado em [`calcular_fator_alocativo`](../src/indices.py) e
 > multiplicativa declarada no texto. A aritmética foi corrigida antes de
 > incorporar aqui — os 28 países recalculados corretamente continuam
 > dentro do critério de aceitação (25%-45%) da v9.0.
+>
+> **Automação parcial (2026-07-13)**: `scripts/build_migracao_raw.py`
+> coleta automaticamente, via UN International Migrant Stock 2024, um
+> **proxy** do ajuste migratório — % da população total que é imigrante
+> (estoque), não "% de nascimentos de mães imigrantes nos últimos 10
+> anos" (a definição exata acima). Grava em `data/raw/migracao_un.csv`;
+> não substitui `AJUSTES_FALSEABILIDADE_POR_PAIS` automaticamente — usar
+> esse dado pra recalibrar é decisão do usuário, não do script. Os
+> ajustes de inércia demográfica e sub-registro/mortalidade seguem sem
+> automação (IHME exige conta; políticas natalistas não são dado
+> estruturado — ver `docs/infraestrutura.md`, seção 2.1).
 
 ### Versão anterior (v8.0, substituída) — 7 testes qualitativos
 

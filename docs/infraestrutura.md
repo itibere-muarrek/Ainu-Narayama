@@ -31,10 +31,33 @@ Render (build + hospedagem, redeploy automático)
 | Commit atual | `26a33b5` |
 | Histórico anterior (v4.0, FastAPI/Railway, abandonado) | preservado na tag `archive/v4.0-railway` |
 | CI | `.github/workflows/ci.yml` — roda a cada push/PR em `main`: instala dependências, valida os 28 países (`config.py` ↔ `paises_perfil.csv`), roda `test_calculo_brasil.py`. Não faz deploy (Render já redesploya sozinho). |
+| Bot de coleta de dados | `.github/workflows/atualizar_dados.yml` (novo, 2026-07-13) — cron mensal (dia 1, 03:00 UTC) + disparo manual (`workflow_dispatch`). Roda `scripts/build_un_wpp_raw.py` e `scripts/build_migracao_raw.py`; **só abre um Pull Request se algo mudou** — nunca commita direto em `main`, nunca redesploya sozinho. Revisão humana continua obrigatória antes do merge. |
 
 Não há workflow de deploy no GitHub Actions — nem Render nem (se algum dia
 for usado) Streamlit Cloud precisam disso; ambos observam o repositório
-diretamente.
+diretamente. O bot de coleta (acima) também não implanta nada: ele só
+propõe atualização de dado via PR.
+
+### 2.1 Bot de coleta de dados — fontes cobertas e limites
+
+Origem: pedido do usuário por um "bot bem construído" pra automatizar
+coleta de dados das fórmulas, em vez de repetir scripts manualmente.
+Nem toda fonte é automatizável sem login/curadoria — mapeamento feito
+antes de implementar:
+
+| Dado | Fonte | Automatizado? |
+|---|---|---|
+| Pop_Base/Pop_Topo/Nasc/Mortes/TFR | UN World Population Prospects | ✅ `scripts/build_un_wpp_raw.py` |
+| Migratório (falseabilidade, proxy) | UN International Migrant Stock 2024 | ✅ `scripts/build_migracao_raw.py` |
+| Sub-registro/Mortalidade (falseabilidade) | IHME GBD | ❌ exige criar conta em `ghdx.healthdata.org`, sem API pública confirmada |
+| Políticas Natalistas Temporárias (falseabilidade) | — | ❌ não é dado estruturado, exige pesquisa qualitativa por país |
+| Fator_Alocativo (NTA) | NTA Project | ❌ fora de escopo desta fase (ver docs/definitions.md, seção 5) |
+
+O ajuste "migratório" automatizado é um **proxy**: mede % da população
+total que é imigrante (estoque), não "% de nascimentos de mães
+imigrantes nos últimos 10 anos" (a definição exata do Anexo 9) — ver
+`scripts/build_migracao_raw.py` e `docs/definitions.md` seção 6 para a
+ressalva completa.
 
 ## 3. Render (hospedagem)
 

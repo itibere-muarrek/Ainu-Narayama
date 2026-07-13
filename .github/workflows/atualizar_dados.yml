@@ -1,0 +1,68 @@
+name: Atualizar dados (bot agendado)
+
+# "Bot de coleta de dados" (2026-07-13, Fase 1): roda os scripts de
+# coleta (UN WPP + migração), e SÓ abre um Pull Request se algo mudou
+# — nunca commita direto em main, nunca dispara redeploy sozinho. A
+# revisão de qualquer mudança de dado continua humana, mesmo padrão
+# seguido no resto do projeto.
+#
+# Fontes automatizadas nesta fase: UN World Population Prospects
+# (scripts/build_un_wpp_raw.py) e UN International Migrant Stock
+# (scripts/build_migracao_raw.py, proxy do ajuste "migratório" da
+# falseabilidade — ver docstring do script). IHME (sub-registro) e
+# políticas natalistas continuam fora de escopo (não automatizáveis
+# sem conta/pesquisa qualitativa — ver docs/definitions.md, seção 6).
+
+on:
+  schedule:
+    - cron: "0 3 1 * *" # dia 1 de cada mês, 03:00 UTC
+  workflow_dispatch: {} # permite rodar manualmente a qualquer momento
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Instalar dependências
+        run: pip install -r app/requirements.txt
+
+      - name: Rodar coleta — UN WPP
+        run: python scripts/build_un_wpp_raw.py --output data/raw/un_wpp.csv
+
+      - name: Rodar coleta — Migração (UN Migrant Stock)
+        run: python scripts/build_migracao_raw.py --output data/raw/migracao_un.csv
+
+      - name: Checar se algo mudou
+        id: diff
+        run: |
+          if git diff --quiet -- data/raw/un_wpp.csv data/raw/migracao_un.csv; then
+            echo "mudou=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "mudou=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Abrir Pull Request com os dados atualizados
+        if: steps.diff.outputs.mudou == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "ainu-bot"
+          git config user.email "ainu-bot@users.noreply.github.com"
+          branch="bot/atualizacao-dados-$(date +%Y-%m-%d)"
+          git checkout -b "$branch"
+          git add data/raw/un_wpp.csv data/raw/migracao_un.csv
+          git commit -m "Atualização automática de dados (UN WPP + migração)"
+          git push origin "$branch"
+          gh pr create \
+            --title "Bot: atualização automática de dados ($(date +%Y-%m-%d))" \
+            --body "Rodado automaticamente pelo workflow \`atualizar_dados.yml\`. Revisar o diff de \`data/raw/un_wpp.csv\` e \`data/raw/migracao_un.csv\` antes de mergear — nada foi enviado a produção, o pipeline só é reexecutado depois do merge em \`main\`." \
+            --base main \
+            --head "$branch"
