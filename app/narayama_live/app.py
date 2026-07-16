@@ -27,6 +27,12 @@ equilíbrio no meio da escala. N* muito baixo (< 0,71) é Colapso de
 Narayama (PEC); N* muito alto (≥ 2,00) é Saturação por Overbirths
 (PEEC); o ideal fica no meio, entre 0,90 e 1,40 (Equilíbrio
 Sustentável / PEA).
+
+Ordem da página (reorganizada em 2026-07-16, a pedido do autor: "a
+tabela geracional de narayama deve encabeçar a página"): a Tabela
+Geracional agora é o primeiro conteúdo visual da página, logo após o
+cabeçalho/legenda — a tabela minimalista e o gráfico de barras viram
+detalhe de apoio, abaixo dela.
 """
 
 import sys
@@ -42,6 +48,7 @@ from src.config import (
     CODIGO_DDI_POR_PAIS,
     CORES_5_ZONAS,
     DATA_PROCESSED_DIR,
+    DATA_RAW_DIR,
     PAISES,
     PAISES_DESTAQUE_NARAYAMA_LIVE,
 )
@@ -107,6 +114,14 @@ def carregar_destaques() -> pd.DataFrame:
 
         df["N*"] = df.apply(_formatar_n_estrela, axis=1)
 
+    try:
+        conv_df = pd.read_csv(DATA_RAW_DIR / "convergencia_un.csv")
+        conv_df = conv_df.rename(columns={"pais_codigo": "codigo"})[["codigo", "p_eq", "ano_eq"]]
+        df = df.merge(conv_df, on="codigo", how="left")
+    except FileNotFoundError:
+        df["p_eq"] = None
+        df["ano_eq"] = None
+
     return df
 
 
@@ -119,6 +134,81 @@ if df.empty:
         "(Fase 2)."
     )
     st.stop()
+
+# -----------------------------------------------------------------------
+# Tabela Geracional de Narayama (versão reduzida, 7 países destaque)
+# -----------------------------------------------------------------------
+# Mesma grade do ainu.systems (ver app/ainu_systems/app.py — Seção
+# 9-A.7 da tese), portada em 2026-07-15. Movida para o topo da página
+# em 2026-07-16, a pedido do autor.
+
+st.header("Tabela Geracional de Narayama")
+st.caption(
+    "Grade dos 7 países destaque por zona do Índice Narayama (Saturação/"
+    "PEEC → Colapso/PEC), países ordenados por população atual dentro de "
+    "cada zona. Farol institucional aparece como lacuna (`s/d`) — mesma "
+    "explicação do quadro acima."
+)
+st.caption(
+    "**A seta mostra População atual → P_eq**: o tamanho populacional "
+    "de equilíbrio, ~1 geração (25 anos) depois de um cenário em que a "
+    "TFR salta para o nível de reposição (~2,1) e a migração vai a "
+    "zero — dado real da UN WPP 2024 (variante \"Instant replacement "
+    "zero migration\"), não uma projeção nossa. **Não é uma previsão**: "
+    "é o piso/teto demográfico que a inércia etária impõe mesmo num "
+    "cenário ideal de recuperação da fecundidade. O tempo real até a "
+    "sociedade atingir TFR=2,1 (num cenário gradual em vez de "
+    "instantâneo) continua em aberto — ver "
+    "[ainu.systems](https://ainu.systems) para o detalhamento completo."
+)
+
+_ORDEM_ZONAS = [
+    "Saturação por Overbirths (PEEC)",
+    "Tensão Populacional",
+    "Equilíbrio Sustentável (PEA)",
+    "Tensão Acelerada",
+    "Colapso de Narayama (PEC)",
+]
+
+if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
+    _blocos_html = []
+    for _zona in _ORDEM_ZONAS:
+        _paises_zona = df[df["status"] == _zona].sort_values("populacao", ascending=False)
+        if _paises_zona.empty:
+            continue
+        _cor = CORES_5_ZONAS.get(_zona, "#eeeeee")
+        _cards = []
+        for _linha in _paises_zona.itertuples():
+            _ddi = CODIGO_DDI_POR_PAIS.get(_linha.codigo, "?")
+            _pop_atual = f"{_linha.populacao:.0f}mi"
+            _p_eq = getattr(_linha, "p_eq", None)
+            _pop_eq = f"{_p_eq:.0f}mi" if pd.notna(_p_eq) else "s/d"
+            _cards.append(
+                f'<div style="background:{_cor};border:2px solid #1a1a1a;'
+                f'border-radius:6px;padding:8px;margin-bottom:6px;'
+                f'text-align:center;font-family:monospace;color:#1a1a1a;">'
+                f'<div style="font-weight:700;font-size:0.8em;">{_linha.nome} ({_ddi})</div>'
+                f'<div style="font-weight:700;font-size:1.2em;">{_linha.n_estrela:.2f}'
+                f'<span style="font-size:0.55em;font-weight:400;"> (s/d)</span></div>'
+                f'<div style="font-size:0.72em;">{_pop_atual} → {_pop_eq}</div>'
+                f"</div>"
+            )
+        _blocos_html.append(
+            f'<div style="flex:1;min-width:120px;">'
+            f'<div style="font-size:0.75em;font-weight:600;margin-bottom:6px;text-align:center;">'
+            f"{_zona} ({len(_paises_zona)})</div>"
+            f'{"".join(_cards)}'
+            f"</div>"
+        )
+    _grade_html = (
+        '<div style="display:flex;gap:8px;align-items:flex-start;'
+        'border-bottom:2px solid #1a1a1a;padding-bottom:8px;">'
+        + "".join(_blocos_html)
+        + "</div>"
+        + '<div style="text-align:right;font-size:0.8em;font-weight:600;margin-top:4px;">'
+        "Índice Narayama →</div>"
+    )
+    st.markdown(_grade_html, unsafe_allow_html=True)
 
 # -----------------------------------------------------------------------
 # Tabela minimalista
@@ -145,67 +235,6 @@ if "n_estrela" in df.columns:
         labels={"nome": "País", "n_estrela": "N*"},
     )
     st.plotly_chart(fig, use_container_width=True)
-
-# -----------------------------------------------------------------------
-# Tabela Geracional de Narayama (versão reduzida, 7 países destaque)
-# -----------------------------------------------------------------------
-# Mesma grade do ainu.systems (ver app/ainu_systems/app.py — Seção
-# 9-A.7 da tese), portada em 2026-07-15, restrita aos 7 países
-# destaque desta plataforma.
-
-st.header("Tabela Geracional de Narayama")
-st.caption(
-    "Grade dos 7 países destaque por zona do Índice Narayama (Saturação/"
-    "PEEC → Colapso/PEC), países ordenados por população atual dentro de "
-    "cada zona. Farol institucional e população projetada aparecem como "
-    "lacuna (`s/d` / `pendente`) — mesma explicação do quadro acima."
-)
-
-_ORDEM_ZONAS = [
-    "Saturação por Overbirths (PEEC)",
-    "Tensão Populacional",
-    "Equilíbrio Sustentável (PEA)",
-    "Tensão Acelerada",
-    "Colapso de Narayama (PEC)",
-]
-
-if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
-    _blocos_html = []
-    for _zona in _ORDEM_ZONAS:
-        _paises_zona = df[df["status"] == _zona].sort_values("populacao", ascending=False)
-        if _paises_zona.empty:
-            continue
-        _cor = CORES_5_ZONAS.get(_zona, "#eeeeee")
-        _cards = []
-        for _linha in _paises_zona.itertuples():
-            _ddi = CODIGO_DDI_POR_PAIS.get(_linha.codigo, "?")
-            _pop_atual = f"{_linha.populacao:.0f}mi"
-            _cards.append(
-                f'<div style="background:{_cor};border:2px solid #1a1a1a;'
-                f'border-radius:6px;padding:8px;margin-bottom:6px;'
-                f'text-align:center;font-family:monospace;color:#1a1a1a;">'
-                f'<div style="font-weight:700;font-size:0.8em;">{_linha.nome} ({_ddi})</div>'
-                f'<div style="font-weight:700;font-size:1.2em;">{_linha.n_estrela:.2f}'
-                f'<span style="font-size:0.55em;font-weight:400;"> (s/d)</span></div>'
-                f'<div style="font-size:0.72em;">{_pop_atual} → pendente</div>'
-                f"</div>"
-            )
-        _blocos_html.append(
-            f'<div style="flex:1;min-width:120px;">'
-            f'<div style="font-size:0.75em;font-weight:600;margin-bottom:6px;text-align:center;">'
-            f"{_zona} ({len(_paises_zona)})</div>"
-            f'{"".join(_cards)}'
-            f"</div>"
-        )
-    _grade_html = (
-        '<div style="display:flex;gap:8px;align-items:flex-start;'
-        'border-bottom:2px solid #1a1a1a;padding-bottom:8px;">'
-        + "".join(_blocos_html)
-        + "</div>"
-        + '<div style="text-align:right;font-size:0.8em;font-weight:600;margin-top:4px;">'
-        "Índice Narayama →</div>"
-    )
-    st.markdown(_grade_html, unsafe_allow_html=True)
 
 # -----------------------------------------------------------------------
 # Rodapé

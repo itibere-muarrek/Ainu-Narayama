@@ -52,6 +52,7 @@ from src.config import (
     CODIGO_DDI_POR_PAIS,
     CORES_5_ZONAS,
     DATA_PROCESSED_DIR,
+    DATA_RAW_DIR,
     DOCS_DIR,
     LIMIAR_PEEC_TFR,
     PAISES,
@@ -133,6 +134,14 @@ def carregar_n_index_2024() -> pd.DataFrame:
         df = df.merge(tfr_df, on="codigo", how="left")
     except FileNotFoundError:
         df["tfr_2024"] = None
+
+    try:
+        conv_df = pd.read_csv(DATA_RAW_DIR / "convergencia_un.csv")
+        conv_df = conv_df.rename(columns={"pais_codigo": "codigo"})[["codigo", "p_eq", "ano_eq"]]
+        df = df.merge(conv_df, on="codigo", how="left")
+    except FileNotFoundError:
+        df["p_eq"] = None
+        df["ano_eq"] = None
 
     return df
 
@@ -358,15 +367,21 @@ st.caption(
     "países, independente dos filtros de Perfil/Região acima."
 )
 st.caption(
-    "⚠️ **Lacunas registradas nos cards**: `farol (s/d)` — depende do "
+    "⚠️ **Lacuna registrada nos cards**: `farol (s/d)` — depende do "
     "Fator_Alocativo/NTA, sem fonte de dado real ainda (ver "
-    "docs/definitions.md, seção 5). `pop. projetada: pendente` — "
-    "depende de um modelo de projeção demográfica (TFR convergindo a "
-    "2,1, gerações até estabilização) que este projeto ainda não "
-    "implementa; a tese reserva isso para a Fase 5 (simulações OLG), "
-    "que faz mais sentido construir com a colaboração de um "
-    "demógrafo do que decidir sozinho agora — ver README.md, "
-    "\"Próximas Fases\"."
+    "docs/definitions.md, seção 5)."
+)
+st.caption(
+    "**A seta mostra População atual → P_eq**: o tamanho populacional "
+    "de equilíbrio, ~1 geração (25 anos) depois de um cenário em que a "
+    "TFR salta para o nível de reposição (~2,1) e a migração vai a "
+    "zero — dado real da UN WPP 2024 (variante \"Instant replacement "
+    "zero migration\"), não uma projeção nossa. **Não é uma previsão**: "
+    "é o piso/teto demográfico que a inércia etária impõe mesmo num "
+    "cenário ideal de recuperação da fecundidade — formalização do "
+    "autor (2026-07-16), P_eq = P_E(t_c + 25). O tempo real até a "
+    "sociedade atingir TFR=2,1 (T_2.1, num cenário gradual em vez de "
+    "instantâneo) continua em aberto — ver docs/definitions.md, seção 8-B."
 )
 
 _ORDEM_ZONAS = [
@@ -386,6 +401,8 @@ if not df.empty and {"status", "n_estrela", "codigo", "nome", "populacao"}.issub
         for _linha in _paises_zona.itertuples():
             _ddi = CODIGO_DDI_POR_PAIS.get(_linha.codigo, "?")
             _pop_atual = f"{_linha.populacao:.0f}mi"
+            _p_eq = getattr(_linha, "p_eq", None)
+            _pop_eq = f"{_p_eq:.0f}mi" if pd.notna(_p_eq) else "s/d"
             _cards.append(
                 f'<div style="background:{_cor};border:2px solid #1a1a1a;'
                 f'border-radius:6px;padding:8px;margin-bottom:6px;'
@@ -393,7 +410,7 @@ if not df.empty and {"status", "n_estrela", "codigo", "nome", "populacao"}.issub
                 f'<div style="font-weight:700;font-size:0.8em;">{_linha.nome} ({_ddi})</div>'
                 f'<div style="font-weight:700;font-size:1.2em;">{_linha.n_estrela:.2f}'
                 f'<span style="font-size:0.55em;font-weight:400;"> (s/d)</span></div>'
-                f'<div style="font-size:0.72em;">{_pop_atual} → pendente</div>'
+                f'<div style="font-size:0.72em;">{_pop_atual} → {_pop_eq}</div>'
                 f"</div>"
             )
         _blocos_html.append(

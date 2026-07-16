@@ -19,15 +19,16 @@ pip install -r app/requirements.txt
 ### 2. Obter dados
 
 ```bash
-python scripts/build_un_wpp_raw.py      # Pop_Base/Pop_Topo/Nasc/Mortes/TFR (UN WPP)
-python scripts/build_migracao_raw.py    # proxy do ajuste migratório da falseabilidade (UN Migrant Stock)
-python scripts/build_historico_raw.py   # série quinquenal 1990-2024 (UN WPP) — evolução do N*
+python scripts/build_un_wpp_raw.py        # Pop_Base/Pop_Topo/Nasc/Mortes/TFR (UN WPP)
+python scripts/build_migracao_raw.py      # proxy do ajuste migratório da falseabilidade (UN Migrant Stock)
+python scripts/build_historico_raw.py     # série quinquenal 1990-2024 (UN WPP) — evolução do N*
+python scripts/build_convergencia_raw.py  # P_2.1/P_eq (UN WPP, cenário Instant replacement) — Tabela Geracional
 ```
 
-Os três scripts baixam da fonte oficial (com cache local em
+Os quatro scripts baixam da fonte oficial (com cache local em
 `data/raw/_cache/`) e gravam em `data/raw/`. Já existe um workflow
 agendado (`.github/workflows/atualizar_dados.yml`, mensal) que roda os
-três automaticamente e abre um Pull Request se algo mudou — nunca
+quatro automaticamente e abre um Pull Request se algo mudou — nunca
 commita direto em `main` nem redesploya sozinho.
 
 ### 3. Rodar pipeline
@@ -120,16 +121,22 @@ redesploya sozinho.
 - `app/narayama_live/` — Website público (Streamlit)
 - `docs/` — Documentação técnica
 
-## Estado atual (2026-07-15)
+## Estado atual (2026-07-16)
 
 - ✅ Pipeline completo com dado real (UN WPP), 28 países, 5 zonas.
 - ✅ Composição ponderada de perfis, Protocolo de Falseabilidade
   quantitativo e normalização do N* — as 3 mudanças metodológicas
   desta fase, documentadas em `docs/registro_mudancas_metodologicas_2026-07.docx`.
-- ✅ Tabela Geracional (visualização em formato periódico), nos dois
-  sites — 28 países no ainu.systems, 7 países destaque no narayama.live.
+- ✅ Tabela Geracional (visualização em formato periódico), encabeçando
+  os dois sites — 28 países no ainu.systems, 7 países destaque no
+  narayama.live.
+- ✅ P_2.1/P_eq (população de convergência e de equilíbrio, formalização
+  do autor de 2026-07-16 — ver `docs/definitions.md`, seção 8-B) nos
+  cards da Tabela Geracional, com dado real da UN WPP (cenário "Instant
+  replacement zero migration"). T_2.1 gradual (quanto tempo a
+  sociedade realmente levaria pra atingir TFR=2,1) continua em aberto.
 - ✅ Bot agendado de coleta de dados (UN WPP + migração + série
-  histórica), Fase 1.
+  histórica + convergência), Fase 1.
 - ✅ LICENSE (todos os direitos reservados) e legenda metodológica
   pública no narayama.live.
 - ✅ Série histórica do N* (`n_index_historico.csv`), quinquenal

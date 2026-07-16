@@ -61,5 +61,20 @@ jobs:
           print('Checagem de regressão (histórico): OK')
           "
 
+      - name: Checagem de regressão (P_2.1/P_eq, convergência)
+        run: |
+          python -c "
+          import pandas as pd
+          from src.config import PAISES
+
+          df = pd.read_csv('data/raw/convergencia_un.csv')
+          assert len(df) == len(PAISES), f'esperado {len(PAISES)} linhas, encontrado {len(df)}'
+          assert set(df['pais_codigo']) == set(PAISES.keys()), 'convergencia_un.csv e src/config.py divergem'
+          assert df['p_eq'].notna().all(), 'p_eq com valores nulos'
+          assert (df['p_eq'] > 0).all(), 'p_eq com valores nao positivos'
+
+          print('Checagem de regressão (convergência): OK')
+          "
+
       - name: Rodar teste de cálculo (Brasil, informativo)
         run: python test_calculo_brasil.py

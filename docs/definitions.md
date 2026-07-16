@@ -336,6 +336,57 @@ por país, não por ano) retroativamente a cada ano da série — os ajustes nã
 têm calibração histórica própria, é uma simplificação consciente do mesmo
 tipo já assumido para o Fator_Alocativo (seção 5).
 
+### 8-B. P_2.1 e P_eq — população de convergência e de equilíbrio (2026-07-16)
+
+Formalização original do autor (documento "tabela geracional -
+formula.docx", 2026-07-16), incorporada à Tabela Geracional (seção
+9-A.7) dos dois sites. Define três conceitos além do N*:
+
+- **População Endógena, P_E(t)**: `P_E(t+1) = P_E(t) + B_E(t) - D_E(t)`
+  — evolução da população só por nascimentos e óbitos, sem termo de
+  migração.
+- **P_2.1 (Estado de Convergência)**: `P_2.1 = P_E(t_c)`, onde `t_c`
+  é o instante em que a TFR atinge 2,1 (nível de reposição) pela
+  primeira vez. A população nesse momento, mas com a estrutura etária
+  ainda não estabilizada.
+- **P_eq (Estado de Equilíbrio)**: `P_eq = P_E(t_c + 25)` — a
+  população ~1 geração depois de `t_c`, mantendo TFR=2,1 durante todo
+  o período. O tamanho populacional sustentável real (a inércia
+  etária já se dissipou).
+
+Também define **P_obs(t) = P_E(t) + P_X(t)**, onde `P_X` é a
+população decorrente de processos exógenos (migração). O Framework
+Narayama (o índice em si) usa só `P_E`; o AINU (a infraestrutura
+computacional) pode simular cenários sobre `P_X` sem alterar a
+definição do indicador — separa mensuração de análise de cenários.
+
+**Implementação (v1, `t_c` = 2024, instantâneo)**: em vez de projetar
+`B_E(t)`/`D_E(t)` nós mesmos — o que exigiria fecundidade por idade e
+tábua de mortalidade que este projeto não tem —, `P_2.1` e `P_eq` usam
+a variante oficial **"Instant replacement zero migration"** da UN WPP
+2024 Revision (`WPP2024_Demographic_Indicators_OtherVariants.csv.gz`,
+mesma pasta CSV_FILES das outras fontes): TFR fixada em ~2,1 e
+migração líquida zero, calculada pelos demógrafos da ONU com dado
+real. `P_2.1` = população 2024 nessa variante; `P_eq` = população
+2049 (2024+25) na mesma variante. Ver
+[`scripts/build_convergencia_raw.py`](../scripts/build_convergencia_raw.py).
+
+**Limitação explícita, documentada nos cards da Tabela Geracional**:
+essa variante assume que a TFR salta para o nível de reposição
+**imediatamente** (T_2.1 = 0), não gradualmente. Não é "quando a
+sociedade vai realmente atingir TFR=2,1" — é "que tamanho a população
+teria SE a TFR já estivesse em reposição hoje". Um piso/teto
+demográfico ilustrativo (evidencia a inércia etária: países da zona
+PEC continuam encolhendo por mais uma geração mesmo nesse cenário
+ideal), não uma previsão.
+
+**Em aberto**: `T_2.1` propriamente dito — quanto tempo uma sociedade
+realmente levaria para atingir TFR=2,1 sob um cenário gradual/realista
+(ex.: extrapolação da tendência histórica de TFR já coletada em
+`data/raw/un_wpp_historico.csv`) — decisão do autor de 2026-07-16:
+implementar o cenário instantâneo primeiro ("por que não" os dois,
+mas o gradual fica para uma iteração seguinte).
+
 ## 9. Roadmap Fase 2b — Versão Expandida (escolaridade)
 
 Confirmado em 2026-07-02, a partir de um documento de simulação de terceiros

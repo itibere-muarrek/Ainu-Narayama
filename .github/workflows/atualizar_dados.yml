@@ -9,11 +9,12 @@ name: Atualizar dados (bot agendado)
 # Fontes automatizadas nesta fase: UN World Population Prospects
 # (scripts/build_un_wpp_raw.py), UN International Migrant Stock
 # (scripts/build_migracao_raw.py, proxy do ajuste "migratório" da
-# falseabilidade — ver docstring do script) e a série histórica
-# quinquenal (scripts/build_historico_raw.py, 2026-07-15). IHME
-# (sub-registro) e políticas natalistas continuam fora de escopo (não
-# automatizáveis sem conta/pesquisa qualitativa — ver
-# docs/definitions.md, seção 6).
+# falseabilidade — ver docstring do script), a série histórica
+# quinquenal (scripts/build_historico_raw.py, 2026-07-15) e P_2.1/P_eq
+# (scripts/build_convergencia_raw.py, 2026-07-16 — ver
+# docs/definitions.md, seção 8-B). IHME (sub-registro) e políticas
+# natalistas continuam fora de escopo (não automatizáveis sem
+# conta/pesquisa qualitativa — ver docs/definitions.md, seção 6).
 
 on:
   schedule:
@@ -45,10 +46,13 @@ jobs:
       - name: Rodar coleta — Série histórica (UN WPP, quinquenal)
         run: python scripts/build_historico_raw.py --output data/raw/un_wpp_historico.csv
 
+      - name: Rodar coleta — P_2.1/P_eq (UN WPP, cenário Instant replacement)
+        run: python scripts/build_convergencia_raw.py --output data/raw/convergencia_un.csv
+
       - name: Checar se algo mudou
         id: diff
         run: |
-          if git diff --quiet -- data/raw/un_wpp.csv data/raw/migracao_un.csv data/raw/un_wpp_historico.csv; then
+          if git diff --quiet -- data/raw/un_wpp.csv data/raw/migracao_un.csv data/raw/un_wpp_historico.csv data/raw/convergencia_un.csv; then
             echo "mudou=false" >> "$GITHUB_OUTPUT"
           else
             echo "mudou=true" >> "$GITHUB_OUTPUT"
@@ -63,11 +67,11 @@ jobs:
           git config user.email "ainu-bot@users.noreply.github.com"
           branch="bot/atualizacao-dados-$(date +%Y-%m-%d)"
           git checkout -b "$branch"
-          git add data/raw/un_wpp.csv data/raw/migracao_un.csv
-          git commit -m "Atualização automática de dados (UN WPP + migração)"
+          git add data/raw/un_wpp.csv data/raw/migracao_un.csv data/raw/un_wpp_historico.csv data/raw/convergencia_un.csv
+          git commit -m "Atualização automática de dados (UN WPP + migração + histórico + convergência)"
           git push origin "$branch"
           gh pr create \
             --title "Bot: atualização automática de dados ($(date +%Y-%m-%d))" \
-            --body "Rodado automaticamente pelo workflow \`atualizar_dados.yml\`. Revisar o diff de \`data/raw/un_wpp.csv\` e \`data/raw/migracao_un.csv\` antes de mergear — nada foi enviado a produção, o pipeline só é reexecutado depois do merge em \`main\`." \
+            --body "Rodado automaticamente pelo workflow \`atualizar_dados.yml\`. Revisar o diff de \`data/raw/un_wpp.csv\`, \`data/raw/migracao_un.csv\`, \`data/raw/un_wpp_historico.csv\` e \`data/raw/convergencia_un.csv\` antes de mergear — nada foi enviado a produção, o pipeline só é reexecutado depois do merge em \`main\`." \
             --base main \
             --head "$branch"
