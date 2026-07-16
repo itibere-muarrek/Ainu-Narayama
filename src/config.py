@@ -412,3 +412,19 @@ del _codigo, _ajustes, _reducao_total
 # 28 países da amostra (ver app/ainu_systems/ e app/narayama_live/).
 
 PAISES_DESTAQUE_NARAYAMA_LIVE = ["ARG", "BRA", "CHN", "KOR", "USA", "ITA", "JPN"]
+
+# ---------------------------------------------------------------------------
+# Código DDI (discagem internacional) — Tabela Geracional (Seção 9-A.7)
+# ---------------------------------------------------------------------------
+# Usado só para exibição na Tabela Geracional (design original do
+# usuário, 2026-07-14: cada país é identificado por nome + código DDI,
+# ex. "Brasil (55)", não pelo código ISO3 usado no resto do projeto).
+# Não é dado calculado — são os códigos de discagem padrão ITU-T E.164.
+
+CODIGO_DDI_POR_PAIS = {
+    "NGA": 234, "ETH": 251, "COD": 243, "VNM": 84, "IND": 91, "IDN": 62,
+    "IRN": 98, "SAU": 966, "MAR": 212, "EGY": 20, "THA": 66, "MEX": 52,
+    "POL": 48, "BRA": 55, "USA": 1, "CHN": 86, "FRA": 33, "ARG": 54,
+    "CHL": 56, "SWE": 46, "GBR": 44, "AUS": 61, "ZAF": 27, "JPN": 81,
+    "DEU": 49, "ITA": 39, "KOR": 82, "RUS": 7,
+}

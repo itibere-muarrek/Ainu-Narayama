@@ -48,7 +48,14 @@ import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
-from src.config import CORES_5_ZONAS, DATA_PROCESSED_DIR, DOCS_DIR, LIMIAR_PEEC_TFR, PAISES
+from src.config import (
+    CODIGO_DDI_POR_PAIS,
+    CORES_5_ZONAS,
+    DATA_PROCESSED_DIR,
+    DOCS_DIR,
+    LIMIAR_PEEC_TFR,
+    PAISES,
+)
 
 # -----------------------------------------------------------------------
 # Configuração da página
@@ -335,49 +342,76 @@ else:
 # -----------------------------------------------------------------------
 # Tabela Geracional de Narayama (visualização em formato periódico)
 # -----------------------------------------------------------------------
+# Layout fiel ao desenho original do usuário (2026-07-14): zonas como
+# blocos lado a lado (eixo X = Índice Narayama), países ordenados
+# dentro do bloco por tamanho de população (eixo Y), cada país
+# identificado por nome + código DDI. Duas correções em relação à
+# primeira versão (2026-07-13, linhas empilhadas por zona, código
+# ISO3): não batiam com o desenho original.
 
 st.header("Tabela Geracional de Narayama")
 st.caption(
     "Grade comparativa dos 28 países segundo o N* (Seção 9-A.7 da tese, "
-    "revisão de 12/07/2026), organizada nas 5 zonas da Seção 9-A.3. "
-    "Dentro de cada zona, países ordenados por N* decrescente — mostra "
-    "sempre os 28 países, independente dos filtros de Perfil/Região "
-    "acima. Farol institucional, gerações até estabilização e projeção "
-    "populacional não aparecem aqui: dependem de National Transfer "
-    "Accounts (Fator_Alocativo) ou de um modelo de projeção TFR que "
-    "este projeto ainda não implementa — ver seções 5 e 9 de "
-    "[docs/definitions.md](../../docs/definitions.md)."
+    "revisão de 12/07/2026). Eixo horizontal = zona do Índice Narayama "
+    "(Saturação/PEEC → Colapso/PEC); eixo vertical, dentro de cada "
+    "zona = população atual, maior no topo. Mostra sempre os 28 "
+    "países, independente dos filtros de Perfil/Região acima."
+)
+st.caption(
+    "⚠️ **Lacunas registradas nos cards**: `farol (s/d)` — depende do "
+    "Fator_Alocativo/NTA, sem fonte de dado real ainda (ver "
+    "docs/definitions.md, seção 5). `pop. projetada: pendente` — "
+    "depende de um modelo de projeção demográfica (TFR convergindo a "
+    "2,1, gerações até estabilização) que este projeto ainda não "
+    "implementa; a tese reserva isso para a Fase 5 (simulações OLG), "
+    "que faz mais sentido construir com a colaboração de um "
+    "demógrafo do que decidir sozinho agora — ver README.md, "
+    "\"Próximas Fases\"."
 )
 
 _ORDEM_ZONAS = [
-    "Colapso de Narayama (PEC)",
-    "Tensão Acelerada",
-    "Equilíbrio Sustentável (PEA)",
-    "Tensão Populacional",
     "Saturação por Overbirths (PEEC)",
+    "Tensão Populacional",
+    "Equilíbrio Sustentável (PEA)",
+    "Tensão Acelerada",
+    "Colapso de Narayama (PEC)",
 ]
 
-if not df.empty and {"status", "n_estrela", "codigo"}.issubset(df.columns):
-    _linhas_html = []
+if not df.empty and {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
+    _blocos_html = []
     for _zona in _ORDEM_ZONAS:
-        _paises_zona = df[df["status"] == _zona].sort_values("n_estrela", ascending=False)
+        _paises_zona = df[df["status"] == _zona].sort_values("populacao", ascending=False)
         _cor = CORES_5_ZONAS.get(_zona, "#eeeeee")
-        _tiles = "".join(
-            f'<div style="background:{_cor};border:1px solid rgba(0,0,0,0.2);'
-            f'border-radius:6px;padding:6px 10px;min-width:64px;text-align:center;'
-            f'font-family:monospace;color:#1a1a1a;">'
-            f'<div style="font-weight:700;font-size:0.95em;">{_linha.codigo}</div>'
-            f'<div style="font-size:0.85em;">{_linha.n_estrela:.2f}</div>'
+        _cards = []
+        for _linha in _paises_zona.itertuples():
+            _ddi = CODIGO_DDI_POR_PAIS.get(_linha.codigo, "?")
+            _pop_atual = f"{_linha.populacao:.0f}mi"
+            _cards.append(
+                f'<div style="background:{_cor};border:2px solid #1a1a1a;'
+                f'border-radius:6px;padding:8px;margin-bottom:6px;'
+                f'text-align:center;font-family:monospace;color:#1a1a1a;">'
+                f'<div style="font-weight:700;font-size:0.8em;">{_linha.nome} ({_ddi})</div>'
+                f'<div style="font-weight:700;font-size:1.2em;">{_linha.n_estrela:.2f}'
+                f'<span style="font-size:0.55em;font-weight:400;"> (s/d)</span></div>'
+                f'<div style="font-size:0.72em;">{_pop_atual} → pendente</div>'
+                f"</div>"
+            )
+        _blocos_html.append(
+            f'<div style="flex:1;min-width:130px;">'
+            f'<div style="font-size:0.8em;font-weight:600;margin-bottom:6px;text-align:center;">'
+            f"{_zona} ({len(_paises_zona)})</div>"
+            f'{"".join(_cards)}'
             f"</div>"
-            for _linha in _paises_zona.itertuples()
         )
-        _linhas_html.append(
-            f'<div style="margin-bottom:12px;">'
-            f'<div style="font-size:0.85em;font-weight:600;margin-bottom:4px;">{_zona} ({len(_paises_zona)})</div>'
-            f'<div style="display:flex;flex-wrap:wrap;gap:6px;">{_tiles}</div>'
-            f"</div>"
-        )
-    st.markdown("".join(_linhas_html), unsafe_allow_html=True)
+    _grade_html = (
+        '<div style="display:flex;gap:8px;align-items:flex-start;'
+        'border-bottom:2px solid #1a1a1a;padding-bottom:8px;">'
+        + "".join(_blocos_html)
+        + "</div>"
+        + '<div style="text-align:right;font-size:0.8em;font-weight:600;margin-top:4px;">'
+        "Índice Narayama →</div>"
+    )
+    st.markdown(_grade_html, unsafe_allow_html=True)
 else:
     st.write("Dados insuficientes para montar a tabela geracional.")
 
