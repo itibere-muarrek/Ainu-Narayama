@@ -19,8 +19,14 @@ normalização de 2026-07-09, ver src.indices.normalizar_n_base), o
 valor comprimido pra faixa plausível, mais adequado pra uma interface
 pública minimalista do que o N_Base bruto.
 
-Convenção de zonas do N* adotada (Tabela 4 / Anexo 8 da tese — ver
-docs/definitions.md, seções 6 e 8): N* alto é melhor.
+Convenção de zonas do N* (atualizada em 2026-07-15 — a nota antiga
+deste docstring, "N* alto é melhor", ficou desatualizada pela
+classificação de 5 zonas de 12/07/2026, ver
+src.indices.classificar_zona_5): não é "quanto maior melhor" — é um
+equilíbrio no meio da escala. N* muito baixo (< 0,71) é Colapso de
+Narayama (PEC); N* muito alto (≥ 2,00) é Saturação por Overbirths
+(PEEC); o ideal fica no meio, entre 0,90 e 1,40 (Equilíbrio
+Sustentável / PEA).
 """
 
 import sys
@@ -52,6 +58,18 @@ st.markdown(
     "doutorado \"Do Dilema de Narayama ao Oicoceno Civilizacional\" (v8.0). "
     "Para análises detalhadas, simulações e calibração, veja "
     "[ainu.systems](https://ainu.systems)."
+)
+st.info(
+    "**Como ler o N\\*:** não é uma nota de \"quanto maior, melhor\" — é um "
+    "equilíbrio. N\\* muito baixo indica **Colapso de Narayama (PEC)**: "
+    "poucos nascimentos não repõem a geração legatária. N\\* muito alto "
+    "indica **Saturação por Overbirths (PEEC)**: crescimento populacional "
+    "acelerado além da capacidade de absorção institucional. O ideal fica "
+    "no meio da escala, faixa chamada de **Equilíbrio Sustentável (PEA)**. "
+    "O farol institucional (+/n/-) ainda não aparece aqui: depende de "
+    "dados de Contas de Transferências Nacionais (NTA) que este projeto "
+    "ainda não tem — ver [ainu.systems](https://ainu.systems) para o "
+    "detalhamento completo da metodologia."
 )
 
 # -----------------------------------------------------------------------

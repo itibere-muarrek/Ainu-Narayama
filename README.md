@@ -145,6 +145,14 @@ redesploya sozinho.
 - UN International Migrant Stock: https://www.un.org/development/desa/pd/content/international-migrant-stock
 - Streamlit: https://docs.streamlit.io/
 
+## Licença
+
+Este projeto está em fase de prototipagem e construção metodológica
+(implementação computacional de uma tese de doutorado ainda em
+andamento). Todos os direitos são reservados — ver `LICENSE`. Uso,
+adaptação ou colaboração acadêmica requerem autorização prévia do
+autor.
+
 ---
 Criado: 29 de junho de 2026
-Última atualização: 13 de julho de 2026
+Última atualização: 15 de julho de 2026
