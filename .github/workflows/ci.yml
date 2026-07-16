@@ -47,5 +47,19 @@ jobs:
           print('Checagem de regressão: OK')
           "
 
+      - name: Checagem de regressão (série histórica, quinquenal)
+        run: |
+          python -c "
+          from src.config import ANOS_ALVO_HISTORICO, PAISES
+          from src.data_pipeline import executar_pipeline_historico
+
+          df = executar_pipeline_historico()
+          assert len(df) == len(PAISES) * len(ANOS_ALVO_HISTORICO), f'esperado {len(PAISES) * len(ANOS_ALVO_HISTORICO)} linhas, encontrado {len(df)}'
+          assert df['n_base'].notna().all(), 'n_base com valores nulos na serie historica'
+          assert df['n_estrela'].notna().all(), 'n_estrela com valores nulos na serie historica'
+
+          print('Checagem de regressão (histórico): OK')
+          "
+
       - name: Rodar teste de cálculo (Brasil, informativo)
         run: python test_calculo_brasil.py

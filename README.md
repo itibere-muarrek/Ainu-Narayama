@@ -21,19 +21,21 @@ pip install -r app/requirements.txt
 ```bash
 python scripts/build_un_wpp_raw.py      # Pop_Base/Pop_Topo/Nasc/Mortes/TFR (UN WPP)
 python scripts/build_migracao_raw.py    # proxy do ajuste migratório da falseabilidade (UN Migrant Stock)
+python scripts/build_historico_raw.py   # série quinquenal 1990-2024 (UN WPP) — evolução do N*
 ```
 
-Os dois scripts baixam da fonte oficial (com cache local em
+Os três scripts baixam da fonte oficial (com cache local em
 `data/raw/_cache/`) e gravam em `data/raw/`. Já existe um workflow
 agendado (`.github/workflows/atualizar_dados.yml`, mensal) que roda os
-dois automaticamente e abre um Pull Request se algo mudou — nunca
+três automaticamente e abre um Pull Request se algo mudou — nunca
 commita direto em `main` nem redesploya sozinho.
 
 ### 3. Rodar pipeline
 
 ```python
-from src.data_pipeline import executar_pipeline_completo
-executar_pipeline_completo(2024)  # grava data/processed/n_index_2024.csv
+from src.data_pipeline import executar_pipeline_completo, executar_pipeline_historico
+executar_pipeline_completo(2024)   # grava data/processed/n_index_2024.csv
+executar_pipeline_historico()      # grava data/processed/n_index_historico.csv (quinquenal 1990-2024)
 ```
 
 Cadeia de cálculo completa (ver `docs/definitions.md` para o
@@ -118,17 +120,26 @@ redesploya sozinho.
 - `app/narayama_live/` — Website público (Streamlit)
 - `docs/` — Documentação técnica
 
-## Estado atual (2026-07-13)
+## Estado atual (2026-07-15)
 
 - ✅ Pipeline completo com dado real (UN WPP), 28 países, 5 zonas.
 - ✅ Composição ponderada de perfis, Protocolo de Falseabilidade
   quantitativo e normalização do N* — as 3 mudanças metodológicas
   desta fase, documentadas em `docs/registro_mudancas_metodologicas_2026-07.docx`.
-- ✅ Tabela Geracional (visualização em formato periódico, ainu.systems).
-- ✅ Bot agendado de coleta de dados (UN WPP + migração), Fase 1.
+- ✅ Tabela Geracional (visualização em formato periódico), nos dois
+  sites — 28 países no ainu.systems, 7 países destaque no narayama.live.
+- ✅ Bot agendado de coleta de dados (UN WPP + migração + série
+  histórica), Fase 1.
+- ✅ LICENSE (todos os direitos reservados) e legenda metodológica
+  pública no narayama.live.
+- ✅ Série histórica do N* (`n_index_historico.csv`), quinquenal
+  1990-2024 — ponto de partida deliberadamente grosseiro, decisão do
+  autor de 2026-07-15 ("quinquenal para começar e vamos refinando
+  após validações"); migrar pra anual é só trocar
+  `src.config.ANOS_ALVO_HISTORICO`, sem mudança de arquitetura.
 - ⏳ Fator_Alocativo/NTA — sem fonte de dado real (gancho do convite ao
   Prof. Cássio Turra, Cedeplar/UFMG, National Transfer Accounts Project).
-- ⏳ Série histórica (`n_index_historico.csv`) ainda não gerada.
+  ainda em decisão com o autor.
 
 ## Próximas Fases
 - Fase 2b: Fator_Alocativo real (NTA) + Versão Expandida com

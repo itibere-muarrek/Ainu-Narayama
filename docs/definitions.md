@@ -314,6 +314,28 @@ verificação numérica linha a linha mostrou que o valor de "N*" publicado
 nesse documento era, na prática, uma cópia do Fator_Alocativo estimado — não
 uma normalização real do N_Base. Não influenciou a decisão acima.
 
+### 8-A. Série histórica do N* (quinquenal, decisão de 2026-07-15)
+
+O gráfico "Evolução do N*" do ainu.systems usa uma série **quinquenal**
+(1990, 1995, 2000, ..., 2020, 2024 — último intervalo de só 4 anos pra manter
+2024 como âncora, mesmo ano do snapshot em `n_index_2024.csv`), não anual.
+Decisão explícita do autor: **"quinquenal para começar e vamos refinando
+após validações"** — ponto de partida deliberadamente grosseiro, não uma
+limitação técnica: a mesma cadeia de cálculo (NGII_Bruto → NGII_Puro →
+N_Base → N*) roda pra cada ano independentemente, então passar pra anual no
+futuro é só trocar a lista de anos em
+[`ANOS_ALVO_HISTORICO`](../src/config.py) — nenhuma mudança de arquitetura,
+script ou schema de arquivo é necessária.
+
+Fonte: [`scripts/build_historico_raw.py`](../scripts/build_historico_raw.py)
+(dados brutos, `data/raw/un_wpp_historico.csv`) e
+[`executar_pipeline_historico`](../src/data_pipeline.py) (cálculo,
+`data/processed/n_index_historico.csv`). O Protocolo de Falseabilidade
+(seção 6) é aplicado com os mesmos ajustes de hoje (`AJUSTES_FALSEABILIDADE_POR_PAIS`,
+por país, não por ano) retroativamente a cada ano da série — os ajustes não
+têm calibração histórica própria, é uma simplificação consciente do mesmo
+tipo já assumido para o Fator_Alocativo (seção 5).
+
 ## 9. Roadmap Fase 2b — Versão Expandida (escolaridade)
 
 Confirmado em 2026-07-02, a partir de um documento de simulação de terceiros

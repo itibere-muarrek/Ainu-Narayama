@@ -7,11 +7,13 @@ name: Atualizar dados (bot agendado)
 # seguido no resto do projeto.
 #
 # Fontes automatizadas nesta fase: UN World Population Prospects
-# (scripts/build_un_wpp_raw.py) e UN International Migrant Stock
+# (scripts/build_un_wpp_raw.py), UN International Migrant Stock
 # (scripts/build_migracao_raw.py, proxy do ajuste "migratório" da
-# falseabilidade — ver docstring do script). IHME (sub-registro) e
-# políticas natalistas continuam fora de escopo (não automatizáveis
-# sem conta/pesquisa qualitativa — ver docs/definitions.md, seção 6).
+# falseabilidade — ver docstring do script) e a série histórica
+# quinquenal (scripts/build_historico_raw.py, 2026-07-15). IHME
+# (sub-registro) e políticas natalistas continuam fora de escopo (não
+# automatizáveis sem conta/pesquisa qualitativa — ver
+# docs/definitions.md, seção 6).
 
 on:
   schedule:
@@ -40,10 +42,13 @@ jobs:
       - name: Rodar coleta — Migração (UN Migrant Stock)
         run: python scripts/build_migracao_raw.py --output data/raw/migracao_un.csv
 
+      - name: Rodar coleta — Série histórica (UN WPP, quinquenal)
+        run: python scripts/build_historico_raw.py --output data/raw/un_wpp_historico.csv
+
       - name: Checar se algo mudou
         id: diff
         run: |
-          if git diff --quiet -- data/raw/un_wpp.csv data/raw/migracao_un.csv; then
+          if git diff --quiet -- data/raw/un_wpp.csv data/raw/migracao_un.csv data/raw/un_wpp_historico.csv; then
             echo "mudou=false" >> "$GITHUB_OUTPUT"
           else
             echo "mudou=true" >> "$GITHUB_OUTPUT"

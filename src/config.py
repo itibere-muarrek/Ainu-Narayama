@@ -428,3 +428,16 @@ CODIGO_DDI_POR_PAIS = {
     "CHL": 56, "SWE": 46, "GBR": 44, "AUS": 61, "ZAF": 27, "JPN": 81,
     "DEU": 49, "ITA": 39, "KOR": 82, "RUS": 7,
 }
+
+# ---------------------------------------------------------------------------
+# Série histórica do N* — anos-alvo (Seção 9, gráfico "Evolução do N*")
+# ---------------------------------------------------------------------------
+# Quinquenal 1990-2024, decisão do autor de 2026-07-15 ("quinquenal
+# para começar e vamos refinando após validações") — ponto de partida
+# deliberadamente grosseiro; migrar pra anual depois só troca esta
+# lista (ver scripts/build_historico_raw.py e
+# src.data_pipeline.executar_pipeline_historico, nenhum dos dois
+# hardcoda os anos). Último intervalo é de só 4 anos (2020->2024) pra
+# manter 2024 como âncora, mesmo ano do snapshot em n_index_2024.csv.
+
+ANOS_ALVO_HISTORICO = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024]

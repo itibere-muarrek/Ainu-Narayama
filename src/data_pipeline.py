@@ -61,7 +61,13 @@ from typing import Optional
 
 import pandas as pd
 
-from src.config import AJUSTES_FALSEABILIDADE_POR_PAIS, DATA_PROCESSED_DIR, DATA_RAW_DIR, PAISES
+from src.config import (
+    AJUSTES_FALSEABILIDADE_POR_PAIS,
+    ANOS_ALVO_HISTORICO,
+    DATA_PROCESSED_DIR,
+    DATA_RAW_DIR,
+    PAISES,
+)
 from src.data_loader import carregar_dados_un
 from src.falseability import aplicar_falseabilidade_quantitativa
 from src.indices import (
@@ -147,6 +153,92 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
 
     DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     caminho_saida = DATA_PROCESSED_DIR / f"n_index_{ano}.csv"
+    resultado_df.to_csv(caminho_saida, index=False)
+
+    return resultado_df
+
+
+def executar_pipeline_historico(
+    anos: Optional[list] = None,
+    caminho_historico: Optional[Path] = None,
+) -> pd.DataFrame:
+    """
+    Calcula N* pra uma série de anos (série histórica, Fase 2+ —
+    decisão do autor de 2026-07-15: começar quinquenal, refinar pra
+    anual depois de validações), usando
+    data/raw/un_wpp_historico.csv (ver scripts/build_historico_raw.py).
+
+    Mesma cadeia de cálculo de `executar_pipeline_completo`, repetida
+    pra cada ano de `anos`: NGII_Bruto -> NGII_Puro (falseabilidade) ->
+    N_Base -> N* (normalizado). Cada ano usa seu próprio ano-25 pra
+    calcular o Fator_Geracional — o CSV de origem precisa ter uma
+    linha de TFR pra esse ano-25 (não precisa ter pop_base/pop_topo:
+    só a coluna tfr é lida do ano-25, ver linha `tfr_25_anos_atras`
+    abaixo).
+
+    Args:
+        anos: Lista de anos-alvo (opcional, usa
+            src.config.ANOS_ALVO_HISTORICO por padrão — hoje
+            [1990, 1995, ..., 2024]).
+        caminho_historico: Caminho alternativo do CSV (opcional, usa
+            data/raw/un_wpp_historico.csv por padrão).
+
+    Returns:
+        DataFrame com uma linha por (país, ano), colunas: codigo, ano,
+        n_base, n_estrela. Também grava o resultado em
+        data/processed/n_index_historico.csv.
+    """
+    anos = anos or ANOS_ALVO_HISTORICO
+    caminho_historico = caminho_historico or (DATA_RAW_DIR / "un_wpp_historico.csv")
+    df = carregar_dados_un(caminho_historico)
+
+    resultados = []
+    for ano in anos:
+        ano_base = ano - CICLO_GERACIONAL_ANOS
+        df_ano = df[df["ano"] == ano].set_index("pais_codigo")
+        df_base = df[df["ano"] == ano_base].set_index("pais_codigo")
+
+        for codigo in PAISES:
+            if codigo not in df_ano.index or codigo not in df_base.index:
+                continue
+            if codigo not in AJUSTES_FALSEABILIDADE_POR_PAIS:
+                continue
+
+            linha = df_ano.loc[codigo]
+            if pd.isna(linha["pop_base"]) or pd.isna(linha["pop_topo"]):
+                continue
+
+            ngii_bruto = calcular_ngii_puro(
+                pop_base=linha["pop_base"],
+                pop_topo=linha["pop_topo"],
+                nascimentos=linha["nascimentos"],
+                mortes=linha["mortes"],
+            )
+            ngii_puro = (
+                aplicar_falseabilidade_quantitativa(ngii_bruto, AJUSTES_FALSEABILIDADE_POR_PAIS[codigo])
+                if ngii_bruto is not None
+                else None
+            )
+            fator_geracional = calcular_fator_geracional(
+                tfr_atual=linha["tfr"],
+                tfr_25_anos_atras=df_base.loc[codigo, "tfr"],
+            )
+            n_base = calcular_n_base(ngii_puro, fator_geracional)
+            n_estrela = normalizar_n_base(n_base)
+
+            resultados.append(
+                {
+                    "codigo": codigo,
+                    "ano": ano,
+                    "n_base": round(n_base, 4) if n_base is not None else None,
+                    "n_estrela": round(n_estrela, 4) if n_estrela is not None else None,
+                }
+            )
+
+    resultado_df = pd.DataFrame(resultados).sort_values(["codigo", "ano"]).reset_index(drop=True)
+
+    DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    caminho_saida = DATA_PROCESSED_DIR / "n_index_historico.csv"
     resultado_df.to_csv(caminho_saida, index=False)
 
     return resultado_df

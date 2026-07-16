@@ -30,7 +30,9 @@ data/processed/*
 !data/processed/.gitkeep
 !data/raw/un_wpp.csv
 !data/raw/migracao_un.csv
+!data/raw/un_wpp_historico.csv
 !data/processed/n_index_2024.csv
+!data/processed/n_index_historico.csv
 
 # IDE
 .vscode/
