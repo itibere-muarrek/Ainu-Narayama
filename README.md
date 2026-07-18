@@ -132,9 +132,19 @@ redesploya sozinho.
   narayama.live.
 - ✅ P_2.1/P_eq (população de convergência e de equilíbrio, formalização
   do autor de 2026-07-16 — ver `docs/definitions.md`, seção 8-B) nos
-  cards da Tabela Geracional, com dado real da UN WPP (cenário "Instant
-  replacement zero migration"). T_2.1 gradual (quanto tempo a
-  sociedade realmente levaria pra atingir TFR=2,1) continua em aberto.
+  cards da Tabela Geracional. Corrigido em 2026-07-18 em duas etapas
+  (auditoria do autor): (1) o cenário anterior, "Instant replacement
+  zero migration" da UN WPP, mostrava aumento populacional pra países
+  de TFR real baixíssima como China/Coreia do Sul — trocado por um
+  cenário PROPOSTO de convergência linear em 25+25 anos (t_c=2049,
+  t_c+25=2074), simulado sobre nascimentos/óbitos reais da UN WPP
+  (variante "Zero migration") — fecha o item "T_2.1 gradual" que estava
+  em aberto; (2) os cards comparavam "população hoje → P_eq", o que
+  misturava inércia etária (que sozinha já faz a população crescer por
+  décadas em países como o Brasil, mesmo sem mudança nenhuma) com o
+  efeito da recuperação de fecundidade — corrigido pra comparar dois
+  cenários no mesmo ano (`P_tendência (2074, sem mudança) → P_eq (2074,
+  com recuperação)`), isolando o efeito da política.
 - ✅ Bot agendado de coleta de dados (UN WPP + migração + série
   histórica + convergência), Fase 1.
 - ✅ LICENSE (todos os direitos reservados) e legenda metodológica

@@ -116,11 +116,14 @@ def carregar_destaques() -> pd.DataFrame:
 
     try:
         conv_df = pd.read_csv(DATA_RAW_DIR / "convergencia_un.csv")
-        conv_df = conv_df.rename(columns={"pais_codigo": "codigo"})[["codigo", "p_eq", "ano_eq"]]
+        conv_df = conv_df.rename(columns={"pais_codigo": "codigo"})[
+            ["codigo", "p_eq", "ano_eq", "p_tendencia"]
+        ]
         df = df.merge(conv_df, on="codigo", how="left")
     except FileNotFoundError:
         df["p_eq"] = None
         df["ano_eq"] = None
+        df["p_tendencia"] = None
 
     return df
 
@@ -150,16 +153,21 @@ st.caption(
     "explicação do quadro acima."
 )
 st.caption(
-    "**A seta mostra População atual → P_eq**: o tamanho populacional "
-    "de equilíbrio, ~1 geração (25 anos) depois de um cenário em que a "
-    "TFR salta para o nível de reposição (~2,1) e a migração vai a "
-    "zero — dado real da UN WPP 2024 (variante \"Instant replacement "
-    "zero migration\"), não uma projeção nossa. **Não é uma previsão**: "
-    "é o piso/teto demográfico que a inércia etária impõe mesmo num "
-    "cenário ideal de recuperação da fecundidade. O tempo real até a "
-    "sociedade atingir TFR=2,1 (num cenário gradual em vez de "
-    "instantâneo) continua em aberto — ver "
-    "[ainu.systems](https://ainu.systems) para o detalhamento completo."
+    "**A seta compara dois cenários no mesmo ano (2074), não hoje vs. "
+    "futuro**: P_tendência → P_eq. **P_tendência**: população em 2074 se "
+    "a fecundidade real de cada país seguir sem mudança (dado real UN "
+    "WPP 2024, variante \"Zero migration\"). **P_eq**: população em 2074 "
+    "num cenário PROPOSTO em que o país converge linearmente até TFR=2,1 "
+    "ao longo de 25 anos (2024-2049) e mantém essa taxa por mais 25 anos "
+    "(2049-2074) — sempre com migração zerada. Comparar as duas no mesmo "
+    "ano isola o efeito da recuperação de fecundidade da simples inércia "
+    "etária (que sozinha já pode fazer a população crescer por décadas, "
+    "mesmo sem mudança nenhuma — caso do Brasil). **Não é uma previsão "
+    "nem um dado direto da ONU**: os nascimentos usados na simulação de "
+    "P_eq são reais, só escalados pela razão entre a TFR proposta e a "
+    "TFR real projetada pela ONU, ano a ano — óbitos ficam com o valor "
+    "real. Simplificação documentada, não um modelo de coorte por idade. "
+    "Ver [ainu.systems](https://ainu.systems) para o detalhamento completo."
 )
 
 _ORDEM_ZONAS = [
@@ -180,7 +188,8 @@ if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
         _cards = []
         for _linha in _paises_zona.itertuples():
             _ddi = CODIGO_DDI_POR_PAIS.get(_linha.codigo, "?")
-            _pop_atual = f"{_linha.populacao:.0f}mi"
+            _p_tendencia = getattr(_linha, "p_tendencia", None)
+            _pop_tendencia = f"{_p_tendencia:.0f}mi" if pd.notna(_p_tendencia) else "s/d"
             _p_eq = getattr(_linha, "p_eq", None)
             _pop_eq = f"{_p_eq:.0f}mi" if pd.notna(_p_eq) else "s/d"
             _cards.append(
@@ -190,7 +199,7 @@ if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
                 f'<div style="font-weight:700;font-size:0.8em;">{_linha.nome} ({_ddi})</div>'
                 f'<div style="font-weight:700;font-size:1.2em;">{_linha.n_estrela:.2f}'
                 f'<span style="font-size:0.55em;font-weight:400;"> (s/d)</span></div>'
-                f'<div style="font-size:0.72em;">{_pop_atual} → {_pop_eq}</div>'
+                f'<div style="font-size:0.72em;">{_pop_tendencia} → {_pop_eq}</div>'
                 f"</div>"
             )
         _blocos_html.append(

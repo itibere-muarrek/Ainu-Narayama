@@ -360,32 +360,94 @@ Narayama (o índice em si) usa só `P_E`; o AINU (a infraestrutura
 computacional) pode simular cenários sobre `P_X` sem alterar a
 definição do indicador — separa mensuração de análise de cenários.
 
-**Implementação (v1, `t_c` = 2024, instantâneo)**: em vez de projetar
-`B_E(t)`/`D_E(t)` nós mesmos — o que exigiria fecundidade por idade e
-tábua de mortalidade que este projeto não tem —, `P_2.1` e `P_eq` usam
-a variante oficial **"Instant replacement zero migration"** da UN WPP
-2024 Revision (`WPP2024_Demographic_Indicators_OtherVariants.csv.gz`,
-mesma pasta CSV_FILES das outras fontes): TFR fixada em ~2,1 e
-migração líquida zero, calculada pelos demógrafos da ONU com dado
-real. `P_2.1` = população 2024 nessa variante; `P_eq` = população
-2049 (2024+25) na mesma variante. Ver
+**Implementação v1 (2026-07-16, `t_c` = 2024, instantâneo) — abandonada**:
+a primeira versão usava a variante oficial "Instant replacement zero
+migration" da UN WPP 2024 Revision, que assume TFR=2,1 já a partir de
+2024. Auditoria do autor em 2026-07-18 encontrou que essa premissa
+produz números sem sentido pra países de fecundidade baixa persistente:
+China e Coreia do Sul apareciam com `P_eq` **maior** que a população
+atual, apesar de TFR real muito abaixo de 2,1 (China ~0,9-1,0; Coreia
+~0,7) — o salto instantâneo ignora a trajetória real desses países.
+
+**Tentativa 2 (mesma auditoria) — também abandonada**: usar direto a
+trajetória real da ONU (variante "Zero migration", fecundidade "Medium"
++ migração zero, sem nenhum salto) pra achar o `t_c` real (ano em que a
+TFR de cada país cruza 2,1). Resultado: **nenhum dos 20 países com TFR
+hoje abaixo de 2,1 — dos 28 do projeto, incluindo os 7 destaque do
+narayama.live — cruza TFR=2,1 até 2100**, o fim do horizonte de
+projeção da ONU. O dado real e puro da ONU não cobre esse cenário pra
+praticamente nenhum país do projeto.
+
+**Implementação atual (v2, 2026-07-18) — cenário PROPOSTO de
+recuperação em 25+25 anos**: decisão do autor. Em vez de um dado direto
+da ONU (que não cobre o cenário) ou um salto instantâneo (irreal),
+simula-se um cenário próprio: todo país — esteja hoje acima ou abaixo
+de 2,1 — segue um plano de convergência **linear** até TFR=2,1 ao longo
+de 25 anos (`t_c = 2049`), e depois mantém TFR=2,1 por mais 25 anos
+(`t_c + 25 = 2074`). Convergir nos dois sentidos (não só recuperar quem
+está abaixo de 2,1, mas também países hoje acima, como Nigéria) é
+coerente com o enquadramento da tese: PEC (colapso, TFR baixa) e PEEC
+(saturação, TFR alta) são os dois extremos, PEA (TFR ~2,1) é o meio — o
+mesmo plano de convergência serve pros dois lados.
+
+A única parte "proposta" (não um dado direto da ONU) é a trajetória de
+TFR (`TFR_ramp(t)`, interpolação linear de `TFR_real(2024)` até 2,1 em
+`t_c`, depois constante). Nascimentos e óbitos usados na simulação SÃO
+reais — vêm da variante "Zero migration" da própria ONU (colunas
+`Births`/`Deaths`/`TFR` anuais, presentes em
+`WPP2024_Demographic_Indicators_OtherVariants.csv.gz`). Nascimentos são
+escalados pela razão `TFR_ramp(t) / TFR_real(t)` a cada ano — a
+aproximação padrão quando não se tem fecundidade específica por idade
+(que este projeto não tem — exigiria tábua de mortalidade e fecundidade
+por idade). Óbitos ficam com o valor real da ONU (não dependem do
+cenário de fecundidade no curto/médio prazo). **Simplificação explícita**:
+não é um modelo de coorte por idade, é uma escala do total de
+nascimentos — mesmo nível de aproximação já usado em outras partes do
+projeto (ex.: normalização do N* por raiz quadrada, seção 5.2). Ver
 [`scripts/build_convergencia_raw.py`](../scripts/build_convergencia_raw.py).
 
-**Limitação explícita, documentada nos cards da Tabela Geracional**:
-essa variante assume que a TFR salta para o nível de reposição
-**imediatamente** (T_2.1 = 0), não gradualmente. Não é "quando a
-sociedade vai realmente atingir TFR=2,1" — é "que tamanho a população
-teria SE a TFR já estivesse em reposição hoje". Um piso/teto
-demográfico ilustrativo (evidencia a inércia etária: países da zona
-PEC continuam encolhendo por mais uma geração mesmo nesse cenário
-ideal), não uma previsão.
+**Limitação explícita, documentada nos cards da Tabela Geracional**: não
+é uma previsão nem um dado direto da ONU — é um cenário proposto de
+política de recuperação/convergência, simulado sobre componentes reais
+da ONU (nascimentos, óbitos, TFR), não população inventada.
 
-**Em aberto**: `T_2.1` propriamente dito — quanto tempo uma sociedade
-realmente levaria para atingir TFR=2,1 sob um cenário gradual/realista
-(ex.: extrapolação da tendência histórica de TFR já coletada em
-`data/raw/un_wpp_historico.csv`) — decisão do autor de 2026-07-16:
-implementar o cenário instantâneo primeiro ("por que não" os dois,
-mas o gradual fica para uma iteração seguinte).
+**Correção de interpretação — "o problema dos dois números" (mesma
+auditoria, 2026-07-18)**: a v2 original comparava, nos cards,
+"população hoje (2024) → P_eq (2074)". O autor identificou que essa
+comparação mistura dois efeitos distintos e não deveria ser somada num
+único número: a **inércia etária própria do país** (que sozinha já pode
+fazer a população crescer por décadas, mesmo sem nenhuma mudança de
+política — caso do Brasil: TFR real ~1,6, mas a população real da ONU
+[variante "Zero migration", sem rampa nenhuma] cresce até ~2043 antes de
+começar a cair, por causa da base grande de mulheres em idade fértil
+herdada de décadas de fecundidade mais alta) e o **efeito do cenário de
+recuperação proposto**. Comparar "hoje" com "daqui a 50 anos sob um
+cenário ideal" confunde os dois — dá a impressão de que todo o ganho
+populacional veio da política, quando parte (às vezes a maior parte, ver
+Brasil) já aconteceria de qualquer forma.
+
+Correção: introduzido **P_tendência**, a população no MESMO ano final
+(`t_c + 25 = 2074`), mas seguindo a trajetória real da ONU sem nenhuma
+rampa/política (variante "Zero migration" pura). Os cards agora mostram
+`P_tendência → P_eq` — ambos no ano 2074, isolando o efeito da política
+de recuperação da simples passagem do tempo. Coluna `p_tendencia` em
+`data/raw/convergencia_un.csv`. Resultado, pós-correção: pra todo país
+com TFR real hoje abaixo de 2,1 (a maioria dos 28, incluindo os 7
+destaque do narayama.live), `P_eq > P_tendência` — a recuperação de
+fecundidade dá uma população maior que não fazer nada; pra países hoje
+acima de 2,1 (Nigéria, Etiópia, RD Congo...), `P_eq < P_tendência` — a
+convergência PARA BAIXO até 2,1 reduz o crescimento que aconteceria sem
+intervenção. Ambos os casos são esperados e coerentes com o
+enquadramento PEC/PEEC/PEA da tese.
+
+**Resolvido**: o item "T_2.1 gradual" que ficava em aberto desde
+2026-07-16 — essa implementação (v2) já é o cenário gradual, só que como
+convergência proposta por nós em 25 anos, não uma variante pronta da
+ONU (nenhuma cobre esse caso, ver "Tentativa 2" acima). **Em aberto pra
+uma iteração futura**: um modelo de coorte por idade completo
+(fecundidade específica por idade + tábua de mortalidade), que
+substituiria a aproximação por escala de nascimentos por algo mais
+preciso — projeto bem maior, fora de escopo por ora.
 
 ## 9. Roadmap Fase 2b — Versão Expandida (escolaridade)
 
