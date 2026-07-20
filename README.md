@@ -145,6 +145,15 @@ redesploya sozinho.
   efeito da recuperação de fecundidade — corrigido pra comparar dois
   cenários no mesmo ano (`P_tendência (2074, sem mudança) → P_eq (2074,
   com recuperação)`), isolando o efeito da política.
+- ✅ Seletor de idioma nos dois sites (2026-07-18, decisão do autor):
+  barra superior, 9 idiomas — PT (padrão/fonte) + EN/ES/JA/KO/IT/FI/FR/ZH
+  — ver `src/i18n.py`. Tradução PT→EN/ES/IT/FR feita com alta confiança;
+  PT→JA/KO/FI/ZH feita com cuidado mas sem revisão nativa — recomendável
+  revisão por falante nativo antes de divulgação ampla nesses 4 idiomas.
+  Termos técnicos da tese (N*, PEC, PEEC, PEA, NGII, TFR, P_eq,
+  P_tendência etc.) permanecem inalterados em todo idioma. Nomes de
+  país/região traduzidos; códigos de "perfil" (ex.: A35/B40/C25) já são
+  alfanuméricos, sem tradução.
 - ✅ Bot agendado de coleta de dados (UN WPP + migração + série
   histórica + convergência), Fase 1.
 - ✅ LICENSE (todos os direitos reservados) e legenda metodológica

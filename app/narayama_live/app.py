@@ -33,6 +33,10 @@ tabela geracional de narayama deve encabeçar a página"): a Tabela
 Geracional agora é o primeiro conteúdo visual da página, logo após o
 cabeçalho/legenda — a tabela minimalista e o gráfico de barras viram
 detalhe de apoio, abaixo dela.
+
+Seletor de idioma (2026-07-18, decisão do autor): barra superior com
+9 idiomas (PT padrão/fonte + EN/ES/JA/KO/IT/FI/FR/ZH), via
+src.i18n — ver esse módulo pra convenções de tradução.
 """
 
 import sys
@@ -52,6 +56,14 @@ from src.config import (
     PAISES,
     PAISES_DESTAQUE_NARAYAMA_LIVE,
 )
+from src.i18n import (
+    nome_pais,
+    nome_zona,
+    seletor_idioma,
+    sem_dado,
+    sufixo_milhoes,
+    t,
+)
 
 # -----------------------------------------------------------------------
 # Configuração da página
@@ -59,31 +71,16 @@ from src.config import (
 
 st.set_page_config(page_title="Narayama.live", layout="centered")
 
+lang = seletor_idioma()
+
 # -----------------------------------------------------------------------
 # Cabeçalho
 # -----------------------------------------------------------------------
 
 st.title("Narayama.live")
-st.markdown("### Termômetro do Índice de Narayama Sistêmico")
-st.markdown(
-    "Acompanhe, de forma simples, a capacidade de renovação geracional "
-    "de 7 países ao final de um ciclo de 25 anos — com base na tese de "
-    "doutorado \"Do Dilema de Narayama ao Oicoceno Civilizacional\" (v8.0). "
-    "Para análises detalhadas, simulações e calibração, veja "
-    "[ainu.systems](https://ainu.systems)."
-)
-st.info(
-    "**Como ler o N\\*:** não é uma nota de \"quanto maior, melhor\" — é um "
-    "equilíbrio. N\\* muito baixo indica **Colapso de Narayama (PEC)**: "
-    "poucos nascimentos não repõem a geração legatária. N\\* muito alto "
-    "indica **Saturação por Overbirths (PEEC)**: crescimento populacional "
-    "acelerado além da capacidade de absorção institucional. O ideal fica "
-    "no meio da escala, faixa chamada de **Equilíbrio Sustentável (PEA)**. "
-    "O farol institucional (+/n/-) ainda não aparece aqui: depende de "
-    "dados de Contas de Transferências Nacionais (NTA) que este projeto "
-    "ainda não tem — ver [ainu.systems](https://ainu.systems) para o "
-    "detalhamento completo da metodologia."
-)
+st.markdown(f"### {t('narayama_subtitulo', lang)}")
+st.markdown(t("narayama_intro", lang))
+st.info(t("narayama_info", lang))
 
 # -----------------------------------------------------------------------
 # Carregamento de dados
@@ -131,12 +128,10 @@ def carregar_destaques() -> pd.DataFrame:
 df = carregar_destaques()
 
 if df.empty:
-    st.warning(
-        "Nenhum dado encontrado em `data/processed/n_index_2024.csv`. "
-        "Este arquivo ainda não foi gerado pelo pipeline de cálculo "
-        "(Fase 2)."
-    )
+    st.warning(t("narayama_warning_sem_dado", lang))
     st.stop()
+
+df["nome_exibicao"] = df["codigo"].map(lambda c: nome_pais(c, lang))
 
 # -----------------------------------------------------------------------
 # Tabela Geracional de Narayama (versão reduzida, 7 países destaque)
@@ -145,30 +140,9 @@ if df.empty:
 # 9-A.7 da tese), portada em 2026-07-15. Movida para o topo da página
 # em 2026-07-16, a pedido do autor.
 
-st.header("Tabela Geracional de Narayama")
-st.caption(
-    "Grade dos 7 países destaque por zona do Índice Narayama (Saturação/"
-    "PEEC → Colapso/PEC), países ordenados por população atual dentro de "
-    "cada zona. Farol institucional aparece como lacuna (`s/d`) — mesma "
-    "explicação do quadro acima."
-)
-st.caption(
-    "**A seta compara dois cenários no mesmo ano (2074), não hoje vs. "
-    "futuro**: P_tendência → P_eq. **P_tendência**: população em 2074 se "
-    "a fecundidade real de cada país seguir sem mudança (dado real UN "
-    "WPP 2024, variante \"Zero migration\"). **P_eq**: população em 2074 "
-    "num cenário PROPOSTO em que o país converge linearmente até TFR=2,1 "
-    "ao longo de 25 anos (2024-2049) e mantém essa taxa por mais 25 anos "
-    "(2049-2074) — sempre com migração zerada. Comparar as duas no mesmo "
-    "ano isola o efeito da recuperação de fecundidade da simples inércia "
-    "etária (que sozinha já pode fazer a população crescer por décadas, "
-    "mesmo sem mudança nenhuma — caso do Brasil). **Não é uma previsão "
-    "nem um dado direto da ONU**: os nascimentos usados na simulação de "
-    "P_eq são reais, só escalados pela razão entre a TFR proposta e a "
-    "TFR real projetada pela ONU, ano a ano — óbitos ficam com o valor "
-    "real. Simplificação documentada, não um modelo de coorte por idade. "
-    "Ver [ainu.systems](https://ainu.systems) para o detalhamento completo."
-)
+st.header(t("tabela_geracional_header", lang))
+st.caption(t("narayama_caption_grade", lang))
+st.caption(t("caption_arrow_narayama", lang))
 
 _ORDEM_ZONAS = [
     "Saturação por Overbirths (PEEC)",
@@ -179,6 +153,8 @@ _ORDEM_ZONAS = [
 ]
 
 if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
+    _sd = sem_dado(lang)
+    _mi = sufixo_milhoes(lang)
     _blocos_html = []
     for _zona in _ORDEM_ZONAS:
         _paises_zona = df[df["status"] == _zona].sort_values("populacao", ascending=False)
@@ -189,23 +165,23 @@ if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
         for _linha in _paises_zona.itertuples():
             _ddi = CODIGO_DDI_POR_PAIS.get(_linha.codigo, "?")
             _p_tendencia = getattr(_linha, "p_tendencia", None)
-            _pop_tendencia = f"{_p_tendencia:.0f}mi" if pd.notna(_p_tendencia) else "s/d"
+            _pop_tendencia = f"{_p_tendencia:.0f}{_mi}" if pd.notna(_p_tendencia) else _sd
             _p_eq = getattr(_linha, "p_eq", None)
-            _pop_eq = f"{_p_eq:.0f}mi" if pd.notna(_p_eq) else "s/d"
+            _pop_eq = f"{_p_eq:.0f}{_mi}" if pd.notna(_p_eq) else _sd
             _cards.append(
                 f'<div style="background:{_cor};border:2px solid #1a1a1a;'
                 f'border-radius:6px;padding:8px;margin-bottom:6px;'
                 f'text-align:center;font-family:monospace;color:#1a1a1a;">'
-                f'<div style="font-weight:700;font-size:0.8em;">{_linha.nome} ({_ddi})</div>'
+                f'<div style="font-weight:700;font-size:0.8em;">{_linha.nome_exibicao} ({_ddi})</div>'
                 f'<div style="font-weight:700;font-size:1.2em;">{_linha.n_estrela:.2f}'
-                f'<span style="font-size:0.55em;font-weight:400;"> (s/d)</span></div>'
+                f'<span style="font-size:0.55em;font-weight:400;"> ({_sd})</span></div>'
                 f'<div style="font-size:0.72em;">{_pop_tendencia} → {_pop_eq}</div>'
                 f"</div>"
             )
         _blocos_html.append(
             f'<div style="flex:1;min-width:120px;">'
             f'<div style="font-size:0.75em;font-weight:600;margin-bottom:6px;text-align:center;">'
-            f"{_zona} ({len(_paises_zona)})</div>"
+            f"{nome_zona(_zona, lang)} ({len(_paises_zona)})</div>"
             f'{"".join(_cards)}'
             f"</div>"
         )
@@ -215,7 +191,8 @@ if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
         + "".join(_blocos_html)
         + "</div>"
         + '<div style="text-align:right;font-size:0.8em;font-weight:600;margin-top:4px;">'
-        "Índice Narayama →</div>"
+        + t("indice_narayama_seta", lang)
+        + "</div>"
     )
     st.markdown(_grade_html, unsafe_allow_html=True)
 
@@ -223,11 +200,16 @@ if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
 # Tabela minimalista
 # -----------------------------------------------------------------------
 
-st.header("N* — 7 Países Destaque (2024)")
+st.header(t("n_star_header_destaque", lang))
 
-df_tabela = df.sort_values("n_estrela").rename(columns={"nome": "País", "status": "Status"})
+_col_pais = t("col_pais", lang)
+_col_status = t("col_status", lang)
+df_tabela = df.copy()
+df_tabela[_col_pais] = df_tabela["nome_exibicao"]
+df_tabela[_col_status] = df_tabela["status"].map(lambda z: nome_zona(z, lang))
+df_tabela = df_tabela.sort_values("n_estrela")
 
-colunas_exibidas = [c for c in ["País", "N*", "Status"] if c in df_tabela.columns]
+colunas_exibidas = [c for c in [_col_pais, "N*", _col_status] if c in df_tabela.columns]
 st.dataframe(df_tabela[colunas_exibidas], use_container_width=True, hide_index=True)
 
 # -----------------------------------------------------------------------
@@ -237,11 +219,11 @@ st.dataframe(df_tabela[colunas_exibidas], use_container_width=True, hide_index=T
 if "n_estrela" in df.columns:
     fig = px.bar(
         df.sort_values("n_estrela"),
-        x="nome",
+        x="nome_exibicao",
         y="n_estrela",
         color="farol" if "farol" in df.columns else None,
-        title="N* por país (2024)",
-        labels={"nome": "País", "n_estrela": "N*"},
+        title=t("bar_chart_title", lang),
+        labels={"nome_exibicao": t("col_pais", lang), "n_estrela": "N*"},
     )
     st.plotly_chart(fig, use_container_width=True)
 
@@ -250,8 +232,4 @@ if "n_estrela" in df.columns:
 # -----------------------------------------------------------------------
 
 st.markdown("---")
-st.markdown(
-    "**Dados**: UN World Population Prospects + OECD Social Expenditure Database  \n"
-    "**Metodologia**: Tese \"Do Dilema de Narayama ao Oicoceno Civilizacional\" v8.0  \n"
-    "**Análise detalhada**: [ainu.systems](https://ainu.systems)"
-)
+st.markdown(t("footer_narayama", lang))
