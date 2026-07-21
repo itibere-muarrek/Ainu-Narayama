@@ -1,13 +1,20 @@
-# Definições Técnicas — AINU-Narayama (v8.0)
+# Definições Técnicas — AINU-Narayama (v9.2)
 
 ## 1. Introdução
 
 Este documento é a receita técnica exata do projeto AINU-Narayama: contém as
 fórmulas matemáticas usadas no cálculo do Índice de Narayama Sistêmico (N*) e
 seus componentes, conforme definidos na tese de doutorado "Do Dilema de
-Narayama ao Oicoceno Civilizacional" (`V1_EcoPol_062426_v8.0.docx`). Um único
-exemplo (Brasil, dados reais da UN WPP 2024) percorre as seções 2 a 5 para
-mostrar a mecânica completa do cálculo.
+Narayama ao Oicoceno Civilizacional". Fonte atual: `V1_EcoPol_070726_v9_2.docx`
+— versão consolidada que incorpora, no corpo do próprio documento (Seção
+9-A.1 a 9-A.9), todas as correções e extensões antes registradas separadamente
+nas revisões v9.0/v9.1 e nos registros técnicos deste repositório (composição
+ponderada de perfis, Protocolo de Falseabilidade quantitativo, normalização
+do N* por raiz quadrada, e P_2.1/P_eq/P_tendência — ver seção 10 abaixo para
+a citação exata de cada seção). As fórmulas centrais e a estrutura das seções
+1-8 vêm de `V1_EcoPol_062426_v8.0.docx`, inalteradas na v9.2. Um único exemplo
+(Brasil, dados reais da UN WPP 2024) percorre as seções 2 a 5 para mostrar a
+mecânica completa do cálculo.
 
 ## 2. N* (Índice de Narayama Sistêmico)
 
@@ -526,6 +533,24 @@ metodológica trazida pelo usuário.
   - Anexo 9 — Protocolo de Falseabilidade reescrito: fórmula quantitativa
     de 4 ajustes multiplicativos (adotada, ver seção 6), substituindo os
     7 testes qualitativos da v8.0
+- Tese v9.2, `V1_EcoPol_070726_v9_2.docx` (trazida em 2026-07-21) —
+  **fonte atual/consolidada**, substitui a citação separada de v8.0/v9.0/v9.1
+  como "fonte geral": incorpora, na própria Seção 9-A (9-A.1 a 9-A.9), tudo
+  que antes só existia como registro técnico neste repositório —
+  - 9-A.1 — Composição ponderada de perfis (Seção 5.2, corrigida)
+  - 9-A.2 — Protocolo de Falseabilidade quantitativo, calibração testada e
+    aprovada com pesquisador da Unicamp (mesmo conteúdo da v9.0 acima, agora
+    com a calibração final)
+  - 9-A.3 — Normalização do N* via raiz quadrada (N\* = √N_Base), com os 5
+    limiares refinados em 12/07/2026: PEC < 0,71; Tensão Acelerada
+    0,71-0,90; PEA 0,90-1,40; Tensão Populacional 1,40-2,00; PEEC ≥ 2,00
+    — mesmos valores usados em `src/config.py` (`LIMIARES_5_ZONAS_NORMALIZADOS`)
+  - 9-A.9 — P_conv/P_eq/P_tendência: formaliza o cenário de recuperação em
+    25+25 anos e a correção "problema dos dois números" (commit 696630d),
+    com o mesmo conteúdo de docs/registro_correcao_p_eq_2026-07-18.docx
+  - As fórmulas centrais (Seções 1-8 deste documento) permanecem inalteradas
+    desde a v8.0 — a v9.2 não as reescreve, só consolida as extensões acima
+    no corpo do texto em vez de mantê-las como adendo separado
 - Documento de terceiros "Aqui está a simulação completa atualizada com os 7
   países destaque..." (ChatGPT/Grok, validado com pesquisadores, trazido em
   2026-07-01/02): números não reproduzíveis (seção 8), mas útil para a

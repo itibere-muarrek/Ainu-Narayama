@@ -2,11 +2,13 @@
 
 Cálculo do Índice de Narayama Sistêmico (N*) para 28 economias.
 
-Baseado na tese "Do Dilema de Narayama ao Oicoceno Civilizacional". As
-fórmulas centrais, a composição de perfis dos 28 países e os limiares
-de zona vêm da **v8.0**; o Protocolo de Falseabilidade quantitativo e
-a normalização do N* vêm da revisão **v9.1** (2026-07) — ver
-`docs/definitions.md` para a citação exata de cada seção.
+Baseado na tese "Do Dilema de Narayama ao Oicoceno Civilizacional",
+versão atual **v9.2** (2026-07-21) — consolida no corpo do documento
+(Seção 9-A) tudo que antes ficava só nos registros técnicos deste
+repositório: composição ponderada de perfis, Protocolo de
+Falseabilidade quantitativo, normalização do N* por raiz quadrada e
+P_2.1/P_eq/P_tendência. As fórmulas centrais vêm da v8.0, inalteradas
+na v9.2 — ver `docs/definitions.md` para a citação exata de cada seção.
 
 ## Começar
 
@@ -121,8 +123,13 @@ redesploya sozinho.
 - `app/narayama_live/` — Website público (Streamlit)
 - `docs/` — Documentação técnica
 
-## Estado atual (2026-07-16)
+## Estado atual (2026-07-21)
 
+- ✅ Tese atualizada para **v9.2** (`V1_EcoPol_070726_v9_2.docx`,
+  2026-07-21) — consolida no corpo do documento (Seção 9-A) tudo que
+  antes só existia como registro técnico separado neste repositório.
+  Citações de versão nos sites e no README atualizadas de v8.0 para
+  v9.2 — ver `docs/definitions.md`, seção 10, para o detalhamento.
 - ✅ Pipeline completo com dado real (UN WPP), 28 países, 5 zonas.
 - ✅ Composição ponderada de perfis, Protocolo de Falseabilidade
   quantitativo e normalização do N* — as 3 mudanças metodológicas
@@ -177,7 +184,7 @@ redesploya sozinho.
 - Fase 6: Agentes computacionais
 
 ## Referências
-- Tese v8.0/v9.1: `docs/`
+- Tese v9.2 (consolidada; fórmulas centrais de v8.0): `docs/`
 - UN WPP: https://population.un.org/wpp/
 - UN International Migrant Stock: https://www.un.org/development/desa/pd/content/international-migrant-stock
 - Streamlit: https://docs.streamlit.io/
