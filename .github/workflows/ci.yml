@@ -72,6 +72,8 @@ jobs:
           assert set(df['pais_codigo']) == set(PAISES.keys()), 'convergencia_un.csv e src/config.py divergem'
           assert df['p_eq'].notna().all(), 'p_eq com valores nulos'
           assert (df['p_eq'] > 0).all(), 'p_eq com valores nao positivos'
+          assert df['p_tendencia'].notna().all(), 'p_tendencia com valores nulos'
+          assert (df['p_tendencia'] > 0).all(), 'p_tendencia com valores nao positivos'
 
           print('Checagem de regressão (convergência): OK')
           "

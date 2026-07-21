@@ -36,6 +36,12 @@ docs/definitions.md, seções 6 e 8): N_Base alto é melhor.
     0.50 <= N_Base < 0.80   -> Tensão Acelerada
     N_Base < 0.50           -> Colapso de Narayama (PEC)
 PEEC não é um limiar de N*: é diagnosticado por TFR > 2.8 (Cap. 3.2.1).
+
+Seletor de idioma (2026-07-18, decisão do autor): barra superior com
+9 idiomas (PT padrão/fonte + EN/ES/JA/KO/IT/FI/FR/ZH), via
+src.i18n — ver esse módulo pra convenções de tradução. Nomes de
+região são traduzidos; códigos de "perfil" (ex.: A35/B40/C25) são
+alfanuméricos e não precisam de tradução.
 """
 
 import os
@@ -57,12 +63,23 @@ from src.config import (
     LIMIAR_PEEC_TFR,
     PAISES,
 )
+from src.i18n import (
+    nome_pais,
+    nome_regiao,
+    nome_zona,
+    seletor_idioma,
+    sem_dado,
+    sufixo_milhoes,
+    t,
+)
 
 # -----------------------------------------------------------------------
 # Configuração da página
 # -----------------------------------------------------------------------
 
 st.set_page_config(page_title="ainu.systems", layout="wide")
+
+lang = seletor_idioma()
 
 # -----------------------------------------------------------------------
 # Controle de acesso (placeholder — Fase 1)
@@ -78,18 +95,14 @@ def _acesso_liberado() -> bool:
     senha_esperada = os.environ.get("AINU_SYSTEMS_PASSWORD")
 
     if not senha_esperada:
-        st.warning(
-            "Autenticação não configurada nesta instância (Fase 1 — "
-            "placeholder). Defina a variável de ambiente "
-            "`AINU_SYSTEMS_PASSWORD` para restringir o acesso."
-        )
+        st.warning(t("auth_nao_configurada", lang))
         return True
 
-    senha_digitada = st.text_input("Senha de acesso (ainu.systems)", type="password")
+    senha_digitada = st.text_input(t("senha_prompt", lang), type="password")
     if senha_digitada == senha_esperada:
         return True
     if senha_digitada:
-        st.error("Senha incorreta.")
+        st.error(t("senha_incorreta", lang))
     return False
 
 
@@ -101,14 +114,8 @@ if not _acesso_liberado():
 # -----------------------------------------------------------------------
 
 st.title("ainu.systems")
-st.markdown("### Plataforma restrita a pesquisadores e formuladores de política")
-st.markdown(
-    "Cálculos detalhados do Índice de Narayama Sistêmico (N*) para os "
-    "28 países da amostra, com base na tese de doutorado "
-    "\"Do Dilema de Narayama ao Oicoceno Civilizacional\" (v8.0). "
-    "Para a visão pública e simplificada, veja "
-    "[narayama.live](https://narayama.live)."
-)
+st.markdown(f"### {t('ainu_subtitulo', lang)}")
+st.markdown(t("ainu_intro", lang))
 
 # -----------------------------------------------------------------------
 # Carregamento de dados
@@ -137,11 +144,14 @@ def carregar_n_index_2024() -> pd.DataFrame:
 
     try:
         conv_df = pd.read_csv(DATA_RAW_DIR / "convergencia_un.csv")
-        conv_df = conv_df.rename(columns={"pais_codigo": "codigo"})[["codigo", "p_eq", "ano_eq"]]
+        conv_df = conv_df.rename(columns={"pais_codigo": "codigo"})[
+            ["codigo", "p_eq", "ano_eq", "p_tendencia"]
+        ]
         df = df.merge(conv_df, on="codigo", how="left")
     except FileNotFoundError:
         df["p_eq"] = None
         df["ano_eq"] = None
+        df["p_tendencia"] = None
 
     return df
 
@@ -164,45 +174,52 @@ def carregar_n_index_historico() -> pd.DataFrame:
 df = carregar_n_index_2024()
 
 if df.empty:
-    st.warning(
-        "Nenhum dado encontrado em `data/processed/n_index_2024.csv`. "
-        "Este arquivo ainda não foi gerado pelo pipeline de cálculo "
-        "(Fase 2). As seções abaixo aparecem vazias até que os dados "
-        "existam."
-    )
+    st.warning(t("ainu_warning_sem_dado", lang))
+else:
+    df["nome_exibicao"] = df["codigo"].map(lambda c: nome_pais(c, lang))
+    df["regiao_exibicao"] = df["regiao"].map(lambda r: nome_regiao(r, lang) if pd.notna(r) else r)
 
 # -----------------------------------------------------------------------
 # Filtros (sidebar)
 # -----------------------------------------------------------------------
 
-st.sidebar.header("Filtros")
+st.sidebar.header(t("filtros_header", lang))
 
-perfis_disponiveis = ["Todos"] + sorted(df["perfil"].dropna().unique()) if not df.empty else ["Todos"]
-perfil_selecionado = st.sidebar.selectbox("Perfil", perfis_disponiveis)
+_todos = t("todos", lang)
+_todas = t("todas", lang)
 
-regioes_disponiveis = ["Todas"] + sorted(df["regiao"].dropna().unique()) if not df.empty else ["Todas"]
-regiao_selecionada = st.sidebar.selectbox("Região", regioes_disponiveis)
+perfis_disponiveis = [_todos] + sorted(df["perfil"].dropna().unique()) if not df.empty else [_todos]
+perfil_selecionado = st.sidebar.selectbox(t("perfil_label", lang), perfis_disponiveis)
 
-busca_pais = st.sidebar.text_input("Buscar país")
+if not df.empty:
+    _regioes_map = dict(zip(df["regiao_exibicao"], df["regiao"]))
+    regioes_disponiveis_exibicao = [_todas] + sorted(df["regiao_exibicao"].dropna().unique())
+else:
+    _regioes_map = {}
+    regioes_disponiveis_exibicao = [_todas]
+regiao_selecionada_exibicao = st.sidebar.selectbox(t("regiao_label", lang), regioes_disponiveis_exibicao)
+regiao_selecionada = _regioes_map.get(regiao_selecionada_exibicao, regiao_selecionada_exibicao)
+
+busca_pais = st.sidebar.text_input(t("buscar_pais_label", lang))
 
 df_filtrado = df.copy()
 if not df_filtrado.empty:
-    if perfil_selecionado != "Todos":
+    if perfil_selecionado != _todos:
         df_filtrado = df_filtrado[df_filtrado["perfil"] == perfil_selecionado]
-    if regiao_selecionada != "Todas":
+    if regiao_selecionada_exibicao != _todas:
         df_filtrado = df_filtrado[df_filtrado["regiao"] == regiao_selecionada]
     if busca_pais:
-        df_filtrado = df_filtrado[df_filtrado["nome"].str.contains(busca_pais, case=False, na=False)]
+        df_filtrado = df_filtrado[df_filtrado["nome_exibicao"].str.contains(busca_pais, case=False, na=False)]
 
 # -----------------------------------------------------------------------
 # Estatísticas (sidebar)
 # -----------------------------------------------------------------------
 
-st.sidebar.header("Estatísticas")
+st.sidebar.header(t("estatisticas_header", lang))
 
 if not df.empty:
     contagem_zonas = df["status"].value_counts()
-    st.sidebar.markdown("**Países por zona de N\\*:**")
+    st.sidebar.markdown(t("paises_por_zona_label", lang))
     for zona in [
         "Colapso de Narayama (PEC)",
         "Tensão Acelerada",
@@ -210,73 +227,66 @@ if not df.empty:
         "Tensão Populacional",
         "Saturação por Overbirths (PEEC)",
     ]:
-        st.sidebar.write(f"{zona}: {contagem_zonas.get(zona, 0)}")
+        st.sidebar.write(f"{nome_zona(zona, lang)}: {contagem_zonas.get(zona, 0)}")
 
     if "tfr_2024" in df.columns:
         risco_peec = int((df["tfr_2024"] > LIMIAR_PEEC_TFR).sum())
-        st.sidebar.write(f"Risco PEEC (TFR > {LIMIAR_PEEC_TFR}): {risco_peec}")
+        st.sidebar.write(t("risco_peec_label", lang, limiar=LIMIAR_PEEC_TFR, valor=risco_peec))
 
     if "n_estrela" in df.columns and "perfil" in df.columns:
-        st.sidebar.markdown("**N\\* médio por perfil:**")
+        st.sidebar.markdown(t("n_medio_perfil_label", lang))
         st.sidebar.dataframe(df.groupby("perfil")["n_estrela"].mean().round(3))
 
-    if "fator_alocativo" in df.columns and "regiao" in df.columns:
-        st.sidebar.markdown("**Fator_Alocativo médio por região:**")
-        st.sidebar.dataframe(df.groupby("regiao")["fator_alocativo"].mean().round(3))
+    if "fator_alocativo" in df.columns and "regiao_exibicao" in df.columns:
+        st.sidebar.markdown(t("fator_alocativo_medio_regiao_label", lang))
+        st.sidebar.dataframe(df.groupby("regiao_exibicao")["fator_alocativo"].mean().round(3))
 else:
-    st.sidebar.write("Sem dados carregados.")
+    st.sidebar.write(t("sem_dados_carregados", lang))
 
 # -----------------------------------------------------------------------
 # Tabela principal
 # -----------------------------------------------------------------------
 
-st.header("Tabela Principal — N* por País (2024)")
+st.header(t("tabela_principal_header", lang))
 
-st.caption(
-    "N* = raiz quadrada do N_Base (decisão de 2026-07-09, sendo "
-    "incorporada pelo autor na tese) — normaliza os casos extremos de "
-    "países jovens/alta fecundidade sem empatar países entre si nem "
-    "usar constante arbitrária. `N_Base` (valor demográfico bruto) "
-    "fica ao lado, pra transparência. `NGII_Puro` já é depurado pelo "
-    "Protocolo de Falseabilidade quantitativo (4 ajustes multiplicativos "
-    "— migração, inércia demográfica, políticas natalistas temporárias, "
-    "sub-registro/mortalidade — Anexo 9, v9.0); `NGII_Bruto` é o valor "
-    "sem esse ajuste. `Farol`/`Fator_Aloc` aparecem como \"Pendente "
-    "(NTA)\" porque dependem de National Transfer Accounts, ainda não "
-    "integrado (Fase 2b). Detalhes em "
-    "[docs/definitions.md](../../docs/definitions.md), seções 6, 7 e 8."
-)
+st.caption(t("tabela_principal_caption", lang))
 
 if not df_filtrado.empty:
+    _pendente = t("pendente_nta", lang)
+    _col_pais = t("col_pais", lang)
+    _col_status = t("col_status", lang)
+    _col_farol = t("col_farol", lang)
+
     df_tabela = df_filtrado.copy()
-    df_tabela["farol"] = df_tabela["farol"].fillna("Pendente (NTA)")
+    df_tabela["farol"] = df_tabela["farol"].fillna(_pendente)
     df_tabela["fator_alocativo"] = df_tabela["fator_alocativo"].apply(
-        lambda v: "Pendente (NTA)" if pd.isna(v) else v
+        lambda v: _pendente if pd.isna(v) else v
     )
+    df_tabela[_col_pais] = df_tabela["nome_exibicao"]
+    df_tabela[_col_status] = df_tabela["status"].map(lambda z: nome_zona(z, lang))
     df_tabela = df_tabela.sort_values("n_base").rename(
         columns={
-            "nome": "País",
             "n_estrela": "N*",
             "n_base": "N_Base",
-            "farol": "Farol",
+            "farol": _col_farol,
             "ngii_bruto": "NGII_Bruto",
             "ngii_puro": "NGII_puro",
             "fator_geracional": "Fator_Ger",
             "fator_alocativo": "Fator_Aloc",
-            "status": "Status",
         }
     )
 
     colunas_exibidas = [
         c
-        for c in ["País", "N*", "N_Base", "Farol", "NGII_Bruto", "NGII_puro", "Fator_Ger", "Fator_Aloc", "Status"]
+        for c in [_col_pais, "N*", "N_Base", _col_farol, "NGII_Bruto", "NGII_puro", "Fator_Ger", "Fator_Aloc", _col_status]
         if c in df_tabela.columns
     ]
 
     def colorir_por_zona(linha: pd.Series) -> list:
         """Cores das 5 zonas (Seção 9-A.7) — mesma fonte que a coluna Status."""
-        status = linha.get("Status")
-        cor_hex = CORES_5_ZONAS.get(status)
+        status_exibido = linha.get(_col_status)
+        status_pt = next((z for z in CORES_5_ZONAS if nome_zona(z, lang) == status_exibido), status_exibido)
+        cor_hex = CORES_5_ZONAS.get(status_pt)
         cor = f"background-color: {cor_hex}" if cor_hex else ""
         return [cor] * len(linha)
 
@@ -285,13 +295,13 @@ if not df_filtrado.empty:
         use_container_width=True,
     )
 else:
-    st.write("Nenhum país corresponde aos filtros selecionados (ou não há dados carregados).")
+    st.write(t("nenhum_pais_filtro", lang))
 
 # -----------------------------------------------------------------------
 # Gráfico 1 — Scatter Plot (NGII_puro vs Fator_Alocativo)
 # -----------------------------------------------------------------------
 
-st.header("NGII_puro vs Fator_Alocativo (28 países, 2024)")
+st.header(t("scatter_header", lang))
 
 colunas_scatter = {"ngii_puro", "fator_alocativo", "perfil", "populacao"}
 if not df_filtrado.empty and colunas_scatter.issubset(df_filtrado.columns):
@@ -301,52 +311,47 @@ if not df_filtrado.empty and colunas_scatter.issubset(df_filtrado.columns):
         y="fator_alocativo",
         color="perfil",
         size="populacao",
-        hover_name="nome",
-        title="NGII_puro vs Fator_Alocativo (28 países 2024)",
+        hover_name="nome_exibicao",
+        title=t("scatter_header", lang),
     )
     st.plotly_chart(fig_scatter, use_container_width=True)
 else:
-    st.write(
-        "Gráfico indisponível: faltam dados ou a coluna `populacao` "
-        "em `data/processed/n_index_2024.csv`."
-    )
+    st.write(t("scatter_fallback", lang))
 
 # -----------------------------------------------------------------------
 # Gráfico 2 — Série Temporal do N*
 # -----------------------------------------------------------------------
 
-st.header("Evolução do N* — Série Histórica")
+st.header(t("serie_historica_header", lang))
 
 df_historico = carregar_n_index_historico()
 
 if not df_historico.empty:
-    paises_disponiveis = sorted(df_historico["nome"].dropna().unique())
+    df_historico["nome_exibicao"] = df_historico["codigo"].map(lambda c: nome_pais(c, lang))
+    paises_disponiveis = sorted(df_historico["nome_exibicao"].dropna().unique())
     paises_selecionados = st.multiselect(
-        "Selecione de 3 a 5 países",
+        t("selecione_paises_label", lang),
         options=paises_disponiveis,
         default=paises_disponiveis[: min(5, len(paises_disponiveis))],
         max_selections=5,
     )
 
-    df_historico_filtrado = df_historico[df_historico["nome"].isin(paises_selecionados)]
+    df_historico_filtrado = df_historico[df_historico["nome_exibicao"].isin(paises_selecionados)]
 
     if not df_historico_filtrado.empty:
         fig_linha = px.line(
             df_historico_filtrado,
             x="ano",
             y="n_base",
-            color="nome",
-            title="Evolução do N* — Série Histórica",
-            labels={"ano": "Ano", "n_base": "N*", "nome": "País"},
+            color="nome_exibicao",
+            title=t("serie_historica_header", lang),
+            labels={"ano": "Ano", "n_base": "N*", "nome_exibicao": t("col_pais", lang)},
         )
         st.plotly_chart(fig_linha, use_container_width=True)
     else:
-        st.write("Selecione ao menos um país para exibir a série histórica.")
+        st.write(t("selecione_ao_menos_um_pais", lang))
 else:
-    st.write(
-        "Série histórica indisponível: `data/processed/n_index_historico.csv` "
-        "ainda não foi gerado pelo pipeline (Fase 2+)."
-    )
+    st.write(t("serie_historica_indisponivel", lang))
 
 # -----------------------------------------------------------------------
 # Tabela Geracional de Narayama (visualização em formato periódico)
@@ -358,31 +363,10 @@ else:
 # primeira versão (2026-07-13, linhas empilhadas por zona, código
 # ISO3): não batiam com o desenho original.
 
-st.header("Tabela Geracional de Narayama")
-st.caption(
-    "Grade comparativa dos 28 países segundo o N* (Seção 9-A.7 da tese, "
-    "revisão de 12/07/2026). Eixo horizontal = zona do Índice Narayama "
-    "(Saturação/PEEC → Colapso/PEC); eixo vertical, dentro de cada "
-    "zona = população atual, maior no topo. Mostra sempre os 28 "
-    "países, independente dos filtros de Perfil/Região acima."
-)
-st.caption(
-    "⚠️ **Lacuna registrada nos cards**: `farol (s/d)` — depende do "
-    "Fator_Alocativo/NTA, sem fonte de dado real ainda (ver "
-    "docs/definitions.md, seção 5)."
-)
-st.caption(
-    "**A seta mostra População atual → P_eq**: o tamanho populacional "
-    "de equilíbrio, ~1 geração (25 anos) depois de um cenário em que a "
-    "TFR salta para o nível de reposição (~2,1) e a migração vai a "
-    "zero — dado real da UN WPP 2024 (variante \"Instant replacement "
-    "zero migration\"), não uma projeção nossa. **Não é uma previsão**: "
-    "é o piso/teto demográfico que a inércia etária impõe mesmo num "
-    "cenário ideal de recuperação da fecundidade — formalização do "
-    "autor (2026-07-16), P_eq = P_E(t_c + 25). O tempo real até a "
-    "sociedade atingir TFR=2,1 (T_2.1, num cenário gradual em vez de "
-    "instantâneo) continua em aberto — ver docs/definitions.md, seção 8-B."
-)
+st.header(t("tabela_geracional_header", lang))
+st.caption(t("tabela_geracional_caption_ainu", lang))
+st.caption(t("farol_gap_caption", lang))
+st.caption(t("caption_arrow_ainu", lang))
 
 _ORDEM_ZONAS = [
     "Saturação por Overbirths (PEEC)",
@@ -393,6 +377,8 @@ _ORDEM_ZONAS = [
 ]
 
 if not df.empty and {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
+    _sd = sem_dado(lang)
+    _mi = sufixo_milhoes(lang)
     _blocos_html = []
     for _zona in _ORDEM_ZONAS:
         _paises_zona = df[df["status"] == _zona].sort_values("populacao", ascending=False)
@@ -400,23 +386,24 @@ if not df.empty and {"status", "n_estrela", "codigo", "nome", "populacao"}.issub
         _cards = []
         for _linha in _paises_zona.itertuples():
             _ddi = CODIGO_DDI_POR_PAIS.get(_linha.codigo, "?")
-            _pop_atual = f"{_linha.populacao:.0f}mi"
+            _p_tendencia = getattr(_linha, "p_tendencia", None)
+            _pop_tendencia = f"{_p_tendencia:.0f}{_mi}" if pd.notna(_p_tendencia) else _sd
             _p_eq = getattr(_linha, "p_eq", None)
-            _pop_eq = f"{_p_eq:.0f}mi" if pd.notna(_p_eq) else "s/d"
+            _pop_eq = f"{_p_eq:.0f}{_mi}" if pd.notna(_p_eq) else _sd
             _cards.append(
                 f'<div style="background:{_cor};border:2px solid #1a1a1a;'
                 f'border-radius:6px;padding:8px;margin-bottom:6px;'
                 f'text-align:center;font-family:monospace;color:#1a1a1a;">'
-                f'<div style="font-weight:700;font-size:0.8em;">{_linha.nome} ({_ddi})</div>'
+                f'<div style="font-weight:700;font-size:0.8em;">{_linha.nome_exibicao} ({_ddi})</div>'
                 f'<div style="font-weight:700;font-size:1.2em;">{_linha.n_estrela:.2f}'
-                f'<span style="font-size:0.55em;font-weight:400;"> (s/d)</span></div>'
-                f'<div style="font-size:0.72em;">{_pop_atual} → {_pop_eq}</div>'
+                f'<span style="font-size:0.55em;font-weight:400;"> ({_sd})</span></div>'
+                f'<div style="font-size:0.72em;">{_pop_tendencia} → {_pop_eq}</div>'
                 f"</div>"
             )
         _blocos_html.append(
             f'<div style="flex:1;min-width:130px;">'
             f'<div style="font-size:0.8em;font-weight:600;margin-bottom:6px;text-align:center;">'
-            f"{_zona} ({len(_paises_zona)})</div>"
+            f"{nome_zona(_zona, lang)} ({len(_paises_zona)})</div>"
             f'{"".join(_cards)}'
             f"</div>"
         )
@@ -426,20 +413,16 @@ if not df.empty and {"status", "n_estrela", "codigo", "nome", "populacao"}.issub
         + "".join(_blocos_html)
         + "</div>"
         + '<div style="text-align:right;font-size:0.8em;font-weight:600;margin-top:4px;">'
-        "Índice Narayama →</div>"
+        + t("indice_narayama_seta", lang)
+        + "</div>"
     )
     st.markdown(_grade_html, unsafe_allow_html=True)
 else:
-    st.write("Dados insuficientes para montar a tabela geracional.")
+    st.write(t("dados_insuficientes_tabela_geracional", lang))
 
 # -----------------------------------------------------------------------
 # Rodapé
 # -----------------------------------------------------------------------
 
 st.markdown("---")
-st.markdown(
-    "**Dados**: UN World Population Prospects + OECD Social Expenditure Database  \n"
-    "**Metodologia**: Tese \"Do Dilema de Narayama ao Oicoceno Civilizacional\" v8.0  \n"
-    "**Documentação**: [docs/definitions.md](../../docs/definitions.md)  \n"
-    "**Versão pública**: [narayama.live](https://narayama.live)"
-)
+st.markdown(t("footer_ainu", lang))
