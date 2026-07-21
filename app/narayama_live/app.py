@@ -142,6 +142,7 @@ df["nome_exibicao"] = df["codigo"].map(lambda c: nome_pais(c, lang))
 
 st.header(t("tabela_geracional_header", lang))
 st.caption(t("narayama_caption_grade", lang))
+st.caption(t("farol_provisorio_caption", lang))
 st.caption(t("caption_arrow_narayama", lang))
 
 _ORDEM_ZONAS = [

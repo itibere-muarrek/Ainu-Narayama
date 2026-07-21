@@ -366,6 +366,7 @@ else:
 st.header(t("tabela_geracional_header", lang))
 st.caption(t("tabela_geracional_caption_ainu", lang))
 st.caption(t("farol_gap_caption", lang))
+st.caption(t("farol_provisorio_caption", lang))
 st.caption(t("caption_arrow_ainu", lang))
 
 _ORDEM_ZONAS = [
