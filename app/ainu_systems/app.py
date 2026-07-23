@@ -64,6 +64,7 @@ from src.config import (
     PAISES,
 )
 from src.i18n import (
+    glossario_markdown,
     nome_pais,
     nome_regiao,
     nome_zona,
@@ -318,11 +319,13 @@ if not df_filtrado.empty and colunas_scatter.issubset(df_filtrado.columns):
         y="fator_geracional",
         color="perfil",
         size="populacao",
+        text="codigo",
         hover_name="nome_exibicao",
         title=t("scatter_header", lang),
         log_x=True,
         labels={"ngii_puro": t("scatter_eixo_x_label", lang), "fator_geracional": "Fator_Geracional"},
     )
+    fig_scatter.update_traces(textposition="top center", textfont_size=10)
     st.plotly_chart(fig_scatter, use_container_width=True)
 else:
     st.write(t("scatter_fallback", lang))
@@ -429,6 +432,15 @@ if not df.empty and {"status", "n_estrela", "codigo", "nome", "populacao"}.issub
     st.markdown(_grade_html, unsafe_allow_html=True)
 else:
     st.write(t("dados_insuficientes_tabela_geracional", lang))
+
+# -----------------------------------------------------------------------
+# Glossário (versão completa — Anexo 14 da tese v9.2)
+# -----------------------------------------------------------------------
+
+st.markdown("---")
+st.header(t("glossario_header", lang))
+st.caption(t("glossario_intro", lang))
+st.markdown(glossario_markdown(lang, apenas_resumido=False))
 
 # -----------------------------------------------------------------------
 # Rodapé

@@ -57,6 +57,7 @@ from src.config import (
     PAISES_DESTAQUE_NARAYAMA_LIVE,
 )
 from src.i18n import (
+    glossario_markdown,
     nome_pais,
     nome_zona,
     seletor_idioma,
@@ -227,6 +228,15 @@ if "n_estrela" in df.columns:
         labels={"nome_exibicao": t("col_pais", lang), "n_estrela": "N*"},
     )
     st.plotly_chart(fig, use_container_width=True)
+
+# -----------------------------------------------------------------------
+# Glossário (versão resumida — só os termos que aparecem na tela)
+# -----------------------------------------------------------------------
+
+st.markdown("---")
+st.header(t("glossario_header", lang))
+st.caption(t("glossario_intro", lang))
+st.markdown(glossario_markdown(lang, apenas_resumido=True))
 
 # -----------------------------------------------------------------------
 # Rodapé
