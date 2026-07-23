@@ -308,6 +308,7 @@ else:
 # sempre disponível pros 28 países — ver src/indices.py:calcular_n_base.
 
 st.header(t("scatter_header", lang))
+st.caption(t("scatter_caption_leitura", lang))
 
 colunas_scatter = {"ngii_puro", "fator_geracional", "perfil", "populacao"}
 if not df_filtrado.empty and colunas_scatter.issubset(df_filtrado.columns):
@@ -319,6 +320,8 @@ if not df_filtrado.empty and colunas_scatter.issubset(df_filtrado.columns):
         size="populacao",
         hover_name="nome_exibicao",
         title=t("scatter_header", lang),
+        log_x=True,
+        labels={"ngii_puro": t("scatter_eixo_x_label", lang), "fator_geracional": "Fator_Geracional"},
     )
     st.plotly_chart(fig_scatter, use_container_width=True)
 else:
