@@ -298,17 +298,23 @@ else:
     st.write(t("nenhum_pais_filtro", lang))
 
 # -----------------------------------------------------------------------
-# Gráfico 1 — Scatter Plot (NGII_puro vs Fator_Alocativo)
+# Gráfico 1 — Scatter Plot (NGII_puro vs Fator_Geracional)
 # -----------------------------------------------------------------------
+# Trocado de Fator_Alocativo pra Fator_Geracional em 2026-07-21: o
+# usuário reportou o gráfico "não carregando" — não era bug de
+# renderização, era fator_alocativo com 0/28 países preenchidos (NTA
+# ainda não integrado, ver farol_gap_caption). Fator_Geracional é o
+# outro componente real do N_Base (N_Base = NGII_puro × Fator_Geracional),
+# sempre disponível pros 28 países — ver src/indices.py:calcular_n_base.
 
 st.header(t("scatter_header", lang))
 
-colunas_scatter = {"ngii_puro", "fator_alocativo", "perfil", "populacao"}
+colunas_scatter = {"ngii_puro", "fator_geracional", "perfil", "populacao"}
 if not df_filtrado.empty and colunas_scatter.issubset(df_filtrado.columns):
     fig_scatter = px.scatter(
         df_filtrado,
         x="ngii_puro",
-        y="fator_alocativo",
+        y="fator_geracional",
         color="perfil",
         size="populacao",
         hover_name="nome_exibicao",

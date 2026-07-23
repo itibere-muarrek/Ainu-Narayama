@@ -443,11 +443,11 @@ T: dict[str, dict[str, str]] = {
         "zh": "没有国家符合所选筛选条件（或未加载数据）。",
     },
     "scatter_header": {
-        "pt": "NGII_puro vs Fator_Alocativo (28 países, 2024)", "en": "NGII_puro vs Fator_Alocativo (28 countries, 2024)",
-        "es": "NGII_puro vs Fator_Alocativo (28 países, 2024)", "ja": "NGII_puro 対 Fator_Alocativo（28か国、2024年）",
-        "ko": "NGII_puro 대 Fator_Alocativo (28개국, 2024)", "it": "NGII_puro vs Fator_Alocativo (28 paesi, 2024)",
-        "fi": "NGII_puro vs Fator_Alocativo (28 maata, 2024)", "fr": "NGII_puro vs Fator_Alocativo (28 pays, 2024)",
-        "zh": "NGII_puro 与 Fator_Alocativo 对比（28个国家，2024年）",
+        "pt": "NGII_puro vs Fator_Geracional (28 países, 2024)", "en": "NGII_puro vs Fator_Geracional (28 countries, 2024)",
+        "es": "NGII_puro vs Fator_Geracional (28 países, 2024)", "ja": "NGII_puro 対 Fator_Geracional（28か国、2024年）",
+        "ko": "NGII_puro 대 Fator_Geracional (28개국, 2024)", "it": "NGII_puro vs Fator_Geracional (28 paesi, 2024)",
+        "fi": "NGII_puro vs Fator_Geracional (28 maata, 2024)", "fr": "NGII_puro vs Fator_Geracional (28 pays, 2024)",
+        "zh": "NGII_puro 与 Fator_Geracional 对比（28个国家，2024年）",
     },
     "scatter_fallback": {
         "pt": "Gráfico indisponível: faltam dados ou a coluna `populacao` em `data/processed/n_index_2024.csv`.",
