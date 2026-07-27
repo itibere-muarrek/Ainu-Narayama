@@ -170,6 +170,22 @@ redesploya sozinho.
   autor de 2026-07-15 ("quinquenal para começar e vamos refinando
   após validações"); migrar pra anual é só trocar
   `src.config.ANOS_ALVO_HISTORICO`, sem mudança de arquitetura.
+- ✅ Gráfico NGII_puro vs Fator_Geracional no ainu.systems (2026-07-23):
+  trocado de Fator_Alocativo (0/28 países com dado real, gráfico ficava
+  vazio) para Fator_Geracional (sempre disponível); eixo X em escala
+  logarítmica (poucos países com NGII_puro muito alto não esticam mais
+  o eixo); rótulo de código do país em cada bolha; legenda explicando
+  os dois eixos e o cuidado de leitura (N_Base é multiplicação, não soma
+  — "mais pra cima-direita" não é sempre "melhor").
+- ✅ Glossário (2026-07-23), baseado no Anexo 14 (Glossário Técnico) da
+  tese v9.2, no fim das duas páginas antes do rodapé técnico —
+  narayama.live com os 12 termos que aparecem na tela; ainu.systems com
+  os 36 termos completos, incluindo conceitos de fases futuras (CHR,
+  EIS, IES, IVAT, NCII, NGIO, NIH, NSII, NTAI, Flor de Narayama, URSS,
+  Provedor Geracional, RRE, Oicoceno Civilizacional, Pacto
+  Ético-Geracional, OLG). Entradas de PEC/PEA/PEEC corrigidas pra usar
+  os limiares reais de 5 zonas, não a convenção de 3 zonas do Anexo 14
+  original (desatualizada).
 - ⏳ Fator_Alocativo/NTA — sem fonte de dado real (gancho do convite ao
   Prof. Cássio Turra, Cedeplar/UFMG, National Transfer Accounts Project).
   ainda em decisão com o autor.
