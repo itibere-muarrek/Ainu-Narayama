@@ -460,7 +460,7 @@ else:
     st.write(t("dados_insuficientes_tabela_geracional", lang))
 
 # -----------------------------------------------------------------------
-# Glossário (versão completa — Anexo 14 da tese v9.2)
+# Glossário (versão completa — Anexo 14 da tese V1_11)
 # -----------------------------------------------------------------------
 
 st.markdown("---")
