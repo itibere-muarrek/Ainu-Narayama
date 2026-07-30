@@ -1,9 +1,19 @@
 # Blueprint do Render (https://render.com/docs/blueprint-spec).
 #
-# Define os dois serviços do AINU-Narayama como Web Services
-# independentes, cada um com seu próprio domínio customizado
-# (configurado manualmente no painel do Render após o primeiro
-# deploy — ver README.md, seção "Deploy").
+# Cada site público (ainu.systems, narayama.live) agora é composto por
+# DOIS serviços Render:
+#   1. Uma landing page estática (HTML puro) na raiz do domínio —
+#      existe pra ser indexável pelos motores de busca (Streamlit é
+#      renderizado via JS e não é indexável). Ver landing/README ou
+#      a discussão de SEO de 2026-07-30.
+#   2. O app Streamlit interativo de sempre, que passa a viver no
+#      subdomínio "app." de cada domínio (app.ainu.systems,
+#      app.narayama.live) em vez da raiz.
+#
+# Domínios customizados são configurados manualmente no painel do
+# Render após o deploy (ver README.md, seção "Deploy") — a raiz de
+# cada domínio vai pro serviço "*-landing", e o subdomínio "app."
+# vai pro serviço Streamlit correspondente.
 #
 # Render redesploya automaticamente a cada push para a branch
 # conectada; não é necessário workflow de deploy no GitHub Actions.
@@ -25,3 +35,17 @@ services:
     plan: free
     buildCommand: pip install -r app/requirements.txt
     startCommand: streamlit run app/narayama_live/app.py --server.port $PORT --server.address 0.0.0.0
+
+  - type: web
+    name: ainu-systems-landing
+    runtime: static
+    plan: free
+    staticPublishPath: ./landing/ainu-systems
+    buildCommand: ""
+
+  - type: web
+    name: narayama-live-landing
+    runtime: static
+    plan: free
+    staticPublishPath: ./landing/narayama-live
+    buildCommand: ""

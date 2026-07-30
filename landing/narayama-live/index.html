@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Narayama.live — Observatório Público do Índice de Narayama Sistêmico</title>
+  <meta name="description" content="Narayama.live é o observatório público do Índice de Narayama Sistêmico (N*): acompanhe, em linguagem simples, a capacidade de 7 países se renovarem geracionalmente. Dados abertos, atualização mensal, metodologia rastreável.">
+  <meta name="keywords" content="Narayama, Narayama.live, índice demográfico, observatório público, sustentabilidade intergeracional, declínio populacional, N* index, open data, demographic index, public observatory">
+  <meta name="author" content="Itiberê Muarrek">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Narayama_icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://narayama.live">
+  <meta property="og:title" content="Narayama.live — Observatório Público do Índice de Narayama Sistêmico">
+  <meta property="og:description" content="Public observatory for the Systemic Narayama Index. Track 7 countries' generational renewal capacity in plain language. Monthly updates, open data.">
+  <meta property="og:image" content="https://narayama.live/Narayama_icon.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Narayama.live — Public Observatory of the Systemic Narayama Index">
+  <meta name="twitter:description" content="Public observatory for the Systemic Narayama Index. Track 7 countries' generational renewal capacity in plain language. Monthly updates, open data.">
+  <meta name="twitter:image" content="https://narayama.live/Narayama_icon.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://narayama.live">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ResearchProject",
+    "name": "Narayama.live",
+    "description": "Public observatory for the Systemic Narayama Index (N*), the demographic thermometer computed by AINU. Narayama Framework.",
+    "url": "https://narayama.live",
+    "author": {
+      "@type": "Person",
+      "name": "Itiberê Muarrek"
+    },
+    "keywords": "demographic index, N* index, intergenerational sustainability, public observatory, open data"
+  }
+  </script>
+
+  <style>
+    /* ─── TOKENS ──────────────────────────────────────────────── */
+    :root {
+      --ink:       #0D1B2A;
+      --ink-soft:  #3D5166;
+      --sky:       #1B6CA8;
+      --glow:      #4ABDE8;
+      --paper:     #F7F9FB;
+      --divider:   #D8E4EE;
+      --white:     #FFFFFF;
+
+      --f-display: 'Cormorant Garamond', Georgia, serif;
+      --f-body:    'Inter', system-ui, sans-serif;
+      --f-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+      --radius: 6px;
+      --shadow: 0 2px 24px rgba(13,27,42,0.10);
+    }
+
+    /* ─── RESET ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--f-body);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── FONTS ───────────────────────────────────────────────── */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    /* ─── NAV ─────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 60px;
+      background: rgba(247,249,251,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .nav-logo {
+      font-family: var(--f-mono);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--sky);
+      text-decoration: none;
+    }
+
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+
+    .lang-select {
+      font-family: var(--f-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      background: transparent;
+      border: 1px solid var(--divider);
+      border-radius: var(--radius);
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .lang-select:hover { border-color: var(--sky); }
+
+    .nav-link {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--sky); }
+
+    /* ─── HERO ────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: 60px 0 0;
+    }
+
+    .hero-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      gap: 0;
+    }
+
+    .hero-logo {
+      width: min(180px, 40vw);
+      height: auto;
+      margin-bottom: 1.4rem;
+      filter: drop-shadow(0 4px 32px rgba(74,189,232,0.18));
+    }
+
+    .hero-wordmark {
+      font-family: var(--f-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      color: var(--glow);
+      text-transform: uppercase;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-title {
+      font-family: var(--f-display);
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--ink);
+      max-width: 720px;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--sky);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      max-width: 580px;
+      margin-bottom: 2.6rem;
+      line-height: 1.75;
+    }
+
+    /* ─── BUTTONS ─────────────────────────────────────────────── */
+    .btn-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.8rem;
+      background: var(--sky);
+      color: var(--white);
+      font-family: var(--f-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary:hover {
+      background: #155d92;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.8rem;
+      background: transparent;
+      color: var(--sky);
+      font-family: var(--f-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1.5px solid var(--sky);
+      border-radius: var(--radius);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-ghost:hover {
+      background: var(--sky);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* ─── STATS STRIP ─────────────────────────────────────────── */
+    .stats-strip {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--divider);
+      background: var(--white);
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 160px;
+      padding: 1.6rem 2rem;
+      text-align: center;
+      border-right: 1px solid var(--divider);
+    }
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: var(--f-display);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--sky);
+      line-height: 1;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-top: 0.3rem;
+      display: block;
+      font-weight: 500;
+    }
+
+    /* ─── ABOUT SECTION ───────────────────────────────────────── */
+    .section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-eyebrow {
+      font-family: var(--f-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--glow);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--f-display);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      line-height: 1.25;
+    }
+
+    .section-body {
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 680px;
+    }
+
+    .section-body p + p { margin-top: 1rem; }
+
+    /* ─── ZONES ───────────────────────────────────────────────── */
+    .zones-ruler {
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 2rem;
+      border: 1px solid var(--divider);
+    }
+    .zone-seg {
+      flex: 1;
+      min-width: 140px;
+      padding: 1.1rem 0.9rem;
+      text-align: center;
+      color: var(--ink);
+      border-right: 1px solid rgba(13,27,42,0.08);
+    }
+    .zone-seg:last-child { border-right: none; }
+    .zone-seg-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 0.3rem;
+    }
+    .zone-seg-range {
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      opacity: 0.75;
+    }
+    .formula-note {
+      font-family: var(--f-mono);
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    /* ─── OPEN RESEARCH ───────────────────────────────────────── */
+    .pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) { .pillars { grid-template-columns: 1fr; } }
+
+    .pillar-card {
+      background: var(--white);
+      border: 1px solid var(--divider);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .pillar-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .pillar-title {
+      font-family: var(--f-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--sky);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-text {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    /* ─── CONTACT BOX ─────────────────────────────────────────── */
+    .contact-box {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 2.5rem 0;
+      background: var(--white);
+      border: 1.5px solid var(--divider);
+      border-left: 4px solid var(--glow);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      box-shadow: var(--shadow);
+    }
+    .contact-icon { font-size: 2rem; color: var(--glow); line-height: 1; flex-shrink: 0; }
+    .contact-text { flex: 1; min-width: 180px; }
+    .contact-title {
+      font-family: var(--f-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+    .contact-sub { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.2rem; }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.2rem;
+      background: var(--paper);
+      border: 1.5px solid var(--divider);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--sky);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .contact-btn:hover { background: var(--sky); color: var(--white); border-color: var(--sky); }
+    .contact-email-icon { font-family: var(--f-mono); font-size: 1rem; font-weight: 600; }
+    @media (max-width: 600px) {
+      .contact-box { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    }
+
+    /* ─── COLLABORATE ─────────────────────────────────────────── */
+    .collab-block {
+      background: var(--ink);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      margin: 4rem 0 0;
+    }
+
+    .collab-block .section-eyebrow { color: var(--glow); }
+
+    .collab-title {
+      font-family: var(--f-display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .collab-sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.75;
+    }
+
+    .collab-block .btn-primary {
+      background: var(--glow);
+      color: var(--ink);
+    }
+    .collab-block .btn-primary:hover { background: #38a8d0; }
+
+    /* ─── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--divider);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left {
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.08em;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-link {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--sky); }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 0 1.2rem; }
+      .stat-item { min-width: 120px; padding: 1.2rem; }
+      .stat-num { font-size: 1.6rem; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-right { justify-content: center; }
+      .collab-block { padding: 2rem 1.5rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────────────────── -->
+<nav>
+  <a class="nav-logo" href="/">NARAYAMA.LIVE</a>
+  <div class="nav-right">
+    <select class="lang-select" id="langSelect" onchange="setLang(this.value)" aria-label="Select language">
+      <option value="pt">🇧🇷 PT</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="es">🇪🇸 ES</option>
+      <option value="fr">🇫🇷 FR</option>
+      <option value="it">🇮🇹 IT</option>
+      <option value="zh">🇨🇳 ZH</option>
+      <option value="ja">🇯🇵 JA</option>
+      <option value="ko">🇰🇷 KO</option>
+      <option value="fi">🇫🇮 FI</option>
+    </select>
+    <a class="nav-link lang-link" data-base="https://app.narayama.live" href="https://app.narayama.live" target="_blank" rel="noopener" data-i18n="nav_observatory">Observatório</a>
+    <a class="nav-link lang-link" data-base="https://app.ainu.systems" href="https://app.ainu.systems" target="_blank" rel="noopener" data-i18n="nav_platform">AINU.systems</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-body">
+    <img src="Narayama_icon.png" alt="Narayama — Índice de Narayama Sistêmico" class="hero-logo">
+    <p class="hero-wordmark">Narayama.live</p>
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Termômetro do Índice de Narayama Sistêmico</p>
+    <h1 class="hero-title" data-i18n="hero_title">
+      Veja, em tempo real, quem está perto do <em>colapso geracional</em>.
+    </h1>
+    <p class="hero-sub" data-i18n="hero_sub">
+      Narayama.live traduz o Índice N* — calculado pelo AINU — num mapa simples de 7 países, atualizado mensalmente. Para a análise técnica completa dos 28 países da amostra, veja ainu.systems.
+    </p>
+    <div class="btn-row">
+      <a class="btn-primary lang-link" data-base="https://app.narayama.live" href="https://app.narayama.live" target="_blank" rel="noopener" data-i18n="btn_access">
+        ↗ Explorar o Observatório
+      </a>
+      <a class="btn-ghost lang-link" data-base="https://app.ainu.systems" href="https://app.ainu.systems" target="_blank" rel="noopener" data-i18n="btn_observatory">
+        AINU.systems
+      </a>
+    </div>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <span class="stat-num">7</span>
+      <span class="stat-label" data-i18n="stat_countries">Países destaque</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">5</span>
+      <span class="stat-label" data-i18n="stat_zones">Zonas geracionais</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">9</span>
+      <span class="stat-label" data-i18n="stat_languages">Idiomas</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">∞</span>
+      <span class="stat-label" data-i18n="stat_open">Dado aberto</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FIVE ZONES ────────────────────────────────────────────── -->
+<article class="section" style="padding-bottom:0">
+  <p class="section-eyebrow" data-i18n="zones_eyebrow">Os Cinco Regimes Geracionais</p>
+  <h2 class="section-title" data-i18n="formula_label">Índice de Narayama Sistêmico</h2>
+  <div class="zones-ruler">
+    <div class="zone-seg" style="background:#f5c2c7">
+      <div class="zone-seg-name" data-i18n="zone_pec">Colapso de Narayama (PEC)</div>
+      <div class="zone-seg-range">&lt; 0.71</div>
+    </div>
+    <div class="zone-seg" style="background:#ffdba8">
+      <div class="zone-seg-name" data-i18n="zone_ta">Tensão Acelerada</div>
+      <div class="zone-seg-range">0.71 – 0.90</div>
+    </div>
+    <div class="zone-seg" style="background:#cfe2ff">
+      <div class="zone-seg-name" data-i18n="zone_pea">Equilíbrio Sustentável (PEA)</div>
+      <div class="zone-seg-range">0.90 – 1.40</div>
+    </div>
+    <div class="zone-seg" style="background:#fff3cd">
+      <div class="zone-seg-name" data-i18n="zone_tp">Tensão Populacional</div>
+      <div class="zone-seg-range">1.40 – 2.00</div>
+    </div>
+    <div class="zone-seg" style="background:#ffd60a">
+      <div class="zone-seg-name" data-i18n="zone_peec">Saturação por Overbirths (PEEC)</div>
+      <div class="zone-seg-range">&ge; 2.00</div>
+    </div>
+  </div>
+  <p class="formula-note" data-i18n="formula_note">Normalização por raiz quadrada · Atualização mensal · Versionamento Git rastreável</p>
+</article>
+
+<!-- ─── ABOUT ─────────────────────────────────────────────────── -->
+<article class="section">
+  <p class="section-eyebrow" data-i18n="about_eyebrow">O que é o Narayama.live</p>
+  <h2 class="section-title" data-i18n="about_title">A porta pública do Índice de Narayama Sistêmico</h2>
+  <div class="section-body">
+    <p data-i18n="about_p1">
+      O AINU calcula, mês a mês, a capacidade de cada sociedade renovar suas próprias gerações — o Índice de Narayama Sistêmico (N*). O narayama.live é a porta pública dessa pesquisa: sem jargão técnico, mostra onde cada um dos 7 países destaque está nessa escala, agora.
+    </p>
+    <p data-i18n="about_p2">
+      Desenvolvido no contexto do doutorado em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o narayama.live é atualizado automaticamente todo mês, com a mesma metodologia rastreável usada na análise técnica completa em ainu.systems.
+    </p>
+  </div>
+
+  <!-- CONTACT BOX -->
+  <div class="contact-box">
+    <span class="contact-icon">✉</span>
+    <div class="contact-text">
+      <p class="contact-title" data-i18n="contact_title">Quer saber mais e participar desta pesquisa?</p>
+      <p class="contact-sub" data-i18n="contact_sub">Entre em contato conosco</p>
+    </div>
+    <a class="contact-btn" href="mailto:narayama.live@gmail.com" aria-label="Enviar email para narayama.live@gmail.com">
+      <span class="contact-email-icon">@</span>
+      <span class="contact-email-text">narayama.live@gmail.com</span>
+    </a>
+  </div>
+</article>
+
+<!-- ─── OPEN RESEARCH ──────────────────────────────────────────── -->
+<article class="section" style="padding-top:0">
+  <p class="section-eyebrow" data-i18n="open_eyebrow">Arquitetura AINU–Narayama</p>
+  <h2 class="section-title" data-i18n="open_title">Laboratório e observatório — separados por design</h2>
+  <div class="pillars">
+    <div class="pillar-card">
+      <span class="pillar-icon">⚙️</span>
+      <p class="pillar-title">AINU.systems</p>
+      <p class="pillar-text" data-i18n="pillar_ainu">
+        Ambiente computacional experimental. Integra bases de dados internacionais, aplica protocolo de falseabilidade quantitativo e versiona cada decisão metodológica com rastreabilidade Git. Onde os dados são <em>questionados</em>.
+      </p>
+    </div>
+    <div class="pillar-card">
+      <span class="pillar-icon">🌐</span>
+      <p class="pillar-title">Narayama.live</p>
+      <p class="pillar-text" data-i18n="pillar_narayama">
+        Observatório público. Publica resultados, documenta a evolução metodológica e exibe o mapa periódico dos 28 países em 9 idiomas. Onde os dados são <em>apresentados</em>.
+      </p>
+    </div>
+  </div>
+
+  <!-- COLLABORATE -->
+  <div class="collab-block">
+    <p class="section-eyebrow" data-i18n="collab_eyebrow">Colaboração Internacional</p>
+    <h3 class="collab-title" data-i18n="collab_title">É pesquisador? Vá além do observatório.</h3>
+    <p class="collab-sub" data-i18n="collab_sub">
+      O narayama.live mostra o retrato simplificado de 7 países. Para os 28 países da amostra, os componentes técnicos completos e a colaboração científica internacional, a porta de entrada é o ainu.systems — pesquisadoras e pesquisadores são especialmente bem-vindos.
+    </p>
+    <div class="btn-row">
+      <a class="btn-primary lang-link" data-base="https://app.ainu.systems" href="https://app.ainu.systems" target="_blank" rel="noopener" data-i18n="collab_btn">
+        ↗ Ver Análise Técnica
+      </a>
+    </div>
+  </div>
+</article>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-left">
+    Narayama.live · Observatório Público do Índice de Narayama Sistêmico · © 2026 Itiberê Muarrek
+  </div>
+  <div class="footer-right">
+    <a class="footer-link lang-link" data-base="https://app.ainu.systems" href="https://app.ainu.systems" target="_blank" rel="noopener">AINU.systems</a>
+    <a class="footer-link lang-link" data-base="https://app.narayama.live" href="https://app.narayama.live" target="_blank" rel="noopener" data-i18n="nav_observatory">Observatório</a>
+  </div>
+</footer>
+
+<!-- ─── I18N ───────────────────────────────────────────────────── -->
+<script>
+const i18n = {
+  pt: {
+    nav_observatory: "Observatório",
+    nav_platform: "AINU.systems",
+    hero_eyebrow: "Termômetro do Índice de Narayama Sistêmico",
+    hero_title: "Veja, em tempo real, quem está perto do <em>colapso geracional</em>.",
+    hero_sub: "Narayama.live traduz o Índice N* — calculado pelo AINU — num mapa simples de 7 países, atualizado mensalmente. Para a análise técnica completa dos 28 países da amostra, veja ainu.systems.",
+    btn_access: "↗ Explorar o Observatório",
+    btn_observatory: "AINU.systems",
+    stat_countries: "Países destaque",
+    stat_zones: "Zonas geracionais",
+    stat_languages: "Idiomas",
+    stat_open: "Dado aberto",
+    about_eyebrow: "O que é o Narayama.live",
+    about_title: "A porta pública do Índice de Narayama Sistêmico",
+    about_p1: "O AINU calcula, mês a mês, a capacidade de cada sociedade renovar suas próprias gerações — o Índice de Narayama Sistêmico (N*). O narayama.live é a porta pública dessa pesquisa: sem jargão técnico, mostra onde cada um dos 7 países destaque está nessa escala, agora.",
+    about_p2: "Desenvolvido no contexto do doutorado em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o narayama.live é atualizado automaticamente todo mês, com a mesma metodologia rastreável usada na análise técnica completa em ainu.systems.",
+    formula_label: "Índice de Narayama Sistêmico",
+    formula_note: "Normalização por raiz quadrada · Atualização mensal · Versionamento Git rastreável",
+    zones_eyebrow: "Os Cinco Regimes Geracionais",
+    zone_pec: "Colapso de Narayama (PEC)",
+    zone_ta: "Tensão Acelerada",
+    zone_pea: "Equilíbrio",
+    zone_tp: "Tensão Populacional",
+    zone_peec: "Saturação",
+    open_eyebrow: "Arquitetura AINU–Narayama",
+    open_title: "Laboratório e observatório — separados por design",
+    pillar_ainu: "Ambiente computacional experimental. Integra bases de dados internacionais, aplica protocolo de falseabilidade quantitativo e versiona cada decisão metodológica com rastreabilidade Git. Onde os dados são <em>questionados</em>.",
+    pillar_narayama: "Observatório público. Publica resultados, documenta a evolução metodológica e exibe o mapa periódico dos 28 países em 9 idiomas. Onde os dados são <em>apresentados</em>.",
+    collab_eyebrow: "Colaboração Internacional",
+    collab_title: "É pesquisador? Vá além do observatório.",
+    collab_sub: "O narayama.live mostra o retrato simplificado de 7 países. Para os 28 países da amostra, os componentes técnicos completos e a colaboração científica internacional, a porta de entrada é o ainu.systems — pesquisadoras e pesquisadores são especialmente bem-vindos.",
+    collab_btn: "↗ Ver Análise Técnica",
+    contact_title: "Quer saber mais e participar desta pesquisa?",
+    contact_sub: "Entre em contato conosco",
+  },
+  en: {
+    nav_observatory: "Observatory",
+    nav_platform: "AINU.systems",
+    hero_eyebrow: "Thermometer of the Systemic Narayama Index",
+    hero_title: "See, in real time, who is close to <em>generational collapse</em>.",
+    hero_sub: "Narayama.live translates the N* Index — computed by AINU — into a simple map of 7 countries, updated monthly. For the full technical analysis of all 28 sample countries, see ainu.systems.",
+    btn_access: "↗ Explore the Observatory",
+    btn_observatory: "AINU.systems",
+    stat_countries: "Featured countries",
+    stat_zones: "Generational zones",
+    stat_languages: "Languages",
+    stat_open: "Open data",
+    about_eyebrow: "What is Narayama.live",
+    about_title: "The public gateway to the Systemic Narayama Index",
+    about_p1: "AINU computes, month by month, each society's capacity to renew its own generations — the Systemic Narayama Index (N*). Narayama.live is the public gateway to that research: with no technical jargon, it shows where each of the 7 featured countries stands on that scale, right now.",
+    about_p2: "Developed within the doctoral research in Political Economy <em>From the Narayama Dilemma to the Civilizational Oikocene</em>, narayama.live is updated automatically every month, using the same traceable methodology behind the full technical analysis on ainu.systems.",
+    formula_label: "Narayama Systemic Index",
+    formula_note: "Square root normalization · Monthly updates · Traceable Git versioning",
+    zones_eyebrow: "The Five Generational Regimes",
+    zone_pec: "Narayama Collapse (PEC)",
+    zone_ta: "Accelerated Tension",
+    zone_pea: "Equilibrium",
+    zone_tp: "Population Tension",
+    zone_peec: "Saturation",
+    open_eyebrow: "AINU–Narayama Architecture",
+    open_title: "Laboratory and observatory — separated by design",
+    pillar_ainu: "Experimental computational environment. Integrates international databases, applies quantitative falsifiability protocols, and versions every methodological decision with Git traceability. Where data is <em>questioned</em>.",
+    pillar_narayama: "Public observatory. Publishes results, documents methodological evolution, and displays the periodic map of 28 countries in 9 languages. Where data is <em>presented</em>.",
+    collab_eyebrow: "International Collaboration",
+    collab_title: "A researcher? Go beyond the observatory.",
+    collab_sub: "Narayama.live shows the simplified picture of 7 countries. For all 28 sample countries, the full technical components, and international scientific collaboration, the gateway is ainu.systems — researchers are especially welcome.",
+    collab_btn: "↗ See Technical Analysis",
+    contact_title: "Want to learn more and participate in this research?",
+    contact_sub: "Contact us",
+  },
+  es: {
+    nav_observatory: "Observatorio",
+    nav_platform: "AINU.systems",
+    hero_eyebrow: "Termómetro del Índice de Narayama Sistémico",
+    hero_title: "Vea, en tiempo real, quién está cerca del <em>colapso generacional</em>.",
+    hero_sub: "Narayama.live traduce el Índice N* — calculado por AINU — en un mapa simple de 7 países, actualizado mensualmente. Para el análisis técnico completo de los 28 países de la muestra, vea ainu.systems.",
+    btn_access: "↗ Explorar el Observatorio",
+    btn_observatory: "AINU.systems",
+    stat_countries: "Países destacados",
+    stat_zones: "Regímenes generacionales",
+    stat_languages: "Idiomas",
+    stat_open: "Datos abiertos",
+    about_eyebrow: "Qué es Narayama.live",
+    about_title: "La puerta pública del Índice de Narayama Sistémico",
+    about_p1: "AINU calcula, mes a mes, la capacidad de cada sociedad de renovar sus propias generaciones — el Índice de Narayama Sistémico (N*). Narayama.live es la puerta pública de esa investigación: sin jerga técnica, muestra dónde está cada uno de los 7 países destacados en esa escala, ahora mismo.",
+    about_p2: "Desarrollado en el contexto del doctorado en Economía Política <em>Del Dilema de Narayama al Oicoceno Civilizacional</em>, narayama.live se actualiza automáticamente cada mes, con la misma metodología trazable usada en el análisis técnico completo de ainu.systems.",
+    formula_label: "Índice Sistémico de Narayama",
+    formula_note: "Normalización por raíz cuadrada · Actualización mensual · Versionado Git trazable",
+    zones_eyebrow: "Los Cinco Regímenes Generacionales",
+    zone_pec: "Colapso de Narayama (PEC)",
+    zone_ta: "Tensión Acelerada",
+    zone_pea: "Equilibrio",
+    zone_tp: "Tensión Poblacional",
+    zone_peec: "Saturación",
+    open_eyebrow: "Arquitectura AINU–Narayama",
+    open_title: "Laboratorio y observatorio — separados por diseño",
+    pillar_ainu: "Entorno computacional experimental. Integra bases de datos internacionales y versiona cada decisión metodológica. Donde los datos son <em>cuestionados</em>.",
+    pillar_narayama: "Observatorio público. Publica resultados y exhibe el mapa periódico de 28 países en 9 idiomas. Donde los datos son <em>presentados</em>.",
+    collab_eyebrow: "Colaboración Internacional",
+    collab_title: "¿Es investigador/a? Vaya más allá del observatorio.",
+    collab_sub: "Narayama.live muestra el retrato simplificado de 7 países. Para los 28 países de la muestra, los componentes técnicos completos y la colaboración científica internacional, la puerta de entrada es ainu.systems — investigadoras e investigadores son especialmente bienvenidos.",
+    collab_btn: "↗ Ver Análisis Técnico",
+    contact_title: "¿Quiere saber más y participar en esta investigación?",
+    contact_sub: "Contáctenos",
+  },
+  fr: {
+    nav_observatory: "Observatoire",
+    nav_platform: "AINU.systems",
+    hero_eyebrow: "Thermomètre de l'indice de Narayama systémique",
+    hero_title: "Voyez, en temps réel, qui est proche de l'<em>effondrement générationnel</em>.",
+    hero_sub: "Narayama.live traduit l'Indice N* — calculé par AINU — en une carte simple de 7 pays, mise à jour mensuellement. Pour l'analyse technique complète des 28 pays de l'échantillon, voir ainu.systems.",
+    btn_access: "↗ Explorer l'Observatoire",
+    btn_observatory: "AINU.systems",
+    stat_countries: "Pays en vedette",
+    stat_zones: "Régimes générationnels",
+    stat_languages: "Langues",
+    stat_open: "Données ouvertes",
+    about_eyebrow: "Qu'est-ce que Narayama.live",
+    about_title: "La porte publique de l'indice de Narayama systémique",
+    about_p1: "AINU calcule, mois après mois, la capacité de chaque société à renouveler ses propres générations — l'indice de Narayama systémique (N*). Narayama.live est la porte publique de cette recherche : sans jargon technique, elle montre où se situe chacun des 7 pays en vedette sur cette échelle, dès maintenant.",
+    about_p2: "Développé dans le cadre du doctorat en Économie Politique <em>Du Dilemme de Narayama à l'Oïcocène Civilisationnel</em>, narayama.live est mis à jour automatiquement chaque mois, avec la même méthodologie traçable utilisée dans l'analyse technique complète sur ainu.systems.",
+    formula_label: "Indice Systémique de Narayama",
+    formula_note: "Normalisation par racine carrée · Mise à jour mensuelle · Versionnement Git traçable",
+    zones_eyebrow: "Les Cinq Régimes Générationnels",
+    zone_pec: "Effondrement de Narayama (PEC)",
+    zone_ta: "Tension Accélérée",
+    zone_pea: "Équilibre",
+    zone_tp: "Tension Démographique",
+    zone_peec: "Saturation",
+    open_eyebrow: "Architecture AINU–Narayama",
+    open_title: "Laboratoire et observatoire — séparés par design",
+    pillar_ainu: "Environnement computationnel expérimental. Intègre des bases de données internationales. Là où les données sont <em>questionnées</em>.",
+    pillar_narayama: "Observatoire public. Publie les résultats en 9 langues. Là où les données sont <em>présentées</em>.",
+    collab_eyebrow: "Collaboration Internationale",
+    collab_title: "Chercheur ou chercheuse ? Allez au-delà de l'observatoire.",
+    collab_sub: "Narayama.live montre le portrait simplifié de 7 pays. Pour les 28 pays de l'échantillon, les composants techniques complets et la collaboration scientifique internationale, la porte d'entrée est ainu.systems — les chercheurs et chercheuses sont particulièrement bienvenus.",
+    collab_btn: "↗ Voir l'Analyse Technique",
+    contact_title: "Vous voulez en savoir plus et participer à cette recherche ?",
+    contact_sub: "Contactez-nous",
+  },
+  ko: {
+    nav_observatory: "관측소",
+    nav_platform: "AINU.systems",
+    hero_eyebrow: "체계적 나라야마 지수 온도계",
+    hero_title: "누가 <em>세대 붕괴</em>에 가까운지 실시간으로 확인하세요.",
+    hero_sub: "narayama.live는 AINU가 계산하는 N* 지수를 7개국의 간단한 지도로 변환하여 매달 갱신합니다. 표본 28개국에 대한 전체 기술 분석은 ainu.systems를 참고하세요.",
+    btn_access: "↗ 관측소 둘러보기",
+    btn_observatory: "AINU.systems",
+    stat_countries: "주요 국가",
+    stat_zones: "세대 구역",
+    stat_languages: "언어",
+    stat_open: "개방 데이터",
+    about_eyebrow: "Narayama.live란",
+    about_title: "체계적 나라야마 지수의 공개 관문",
+    about_p1: "AINU는 매달 각 사회가 스스로 세대를 재생산하는 능력—체계적 나라야마 지수(N*)—을 계산합니다. narayama.live는 이 연구의 공개 관문으로, 전문 용어 없이 주요 7개국이 지금 이 척도에서 어디에 있는지 보여줍니다.",
+    about_p2: "정치경제학 박사 연구 <em>나라야마의 딜레마에서 문명적 오이코세까지</em>의 맥락에서 개발된 narayama.live는 매달 자동으로 갱신되며, ainu.systems의 전체 기술 분석에 사용되는 것과 동일한 추적 가능한 방법론을 사용합니다.",
+    formula_label: "나라야마 체계 지수",
+    formula_note: "제곱근 정규화 · 매월 갱신 · 추적 가능한 Git 버전 관리",
+    zones_eyebrow: "다섯 가지 세대적 체제",
+    zone_pec: "나라야마 붕괴 (PEC)",
+    zone_ta: "가속 긴장",
+    zone_pea: "균형",
+    zone_tp: "인구 긴장",
+    zone_peec: "포화",
+    open_eyebrow: "AINU–나라야마 아키텍처",
+    open_title: "실험실과 관측소 — 설계상 분리",
+    pillar_ainu: "실험적 계산 환경. 국제 데이터베이스를 통합하고, 정량적 반증가능성 프로토콜을 적용하며, Git으로 추적 가능한 방법론적 결정을 버전 관리합니다. 데이터가 <em>검증되는</em> 곳.",
+    pillar_narayama: "공개 관측소. 결과를 발표하고, 방법론적 발전을 문서화하며, 9개 언어로 28개국의 주기율표를 표시합니다. 데이터가 <em>제시되는</em> 곳.",
+    collab_eyebrow: "국제 협력",
+    collab_title: "연구자이신가요? 관측소 그 이상으로.",
+    collab_sub: "narayama.live는 7개국의 단순화된 모습을 보여줍니다. 표본 28개국 전체, 완전한 기술 구성요소, 국제 학술 협력을 위한 관문은 ainu.systems입니다 — 연구자들을 특별히 환영합니다.",
+    collab_btn: "↗ 기술 분석 보기",
+    contact_title: "더 알아보고 이 연구에 참여하고 싶으신가요?",
+    contact_sub: "문의하기",
+  },
+  it: {
+    nav_observatory: "Osservatorio",
+    nav_platform: "AINU.systems",
+    hero_eyebrow: "Termometro dell'Indice di Narayama Sistemico",
+    hero_title: "Guarda, in tempo reale, chi è vicino al <em>collasso generazionale</em>.",
+    hero_sub: "Narayama.live traduce l'Indice N* — calcolato da AINU — in una mappa semplice di 7 paesi, aggiornata mensilmente. Per l'analisi tecnica completa dei 28 paesi del campione, vedi ainu.systems.",
+    btn_access: "↗ Esplora l'Osservatorio",
+    btn_observatory: "AINU.systems",
+    stat_countries: "Paesi in evidenza",
+    stat_zones: "Regimi generazionali",
+    stat_languages: "Lingue",
+    stat_open: "Dati aperti",
+    about_eyebrow: "Cos'è Narayama.live",
+    about_title: "La porta pubblica dell'Indice di Narayama Sistemico",
+    about_p1: "AINU calcola, mese dopo mese, la capacità di ogni società di rinnovare le proprie generazioni — l'Indice di Narayama Sistemico (N*). Narayama.live è la porta pubblica di questa ricerca: senza gergo tecnico, mostra dove si trova ciascuno dei 7 paesi in evidenza su questa scala, adesso.",
+    about_p2: "Sviluppato nel contesto del dottorato in Economia Politica <em>Dal Dilemma di Narayama all'Oikoceno Civilizazionale</em>, narayama.live viene aggiornato automaticamente ogni mese, con la stessa metodologia tracciabile usata nell'analisi tecnica completa su ainu.systems.",
+    formula_label: "Indice Sistemico di Narayama",
+    formula_note: "Normalizzazione per radice quadrata · Aggiornamento mensile · Versionamento Git tracciabile",
+    zones_eyebrow: "I Cinque Regimi Generazionali",
+    zone_pec: "Collasso di Narayama (PEC)",
+    zone_ta: "Tensione Accelerata",
+    zone_pea: "Equilibrio",
+    zone_tp: "Tensione Demografica",
+    zone_peec: "Saturazione",
+    open_eyebrow: "Architettura AINU–Narayama",
+    open_title: "Laboratorio e osservatorio — separati per design",
+    pillar_ainu: "Ambiente computazionale sperimentale. Integra banche dati internazionali. Dove i dati vengono <em>messi in discussione</em>.",
+    pillar_narayama: "Osservatorio pubblico. Pubblica risultati in 9 lingue. Dove i dati vengono <em>presentati</em>.",
+    collab_eyebrow: "Collaborazione Internazionale",
+    collab_title: "Sei un ricercatore/una ricercatrice? Vai oltre l'osservatorio.",
+    collab_sub: "Narayama.live mostra il ritratto semplificato di 7 paesi. Per tutti i 28 paesi del campione, le componenti tecniche complete e la collaborazione scientifica internazionale, la porta d'ingresso è ainu.systems — ricercatori e ricercatrici sono particolarmente benvenuti.",
+    collab_btn: "↗ Vedi l'Analisi Tecnica",
+    contact_title: "Vuoi saperne di più e partecipare a questa ricerca?",
+    contact_sub: "Contattaci",
+  },
+  zh: {
+    nav_observatory: "观测站",
+    nav_platform: "AINU.systems",
+    hero_eyebrow: "系统性楢山指数温度计",
+    hero_title: "实时查看谁正接近<em>世代崩溃</em>。",
+    hero_sub: "narayama.live将AINU计算的N*指数转化为7个国家的简明地图，每月更新。样本中28个国家的完整技术分析请见ainu.systems。",
+    btn_access: "↗ 探索观测站",
+    btn_observatory: "AINU.systems",
+    stat_countries: "重点国家",
+    stat_zones: "代际区间",
+    stat_languages: "语言",
+    stat_open: "开放数据",
+    about_eyebrow: "什么是narayama.live",
+    about_title: "系统性楢山指数的公共入口",
+    about_p1: "AINU每月计算每个社会更新其世代的能力——系统性楢山指数（N*）。narayama.live是这项研究的公共入口：没有技术术语，展示7个重点国家目前在这一量表上的位置。",
+    about_p2: "narayama.live在政治经济学博士研究《从楢山难题到文明世的宜居纪》的背景下开发，每月自动更新，采用与ainu.systems完整技术分析相同的可追溯方法论。",
+    formula_label: "Narayama系统指数",
+    formula_note: "平方根标准化 · 每月更新 · 可追溯Git版本控制",
+    zones_eyebrow: "五大代际区间",
+    zone_pec: "楢山崩溃 (PEC)",
+    zone_ta: "加速紧张",
+    zone_pea: "均衡",
+    zone_tp: "人口紧张",
+    zone_peec: "过饱和",
+    open_eyebrow: "AINU–Narayama架构",
+    open_title: "实验室与观测站——设计分离",
+    pillar_ainu: "实验性计算环境，整合国际数据库，数据在此被<em>质疑</em>。",
+    pillar_narayama: "公共观测站，以9种语言发布结果，数据在此被<em>呈现</em>。",
+    collab_eyebrow: "国际合作",
+    collab_title: "您是研究人员吗？超越观测站。",
+    collab_sub: "narayama.live展示的是7个国家的简化图景。若需样本中全部28个国家、完整的技术组成部分以及国际科学合作，入口是ainu.systems——特别欢迎研究人员。",
+    collab_btn: "↗ 查看技术分析",
+    contact_title: "想了解更多并参与本研究？",
+    contact_sub: "联系我们",
+  },
+  ja: {
+    nav_observatory: "観測所",
+    nav_platform: "AINU.systems",
+    hero_eyebrow: "システミック・ナラヤマ指数の温度計",
+    hero_title: "誰が<em>世代崩壊</em>に近づいているか、リアルタイムで見る。",
+    hero_sub: "narayama.liveは、AINUが算出するN*指数を7か国のシンプルな地図に変換し、毎月更新します。サンプル28か国の詳細な技術分析はainu.systemsをご覧ください。",
+    btn_access: "↗ 観測所を見る",
+    btn_observatory: "AINU.systems",
+    stat_countries: "注目国",
+    stat_zones: "世代的体制",
+    stat_languages: "言語",
+    stat_open: "オープンデータ",
+    about_eyebrow: "narayama.liveとは",
+    about_title: "システミック・ナラヤマ指数への公開の入口",
+    about_p1: "AINUは毎月、各社会が自らの世代を更新する能力——システミック・ナラヤマ指数（N*）——を計算します。narayama.liveはこの研究への公開の入口です：専門用語なしで、注目7か国それぞれが今このスケール上のどこにいるかを示します。",
+    about_p2: "政治経済学博士研究『ナラヤマのジレンマから文明的オイコセーンへ』の文脈で開発されたnarayama.liveは、毎月自動的に更新され、ainu.systemsの詳細な技術分析と同じ追跡可能な方法論を使用します。",
+    formula_label: "ナラヤマ・システミック指数",
+    formula_note: "平方根正規化 · 毎月更新 · 追跡可能なGitバージョン管理",
+    zones_eyebrow: "5つの世代的体制",
+    zone_pec: "ナラヤマ崩壊 (PEC)",
+    zone_ta: "加速緊張",
+    zone_pea: "均衡",
+    zone_tp: "人口緊張",
+    zone_peec: "飽和",
+    open_eyebrow: "AINU–ナラヤマアーキテクチャ",
+    open_title: "実験室と観測所——設計により分離",
+    pillar_ainu: "実験的な計算環境。データが<em>問われる</em>場所。",
+    pillar_narayama: "公開観測所。9言語で結果を公開。データが<em>提示される</em>場所。",
+    collab_eyebrow: "国際協力",
+    collab_title: "研究者ですか？観測所のその先へ。",
+    collab_sub: "narayama.liveは7か国の簡易版を示します。サンプル28か国全体、詳細な技術コンポーネント、国際的な科学協力への入口はainu.systemsです——研究者を特に歓迎します。",
+    collab_btn: "↗ 技術分析を見る",
+    contact_title: "もっと知りたい、この研究に参加したいですか？",
+    contact_sub: "お問い合わせください",
+  },
+  fi: {
+    nav_observatory: "Observatorio",
+    nav_platform: "AINU.systems",
+    hero_eyebrow: "Systeemisen Narayama-indeksin lämpömittari",
+    hero_title: "Katso reaaliajassa, kuka on lähellä <em>sukupolvien romahdusta</em>.",
+    hero_sub: "Narayama.live kääntää AINU:n laskeman N*-indeksin yksinkertaiseksi 7 maan kartaksi, joka päivitetään kuukausittain. Otoksen kaikkien 28 maan täydellinen tekninen analyysi löytyy sivustolta ainu.systems.",
+    btn_access: "↗ Tutustu observatorioon",
+    btn_observatory: "AINU.systems",
+    stat_countries: "Esiteltyä maata",
+    stat_zones: "Sukupolvivyöhykettä",
+    stat_languages: "Kieltä",
+    stat_open: "Avoin data",
+    about_eyebrow: "Mikä on Narayama.live",
+    about_title: "Systeemisen Narayama-indeksin julkinen portti",
+    about_p1: "AINU laskee joka kuukausi kunkin yhteiskunnan kyvyn uudistaa omia sukupolviaan — systeemisen Narayama-indeksin (N*). Narayama.live on tämän tutkimuksen julkinen portti: ilman teknistä ammattikieltä se näyttää, missä kukin 7 esitellystä maasta on tällä asteikolla juuri nyt.",
+    about_p2: "Kehitetty osana valtio-opin tohtoritutkimusta <em>Narayaman dilemmasta sivilisaation Oikoseeniin</em>, narayama.live päivittyy automaattisesti joka kuukausi, samalla jäljitettävällä menetelmällä kuin ainu.systemsin täydellinen tekninen analyysi.",
+    formula_label: "Systeeminen Narayama-indeksi",
+    formula_note: "Neliöjuurinormalisointi · Kuukausittainen päivitys · Jäljitettävä Git-versiointi",
+    zones_eyebrow: "Viisi sukupolvien regiimiä",
+    zone_pec: "Narayama-romahdus (PEC)",
+    zone_ta: "Kiihtyvä jännite",
+    zone_pea: "Tasapaino",
+    zone_tp: "Väestöjännite",
+    zone_peec: "Kyllästymä",
+    open_eyebrow: "AINU–Narayama-arkkitehtuuri",
+    open_title: "Laboratorio ja observatorio — erotettu suunnittelulla",
+    pillar_ainu: "Kokeellinen laskentaympäristö. Integroi kansainväliset tietokannat, soveltaa kvantitatiivista falsifioitavuusprotokollaa ja versioi jokaisen metodologisen päätöksen jäljitettävästi Gitillä. Missä dataa <em>kyseenalaistetaan</em>.",
+    pillar_narayama: "Julkinen observatorio. Julkaisee tuloksia, dokumentoi menetelmän kehitystä ja näyttää 28 maan jaksollisen kartan 9 kielellä. Missä dataa <em>esitetään</em>.",
+    collab_eyebrow: "Kansainvälinen yhteistyö",
+    collab_title: "Oletko tutkija? Mene observatoriota pidemmälle.",
+    collab_sub: "Narayama.live näyttää yksinkertaistetun kuvan 7 maasta. Kaikkien 28 otosmaan, täydellisten teknisten komponenttien ja kansainvälisen tieteellisen yhteistyön portti on ainu.systems — tutkijat ovat erityisen tervetulleita.",
+    collab_btn: "↗ Katso tekninen analyysi",
+    contact_title: "Haluatko tietää lisää ja osallistua tähän tutkimukseen?",
+    contact_sub: "Ota yhteyttä",
+  }
+};
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  const t = i18n[lang] || i18n['en'];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('.lang-link').forEach(el => {
+    const base = el.getAttribute('data-base');
+    el.href = base + '?lang=' + lang;
+  });
+  localStorage.setItem('narayama_lang', lang);
+}
+
+// Init
+(function() {
+  const saved = localStorage.getItem('narayama_lang');
+  const browser = navigator.language?.slice(0,2);
+  const supported = Object.keys(i18n);
+  const lang = supported.includes(saved) ? saved
+              : supported.includes(browser) ? browser
+              : 'pt';
+  document.getElementById('langSelect').value = lang;
+  setLang(lang);
+})();
+</script>
+
+</body>
+</html>

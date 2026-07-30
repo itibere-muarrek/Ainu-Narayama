@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>AINU — Ancestral Isomorphic Nexus Unit | Narayama Research Platform</title>
+  <meta name="description" content="AINU é uma infraestrutura computacional aberta para pesquisa sobre sustentabilidade intergeracional. Calcula o Índice N* para 28 países, com atualização mensal e metodologia rastreável.">
+  <meta name="keywords" content="AINU, Narayama, índice demográfico, sustentabilidade intergeracional, declínio populacional, N* index, pesquisa aberta, open research, demographic index, intergerational sustainability">
+  <meta name="author" content="Itiberê Muarrek">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Ainu.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ainu.systems">
+  <meta property="og:title" content="AINU — Ancestral Isomorphic Nexus Unit">
+  <meta property="og:description" content="Open research infrastructure for intergenerational sustainability. N* Index across 28 countries. Monthly updates. Traceable methodology.">
+  <meta property="og:image" content="https://ainu.systems/Ainu.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AINU — Ancestral Isomorphic Nexus Unit">
+  <meta name="twitter:description" content="Open research infrastructure for intergenerational sustainability. N* Index across 28 countries. Monthly updates. Traceable methodology.">
+  <meta name="twitter:image" content="https://ainu.systems/Ainu.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://ainu.systems">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ResearchProject",
+    "name": "AINU — Ancestral Isomorphic Nexus Unit",
+    "description": "Open computational infrastructure for intergenerational sustainability research. Narayama Framework.",
+    "url": "https://ainu.systems",
+    "author": {
+      "@type": "Person",
+      "name": "Itiberê Muarrek"
+    },
+    "keywords": "demographic index, N* index, intergenerational sustainability, open research"
+  }
+  </script>
+
+  <style>
+    /* ─── TOKENS ──────────────────────────────────────────────── */
+    :root {
+      --ink:       #0D1B2A;
+      --ink-soft:  #3D5166;
+      --sky:       #1B6CA8;
+      --glow:      #4ABDE8;
+      --paper:     #F7F9FB;
+      --divider:   #D8E4EE;
+      --white:     #FFFFFF;
+
+      --f-display: 'Cormorant Garamond', Georgia, serif;
+      --f-body:    'Inter', system-ui, sans-serif;
+      --f-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+      --radius: 6px;
+      --shadow: 0 2px 24px rgba(13,27,42,0.10);
+    }
+
+    /* ─── RESET ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--f-body);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── FONTS ───────────────────────────────────────────────── */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    /* ─── NAV ─────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 60px;
+      background: rgba(247,249,251,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .nav-logo {
+      font-family: var(--f-mono);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--sky);
+      text-decoration: none;
+    }
+
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+
+    .lang-select {
+      font-family: var(--f-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      background: transparent;
+      border: 1px solid var(--divider);
+      border-radius: var(--radius);
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .lang-select:hover { border-color: var(--sky); }
+
+    .nav-link {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--sky); }
+
+    /* ─── HERO ────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: 60px 0 0;
+    }
+
+    .hero-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      gap: 0;
+    }
+
+    .hero-logo {
+      width: min(480px, 72vw);
+      height: auto;
+      margin-bottom: 2.8rem;
+      filter: drop-shadow(0 4px 32px rgba(74,189,232,0.18));
+    }
+
+    .hero-eyebrow {
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      color: var(--glow);
+      text-transform: uppercase;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-title {
+      font-family: var(--f-display);
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--ink);
+      max-width: 720px;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--sky);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      max-width: 580px;
+      margin-bottom: 2.6rem;
+      line-height: 1.75;
+    }
+
+    /* ─── BUTTONS ─────────────────────────────────────────────── */
+    .btn-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.8rem;
+      background: var(--sky);
+      color: var(--white);
+      font-family: var(--f-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary:hover {
+      background: #155d92;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.8rem;
+      background: transparent;
+      color: var(--sky);
+      font-family: var(--f-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1.5px solid var(--sky);
+      border-radius: var(--radius);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-ghost:hover {
+      background: var(--sky);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* ─── DIVIDER ─────────────────────────────────────────────── */
+    .hero-rule {
+      width: 100%;
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin-top: 4rem;
+    }
+
+    /* ─── STATS STRIP ─────────────────────────────────────────── */
+    .stats-strip {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--divider);
+      background: var(--white);
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 160px;
+      padding: 1.6rem 2rem;
+      text-align: center;
+      border-right: 1px solid var(--divider);
+    }
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: var(--f-display);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--sky);
+      line-height: 1;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-top: 0.3rem;
+      display: block;
+      font-weight: 500;
+    }
+
+    /* ─── ABOUT SECTION ───────────────────────────────────────── */
+    .section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-eyebrow {
+      font-family: var(--f-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--glow);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--f-display);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      line-height: 1.25;
+    }
+
+    .section-body {
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 680px;
+    }
+
+    .section-body p + p { margin-top: 1rem; }
+
+    /* ─── ZONES ───────────────────────────────────────────────── */
+    .zones-ruler {
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 2rem;
+      border: 1px solid var(--divider);
+    }
+    .zone-seg {
+      flex: 1;
+      min-width: 140px;
+      padding: 1.1rem 0.9rem;
+      text-align: center;
+      color: var(--ink);
+      border-right: 1px solid rgba(13,27,42,0.08);
+    }
+    .zone-seg:last-child { border-right: none; }
+    .zone-seg-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 0.3rem;
+    }
+    .zone-seg-range {
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      opacity: 0.75;
+    }
+    .formula-note {
+      font-family: var(--f-mono);
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+
+    /* ─── OPEN RESEARCH ───────────────────────────────────────── */
+    .pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) { .pillars { grid-template-columns: 1fr; } }
+
+    .pillar-card {
+      background: var(--white);
+      border: 1px solid var(--divider);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .pillar-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .pillar-title {
+      font-family: var(--f-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--sky);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-text {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    /* ─── CONTACT BOX ─────────────────────────────────────────── */
+    .contact-box {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 2.5rem 0;
+      background: var(--white);
+      border: 1.5px solid var(--divider);
+      border-left: 4px solid var(--glow);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      box-shadow: var(--shadow);
+    }
+    .contact-icon { font-size: 2rem; color: var(--glow); line-height: 1; flex-shrink: 0; }
+    .contact-text { flex: 1; min-width: 180px; }
+    .contact-title {
+      font-family: var(--f-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+    .contact-sub { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.2rem; }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.2rem;
+      background: var(--paper);
+      border: 1.5px solid var(--divider);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--sky);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .contact-btn:hover { background: var(--sky); color: var(--white); border-color: var(--sky); }
+    .contact-email-icon { font-family: var(--f-mono); font-size: 1rem; font-weight: 600; }
+    @media (max-width: 600px) {
+      .contact-box { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    }
+
+    /* ─── COLLABORATE ─────────────────────────────────────────── */
+    .collab-block {
+      background: var(--ink);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      margin: 4rem 0 0;
+    }
+
+    .collab-block .section-eyebrow { color: var(--glow); }
+
+    .collab-title {
+      font-family: var(--f-display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .collab-sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.75;
+    }
+
+    .collab-block .btn-primary {
+      background: var(--glow);
+      color: var(--ink);
+    }
+    .collab-block .btn-primary:hover { background: #38a8d0; }
+
+    /* ─── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--divider);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-left {
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.08em;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-link {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--sky); }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 0 1.2rem; }
+      .stat-item { min-width: 120px; padding: 1.2rem; }
+      .stat-num { font-size: 1.6rem; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-right { justify-content: center; }
+      .collab-block { padding: 2rem 1.5rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────────────────── -->
+<nav>
+  <a class="nav-logo" href="/">AINU.SYSTEMS</a>
+  <div class="nav-right">
+    <select class="lang-select" id="langSelect" onchange="setLang(this.value)" aria-label="Select language">
+      <option value="pt">🇧🇷 PT</option>
+      <option value="en">🇬🇧 EN</option>
+      <option value="es">🇪🇸 ES</option>
+      <option value="fr">🇫🇷 FR</option>
+      <option value="it">🇮🇹 IT</option>
+      <option value="zh">🇨🇳 ZH</option>
+      <option value="ja">🇯🇵 JA</option>
+      <option value="ko">🇰🇷 KO</option>
+      <option value="fi">🇫🇮 FI</option>
+    </select>
+    <a class="nav-link lang-link" data-base="https://app.narayama.live" href="https://app.narayama.live" target="_blank" rel="noopener" data-i18n="nav_observatory">Observatório</a>
+    <a class="nav-link lang-link" data-base="https://app.ainu.systems" href="https://app.ainu.systems" target="_blank" rel="noopener" data-i18n="nav_platform">Plataforma</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-body">
+    <img src="Ainu.png" alt="AINU — Ancestral Isomorphic Nexus Unit" class="hero-logo">
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Infraestrutura de Pesquisa Aberta · Narayama Framework</p>
+    <h1 class="hero-title" data-i18n="hero_title">
+      Quanto tempo resta para cada sociedade <em>se renovar</em>?
+    </h1>
+    <p class="hero-sub" data-i18n="hero_sub">
+      AINU calcula o Índice N* — um termômetro demográfico para 28 países, atualizado mensalmente, com metodologia rastreável e aberta à colaboração científica internacional.
+    </p>
+    <div class="btn-row">
+      <a class="btn-primary lang-link" data-base="https://app.ainu.systems" href="https://app.ainu.systems" target="_blank" rel="noopener" data-i18n="btn_access">
+        ↗ Acessar a Plataforma
+      </a>
+      <a class="btn-ghost lang-link" data-base="https://app.narayama.live" href="https://app.narayama.live" target="_blank" rel="noopener" data-i18n="btn_observatory">
+        Narayama.live
+      </a>
+    </div>
+  </div>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <span class="stat-num">28</span>
+      <span class="stat-label" data-i18n="stat_countries">Países</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">5</span>
+      <span class="stat-label" data-i18n="stat_zones">Zonas geracionais</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">9</span>
+      <span class="stat-label" data-i18n="stat_languages">Idiomas</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">∞</span>
+      <span class="stat-label" data-i18n="stat_open">Pesquisa aberta</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FIVE ZONES ────────────────────────────────────────────── -->
+<article class="section" style="padding-bottom:0">
+  <p class="section-eyebrow" data-i18n="zones_eyebrow">Os Cinco Regimes Geracionais</p>
+  <h2 class="section-title" data-i18n="formula_label">Índice de Narayama Sistêmico</h2>
+  <div class="zones-ruler">
+    <div class="zone-seg" style="background:#f5c2c7">
+      <div class="zone-seg-name" data-i18n="zone_pec">Colapso de Narayama (PEC)</div>
+      <div class="zone-seg-range">&lt; 0.71</div>
+    </div>
+    <div class="zone-seg" style="background:#ffdba8">
+      <div class="zone-seg-name" data-i18n="zone_ta">Tensão Acelerada</div>
+      <div class="zone-seg-range">0.71 – 0.90</div>
+    </div>
+    <div class="zone-seg" style="background:#cfe2ff">
+      <div class="zone-seg-name" data-i18n="zone_pea">Equilíbrio Sustentável (PEA)</div>
+      <div class="zone-seg-range">0.90 – 1.40</div>
+    </div>
+    <div class="zone-seg" style="background:#fff3cd">
+      <div class="zone-seg-name" data-i18n="zone_tp">Tensão Populacional</div>
+      <div class="zone-seg-range">1.40 – 2.00</div>
+    </div>
+    <div class="zone-seg" style="background:#ffd60a">
+      <div class="zone-seg-name" data-i18n="zone_peec">Saturação por Overbirths (PEEC)</div>
+      <div class="zone-seg-range">&ge; 2.00</div>
+    </div>
+  </div>
+  <p class="formula-note" data-i18n="formula_note">Normalização por raiz quadrada · Atualização mensal · Versionamento Git rastreável</p>
+</article>
+
+<!-- ─── ABOUT ─────────────────────────────────────────────────── -->
+<article class="section">
+  <p class="section-eyebrow" data-i18n="about_eyebrow">O que é o AINU</p>
+  <h2 class="section-title" data-i18n="about_title">Uma infraestrutura científica permanentemente aberta</h2>
+  <div class="section-body">
+    <p data-i18n="about_p1">
+      A economia moderna contabiliza capital, trabalho, terra e tecnologia — mas não mede o que produz o próprio produtor: a capacidade de cada sociedade de renovar suas gerações. O AINU foi criado para preencher essa lacuna.
+    </p>
+    <p data-i18n="about_p2">
+      Desenvolvido no contexto do doutorado em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o AINU não é um resultado final. É uma arquitetura científica concebida para permanecer aberta — ao refinamento metodológico, à crítica acadêmica e à incorporação permanente de novas evidências.
+    </p>
+  </div>
+
+  <!-- CONTACT BOX -->
+  <div class="contact-box">
+    <span class="contact-icon">✉</span>
+    <div class="contact-text">
+      <p class="contact-title" data-i18n="contact_title">Quer saber mais e participar desta pesquisa?</p>
+      <p class="contact-sub" data-i18n="contact_sub">Entre em contato conosco</p>
+    </div>
+    <a class="contact-btn" href="mailto:narayama.live@gmail.com" aria-label="Enviar email para narayama.live@gmail.com">
+      <span class="contact-email-icon">@</span>
+      <span class="contact-email-text">narayama.live@gmail.com</span>
+    </a>
+  </div>
+</article>
+
+<!-- ─── OPEN RESEARCH ──────────────────────────────────────────── -->
+<article class="section" style="padding-top:0">
+  <p class="section-eyebrow" data-i18n="open_eyebrow">Arquitetura AINU–Narayama</p>
+  <h2 class="section-title" data-i18n="open_title">Laboratório e observatório — separados por design</h2>
+  <div class="pillars">
+    <div class="pillar-card">
+      <span class="pillar-icon">⚙️</span>
+      <p class="pillar-title">AINU.systems</p>
+      <p class="pillar-text" data-i18n="pillar_ainu">
+        Ambiente computacional experimental. Integra bases de dados internacionais, aplica protocolo de falseabilidade quantitativo e versiona cada decisão metodológica com rastreabilidade Git. Onde os dados são <em>questionados</em>.
+      </p>
+    </div>
+    <div class="pillar-card">
+      <span class="pillar-icon">🌐</span>
+      <p class="pillar-title">Narayama.live</p>
+      <p class="pillar-text" data-i18n="pillar_narayama">
+        Observatório público. Publica resultados, documenta a evolução metodológica e exibe o mapa periódico dos 28 países em 9 idiomas. Onde os dados são <em>apresentados</em>.
+      </p>
+    </div>
+  </div>
+
+  <!-- COLLABORATE -->
+  <div class="collab-block">
+    <p class="section-eyebrow" data-i18n="collab_eyebrow">Colaboração Internacional</p>
+    <h3 class="collab-title" data-i18n="collab_title">A pesquisa permanece aberta.</h3>
+    <p class="collab-sub" data-i18n="collab_sub">
+      Pesquisadores dos 28 países contemplados são especialmente bem-vindos — em particular mulheres pesquisadoras com expertise em economia do cuidado, reprodução social e políticas de sustentabilidade geracional.
+    </p>
+    <div class="btn-row">
+      <a class="btn-primary lang-link" data-base="https://app.ainu.systems" href="https://app.ainu.systems" target="_blank" rel="noopener" data-i18n="collab_btn">
+        ↗ Entrar na Plataforma
+      </a>
+    </div>
+  </div>
+</article>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-left">
+    AINU · Ancestral Isomorphic Nexus Unit · © 2026 Itiberê Muarrek
+  </div>
+  <div class="footer-right">
+    <a class="footer-link lang-link" data-base="https://app.narayama.live" href="https://app.narayama.live" target="_blank" rel="noopener">Narayama.live</a>
+    <a class="footer-link lang-link" data-base="https://app.ainu.systems" href="https://app.ainu.systems" target="_blank" rel="noopener" data-i18n="nav_platform">Plataforma</a>
+  </div>
+</footer>
+
+<!-- ─── I18N ───────────────────────────────────────────────────── -->
+<script>
+const i18n = {
+  pt: {
+    nav_observatory: "Observatório",
+    nav_platform: "Plataforma",
+    hero_eyebrow: "Infraestrutura de Pesquisa Aberta · Narayama Framework",
+    hero_title: "Quanto tempo resta para cada sociedade <em>se renovar</em>?",
+    hero_sub: "AINU calcula o Índice N* — um termômetro demográfico para 28 países, atualizado mensalmente, com metodologia rastreável e aberta à colaboração científica internacional.",
+    btn_access: "↗ Acessar a Plataforma",
+    btn_observatory: "Narayama.live",
+    login_label: "Acesso aberto:",
+    stat_countries: "Países",
+    stat_zones: "Zonas geracionais",
+    stat_languages: "Idiomas",
+    stat_open: "Pesquisa aberta",
+    about_eyebrow: "O que é o AINU",
+    about_title: "Uma infraestrutura científica permanentemente aberta",
+    about_p1: "A economia moderna contabiliza capital, trabalho, terra e tecnologia — mas não mede o que produz o próprio produtor: a capacidade de cada sociedade de renovar suas gerações. O AINU foi criado para preencher essa lacuna.",
+    about_p2: "Desenvolvido no contexto do doutorado em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o AINU não é um resultado final. É uma arquitetura científica concebida para permanecer aberta — ao refinamento metodológico, à crítica acadêmica e à incorporação permanente de novas evidências.",
+    formula_label: "Índice de Narayama Sistêmico",
+    formula_note: "Normalização por raiz quadrada · Atualização mensal · Versionamento Git rastreável",
+    zones_eyebrow: "Os Cinco Regimes Geracionais",
+    zone_pec: "Colapso de Narayama (PEC)",
+    zone_ta: "Tensão Acelerada",
+    zone_pea: "Equilíbrio",
+    zone_tp: "Tensão Populacional",
+    zone_peec: "Saturação",
+    open_eyebrow: "Arquitetura AINU–Narayama",
+    open_title: "Laboratório e observatório — separados por design",
+    pillar_ainu: "Ambiente computacional experimental. Integra bases de dados internacionais, aplica protocolo de falseabilidade quantitativo e versiona cada decisão metodológica com rastreabilidade Git. Onde os dados são <em>questionados</em>.",
+    pillar_narayama: "Observatório público. Publica resultados, documenta a evolução metodológica e exibe o mapa periódico dos 28 países em 9 idiomas. Onde os dados são <em>apresentados</em>.",
+    collab_eyebrow: "Colaboração Internacional",
+    collab_title: "A pesquisa permanece aberta.",
+    collab_sub: "Pesquisadores dos 28 países contemplados são especialmente bem-vindos — em particular mulheres pesquisadoras com expertise em economia do cuidado, reprodução social e políticas de sustentabilidade geracional.",
+    collab_btn: "↗ Entrar na Plataforma",
+    contact_title: "Quer saber mais e participar desta pesquisa?",
+    contact_sub: "Entre em contato conosco",
+  },
+  en: {
+    nav_observatory: "Observatory",
+    nav_platform: "Platform",
+    hero_eyebrow: "Open Research Infrastructure · Narayama Framework",
+    hero_title: "How long does each society have to <em>renew itself</em>?",
+    hero_sub: "AINU computes the N* Index — a demographic thermometer for 28 countries, updated monthly, with traceable methodology open to international scientific collaboration.",
+    btn_access: "↗ Access Platform",
+    btn_observatory: "Narayama.live",
+    login_label: "Open access:",
+    stat_countries: "Countries",
+    stat_zones: "Generational zones",
+    stat_languages: "Languages",
+    stat_open: "Open research",
+    about_eyebrow: "What is AINU",
+    about_title: "A permanently open scientific infrastructure",
+    about_p1: "Modern economics accounts for capital, labor, land, and technology — but does not measure what produces the producer itself: each society's capacity to renew its generations. AINU was built to fill that gap.",
+    about_p2: "Developed within the doctoral research in Political Economy <em>From the Narayama Dilemma to the Civilizational Oikocene</em>, AINU is not a final result. It is a scientific architecture designed to remain open — to methodological refinement, academic critique, and the permanent incorporation of new evidence.",
+    formula_label: "Narayama Systemic Index",
+    formula_note: "Square root normalization · Monthly updates · Traceable Git versioning",
+    zones_eyebrow: "The Five Generational Regimes",
+    zone_pec: "Narayama Collapse (PEC)",
+    zone_ta: "Accelerated Tension",
+    zone_pea: "Equilibrium",
+    zone_tp: "Population Tension",
+    zone_peec: "Saturation",
+    open_eyebrow: "AINU–Narayama Architecture",
+    open_title: "Laboratory and observatory — separated by design",
+    pillar_ainu: "Experimental computational environment. Integrates international databases, applies quantitative falsifiability protocols, and versions every methodological decision with Git traceability. Where data is <em>questioned</em>.",
+    pillar_narayama: "Public observatory. Publishes results, documents methodological evolution, and displays the periodic map of 28 countries in 9 languages. Where data is <em>presented</em>.",
+    collab_eyebrow: "International Collaboration",
+    collab_title: "The research remains open.",
+    collab_sub: "Researchers from the 28 countries studied are especially welcome — particularly women researchers with expertise in care economics, social reproduction, and intergenerational sustainability policies.",
+    collab_btn: "↗ Enter Platform",
+    contact_title: "Want to learn more and participate in this research?",
+    contact_sub: "Contact us",
+  },
+  es: {
+    nav_observatory: "Observatorio",
+    nav_platform: "Plataforma",
+    hero_eyebrow: "Infraestructura de Investigación Abierta · Marco Narayama",
+    hero_title: "¿Cuánto tiempo le queda a cada sociedad para <em>renovarse</em>?",
+    hero_sub: "AINU calcula el Índice N* — un termómetro demográfico para 28 países, actualizado mensualmente, con metodología trazable y abierta a la colaboración científica internacional.",
+    btn_access: "↗ Acceder a la Plataforma",
+    btn_observatory: "Narayama.live",
+    login_label: "Acceso abierto:",
+    stat_countries: "Países",
+    stat_zones: "Regímenes generacionales",
+    stat_languages: "Idiomas",
+    stat_open: "Investigación abierta",
+    about_eyebrow: "Qué es AINU",
+    about_title: "Una infraestructura científica permanentemente abierta",
+    about_p1: "La economía moderna contabiliza capital, trabajo, tierra y tecnología — pero no mide lo que produce al propio productor: la capacidad de cada sociedad de renovar sus generaciones. AINU fue creado para llenar ese vacío.",
+    about_p2: "Desarrollado en el contexto del doctorado en Economía Política <em>Del Dilema de Narayama al Oicoceno Civilizacional</em>, AINU no es un resultado final. Es una arquitectura científica concebida para mantenerse abierta.",
+    formula_label: "Índice Sistémico de Narayama",
+    formula_note: "Normalización por raíz cuadrada · Actualización mensual · Versionado Git trazable",
+    zones_eyebrow: "Los Cinco Regímenes Generacionales",
+    zone_pec: "Colapso de Narayama (PEC)",
+    zone_ta: "Tensión Acelerada",
+    zone_pea: "Equilibrio",
+    zone_tp: "Tensión Poblacional",
+    zone_peec: "Saturación",
+    open_eyebrow: "Arquitectura AINU–Narayama",
+    open_title: "Laboratorio y observatorio — separados por diseño",
+    pillar_ainu: "Entorno computacional experimental. Integra bases de datos internacionales y versiona cada decisión metodológica. Donde los datos son <em>cuestionados</em>.",
+    pillar_narayama: "Observatorio público. Publica resultados y exhibe el mapa periódico de 28 países en 9 idiomas. Donde los datos son <em>presentados</em>.",
+    collab_eyebrow: "Colaboración Internacional",
+    collab_title: "La investigación permanece abierta.",
+    collab_sub: "Se invita especialmente a investigadoras con experiencia en economía del cuidado, reproducción social y políticas de sostenibilidad intergeneracional.",
+    collab_btn: "↗ Entrar a la Plataforma",
+    contact_title: "¿Quiere saber más y participar en esta investigación?",
+    contact_sub: "Contáctenos",
+  },
+  fr: {
+    nav_observatory: "Observatoire",
+    nav_platform: "Plateforme",
+    hero_eyebrow: "Infrastructure de Recherche Ouverte · Cadre Narayama",
+    hero_title: "Combien de temps reste-t-il à chaque société pour <em>se renouveler</em>?",
+    hero_sub: "AINU calcule l'Indice N* — un thermomètre démographique pour 28 pays, mis à jour mensuellement, avec une méthodologie traçable et ouverte à la collaboration scientifique internationale.",
+    btn_access: "↗ Accéder à la Plateforme",
+    btn_observatory: "Narayama.live",
+    login_label: "Accès ouvert :",
+    stat_countries: "Pays",
+    stat_zones: "Régimes générationnels",
+    stat_languages: "Langues",
+    stat_open: "Recherche ouverte",
+    about_eyebrow: "Qu'est-ce que AINU",
+    about_title: "Une infrastructure scientifique ouverture permanente",
+    about_p1: "L'économie moderne comptabilise le capital, le travail, la terre et la technologie — mais ne mesure pas ce qui produit le producteur lui-même. AINU a été créé pour combler ce vide.",
+    about_p2: "Développé dans le cadre du doctorat en Économie Politique <em>Du Dilemme de Narayama à l'Oicocène Civilisationnel</em>, AINU est une architecture scientifique conçue pour rester ouverte.",
+    formula_label: "Indice Systémique de Narayama",
+    formula_note: "Normalisation par racine carrée · Mise à jour mensuelle · Versionnement Git traçable",
+    zones_eyebrow: "Les Cinq Régimes Générationnels",
+    zone_pec: "Effondrement de Narayama (PEC)",
+    zone_ta: "Tension Accélérée",
+    zone_pea: "Équilibre",
+    zone_tp: "Tension Démographique",
+    zone_peec: "Saturation",
+    open_eyebrow: "Architecture AINU–Narayama",
+    open_title: "Laboratoire et observatoire — séparés par design",
+    pillar_ainu: "Environnement computationnel expérimental. Intègre des bases de données internationales. Là où les données sont <em>questionnées</em>.",
+    pillar_narayama: "Observatoire public. Publie les résultats en 9 langues. Là où les données sont <em>présentées</em>.",
+    collab_eyebrow: "Collaboration Internationale",
+    collab_title: "La recherche reste ouverte.",
+    collab_sub: "Les chercheurs des 28 pays étudiés sont particulièrement bienvenus — notamment les femmes chercheuses spécialisées en économie du soin et durabilité intergénérationnelle.",
+    collab_btn: "↗ Entrer sur la Plateforme",
+    contact_title: "Vous voulez en savoir plus et participer à cette recherche ?",
+    contact_sub: "Contactez-nous",
+  },
+  ko: {
+    nav_observatory: "관측소",
+    nav_platform: "플랫폼",
+    hero_eyebrow: "개방형 연구 인프라 · 나라야마 프레임워크",
+    hero_title: "각 사회가 <em>스스로 재생</em>할 시간은 얼마나 남았을까?",
+    hero_sub: "AINU는 N* 지수를 계산합니다 — 28개국을 위한 인구통계학적 온도계로, 매달 갱신되며, 추적 가능한 방법론으로 국제 학술 협력에 열려 있습니다.",
+    btn_access: "↗ 플랫폼 접속",
+    btn_observatory: "Narayama.live",
+    login_label: "개방 접근:",
+    stat_countries: "국가",
+    stat_zones: "세대 구역",
+    stat_languages: "언어",
+    stat_open: "개방 연구",
+    about_eyebrow: "AINU란",
+    about_title: "영구적으로 개방된 과학 인프라",
+    about_p1: "현대 경제학은 자본, 노동, 토지, 기술을 계산하지만 — 생산자 그 자체를 만들어내는 것, 즉 각 사회가 세대를 재생산하는 능력은 측정하지 않습니다. AINU는 이 공백을 채우기 위해 만들어졌습니다.",
+    about_p2: "정치경제학 박사 연구 <em>나라야마의 딜레마에서 문명적 오이코세까지</em>의 맥락에서 개발된 AINU는 최종 결과물이 아닙니다. 방법론적 개선, 학술적 비판, 새로운 증거의 지속적인 반영에 열려 있도록 설계된 과학적 아키텍처입니다.",
+    formula_label: "나라야마 체계 지수",
+    formula_note: "제곱근 정규화 · 매월 갱신 · 추적 가능한 Git 버전 관리",
+    zones_eyebrow: "다섯 가지 세대적 체제",
+    zone_pec: "나라야마 붕괴 (PEC)",
+    zone_ta: "가속 긴장",
+    zone_pea: "균형",
+    zone_tp: "인구 긴장",
+    zone_peec: "포화",
+    open_eyebrow: "AINU–나라야마 아키텍처",
+    open_title: "실험실과 관측소 — 설계상 분리",
+    pillar_ainu: "실험적 계산 환경. 국제 데이터베이스를 통합하고, 정량적 반증가능성 프로토콜을 적용하며, Git으로 추적 가능한 방법론적 결정을 버전 관리합니다. 데이터가 <em>검증되는</em> 곳.",
+    pillar_narayama: "공개 관측소. 결과를 발표하고, 방법론적 발전을 문서화하며, 9개 언어로 28개국의 주기율표를 표시합니다. 데이터가 <em>제시되는</em> 곳.",
+    collab_eyebrow: "국제 협력",
+    collab_title: "연구는 계속 열려 있습니다.",
+    collab_sub: "연구 대상 28개국의 연구자들을 특별히 환영합니다 — 특히 돌봄 경제학, 사회적 재생산, 세대간 지속가능성 정책 전문성을 가진 여성 연구자들을 환영합니다.",
+    collab_btn: "↗ 플랫폼 입장",
+    contact_title: "더 알아보고 이 연구에 참여하고 싶으신가요?",
+    contact_sub: "문의하기",
+  },
+  it: {
+    nav_observatory: "Osservatorio",
+    nav_platform: "Piattaforma",
+    hero_eyebrow: "Infrastruttura di Ricerca Aperta · Framework Narayama",
+    hero_title: "Quanto tempo rimane a ogni società per <em>rinnovarsi</em>?",
+    hero_sub: "AINU calcola l'Indice N* — un termometro demografico per 28 paesi, aggiornato mensilmente, con metodologia tracciabile e aperta alla collaborazione scientifica internazionale.",
+    btn_access: "↗ Accedi alla Piattaforma",
+    btn_observatory: "Narayama.live",
+    login_label: "Accesso aperto:",
+    stat_countries: "Paesi",
+    stat_zones: "Regimi generazionali",
+    stat_languages: "Lingue",
+    stat_open: "Ricerca aperta",
+    about_eyebrow: "Cos'è AINU",
+    about_title: "Un'infrastruttura scientifica permanentemente aperta",
+    about_p1: "L'economia moderna contabilizza capitale, lavoro, terra e tecnologia — ma non misura ciò che produce il produttore stesso. AINU è stato creato per colmare questa lacuna.",
+    about_p2: "Sviluppato nel contesto del dottorato in Economia Politica <em>Dal Dilemma di Narayama all'Oikoceno Civilizazionale</em>, AINU è un'architettura scientifica concepita per rimanere aperta.",
+    formula_label: "Indice Sistemico di Narayama",
+    formula_note: "Normalizzazione per radice quadrata · Aggiornamento mensile · Versionamento Git tracciabile",
+    zones_eyebrow: "I Cinque Regimi Generazionali",
+    zone_pec: "Collasso di Narayama (PEC)",
+    zone_ta: "Tensione Accelerata",
+    zone_pea: "Equilibrio",
+    zone_tp: "Tensione Demografica",
+    zone_peec: "Saturazione",
+    open_eyebrow: "Architettura AINU–Narayama",
+    open_title: "Laboratorio e osservatorio — separati per design",
+    pillar_ainu: "Ambiente computazionale sperimentale. Integra banche dati internazionali. Dove i dati vengono <em>messi in discussione</em>.",
+    pillar_narayama: "Osservatorio pubblico. Pubblica risultati in 9 lingue. Dove i dati vengono <em>presentati</em>.",
+    collab_eyebrow: "Collaborazione Internazionale",
+    collab_title: "La ricerca rimane aperta.",
+    collab_sub: "I ricercatori dei 28 paesi studiati sono particolarmente benvenuti — in particolare le ricercatrici esperte di economia della cura e sostenibilità intergenerazionale.",
+    collab_btn: "↗ Entra nella Piattaforma",
+    contact_title: "Vuoi saperne di più e partecipare a questa ricerca?",
+    contact_sub: "Contattaci",
+  },
+  zh: {
+    nav_observatory: "观测站",
+    nav_platform: "平台",
+    hero_eyebrow: "开放研究基础设施 · Narayama框架",
+    hero_title: "每个社会还有多少时间来<em>自我更新</em>？",
+    hero_sub: "AINU计算N*指数——28个国家的人口温度计，每月更新，方法论可追溯，向国际科学合作开放。",
+    btn_access: "↗ 进入平台",
+    btn_observatory: "Narayama.live",
+    login_label: "开放访问：",
+    stat_countries: "国家",
+    stat_zones: "代际区间",
+    stat_languages: "语言",
+    stat_open: "开放研究",
+    about_eyebrow: "什么是AINU",
+    about_title: "一个永久开放的科学基础设施",
+    about_p1: "现代经济学核算资本、劳动、土地和技术——但不衡量生产者本身的生产能力：每个社会更新其世代的能力。AINU正是为填补这一空白而创建的。",
+    about_p2: "AINU在政治经济学博士研究《从Narayama困境到文明生态纪》的背景下发展，不是最终结果，而是一个永久开放的科学架构。",
+    formula_label: "Narayama系统指数",
+    formula_note: "平方根标准化 · 每月更新 · 可追溯Git版本控制",
+    zones_eyebrow: "五大代际区间",
+    zone_pec: "楢山崩溃 (PEC)",
+    zone_ta: "加速紧张",
+    zone_pea: "均衡",
+    zone_tp: "人口紧张",
+    zone_peec: "过饱和",
+    open_eyebrow: "AINU–Narayama架构",
+    open_title: "实验室与观测站——设计分离",
+    pillar_ainu: "实验性计算环境，整合国际数据库，数据在此被<em>质疑</em>。",
+    pillar_narayama: "公共观测站，以9种语言发布结果，数据在此被<em>呈现</em>。",
+    collab_eyebrow: "国际合作",
+    collab_title: "研究保持开放。",
+    collab_sub: "特别欢迎来自28个研究国家的研究人员——尤其是在照护经济学和代际可持续性政策方面有专长的女性研究人员。",
+    collab_btn: "↗ 进入平台",
+    contact_title: "想了解更多并参与本研究？",
+    contact_sub: "联系我们",
+  },
+  ja: {
+    nav_observatory: "観測所",
+    nav_platform: "プラットフォーム",
+    hero_eyebrow: "オープン研究インフラ · ナラヤマフレームワーク",
+    hero_title: "各社会が<em>自己更新</em>するまでの時間はどれほどか？",
+    hero_sub: "AINUはN*指数を計算します——28カ国の人口温度計、毎月更新、追跡可能な方法論、国際的な科学的協力に開放。",
+    btn_access: "↗ プラットフォームにアクセス",
+    btn_observatory: "Narayama.live",
+    login_label: "オープンアクセス：",
+    stat_countries: "カ国",
+    stat_zones: "世代的体制",
+    stat_languages: "言語",
+    stat_open: "オープン研究",
+    about_eyebrow: "AINUとは",
+    about_title: "永続的に開かれた科学インフラ",
+    about_p1: "現代経済学は資本、労働、土地、技術を計上しますが、生産者自身を生み出すもの——各社会が世代を更新する能力——は測定しません。AINUはそのギャップを埋めるために作られました。",
+    about_p2: "政治経済学博士研究の文脈で開発されたAINUは、最終的な結果ではなく、方法論的改良と永続的な証拠の取り込みに開かれた科学的アーキテクチャです。",
+    formula_label: "ナラヤマ・システミック指数",
+    formula_note: "平方根正規化 · 毎月更新 · 追跡可能なGitバージョン管理",
+    zones_eyebrow: "5つの世代的体制",
+    zone_pec: "ナラヤマ崩壊 (PEC)",
+    zone_ta: "加速緊張",
+    zone_pea: "均衡",
+    zone_tp: "人口緊張",
+    zone_peec: "飽和",
+    open_eyebrow: "AINU–ナラヤマアーキテクチャ",
+    open_title: "実験室と観測所——設計により分離",
+    pillar_ainu: "実験的な計算環境。データが<em>問われる</em>場所。",
+    pillar_narayama: "公開観測所。9言語で結果を公開。データが<em>提示される</em>場所。",
+    collab_eyebrow: "国際協力",
+    collab_title: "研究は開かれたまま。",
+    collab_sub: "28カ国の研究者を特に歓迎します——ケア経済学、社会的再生産、世代間持続可能性政策の専門知識を持つ女性研究者を特に。",
+    collab_btn: "↗ プラットフォームに入る",
+    contact_title: "もっと知りたい、この研究に参加したいですか？",
+    contact_sub: "お問い合わせください",
+  },
+  fi: {
+    nav_observatory: "Observatorio",
+    nav_platform: "Alusta",
+    hero_eyebrow: "Avoin tutkimusinfrastruktuuri · Narayama-viitekehys",
+    hero_title: "Kuinka paljon aikaa kullakin yhteiskunnalla on <em>uudistua</em>?",
+    hero_sub: "AINU laskee N*-indeksin — väestötieteellisen lämpömittarin 28 maalle, päivitetään kuukausittain, jäljitettävällä menetelmällä, avoin kansainväliselle tieteelliselle yhteistyölle.",
+    btn_access: "↗ Siirry alustalle",
+    btn_observatory: "Narayama.live",
+    login_label: "Avoin pääsy:",
+    stat_countries: "Maata",
+    stat_zones: "Sukupolvivyöhykettä",
+    stat_languages: "Kieltä",
+    stat_open: "Avoin tutkimus",
+    about_eyebrow: "Mikä on AINU",
+    about_title: "Pysyvästi avoin tieteellinen infrastruktuuri",
+    about_p1: "Nykytalous laskee pääoman, työn, maan ja teknologian — mutta ei mittaa sitä, mikä tuottaa tuottajan itsensä: kunkin yhteiskunnan kykyä uudistaa sukupolviaan. AINU rakennettiin täyttämään tämä aukko.",
+    about_p2: "Kehitetty osana valtio-opin tohtoritutkimusta <em>Narayaman dilemmasta sivilisaation Oikoseeniin</em>, AINU ei ole lopullinen tulos. Se on tieteellinen arkkitehtuuri, joka on suunniteltu pysymään avoimena metodologiselle tarkentamiselle, akateemiselle kritiikille ja uuden näytön jatkuvalle sisällyttämiselle.",
+    formula_label: "Systeeminen Narayama-indeksi",
+    formula_note: "Neliöjuurinormalisointi · Kuukausittainen päivitys · Jäljitettävä Git-versiointi",
+    zones_eyebrow: "Viisi sukupolvien regiimiä",
+    zone_pec: "Narayama-romahdus (PEC)",
+    zone_ta: "Kiihtyvä jännite",
+    zone_pea: "Tasapaino",
+    zone_tp: "Väestöjännite",
+    zone_peec: "Kyllästymä",
+    open_eyebrow: "AINU–Narayama-arkkitehtuuri",
+    open_title: "Laboratorio ja observatorio — erotettu suunnittelulla",
+    pillar_ainu: "Kokeellinen laskentaympäristö. Integroi kansainväliset tietokannat, soveltaa kvantitatiivista falsifioitavuusprotokollaa ja versioi jokaisen metodologisen päätöksen jäljitettävästi Gitillä. Missä dataa <em>kyseenalaistetaan</em>.",
+    pillar_narayama: "Julkinen observatorio. Julkaisee tuloksia, dokumentoi menetelmän kehitystä ja näyttää 28 maan jaksollisen kartan 9 kielellä. Missä dataa <em>esitetään</em>.",
+    collab_eyebrow: "Kansainvälinen yhteistyö",
+    collab_title: "Tutkimus pysyy avoimena.",
+    collab_sub: "Tutkijat kaikista 28 tutkitusta maasta ovat erityisen tervetulleita — etenkin naistutkijat, joilla on asiantuntemusta hoivatalaudesta, sosiaalisesta uusintamisesta ja sukupolvien välisen kestävyyden politiikasta.",
+    collab_btn: "↗ Siirry alustalle",
+    contact_title: "Haluatko tietää lisää ja osallistua tähän tutkimukseen?",
+    contact_sub: "Ota yhteyttä",
+  }
+};
+
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  const t = i18n[lang] || i18n['en'];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('.lang-link').forEach(el => {
+    const base = el.getAttribute('data-base');
+    el.href = base + '?lang=' + lang;
+  });
+  localStorage.setItem('ainu_lang', lang);
+}
+
+// Init
+(function() {
+  const saved = localStorage.getItem('ainu_lang');
+  const browser = navigator.language?.slice(0,2);
+  const supported = Object.keys(i18n);
+  const lang = supported.includes(saved) ? saved
+              : supported.includes(browser) ? browser
+              : 'pt';
+  document.getElementById('langSelect').value = lang;
+  setLang(lang);
+})();
+</script>
+
+</body>
+</html>
