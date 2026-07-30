@@ -356,7 +356,7 @@ if not df_historico.empty:
             x="ano",
             y="n_base",
             color="nome_exibicao",
-            title=t("serie_historica_header", lang),
+            title=t("serie_historica_header", lang).replace("\\*", "*"),
             labels={"ano": "Ano", "n_base": "N*", "nome_exibicao": t("col_pais", lang)},
         )
         st.plotly_chart(fig_linha, use_container_width=True)
@@ -392,6 +392,9 @@ _ORDEM_ZONAS = [
 if not df.empty and {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
     _sd = sem_dado(lang)
     _mi = sufixo_milhoes(lang)
+    _atual_label = t("atual_label", lang)
+    _tendencia_label = t("tendencia_label_curto", lang)
+    _cenario_label = t("cenario_label_curto", lang)
     _blocos_html = []
     for _zona in _ORDEM_ZONAS:
         _paises_zona = df[df["status"] == _zona].sort_values("populacao", ascending=False)
@@ -399,18 +402,41 @@ if not df.empty and {"status", "n_estrela", "codigo", "nome", "populacao"}.issub
         _cards = []
         for _linha in _paises_zona.itertuples():
             _ddi = CODIGO_DDI_POR_PAIS.get(_linha.codigo, "?")
+            _pop_atual = f"{_linha.populacao:.0f}{_mi}" if pd.notna(_linha.populacao) else _sd
             _p_tendencia = getattr(_linha, "p_tendencia", None)
             _pop_tendencia = f"{_p_tendencia:.0f}{_mi}" if pd.notna(_p_tendencia) else _sd
             _p_eq = getattr(_linha, "p_eq", None)
             _pop_eq = f"{_p_eq:.0f}{_mi}" if pd.notna(_p_eq) else _sd
+            _ano_eq = getattr(_linha, "ano_eq", None)
+            _ano_eq_txt = f"{_ano_eq:.0f}" if pd.notna(_ano_eq) else "2074"
+            # Tooltip nativo (title=) com os componentes técnicos — a
+            # Tabela Principal (dataframe acima) já mostra essas colunas
+            # por extenso; aqui é só um atalho pra quem passa o mouse
+            # direto no card da Tabela Geracional (2026-07-30).
+            _n_base = getattr(_linha, "n_base", None)
+            _ngii_bruto = getattr(_linha, "ngii_bruto", None)
+            _ngii_puro = getattr(_linha, "ngii_puro", None)
+            _fator_ger = getattr(_linha, "fator_geracional", None)
+            _fator_aloc = getattr(_linha, "fator_alocativo", None)
+            _fator_aloc_txt = f"{_fator_aloc:.4f}" if pd.notna(_fator_aloc) else _sd
+            _tooltip = (
+                f"N_Base: {_n_base:.4f} | NGII_Bruto: {_ngii_bruto:.4f} | "
+                f"NGII_puro: {_ngii_puro:.4f} | Fator_Geracional: {_fator_ger:.4f} | "
+                f"Fator_Alocativo: {_fator_aloc_txt}"
+                if pd.notna(_n_base) and pd.notna(_ngii_bruto) and pd.notna(_ngii_puro) and pd.notna(_fator_ger)
+                else f"N_Base: {_n_base} | Fator_Alocativo: {_fator_aloc_txt}"
+            )
             _cards.append(
-                f'<div style="background:{_cor};border:2px solid #1a1a1a;'
+                f'<div title="{_tooltip}" style="background:{_cor};border:2px solid #1a1a1a;'
                 f'border-radius:6px;padding:8px;margin-bottom:6px;'
-                f'text-align:center;font-family:monospace;color:#1a1a1a;">'
+                f'text-align:center;font-family:monospace;color:#1a1a1a;cursor:help;">'
                 f'<div style="font-weight:700;font-size:0.8em;">{_linha.nome_exibicao} ({_ddi})</div>'
                 f'<div style="font-weight:700;font-size:1.2em;">{_linha.n_estrela:.2f}'
                 f'<span style="font-size:0.55em;font-weight:400;"> ({_sd})</span></div>'
-                f'<div style="font-size:0.72em;">{_pop_tendencia} → {_pop_eq}</div>'
+                f'<div style="font-size:0.72em;">{_atual_label}: {_pop_atual}</div>'
+                f'<div style="font-size:0.72em;">{_ano_eq_txt}: {_pop_tendencia} → {_pop_eq}</div>'
+                f'<div style="display:flex;justify-content:space-between;font-size:0.55em;opacity:0.75;">'
+                f'<span>{_tendencia_label}</span><span>{_cenario_label}</span></div>'
                 f"</div>"
             )
         _blocos_html.append(

@@ -12,6 +12,14 @@ confirmada pelo autor da tese em 2026-07-01 (ver
 src.config.PAISES_DESTAQUE_NARAYAMA_LIVE): Argentina, Brasil, China,
 Coreia do Sul, EUA, Itália, Japão.
 
+Países-exemplo pedagógicos (2026-07-30, decisão do autor): os 7
+destaque caem só em 2 das 5 zonas do N* (PEC e PEA) — sem nenhum
+exemplo de Tensão Acelerada, Tensão Populacional ou PEEC, enfraquecendo
+a leitura visual da escala completa. Acrescenta França, México e
+Nigéria (src.config.PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE) só pra cobertura
+pedagógica das 5 zonas — não substitui nem se mistura com a lista
+oficial de 7 (marcados com a tag "exemplo" nos cards).
+
 Fonte de dados esperada (produzida pelo pipeline da Fase 2+):
 data/processed/n_index_2024.csv — colunas: codigo, n_base, n_estrela,
 farol, status. O N* mostrado aqui é `n_estrela` (sqrt(n_base) —
@@ -53,8 +61,10 @@ from src.config import (
     CORES_5_ZONAS,
     DATA_PROCESSED_DIR,
     DATA_RAW_DIR,
+    LIMIARES_5_ZONAS_NORMALIZADOS,
     PAISES,
     PAISES_DESTAQUE_NARAYAMA_LIVE,
+    PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE,
 )
 from src.i18n import (
     glossario_markdown,
@@ -81,7 +91,49 @@ lang = seletor_idioma()
 st.title("Narayama.live")
 st.markdown(f"### {t('narayama_subtitulo', lang)}")
 st.markdown(t("narayama_intro", lang))
-st.info(t("narayama_info", lang))
+st.markdown(t("n_star_explicacao_curta", lang))
+
+# Régua visual das 5 zonas (2026-07-30) — substitui o antigo st.info()
+# como o resumo sempre visível; a explicação detalhada zona a zona vira
+# um expander logo abaixo, pra reduzir a poluição textual da página.
+_ORDEM_ZONAS_ASC = [
+    "Colapso de Narayama (PEC)",
+    "Tensão Acelerada",
+    "Equilíbrio Sustentável (PEA)",
+    "Tensão Populacional",
+    "Saturação por Overbirths (PEEC)",
+]
+_faixas_ruler = [
+    (None, LIMIARES_5_ZONAS_NORMALIZADOS["pec"]),
+    (LIMIARES_5_ZONAS_NORMALIZADOS["pec"], LIMIARES_5_ZONAS_NORMALIZADOS["tensao_acelerada"]),
+    (LIMIARES_5_ZONAS_NORMALIZADOS["tensao_acelerada"], LIMIARES_5_ZONAS_NORMALIZADOS["pea"]),
+    (LIMIARES_5_ZONAS_NORMALIZADOS["pea"], LIMIARES_5_ZONAS_NORMALIZADOS["tensao_populacional"]),
+    (LIMIARES_5_ZONAS_NORMALIZADOS["tensao_populacional"], None),
+]
+_ruler_segmentos = []
+for _i, (_zona, (_lo, _hi)) in enumerate(zip(_ORDEM_ZONAS_ASC, _faixas_ruler)):
+    _cor = CORES_5_ZONAS.get(_zona, "#eeeeee")
+    if _lo is None:
+        _faixa_txt = f"< {_hi:.2f}"
+    elif _hi is None:
+        _faixa_txt = f"≥ {_lo:.2f}"
+    else:
+        _faixa_txt = f"{_lo:.2f}–{_hi:.2f}"
+    _borda = "border-right:1px solid #1a1a1a;" if _i < len(_ORDEM_ZONAS_ASC) - 1 else ""
+    _ruler_segmentos.append(
+        f'<div style="flex:1;background:{_cor};padding:8px 4px;text-align:center;'
+        f'font-family:monospace;color:#1a1a1a;{_borda}">'
+        f'<div style="font-weight:700;font-size:0.72em;">{nome_zona(_zona, lang)}</div>'
+        f'<div style="font-size:0.65em;">{_faixa_txt}</div>'
+        f"</div>"
+    )
+st.markdown(
+    '<div style="display:flex;border:2px solid #1a1a1a;border-radius:6px;'
+    'overflow:hidden;margin:8px 0 4px;">' + "".join(_ruler_segmentos) + "</div>",
+    unsafe_allow_html=True,
+)
+with st.expander(t("como_ler_nstar_expander_label", lang)):
+    st.markdown(t("narayama_info", lang))
 
 # -----------------------------------------------------------------------
 # Carregamento de dados
@@ -90,13 +142,16 @@ st.info(t("narayama_info", lang))
 
 @st.cache_data
 def carregar_destaques() -> pd.DataFrame:
-    """Carrega o snapshot 2024 do N*, restrito aos 7 países destaque."""
+    """Carrega o snapshot 2024 do N*: os 7 países destaque + 3 exemplos
+    pedagógicos (ver docstring do módulo) — 10 países no total."""
     caminho = DATA_PROCESSED_DIR / "n_index_2024.csv"
     if not caminho.exists():
         return pd.DataFrame()
 
     df = pd.read_csv(caminho)
-    df = df[df["codigo"].isin(PAISES_DESTAQUE_NARAYAMA_LIVE)].copy()
+    _codigos = PAISES_DESTAQUE_NARAYAMA_LIVE + PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE
+    df = df[df["codigo"].isin(_codigos)].copy()
+    df["eh_exemplo"] = df["codigo"].isin(PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE)
 
     df["nome"] = df["codigo"].map(lambda c: PAISES[c]["nome"])
 
@@ -144,7 +199,9 @@ df["nome_exibicao"] = df["codigo"].map(lambda c: nome_pais(c, lang))
 st.header(t("tabela_geracional_header", lang))
 st.caption(t("narayama_caption_grade", lang))
 st.caption(t("farol_provisorio_caption", lang))
-st.caption(t("caption_arrow_narayama", lang))
+st.caption(t("projecoes_resumo_curto", lang))
+with st.expander(t("como_calculamos_expander_label", lang)):
+    st.markdown(t("caption_arrow_narayama", lang))
 
 _ORDEM_ZONAS = [
     "Saturação por Overbirths (PEEC)",
@@ -157,6 +214,10 @@ _ORDEM_ZONAS = [
 if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
     _sd = sem_dado(lang)
     _mi = sufixo_milhoes(lang)
+    _atual_label = t("atual_label", lang)
+    _tendencia_label = t("tendencia_label_curto", lang)
+    _cenario_label = t("cenario_label_curto", lang)
+    _exemplo_tag = t("exemplo_pedagogico_tag", lang)
     _blocos_html = []
     for _zona in _ORDEM_ZONAS:
         _paises_zona = df[df["status"] == _zona].sort_values("populacao", ascending=False)
@@ -166,18 +227,31 @@ if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
         _cards = []
         for _linha in _paises_zona.itertuples():
             _ddi = CODIGO_DDI_POR_PAIS.get(_linha.codigo, "?")
+            _pop_atual = f"{_linha.populacao:.0f}{_mi}" if pd.notna(_linha.populacao) else _sd
             _p_tendencia = getattr(_linha, "p_tendencia", None)
             _pop_tendencia = f"{_p_tendencia:.0f}{_mi}" if pd.notna(_p_tendencia) else _sd
             _p_eq = getattr(_linha, "p_eq", None)
             _pop_eq = f"{_p_eq:.0f}{_mi}" if pd.notna(_p_eq) else _sd
+            _ano_eq = getattr(_linha, "ano_eq", None)
+            _ano_eq_txt = f"{_ano_eq:.0f}" if pd.notna(_ano_eq) else "2074"
+            _eh_exemplo = getattr(_linha, "eh_exemplo", False)
+            _selo_exemplo = (
+                f'<div style="font-size:0.6em;font-style:italic;opacity:0.75;">({_exemplo_tag})</div>'
+                if _eh_exemplo else ""
+            )
             _cards.append(
                 f'<div style="background:{_cor};border:2px solid #1a1a1a;'
                 f'border-radius:6px;padding:8px;margin-bottom:6px;'
-                f'text-align:center;font-family:monospace;color:#1a1a1a;">'
+                f'text-align:center;font-family:monospace;color:#1a1a1a;'
+                f'{"opacity:0.85;" if _eh_exemplo else ""}">'
                 f'<div style="font-weight:700;font-size:0.8em;">{_linha.nome_exibicao} ({_ddi})</div>'
+                f"{_selo_exemplo}"
                 f'<div style="font-weight:700;font-size:1.2em;">{_linha.n_estrela:.2f}'
                 f'<span style="font-size:0.55em;font-weight:400;"> ({_sd})</span></div>'
-                f'<div style="font-size:0.72em;">{_pop_tendencia} → {_pop_eq}</div>'
+                f'<div style="font-size:0.72em;">{_atual_label}: {_pop_atual}</div>'
+                f'<div style="font-size:0.72em;">{_ano_eq_txt}: {_pop_tendencia} → {_pop_eq}</div>'
+                f'<div style="display:flex;justify-content:space-between;font-size:0.55em;opacity:0.75;">'
+                f'<span>{_tendencia_label}</span><span>{_cenario_label}</span></div>'
                 f"</div>"
             )
         _blocos_html.append(
@@ -204,9 +278,14 @@ if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
 
 st.header(t("n_star_header_destaque", lang))
 
+# Só os 7 países destaque oficiais aqui (não os 3 exemplos pedagógicos,
+# que ficam restritos à Tabela Geracional acima) — mantém o cabeçalho
+# "7 Países Destaque" literalmente correto.
+_df_destaque_oficial = df[~df["eh_exemplo"]] if "eh_exemplo" in df.columns else df
+
 _col_pais = t("col_pais", lang)
 _col_status = t("col_status", lang)
-df_tabela = df.copy()
+df_tabela = _df_destaque_oficial.copy()
 df_tabela[_col_pais] = df_tabela["nome_exibicao"]
 df_tabela[_col_status] = df_tabela["status"].map(lambda z: nome_zona(z, lang))
 df_tabela = df_tabela.sort_values("n_estrela")
@@ -218,13 +297,13 @@ st.dataframe(df_tabela[colunas_exibidas], use_container_width=True, hide_index=T
 # Gráfico — N* por país
 # -----------------------------------------------------------------------
 
-if "n_estrela" in df.columns:
+if "n_estrela" in _df_destaque_oficial.columns:
     fig = px.bar(
-        df.sort_values("n_estrela"),
+        _df_destaque_oficial.sort_values("n_estrela"),
         x="nome_exibicao",
         y="n_estrela",
-        color="farol" if "farol" in df.columns else None,
-        title=t("bar_chart_title", lang),
+        color="farol" if "farol" in _df_destaque_oficial.columns else None,
+        title=t("bar_chart_title", lang).replace("\\*", "*"),
         labels={"nome_exibicao": t("col_pais", lang), "n_estrela": "N*"},
     )
     st.plotly_chart(fig, use_container_width=True)
