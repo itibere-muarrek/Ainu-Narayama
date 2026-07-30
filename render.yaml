@@ -4,16 +4,20 @@
 # DOIS serviços Render:
 #   1. Uma landing page estática (HTML puro) na raiz do domínio —
 #      existe pra ser indexável pelos motores de busca (Streamlit é
-#      renderizado via JS e não é indexável). Ver landing/README ou
-#      a discussão de SEO de 2026-07-30.
-#   2. O app Streamlit interativo de sempre, que passa a viver no
-#      subdomínio "app." de cada domínio (app.ainu.systems,
-#      app.narayama.live) em vez da raiz.
+#      renderizado via JS e não é indexável).
+#   2. O app Streamlit interativo de sempre, sem domínio customizado —
+#      fica na URL gratuita do próprio Render (ex.:
+#      ainu-systems.onrender.com). Decisão de 2026-07-30: o plano
+#      gratuito do Render só inclui 2 domínios customizados por conta
+#      (não por serviço); usar subdomínio "app." nos 2 sites exigiria
+#      4 domínios (2 pagos, ~US$0,50/mês) — evitado atribuindo os 2
+#      domínios customizados gratuitos só às landing pages.
 #
 # Domínios customizados são configurados manualmente no painel do
-# Render após o deploy (ver README.md, seção "Deploy") — a raiz de
-# cada domínio vai pro serviço "*-landing", e o subdomínio "app."
-# vai pro serviço Streamlit correspondente.
+# Render após o deploy (ver README.md, seção "Deploy") — ainu.systems
+# vai pro serviço "ainu-systems-landing", narayama.live vai pro
+# "narayama-live-landing". Os 2 serviços Streamlit ficam sem domínio
+# customizado.
 #
 # Render redesploya automaticamente a cada push para a branch
 # conectada; não é necessário workflow de deploy no GitHub Actions.
