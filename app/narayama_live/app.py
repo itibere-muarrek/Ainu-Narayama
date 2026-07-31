@@ -32,8 +32,8 @@ deste docstring, "N* alto é melhor", ficou desatualizada pela
 classificação de 5 zonas de 12/07/2026, ver
 src.indices.classificar_zona_5): não é "quanto maior melhor" — é um
 equilíbrio no meio da escala. N* muito baixo (< 0,71) é Colapso de
-Narayama (PEC); N* muito alto (≥ 2,00) é Saturação por Overbirths
-(PEEC); o ideal fica no meio, entre 0,90 e 1,40 (Equilíbrio
+Narayama (PEC); N* muito alto (≥ 2,00) é Saturação por Excesso de
+Contingente (PEEC); o ideal fica no meio, entre 0,90 e 1,40 (Equilíbrio
 Sustentável / PEA).
 
 Ordem da página (reorganizada em 2026-07-16, a pedido do autor: "a
@@ -101,7 +101,7 @@ _ORDEM_ZONAS_ASC = [
     "Tensão Acelerada",
     "Equilíbrio Sustentável (PEA)",
     "Tensão Populacional",
-    "Saturação por Overbirths (PEEC)",
+    "Saturação por Excesso de Contingente (PEEC)",
 ]
 _faixas_ruler = [
     (None, LIMIARES_5_ZONAS_NORMALIZADOS["pec"]),
@@ -204,7 +204,7 @@ with st.expander(t("como_calculamos_expander_label", lang)):
     st.markdown(t("caption_arrow_narayama", lang))
 
 _ORDEM_ZONAS = [
-    "Saturação por Overbirths (PEEC)",
+    "Saturação por Excesso de Contingente (PEEC)",
     "Tensão Populacional",
     "Equilíbrio Sustentável (PEA)",
     "Tensão Acelerada",

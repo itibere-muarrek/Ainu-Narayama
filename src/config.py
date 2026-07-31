@@ -115,7 +115,7 @@ CORES_5_ZONAS = {
     "Tensão Acelerada": "#ffdba8",  # laranja
     "Equilíbrio Sustentável (PEA)": "#cfe2ff",  # azul
     "Tensão Populacional": "#fff3cd",  # amarelo-claro
-    "Saturação por Overbirths (PEEC)": "#ffd60a",  # amarelo forte
+    "Saturação por Excesso de Contingente (PEEC)": "#ffd60a",  # amarelo forte
 }
 
 # ---------------------------------------------------------------------------

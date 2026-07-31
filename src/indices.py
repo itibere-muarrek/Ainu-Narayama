@@ -266,7 +266,7 @@ def classificar_zona_5(n_base: Optional[float]) -> Optional[str]:
         0,50 <= N_Base < 0,81          -> Tensão Acelerada
         0,81 <= N_Base < 1,96          -> Equilíbrio Sustentável (PEA)
         1,96 <= N_Base < 4,00          -> Tensão Populacional
-        N_Base >= 4,00                 -> Saturação por Overbirths (PEEC)
+        N_Base >= 4,00                 -> Saturação por Excesso de Contingente (PEEC)
 
     Args:
         n_base: Resultado de calcular_n_base().
@@ -291,7 +291,7 @@ def classificar_zona_5(n_base: Optional[float]) -> Optional[str]:
         return "Equilíbrio Sustentável (PEA)"
     if n_base < LIMIARES_5_ZONAS["tensao_populacional"]:
         return "Tensão Populacional"
-    return "Saturação por Overbirths (PEEC)"
+    return "Saturação por Excesso de Contingente (PEEC)"
 
 
 def normalizar_n_base(n_base: Optional[float]) -> Optional[float]:

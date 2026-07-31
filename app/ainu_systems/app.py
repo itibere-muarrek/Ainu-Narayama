@@ -226,7 +226,7 @@ if not df.empty:
         "Tensão Acelerada",
         "Equilíbrio Sustentável (PEA)",
         "Tensão Populacional",
-        "Saturação por Overbirths (PEEC)",
+        "Saturação por Excesso de Contingente (PEEC)",
     ]:
         st.sidebar.write(f"{nome_zona(zona, lang)}: {contagem_zonas.get(zona, 0)}")
 
@@ -382,7 +382,7 @@ st.caption(t("farol_provisorio_caption", lang))
 st.caption(t("caption_arrow_ainu", lang))
 
 _ORDEM_ZONAS = [
-    "Saturação por Overbirths (PEEC)",
+    "Saturação por Excesso de Contingente (PEEC)",
     "Tensão Populacional",
     "Equilíbrio Sustentável (PEA)",
     "Tensão Acelerada",
