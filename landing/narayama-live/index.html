@@ -52,7 +52,7 @@
       --ink:       #0D1B2A;
       --ink-soft:  #3D5166;
       --sky:       #1B6CA8;
-      --glow:      #4ABDE8;
+      --glow:      #18C2ED;  /* mais vívido que o ainu.systems, mesma família azul */
       --paper:     #F7F9FB;
       --divider:   #D8E4EE;
       --white:     #FFFFFF;
@@ -364,6 +364,26 @@
       border-radius: var(--radius);
       padding: 1.5rem;
     }
+    .pillar-card-primary {
+      border-color: var(--sky);
+      border-width: 1.5px;
+      box-shadow: var(--shadow);
+    }
+    .pillar-card-secondary {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .pillar-card-secondary .pillar-text {
+      margin-bottom: 0.8rem;
+    }
+    .pillar-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--sky);
+      text-decoration: none;
+    }
+    .pillar-link:hover { text-decoration: underline; }
 
     .pillar-icon {
       font-size: 1.4rem;
@@ -654,14 +674,17 @@
   <p class="section-eyebrow" data-i18n="open_eyebrow">Arquitetura AINU–Narayama</p>
   <h2 class="section-title" data-i18n="open_title">Laboratório e observatório — separados por design</h2>
   <div class="pillars">
-    <div class="pillar-card">
+    <div class="pillar-card pillar-card-secondary">
       <span class="pillar-icon">⚙️</span>
       <p class="pillar-title">AINU.systems</p>
       <p class="pillar-text" data-i18n="pillar_ainu">
-        Ambiente computacional experimental. Integra bases de dados internacionais, aplica protocolo de falseabilidade quantitativo e versiona cada decisão metodológica com rastreabilidade Git. Onde os dados são <em>questionados</em>.
+        A análise técnica completa dos 28 países da amostra.
       </p>
+      <a class="pillar-link lang-link" data-base="https://ainu-systems.onrender.com" href="https://ainu-systems.onrender.com" target="_blank" rel="noopener" data-i18n="pillar_link_ainu">
+        Ver a plataforma técnica →
+      </a>
     </div>
-    <div class="pillar-card">
+    <div class="pillar-card pillar-card-primary">
       <span class="pillar-icon">🌐</span>
       <p class="pillar-title">Narayama.live</p>
       <p class="pillar-text" data-i18n="pillar_narayama">
@@ -726,7 +749,8 @@ const i18n = {
     zone_peec: "Saturação",
     open_eyebrow: "Arquitetura AINU–Narayama",
     open_title: "Laboratório e observatório — separados por design",
-    pillar_ainu: "Ambiente computacional experimental. Integra bases de dados internacionais, aplica protocolo de falseabilidade quantitativo e versiona cada decisão metodológica com rastreabilidade Git. Onde os dados são <em>questionados</em>.",
+    pillar_ainu: "A análise técnica completa dos 28 países da amostra.",
+    pillar_link_ainu: "Ver a plataforma técnica →",
     pillar_narayama: "Observatório público. Publica resultados, documenta a evolução metodológica e exibe o mapa periódico dos 28 países em 9 idiomas. Onde os dados são <em>apresentados</em>.",
     collab_eyebrow: "Colaboração Internacional",
     collab_title: "É pesquisador? Vá além do observatório.",
@@ -761,7 +785,8 @@ const i18n = {
     zone_peec: "Saturation",
     open_eyebrow: "AINU–Narayama Architecture",
     open_title: "Laboratory and observatory — separated by design",
-    pillar_ainu: "Experimental computational environment. Integrates international databases, applies quantitative falsifiability protocols, and versions every methodological decision with Git traceability. Where data is <em>questioned</em>.",
+    pillar_ainu: "The full technical analysis of all 28 sample countries.",
+    pillar_link_ainu: "See the technical platform →",
     pillar_narayama: "Public observatory. Publishes results, documents methodological evolution, and displays the periodic map of 28 countries in 9 languages. Where data is <em>presented</em>.",
     collab_eyebrow: "International Collaboration",
     collab_title: "A researcher? Go beyond the observatory.",
@@ -796,7 +821,8 @@ const i18n = {
     zone_peec: "Saturación",
     open_eyebrow: "Arquitectura AINU–Narayama",
     open_title: "Laboratorio y observatorio — separados por diseño",
-    pillar_ainu: "Entorno computacional experimental. Integra bases de datos internacionales y versiona cada decisión metodológica. Donde los datos son <em>cuestionados</em>.",
+    pillar_ainu: "El análisis técnico completo de los 28 países de la muestra.",
+    pillar_link_ainu: "Ver la plataforma técnica →",
     pillar_narayama: "Observatorio público. Publica resultados y exhibe el mapa periódico de 28 países en 9 idiomas. Donde los datos son <em>presentados</em>.",
     collab_eyebrow: "Colaboración Internacional",
     collab_title: "¿Es investigador/a? Vaya más allá del observatorio.",
@@ -831,7 +857,8 @@ const i18n = {
     zone_peec: "Saturation",
     open_eyebrow: "Architecture AINU–Narayama",
     open_title: "Laboratoire et observatoire — séparés par design",
-    pillar_ainu: "Environnement computationnel expérimental. Intègre des bases de données internationales. Là où les données sont <em>questionnées</em>.",
+    pillar_ainu: "L'analyse technique complète des 28 pays de l'échantillon.",
+    pillar_link_ainu: "Voir la plateforme technique →",
     pillar_narayama: "Observatoire public. Publie les résultats en 9 langues. Là où les données sont <em>présentées</em>.",
     collab_eyebrow: "Collaboration Internationale",
     collab_title: "Chercheur ou chercheuse ? Allez au-delà de l'observatoire.",
@@ -866,7 +893,8 @@ const i18n = {
     zone_peec: "포화",
     open_eyebrow: "AINU–나라야마 아키텍처",
     open_title: "실험실과 관측소 — 설계상 분리",
-    pillar_ainu: "실험적 계산 환경. 국제 데이터베이스를 통합하고, 정량적 반증가능성 프로토콜을 적용하며, Git으로 추적 가능한 방법론적 결정을 버전 관리합니다. 데이터가 <em>검증되는</em> 곳.",
+    pillar_ainu: "표본 28개국에 대한 전체 기술 분석.",
+    pillar_link_ainu: "기술 플랫폼 보기 →",
     pillar_narayama: "공개 관측소. 결과를 발표하고, 방법론적 발전을 문서화하며, 9개 언어로 28개국의 주기율표를 표시합니다. 데이터가 <em>제시되는</em> 곳.",
     collab_eyebrow: "국제 협력",
     collab_title: "연구자이신가요? 관측소 그 이상으로.",
@@ -901,7 +929,8 @@ const i18n = {
     zone_peec: "Saturazione",
     open_eyebrow: "Architettura AINU–Narayama",
     open_title: "Laboratorio e osservatorio — separati per design",
-    pillar_ainu: "Ambiente computazionale sperimentale. Integra banche dati internazionali. Dove i dati vengono <em>messi in discussione</em>.",
+    pillar_ainu: "L'analisi tecnica completa dei 28 paesi del campione.",
+    pillar_link_ainu: "Vedi la piattaforma tecnica →",
     pillar_narayama: "Osservatorio pubblico. Pubblica risultati in 9 lingue. Dove i dati vengono <em>presentati</em>.",
     collab_eyebrow: "Collaborazione Internazionale",
     collab_title: "Sei un ricercatore/una ricercatrice? Vai oltre l'osservatorio.",
@@ -936,7 +965,8 @@ const i18n = {
     zone_peec: "过饱和",
     open_eyebrow: "AINU–Narayama架构",
     open_title: "实验室与观测站——设计分离",
-    pillar_ainu: "实验性计算环境，整合国际数据库，数据在此被<em>质疑</em>。",
+    pillar_ainu: "样本中全部28个国家的完整技术分析。",
+    pillar_link_ainu: "查看技术平台 →",
     pillar_narayama: "公共观测站，以9种语言发布结果，数据在此被<em>呈现</em>。",
     collab_eyebrow: "国际合作",
     collab_title: "您是研究人员吗？超越观测站。",
@@ -971,7 +1001,8 @@ const i18n = {
     zone_peec: "飽和",
     open_eyebrow: "AINU–ナラヤマアーキテクチャ",
     open_title: "実験室と観測所——設計により分離",
-    pillar_ainu: "実験的な計算環境。データが<em>問われる</em>場所。",
+    pillar_ainu: "サンプル28か国の詳細な技術分析。",
+    pillar_link_ainu: "技術プラットフォームを見る →",
     pillar_narayama: "公開観測所。9言語で結果を公開。データが<em>提示される</em>場所。",
     collab_eyebrow: "国際協力",
     collab_title: "研究者ですか？観測所のその先へ。",
@@ -1006,7 +1037,8 @@ const i18n = {
     zone_peec: "Kyllästymä",
     open_eyebrow: "AINU–Narayama-arkkitehtuuri",
     open_title: "Laboratorio ja observatorio — erotettu suunnittelulla",
-    pillar_ainu: "Kokeellinen laskentaympäristö. Integroi kansainväliset tietokannat, soveltaa kvantitatiivista falsifioitavuusprotokollaa ja versioi jokaisen metodologisen päätöksen jäljitettävästi Gitillä. Missä dataa <em>kyseenalaistetaan</em>.",
+    pillar_ainu: "Otoksen kaikkien 28 maan täydellinen tekninen analyysi.",
+    pillar_link_ainu: "Katso tekninen alusta →",
     pillar_narayama: "Julkinen observatorio. Julkaisee tuloksia, dokumentoi menetelmän kehitystä ja näyttää 28 maan jaksollisen kartan 9 kielellä. Missä dataa <em>esitetään</em>.",
     collab_eyebrow: "Kansainvälinen yhteistyö",
     collab_title: "Oletko tutkija? Mene observatoriota pidemmälle.",
