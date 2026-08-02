@@ -136,7 +136,7 @@ def calcular_n_base(ngii_puro: Optional[float], fator_geracional: Optional[float
     neste projeto, ver docs/definitions.md para a nota sobre a
     convenção alternativa e contraditória usada na Seção 3.2):
         N_Base > 1.10          -> Expansão Forte
-        0.80 <= N_Base <= 1.10 -> Equilíbrio Sustentável (PEA)
+        0.80 <= N_Base <= 1.10 -> Ponto de Equilíbrio Autossustentável (PEA)
         0.50 <= N_Base < 0.80  -> Tensão Acelerada
         N_Base < 0.50          -> Colapso de Narayama (PEC)
 
@@ -231,7 +231,7 @@ def classificar_zona_n_base(n_base: Optional[float]) -> Optional[str]:
         n_base: Resultado de calcular_n_base().
 
     Returns:
-        Uma entre: "Expansão Forte", "Equilíbrio Sustentável (PEA)",
+        Uma entre: "Expansão Forte", "Ponto de Equilíbrio Autossustentável (PEA)",
         "Tensão Acelerada", "Colapso de Narayama (PEC)", ou None se
         n_base for None.
 
@@ -247,7 +247,7 @@ def classificar_zona_n_base(n_base: Optional[float]) -> Optional[str]:
     if n_base > LIMIAR_EXPANSAO_FORTE:
         return "Expansão Forte"
     if n_base >= LIMIAR_PEA_INFERIOR:
-        return "Equilíbrio Sustentável (PEA)"
+        return "Ponto de Equilíbrio Autossustentável (PEA)"
     if n_base >= LIMIAR_TENSAO_INFERIOR:
         return "Tensão Acelerada"
     return "Colapso de Narayama (PEC)"
@@ -264,7 +264,7 @@ def classificar_zona_5(n_base: Optional[float]) -> Optional[str]:
     Limiares (N_Base bruto — ver src.config.LIMIARES_5_ZONAS):
         N_Base < 0,50                  -> Colapso de Narayama (PEC)
         0,50 <= N_Base < 0,81          -> Tensão Acelerada
-        0,81 <= N_Base < 1,96          -> Equilíbrio Sustentável (PEA)
+        0,81 <= N_Base < 1,96          -> Ponto de Equilíbrio Autossustentável (PEA)
         1,96 <= N_Base < 4,00          -> Tensão Populacional
         N_Base >= 4,00                 -> Saturação por Excesso de Contingente (PEEC)
 
@@ -276,7 +276,7 @@ def classificar_zona_5(n_base: Optional[float]) -> Optional[str]:
 
     Exemplo:
         >>> classificar_zona_5(1.3761)
-        'Equilíbrio Sustentável (PEA)'
+        'Ponto de Equilíbrio Autossustentável (PEA)'
     """
     if n_base is None:
         return None
@@ -288,7 +288,7 @@ def classificar_zona_5(n_base: Optional[float]) -> Optional[str]:
     if n_base < LIMIARES_5_ZONAS["tensao_acelerada"]:
         return "Tensão Acelerada"
     if n_base < LIMIARES_5_ZONAS["pea"]:
-        return "Equilíbrio Sustentável (PEA)"
+        return "Ponto de Equilíbrio Autossustentável (PEA)"
     if n_base < LIMIARES_5_ZONAS["tensao_populacional"]:
         return "Tensão Populacional"
     return "Saturação por Excesso de Contingente (PEEC)"

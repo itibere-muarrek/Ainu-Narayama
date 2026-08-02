@@ -33,8 +33,8 @@ classificação de 5 zonas de 12/07/2026, ver
 src.indices.classificar_zona_5): não é "quanto maior melhor" — é um
 equilíbrio no meio da escala. N* muito baixo (< 0,71) é Colapso de
 Narayama (PEC); N* muito alto (≥ 2,00) é Saturação por Excesso de
-Contingente (PEEC); o ideal fica no meio, entre 0,90 e 1,40 (Equilíbrio
-Sustentável / PEA).
+Contingente (PEEC); o ideal fica no meio, entre 0,90 e 1,40 (Ponto de
+Equilíbrio Autossustentável / PEA).
 
 Ordem da página (reorganizada em 2026-07-16, a pedido do autor: "a
 tabela geracional de narayama deve encabeçar a página"): a Tabela
@@ -99,7 +99,7 @@ st.markdown(t("n_star_explicacao_curta", lang))
 _ORDEM_ZONAS_ASC = [
     "Colapso de Narayama (PEC)",
     "Tensão Acelerada",
-    "Equilíbrio Sustentável (PEA)",
+    "Ponto de Equilíbrio Autossustentável (PEA)",
     "Tensão Populacional",
     "Saturação por Excesso de Contingente (PEEC)",
 ]
@@ -206,7 +206,7 @@ with st.expander(t("como_calculamos_expander_label", lang)):
 _ORDEM_ZONAS = [
     "Saturação por Excesso de Contingente (PEEC)",
     "Tensão Populacional",
-    "Equilíbrio Sustentável (PEA)",
+    "Ponto de Equilíbrio Autossustentável (PEA)",
     "Tensão Acelerada",
     "Colapso de Narayama (PEC)",
 ]

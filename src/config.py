@@ -113,7 +113,7 @@ LIMIARES_5_ZONAS_NORMALIZADOS = {k: math.sqrt(v) for k, v in LIMIARES_5_ZONAS.it
 CORES_5_ZONAS = {
     "Colapso de Narayama (PEC)": "#f5c2c7",  # vermelho
     "Tensão Acelerada": "#ffdba8",  # laranja
-    "Equilíbrio Sustentável (PEA)": "#cfe2ff",  # azul
+    "Ponto de Equilíbrio Autossustentável (PEA)": "#cfe2ff",  # azul
     "Tensão Populacional": "#fff3cd",  # amarelo-claro
     "Saturação por Excesso de Contingente (PEEC)": "#ffd60a",  # amarelo forte
 }

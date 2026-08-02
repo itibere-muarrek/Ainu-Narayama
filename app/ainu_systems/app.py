@@ -32,7 +32,7 @@ escalas (raiz é monotônica).
 Convenção de zonas do N_Base adotada (Tabela 4 / Anexo 8 da tese — ver
 docs/definitions.md, seções 6 e 8): N_Base alto é melhor.
     N_Base > 1.10          -> Expansão Forte
-    0.80 <= N_Base <= 1.10  -> Equilíbrio Sustentável (PEA)
+    0.80 <= N_Base <= 1.10  -> Ponto de Equilíbrio Autossustentável (PEA)
     0.50 <= N_Base < 0.80   -> Tensão Acelerada
     N_Base < 0.50           -> Colapso de Narayama (PEC)
 PEEC não é um limiar de N*: é diagnosticado por TFR > 2.8 (Cap. 3.2.1).
@@ -224,7 +224,7 @@ if not df.empty:
     for zona in [
         "Colapso de Narayama (PEC)",
         "Tensão Acelerada",
-        "Equilíbrio Sustentável (PEA)",
+        "Ponto de Equilíbrio Autossustentável (PEA)",
         "Tensão Populacional",
         "Saturação por Excesso de Contingente (PEEC)",
     ]:
@@ -384,7 +384,7 @@ st.caption(t("caption_arrow_ainu", lang))
 _ORDEM_ZONAS = [
     "Saturação por Excesso de Contingente (PEEC)",
     "Tensão Populacional",
-    "Equilíbrio Sustentável (PEA)",
+    "Ponto de Equilíbrio Autossustentável (PEA)",
     "Tensão Acelerada",
     "Colapso de Narayama (PEC)",
 ]
