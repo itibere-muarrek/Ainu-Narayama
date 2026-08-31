@@ -417,6 +417,15 @@
       letter-spacing: 0.03em;
       color: #3a2a10;
     }
+    .country-example-tag {
+      display: block;
+      font-size: 0.62rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      opacity: 0.75;
+      margin-top: -0.15rem;
+      margin-bottom: 0.3rem;
+    }
     .snapshot-note {
       font-size: 0.8rem;
       color: var(--ink-soft);
@@ -784,6 +793,20 @@
   <h2 class="section-title" data-i18n="snapshot_title">Onde os 8 países destaque estão agora</h2>
   <div class="country-snapshot">
     <div class="country-card">
+      <span class="country-flag">🇳🇬</span>
+      <span class="country-name" data-i18n="country_nga">Nigéria</span>
+      <span class="country-example-tag" data-i18n="example_tag">(exemplo)</span>
+      <span class="country-nstar">2.58</span>
+      <span class="country-zone-badge" style="background:#ffd60a">PEEC</span>
+    </div>
+    <div class="country-card">
+      <span class="country-flag">🇲🇽</span>
+      <span class="country-name" data-i18n="country_mex">México</span>
+      <span class="country-example-tag" data-i18n="example_tag">(exemplo)</span>
+      <span class="country-nstar">1.67</span>
+      <span class="country-zone-badge" style="background:#fff3cd">TP</span>
+    </div>
+    <div class="country-card">
       <span class="country-flag">🇮🇳</span>
       <span class="country-name" data-i18n="country_ind">Índia</span>
       <span class="country-nstar">1.37</span>
@@ -806,6 +829,13 @@
       <span class="country-name" data-i18n="country_usa">Estados Unidos</span>
       <span class="country-nstar">0.96</span>
       <span class="country-zone-badge" style="background:#cfe2ff">PEA</span>
+    </div>
+    <div class="country-card">
+      <span class="country-flag">🇫🇷</span>
+      <span class="country-name" data-i18n="country_fra">França</span>
+      <span class="country-example-tag" data-i18n="example_tag">(exemplo)</span>
+      <span class="country-nstar">0.75</span>
+      <span class="country-zone-badge" style="background:#ffdba8">TA</span>
     </div>
     <div class="country-card">
       <span class="country-flag">🇨🇳</span>
@@ -960,6 +990,10 @@ const i18n = {
     snapshot_eyebrow: "Panorama Real",
     snapshot_title: "Onde os 8 países destaque estão agora",
     country_ind: "Índia",
+    country_fra: "França",
+    country_mex: "México",
+    country_nga: "Nigéria",
+    example_tag: "(exemplo)",
     country_bra: "Brasil",
     country_arg: "Argentina",
     country_usa: "Estados Unidos",
@@ -1014,6 +1048,10 @@ const i18n = {
     snapshot_eyebrow: "Real Snapshot",
     snapshot_title: "Where the 8 featured countries stand now",
     country_ind: "India",
+    country_fra: "France",
+    country_mex: "Mexico",
+    country_nga: "Nigeria",
+    example_tag: "(example)",
     country_bra: "Brazil",
     country_arg: "Argentina",
     country_usa: "United States",
@@ -1068,6 +1106,10 @@ const i18n = {
     snapshot_eyebrow: "Panorama Real",
     snapshot_title: "Dónde están ahora los 8 países destacados",
     country_ind: "India",
+    country_fra: "Francia",
+    country_mex: "México",
+    country_nga: "Nigeria",
+    example_tag: "(ejemplo)",
     country_bra: "Brasil",
     country_arg: "Argentina",
     country_usa: "Estados Unidos",
@@ -1122,6 +1164,10 @@ const i18n = {
     snapshot_eyebrow: "Aperçu réel",
     snapshot_title: "Où en sont les 8 pays en vedette",
     country_ind: "Inde",
+    country_fra: "France",
+    country_mex: "Mexique",
+    country_nga: "Nigéria",
+    example_tag: "(exemple)",
     country_bra: "Brésil",
     country_arg: "Argentine",
     country_usa: "États-Unis",
@@ -1176,6 +1222,10 @@ const i18n = {
     snapshot_eyebrow: "실제 현황",
     snapshot_title: "지금 8개 주요국의 현황",
     country_ind: "인도",
+    country_fra: "프랑스",
+    country_mex: "멕시코",
+    country_nga: "나이지리아",
+    example_tag: "(예시)",
     country_bra: "브라질",
     country_arg: "아르헨티나",
     country_usa: "미국",
@@ -1230,6 +1280,10 @@ const i18n = {
     snapshot_eyebrow: "Panorama reale",
     snapshot_title: "Dove si trovano ora i 8 paesi in evidenza",
     country_ind: "India",
+    country_fra: "Francia",
+    country_mex: "Messico",
+    country_nga: "Nigeria",
+    example_tag: "(esempio)",
     country_bra: "Brasile",
     country_arg: "Argentina",
     country_usa: "Stati Uniti",
@@ -1284,6 +1338,10 @@ const i18n = {
     snapshot_eyebrow: "实时概览",
     snapshot_title: "8个重点国家目前所处的位置",
     country_ind: "印度",
+    country_fra: "法国",
+    country_mex: "墨西哥",
+    country_nga: "尼日利亚",
+    example_tag: "(示例)",
     country_bra: "巴西",
     country_arg: "阿根廷",
     country_usa: "美国",
@@ -1338,6 +1396,10 @@ const i18n = {
     snapshot_eyebrow: "リアルな現状",
     snapshot_title: "注目8か国の現状",
     country_ind: "インド",
+    country_fra: "フランス",
+    country_mex: "メキシコ",
+    country_nga: "ナイジェリア",
+    example_tag: "(例)",
     country_bra: "ブラジル",
     country_arg: "アルゼンチン",
     country_usa: "アメリカ合衆国",
@@ -1392,6 +1454,10 @@ const i18n = {
     snapshot_eyebrow: "Todellinen tilannekuva",
     snapshot_title: "Missä 8 esiteltyä maata ovat nyt",
     country_ind: "Intia",
+    country_fra: "Ranska",
+    country_mex: "Meksiko",
+    country_nga: "Nigeria",
+    example_tag: "(esimerkki)",
     country_bra: "Brasilia",
     country_arg: "Argentiina",
     country_usa: "Yhdysvallat",
