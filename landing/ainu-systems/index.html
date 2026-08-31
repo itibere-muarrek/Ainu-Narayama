@@ -406,6 +406,63 @@
       margin-top: 1rem;
     }
 
+    /* ─── COUNTRY SNAPSHOT ────────────────────────────────────── */
+    .snapshot-eyebrow {
+      margin-top: 2.5rem;
+    }
+    .country-snapshot {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1.2rem;
+    }
+    .country-card {
+      background: var(--white);
+      border: 1px solid var(--divider);
+      border-radius: var(--radius);
+      padding: 0.9rem 0.6rem;
+      text-align: center;
+    }
+    .country-flag { font-size: 1.5rem; display: block; margin-bottom: 0.25rem; }
+    .country-name {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .country-nstar {
+      font-family: var(--f-mono);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--sky);
+      display: block;
+    }
+    .country-zone-badge {
+      display: inline-block;
+      margin-top: 0.4rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: #3a2a10;
+    }
+    .snapshot-note {
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      text-align: center;
+      margin-top: 1.2rem;
+      max-width: 46rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* ainu.systems: mesmo tratamento compacto/desaturado do zones-ruler-compact */
+    .country-snapshot-compact .country-card { padding: 0.7rem 0.5rem; }
+    .country-snapshot-compact .country-flag { font-size: 1.25rem; }
+    .country-snapshot-compact .country-name { font-size: 0.7rem; }
+    .country-snapshot-compact .country-nstar { font-size: 0.9rem; }
+    .country-snapshot-compact .country-zone-badge { opacity: 0.85; }
 
     /* ─── OPEN RESEARCH ───────────────────────────────────────── */
     .pillars {
@@ -759,6 +816,54 @@
     </div>
   </div>
   <p class="formula-note" data-i18n="formula_note">Normalização por raiz quadrada · Atualização trimestral · Versionamento Git rastreável</p>
+
+  <p class="section-eyebrow snapshot-eyebrow" data-i18n="snapshot_eyebrow">Panorama Real</p>
+  <h2 class="section-title" style="font-size:1.1rem;font-weight:500;color:var(--ink-soft)" data-i18n="snapshot_title">Onde os 7 países destaque estão agora</h2>
+  <div class="country-snapshot country-snapshot-compact">
+    <div class="country-card">
+      <span class="country-flag">🇧🇷</span>
+      <span class="country-name" data-i18n="country_bra">Brasil</span>
+      <span class="country-nstar">1.17</span>
+      <span class="country-zone-badge" style="background:#cfe2ff">PEA</span>
+    </div>
+    <div class="country-card">
+      <span class="country-flag">🇦🇷</span>
+      <span class="country-name" data-i18n="country_arg">Argentina</span>
+      <span class="country-nstar">1.06</span>
+      <span class="country-zone-badge" style="background:#cfe2ff">PEA</span>
+    </div>
+    <div class="country-card">
+      <span class="country-flag">🇺🇸</span>
+      <span class="country-name" data-i18n="country_usa">Estados Unidos</span>
+      <span class="country-nstar">0.96</span>
+      <span class="country-zone-badge" style="background:#cfe2ff">PEA</span>
+    </div>
+    <div class="country-card">
+      <span class="country-flag">🇨🇳</span>
+      <span class="country-name" data-i18n="country_chn">China</span>
+      <span class="country-nstar">0.59</span>
+      <span class="country-zone-badge" style="background:#f5c2c7">PEC</span>
+    </div>
+    <div class="country-card">
+      <span class="country-flag">🇮🇹</span>
+      <span class="country-name" data-i18n="country_ita">Itália</span>
+      <span class="country-nstar">0.49</span>
+      <span class="country-zone-badge" style="background:#f5c2c7">PEC</span>
+    </div>
+    <div class="country-card">
+      <span class="country-flag">🇯🇵</span>
+      <span class="country-name" data-i18n="country_jpn">Japão</span>
+      <span class="country-nstar">0.43</span>
+      <span class="country-zone-badge" style="background:#f5c2c7">PEC</span>
+    </div>
+    <div class="country-card">
+      <span class="country-flag">🇰🇷</span>
+      <span class="country-name" data-i18n="country_kor">Coreia do Sul</span>
+      <span class="country-nstar">0.37</span>
+      <span class="country-zone-badge" style="background:#f5c2c7">PEC</span>
+    </div>
+  </div>
+  <p class="snapshot-note" data-i18n="snapshot_note">Amostra reduzida — a análise completa dos 28 países da amostra, com todos os componentes técnicos, é exclusiva da plataforma (colaboradores).</p>
 </article>
 
 <!-- ─── ABOUT ─────────────────────────────────────────────────── -->
@@ -885,6 +990,16 @@ const i18n = {
     about_p2: "Desenvolvido no contexto do doutorado em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o AINU não é um resultado final. É uma arquitetura científica concebida para permanecer aberta — ao refinamento metodológico, à crítica acadêmica e à incorporação permanente de novas evidências.",
     formula_label: "Índice de Narayama Sistêmico",
     formula_note: "Normalização por raiz quadrada · Atualização trimestral · Versionamento Git rastreável",
+    snapshot_eyebrow: "Panorama Real",
+    snapshot_title: "Onde os 7 países destaque estão agora",
+    snapshot_note: "Amostra reduzida — a análise completa dos 28 países da amostra, com todos os componentes técnicos, é exclusiva da plataforma (colaboradores).",
+    country_bra: "Brasil",
+    country_arg: "Argentina",
+    country_usa: "Estados Unidos",
+    country_chn: "China",
+    country_ita: "Itália",
+    country_jpn: "Japão",
+    country_kor: "Coreia do Sul",
     zones_eyebrow: "Os Cinco Regimes Geracionais",
     zone_pec: "Colapso de Narayama (PEC)",
     zone_ta: "Tensão Acelerada",
@@ -930,6 +1045,16 @@ const i18n = {
     about_p2: "Developed within the doctoral research in Political Economy <em>From the Narayama Dilemma to the Civilizational Oikocene</em>, AINU is not a final result. It is a scientific architecture designed to remain open — to methodological refinement, academic critique, and the permanent incorporation of new evidence.",
     formula_label: "Narayama Systemic Index",
     formula_note: "Square root normalization · Quarterly updates · Traceable Git versioning",
+    snapshot_eyebrow: "Real Snapshot",
+    snapshot_title: "Where the 7 featured countries stand now",
+    snapshot_note: "Reduced sample — the full analysis of all 28 sample countries, with every technical component, is exclusive to the platform (collaborators).",
+    country_bra: "Brazil",
+    country_arg: "Argentina",
+    country_usa: "United States",
+    country_chn: "China",
+    country_ita: "Italy",
+    country_jpn: "Japan",
+    country_kor: "South Korea",
     zones_eyebrow: "The Five Generational Regimes",
     zone_pec: "Narayama Collapse (PEC)",
     zone_ta: "Accelerated Tension",
@@ -975,6 +1100,16 @@ const i18n = {
     about_p2: "Desarrollado en el contexto del doctorado en Economía Política <em>Del Dilema de Narayama al Oicoceno Civilizacional</em>, AINU no es un resultado final. Es una arquitectura científica concebida para mantenerse abierta.",
     formula_label: "Índice Sistémico de Narayama",
     formula_note: "Normalización por raíz cuadrada · Actualización trimestral · Versionado Git trazable",
+    snapshot_eyebrow: "Panorama Real",
+    snapshot_title: "Dónde están ahora los 7 países destacados",
+    snapshot_note: "Muestra reducida — el análisis completo de los 28 países de la muestra, con todos los componentes técnicos, es exclusivo de la plataforma (colaboradores).",
+    country_bra: "Brasil",
+    country_arg: "Argentina",
+    country_usa: "Estados Unidos",
+    country_chn: "China",
+    country_ita: "Italia",
+    country_jpn: "Japón",
+    country_kor: "Corea del Sur",
     zones_eyebrow: "Los Cinco Regímenes Generacionales",
     zone_pec: "Colapso de Narayama (PEC)",
     zone_ta: "Tensión Acelerada",
@@ -1020,6 +1155,16 @@ const i18n = {
     about_p2: "Développé dans le cadre du doctorat en Économie Politique <em>Du Dilemme de Narayama à l'Oicocène Civilisationnel</em>, AINU est une architecture scientifique conçue pour rester ouverte.",
     formula_label: "Indice Systémique de Narayama",
     formula_note: "Normalisation par racine carrée · Mise à jour trimestrielle · Versionnement Git traçable",
+    snapshot_eyebrow: "Aperçu réel",
+    snapshot_title: "Où en sont les 7 pays en vedette",
+    snapshot_note: "Échantillon réduit — l'analyse complète des 28 pays de l'échantillon, avec tous les composants techniques, est réservée à la plateforme (collaborateurs).",
+    country_bra: "Brésil",
+    country_arg: "Argentine",
+    country_usa: "États-Unis",
+    country_chn: "Chine",
+    country_ita: "Italie",
+    country_jpn: "Japon",
+    country_kor: "Corée du Sud",
     zones_eyebrow: "Les Cinq Régimes Générationnels",
     zone_pec: "Effondrement de Narayama (PEC)",
     zone_ta: "Tension Accélérée",
@@ -1065,6 +1210,16 @@ const i18n = {
     about_p2: "정치경제학 박사 연구 <em>나라야마의 딜레마에서 문명적 오이코세까지</em>의 맥락에서 개발된 AINU는 최종 결과물이 아닙니다. 방법론적 개선, 학술적 비판, 새로운 증거의 지속적인 반영에 열려 있도록 설계된 과학적 아키텍처입니다.",
     formula_label: "나라야마 체계 지수",
     formula_note: "제곱근 정규화 · 분기별 갱신 · 추적 가능한 Git 버전 관리",
+    snapshot_eyebrow: "실제 현황",
+    snapshot_title: "지금 7개 주요국의 현황",
+    snapshot_note: "축소된 표본입니다 — 전체 기술 구성 요소를 포함한 표본 28개국의 완전한 분석은 플랫폼(협력자) 전용입니다.",
+    country_bra: "브라질",
+    country_arg: "아르헨티나",
+    country_usa: "미국",
+    country_chn: "중국",
+    country_ita: "이탈리아",
+    country_jpn: "일본",
+    country_kor: "대한민국",
     zones_eyebrow: "다섯 가지 세대적 체제",
     zone_pec: "나라야마 붕괴 (PEC)",
     zone_ta: "가속 긴장",
@@ -1110,6 +1265,16 @@ const i18n = {
     about_p2: "Sviluppato nel contesto del dottorato in Economia Politica <em>Dal Dilemma di Narayama all'Oikoceno Civilizazionale</em>, AINU è un'architettura scientifica concepita per rimanere aperta.",
     formula_label: "Indice Sistemico di Narayama",
     formula_note: "Normalizzazione per radice quadrata · Aggiornamento trimestrale · Versionamento Git tracciabile",
+    snapshot_eyebrow: "Panorama reale",
+    snapshot_title: "Dove si trovano ora i 7 paesi in evidenza",
+    snapshot_note: "Campione ridotto — l'analisi completa dei 28 paesi del campione, con tutte le componenti tecniche, è esclusiva della piattaforma (collaboratori).",
+    country_bra: "Brasile",
+    country_arg: "Argentina",
+    country_usa: "Stati Uniti",
+    country_chn: "Cina",
+    country_ita: "Italia",
+    country_jpn: "Giappone",
+    country_kor: "Corea del Sud",
     zones_eyebrow: "I Cinque Regimi Generazionali",
     zone_pec: "Collasso di Narayama (PEC)",
     zone_ta: "Tensione Accelerata",
@@ -1155,6 +1320,16 @@ const i18n = {
     about_p2: "AINU在政治经济学博士研究《从Narayama困境到文明生态纪》的背景下发展，不是最终结果，而是一个永久开放的科学架构。",
     formula_label: "Narayama系统指数",
     formula_note: "平方根标准化 · 每季度更新 · 可追溯Git版本控制",
+    snapshot_eyebrow: "实时概览",
+    snapshot_title: "7个重点国家目前所处的位置",
+    snapshot_note: "样本已精简——包含全部技术组件的28个样本国家完整分析仅限平台（合作者）查看。",
+    country_bra: "巴西",
+    country_arg: "阿根廷",
+    country_usa: "美国",
+    country_chn: "中国",
+    country_ita: "意大利",
+    country_jpn: "日本",
+    country_kor: "韩国",
     zones_eyebrow: "五大代际区间",
     zone_pec: "楢山崩溃 (PEC)",
     zone_ta: "加速紧张",
@@ -1200,6 +1375,16 @@ const i18n = {
     about_p2: "政治経済学博士研究の文脈で開発されたAINUは、最終的な結果ではなく、方法論的改良と永続的な証拠の取り込みに開かれた科学的アーキテクチャです。",
     formula_label: "ナラヤマ・システミック指数",
     formula_note: "平方根正規化 · 四半期更新 · 追跡可能なGitバージョン管理",
+    snapshot_eyebrow: "リアルな現状",
+    snapshot_title: "注目7か国の現状",
+    snapshot_note: "縮小サンプルです — 全ての技術コンポーネントを含む28か国のサンプルの完全な分析は、プラットフォーム（協力者）限定です。",
+    country_bra: "ブラジル",
+    country_arg: "アルゼンチン",
+    country_usa: "アメリカ合衆国",
+    country_chn: "中国",
+    country_ita: "イタリア",
+    country_jpn: "日本",
+    country_kor: "韓国",
     zones_eyebrow: "5つの世代的体制",
     zone_pec: "ナラヤマ崩壊 (PEC)",
     zone_ta: "加速緊張",
@@ -1245,6 +1430,16 @@ const i18n = {
     about_p2: "Kehitetty osana valtio-opin tohtoritutkimusta <em>Narayaman dilemmasta sivilisaation Oikoseeniin</em>, AINU ei ole lopullinen tulos. Se on tieteellinen arkkitehtuuri, joka on suunniteltu pysymään avoimena metodologiselle tarkentamiselle, akateemiselle kritiikille ja uuden näytön jatkuvalle sisällyttämiselle.",
     formula_label: "Systeeminen Narayama-indeksi",
     formula_note: "Neliöjuurinormalisointi · Neljännesvuosittainen päivitys · Jäljitettävä Git-versiointi",
+    snapshot_eyebrow: "Todellinen tilannekuva",
+    snapshot_title: "Missä 7 esiteltyä maata ovat nyt",
+    snapshot_note: "Suppea otos — täydellinen analyysi kaikista 28 otoksen maasta, kaikkine teknisine osineen, on varattu alustalle (yhteistyökumppanit).",
+    country_bra: "Brasilia",
+    country_arg: "Argentiina",
+    country_usa: "Yhdysvallat",
+    country_chn: "Kiina",
+    country_ita: "Italia",
+    country_jpn: "Japani",
+    country_kor: "Etelä-Korea",
     zones_eyebrow: "Viisi sukupolvien regiimiä",
     zone_pec: "Narayama-romahdus (PEC)",
     zone_ta: "Kiihtyvä jännite",
