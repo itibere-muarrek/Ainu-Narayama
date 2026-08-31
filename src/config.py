@@ -5,7 +5,7 @@ Contém o cadastro dos 28 países cobertos pela tese v8.0 (Anexo 5),
 os limiares críticos do Índice de Narayama Sistêmico (N*) e os
 caminhos padrão de dados usados pelo restante do pipeline.
 
-Fonte: V1_EcoPol_062426_v8.0.docx (tese de doutorado, Cap. 3, V.III,
+Fonte: V1_EcoPol_062426_v8.0.docx (pesquisa independente, Cap. 3, V.III,
 Capítulo 5, Anexo 5, Anexo 8, Tabela 4, Tabela 14).
 """
 

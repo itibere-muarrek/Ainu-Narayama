@@ -4,7 +4,7 @@
 
 Este documento é a receita técnica exata do projeto AINU-Narayama: contém as
 fórmulas matemáticas usadas no cálculo do Índice de Narayama Sistêmico (N*) e
-seus componentes, conforme definidos na tese de doutorado "Do Dilema de
+seus componentes, conforme definidos na pesquisa independente "Do Dilema de
 Narayama ao Oicoceno Civilizacional". Fonte atual: `V1_EcoPol_070726_v9_2.docx`
 — versão consolidada que incorpora, no corpo do próprio documento (Seção
 9-A.1 a 9-A.9), todas as correções e extensões antes registradas separadamente

@@ -208,8 +208,9 @@ redesploya sozinho.
 ## Licença
 
 Este projeto está em fase de prototipagem e construção metodológica
-(implementação computacional de uma tese de doutorado ainda em
-andamento). Todos os direitos são reservados — ver `LICENSE`. Uso,
+(implementação computacional de uma pesquisa independente em
+Economia Política, ainda em andamento). Todos os direitos são
+reservados — ver `LICENSE`. Uso,
 adaptação ou colaboração acadêmica requerem autorização prévia do
 autor.
 
