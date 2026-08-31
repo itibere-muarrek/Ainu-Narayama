@@ -439,6 +439,44 @@
       line-height: 1.65;
     }
 
+    /* ─── PAPERS ──────────────────────────────────────────────── */
+    .paper-card {
+      background: var(--white);
+      border: 1px solid var(--divider);
+      border-radius: var(--radius);
+      padding: 1.8rem 2rem;
+      margin-top: 2rem;
+    }
+    .paper-card-title {
+      font-family: var(--f-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.35;
+      margin-bottom: 0.4rem;
+    }
+    .paper-card-subtitle {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      margin-bottom: 0.9rem;
+    }
+    .paper-card-summary {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 0.9rem;
+    }
+    .paper-card-meta {
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      opacity: 0.75;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.2rem;
+    }
+
     /* ─── CONTACT BOX ─────────────────────────────────────────── */
     .contact-box {
       display: flex;
@@ -742,6 +780,24 @@
   </div>
 </article>
 
+<!-- ─── PAPERS ─────────────────────────────────────────────────── -->
+<article class="section" style="padding-top:0">
+  <p class="section-eyebrow" data-i18n="papers_eyebrow">Pesquisa Publicada</p>
+  <h2 class="section-title" data-i18n="papers_title">Publicações</h2>
+  <div class="paper-card">
+    <p class="paper-card-title">Glocalização Destruída, Reprodução Geracional Colapsada: A Floresta como Lápide Demográfica nas Cidades Pequenas e Médias da Itália</p>
+    <p class="paper-card-subtitle">Glocalization Collapse and Generational Reproduction Failure in Small and Medium Italian Cities: The Narayama Systemic and the Forest as Demographic Tombstone</p>
+    <p class="paper-card-summary" data-i18n="paper_floresta_summary">
+      A Itália perdeu 40% do seu território pra floresta espontânea — não é conquista ambiental, é a marca geográfica do colapso da URSS nas cidades pequenas e médias do interior. Este paper aplica o Índice de Narayama Sistêmico ao caso italiano (TFR 1,14, N\* 0,49, Zona PEC) e propõe IVAT + Glocalização ativa como reversão.
+    </p>
+    <p class="paper-card-meta">Itiberê L. G. C. Muarrek · AINU.Systems Research · Agosto de 2026</p>
+    <div class="btn-row">
+      <a class="btn-ghost" href="papers/paper-floresta-italia-pt.pdf" target="_blank" rel="noopener" data-i18n="paper_read_pt">Ler em Português (PDF)</a>
+      <a class="btn-ghost" href="papers/paper-floresta-italia-en.pdf" target="_blank" rel="noopener" data-i18n="paper_read_en">Read in English (PDF)</a>
+    </div>
+  </div>
+</article>
+
 <!-- ─── FOOTER ─────────────────────────────────────────────────── -->
 <footer>
   <div class="footer-left">
@@ -796,6 +852,11 @@ const i18n = {
     collab_btn: "↗ Entrar na Plataforma",
     contact_title: "Quer saber mais e participar desta investigação?",
     contact_sub: "Entre em contato conosco",
+    papers_eyebrow: "Pesquisa Publicada",
+    papers_title: "Publicações",
+    paper_floresta_summary: "A Itália perdeu 40% do seu território pra floresta espontânea — não é conquista ambiental, é a marca geográfica do colapso da URSS nas cidades pequenas e médias do interior. Este paper aplica o Índice de Narayama Sistêmico ao caso italiano (TFR 1,14, N\\* 0,49, Zona PEC) e propõe IVAT + Glocalização ativa como reversão.",
+    paper_read_pt: "Ler em Português (PDF)",
+    paper_read_en: "Read in English (PDF)",
   },
   en: {
     nav_observatory: "Observatory",
@@ -833,6 +894,11 @@ const i18n = {
     collab_btn: "↗ Enter Platform",
     contact_title: "Want to learn more and participate in this research?",
     contact_sub: "Contact us",
+    papers_eyebrow: "Published Research",
+    papers_title: "Publications",
+    paper_floresta_summary: "Italy has lost 40% of its territory to spontaneous forest growth — not an environmental win, but the geographic signature of URSS collapse in small and medium interior cities. This paper applies the Systemic Narayama Index to the Italian case (TFR 1.14, N\\* 0.49, PEC Zone) and proposes IVAT plus active Glocalization as the path to reversal.",
+    paper_read_pt: "Ler em Português (PDF)",
+    paper_read_en: "Read in English (PDF)",
   },
   es: {
     nav_observatory: "Observatorio",
@@ -870,6 +936,11 @@ const i18n = {
     collab_btn: "↗ Entrar a la Plataforma",
     contact_title: "¿Quiere saber más y participar en esta investigación?",
     contact_sub: "Contáctenos",
+    papers_eyebrow: "Investigación Publicada",
+    papers_title: "Publicaciones",
+    paper_floresta_summary: "Italia perdió el 40% de su territorio ante el avance espontáneo del bosque — no es una conquista ambiental, es la firma geográfica del colapso de la URSS en las ciudades pequeñas y medianas del interior. Este paper aplica el Índice de Narayama Sistémico al caso italiano (TFR 1,14, N\\* 0,49, Zona PEC) y propone el IVAT y la Glocalización activa como reversión.",
+    paper_read_pt: "Ler em Português (PDF)",
+    paper_read_en: "Read in English (PDF)",
   },
   fr: {
     nav_observatory: "Observatoire",
@@ -907,6 +978,11 @@ const i18n = {
     collab_btn: "↗ Entrer sur la Plateforme",
     contact_title: "Vous voulez en savoir plus et participer à cette recherche ?",
     contact_sub: "Contactez-nous",
+    papers_eyebrow: "Recherche Publiée",
+    papers_title: "Publications",
+    paper_floresta_summary: "L'Italie a perdu 40 % de son territoire au profit de la forêt spontanée — non pas une victoire environnementale, mais la signature géographique de l'effondrement de l'URSS dans les petites et moyennes villes de l'intérieur. Ce paper applique l'Indice de Narayama Systémique au cas italien (TFR 1,14, N\\* 0,49, Zone PEC) et propose l'IVAT et la Glocalisation active comme voie de réversion.",
+    paper_read_pt: "Ler em Português (PDF)",
+    paper_read_en: "Read in English (PDF)",
   },
   ko: {
     nav_observatory: "관측소",
@@ -944,6 +1020,11 @@ const i18n = {
     collab_btn: "↗ 플랫폼 입장",
     contact_title: "더 알아보고 이 연구에 참여하고 싶으신가요?",
     contact_sub: "문의하기",
+    papers_eyebrow: "발표된 연구",
+    papers_title: "출판물",
+    paper_floresta_summary: "이탈리아는 국토의 40%를 자연발생적 숲에 내주었습니다 — 이는 환경적 성과가 아니라, 내륙 중소도시들의 URSS 붕괴를 보여주는 지리적 흔적입니다. 이 논문은 나라야마 체계 지수를 이탈리아 사례에 적용하고(TFR 1.14, N\\* 0.49, PEC 구역), IVAT와 적극적 글로컬화를 반전의 방안으로 제안합니다.",
+    paper_read_pt: "Ler em Português (PDF)",
+    paper_read_en: "Read in English (PDF)",
   },
   it: {
     nav_observatory: "Osservatorio",
@@ -981,6 +1062,11 @@ const i18n = {
     collab_btn: "↗ Entra nella Piattaforma",
     contact_title: "Vuoi saperne di più e partecipare a questa ricerca?",
     contact_sub: "Contattaci",
+    papers_eyebrow: "Ricerca Pubblicata",
+    papers_title: "Pubblicazioni",
+    paper_floresta_summary: "L'Italia ha perso il 40% del proprio territorio a favore del bosco spontaneo — non una conquista ambientale, ma la firma geografica del collasso dell'URSS nelle città piccole e medie dell'entroterra. Questo paper applica l'Indice di Narayama Sistemico al caso italiano (TFR 1,14, N\\* 0,49, Zona PEC) e propone l'IVAT e la Glocalizzazione attiva come via di inversione.",
+    paper_read_pt: "Ler em Português (PDF)",
+    paper_read_en: "Read in English (PDF)",
   },
   zh: {
     nav_observatory: "观测站",
@@ -1018,6 +1104,11 @@ const i18n = {
     collab_btn: "↗ 进入平台",
     contact_title: "想了解更多并参与本研究？",
     contact_sub: "联系我们",
+    papers_eyebrow: "已发表研究",
+    papers_title: "出版物",
+    paper_floresta_summary: "意大利40%的国土已被自然扩张的森林覆盖——这并非环保成就，而是内陆中小城市URSS崩溃的地理印记。本文将系统性楢山指数应用于意大利案例（TFR 1.14，N\\*=0.49，PEC区），提出IVAT与积极的本土全球化作为逆转路径。",
+    paper_read_pt: "Ler em Português (PDF)",
+    paper_read_en: "Read in English (PDF)",
   },
   ja: {
     nav_observatory: "観測所",
@@ -1055,6 +1146,11 @@ const i18n = {
     collab_btn: "↗ プラットフォームに入る",
     contact_title: "もっと知りたい、この研究に参加したいですか？",
     contact_sub: "お問い合わせください",
+    papers_eyebrow: "発表された研究",
+    papers_title: "刊行物",
+    paper_floresta_summary: "イタリアは国土の40%を自然発生的な森林に失いました——これは環境的な成果ではなく、内陸部の中小都市におけるURSS崩壊の地理的痕跡です。本論文はシステミック・ナラヤマ指数をイタリアの事例に適用し（TFR 1.14、N\\*=0.49、PECゾーン）、IVATと積極的なグローカリゼーションを反転の手段として提案します。",
+    paper_read_pt: "Ler em Português (PDF)",
+    paper_read_en: "Read in English (PDF)",
   },
   fi: {
     nav_observatory: "Observatorio",
@@ -1092,6 +1188,11 @@ const i18n = {
     collab_btn: "↗ Siirry alustalle",
     contact_title: "Haluatko tietää lisää ja osallistua tähän tutkimukseen?",
     contact_sub: "Ota yhteyttä",
+    papers_eyebrow: "Julkaistu tutkimus",
+    papers_title: "Julkaisut",
+    paper_floresta_summary: "Italia on menettänyt 40 % alueestaan spontaanille metsälle — tämä ei ole ympäristövoitto, vaan URSS:n romahduksen maantieteellinen jälki pienissä ja keskisuurissa sisämaan kaupungeissa. Tämä paperi soveltaa systeemistä Narayama-indeksiä Italian tapaukseen (TFR 1,14, N\\*=0,49, PEC-vyöhyke) ja ehdottaa IVAT:ia sekä aktiivista glokalisaatiota kääntymisen keinoiksi.",
+    paper_read_pt: "Ler em Português (PDF)",
+    paper_read_en: "Read in English (PDF)",
   }
 };
 
