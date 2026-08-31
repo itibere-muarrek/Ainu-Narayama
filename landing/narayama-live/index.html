@@ -132,9 +132,8 @@
 
     /* ─── HERO ────────────────────────────────────────────────── */
     .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-rows: 1fr auto;
+      display: flex;
+      flex-direction: column;
       padding: 60px 0 0;
     }
 
@@ -144,7 +143,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 5rem 2rem 3rem;
+      padding: 3.5rem 2rem 2.5rem;
       gap: 0;
     }
 
@@ -722,20 +721,6 @@
     <p class="hero-sub" data-i18n="hero_sub">
       Narayama.live traduz o Índice N* — calculado pelo AINU — num mapa simples de 8 países, atualizado trimestralmente. Para a análise técnica completa dos 28 países da amostra, veja ainu.systems.
     </p>
-    <div class="btn-row">
-      <div class="btn-group">
-        <a class="btn-primary lang-link" data-base="https://narayama-live.onrender.com" href="https://narayama-live.onrender.com" target="_blank" rel="noopener" data-i18n="btn_access">
-          ↗ Explorar o Observatório
-        </a>
-        <span class="btn-caption" data-i18n="btn_access_caption">(conteúdo aberto)</span>
-      </div>
-      <div class="btn-group">
-        <a class="btn-ghost lang-link" data-base="https://ainu-systems.onrender.com" href="https://ainu-systems.onrender.com" target="_blank" rel="noopener" data-i18n="btn_observatory">
-          AINU.systems
-        </a>
-        <span class="btn-caption" data-i18n="btn_observatory_caption">(colaboradores)</span>
-      </div>
-    </div>
   </div>
 
   <!-- STATS STRIP -->
@@ -747,10 +732,6 @@
     <div class="stat-item">
       <span class="stat-num">5</span>
       <span class="stat-label" data-i18n="stat_zones">Zonas geracionais</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">9</span>
-      <span class="stat-label" data-i18n="stat_languages">Idiomas</span>
     </div>
     <div class="stat-item">
       <a class="stat-social-link" href="https://www.linkedin.com/company/ainu-systems" target="_blank" rel="noopener" aria-label="AINU no LinkedIn">
@@ -790,7 +771,7 @@
   <p class="formula-note" data-i18n="formula_note">Normalização por raiz quadrada · Atualização trimestral · Versionamento Git rastreável</p>
 
   <p class="section-eyebrow snapshot-eyebrow" data-i18n="snapshot_eyebrow">Panorama Real</p>
-  <h2 class="section-title" data-i18n="snapshot_title">Onde os 8 países destaque estão agora</h2>
+  <h2 class="section-title" data-i18n="snapshot_title">Onde os 11 países estão agora</h2>
   <div class="country-snapshot">
     <div class="country-card">
       <span class="country-flag">🇳🇬</span>
@@ -875,24 +856,11 @@
   <h2 class="section-title" data-i18n="about_title">A porta pública do Índice de Narayama Sistêmico</h2>
   <div class="section-body">
     <p data-i18n="about_p1">
-      O AINU calcula, a cada trimestre, a capacidade de cada sociedade renovar suas próprias gerações — o Índice de Narayama Sistêmico (N*). O narayama.live é a porta pública dessa pesquisa: sem jargão técnico, mostra onde cada um dos 8 países destaque está nessa escala, agora.
+      O AINU calcula, a cada trimestre, a capacidade de cada sociedade renovar suas próprias gerações — o Índice de Narayama Sistêmico (N*). O narayama.live é a porta pública dessa pesquisa: sem jargão técnico, mostra onde cada um dos 11 países está nessa escala, agora.
     </p>
     <p data-i18n="about_p2">
-      Desenvolvido no contexto do doutorado em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o narayama.live é atualizado automaticamente a cada trimestre, com a mesma metodologia rastreável usada na análise técnica completa em ainu.systems.
+      Desenvolvido no contexto de uma pesquisa independente em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o narayama.live é atualizado automaticamente a cada trimestre, com a mesma metodologia rastreável usada na análise técnica completa em ainu.systems.
     </p>
-  </div>
-
-  <!-- CONTACT BOX -->
-  <div class="contact-box">
-    <span class="contact-icon">✉</span>
-    <div class="contact-text">
-      <p class="contact-title" data-i18n="contact_title">Quer saber mais e participar desta pesquisa?</p>
-      <p class="contact-sub" data-i18n="contact_sub">Entre em contato conosco</p>
-    </div>
-    <a class="contact-btn" href="mailto:narayama.live@gmail.com" aria-label="Enviar email para narayama.live@gmail.com">
-      <span class="contact-email-icon">@</span>
-      <span class="contact-email-text">narayama.live@gmail.com</span>
-    </a>
   </div>
 </article>
 
@@ -917,20 +885,6 @@
       <p class="pillar-text" data-i18n="pillar_narayama">
         Observatório público. Publica resultados, documenta a evolução metodológica e exibe o mapa periódico dos 28 países em 9 idiomas. Onde os dados são <em>apresentados</em>.
       </p>
-    </div>
-  </div>
-
-  <!-- COLLABORATE -->
-  <div class="collab-block">
-    <p class="section-eyebrow" data-i18n="collab_eyebrow">Colaboração Internacional</p>
-    <h3 class="collab-title" data-i18n="collab_title">É pesquisador? Vá além do observatório.</h3>
-    <p class="collab-sub" data-i18n="collab_sub">
-      O narayama.live mostra o retrato simplificado de 8 países. Para os 28 países da amostra, os componentes técnicos completos e a colaboração científica internacional, a porta de entrada é o ainu.systems — pesquisadoras e pesquisadores são especialmente bem-vindos.
-    </p>
-    <div class="btn-row">
-      <a class="btn-primary lang-link" data-base="https://ainu-systems.onrender.com" href="https://ainu-systems.onrender.com" target="_blank" rel="noopener" data-i18n="collab_btn">
-        ↗ Ver Análise Técnica
-      </a>
     </div>
   </div>
 </article>
@@ -978,22 +932,17 @@ const i18n = {
     hero_eyebrow: "Termômetro do Índice de Narayama Sistêmico",
     hero_title: "O retrato público da capacidade de cada país <em>de renovar sua população e prover seu futuro</em> de forma sustentável.",
     hero_sub: "Narayama.live traduz o Índice N* — calculado pelo AINU — num mapa simples de 8 países, atualizado trimestralmente. Para a análise técnica completa dos 28 países da amostra, veja ainu.systems.",
-    btn_access: "↗ Explorar o Observatório",
-    btn_observatory: "AINU.systems",
-    btn_access_caption: "(conteúdo aberto)",
-    btn_observatory_caption: "(colaboradores)",
     stat_countries: "Países no panorama",
     stat_zones: "Zonas geracionais",
-    stat_languages: "Idiomas",
     stat_follow: "Siga-nos",
     about_eyebrow: "O que é o Narayama.live",
     about_title: "A porta pública do Índice de Narayama Sistêmico",
-    about_p1: "O AINU calcula, a cada trimestre, a capacidade de cada sociedade renovar suas próprias gerações — o Índice de Narayama Sistêmico (N*). O narayama.live é a porta pública dessa pesquisa: sem jargão técnico, mostra onde cada um dos 8 países destaque está nessa escala, agora.",
-    about_p2: "Desenvolvido no contexto do doutorado em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o narayama.live é atualizado automaticamente a cada trimestre, com a mesma metodologia rastreável usada na análise técnica completa em ainu.systems.",
+    about_p1: "O AINU calcula, a cada trimestre, a capacidade de cada sociedade renovar suas próprias gerações — o Índice de Narayama Sistêmico (N*). O narayama.live é a porta pública dessa pesquisa: sem jargão técnico, mostra onde cada um dos 11 países está nessa escala, agora.",
+    about_p2: "Desenvolvido no contexto de uma pesquisa independente em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o narayama.live é atualizado automaticamente a cada trimestre, com a mesma metodologia rastreável usada na análise técnica completa em ainu.systems.",
     formula_label: "Índice de Narayama Sistêmico",
     formula_note: "Normalização por raiz quadrada · Atualização trimestral · Versionamento Git rastreável",
     snapshot_eyebrow: "Panorama Real",
-    snapshot_title: "Onde os 8 países destaque estão agora",
+    snapshot_title: "Onde os 11 países estão agora",
     country_ind: "Índia",
     country_fra: "França",
     country_mex: "México",
@@ -1018,12 +967,6 @@ const i18n = {
     pillar_ainu: "A análise técnica completa dos 28 países da amostra.",
     pillar_link_ainu: "Ver a plataforma técnica →",
     pillar_narayama: "Observatório público. Publica resultados, documenta a evolução metodológica e exibe o mapa periódico dos 28 países em 9 idiomas. Onde os dados são <em>apresentados</em>.",
-    collab_eyebrow: "Colaboração Internacional",
-    collab_title: "É pesquisador? Vá além do observatório.",
-    collab_sub: "O narayama.live mostra o retrato simplificado de 8 países. Para os 28 países da amostra, os componentes técnicos completos e a colaboração científica internacional, a porta de entrada é o ainu.systems — pesquisadoras e pesquisadores são especialmente bem-vindos.",
-    collab_btn: "↗ Ver Análise Técnica",
-    contact_title: "Quer saber mais e participar desta investigação?",
-    contact_sub: "Entre em contato conosco",
     papers_eyebrow: "Pesquisa Publicada",
     papers_title: "Publicações",
     paper_floresta_summary: "A Itália perdeu 40% do seu território pra floresta espontânea — não é conquista ambiental, é a marca geográfica do colapso da URSS nas cidades pequenas e médias do interior. Este paper aplica o Índice de Narayama Sistêmico ao caso italiano (TFR 1,14, N\\* 0,49, Zona PEC) e propõe IVAT + Glocalização ativa como reversão.",
@@ -1037,22 +980,17 @@ const i18n = {
     hero_eyebrow: "Thermometer of the Systemic Narayama Index",
     hero_title: "A public portrait of each country's capacity <em>to renew its population and sustainably provide for its future</em>.",
     hero_sub: "Narayama.live translates the N* Index — computed by AINU — into a simple map of 8 countries, updated quarterly. For the full technical analysis of all 28 sample countries, see ainu.systems.",
-    btn_access: "↗ Explore the Observatory",
-    btn_observatory: "AINU.systems",
-    btn_access_caption: "(open content)",
-    btn_observatory_caption: "(collaborators)",
     stat_countries: "Countries in the snapshot",
     stat_zones: "Generational zones",
-    stat_languages: "Languages",
     stat_follow: "Follow us",
     about_eyebrow: "What is Narayama.live",
     about_title: "The public gateway to the Systemic Narayama Index",
-    about_p1: "AINU computes, quarter by quarter, each society's capacity to renew its own generations — the Systemic Narayama Index (N*). Narayama.live is the public gateway to that research: with no technical jargon, it shows where each of the 8 featured countries stands on that scale, right now.",
-    about_p2: "Developed within the doctoral research in Political Economy <em>From the Narayama Dilemma to the Civilizational Oikocene</em>, narayama.live is updated automatically every quarter, using the same traceable methodology behind the full technical analysis on ainu.systems.",
+    about_p1: "AINU computes, quarter by quarter, each society's capacity to renew its own generations — the Systemic Narayama Index (N*). Narayama.live is the public gateway to that research: with no technical jargon, it shows where each of the 11 countries stands on that scale, right now.",
+    about_p2: "Developed within independent research in Political Economy <em>From the Narayama Dilemma to the Civilizational Oikocene</em>, narayama.live is updated automatically every quarter, using the same traceable methodology behind the full technical analysis on ainu.systems.",
     formula_label: "Narayama Systemic Index",
     formula_note: "Square root normalization · Quarterly updates · Traceable Git versioning",
     snapshot_eyebrow: "Real Snapshot",
-    snapshot_title: "Where the 8 featured countries stand now",
+    snapshot_title: "Where the 11 countries stand now",
     country_ind: "India",
     country_fra: "France",
     country_mex: "Mexico",
@@ -1077,12 +1015,6 @@ const i18n = {
     pillar_ainu: "The full technical analysis of all 28 sample countries.",
     pillar_link_ainu: "See the technical platform →",
     pillar_narayama: "Public observatory. Publishes results, documents methodological evolution, and displays the periodic map of 28 countries in 9 languages. Where data is <em>presented</em>.",
-    collab_eyebrow: "International Collaboration",
-    collab_title: "A researcher? Go beyond the observatory.",
-    collab_sub: "Narayama.live shows the simplified picture of 8 countries. For all 28 sample countries, the full technical components, and international scientific collaboration, the gateway is ainu.systems — researchers are especially welcome.",
-    collab_btn: "↗ See Technical Analysis",
-    contact_title: "Want to learn more and participate in this research?",
-    contact_sub: "Contact us",
     papers_eyebrow: "Published Research",
     papers_title: "Publications",
     paper_floresta_summary: "Italy has lost 40% of its territory to spontaneous forest growth — not an environmental win, but the geographic signature of URSS collapse in small and medium interior cities. This paper applies the Systemic Narayama Index to the Italian case (TFR 1.14, N\\* 0.49, PEC Zone) and proposes IVAT plus active Glocalization as the path to reversal.",
@@ -1096,22 +1028,17 @@ const i18n = {
     hero_eyebrow: "Termómetro del Índice de Narayama Sistémico",
     hero_title: "El retrato público de la capacidad de cada país <em>para renovar su población y proveer su futuro</em> de forma sostenible.",
     hero_sub: "Narayama.live traduce el Índice N* — calculado por AINU — en un mapa simple de 8 países, actualizado trimestralmente. Para el análisis técnico completo de los 28 países de la muestra, vea ainu.systems.",
-    btn_access: "↗ Explorar el Observatorio",
-    btn_observatory: "AINU.systems",
-    btn_access_caption: "(contenido abierto)",
-    btn_observatory_caption: "(colaboradores)",
     stat_countries: "Países en el panorama",
     stat_zones: "Regímenes generacionales",
-    stat_languages: "Idiomas",
     stat_follow: "Síganos",
     about_eyebrow: "Qué es Narayama.live",
     about_title: "La puerta pública del Índice de Narayama Sistémico",
-    about_p1: "AINU calcula, trimestre a trimestre, la capacidad de cada sociedad de renovar sus propias generaciones — el Índice de Narayama Sistémico (N*). Narayama.live es la puerta pública de esa investigación: sin jerga técnica, muestra dónde está cada uno de los 8 países destacados en esa escala, ahora mismo.",
-    about_p2: "Desarrollado en el contexto del doctorado en Economía Política <em>Del Dilema de Narayama al Oicoceno Civilizacional</em>, narayama.live se actualiza automáticamente cada trimestre, con la misma metodología trazable usada en el análisis técnico completo de ainu.systems.",
+    about_p1: "AINU calcula, trimestre a trimestre, la capacidad de cada sociedad de renovar sus propias generaciones — el Índice de Narayama Sistémico (N*). Narayama.live es la puerta pública de esa investigación: sin jerga técnica, muestra dónde está cada uno de los 11 países en esa escala, ahora mismo.",
+    about_p2: "Desarrollado en el contexto de una investigación independiente en Economía Política <em>Del Dilema de Narayama al Oicoceno Civilizacional</em>, narayama.live se actualiza automáticamente cada trimestre, con la misma metodología trazable usada en el análisis técnico completo de ainu.systems.",
     formula_label: "Índice Sistémico de Narayama",
     formula_note: "Normalización por raíz cuadrada · Actualización trimestral · Versionado Git trazable",
     snapshot_eyebrow: "Panorama Real",
-    snapshot_title: "Dónde están ahora los 8 países destacados",
+    snapshot_title: "Dónde están ahora los 11 países",
     country_ind: "India",
     country_fra: "Francia",
     country_mex: "México",
@@ -1136,12 +1063,6 @@ const i18n = {
     pillar_ainu: "El análisis técnico completo de los 28 países de la muestra.",
     pillar_link_ainu: "Ver la plataforma técnica →",
     pillar_narayama: "Observatorio público. Publica resultados y exhibe el mapa periódico de 28 países en 9 idiomas. Donde los datos son <em>presentados</em>.",
-    collab_eyebrow: "Colaboración Internacional",
-    collab_title: "¿Es investigador/a? Vaya más allá del observatorio.",
-    collab_sub: "Narayama.live muestra el retrato simplificado de 8 países. Para los 28 países de la muestra, los componentes técnicos completos y la colaboración científica internacional, la puerta de entrada es ainu.systems — investigadoras e investigadores son especialmente bienvenidos.",
-    collab_btn: "↗ Ver Análisis Técnico",
-    contact_title: "¿Quiere saber más y participar en esta investigación?",
-    contact_sub: "Contáctenos",
     papers_eyebrow: "Investigación Publicada",
     papers_title: "Publicaciones",
     paper_floresta_summary: "Italia perdió el 40% de su territorio ante el avance espontáneo del bosque — no es una conquista ambiental, es la firma geográfica del colapso de la URSS en las ciudades pequeñas y medianas del interior. Este paper aplica el Índice de Narayama Sistémico al caso italiano (TFR 1,14, N\\* 0,49, Zona PEC) y propone el IVAT y la Glocalización activa como reversión.",
@@ -1155,22 +1076,17 @@ const i18n = {
     hero_eyebrow: "Thermomètre de l'indice de Narayama systémique",
     hero_title: "Le portrait public de la capacité de chaque pays <em>à renouveler sa population et assurer durablement son avenir</em>.",
     hero_sub: "Narayama.live traduit l'Indice N* — calculé par AINU — en une carte simple de 8 pays, mise à jour trimestriellement. Pour l'analyse technique complète des 28 pays de l'échantillon, voir ainu.systems.",
-    btn_access: "↗ Explorer l'Observatoire",
-    btn_observatory: "AINU.systems",
-    btn_access_caption: "(contenu ouvert)",
-    btn_observatory_caption: "(collaborateurs)",
     stat_countries: "Pays dans l'aperçu",
     stat_zones: "Régimes générationnels",
-    stat_languages: "Langues",
     stat_follow: "Suivez-nous",
     about_eyebrow: "Qu'est-ce que Narayama.live",
     about_title: "La porte publique de l'indice de Narayama systémique",
-    about_p1: "AINU calcule, trimestre après trimestre, la capacité de chaque société à renouveler ses propres générations — l'indice de Narayama systémique (N*). Narayama.live est la porte publique de cette recherche : sans jargon technique, elle montre où se situe chacun des 8 pays en vedette sur cette échelle, dès maintenant.",
-    about_p2: "Développé dans le cadre du doctorat en Économie Politique <em>Du Dilemme de Narayama à l'Oïcocène Civilisationnel</em>, narayama.live est mis à jour automatiquement chaque trimestre, avec la même méthodologie traçable utilisée dans l'analyse technique complète sur ainu.systems.",
+    about_p1: "AINU calcule, trimestre après trimestre, la capacité de chaque société à renouveler ses propres générations — l'indice de Narayama systémique (N*). Narayama.live est la porte publique de cette recherche : sans jargon technique, elle montre où se situe chacun des 11 pays sur cette échelle, dès maintenant.",
+    about_p2: "Développé dans le cadre d'une recherche indépendante en Économie Politique <em>Du Dilemme de Narayama à l'Oïcocène Civilisationnel</em>, narayama.live est mis à jour automatiquement chaque trimestre, avec la même méthodologie traçable utilisée dans l'analyse technique complète sur ainu.systems.",
     formula_label: "Indice Systémique de Narayama",
     formula_note: "Normalisation par racine carrée · Mise à jour trimestrielle · Versionnement Git traçable",
     snapshot_eyebrow: "Aperçu réel",
-    snapshot_title: "Où en sont les 8 pays en vedette",
+    snapshot_title: "Où en sont les 11 pays",
     country_ind: "Inde",
     country_fra: "France",
     country_mex: "Mexique",
@@ -1195,12 +1111,6 @@ const i18n = {
     pillar_ainu: "L'analyse technique complète des 28 pays de l'échantillon.",
     pillar_link_ainu: "Voir la plateforme technique →",
     pillar_narayama: "Observatoire public. Publie les résultats en 9 langues. Là où les données sont <em>présentées</em>.",
-    collab_eyebrow: "Collaboration Internationale",
-    collab_title: "Chercheur ou chercheuse ? Allez au-delà de l'observatoire.",
-    collab_sub: "Narayama.live montre le portrait simplifié de 8 pays. Pour les 28 pays de l'échantillon, les composants techniques complets et la collaboration scientifique internationale, la porte d'entrée est ainu.systems — les chercheurs et chercheuses sont particulièrement bienvenus.",
-    collab_btn: "↗ Voir l'Analyse Technique",
-    contact_title: "Vous voulez en savoir plus et participer à cette recherche ?",
-    contact_sub: "Contactez-nous",
     papers_eyebrow: "Recherche Publiée",
     papers_title: "Publications",
     paper_floresta_summary: "L'Italie a perdu 40 % de son territoire au profit de la forêt spontanée — non pas une victoire environnementale, mais la signature géographique de l'effondrement de l'URSS dans les petites et moyennes villes de l'intérieur. Ce paper applique l'Indice de Narayama Systémique au cas italien (TFR 1,14, N\\* 0,49, Zone PEC) et propose l'IVAT et la Glocalisation active comme voie de réversion.",
@@ -1214,22 +1124,17 @@ const i18n = {
     hero_eyebrow: "체계적 나라야마 지수 온도계",
     hero_title: "각 나라가 <em>인구를 재생산하고 지속가능하게 미래를 마련할</em> 능력을 보여주는 공개 초상.",
     hero_sub: "narayama.live는 AINU가 계산하는 N* 지수를 8개국의 간단한 지도로 변환하여 분기별로 갱신합니다. 표본 28개국에 대한 전체 기술 분석은 ainu.systems를 참고하세요.",
-    btn_access: "↗ 관측소 둘러보기",
-    btn_observatory: "AINU.systems",
-    btn_access_caption: "(공개 콘텐츠)",
-    btn_observatory_caption: "(협력자)",
     stat_countries: "파노라마 속 국가",
     stat_zones: "세대 구역",
-    stat_languages: "언어",
     stat_follow: "팔로우하기",
     about_eyebrow: "Narayama.live란",
     about_title: "체계적 나라야마 지수의 공개 관문",
-    about_p1: "AINU는 분기마다 각 사회가 스스로 세대를 재생산하는 능력—체계적 나라야마 지수(N*)—을 계산합니다. narayama.live는 이 연구의 공개 관문으로, 전문 용어 없이 주요 8개국이 지금 이 척도에서 어디에 있는지 보여줍니다.",
-    about_p2: "정치경제학 박사 연구 <em>나라야마의 딜레마에서 문명적 오이코세까지</em>의 맥락에서 개발된 narayama.live는 분기마다 자동으로 갱신되며, ainu.systems의 전체 기술 분석에 사용되는 것과 동일한 추적 가능한 방법론을 사용합니다.",
+    about_p1: "AINU는 분기마다 각 사회가 스스로 세대를 재생산하는 능력—체계적 나라야마 지수(N*)—을 계산합니다. narayama.live는 이 연구의 공개 관문으로, 전문 용어 없이 11개국이 지금 이 척도에서 어디에 있는지 보여줍니다.",
+    about_p2: "정치경제학 독립 연구 <em>나라야마의 딜레마에서 문명적 오이코세까지</em>의 맥락에서 개발된 narayama.live는 분기마다 자동으로 갱신되며, ainu.systems의 전체 기술 분석에 사용되는 것과 동일한 추적 가능한 방법론을 사용합니다.",
     formula_label: "나라야마 체계 지수",
     formula_note: "제곱근 정규화 · 분기별 갱신 · 추적 가능한 Git 버전 관리",
     snapshot_eyebrow: "실제 현황",
-    snapshot_title: "지금 8개 주요국의 현황",
+    snapshot_title: "지금 11개국의 현황",
     country_ind: "인도",
     country_fra: "프랑스",
     country_mex: "멕시코",
@@ -1254,12 +1159,6 @@ const i18n = {
     pillar_ainu: "표본 28개국에 대한 전체 기술 분석.",
     pillar_link_ainu: "기술 플랫폼 보기 →",
     pillar_narayama: "공개 관측소. 결과를 발표하고, 방법론적 발전을 문서화하며, 9개 언어로 28개국의 주기율표를 표시합니다. 데이터가 <em>제시되는</em> 곳.",
-    collab_eyebrow: "국제 협력",
-    collab_title: "연구자이신가요? 관측소 그 이상으로.",
-    collab_sub: "narayama.live는 8개국의 단순화된 모습을 보여줍니다. 표본 28개국 전체, 완전한 기술 구성요소, 국제 학술 협력을 위한 관문은 ainu.systems입니다 — 연구자들을 특별히 환영합니다.",
-    collab_btn: "↗ 기술 분석 보기",
-    contact_title: "더 알아보고 이 연구에 참여하고 싶으신가요?",
-    contact_sub: "문의하기",
     papers_eyebrow: "발표된 연구",
     papers_title: "출판물",
     paper_floresta_summary: "이탈리아는 국토의 40%를 자연발생적 숲에 내주었습니다 — 이는 환경적 성과가 아니라, 내륙 중소도시들의 URSS 붕괴를 보여주는 지리적 흔적입니다. 이 논문은 나라야마 체계 지수를 이탈리아 사례에 적용하고(TFR 1.14, N\\* 0.49, PEC 구역), IVAT와 적극적 글로컬화를 반전의 방안으로 제안합니다.",
@@ -1273,22 +1172,17 @@ const i18n = {
     hero_eyebrow: "Termometro dell'Indice di Narayama Sistemico",
     hero_title: "Il ritratto pubblico della capacità di ogni paese <em>di rinnovare la propria popolazione e garantire un futuro sostenibile</em>.",
     hero_sub: "Narayama.live traduce l'Indice N* — calcolato da AINU — in una mappa semplice di 8 paesi, aggiornata trimestralmente. Per l'analisi tecnica completa dei 28 paesi del campione, vedi ainu.systems.",
-    btn_access: "↗ Esplora l'Osservatorio",
-    btn_observatory: "AINU.systems",
-    btn_access_caption: "(contenuto aperto)",
-    btn_observatory_caption: "(collaboratori)",
     stat_countries: "Paesi nel panorama",
     stat_zones: "Regimi generazionali",
-    stat_languages: "Lingue",
     stat_follow: "Seguici",
     about_eyebrow: "Cos'è Narayama.live",
     about_title: "La porta pubblica dell'Indice di Narayama Sistemico",
-    about_p1: "AINU calcola, trimestre dopo trimestre, la capacità di ogni società di rinnovare le proprie generazioni — l'Indice di Narayama Sistemico (N*). Narayama.live è la porta pubblica di questa ricerca: senza gergo tecnico, mostra dove si trova ciascuno dei 8 paesi in evidenza su questa scala, adesso.",
-    about_p2: "Sviluppato nel contesto del dottorato in Economia Politica <em>Dal Dilemma di Narayama all'Oikoceno Civilizazionale</em>, narayama.live viene aggiornato automaticamente ogni trimestre, con la stessa metodologia tracciabile usata nell'analisi tecnica completa su ainu.systems.",
+    about_p1: "AINU calcola, trimestre dopo trimestre, la capacità di ogni società di rinnovare le proprie generazioni — l'Indice di Narayama Sistemico (N*). Narayama.live è la porta pubblica di questa ricerca: senza gergo tecnico, mostra dove si trova ciascuno degli 11 paesi su questa scala, adesso.",
+    about_p2: "Sviluppato nel contesto di una ricerca indipendente in Economia Politica <em>Dal Dilemma di Narayama all'Oikoceno Civilizazionale</em>, narayama.live viene aggiornato automaticamente ogni trimestre, con la stessa metodologia tracciabile usata nell'analisi tecnica completa su ainu.systems.",
     formula_label: "Indice Sistemico di Narayama",
     formula_note: "Normalizzazione per radice quadrata · Aggiornamento trimestrale · Versionamento Git tracciabile",
     snapshot_eyebrow: "Panorama reale",
-    snapshot_title: "Dove si trovano ora i 8 paesi in evidenza",
+    snapshot_title: "Dove si trovano ora gli 11 paesi",
     country_ind: "India",
     country_fra: "Francia",
     country_mex: "Messico",
@@ -1313,12 +1207,6 @@ const i18n = {
     pillar_ainu: "L'analisi tecnica completa dei 28 paesi del campione.",
     pillar_link_ainu: "Vedi la piattaforma tecnica →",
     pillar_narayama: "Osservatorio pubblico. Pubblica risultati in 9 lingue. Dove i dati vengono <em>presentati</em>.",
-    collab_eyebrow: "Collaborazione Internazionale",
-    collab_title: "Sei un ricercatore/una ricercatrice? Vai oltre l'osservatorio.",
-    collab_sub: "Narayama.live mostra il ritratto semplificato di 8 paesi. Per tutti i 28 paesi del campione, le componenti tecniche complete e la collaborazione scientifica internazionale, la porta d'ingresso è ainu.systems — ricercatori e ricercatrici sono particolarmente benvenuti.",
-    collab_btn: "↗ Vedi l'Analisi Tecnica",
-    contact_title: "Vuoi saperne di più e partecipare a questa ricerca?",
-    contact_sub: "Contattaci",
     papers_eyebrow: "Ricerca Pubblicata",
     papers_title: "Pubblicazioni",
     paper_floresta_summary: "L'Italia ha perso il 40% del proprio territorio a favore del bosco spontaneo — non una conquista ambientale, ma la firma geografica del collasso dell'URSS nelle città piccole e medie dell'entroterra. Questo paper applica l'Indice di Narayama Sistemico al caso italiano (TFR 1,14, N\\* 0,49, Zona PEC) e propone l'IVAT e la Glocalizzazione attiva come via di inversione.",
@@ -1332,22 +1220,17 @@ const i18n = {
     hero_eyebrow: "系统性楢山指数温度计",
     hero_title: "呈现各国<em>更新人口、可持续保障未来</em>能力的公开写照。",
     hero_sub: "narayama.live将AINU计算的N*指数转化为8个国家的简明地图，每季度更新。样本中28个国家的完整技术分析请见ainu.systems。",
-    btn_access: "↗ 探索观测站",
-    btn_observatory: "AINU.systems",
-    btn_access_caption: "(公开内容)",
-    btn_observatory_caption: "(合作者)",
     stat_countries: "全景中的国家",
     stat_zones: "代际区间",
-    stat_languages: "语言",
     stat_follow: "关注我们",
     about_eyebrow: "什么是narayama.live",
     about_title: "系统性楢山指数的公共入口",
-    about_p1: "AINU每季度计算每个社会更新其世代的能力——系统性楢山指数（N*）。narayama.live是这项研究的公共入口：没有技术术语，展示8个重点国家目前在这一量表上的位置。",
-    about_p2: "narayama.live在政治经济学博士研究《从楢山难题到文明世的宜居纪》的背景下开发，每季度自动更新，采用与ainu.systems完整技术分析相同的可追溯方法论。",
+    about_p1: "AINU每季度计算每个社会更新其世代的能力——系统性楢山指数（N*）。narayama.live是这项研究的公共入口：没有技术术语，展示这11个国家目前在这一量表上的位置。",
+    about_p2: "narayama.live在政治经济学独立研究《从楢山难题到文明世的宜居纪》的背景下开发，每季度自动更新，采用与ainu.systems完整技术分析相同的可追溯方法论。",
     formula_label: "Narayama系统指数",
     formula_note: "平方根标准化 · 每季度更新 · 可追溯Git版本控制",
     snapshot_eyebrow: "实时概览",
-    snapshot_title: "8个重点国家目前所处的位置",
+    snapshot_title: "这11个国家目前所处的位置",
     country_ind: "印度",
     country_fra: "法国",
     country_mex: "墨西哥",
@@ -1372,12 +1255,6 @@ const i18n = {
     pillar_ainu: "样本中全部28个国家的完整技术分析。",
     pillar_link_ainu: "查看技术平台 →",
     pillar_narayama: "公共观测站，以9种语言发布结果，数据在此被<em>呈现</em>。",
-    collab_eyebrow: "国际合作",
-    collab_title: "您是研究人员吗？超越观测站。",
-    collab_sub: "narayama.live展示的是8个国家的简化图景。若需样本中全部28个国家、完整的技术组成部分以及国际科学合作，入口是ainu.systems——特别欢迎研究人员。",
-    collab_btn: "↗ 查看技术分析",
-    contact_title: "想了解更多并参与本研究？",
-    contact_sub: "联系我们",
     papers_eyebrow: "已发表研究",
     papers_title: "出版物",
     paper_floresta_summary: "意大利40%的国土已被自然扩张的森林覆盖——这并非环保成就，而是内陆中小城市URSS崩溃的地理印记。本文将系统性楢山指数应用于意大利案例（TFR 1.14，N\\*=0.49，PEC区），提出IVAT与积极的本土全球化作为逆转路径。",
@@ -1391,22 +1268,17 @@ const i18n = {
     hero_eyebrow: "システミック・ナラヤマ指数の温度計",
     hero_title: "各国が<em>人口を更新し、持続可能な形で未来を築く</em>能力を映し出す公開の肖像。",
     hero_sub: "narayama.liveは、AINUが算出するN*指数を8か国のシンプルな地図に変換し、四半期ごとに更新します。サンプル28か国の詳細な技術分析はainu.systemsをご覧ください。",
-    btn_access: "↗ 観測所を見る",
-    btn_observatory: "AINU.systems",
-    btn_access_caption: "(公開コンテンツ)",
-    btn_observatory_caption: "(協力者)",
     stat_countries: "パノラマの国",
     stat_zones: "世代的体制",
-    stat_languages: "言語",
     stat_follow: "フォローする",
     about_eyebrow: "narayama.liveとは",
     about_title: "システミック・ナラヤマ指数への公開の入口",
-    about_p1: "AINUは四半期ごとに、各社会が自らの世代を更新する能力——システミック・ナラヤマ指数（N*）——を計算します。narayama.liveはこの研究への公開の入口です：専門用語なしで、注目8か国それぞれが今このスケール上のどこにいるかを示します。",
-    about_p2: "政治経済学博士研究『ナラヤマのジレンマから文明的オイコセーンへ』の文脈で開発されたnarayama.liveは、四半期ごとに自動的に更新され、ainu.systemsの詳細な技術分析と同じ追跡可能な方法論を使用します。",
+    about_p1: "AINUは四半期ごとに、各社会が自らの世代を更新する能力——システミック・ナラヤマ指数（N*）——を計算します。narayama.liveはこの研究への公開の入口です：専門用語なしで、この11か国それぞれが今このスケール上のどこにいるかを示します。",
+    about_p2: "政治経済学の独立研究『ナラヤマのジレンマから文明的オイコセーンへ』の文脈で開発されたnarayama.liveは、四半期ごとに自動的に更新され、ainu.systemsの詳細な技術分析と同じ追跡可能な方法論を使用します。",
     formula_label: "ナラヤマ・システミック指数",
     formula_note: "平方根正規化 · 四半期更新 · 追跡可能なGitバージョン管理",
     snapshot_eyebrow: "リアルな現状",
-    snapshot_title: "注目8か国の現状",
+    snapshot_title: "この11か国の現状",
     country_ind: "インド",
     country_fra: "フランス",
     country_mex: "メキシコ",
@@ -1431,12 +1303,6 @@ const i18n = {
     pillar_ainu: "サンプル28か国の詳細な技術分析。",
     pillar_link_ainu: "技術プラットフォームを見る →",
     pillar_narayama: "公開観測所。9言語で結果を公開。データが<em>提示される</em>場所。",
-    collab_eyebrow: "国際協力",
-    collab_title: "研究者ですか？観測所のその先へ。",
-    collab_sub: "narayama.liveは8か国の簡易版を示します。サンプル28か国全体、詳細な技術コンポーネント、国際的な科学協力への入口はainu.systemsです——研究者を特に歓迎します。",
-    collab_btn: "↗ 技術分析を見る",
-    contact_title: "もっと知りたい、この研究に参加したいですか？",
-    contact_sub: "お問い合わせください",
     papers_eyebrow: "発表された研究",
     papers_title: "刊行物",
     paper_floresta_summary: "イタリアは国土の40%を自然発生的な森林に失いました——これは環境的な成果ではなく、内陸部の中小都市におけるURSS崩壊の地理的痕跡です。本論文はシステミック・ナラヤマ指数をイタリアの事例に適用し（TFR 1.14、N\\*=0.49、PECゾーン）、IVATと積極的なグローカリゼーションを反転の手段として提案します。",
@@ -1450,22 +1316,17 @@ const i18n = {
     hero_eyebrow: "Systeemisen Narayama-indeksin lämpömittari",
     hero_title: "Julkinen kuva kunkin maan kyvystä <em>uudistaa väestöään ja turvata tulevaisuutensa</em> kestävällä tavalla.",
     hero_sub: "Narayama.live kääntää AINU:n laskeman N*-indeksin yksinkertaiseksi 8 maan kartaksi, joka päivitetään neljännesvuosittain. Otoksen kaikkien 28 maan täydellinen tekninen analyysi löytyy sivustolta ainu.systems.",
-    btn_access: "↗ Tutustu observatorioon",
-    btn_observatory: "AINU.systems",
-    btn_access_caption: "(avoin sisältö)",
-    btn_observatory_caption: "(yhteistyökumppanit)",
     stat_countries: "Maat tilannekuvassa",
     stat_zones: "Sukupolvivyöhykettä",
-    stat_languages: "Kieltä",
     stat_follow: "Seuraa meitä",
     about_eyebrow: "Mikä on Narayama.live",
     about_title: "Systeemisen Narayama-indeksin julkinen portti",
-    about_p1: "AINU laskee neljännesvuosittain kunkin yhteiskunnan kyvyn uudistaa omia sukupolviaan — systeemisen Narayama-indeksin (N*). Narayama.live on tämän tutkimuksen julkinen portti: ilman teknistä ammattikieltä se näyttää, missä kukin 8 esitellystä maasta on tällä asteikolla juuri nyt.",
-    about_p2: "Kehitetty osana valtio-opin tohtoritutkimusta <em>Narayaman dilemmasta sivilisaation Oikoseeniin</em>, narayama.live päivittyy automaattisesti neljännesvuosittain, samalla jäljitettävällä menetelmällä kuin ainu.systemsin täydellinen tekninen analyysi.",
+    about_p1: "AINU laskee neljännesvuosittain kunkin yhteiskunnan kyvyn uudistaa omia sukupolviaan — systeemisen Narayama-indeksin (N*). Narayama.live on tämän tutkimuksen julkinen portti: ilman teknistä ammattikieltä se näyttää, missä kukin näistä 11 maasta on tällä asteikolla juuri nyt.",
+    about_p2: "Kehitetty osana itsenäistä valtio-opin tutkimusta <em>Narayaman dilemmasta sivilisaation Oikoseeniin</em>, narayama.live päivittyy automaattisesti neljännesvuosittain, samalla jäljitettävällä menetelmällä kuin ainu.systemsin täydellinen tekninen analyysi.",
     formula_label: "Systeeminen Narayama-indeksi",
     formula_note: "Neliöjuurinormalisointi · Neljännesvuosittainen päivitys · Jäljitettävä Git-versiointi",
     snapshot_eyebrow: "Todellinen tilannekuva",
-    snapshot_title: "Missä 8 esiteltyä maata ovat nyt",
+    snapshot_title: "Missä nämä 11 maata ovat nyt",
     country_ind: "Intia",
     country_fra: "Ranska",
     country_mex: "Meksiko",
@@ -1490,12 +1351,6 @@ const i18n = {
     pillar_ainu: "Otoksen kaikkien 28 maan täydellinen tekninen analyysi.",
     pillar_link_ainu: "Katso tekninen alusta →",
     pillar_narayama: "Julkinen observatorio. Julkaisee tuloksia, dokumentoi menetelmän kehitystä ja näyttää 28 maan jaksollisen kartan 9 kielellä. Missä dataa <em>esitetään</em>.",
-    collab_eyebrow: "Kansainvälinen yhteistyö",
-    collab_title: "Oletko tutkija? Mene observatoriota pidemmälle.",
-    collab_sub: "Narayama.live näyttää yksinkertaistetun kuvan 8 maasta. Kaikkien 28 otosmaan, täydellisten teknisten komponenttien ja kansainvälisen tieteellisen yhteistyön portti on ainu.systems — tutkijat ovat erityisen tervetulleita.",
-    collab_btn: "↗ Katso tekninen analyysi",
-    contact_title: "Haluatko tietää lisää ja osallistua tähän tutkimukseen?",
-    contact_sub: "Ota yhteyttä",
     papers_eyebrow: "Julkaistu tutkimus",
     papers_title: "Julkaisut",
     paper_floresta_summary: "Italia on menettänyt 40 % alueestaan spontaanille metsälle — tämä ei ole ympäristövoitto, vaan URSS:n romahduksen maantieteellinen jälki pienissä ja keskisuurissa sisämaan kaupungeissa. Tämä paperi soveltaa systeemistä Narayama-indeksiä Italian tapaukseen (TFR 1,14, N\\*=0,49, PEC-vyöhyke) ja ehdottaa IVAT:ia sekä aktiivista glokalisaatiota kääntymisen keinoiksi.",
