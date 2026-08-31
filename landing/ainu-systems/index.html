@@ -6,7 +6,7 @@
 
   <!-- SEO -->
   <title>AINU — Ancestral Isomorphic Nexus Unit | Narayama Research Platform</title>
-  <meta name="description" content="AINU é uma infraestrutura computacional aberta para pesquisa sobre sustentabilidade intergeracional. Calcula o Índice N* para 28 países, com atualização mensal e metodologia rastreável.">
+  <meta name="description" content="AINU é uma infraestrutura computacional aberta para pesquisa sobre sustentabilidade intergeracional. Calcula o Índice N* para 28 países, com atualização trimestral e metodologia rastreável.">
   <meta name="keywords" content="AINU, Narayama, índice demográfico, sustentabilidade intergeracional, declínio populacional, N* index, pesquisa aberta, open research, demographic index, intergerational sustainability">
   <meta name="author" content="Itiberê Muarrek">
   <meta name="robots" content="index, follow">
@@ -18,13 +18,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ainu.systems">
   <meta property="og:title" content="AINU — Ancestral Isomorphic Nexus Unit">
-  <meta property="og:description" content="Open research infrastructure for intergenerational sustainability. N* Index across 28 countries. Monthly updates. Traceable methodology.">
+  <meta property="og:description" content="Open research infrastructure for intergenerational sustainability. N* Index across 28 countries. Quarterly updates. Traceable methodology.">
   <meta property="og:image" content="https://ainu.systems/og-image.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AINU — Ancestral Isomorphic Nexus Unit">
-  <meta name="twitter:description" content="Open research infrastructure for intergenerational sustainability. N* Index across 28 countries. Monthly updates. Traceable methodology.">
+  <meta name="twitter:description" content="Open research infrastructure for intergenerational sustainability. N* Index across 28 countries. Quarterly updates. Traceable methodology.">
   <meta name="twitter:image" content="https://ainu.systems/og-image.jpg">
 
   <!-- Canonical -->
@@ -197,6 +197,19 @@
       gap: 1rem;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: flex-start;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .btn-caption {
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      opacity: 0.7;
+      letter-spacing: 0.01em;
     }
 
     .btn-primary {
@@ -270,6 +283,20 @@
       border-right: 1px solid var(--divider);
     }
     .stat-item:last-child { border-right: none; }
+
+    .stat-social-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.2s;
+    }
+    .stat-social-link:hover { opacity: 0.75; }
+    .stat-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.2rem;
+    }
 
     .stat-num {
       font-family: var(--f-display);
@@ -664,15 +691,21 @@
       Em que faixa reprodutiva uma sociedade consegue se manter <em>sustentável</em>?
     </h1>
     <p class="hero-sub" data-i18n="hero_sub">
-      É isso que o AINU investiga nos 28 países da amostra: a capacidade de cada sociedade de sustentar sua continuidade civilizacional. O Índice N* funciona como termômetro demográfico, atualizado mensalmente, com metodologia rastreável e aberta à colaboração científica internacional.
+      É isso que o AINU investiga nos 28 países da amostra: a capacidade de cada sociedade de sustentar sua continuidade civilizacional. O Índice N* funciona como termômetro demográfico, atualizado trimestralmente, com metodologia rastreável e aberta à colaboração científica internacional.
     </p>
     <div class="btn-row">
-      <a class="btn-primary lang-link" data-base="https://ainu-systems.onrender.com" href="https://ainu-systems.onrender.com" target="_blank" rel="noopener" data-i18n="btn_access">
-        ↗ Acessar a Plataforma
-      </a>
-      <a class="btn-ghost lang-link" data-base="https://narayama-live.onrender.com" href="https://narayama-live.onrender.com" target="_blank" rel="noopener" data-i18n="btn_observatory">
-        Narayama.live
-      </a>
+      <div class="btn-group">
+        <a class="btn-primary lang-link" data-base="https://ainu-systems.onrender.com" href="https://ainu-systems.onrender.com" target="_blank" rel="noopener" data-i18n="btn_access">
+          ↗ Acessar a Plataforma
+        </a>
+        <span class="btn-caption" data-i18n="btn_access_caption">(colaboradores)</span>
+      </div>
+      <div class="btn-group">
+        <a class="btn-ghost lang-link" data-base="https://narayama-live.onrender.com" href="https://narayama-live.onrender.com" target="_blank" rel="noopener" data-i18n="btn_observatory">
+          Narayama.live
+        </a>
+        <span class="btn-caption" data-i18n="btn_observatory_caption">(conteúdo aberto)</span>
+      </div>
     </div>
   </div>
 
@@ -691,8 +724,10 @@
       <span class="stat-label" data-i18n="stat_languages">Idiomas</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num">∞</span>
-      <span class="stat-label" data-i18n="stat_open">Pesquisa aberta</span>
+      <a class="stat-social-link" href="https://www.linkedin.com/company/ainu-systems" target="_blank" rel="noopener" aria-label="AINU no LinkedIn">
+        <span class="stat-num stat-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z"/></svg></span>
+        <span class="stat-label" data-i18n="stat_follow">Siga-nos</span>
+      </a>
     </div>
   </div>
 </section>
@@ -723,7 +758,7 @@
       <div class="zone-seg-range">&ge; 2.00</div>
     </div>
   </div>
-  <p class="formula-note" data-i18n="formula_note">Normalização por raiz quadrada · Atualização mensal · Versionamento Git rastreável</p>
+  <p class="formula-note" data-i18n="formula_note">Normalização por raiz quadrada · Atualização trimestral · Versionamento Git rastreável</p>
 </article>
 
 <!-- ─── ABOUT ─────────────────────────────────────────────────── -->
@@ -834,20 +869,22 @@ const i18n = {
     nav_platform: "Plataforma",
     hero_eyebrow: "Infraestrutura de Pesquisa Aberta · Narayama Framework",
     hero_title: "Em que faixa reprodutiva uma sociedade consegue se manter <em>sustentável</em>?",
-    hero_sub: "É isso que o AINU investiga nos 28 países da amostra: a capacidade de cada sociedade de sustentar sua continuidade civilizacional. O Índice N* funciona como termômetro demográfico, atualizado mensalmente, com metodologia rastreável e aberta à colaboração científica internacional.",
+    hero_sub: "É isso que o AINU investiga nos 28 países da amostra: a capacidade de cada sociedade de sustentar sua continuidade civilizacional. O Índice N* funciona como termômetro demográfico, atualizado trimestralmente, com metodologia rastreável e aberta à colaboração científica internacional.",
     btn_access: "↗ Acessar a Plataforma",
     btn_observatory: "Narayama.live",
+    btn_access_caption: "(colaboradores)",
+    btn_observatory_caption: "(conteúdo aberto)",
     login_label: "Acesso aberto:",
     stat_countries: "Países",
     stat_zones: "Zonas geracionais",
     stat_languages: "Idiomas",
-    stat_open: "Pesquisa aberta",
+    stat_follow: "Siga-nos",
     about_eyebrow: "O que é o AINU",
     about_title: "Uma infraestrutura científica permanentemente aberta",
     about_p1: "A economia moderna contabiliza capital, trabalho, terra e tecnologia — mas não mede o que produz o próprio produtor: a capacidade de cada sociedade de renovar suas gerações. O AINU foi criado para preencher essa lacuna.",
     about_p2: "Desenvolvido no contexto do doutorado em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o AINU não é um resultado final. É uma arquitetura científica concebida para permanecer aberta — ao refinamento metodológico, à crítica acadêmica e à incorporação permanente de novas evidências.",
     formula_label: "Índice de Narayama Sistêmico",
-    formula_note: "Normalização por raiz quadrada · Atualização mensal · Versionamento Git rastreável",
+    formula_note: "Normalização por raiz quadrada · Atualização trimestral · Versionamento Git rastreável",
     zones_eyebrow: "Os Cinco Regimes Geracionais",
     zone_pec: "Colapso de Narayama (PEC)",
     zone_ta: "Tensão Acelerada",
@@ -877,20 +914,22 @@ const i18n = {
     nav_platform: "Platform",
     hero_eyebrow: "Open Research Infrastructure · Narayama Framework",
     hero_title: "In what reproductive range can a modern society remain <em>sustainable</em>?",
-    hero_sub: "That's what AINU investigates across the 28 sample countries: each society's capacity to sustain its civilizational continuity. The N* Index works as a demographic thermometer, updated monthly, with traceable methodology open to international scientific collaboration.",
+    hero_sub: "That's what AINU investigates across the 28 sample countries: each society's capacity to sustain its civilizational continuity. The N* Index works as a demographic thermometer, updated quarterly, with traceable methodology open to international scientific collaboration.",
     btn_access: "↗ Access Platform",
     btn_observatory: "Narayama.live",
+    btn_access_caption: "(collaborators)",
+    btn_observatory_caption: "(open content)",
     login_label: "Open access:",
     stat_countries: "Countries",
     stat_zones: "Generational zones",
     stat_languages: "Languages",
-    stat_open: "Open research",
+    stat_follow: "Follow us",
     about_eyebrow: "What is AINU",
     about_title: "A permanently open scientific infrastructure",
     about_p1: "Modern economics accounts for capital, labor, land, and technology — but does not measure what produces the producer itself: each society's capacity to renew its generations. AINU was built to fill that gap.",
     about_p2: "Developed within the doctoral research in Political Economy <em>From the Narayama Dilemma to the Civilizational Oikocene</em>, AINU is not a final result. It is a scientific architecture designed to remain open — to methodological refinement, academic critique, and the permanent incorporation of new evidence.",
     formula_label: "Narayama Systemic Index",
-    formula_note: "Square root normalization · Monthly updates · Traceable Git versioning",
+    formula_note: "Square root normalization · Quarterly updates · Traceable Git versioning",
     zones_eyebrow: "The Five Generational Regimes",
     zone_pec: "Narayama Collapse (PEC)",
     zone_ta: "Accelerated Tension",
@@ -920,20 +959,22 @@ const i18n = {
     nav_platform: "Plataforma",
     hero_eyebrow: "Infraestructura de Investigación Abierta · Marco Narayama",
     hero_title: "¿En qué franja reproductiva una sociedad moderna logra mantenerse <em>sostenible</em>?",
-    hero_sub: "Eso es lo que AINU investiga en los 28 países de la muestra: la capacidad de cada sociedad de sostener su continuidad civilizatoria. El Índice N* funciona como termómetro demográfico, actualizado mensualmente, con metodología trazable y abierta a la colaboración científica internacional.",
+    hero_sub: "Eso es lo que AINU investiga en los 28 países de la muestra: la capacidad de cada sociedad de sostener su continuidad civilizatoria. El Índice N* funciona como termómetro demográfico, actualizado trimestralmente, con metodología trazable y abierta a la colaboración científica internacional.",
     btn_access: "↗ Acceder a la Plataforma",
     btn_observatory: "Narayama.live",
+    btn_access_caption: "(colaboradores)",
+    btn_observatory_caption: "(contenido abierto)",
     login_label: "Acceso abierto:",
     stat_countries: "Países",
     stat_zones: "Regímenes generacionales",
     stat_languages: "Idiomas",
-    stat_open: "Investigación abierta",
+    stat_follow: "Síganos",
     about_eyebrow: "Qué es AINU",
     about_title: "Una infraestructura científica permanentemente abierta",
     about_p1: "La economía moderna contabiliza capital, trabajo, tierra y tecnología — pero no mide lo que produce al propio productor: la capacidad de cada sociedad de renovar sus generaciones. AINU fue creado para llenar ese vacío.",
     about_p2: "Desarrollado en el contexto del doctorado en Economía Política <em>Del Dilema de Narayama al Oicoceno Civilizacional</em>, AINU no es un resultado final. Es una arquitectura científica concebida para mantenerse abierta.",
     formula_label: "Índice Sistémico de Narayama",
-    formula_note: "Normalización por raíz cuadrada · Actualización mensual · Versionado Git trazable",
+    formula_note: "Normalización por raíz cuadrada · Actualización trimestral · Versionado Git trazable",
     zones_eyebrow: "Los Cinco Regímenes Generacionales",
     zone_pec: "Colapso de Narayama (PEC)",
     zone_ta: "Tensión Acelerada",
@@ -963,20 +1004,22 @@ const i18n = {
     nav_platform: "Plateforme",
     hero_eyebrow: "Infrastructure de Recherche Ouverte · Cadre Narayama",
     hero_title: "Dans quelle fourchette de reproduction une société moderne peut-elle rester <em>durable</em> ?",
-    hero_sub: "C'est ce qu'AINU étudie dans les 28 pays de l'échantillon : la capacité de chaque société à soutenir sa continuité civilisationnelle. L'Indice N* fonctionne comme un thermomètre démographique, mis à jour mensuellement, avec une méthodologie traçable et ouverte à la collaboration scientifique internationale.",
+    hero_sub: "C'est ce qu'AINU étudie dans les 28 pays de l'échantillon : la capacité de chaque société à soutenir sa continuité civilisationnelle. L'Indice N* fonctionne comme un thermomètre démographique, mis à jour trimestriellement, avec une méthodologie traçable et ouverte à la collaboration scientifique internationale.",
     btn_access: "↗ Accéder à la Plateforme",
     btn_observatory: "Narayama.live",
+    btn_access_caption: "(collaborateurs)",
+    btn_observatory_caption: "(contenu ouvert)",
     login_label: "Accès ouvert :",
     stat_countries: "Pays",
     stat_zones: "Régimes générationnels",
     stat_languages: "Langues",
-    stat_open: "Recherche ouverte",
+    stat_follow: "Suivez-nous",
     about_eyebrow: "Qu'est-ce que AINU",
     about_title: "Une infrastructure scientifique ouverture permanente",
     about_p1: "L'économie moderne comptabilise le capital, le travail, la terre et la technologie — mais ne mesure pas ce qui produit le producteur lui-même. AINU a été créé pour combler ce vide.",
     about_p2: "Développé dans le cadre du doctorat en Économie Politique <em>Du Dilemme de Narayama à l'Oicocène Civilisationnel</em>, AINU est une architecture scientifique conçue pour rester ouverte.",
     formula_label: "Indice Systémique de Narayama",
-    formula_note: "Normalisation par racine carrée · Mise à jour mensuelle · Versionnement Git traçable",
+    formula_note: "Normalisation par racine carrée · Mise à jour trimestrielle · Versionnement Git traçable",
     zones_eyebrow: "Les Cinq Régimes Générationnels",
     zone_pec: "Effondrement de Narayama (PEC)",
     zone_ta: "Tension Accélérée",
@@ -1006,20 +1049,22 @@ const i18n = {
     nav_platform: "플랫폼",
     hero_eyebrow: "개방형 연구 인프라 · 나라야마 프레임워크",
     hero_title: "현대 사회는 어떤 재생산 범위에서 <em>지속가능성</em>을 유지할 수 있을까요?",
-    hero_sub: "AINU가 표본 28개국에서 조사하는 것이 바로 이것입니다: 각 사회가 문명적 연속성을 지탱하는 능력. N* 지수는 인구통계학적 온도계로 작동하며, 매달 갱신되고, 국제 학술 협력에 열려 있는 추적 가능한 방법론을 사용합니다.",
+    hero_sub: "AINU가 표본 28개국에서 조사하는 것이 바로 이것입니다: 각 사회가 문명적 연속성을 지탱하는 능력. N* 지수는 인구통계학적 온도계로 작동하며, 분기별로 갱신되고, 국제 학술 협력에 열려 있는 추적 가능한 방법론을 사용합니다.",
     btn_access: "↗ 플랫폼 접속",
     btn_observatory: "Narayama.live",
+    btn_access_caption: "(협력자)",
+    btn_observatory_caption: "(공개 콘텐츠)",
     login_label: "개방 접근:",
     stat_countries: "국가",
     stat_zones: "세대 구역",
     stat_languages: "언어",
-    stat_open: "개방 연구",
+    stat_follow: "팔로우하기",
     about_eyebrow: "AINU란",
     about_title: "영구적으로 개방된 과학 인프라",
     about_p1: "현대 경제학은 자본, 노동, 토지, 기술을 계산하지만 — 생산자 그 자체를 만들어내는 것, 즉 각 사회가 세대를 재생산하는 능력은 측정하지 않습니다. AINU는 이 공백을 채우기 위해 만들어졌습니다.",
     about_p2: "정치경제학 박사 연구 <em>나라야마의 딜레마에서 문명적 오이코세까지</em>의 맥락에서 개발된 AINU는 최종 결과물이 아닙니다. 방법론적 개선, 학술적 비판, 새로운 증거의 지속적인 반영에 열려 있도록 설계된 과학적 아키텍처입니다.",
     formula_label: "나라야마 체계 지수",
-    formula_note: "제곱근 정규화 · 매월 갱신 · 추적 가능한 Git 버전 관리",
+    formula_note: "제곱근 정규화 · 분기별 갱신 · 추적 가능한 Git 버전 관리",
     zones_eyebrow: "다섯 가지 세대적 체제",
     zone_pec: "나라야마 붕괴 (PEC)",
     zone_ta: "가속 긴장",
@@ -1049,20 +1094,22 @@ const i18n = {
     nav_platform: "Piattaforma",
     hero_eyebrow: "Infrastruttura di Ricerca Aperta · Framework Narayama",
     hero_title: "In quale fascia riproduttiva una società moderna riesce a mantenersi <em>sostenibile</em>?",
-    hero_sub: "È questo che AINU indaga nei 28 paesi del campione: la capacità di ogni società di sostenere la propria continuità civilizzazionale. L'Indice N* funziona come termometro demografico, aggiornato mensilmente, con metodologia tracciabile e aperta alla collaborazione scientifica internazionale.",
+    hero_sub: "È questo che AINU indaga nei 28 paesi del campione: la capacità di ogni società di sostenere la propria continuità civilizzazionale. L'Indice N* funziona come termometro demografico, aggiornato trimestralmente, con metodologia tracciabile e aperta alla collaborazione scientifica internazionale.",
     btn_access: "↗ Accedi alla Piattaforma",
     btn_observatory: "Narayama.live",
+    btn_access_caption: "(collaboratori)",
+    btn_observatory_caption: "(contenuto aperto)",
     login_label: "Accesso aperto:",
     stat_countries: "Paesi",
     stat_zones: "Regimi generazionali",
     stat_languages: "Lingue",
-    stat_open: "Ricerca aperta",
+    stat_follow: "Seguici",
     about_eyebrow: "Cos'è AINU",
     about_title: "Un'infrastruttura scientifica permanentemente aperta",
     about_p1: "L'economia moderna contabilizza capitale, lavoro, terra e tecnologia — ma non misura ciò che produce il produttore stesso. AINU è stato creato per colmare questa lacuna.",
     about_p2: "Sviluppato nel contesto del dottorato in Economia Politica <em>Dal Dilemma di Narayama all'Oikoceno Civilizazionale</em>, AINU è un'architettura scientifica concepita per rimanere aperta.",
     formula_label: "Indice Sistemico di Narayama",
-    formula_note: "Normalizzazione per radice quadrata · Aggiornamento mensile · Versionamento Git tracciabile",
+    formula_note: "Normalizzazione per radice quadrata · Aggiornamento trimestrale · Versionamento Git tracciabile",
     zones_eyebrow: "I Cinque Regimi Generazionali",
     zone_pec: "Collasso di Narayama (PEC)",
     zone_ta: "Tensione Accelerata",
@@ -1092,20 +1139,22 @@ const i18n = {
     nav_platform: "平台",
     hero_eyebrow: "开放研究基础设施 · Narayama框架",
     hero_title: "现代社会在什么样的生育率区间才能保持<em>可持续</em>？",
-    hero_sub: "这正是AINU在样本28个国家中所研究的：每个社会维持其文明延续能力的能力。N*指数作为人口温度计运作，每月更新，方法论可追溯，向国际科学合作开放。",
+    hero_sub: "这正是AINU在样本28个国家中所研究的：每个社会维持其文明延续能力的能力。N*指数作为人口温度计运作，每季度更新，方法论可追溯，向国际科学合作开放。",
     btn_access: "↗ 进入平台",
     btn_observatory: "Narayama.live",
+    btn_access_caption: "(合作者)",
+    btn_observatory_caption: "(公开内容)",
     login_label: "开放访问：",
     stat_countries: "国家",
     stat_zones: "代际区间",
     stat_languages: "语言",
-    stat_open: "开放研究",
+    stat_follow: "关注我们",
     about_eyebrow: "什么是AINU",
     about_title: "一个永久开放的科学基础设施",
     about_p1: "现代经济学核算资本、劳动、土地和技术——但不衡量生产者本身的生产能力：每个社会更新其世代的能力。AINU正是为填补这一空白而创建的。",
     about_p2: "AINU在政治经济学博士研究《从Narayama困境到文明生态纪》的背景下发展，不是最终结果，而是一个永久开放的科学架构。",
     formula_label: "Narayama系统指数",
-    formula_note: "平方根标准化 · 每月更新 · 可追溯Git版本控制",
+    formula_note: "平方根标准化 · 每季度更新 · 可追溯Git版本控制",
     zones_eyebrow: "五大代际区间",
     zone_pec: "楢山崩溃 (PEC)",
     zone_ta: "加速紧张",
@@ -1135,20 +1184,22 @@ const i18n = {
     nav_platform: "プラットフォーム",
     hero_eyebrow: "オープン研究インフラ · ナラヤマフレームワーク",
     hero_title: "現代社会はどの出生率の範囲で<em>持続可能</em>でいられるのか？",
-    hero_sub: "それこそAINUがサンプル28か国で調査していることです——各社会が文明的な連続性を支える能力。N*指数は人口温度計として機能し、毎月更新され、追跡可能な方法論で国際的な科学協力に開かれています。",
+    hero_sub: "それこそAINUがサンプル28か国で調査していることです——各社会が文明的な連続性を支える能力。N*指数は人口温度計として機能し、四半期ごとに更新され、追跡可能な方法論で国際的な科学協力に開かれています。",
     btn_access: "↗ プラットフォームにアクセス",
     btn_observatory: "Narayama.live",
+    btn_access_caption: "(協力者)",
+    btn_observatory_caption: "(公開コンテンツ)",
     login_label: "オープンアクセス：",
     stat_countries: "カ国",
     stat_zones: "世代的体制",
     stat_languages: "言語",
-    stat_open: "オープン研究",
+    stat_follow: "フォローする",
     about_eyebrow: "AINUとは",
     about_title: "永続的に開かれた科学インフラ",
     about_p1: "現代経済学は資本、労働、土地、技術を計上しますが、生産者自身を生み出すもの——各社会が世代を更新する能力——は測定しません。AINUはそのギャップを埋めるために作られました。",
     about_p2: "政治経済学博士研究の文脈で開発されたAINUは、最終的な結果ではなく、方法論的改良と永続的な証拠の取り込みに開かれた科学的アーキテクチャです。",
     formula_label: "ナラヤマ・システミック指数",
-    formula_note: "平方根正規化 · 毎月更新 · 追跡可能なGitバージョン管理",
+    formula_note: "平方根正規化 · 四半期更新 · 追跡可能なGitバージョン管理",
     zones_eyebrow: "5つの世代的体制",
     zone_pec: "ナラヤマ崩壊 (PEC)",
     zone_ta: "加速緊張",
@@ -1178,20 +1229,22 @@ const i18n = {
     nav_platform: "Alusta",
     hero_eyebrow: "Avoin tutkimusinfrastruktuuri · Narayama-viitekehys",
     hero_title: "Millä lisääntymisvälillä moderni yhteiskunta pysyy <em>kestävänä</em>?",
-    hero_sub: "Juuri sitä AINU tutkii otoksen 28 maassa: kunkin yhteiskunnan kykyä ylläpitää sivilisaationsa jatkuvuutta. N*-indeksi toimii väestötieteellisenä lämpömittarina, joka päivittyy kuukausittain, jäljitettävällä menetelmällä, avoimena kansainväliselle tieteelliselle yhteistyölle.",
+    hero_sub: "Juuri sitä AINU tutkii otoksen 28 maassa: kunkin yhteiskunnan kykyä ylläpitää sivilisaationsa jatkuvuutta. N*-indeksi toimii väestötieteellisenä lämpömittarina, joka päivittyy neljännesvuosittain, jäljitettävällä menetelmällä, avoimena kansainväliselle tieteelliselle yhteistyölle.",
     btn_access: "↗ Siirry alustalle",
     btn_observatory: "Narayama.live",
+    btn_access_caption: "(yhteistyökumppanit)",
+    btn_observatory_caption: "(avoin sisältö)",
     login_label: "Avoin pääsy:",
     stat_countries: "Maata",
     stat_zones: "Sukupolvivyöhykettä",
     stat_languages: "Kieltä",
-    stat_open: "Avoin tutkimus",
+    stat_follow: "Seuraa meitä",
     about_eyebrow: "Mikä on AINU",
     about_title: "Pysyvästi avoin tieteellinen infrastruktuuri",
     about_p1: "Nykytalous laskee pääoman, työn, maan ja teknologian — mutta ei mittaa sitä, mikä tuottaa tuottajan itsensä: kunkin yhteiskunnan kykyä uudistaa sukupolviaan. AINU rakennettiin täyttämään tämä aukko.",
     about_p2: "Kehitetty osana valtio-opin tohtoritutkimusta <em>Narayaman dilemmasta sivilisaation Oikoseeniin</em>, AINU ei ole lopullinen tulos. Se on tieteellinen arkkitehtuuri, joka on suunniteltu pysymään avoimena metodologiselle tarkentamiselle, akateemiselle kritiikille ja uuden näytön jatkuvalle sisällyttämiselle.",
     formula_label: "Systeeminen Narayama-indeksi",
-    formula_note: "Neliöjuurinormalisointi · Kuukausittainen päivitys · Jäljitettävä Git-versiointi",
+    formula_note: "Neliöjuurinormalisointi · Neljännesvuosittainen päivitys · Jäljitettävä Git-versiointi",
     zones_eyebrow: "Viisi sukupolvien regiimiä",
     zone_pec: "Narayama-romahdus (PEC)",
     zone_ta: "Kiihtyvä jännite",

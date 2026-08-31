@@ -6,7 +6,7 @@
 
   <!-- SEO -->
   <title>Narayama.live — Observatório Público do Índice de Narayama Sistêmico</title>
-  <meta name="description" content="Narayama.live é o observatório público do Índice de Narayama Sistêmico (N*): acompanhe, em linguagem simples, a capacidade de 7 países se renovarem geracionalmente. Dados abertos, atualização mensal, metodologia rastreável.">
+  <meta name="description" content="Narayama.live é o observatório público do Índice de Narayama Sistêmico (N*): acompanhe, em linguagem simples, a capacidade de 7 países se renovarem geracionalmente. Dados abertos, atualização trimestral, metodologia rastreável.">
   <meta name="keywords" content="Narayama, Narayama.live, índice demográfico, observatório público, sustentabilidade intergeracional, declínio populacional, N* index, open data, demographic index, public observatory">
   <meta name="author" content="Itiberê Muarrek">
   <meta name="robots" content="index, follow">
@@ -18,13 +18,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://narayama.live">
   <meta property="og:title" content="Narayama.live — Observatório Público do Índice de Narayama Sistêmico">
-  <meta property="og:description" content="Public observatory for the Systemic Narayama Index. Track 7 countries' generational renewal capacity in plain language. Monthly updates, open data.">
+  <meta property="og:description" content="Public observatory for the Systemic Narayama Index. Track 7 countries' generational renewal capacity in plain language. Quarterly updates, open data.">
   <meta property="og:image" content="https://narayama.live/og-image.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Narayama.live — Public Observatory of the Systemic Narayama Index">
-  <meta name="twitter:description" content="Public observatory for the Systemic Narayama Index. Track 7 countries' generational renewal capacity in plain language. Monthly updates, open data.">
+  <meta name="twitter:description" content="Public observatory for the Systemic Narayama Index. Track 7 countries' generational renewal capacity in plain language. Quarterly updates, open data.">
   <meta name="twitter:image" content="https://narayama.live/og-image.jpg">
 
   <!-- Canonical -->
@@ -193,6 +193,19 @@
       gap: 1rem;
       flex-wrap: wrap;
       justify-content: center;
+      align-items: flex-start;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .btn-caption {
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      opacity: 0.7;
+      letter-spacing: 0.01em;
     }
 
     .btn-primary {
@@ -646,15 +659,21 @@
       O retrato público da capacidade de cada país <em>de renovar sua população e prover seu futuro</em> de forma sustentável.
     </h1>
     <p class="hero-sub" data-i18n="hero_sub">
-      Narayama.live traduz o Índice N* — calculado pelo AINU — num mapa simples de 7 países, atualizado mensalmente. Para a análise técnica completa dos 28 países da amostra, veja ainu.systems.
+      Narayama.live traduz o Índice N* — calculado pelo AINU — num mapa simples de 7 países, atualizado trimestralmente. Para a análise técnica completa dos 28 países da amostra, veja ainu.systems.
     </p>
     <div class="btn-row">
-      <a class="btn-primary lang-link" data-base="https://narayama-live.onrender.com" href="https://narayama-live.onrender.com" target="_blank" rel="noopener" data-i18n="btn_access">
-        ↗ Explorar o Observatório
-      </a>
-      <a class="btn-ghost lang-link" data-base="https://ainu-systems.onrender.com" href="https://ainu-systems.onrender.com" target="_blank" rel="noopener" data-i18n="btn_observatory">
-        AINU.systems
-      </a>
+      <div class="btn-group">
+        <a class="btn-primary lang-link" data-base="https://narayama-live.onrender.com" href="https://narayama-live.onrender.com" target="_blank" rel="noopener" data-i18n="btn_access">
+          ↗ Explorar o Observatório
+        </a>
+        <span class="btn-caption" data-i18n="btn_access_caption">(conteúdo aberto)</span>
+      </div>
+      <div class="btn-group">
+        <a class="btn-ghost lang-link" data-base="https://ainu-systems.onrender.com" href="https://ainu-systems.onrender.com" target="_blank" rel="noopener" data-i18n="btn_observatory">
+          AINU.systems
+        </a>
+        <span class="btn-caption" data-i18n="btn_observatory_caption">(colaboradores)</span>
+      </div>
     </div>
   </div>
 
@@ -707,7 +726,7 @@
       <div class="zone-seg-range">&ge; 2.00</div>
     </div>
   </div>
-  <p class="formula-note" data-i18n="formula_note">Normalização por raiz quadrada · Atualização mensal · Versionamento Git rastreável</p>
+  <p class="formula-note" data-i18n="formula_note">Normalização por raiz quadrada · Atualização trimestral · Versionamento Git rastreável</p>
 </article>
 
 <!-- ─── ABOUT ─────────────────────────────────────────────────── -->
@@ -716,10 +735,10 @@
   <h2 class="section-title" data-i18n="about_title">A porta pública do Índice de Narayama Sistêmico</h2>
   <div class="section-body">
     <p data-i18n="about_p1">
-      O AINU calcula, mês a mês, a capacidade de cada sociedade renovar suas próprias gerações — o Índice de Narayama Sistêmico (N*). O narayama.live é a porta pública dessa pesquisa: sem jargão técnico, mostra onde cada um dos 7 países destaque está nessa escala, agora.
+      O AINU calcula, a cada trimestre, a capacidade de cada sociedade renovar suas próprias gerações — o Índice de Narayama Sistêmico (N*). O narayama.live é a porta pública dessa pesquisa: sem jargão técnico, mostra onde cada um dos 7 países destaque está nessa escala, agora.
     </p>
     <p data-i18n="about_p2">
-      Desenvolvido no contexto do doutorado em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o narayama.live é atualizado automaticamente todo mês, com a mesma metodologia rastreável usada na análise técnica completa em ainu.systems.
+      Desenvolvido no contexto do doutorado em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o narayama.live é atualizado automaticamente a cada trimestre, com a mesma metodologia rastreável usada na análise técnica completa em ainu.systems.
     </p>
   </div>
 
@@ -818,19 +837,21 @@ const i18n = {
     nav_platform: "AINU.systems",
     hero_eyebrow: "Termômetro do Índice de Narayama Sistêmico",
     hero_title: "O retrato público da capacidade de cada país <em>de renovar sua população e prover seu futuro</em> de forma sustentável.",
-    hero_sub: "Narayama.live traduz o Índice N* — calculado pelo AINU — num mapa simples de 7 países, atualizado mensalmente. Para a análise técnica completa dos 28 países da amostra, veja ainu.systems.",
+    hero_sub: "Narayama.live traduz o Índice N* — calculado pelo AINU — num mapa simples de 7 países, atualizado trimestralmente. Para a análise técnica completa dos 28 países da amostra, veja ainu.systems.",
     btn_access: "↗ Explorar o Observatório",
     btn_observatory: "AINU.systems",
+    btn_access_caption: "(conteúdo aberto)",
+    btn_observatory_caption: "(colaboradores)",
     stat_countries: "Países destaque",
     stat_zones: "Zonas geracionais",
     stat_languages: "Idiomas",
     stat_follow: "Siga-nos",
     about_eyebrow: "O que é o Narayama.live",
     about_title: "A porta pública do Índice de Narayama Sistêmico",
-    about_p1: "O AINU calcula, mês a mês, a capacidade de cada sociedade renovar suas próprias gerações — o Índice de Narayama Sistêmico (N*). O narayama.live é a porta pública dessa pesquisa: sem jargão técnico, mostra onde cada um dos 7 países destaque está nessa escala, agora.",
-    about_p2: "Desenvolvido no contexto do doutorado em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o narayama.live é atualizado automaticamente todo mês, com a mesma metodologia rastreável usada na análise técnica completa em ainu.systems.",
+    about_p1: "O AINU calcula, a cada trimestre, a capacidade de cada sociedade renovar suas próprias gerações — o Índice de Narayama Sistêmico (N*). O narayama.live é a porta pública dessa pesquisa: sem jargão técnico, mostra onde cada um dos 7 países destaque está nessa escala, agora.",
+    about_p2: "Desenvolvido no contexto do doutorado em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o narayama.live é atualizado automaticamente a cada trimestre, com a mesma metodologia rastreável usada na análise técnica completa em ainu.systems.",
     formula_label: "Índice de Narayama Sistêmico",
-    formula_note: "Normalização por raiz quadrada · Atualização mensal · Versionamento Git rastreável",
+    formula_note: "Normalização por raiz quadrada · Atualização trimestral · Versionamento Git rastreável",
     zones_eyebrow: "Os Cinco Regimes Geracionais",
     zone_pec: "Colapso de Narayama (PEC)",
     zone_ta: "Tensão Acelerada",
@@ -860,19 +881,21 @@ const i18n = {
     nav_platform: "AINU.systems",
     hero_eyebrow: "Thermometer of the Systemic Narayama Index",
     hero_title: "A public portrait of each country's capacity <em>to renew its population and sustainably provide for its future</em>.",
-    hero_sub: "Narayama.live translates the N* Index — computed by AINU — into a simple map of 7 countries, updated monthly. For the full technical analysis of all 28 sample countries, see ainu.systems.",
+    hero_sub: "Narayama.live translates the N* Index — computed by AINU — into a simple map of 7 countries, updated quarterly. For the full technical analysis of all 28 sample countries, see ainu.systems.",
     btn_access: "↗ Explore the Observatory",
     btn_observatory: "AINU.systems",
+    btn_access_caption: "(open content)",
+    btn_observatory_caption: "(collaborators)",
     stat_countries: "Featured countries",
     stat_zones: "Generational zones",
     stat_languages: "Languages",
     stat_follow: "Follow us",
     about_eyebrow: "What is Narayama.live",
     about_title: "The public gateway to the Systemic Narayama Index",
-    about_p1: "AINU computes, month by month, each society's capacity to renew its own generations — the Systemic Narayama Index (N*). Narayama.live is the public gateway to that research: with no technical jargon, it shows where each of the 7 featured countries stands on that scale, right now.",
-    about_p2: "Developed within the doctoral research in Political Economy <em>From the Narayama Dilemma to the Civilizational Oikocene</em>, narayama.live is updated automatically every month, using the same traceable methodology behind the full technical analysis on ainu.systems.",
+    about_p1: "AINU computes, quarter by quarter, each society's capacity to renew its own generations — the Systemic Narayama Index (N*). Narayama.live is the public gateway to that research: with no technical jargon, it shows where each of the 7 featured countries stands on that scale, right now.",
+    about_p2: "Developed within the doctoral research in Political Economy <em>From the Narayama Dilemma to the Civilizational Oikocene</em>, narayama.live is updated automatically every quarter, using the same traceable methodology behind the full technical analysis on ainu.systems.",
     formula_label: "Narayama Systemic Index",
-    formula_note: "Square root normalization · Monthly updates · Traceable Git versioning",
+    formula_note: "Square root normalization · Quarterly updates · Traceable Git versioning",
     zones_eyebrow: "The Five Generational Regimes",
     zone_pec: "Narayama Collapse (PEC)",
     zone_ta: "Accelerated Tension",
@@ -902,19 +925,21 @@ const i18n = {
     nav_platform: "AINU.systems",
     hero_eyebrow: "Termómetro del Índice de Narayama Sistémico",
     hero_title: "El retrato público de la capacidad de cada país <em>para renovar su población y proveer su futuro</em> de forma sostenible.",
-    hero_sub: "Narayama.live traduce el Índice N* — calculado por AINU — en un mapa simple de 7 países, actualizado mensualmente. Para el análisis técnico completo de los 28 países de la muestra, vea ainu.systems.",
+    hero_sub: "Narayama.live traduce el Índice N* — calculado por AINU — en un mapa simple de 7 países, actualizado trimestralmente. Para el análisis técnico completo de los 28 países de la muestra, vea ainu.systems.",
     btn_access: "↗ Explorar el Observatorio",
     btn_observatory: "AINU.systems",
+    btn_access_caption: "(contenido abierto)",
+    btn_observatory_caption: "(colaboradores)",
     stat_countries: "Países destacados",
     stat_zones: "Regímenes generacionales",
     stat_languages: "Idiomas",
     stat_follow: "Síganos",
     about_eyebrow: "Qué es Narayama.live",
     about_title: "La puerta pública del Índice de Narayama Sistémico",
-    about_p1: "AINU calcula, mes a mes, la capacidad de cada sociedad de renovar sus propias generaciones — el Índice de Narayama Sistémico (N*). Narayama.live es la puerta pública de esa investigación: sin jerga técnica, muestra dónde está cada uno de los 7 países destacados en esa escala, ahora mismo.",
-    about_p2: "Desarrollado en el contexto del doctorado en Economía Política <em>Del Dilema de Narayama al Oicoceno Civilizacional</em>, narayama.live se actualiza automáticamente cada mes, con la misma metodología trazable usada en el análisis técnico completo de ainu.systems.",
+    about_p1: "AINU calcula, trimestre a trimestre, la capacidad de cada sociedad de renovar sus propias generaciones — el Índice de Narayama Sistémico (N*). Narayama.live es la puerta pública de esa investigación: sin jerga técnica, muestra dónde está cada uno de los 7 países destacados en esa escala, ahora mismo.",
+    about_p2: "Desarrollado en el contexto del doctorado en Economía Política <em>Del Dilema de Narayama al Oicoceno Civilizacional</em>, narayama.live se actualiza automáticamente cada trimestre, con la misma metodología trazable usada en el análisis técnico completo de ainu.systems.",
     formula_label: "Índice Sistémico de Narayama",
-    formula_note: "Normalización por raíz cuadrada · Actualización mensual · Versionado Git trazable",
+    formula_note: "Normalización por raíz cuadrada · Actualización trimestral · Versionado Git trazable",
     zones_eyebrow: "Los Cinco Regímenes Generacionales",
     zone_pec: "Colapso de Narayama (PEC)",
     zone_ta: "Tensión Acelerada",
@@ -944,19 +969,21 @@ const i18n = {
     nav_platform: "AINU.systems",
     hero_eyebrow: "Thermomètre de l'indice de Narayama systémique",
     hero_title: "Le portrait public de la capacité de chaque pays <em>à renouveler sa population et assurer durablement son avenir</em>.",
-    hero_sub: "Narayama.live traduit l'Indice N* — calculé par AINU — en une carte simple de 7 pays, mise à jour mensuellement. Pour l'analyse technique complète des 28 pays de l'échantillon, voir ainu.systems.",
+    hero_sub: "Narayama.live traduit l'Indice N* — calculé par AINU — en une carte simple de 7 pays, mise à jour trimestriellement. Pour l'analyse technique complète des 28 pays de l'échantillon, voir ainu.systems.",
     btn_access: "↗ Explorer l'Observatoire",
     btn_observatory: "AINU.systems",
+    btn_access_caption: "(contenu ouvert)",
+    btn_observatory_caption: "(collaborateurs)",
     stat_countries: "Pays en vedette",
     stat_zones: "Régimes générationnels",
     stat_languages: "Langues",
     stat_follow: "Suivez-nous",
     about_eyebrow: "Qu'est-ce que Narayama.live",
     about_title: "La porte publique de l'indice de Narayama systémique",
-    about_p1: "AINU calcule, mois après mois, la capacité de chaque société à renouveler ses propres générations — l'indice de Narayama systémique (N*). Narayama.live est la porte publique de cette recherche : sans jargon technique, elle montre où se situe chacun des 7 pays en vedette sur cette échelle, dès maintenant.",
-    about_p2: "Développé dans le cadre du doctorat en Économie Politique <em>Du Dilemme de Narayama à l'Oïcocène Civilisationnel</em>, narayama.live est mis à jour automatiquement chaque mois, avec la même méthodologie traçable utilisée dans l'analyse technique complète sur ainu.systems.",
+    about_p1: "AINU calcule, trimestre après trimestre, la capacité de chaque société à renouveler ses propres générations — l'indice de Narayama systémique (N*). Narayama.live est la porte publique de cette recherche : sans jargon technique, elle montre où se situe chacun des 7 pays en vedette sur cette échelle, dès maintenant.",
+    about_p2: "Développé dans le cadre du doctorat en Économie Politique <em>Du Dilemme de Narayama à l'Oïcocène Civilisationnel</em>, narayama.live est mis à jour automatiquement chaque trimestre, avec la même méthodologie traçable utilisée dans l'analyse technique complète sur ainu.systems.",
     formula_label: "Indice Systémique de Narayama",
-    formula_note: "Normalisation par racine carrée · Mise à jour mensuelle · Versionnement Git traçable",
+    formula_note: "Normalisation par racine carrée · Mise à jour trimestrielle · Versionnement Git traçable",
     zones_eyebrow: "Les Cinq Régimes Générationnels",
     zone_pec: "Effondrement de Narayama (PEC)",
     zone_ta: "Tension Accélérée",
@@ -986,19 +1013,21 @@ const i18n = {
     nav_platform: "AINU.systems",
     hero_eyebrow: "체계적 나라야마 지수 온도계",
     hero_title: "각 나라가 <em>인구를 재생산하고 지속가능하게 미래를 마련할</em> 능력을 보여주는 공개 초상.",
-    hero_sub: "narayama.live는 AINU가 계산하는 N* 지수를 7개국의 간단한 지도로 변환하여 매달 갱신합니다. 표본 28개국에 대한 전체 기술 분석은 ainu.systems를 참고하세요.",
+    hero_sub: "narayama.live는 AINU가 계산하는 N* 지수를 7개국의 간단한 지도로 변환하여 분기별로 갱신합니다. 표본 28개국에 대한 전체 기술 분석은 ainu.systems를 참고하세요.",
     btn_access: "↗ 관측소 둘러보기",
     btn_observatory: "AINU.systems",
+    btn_access_caption: "(공개 콘텐츠)",
+    btn_observatory_caption: "(협력자)",
     stat_countries: "주요 국가",
     stat_zones: "세대 구역",
     stat_languages: "언어",
     stat_follow: "팔로우하기",
     about_eyebrow: "Narayama.live란",
     about_title: "체계적 나라야마 지수의 공개 관문",
-    about_p1: "AINU는 매달 각 사회가 스스로 세대를 재생산하는 능력—체계적 나라야마 지수(N*)—을 계산합니다. narayama.live는 이 연구의 공개 관문으로, 전문 용어 없이 주요 7개국이 지금 이 척도에서 어디에 있는지 보여줍니다.",
-    about_p2: "정치경제학 박사 연구 <em>나라야마의 딜레마에서 문명적 오이코세까지</em>의 맥락에서 개발된 narayama.live는 매달 자동으로 갱신되며, ainu.systems의 전체 기술 분석에 사용되는 것과 동일한 추적 가능한 방법론을 사용합니다.",
+    about_p1: "AINU는 분기마다 각 사회가 스스로 세대를 재생산하는 능력—체계적 나라야마 지수(N*)—을 계산합니다. narayama.live는 이 연구의 공개 관문으로, 전문 용어 없이 주요 7개국이 지금 이 척도에서 어디에 있는지 보여줍니다.",
+    about_p2: "정치경제학 박사 연구 <em>나라야마의 딜레마에서 문명적 오이코세까지</em>의 맥락에서 개발된 narayama.live는 분기마다 자동으로 갱신되며, ainu.systems의 전체 기술 분석에 사용되는 것과 동일한 추적 가능한 방법론을 사용합니다.",
     formula_label: "나라야마 체계 지수",
-    formula_note: "제곱근 정규화 · 매월 갱신 · 추적 가능한 Git 버전 관리",
+    formula_note: "제곱근 정규화 · 분기별 갱신 · 추적 가능한 Git 버전 관리",
     zones_eyebrow: "다섯 가지 세대적 체제",
     zone_pec: "나라야마 붕괴 (PEC)",
     zone_ta: "가속 긴장",
@@ -1028,19 +1057,21 @@ const i18n = {
     nav_platform: "AINU.systems",
     hero_eyebrow: "Termometro dell'Indice di Narayama Sistemico",
     hero_title: "Il ritratto pubblico della capacità di ogni paese <em>di rinnovare la propria popolazione e garantire un futuro sostenibile</em>.",
-    hero_sub: "Narayama.live traduce l'Indice N* — calcolato da AINU — in una mappa semplice di 7 paesi, aggiornata mensilmente. Per l'analisi tecnica completa dei 28 paesi del campione, vedi ainu.systems.",
+    hero_sub: "Narayama.live traduce l'Indice N* — calcolato da AINU — in una mappa semplice di 7 paesi, aggiornata trimestralmente. Per l'analisi tecnica completa dei 28 paesi del campione, vedi ainu.systems.",
     btn_access: "↗ Esplora l'Osservatorio",
     btn_observatory: "AINU.systems",
+    btn_access_caption: "(contenuto aperto)",
+    btn_observatory_caption: "(collaboratori)",
     stat_countries: "Paesi in evidenza",
     stat_zones: "Regimi generazionali",
     stat_languages: "Lingue",
     stat_follow: "Seguici",
     about_eyebrow: "Cos'è Narayama.live",
     about_title: "La porta pubblica dell'Indice di Narayama Sistemico",
-    about_p1: "AINU calcola, mese dopo mese, la capacità di ogni società di rinnovare le proprie generazioni — l'Indice di Narayama Sistemico (N*). Narayama.live è la porta pubblica di questa ricerca: senza gergo tecnico, mostra dove si trova ciascuno dei 7 paesi in evidenza su questa scala, adesso.",
-    about_p2: "Sviluppato nel contesto del dottorato in Economia Politica <em>Dal Dilemma di Narayama all'Oikoceno Civilizazionale</em>, narayama.live viene aggiornato automaticamente ogni mese, con la stessa metodologia tracciabile usata nell'analisi tecnica completa su ainu.systems.",
+    about_p1: "AINU calcola, trimestre dopo trimestre, la capacità di ogni società di rinnovare le proprie generazioni — l'Indice di Narayama Sistemico (N*). Narayama.live è la porta pubblica di questa ricerca: senza gergo tecnico, mostra dove si trova ciascuno dei 7 paesi in evidenza su questa scala, adesso.",
+    about_p2: "Sviluppato nel contesto del dottorato in Economia Politica <em>Dal Dilemma di Narayama all'Oikoceno Civilizazionale</em>, narayama.live viene aggiornato automaticamente ogni trimestre, con la stessa metodologia tracciabile usata nell'analisi tecnica completa su ainu.systems.",
     formula_label: "Indice Sistemico di Narayama",
-    formula_note: "Normalizzazione per radice quadrata · Aggiornamento mensile · Versionamento Git tracciabile",
+    formula_note: "Normalizzazione per radice quadrata · Aggiornamento trimestrale · Versionamento Git tracciabile",
     zones_eyebrow: "I Cinque Regimi Generazionali",
     zone_pec: "Collasso di Narayama (PEC)",
     zone_ta: "Tensione Accelerata",
@@ -1070,19 +1101,21 @@ const i18n = {
     nav_platform: "AINU.systems",
     hero_eyebrow: "系统性楢山指数温度计",
     hero_title: "呈现各国<em>更新人口、可持续保障未来</em>能力的公开写照。",
-    hero_sub: "narayama.live将AINU计算的N*指数转化为7个国家的简明地图，每月更新。样本中28个国家的完整技术分析请见ainu.systems。",
+    hero_sub: "narayama.live将AINU计算的N*指数转化为7个国家的简明地图，每季度更新。样本中28个国家的完整技术分析请见ainu.systems。",
     btn_access: "↗ 探索观测站",
     btn_observatory: "AINU.systems",
+    btn_access_caption: "(公开内容)",
+    btn_observatory_caption: "(合作者)",
     stat_countries: "重点国家",
     stat_zones: "代际区间",
     stat_languages: "语言",
     stat_follow: "关注我们",
     about_eyebrow: "什么是narayama.live",
     about_title: "系统性楢山指数的公共入口",
-    about_p1: "AINU每月计算每个社会更新其世代的能力——系统性楢山指数（N*）。narayama.live是这项研究的公共入口：没有技术术语，展示7个重点国家目前在这一量表上的位置。",
-    about_p2: "narayama.live在政治经济学博士研究《从楢山难题到文明世的宜居纪》的背景下开发，每月自动更新，采用与ainu.systems完整技术分析相同的可追溯方法论。",
+    about_p1: "AINU每季度计算每个社会更新其世代的能力——系统性楢山指数（N*）。narayama.live是这项研究的公共入口：没有技术术语，展示7个重点国家目前在这一量表上的位置。",
+    about_p2: "narayama.live在政治经济学博士研究《从楢山难题到文明世的宜居纪》的背景下开发，每季度自动更新，采用与ainu.systems完整技术分析相同的可追溯方法论。",
     formula_label: "Narayama系统指数",
-    formula_note: "平方根标准化 · 每月更新 · 可追溯Git版本控制",
+    formula_note: "平方根标准化 · 每季度更新 · 可追溯Git版本控制",
     zones_eyebrow: "五大代际区间",
     zone_pec: "楢山崩溃 (PEC)",
     zone_ta: "加速紧张",
@@ -1112,19 +1145,21 @@ const i18n = {
     nav_platform: "AINU.systems",
     hero_eyebrow: "システミック・ナラヤマ指数の温度計",
     hero_title: "各国が<em>人口を更新し、持続可能な形で未来を築く</em>能力を映し出す公開の肖像。",
-    hero_sub: "narayama.liveは、AINUが算出するN*指数を7か国のシンプルな地図に変換し、毎月更新します。サンプル28か国の詳細な技術分析はainu.systemsをご覧ください。",
+    hero_sub: "narayama.liveは、AINUが算出するN*指数を7か国のシンプルな地図に変換し、四半期ごとに更新します。サンプル28か国の詳細な技術分析はainu.systemsをご覧ください。",
     btn_access: "↗ 観測所を見る",
     btn_observatory: "AINU.systems",
+    btn_access_caption: "(公開コンテンツ)",
+    btn_observatory_caption: "(協力者)",
     stat_countries: "注目国",
     stat_zones: "世代的体制",
     stat_languages: "言語",
     stat_follow: "フォローする",
     about_eyebrow: "narayama.liveとは",
     about_title: "システミック・ナラヤマ指数への公開の入口",
-    about_p1: "AINUは毎月、各社会が自らの世代を更新する能力——システミック・ナラヤマ指数（N*）——を計算します。narayama.liveはこの研究への公開の入口です：専門用語なしで、注目7か国それぞれが今このスケール上のどこにいるかを示します。",
-    about_p2: "政治経済学博士研究『ナラヤマのジレンマから文明的オイコセーンへ』の文脈で開発されたnarayama.liveは、毎月自動的に更新され、ainu.systemsの詳細な技術分析と同じ追跡可能な方法論を使用します。",
+    about_p1: "AINUは四半期ごとに、各社会が自らの世代を更新する能力——システミック・ナラヤマ指数（N*）——を計算します。narayama.liveはこの研究への公開の入口です：専門用語なしで、注目7か国それぞれが今このスケール上のどこにいるかを示します。",
+    about_p2: "政治経済学博士研究『ナラヤマのジレンマから文明的オイコセーンへ』の文脈で開発されたnarayama.liveは、四半期ごとに自動的に更新され、ainu.systemsの詳細な技術分析と同じ追跡可能な方法論を使用します。",
     formula_label: "ナラヤマ・システミック指数",
-    formula_note: "平方根正規化 · 毎月更新 · 追跡可能なGitバージョン管理",
+    formula_note: "平方根正規化 · 四半期更新 · 追跡可能なGitバージョン管理",
     zones_eyebrow: "5つの世代的体制",
     zone_pec: "ナラヤマ崩壊 (PEC)",
     zone_ta: "加速緊張",
@@ -1154,19 +1189,21 @@ const i18n = {
     nav_platform: "AINU.systems",
     hero_eyebrow: "Systeemisen Narayama-indeksin lämpömittari",
     hero_title: "Julkinen kuva kunkin maan kyvystä <em>uudistaa väestöään ja turvata tulevaisuutensa</em> kestävällä tavalla.",
-    hero_sub: "Narayama.live kääntää AINU:n laskeman N*-indeksin yksinkertaiseksi 7 maan kartaksi, joka päivitetään kuukausittain. Otoksen kaikkien 28 maan täydellinen tekninen analyysi löytyy sivustolta ainu.systems.",
+    hero_sub: "Narayama.live kääntää AINU:n laskeman N*-indeksin yksinkertaiseksi 7 maan kartaksi, joka päivitetään neljännesvuosittain. Otoksen kaikkien 28 maan täydellinen tekninen analyysi löytyy sivustolta ainu.systems.",
     btn_access: "↗ Tutustu observatorioon",
     btn_observatory: "AINU.systems",
+    btn_access_caption: "(avoin sisältö)",
+    btn_observatory_caption: "(yhteistyökumppanit)",
     stat_countries: "Esiteltyä maata",
     stat_zones: "Sukupolvivyöhykettä",
     stat_languages: "Kieltä",
     stat_follow: "Seuraa meitä",
     about_eyebrow: "Mikä on Narayama.live",
     about_title: "Systeemisen Narayama-indeksin julkinen portti",
-    about_p1: "AINU laskee joka kuukausi kunkin yhteiskunnan kyvyn uudistaa omia sukupolviaan — systeemisen Narayama-indeksin (N*). Narayama.live on tämän tutkimuksen julkinen portti: ilman teknistä ammattikieltä se näyttää, missä kukin 7 esitellystä maasta on tällä asteikolla juuri nyt.",
-    about_p2: "Kehitetty osana valtio-opin tohtoritutkimusta <em>Narayaman dilemmasta sivilisaation Oikoseeniin</em>, narayama.live päivittyy automaattisesti joka kuukausi, samalla jäljitettävällä menetelmällä kuin ainu.systemsin täydellinen tekninen analyysi.",
+    about_p1: "AINU laskee neljännesvuosittain kunkin yhteiskunnan kyvyn uudistaa omia sukupolviaan — systeemisen Narayama-indeksin (N*). Narayama.live on tämän tutkimuksen julkinen portti: ilman teknistä ammattikieltä se näyttää, missä kukin 7 esitellystä maasta on tällä asteikolla juuri nyt.",
+    about_p2: "Kehitetty osana valtio-opin tohtoritutkimusta <em>Narayaman dilemmasta sivilisaation Oikoseeniin</em>, narayama.live päivittyy automaattisesti neljännesvuosittain, samalla jäljitettävällä menetelmällä kuin ainu.systemsin täydellinen tekninen analyysi.",
     formula_label: "Systeeminen Narayama-indeksi",
-    formula_note: "Neliöjuurinormalisointi · Kuukausittainen päivitys · Jäljitettävä Git-versiointi",
+    formula_note: "Neliöjuurinormalisointi · Neljännesvuosittainen päivitys · Jäljitettävä Git-versiointi",
     zones_eyebrow: "Viisi sukupolvien regiimiä",
     zone_pec: "Narayama-romahdus (PEC)",
     zone_ta: "Kiihtyvä jännite",
