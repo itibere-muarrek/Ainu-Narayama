@@ -1,24 +1,29 @@
 """
 narayama.live — Interface pública minimalista do AINU-Narayama.
 
-Mostra o Índice de Narayama Sistêmico (N*) apenas para os 7 países
+Mostra o Índice de Narayama Sistêmico (N*) apenas para os 8 países
 destaque, sem os filtros e componentes técnicos detalhados (esses
 ficam na plataforma restrita: ver app/ainu_systems/app.py).
 
 Fonte: V1_EcoPol_062426_v8.0.docx, Anexo 14 (Glossário — "AINU"):
 "Interface pública: Narayama.live (7 países destaque); interface
-restrita a pesquisadores: ainu.systems." Lista dos 7 países destaque
-confirmada pelo autor da tese em 2026-07-01 (ver
-src.config.PAISES_DESTAQUE_NARAYAMA_LIVE): Argentina, Brasil, China,
-Coreia do Sul, EUA, Itália, Japão.
+restrita a pesquisadores: ainu.systems." (citação literal do
+documento-fonte na data original — mantida como "7" de propósito,
+não é reescrita aqui.) Lista original de 7 países destaque confirmada
+pelo autor da tese em 2026-07-01; Índia (IND) acrescentada em
+2026-08-31 (decisão do autor, ver memória
+evolucao_futura_ainu_narayama_sites) pra completar um grid 4+4 nas
+landing pages — ver src.config.PAISES_DESTAQUE_NARAYAMA_LIVE: Argentina,
+Brasil, China, Coreia do Sul, EUA, Índia, Itália, Japão.
 
-Países-exemplo pedagógicos (2026-07-30, decisão do autor): os 7
+Países-exemplo pedagógicos (2026-07-30, decisão do autor): os países
 destaque caem só em 2 das 5 zonas do N* (PEC e PEA) — sem nenhum
 exemplo de Tensão Acelerada, Tensão Populacional ou PEEC, enfraquecendo
-a leitura visual da escala completa. Acrescenta França, México e
+a leitura visual da escala completa (situação que persiste com os 8
+atuais, já que Índia também é PEA). Acrescenta França, México e
 Nigéria (src.config.PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE) só pra cobertura
 pedagógica das 5 zonas — não substitui nem se mistura com a lista
-oficial de 7 (marcados com a tag "exemplo" nos cards).
+oficial de destaque (marcados com a tag "exemplo" nos cards).
 
 Fonte de dados esperada (produzida pelo pipeline da Fase 2+):
 data/processed/n_index_2024.csv — colunas: codigo, n_base, n_estrela,
@@ -142,8 +147,8 @@ with st.expander(t("como_ler_nstar_expander_label", lang)):
 
 @st.cache_data
 def carregar_destaques() -> pd.DataFrame:
-    """Carrega o snapshot 2024 do N*: os 7 países destaque + 3 exemplos
-    pedagógicos (ver docstring do módulo) — 10 países no total."""
+    """Carrega o snapshot 2024 do N*: os 8 países destaque + 3 exemplos
+    pedagógicos (ver docstring do módulo) — 11 países no total."""
     caminho = DATA_PROCESSED_DIR / "n_index_2024.csv"
     if not caminho.exists():
         return pd.DataFrame()
@@ -190,7 +195,7 @@ if df.empty:
 df["nome_exibicao"] = df["codigo"].map(lambda c: nome_pais(c, lang))
 
 # -----------------------------------------------------------------------
-# Tabela Geracional de Narayama (versão reduzida, 7 países destaque)
+# Tabela Geracional de Narayama (versão reduzida, 8 países destaque)
 # -----------------------------------------------------------------------
 # Mesma grade do ainu.systems (ver app/ainu_systems/app.py — Seção
 # 9-A.7 da tese), portada em 2026-07-15. Movida para o topo da página
@@ -278,9 +283,9 @@ if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
 
 st.header(t("n_star_header_destaque", lang))
 
-# Só os 7 países destaque oficiais aqui (não os 3 exemplos pedagógicos,
+# Só os 8 países destaque oficiais aqui (não os 3 exemplos pedagógicos,
 # que ficam restritos à Tabela Geracional acima) — mantém o cabeçalho
-# "7 Países Destaque" literalmente correto.
+# "8 Países Destaque" literalmente correto.
 _df_destaque_oficial = df[~df["eh_exemplo"]] if "eh_exemplo" in df.columns else df
 
 _col_pais = t("col_pais", lang)

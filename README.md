@@ -72,7 +72,7 @@ streamlit run app/ainu_systems/app.py
 Acesse: http://localhost:8501
 
 ```bash
-# narayama.live — pública, só os 7 países destaque
+# narayama.live — pública, só os 8 países destaque
 streamlit run app/narayama_live/app.py
 ```
 Acesse: http://localhost:8502 (ver `.claude/launch.json` — as duas
@@ -135,7 +135,7 @@ redesploya sozinho.
   quantitativo e normalização do N* — as 3 mudanças metodológicas
   desta fase, documentadas em `docs/registro_mudancas_metodologicas_2026-07.docx`.
 - ✅ Tabela Geracional (visualização em formato periódico), encabeçando
-  os dois sites — 28 países no ainu.systems, 7 países destaque no
+  os dois sites — 28 países no ainu.systems, 8 países destaque no
   narayama.live.
 - ✅ P_2.1/P_eq (população de convergência e de equilíbrio, formalização
   do autor de 2026-07-16 — ver `docs/definitions.md`, seção 8-B) nos

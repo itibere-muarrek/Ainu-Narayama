@@ -25,7 +25,7 @@ Tentativa 2 (mesma auditoria): usar direto a trajetória real da ONU
 (variante "Zero migration", fecundidade "Medium" + migração zero, sem
 nenhum salto). Resultado: nenhum dos 20 países com TFR hoje abaixo de
 2,1 (dos 28 do projeto) cruza TFR=2,1 até 2100 — o fim do horizonte de
-projeção da ONU. Isso inclui os 7 países destaque do narayama.live
+projeção da ONU. Isso inclui os 8 países destaque do narayama.live
 (Argentina, Brasil, China, Coreia do Sul, EUA, Itália, Japão). Ou seja,
 o dado real e puro da ONU não cobre esse cenário — não existe "ano em
 que a TFR retorna a 2,1" dentro do horizonte disponível pra praticamente

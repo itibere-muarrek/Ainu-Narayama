@@ -406,19 +406,27 @@ del _codigo, _ajustes, _reducao_total
 # Plataformas (Anexo 14 — Glossário Técnico, "AINU")
 # ---------------------------------------------------------------------------
 # narayama.live: interface pública minimalista, mostra só os países
-# destaque abaixo (confirmado pelo autor da tese em 2026-07-01).
+# destaque abaixo. Lista original de 7 confirmada pelo autor da tese em
+# 2026-07-01 (citação literal no Anexo 14: "Interface pública:
+# Narayama.live (7 países destaque)"); Índia acrescentada em 2026-08-31
+# (decisão do autor, ver [[evolucao_futura_ainu_narayama_sites]]) —
+# ainda PEA (1,37), fecha um grid 4 PEA + 4 PEC nas landing pages. A
+# citação literal do Anexo 14 acima permanece "7" porque é texto
+# copiado do documento-fonte na data original; não é reescrita aqui.
 # ainu.systems: plataforma restrita a pesquisadores e formuladores de
 # política, com cálculos detalhados, simulações e calibração para os
 # 28 países da amostra (ver app/ainu_systems/ e app/narayama_live/).
 
-PAISES_DESTAQUE_NARAYAMA_LIVE = ["ARG", "BRA", "CHN", "KOR", "USA", "ITA", "JPN"]
+PAISES_DESTAQUE_NARAYAMA_LIVE = ["ARG", "BRA", "CHN", "IND", "KOR", "USA", "ITA", "JPN"]
 
 # Países-exemplo pedagógicos (decisão desta sessão, 2026-07-30): os 7
-# destaque acima caem só em 2 das 5 zonas do N* (PEC e PEA), enfraquecendo
-# a leitura visual da escala completa. Acréscimo, não substituição — a
-# lista de 7 permanece intacta (decisão do autor de 2026-07-01). França
-# (0,75, Tensão Acelerada — mais inequívoco que Reino Unido 0,80, perto
-# do limiar), México (1,67, Tensão Populacional), Nigéria (2,58, PEEC).
+# destaque originais caem só em 2 das 5 zonas do N* (PEC e PEA),
+# enfraquecendo a leitura visual da escala completa — situação que
+# persiste com os 8 atuais (Índia também é PEA). Acréscimo, não
+# substituição — a lista de destaque permanece intacta (decisão do
+# autor de 2026-07-01, expandida em 2026-08-31). França (0,75, Tensão
+# Acelerada — mais inequívoco que Reino Unido 0,80, perto do limiar),
+# México (1,67, Tensão Populacional), Nigéria (2,58, PEEC).
 PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE = ["FRA", "MEX", "NGA"]
 
 # ---------------------------------------------------------------------------

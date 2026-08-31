@@ -17,7 +17,7 @@ GitHub (código + dados pequenos)
 Render (build + hospedagem, redeploy automático)
    │
    ├── ainu-systems  → ainu.systems     (plataforma restrita, 28 países)
-   └── narayama-live → narayama.live    (plataforma pública, 7 países)
+   └── narayama-live → narayama.live    (plataforma pública, 8 países)
         │
         └── DNS gerenciado na Namecheap
 ```
@@ -133,7 +133,7 @@ Ainu.Narayama/
 │   └── falseability.py            # Protocolo de Falseabilidade (7 testes, Anexo 9)
 ├── app/
 │   ├── ainu_systems/app.py      # plataforma restrita (28 países, gate de senha)
-│   ├── narayama_live/app.py     # plataforma pública (7 países destaque)
+│   ├── narayama_live/app.py     # plataforma pública (8 países destaque)
 │   └── requirements.txt
 ├── data/
 │   ├── raw/un_wpp.csv           # painel real UN WPP (28 países, 1999+2024), commitado

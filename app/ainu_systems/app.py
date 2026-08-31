@@ -4,7 +4,7 @@ ainu.systems — Plataforma restrita a pesquisadores e formuladores de política
 Cálculos detalhados, filtros por perfil/região e os componentes brutos
 do N* (NGII_puro, Fator_Geracional, Fator_Alocativo) para os 28
 países da amostra. Versão pública e minimalista: ver
-app/narayama_live/app.py (7 países destaque, sem detalhamento técnico).
+app/narayama_live/app.py (8 países destaque, sem detalhamento técnico).
 
 Fonte: V1_EcoPol_062426_v8.0.docx, Anexo 14 (Glossário — "AINU"):
 "Interface pública: Narayama.live (7 países destaque); interface
