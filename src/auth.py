@@ -34,15 +34,30 @@ from src.senha import gerar_hash, verificar_hash
 _CHAVE_SESSAO = "ainu_usuario"
 
 
-def _usuarios() -> Optional[dict]:
-    bruto = os.environ.get("AINU_USERS")
-    if not bruto:
-        return None
+def ler_usuarios(bruto: Optional[str]):
+    """Interpreta AINU_USERS. Devolve (usuarios, erro): (None, None) se a variável
+    não existe; (None, "motivo") se existe mas está inválida; (dict, None) se ok.
+
+    Tolera o erro mais comum de colagem: o JSON inteiro entre aspas (e com aspas
+    internas escapadas), lendo-o uma segunda vez.
+    """
+    if bruto is None or not bruto.strip():
+        return None, None
     try:
-        dados = json.loads(bruto)
-        return dados if isinstance(dados, dict) and dados else None
-    except json.JSONDecodeError:
-        return None
+        dados = json.loads(bruto.strip())
+        if isinstance(dados, str):  # colado entre aspas
+            dados = json.loads(dados)
+    except (json.JSONDecodeError, ValueError):
+        return None, "não é um JSON válido (cole o conteúdo inteiro do arquivo, começando em { e terminando em })"
+    if not isinstance(dados, dict) or not dados:
+        return None, "não é um objeto {usuário: hash} (vazio ou de outro tipo)"
+    if not all(isinstance(v, str) and v.startswith("pbkdf2_sha256$") for v in dados.values()):
+        return None, "os valores não parecem hashes pbkdf2_sha256 (foram coladas senhas em vez de hashes?)"
+    return dados, None
+
+
+def _usuarios():
+    return ler_usuarios(os.environ.get("AINU_USERS"))
 
 
 def usuario_logado() -> Optional[str]:
@@ -55,7 +70,11 @@ def exigir_login(txt) -> Optional[str]:
 
     `txt` é uma função texto(chave) já ligada ao idioma (ex.: lambda k: t(k, lang)).
     """
-    usuarios = _usuarios()
+    usuarios, erro_config = _usuarios()
+    if erro_config:
+        # Variável existe mas está inválida: avisa claramente (em vez de ignorar em
+        # silêncio) e segue no modo antigo, para não trancar o administrador.
+        st.error(f"Configuração de logins (AINU_USERS) inválida: {erro_config}. Usando o modo de senha única.")
 
     if usuarios is None:  # modo antigo
         senha_esperada = os.environ.get("AINU_SYSTEMS_PASSWORD")

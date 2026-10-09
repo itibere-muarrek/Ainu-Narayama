@@ -77,6 +77,23 @@ def test_hash_de_senha():
     assert gerar_hash("a") != gerar_hash("a")  # sal individual
 
 
+def test_leitura_de_ainu_users():
+    import json
+
+    from src.auth import ler_usuarios
+
+    h = gerar_hash("x", 1000)
+    ok = json.dumps({"Visitor1": h})
+    assert ler_usuarios(None) == (None, None)
+    assert ler_usuarios("  ") == (None, None)
+    assert ler_usuarios(ok) == ({"Visitor1": h}, None)
+    assert ler_usuarios("  " + ok + "\n")[0] == {"Visitor1": h}  # espaços/quebra de linha
+    assert ler_usuarios(json.dumps(ok))[0] == {"Visitor1": h}  # colado entre aspas
+    for ruim in ("{lixo", "[]", "{}", '{"Visitor1": "senha-em-texto"}', "123"):
+        usuarios, erro = ler_usuarios(ruim)
+        assert usuarios is None and erro, ruim
+
+
 def test_textos_da_simulacao_completos_e_consistentes():
     import string
 
