@@ -54,6 +54,8 @@ import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
+from src.auth import exigir_login
+from src.i18n_simulacao import ts
 from src.config import (
     CODIGO_DDI_POR_PAIS,
     CORES_5_ZONAS,
@@ -83,32 +85,15 @@ st.set_page_config(page_title="ainu.systems", layout="wide")
 lang = seletor_idioma()
 
 # -----------------------------------------------------------------------
-# Controle de acesso (placeholder — Fase 1)
+# Controle de acesso
 # -----------------------------------------------------------------------
-# "Plataforma restrita" na tese implica autenticação real (contas,
-# papéis de pesquisador/formulador de política). Nesta fase, usamos
-# apenas uma senha única via variável de ambiente AINU_SYSTEMS_PASSWORD
-# como placeholder. Sem essa variável configurada, o acesso fica
-# liberado (para não travar o desenvolvimento local) mas com aviso.
+# Logins individuais (Visitor1..N) via variável AINU_USERS com hashes —
+# ver src/auth.py e scripts/gerar_credenciais.py. Sem AINU_USERS, vale o
+# modo antigo (senha única em AINU_SYSTEMS_PASSWORD); sem nenhuma das
+# duas, acesso liberado com aviso (só desenvolvimento local).
 
 
-def _acesso_liberado() -> bool:
-    senha_esperada = os.environ.get("AINU_SYSTEMS_PASSWORD")
-
-    if not senha_esperada:
-        st.warning(t("auth_nao_configurada", lang))
-        return True
-
-    senha_digitada = st.text_input(t("senha_prompt", lang), type="password")
-    if senha_digitada == senha_esperada:
-        return True
-    if senha_digitada:
-        st.error(t("senha_incorreta", lang))
-    return False
-
-
-if not _acesso_liberado():
-    st.stop()
+exigir_login(lambda k: ts(k, lang))
 
 # -----------------------------------------------------------------------
 # Cabeçalho

@@ -32,6 +32,8 @@ services:
     envVars:
       - key: AINU_SYSTEMS_PASSWORD
         sync: false
+      - key: AINU_USERS
+        sync: false
 
   - type: web
     name: narayama-live

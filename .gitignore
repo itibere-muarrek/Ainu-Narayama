@@ -34,6 +34,7 @@ data/processed/*
 !data/raw/convergencia_un.csv
 !data/processed/n_index_2024.csv
 !data/processed/n_index_historico.csv
+!data/processed/projecao_inputs.npz
 
 # IDE
 .vscode/

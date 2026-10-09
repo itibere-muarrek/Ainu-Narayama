@@ -76,9 +76,13 @@ startCommand: streamlit run app/<serviço>/app.py --server.port $PORT --server.a
 ```
 
 **Variáveis de ambiente**:
-- `AINU_SYSTEMS_PASSWORD` (só no serviço `ainu-systems`) — senha do gate de
-  acesso da plataforma restrita. Definida direto no painel do Render, **não
-  está no repositório** (`render.yaml` só reserva o nome com `sync: false`).
+- `AINU_USERS` (só no serviço `ainu-systems`) — JSON `{"Visitor1": "<hash>", ...}`
+  com hashes PBKDF2-SHA256 (sal individual) dos logins individuais. Gerado por
+  `scripts/gerar_credenciais.py`; **não contém senhas**, mas também fica só no
+  painel do Render.
+- `AINU_SYSTEMS_PASSWORD` (só no serviço `ainu-systems`) — modo antigo: senha
+  única do gate. Só vale se `AINU_USERS` não existir. Definida direto no painel
+  do Render, **não está no repositório**.
 
 **Limites do plano gratuito**:
 - 750h de instância/mês, **compartilhadas entre os dois serviços**.
@@ -170,8 +174,10 @@ fecundidade são esperados (ver definitions.md, seção 8).
 
 ## 8. Segurança e segredos
 
-- Único segredo do projeto: `AINU_SYSTEMS_PASSWORD`, mantido exclusivamente
-  no painel do Render (variável de ambiente), nunca no repositório.
+- Segredos do projeto: `AINU_USERS` (hashes dos logins individuais) e
+  `AINU_SYSTEMS_PASSWORD` (modo antigo), mantidos exclusivamente no painel do
+  Render (variáveis de ambiente), nunca no repositório. As senhas em texto dos
+  `Visitor1..6` ficam só com o administrador, em `~/ainu_credenciais/`.
 - `.gitignore` bloqueia `.env`, `data/raw/*` e `data/processed/*` por padrão,
   com exceção explícita pros dois arquivos pequenos e não-sensíveis já
   commitados (`un_wpp.csv`, `n_index_2024.csv`).

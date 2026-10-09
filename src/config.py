@@ -270,6 +270,18 @@ def _cortes_ponderados(composicao: dict) -> tuple:
     return math.floor(base_max + 0.5), math.floor(topo_min + 0.5)
 
 
+def cortes_por_composicao(composicao: dict) -> tuple:
+    """Cortes (pop_base_max, pop_topo_min) de uma composição de perfis.
+
+    Versão pública de _cortes_ponderados, usada pelo motor de projeção
+    (src/projecao.py) para recalcular os cortes na hora a partir de
+    COMPOSICAO_PERFIL_POR_PAIS — assim, editar um peso à mão tem efeito
+    imediato na simulação, sem refazer data/raw/un_wpp.csv.
+    """
+    assert abs(sum(composicao.values()) - 1.0) < 1e-9, f"composição não soma 1.0: {composicao}"
+    return _cortes_ponderados(composicao)
+
+
 def _rotulo_composicao(composicao: dict) -> str:
     ordem = "ABCDE"
     partes = [f"{p}{round(composicao[p] * 100):g}" for p in ordem if p in composicao]

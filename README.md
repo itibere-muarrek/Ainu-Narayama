@@ -78,8 +78,16 @@ streamlit run app/narayama_live/app.py
 Acesse: http://localhost:8502 (ver `.claude/launch.json` — as duas
 apps têm porta fixa pra rodar simultaneamente sem conflito)
 
-O `ainu.systems` aceita a variável de ambiente `AINU_SYSTEMS_PASSWORD`
-para restringir o acesso (sem ela, fica aberto com aviso — Fase 1).
+O `ainu.systems` tem dois modos de acesso (ver `src/auth.py`):
+- **Logins individuais** (beta, `Visitor1`..`Visitor6`): variável `AINU_USERS`
+  com um JSON de *hashes* de senha. Gere com `python scripts/gerar_credenciais.py`
+  (senhas em texto ficam em `~/ainu_credenciais/`, fora do repositório).
+- **Senha única** (modo antigo): variável `AINU_SYSTEMS_PASSWORD`, usada só
+  se `AINU_USERS` não existir. Sem nenhuma das duas, fica aberto com aviso.
+
+A página **Simulação** (`app/ainu_systems/pages/1_Simulacao.py`) usa o motor
+de coorte `src/projecao.py`; método, validação e como ajustar à mão os perfis
+estão em `docs/simulacao.md`.
 
 ## Deploy
 
@@ -94,9 +102,10 @@ customizados grátis no plano Hobby, o que cobre os dois apps).
 1. Conectar o repositório GitHub no Render (New → Blueprint → aponta
    pro repositório) — ele lê o `render.yaml` e cria os dois serviços
    automaticamente.
-2. Em **ainu-systems → Environment**, definir `AINU_SYSTEMS_PASSWORD`
-   (o `render.yaml` já reserva a variável, mas o valor é secreto e
-   não fica no repositório).
+2. Em **ainu-systems → Environment**, definir `AINU_USERS` (conteúdo do
+   `AINU_USERS_AAAAMMDD.json` gerado por `scripts/gerar_credenciais.py`);
+   opcionalmente `AINU_SYSTEMS_PASSWORD` como modo antigo. O `render.yaml`
+   só reserva os nomes; os valores são secretos e não ficam no repositório.
 3. Em cada serviço → **Settings → Custom Domains**, adicionar
    `ainu.systems` (no serviço ainu-systems) e `narayama.live` (no
    serviço narayama-live). O Render mostra o registro DNS exato
