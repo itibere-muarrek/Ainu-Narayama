@@ -32,6 +32,9 @@ import streamlit as st
 from src.senha import gerar_hash, verificar_hash
 
 _CHAVE_SESSAO = "ainu_usuario"
+# Login que continua aceitando a senha única antiga (AINU_SYSTEMS_PASSWORD).
+# O nome não é segredo; pode ser trocado pela variável AINU_LEGACY_USER.
+_LOGIN_SENHA_ANTIGA = "AinuOriginal@@"
 
 
 def ler_usuarios(bruto: Optional[str]):
@@ -106,11 +109,17 @@ def exigir_login(txt) -> Optional[str]:
         senha = st.text_input(txt("senha_prompt"), type="password")
         enviado = st.form_submit_button(txt("login_entrar"))
     if enviado:
-        armazenado = usuarios.get(nome.strip())
+        nome = nome.strip()
+        armazenado = usuarios.get(nome)
         # mesmo custo de cálculo se o usuário não existe (evita revelar quais existem)
         ok = verificar_hash(senha, armazenado or gerar_hash("x", 1000))
         if armazenado and ok:
-            st.session_state[_CHAVE_SESSAO] = nome.strip()
+            st.session_state[_CHAVE_SESSAO] = nome
+            st.rerun()
+        senha_antiga = os.environ.get("AINU_SYSTEMS_PASSWORD")
+        login_antigo = os.environ.get("AINU_LEGACY_USER", _LOGIN_SENHA_ANTIGA)
+        if senha_antiga and nome == login_antigo and hmac.compare_digest(senha, senha_antiga):
+            st.session_state[_CHAVE_SESSAO] = nome
             st.rerun()
         time.sleep(1.0)
         st.error(txt("login_invalido"))

@@ -95,6 +95,11 @@ entregar por canal separado) e hashes em `AINU_USERS_AAAAMMDD.json` — o
 conteúdo deste vai na variável `AINU_USERS` do serviço `ainu-systems` no
 Render. Rodar de novo gera senhas novas para todos.
 
+A senha única antiga (`AINU_SYSTEMS_PASSWORD`) continua valendo, agora com um
+login próprio: usuário `AinuOriginal@@` (nome trocável pela variável
+`AINU_LEGACY_USER`) + a senha antiga. Para desativá-la, apague
+`AINU_SYSTEMS_PASSWORD` no Render.
+
 ## Idiomas
 
 Textos da página em PT e EN (fonte) e es, fr, it, ko, ja, zh, fi
