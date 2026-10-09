@@ -83,6 +83,8 @@ def exigir_login(txt) -> Optional[str]:
             return None
         if st.session_state.get("ainu_senha_unica_ok"):
             return None
+        if not erro_config:
+            st.caption("Modo senha única (AINU_USERS não definida neste serviço).")
         digitada = st.text_input(txt("senha_prompt"), type="password")
         if digitada and hmac.compare_digest(digitada, senha_esperada):
             st.session_state["ainu_senha_unica_ok"] = True
