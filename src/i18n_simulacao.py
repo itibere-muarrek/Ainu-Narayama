@@ -1,10 +1,18 @@
 """
 Textos da página de simulação e do login por usuário (ainu.systems, beta).
 
-Só PT e EN por enquanto (a página é beta, para poucos testadores); os outros
-idiomas caem em PT, como em src.i18n.t(). Chaves não encontradas aqui caem no
-dicionário geral (src.i18n.T) — ex.: auth_nao_configurada, senha_prompt.
+PT e EN são o texto-fonte; es, fr, it, ko, ja, zh e fi vêm de
+src/i18n_simulacao_outros.py (tradução por IA, sem revisão nativa). Idioma ou
+chave ausente cai em PT, como em src.i18n.t(); chaves que não estão aqui caem
+no dicionário geral (src.i18n.T) — ex.: auth_nao_configurada, senha_prompt.
+
+Os números de validação exibidos em "sim_metodo" NÃO ficam escritos no texto:
+vêm de docs/validacao_projecao.json (gerado por scripts/validar_projecao.py)
+via numeros_validacao().
 """
+
+import json
+from pathlib import Path
 
 from src.i18n import IDIOMA_PADRAO, t
 
@@ -117,13 +125,17 @@ TX_SIM: dict[str, dict[str, str]] = {
             "para a TFR do cenário, e calibrados ao total oficial. O N\\* usa a mesma cadeia do projeto "
             "(NGII → NGII_puro → N_Base → N\\* = √N_Base), com os cortes etários da composição de perfis.\n\n"
             "**Validação** (`docs/validacao_projecao.md`): o N\\* de 2024 recalculado pelo motor difere do índice "
-            "de produção em no máximo 0,03%; a calibração dos nascimentos fica em ±1% nos 28 países; o cenário "
-            "sem migração desvia da variante \"Zero migration\" da ONU em 0,45% (mediana) e 1,75% (máximo).\n\n"
+            "de produção em no máximo {v3}; a calibração dos nascimentos fica em até {v1} do total oficial nos 28 "
+            "países; o cenário sem migração desvia da variante \"Zero migration\" da ONU em {v4med} (mediana) e "
+            "{v4max} (máximo).\n\n"
             "**Limites.** (1) Só a TFR varia: sem choque de mortalidade, sem mudança de migração. (2) Os 4 "
             "ajustes de falseabilidade do N\\* são constantes por país, calibradas para 2024 (mesma simplificação "
             "da série histórica). (3) Os perfis (A–E) são definidos por faixas de TFR; aqui a composição fica "
             "fixa mesmo quando a TFR muda muito. (4) É um cenário condicional, não uma previsão. (5) A TFR é "
-            "medida de período; não modelamos efeito de calendário (adiamento/recuperação de nascimentos)."
+            "medida de período; não modelamos efeito de calendário (adiamento/recuperação de nascimentos). "
+            "(6) O P_eq público do narayama.live usa um método mais simples (sem o efeito de eco dos nascimentos "
+            "sobre o número de mulheres férteis 25 anos depois); os valores podem diferir em cerca de {v5med} "
+            "(mediana) a {v5max} (máximo) para o mesmo cenário."
         ),
         "en": (
             "**Method.** Cohort-component projection (single age × sex), annual step. Survival and net migration "
@@ -132,13 +144,17 @@ TX_SIM: dict[str, dict[str, str]] = {
             "calibrated to the official total. N\\* uses the project's own chain (NGII → NGII_puro → N_Base → "
             "N\\* = √N_Base), with age cuts from the profile mix.\n\n"
             "**Validation** (`docs/validacao_projecao.md`): the model's 2024 N\\* differs from the production index "
-            "by at most 0.03%; birth calibration stays within ±1% across 28 countries; the no-migration run "
-            "deviates from the UN \"Zero migration\" variant by 0.45% (median) and 1.75% (max).\n\n"
+            "by at most {v3}; birth calibration stays within {v1} of the official total across 28 countries; "
+            "the no-migration run deviates from the UN \"Zero migration\" variant by {v4med} (median) and "
+            "{v4max} (max).\n\n"
             "**Limits.** (1) Only TFR varies: no mortality shock, no migration change. (2) The 4 falsifiability "
             "adjustments of N\\* are per-country constants calibrated for 2024 (same simplification as the "
             "historical series). (3) Profiles (A–E) are defined by TFR ranges; here the mix stays fixed even "
             "when TFR changes a lot. (4) A conditional scenario, not a forecast. (5) TFR is a period measure; "
-            "tempo effects (birth postponement/recuperation) are not modeled."
+            "tempo effects (birth postponement/recuperation) are not modeled. (6) The public P_eq on "
+            "narayama.live uses a simpler method (without the echo effect of births on the number of fertile "
+            "women 25 years later); values may differ by about {v5med} (median) to {v5max} (max) for the same "
+            "scenario."
         ),
     },
 }
@@ -156,3 +172,34 @@ def ts(chave: str, lang: str, **fmt) -> str:
         except (KeyError, IndexError, ValueError):
             return texto
     return texto
+
+
+# mescla as demais línguas
+from src.i18n_simulacao_outros import TRAD  # noqa: E402
+
+for _chave, _traducoes in TRAD.items():
+    TX_SIM[_chave].update(_traducoes)
+
+_VALIDACAO = Path(__file__).resolve().parent.parent / "docs" / "validacao_projecao.json"
+_VIRGULA = {"pt", "es", "fr", "it", "fi"}
+
+
+def numeros_validacao(lang: str) -> dict:
+    """Números de validação formatados no idioma (vírgula ou ponto decimal)."""
+    try:
+        v = json.loads(_VALIDACAO.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {k: "n/d" for k in ("v1", "v3", "v4med", "v4max", "v5med", "v5max")}
+
+    def pct(x: float) -> str:
+        s = f"{x * 100:.2f}%"
+        return s.replace(".", ",") if lang in _VIRGULA else s
+
+    return {
+        "v1": pct(v["v1_max_desvio"]),
+        "v3": pct(v["v3_max_dif"]),
+        "v4med": pct(v["v4_mediana"]),
+        "v4max": pct(v["v4_max"]),
+        "v5med": pct(v["v5_mediana"]),
+        "v5max": pct(v["v5_max"]),
+    }

@@ -25,7 +25,7 @@ from src.config import (
     cortes_por_composicao,
 )
 from src.i18n import nome_pais, nome_zona, seletor_idioma
-from src.i18n_simulacao import ts
+from src.i18n_simulacao import numeros_validacao, ts
 from src.projecao import ANO_BASE, simular, tfr_onu
 
 st.set_page_config(page_title="ainu.systems — Simulação", layout="wide")
@@ -249,4 +249,4 @@ with g4:
     st.plotly_chart(fig, use_container_width=True)
 
 with st.expander(ts("sim_metodo_titulo", lang)):
-    st.markdown(ts("sim_metodo", lang))
+    st.markdown(ts("sim_metodo", lang, **numeros_validacao(lang)))

@@ -77,6 +77,33 @@ def test_hash_de_senha():
     assert gerar_hash("a") != gerar_hash("a")  # sal individual
 
 
+def test_textos_da_simulacao_completos_e_consistentes():
+    import string
+
+    from src.i18n import IDIOMAS
+    from src.i18n_simulacao import TX_SIM, numeros_validacao, ts
+
+    fm = string.Formatter()
+    for chave, v in TX_SIM.items():
+        ref = {f for _, f, _, _ in fm.parse(v["pt"]) if f}
+        for lang in IDIOMAS:
+            assert lang in v, (chave, lang)
+            assert {f for _, f, _, _ in fm.parse(v[lang]) if f} == ref, (chave, lang)
+    for lang in IDIOMAS:  # o texto do método formata com os números da validação
+        assert "{" not in ts("sim_metodo", lang, **numeros_validacao(lang))
+
+
+def test_validacao_publicada_dentro_dos_limites():
+    import json
+    from pathlib import Path
+
+    v = json.loads((Path(__file__).parent / "docs" / "validacao_projecao.json").read_text(encoding="utf-8"))
+    assert v["v3_max_dif"] < 0.001  # N* 2024 do motor vs produção
+    assert v["v1_max_desvio"] < 0.02  # calibração dos nascimentos
+    assert v["v4_max"] < 0.03  # sem migração vs ONU Zero migration
+    assert v["v6_mediana"] < v["v5_mediana"] / 2  # o eco explica a diferença vs P_eq antigo
+
+
 if __name__ == "__main__":
     testes = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for t in testes:

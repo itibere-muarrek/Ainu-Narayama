@@ -54,6 +54,13 @@ from src.falseability import aplicar_falseabilidade_quantitativa
 ARQUIVO_INSUMOS = DATA_PROCESSED_DIR / "projecao_inputs.npz"
 CICLO = 25
 ANO_BASE = 2024
+# Fração da taxa de mortalidade da idade 0 (óbitos do ano-calendário / pop. de 1º jul.)
+# que atinge a coorte de 0 ano presente em 1º de julho. Calibrada em 2026-10-09
+# contra o saldo migratório oficial da ONU em 28 países (grade 0,15-0,75; erro máximo
+# 124 -> 30 mil/ano com 0,25; também compatível com a idade média de óbito dentro do
+# 1º ano). ATENÇÃO: por ter sido calibrada contra o NetMigrations, a validação V2 não é
+# independente para a idade 0; o teste independente é V4 (variante Zero migration).
+W_INFANTIL = 0.25
 
 
 @functools.lru_cache(maxsize=1)
@@ -85,6 +92,10 @@ def _fator_sobrevivencia(m: np.ndarray) -> np.ndarray:
     S = np.empty((m.shape[0], m.shape[1], m.shape[2] - 1))
     S[:, :100, :] = np.exp(-0.5 * (m[:, :100, :-1] + m[:, 1:101, 1:]))
     S[:, 100, :] = np.exp(-0.5 * (m[:, 100, :-1] + m[:, 100, 1:]))
+    # Idade 0: os óbitos de idade 0 do ano-calendário incluem recém-nascidos que ainda
+    # não existiam em 1º de julho e concentram quase toda a mortalidade infantil;
+    # a coorte de 0 ano presente em julho enfrenta só uma fração (W_INFANTIL).
+    S[:, 0, :] = np.exp(-W_INFANTIL * m[:, 0, :-1])
     return S
 
 
@@ -156,9 +167,17 @@ def calibracao(pais: str) -> np.ndarray:
     return np.where(b_modelo > 0, b_ind / b_modelo, 1.0)
 
 
-def projetar(pais: str, tfr_cenario: Optional[np.ndarray] = None, migracao: str = "un") -> Resultado:
+def projetar(
+    pais: str,
+    tfr_cenario: Optional[np.ndarray] = None,
+    migracao: str = "un",
+    mulheres_ref: Optional[np.ndarray] = None,
+) -> Resultado:
     """Projeta 2024-2100. `tfr_cenario=None` => cenário-base (TFR da ONU).
-    `migracao`: "un" (padrão, tendência da ONU) ou "zero" (só p/ validação)."""
+    `migracao`: "un" (padrão, tendência da ONU) ou "zero" (só p/ validação).
+    `mulheres_ref` [idade, ano]: só p/ validação — usa estas mulheres (ex.: as do
+    cenário-base) como exposição à fecundidade em vez das simuladas, o que desliga o
+    "efeito de eco" (nascimentos de hoje mudando o nº de mulheres 25 anos depois)."""
     ins = _insumos()
     anos = ins["anos"]
     T = len(anos)
@@ -193,7 +212,7 @@ def projetar(pais: str, tfr_cenario: Optional[np.ndarray] = None, migracao: str 
     pop[:, :, 0] = P
     B = np.zeros(T)
     D = np.zeros(T)
-    B[0] = nascimentos(0, P[1])
+    B[0] = nascimentos(0, P[1] if mulheres_ref is None else mulheres_ref[:, 0])
     D[0] = (P * m[:, :, 0]).sum()
     for t in range(T - 1):
         Pn = np.zeros_like(P)
@@ -202,7 +221,7 @@ def projetar(pais: str, tfr_cenario: Optional[np.ndarray] = None, migracao: str 
             Pn[s, 100] = P[s, 99] * S[s, 99, t] + P[s, 100] * S[s, 100, t]
         Pn[:, 1:] += M[:, 1:, t + 1]
         np.clip(Pn, 0.0, None, out=Pn)
-        B[t + 1] = nascimentos(t + 1, Pn[1])
+        B[t + 1] = nascimentos(t + 1, Pn[1] if mulheres_ref is None else mulheres_ref[:, t + 1])
         nasc_passo = g[t] * 0.5 * (B[t] + B[t + 1])
         Pn[0, 0] = nasc_passo * frac_h[t + 1]
         Pn[1, 0] = nasc_passo * (1.0 - frac_h[t + 1])

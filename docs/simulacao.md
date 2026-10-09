@@ -34,7 +34,11 @@ Componentes de coorte, passo anual de 1º de julho a 1º de julho:
 
 - **Sobrevivência:** `P(a+1,t+1) = P(a,t)·S(a,t) + M(a+1,t+1)`; `S` usa a taxa
   de mortalidade da ONU (óbitos/população por idade e sexo) média ao longo da
-  diagonal de Lexis.
+  diagonal de Lexis. Para a idade 0, só a fração `W_INFANTIL = 0,25` da taxa
+  atinge a coorte presente em 1º de julho (os óbitos de idade 0 do ano-calendário
+  incluem recém-nascidos que ainda não existiam); `W_INFANTIL` foi calibrado
+  contra o saldo migratório oficial (grade 0,15–0,75), então a validação V2 não
+  é independente para essa idade — a V4 é.
 - **Migração:** `M` é o resíduo que faz o modelo reproduzir a projeção média da
   ONU, em número absoluto por idade/sexo/ano (confere com o `NetMigrations` da
   ONU — ver V2 da validação).
@@ -66,10 +70,18 @@ simulação a composição fica **fixa** mesmo quando a TFR muda muito.
   (28 países, ~5 MB, versionado). Lê os dumps da ONU em `data/raw/_cache`:
   `proj.csv.gz` (população por idade), `deaths_proj.csv.gz` (óbitos por idade),
   `fertility_age5.csv.gz` (fecundidade por idade), `demographic_indicators.csv.gz`.
-- `scripts/validar_projecao.py` → `docs/validacao_projecao.md` (relatório).
-  Resumo: calibração de nascimentos ±1%; N* de 2024 do motor vs produção
-  ≤ 0,03%; cenário sem migração vs variante "Zero migration" da ONU: 0,45%
-  (mediana), 1,75% (máximo); migração residual acompanha o `NetMigrations`.
+- `scripts/validar_projecao.py` → `docs/validacao_projecao.md` (relatório) e
+  `docs/validacao_projecao.json` (números que a página exibe — nada escrito à
+  mão). Resumo atual: calibração de nascimentos até 0,98%; N* de 2024 do motor
+  vs produção ≤ 0,03%; cenário sem migração vs variante "Zero migration" da
+  ONU (teste independente): 0,36% (mediana), 1,12% (máximo); migração residual
+  vs `NetMigrations`: mediana 3 mil/ano, máximo 30 mil/ano.
+- **Diferença vs P_eq do narayama.live (2,6% mediana, 4,5% máx.):** explicada
+  pelo *efeito de eco* — o método antigo escala os nascimentos pela razão de
+  TFRs e não deixa os nascimentos de hoje mudarem o número de mulheres férteis
+  25 anos depois. Teste (V6): com o eco desligado o motor reproduz o P_eq antigo
+  em 0,54% (mediana). O P_eq público **não foi alterado**: trocar de método muda
+  números publicados e é decisão do autor.
 - `python test_projecao.py` — testes que rodam só com o repositório.
 
 Ampliar de 11 para os 28 países: editar `PAISES_SIMULACAO` na página (os
@@ -83,8 +95,17 @@ entregar por canal separado) e hashes em `AINU_USERS_AAAAMMDD.json` — o
 conteúdo deste vai na variável `AINU_USERS` do serviço `ainu-systems` no
 Render. Rodar de novo gera senhas novas para todos.
 
+## Idiomas
+
+Textos da página em PT e EN (fonte) e es, fr, it, ko, ja, zh, fi
+(`src/i18n_simulacao_outros.py`). As 7 traduções foram feitas por IA, **sem
+revisão de falante nativo**; revisar antes de divulgar fora do beta. Um teste
+(`test_projecao.py`) garante que nenhuma chave fica sem idioma e que os
+marcadores de formato são idênticos.
+
 ## Limites (também exibidos na página)
 
 Só a TFR varia; ajustes de falseabilidade constantes; composição de perfis
 fixa; cenário condicional; TFR é medida de período (sem efeito de calendário);
-controle de acesso simples (sem recuperação de senha nem 2FA).
+P_eq público do narayama.live usa método mais simples (sem eco); controle de
+acesso simples (sem recuperação de senha nem 2FA).
