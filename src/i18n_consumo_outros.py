@@ -146,9 +146,9 @@ TRAD: dict[str, dict[str, str]] = {
         "ja": "2. 追加の子ども1人は何を支えるか", "zh": "2. 每增加一名儿童能支撑什么?", "fi": "2. Mitä jokainen lisälapsi tukee?",
     },
     "c_inc_ajuda": {
-        "es": "Valor por niño y por año dAINU.Systems (la demanda de consumo, privado y público, que el niño representa), multiplicado por el número de niños. Es un límite superior: usa el consumo medio por Descendente, vale por año en la cohorte, no acumula ni descuenta y excluye la producción futura del niño.",
+        "es": "Valor por niño y por año de AINU.Systems (la demanda de consumo, privado y público, que el niño representa), multiplicado por el número de niños. Es un límite superior: usa el consumo medio por Descendente, vale por año en la cohorte, no acumula ni descuenta y excluye la producción futura del niño.",
         "fr": "Valeur par enfant et par an d'AINU.Systems (la demande de consommation, privée et publique, que l'enfant représente), multipliée par le nombre d'enfants. C'est une borne supérieure : elle utilise la consommation moyenne par Descendente, vaut par année dans la cohorte, ne cumule ni n'actualise, et exclut la production future de l'enfant.",
-        "it": "Valore per bambino e per anno dAINU.Systems (la domanda di consumo, privato e pubblico, che il bambino rappresenta), moltiplicato per il numero di bambini. È un limite superiore: usa il consumo medio per Descendente, vale per anno nella coorte, non accumula né sconta e esclude la produzione futura del bambino.",
+        "it": "Valore per bambino e per anno di AINU.Systems (la domanda di consumo, privato e pubblico, che il bambino rappresenta), moltiplicato per il numero di bambini. È un limite superiore: usa il consumo medio per Descendente, vale per anno nella coorte, non accumula né sconta e esclude la produzione futura del bambino.",
         "ko": "AINU.Systems의 아동 1명당·연간 값(아동이 나타내는 민간·공공 소비 수요)에 아동 수를 곱한 것입니다. 상한값입니다. Descendente 1인당 평균 소비를 사용하고, 코호트에 있는 해마다의 값이며, 누적하거나 할인하지 않고, 아동의 미래 생산은 제외합니다.",
         "ja": "AINU.Systems の、子ども1人・1年当たりの値(その子どもが表す民間・公的消費需要)に子どもの数を掛けたものです。上限値です。Descendente 1人当たりの平均消費を用い、コホートに属する年ごとの値で、累積も割引もせず、子どもの将来の生産は含みません。",
         "zh": "AINU.Systems 中每名儿童每年的数值(该儿童所代表的私人和公共消费需求)乘以儿童人数。这是上限:使用每名 Descendente 的平均消费,按其在队列中的每一年计算,不累计也不贴现,且不含儿童未来的产出。",
@@ -202,9 +202,9 @@ TRAD: dict[str, dict[str, str]] = {
         "ko": "3. 출산율이 바뀌면 어떻게 될까요?", "ja": "3. 出生率が変わったら", "zh": "3. 如果生育率改变会怎样?", "fi": "3. Entä jos hedelmällisyys muuttuu?",
     },
     "c_cen_ajuda": {
-        "es": "Variación respecto de una trayectoria con TFR constante, con el consumo por persona constante (hoja P5). Son escenarios del modelo de cohortes dAINU.Systems (los nombres y metas de TFR pueden variar según el país) y no previsiones. Elija un escenario para ver el cambio en cada horizonte.",
+        "es": "Variación respecto de una trayectoria con TFR constante, con el consumo por persona constante (hoja P5). Son escenarios del modelo de cohortes de AINU.Systems (los nombres y metas de TFR pueden variar según el país) y no previsiones. Elija un escenario para ver el cambio en cada horizonte.",
         "fr": "Variation par rapport à une trajectoire à TFR constant, avec une consommation par personne constante (feuille P5). Ce sont des scénarios du modèle de cohortes d'AINU.Systems (les noms et cibles de TFR peuvent varier selon le pays) et non des prévisions. Choisissez un scénario pour voir la variation à chaque horizon.",
-        "it": "Variazione rispetto a una traiettoria con TFR costante, con consumo per persona costante (foglio P5). Sono scenari del modello a coorti dAINU.Systems (i nomi e gli obiettivi di TFR possono variare da paese a paese) e non previsioni. Scegliere uno scenario per vedere la variazione a ciascun orizzonte.",
+        "it": "Variazione rispetto a una traiettoria con TFR costante, con consumo per persona costante (foglio P5). Sono scenari del modello a coorti di AINU.Systems (i nomi e gli obiettivi di TFR possono variare da paese a paese) e non previsioni. Scegliere uno scenario per vedere la variazione a ciascun orizzonte.",
         "ko": "TFR이 일정한 경로 대비 변화이며, 1인당 소비는 일정하다고 가정합니다(P5 시트). AINU.Systems 코호트 모형의 시나리오이며(이름과 TFR 목표는 국가마다 다를 수 있음) 예측이 아닙니다. 시나리오를 고르면 각 시점의 변화를 볼 수 있습니다.",
         "ja": "TFR が一定の経路との差で、1人当たり消費は一定としています(AINU.Systems、P5 シート)。AINU.Systems のコホート・モデルのシナリオであり(名称や TFR の目標は国によって異なる場合があります)、予測ではありません。シナリオを選ぶと、各時点の変化が表示されます。",
         "zh": "相对于 TFR 保持不变的路径的变化,假定人均消费不变(AINU.Systems,P5 工作表)。这些是 AINU.Systems 队列模型的情景(名称和 TFR 目标可能因国家而异),不是预测。选择情景即可查看各个时点的变化。",
