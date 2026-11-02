@@ -1,0 +1,10 @@
+{
+ "ITA|Assegno Unico e Universale (AUU)": {"nivel": "misto", "motivo": "Osservatorio do INPS lido (L1); circolare 7/2026 só em trechos de busca (L2)"},
+ "ITA|Bonus asilo nido": {"nivel": "L2", "motivo": "trechos de busca do INPS e fontes secundárias com valores divergentes; circolare não aberta"},
+ "ITA|Detrazione do IRPEF por filho": {"nivel": "secundaria", "motivo": "só fontes secundárias; circular da Agenzia delle Entrate não confirmada"},
+ "ITA|Esonero contributivo de 100% para quem contrata mães de ≥ 3 filhos menores de 18": {"nivel": "L2", "motivo": "notícia e comunicado do INPS em trechos de busca; circolare 82/2026 não aberta"},
+ "ITA|Bonus mamme (esonero para trabalhadoras com ≥ 3 filhos)": {"nivel": "secundaria", "motivo": "fontes secundárias discordantes, não confirmado"},
+ "ITA|IVA reduzido em produtos infantis": {"nivel": "secundaria", "motivo": "fonte secundária; status em 2026 não verificado"},
+ "ITA|Despesa ESSPROS função família/crianças (agregado)": {"nivel": "L1", "motivo": "API do Eurostat lida"},
+ "JPN|Instrumento do tipo IFVI como política formal": {"nivel": "L1", "motivo": "resumo derivado da contribuição patronal japonesa, que é L1 (AINU-JPN-EMPLCONTR-2025-000611)"}
+}

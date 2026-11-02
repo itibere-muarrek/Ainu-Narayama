@@ -1,0 +1,178 @@
+[
+ {
+  "iso": "ITA",
+  "item": "Assegno unico e universale 2025: € 19,7 bi",
+  "fonte": "INPS, Osservatorio AUU (jan/2026)",
+  "url": "https://www.inps.it/content/dam/inps-site/pdf/dati-analisi-bilanci/osservatori-statistici/osservatorio-auu/Osservatorio_AUU_gennaio_2026.pdf",
+  "estado": "confere",
+  "nota": "A soma dos 12 meses de 2025 dá € 19.706,4 mi; média de 9.478.314 filhos."
+ },
+ {
+  "iso": "BRA",
+  "item": "Bolsa Família: R$ 153,5 bi (1,11% do PIB de 2026)",
+  "fonte": "Secom, abr/2026",
+  "url": "https://www.gov.br/secom/pt-br/acompanhe-a-secom/noticias/2026/04/bolsa-familia-chega-a-18-9-milhoes-de-beneficiarios-em-todo-o-brasil-a-partir-desta-quinta-16",
+  "estado": "confere",
+  "nota": "O custo bate: R$ 12,79 bi no mês × 12 = R$ 153,5 bi (Secom). O PIB assumido, R$ 13.826,3 bi, está na planilha dos quadros do DGT PLOA 2026; 153,5 ÷ 13.826,3 = 1,11%."
+ },
+ {
+  "iso": "BRA",
+  "item": "Bolsa Família ≈ R$ 160 bi em 2025",
+  "fonte": "MDS, notícia de 23/12/2025",
+  "url": "https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/bolsa-familia-amplia-inclusao-e-fortalece-gestoes-estaduais-e-municipais",
+  "estado": "confere_parcial",
+  "nota": "A notícia diz \"quase R$ 160 bilhões de janeiro a dezembro\" de 2025 (publicada em 23/12, antes de fechar o ano) e cerca de 19,8 milhões de famílias por mês. O servidor devolveu 404 ao teste automático de link logo depois da leitura; o número foi lido, mas o link pode não abrir."
+ },
+ {
+  "iso": "USA",
+  "item": "Child credit FY2025: US$ 75,35 bi (0,245% do PIB)",
+  "fonte": "Treasury, Tax Expenditures FY2027",
+  "url": "https://home.treasury.gov/policy-issues/tax-policy/tax-expenditures",
+  "estado": "confere",
+  "nota": "Tabela 1: 32,81 bi (receita não arrecadada) + Tabela 5: 42,54 bi (gasto direto) = 75,35 bi; ÷ PIB de US$ 30.770 bi = 0,245%."
+ },
+ {
+  "iso": "USA",
+  "item": "EITC FY2025: US$ 68,6 bi (0,223% do PIB)",
+  "fonte": "Treasury, Tax Expenditures FY2027",
+  "url": "https://home.treasury.gov/policy-issues/tax-policy/tax-expenditures",
+  "estado": "confere",
+  "nota": "0,90 bi (receita) + 67,73 bi (gasto direto) = 68,63 bi."
+ },
+ {
+  "iso": "JPN",
+  "item": "Abono infantil: ¥ 2,1666 tri (0,34% do PIB)",
+  "fonte": "Agência de Crianças e Famílias, orçamento FY2025",
+  "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/13c14507-66d3-4212-9cda-7afd707c1083/eae3eab8/20250402_policies_budget_tokubetsukaikei_kodomokosodate_08.pdf",
+  "estado": "confere",
+  "nota": "O documento traz 21.666 (100 milhões de ienes) para FY2025; ÷ PIB de 2024 de ¥ 634,23 tri (Banco Mundial) = 0,342%."
+ },
+ {
+  "iso": "JPN",
+  "item": "Contribuição patronal: taxa de 0,36% e receita de ¥ 751,4 bi",
+  "fonte": "Agência de Crianças e Famílias, orçamento FY2025",
+  "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/13c14507-66d3-4212-9cda-7afd707c1083/eae3eab8/20250402_policies_budget_tokubetsukaikei_kodomokosodate_08.pdf",
+  "estado": "confere",
+  "nota": "Taxa 0,36% e receita de 7.514 (100 milhões de ienes) em FY2025; 7.309 em FY2024."
+ },
+ {
+  "iso": "MEX",
+  "item": "Programa S174: orçamento original $ 3.185 mi (0,0095% do PIB)",
+  "fonte": "Informe trimestral 2025, SHCP",
+  "url": "https://www.gob.mx/cms/uploads/attachment/file/1034237/00_3IT_2025.pdf",
+  "estado": "confere",
+  "nota": "O informe traz o orçamento original de 3.185,0 milhões de pesos; ÷ PIB de 2024 (Banco Mundial, $ 33.507 bi) = 0,0095%."
+ },
+ {
+  "iso": "ARG",
+  "item": "AUH em 2025: $ 5,6 billones",
+  "fonte": "OPC, execução orçamentária dez/2025",
+  "url": "https://www.opc.gob.ar/wp-content/uploads/ANALISIS-DE-LA-EJECUCION-PRESUPUESTARIA-DE-LA-ADMINISTRACION-NACIONAL-DICIEMBRE-2025.pdf",
+  "estado": "confere",
+  "nota": "AUH 5,6 de 8,8 billones em asignaciones familiares. O 0,61% do PIB é de 2018; o PIB de 2018 ($ 14,745 tri) bate com o Banco Mundial, mas o gasto de 2018 não foi relido."
+ },
+ {
+  "iso": "FRA",
+  "item": "Allocations familiales 2024: € 13,4 bi (0,46% do PIB)",
+  "fonte": "CNAF, Analyses statistiques nº 7",
+  "url": "https://www.caf.fr/sites/default/files/medias/cnaf/Nous_connaitre/Recherche_et_statistiques/Analyses_statistiques/CNAF_n%C2%B07_Analyses_statistiques.pdf",
+  "estado": "confere",
+  "nota": "A CNAF diz € 13,4 bi em 2024; o relatório de atividade da CNAF traz € 13,7 bi, com outro escopo. 13,4 ÷ PIB de € 2.919,9 bi = 0,459%."
+ },
+ {
+  "iso": "CHN",
+  "item": "Subsídio de criação de filhos ≈ ¥ 100 bi (0,07% do PIB)",
+  "fonte": "Xinhua, 30/07/2025",
+  "url": "https://www.shanghai.gov.cn/nw4411/20250731/c35108cbd7ad4b3487fbd170ef07be8b.html",
+  "estado": "confere_parcial",
+  "nota": "A fonte lida diz ≈ ¥ 90 bi do orçamento central (900亿元). O ¥ 100 bi é de nível L2; os dois dão cerca de 0,07% do PIB de 2024 (0,067% e 0,074%)."
+ },
+ {
+  "iso": "IND",
+  "item": "HCES 2023-24: 24 grupos de itens e 15 indicadores de nível (126 valores)",
+  "fonte": "MoSPI, NSS Report nº 592",
+  "url": "https://mospi.gov.in/sites/default/files/publication_reports/Final_Report_HCES_2023-24L.pdf",
+  "estado": "confere",
+  "nota": "Todos os 126 valores aparecem no relatório; nas 24 linhas de grupos, as quatro cifras (rúpias e % rural e urbano) estão juntas numa mesma linha do relatório."
+ },
+ {
+  "iso": "ALL",
+  "item": "População e TFT de 2023 dos 11 países (WPP local)",
+  "fonte": "Banco Mundial (API), SP.POP.TOTL e SP.DYN.TFRT.IN",
+  "url": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+  "estado": "confere_parcial",
+  "nota": "População igual em 5 países e até 0,1% de diferença em Japão e Coreia; difere de 0,8% a 2,8% em EUA, França, China e Itália (definições nacionais). TFT difere no máximo 1,3%. Não é a ONU direto: a API da ONU exige credencial."
+ },
+ {
+  "iso": "ALL",
+  "item": "PIB usado nos percentuais (Japão 2022 e 2024, EUA 2023 e 2025, Brasil 2018, Argentina 2018)",
+  "fonte": "Banco Mundial (API), NY.GDP.MKTP.CN",
+  "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CN",
+  "estado": "confere",
+  "nota": "Os seis valores citados nas abas batem com a API até o último algarismo."
+ },
+ {
+  "iso": "KOR",
+  "item": "Abono infantil: ₩ 2,65 tri ao ano (0,103% do PIB), corrigido",
+  "fonte": "Ministério da Saúde e Bem-Estar da Coreia, comunicado de 24/04/2026",
+  "url": "https://www.bokjiro.go.kr/ssis-tbu/cms/pc/news/news/1309692_1114.html",
+  "estado": "confere_parcial",
+  "nota": "CORREÇÃO: o pagamento de abril (₩ 389,2 bi) inclui ₩ 168,7 bi retroativos; sem eles são ₩ 220,5 bi no mês, ou ₩ 2,65 tri ao ano, 0,103% do PIB de 2024. A versão anterior (₩ 4,7 tri, 0,18%) multiplicava por 12 o mês com retroativo. O valor anual segue derivado de um mês: o orçamento do programa não foi lido. Conferência de ordem de grandeza: o projeto de orçamento de 2026 do governo prevê ₩ 2,4822 tri (contra ₩ 1,9588 tri em 2025), segundo a imprensa (Newsis, 29/08/2025); a estimativa de ₩ 2,65 tri fica 7% acima, compatível com os extras regionais e com a inclusão de 2017-nascidos. O orçamento aprovado não foi lido."
+ },
+ {
+  "iso": "ITA FRA JPN KOR MEX USA",
+  "item": "Gasto público em família, OECD SOCX (% do PIB)",
+  "fonte": "OCDE, API SDMX pública (SOCX, programa TP51, gasto público, % do PIB)",
+  "url": "https://www.oecd.org/en/data/datasets/social-expenditure-database-socx.html",
+  "estado": "confere",
+  "nota": "Itália 1,425 (2021), Japão 1,975 (2022), Coreia 1,652 (2022), México 0,548 (2023) e EUA 0,604 (2023) batem com a planilha (1,43; 1,98; 1,65; 0,55; 0,60). França: 2,628 (2022) na API contra 2,64 na planilha, diferença de 0,01 ponto porque a planilha soma componentes arredondados."
+ },
+ {
+  "iso": "ALL",
+  "item": "Razões de consumo por idade do NTA (pesos NTA) dos 11 países",
+  "fonte": "NTA Data Sheet 2016",
+  "url": "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf",
+  "estado": "confere",
+  "nota": "Privado 0–24 e 65+, e público 0–24 e 65+, de cada país, conferidos contra a folha (lida como imagem, porque o texto do PDF mistura as linhas): Nigéria 82/96 e 137/93; Índia 59/107 e 124/137; Brasil 54/103 e 126/112; EUA 54/113 e 159/237; Japão 67/108 e 194/228; França 58/99 e 148/169; China 91/91 e 155/141; Itália 58/96 e 201/181; Coreia 86/75 e 176/155; México 73/86 e 181/114; Argentina 58/97 e 143/121."
+ },
+ {
+  "iso": "ALL",
+  "item": "Dividendo de 10% (% do PIB) e demais estimativas EST/SIM",
+  "fonte": "Cálculo do autor (Paper 3)",
+  "url": "",
+  "estado": "confere_parcial",
+  "nota": "A aritmética por amostra fecha (ex.: França, 9,0% do PIB × 10% = 0,90%), e a escala linear reproduz os 25% e 50% da planilha. Não é conferência de fonte: depende do ancoramento ao NTA, que é a principal incerteza do estudo."
+ },
+ {
+  "iso": "ALL",
+  "item": "TFT de 2025 do WPP 2024",
+  "fonte": "ONU, World Population Prospects 2024",
+  "url": "https://population.un.org/wpp/",
+  "estado": "nao_conferido",
+  "nota": "A API da ONU exige credencial e o arquivo oficial é um download grande; só a comparação com o Banco Mundial (2023) foi feita."
+ },
+ {
+  "iso": "BRA",
+  "item": "Dedução de IRPF por dependente: R$ 2.275,08 por ano (ano-calendário 2025)",
+  "fonte": "Receita Federal, Tributação de 2025",
+  "url": "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2025",
+  "estado": "confere",
+  "nota": "Valor lido no original; a economia de R$ 170,63 a R$ 625,65 por dependente é 2.275,08 × 7,5% e × 27,5%."
+ },
+ {
+  "iso": "USA",
+  "item": "CCDF GY2025 ≈ US$ 12,5 bi federais (discricionário 8,75; mandatório 1,39; suplemento 0,25)",
+  "fonte": "Federal Register (HHS/ACF), aviso de 27/05/2025; CRS R48598",
+  "url": "https://public-inspection.federalregister.gov/2025-09381.pdf",
+  "estado": "confere_parcial",
+  "nota": "O suplemento de US$ 0,25 bi confere: o Federal Register (aviso de 27/05/2025) diz que a American Relief Act, 2025 destinou US$ 250.000.000 a ajuda por desastres para o cuidado infantil. O CRS (R48598) fala em US$ 500 mi de emergência para o CCDBG na mesma lei, e a ACF cita também um suplemento discricionário 'não ligado a desastres' (memorando CCDF-IM-25-03, que não consegui abrir): os outros US$ 250 mi provavelmente são esse suplemento, mas isso é inferência. Os US$ 8,75 bi discricionários e US$ 1,39 bi mandatórios seguem sem original lido (a ACF devolve 403); não sei se o 8,75 já inclui o segundo suplemento."
+ },
+ {
+  "iso": "MEX",
+  "item": "IVA tasa cero: $ 563.419 mi em 2025 (1,57% do PIB)",
+  "fonte": "CEFP (L2)",
+  "url": "",
+  "estado": "nao_conferido",
+  "nota": "O original do CEFP segue sem abrir. Fontes secundárias (SHCP via imprensa) dão US$ 451,1 bi em alimentos (2024) e $ 41,2 bi em medicamentos (2025), mesma ordem de grandeza."
+ }
+]

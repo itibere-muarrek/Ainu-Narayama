@@ -1,0 +1,179 @@
+[
+ {
+  "chave": "fo2013",
+  "nome": "Frey, C. B.; Osborne, M. A. The Future of Employment: how susceptible are jobs to computerisation? Oxford Martin School, documento de trabalho de 2013 (702 ocupações dos EUA).",
+  "url": "https://www.oxfordmartin.ox.ac.uk/downloads/academic/The_Future_of_Employment.pdf",
+  "uso": "Probabilidade de informatização por ocupação (Tabela de exposição à automação).",
+  "paises": [
+   "BRA",
+   "MEX",
+   "ARG",
+   "USA",
+   "ITA"
+  ],
+  "tipo": "metodo"
+ },
+ {
+  "chave": "wp140",
+  "nome": "OIT. Gmyrek, P.; Berg, J.; Kamiński, K.; Konopczyński, F.; Ładna, A.; Nafradi, B.; Rosłaniec, K.; Troszyński, M. Generative AI and Jobs: a refined global index of occupational exposure. ILO Working Paper 140, 2025.",
+  "url": "https://www.ilo.org/sites/default/files/2025-05/WP140_web.pdf",
+  "uso": "Escore de exposição à IA generativa por ocupação ISCO-08 (base de referência, Anexo A).",
+  "paises": [
+   "BRA",
+   "MEX",
+   "ARG",
+   "USA",
+   "ITA"
+  ],
+  "tipo": "metodo"
+ },
+ {
+  "chave": "bls_crosswalk",
+  "nome": "BLS. Tabela de correspondência ISCO-08 × SOC 2010 (ISCO_SOC_Crosswalk).",
+  "url": "https://www.bls.gov/soc/crosswalks.htm",
+  "uso": "Passa a probabilidade de Frey e Osborne (SOC) para ISCO-08.",
+  "paises": [
+   "BRA",
+   "MEX",
+   "ARG",
+   "USA",
+   "ITA"
+  ],
+  "tipo": "metodo"
+ },
+ {
+  "chave": "ilo_ocu_BRA",
+  "nome": "OIT/ILOSTAT. Emprego por atividade (ISIC Rev.4) e ocupação (ISCO-08), indicador EMP_TEMP_ECO_OCU_NB_A, Brasil.",
+  "url": "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=BRA&format=.csv",
+  "uso": "Composição ocupacional de cada seção ISIC.",
+  "paises": [
+   "BRA"
+  ],
+  "tipo": "dado"
+ },
+ {
+  "chave": "ilo_ocu_MEX",
+  "nome": "OIT/ILOSTAT. Emprego por atividade (ISIC Rev.4) e ocupação (ISCO-08), indicador EMP_TEMP_ECO_OCU_NB_A, México.",
+  "url": "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=MEX&format=.csv",
+  "uso": "Composição ocupacional de cada seção ISIC.",
+  "paises": [
+   "MEX"
+  ],
+  "tipo": "dado"
+ },
+ {
+  "chave": "ilo_ocu_ARG",
+  "nome": "OIT/ILOSTAT. Emprego por atividade (ISIC Rev.4) e ocupação (ISCO-08), indicador EMP_TEMP_ECO_OCU_NB_A, Argentina.",
+  "url": "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=ARG&format=.csv",
+  "uso": "Composição ocupacional de cada seção ISIC.",
+  "paises": [
+   "ARG"
+  ],
+  "tipo": "dado"
+ },
+ {
+  "chave": "ilo_ocu_USA",
+  "nome": "OIT/ILOSTAT. Emprego por atividade (ISIC Rev.4) e ocupação (ISCO-08), indicador EMP_TEMP_ECO_OCU_NB_A, Estados Unidos.",
+  "url": "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=USA&format=.csv",
+  "uso": "Composição ocupacional de cada seção ISIC.",
+  "paises": [
+   "USA"
+  ],
+  "tipo": "dado"
+ },
+ {
+  "chave": "ilo_ocu_ITA",
+  "nome": "OIT/ILOSTAT. Emprego por atividade (ISIC Rev.4) e ocupação (ISCO-08), indicador EMP_TEMP_ECO_OCU_NB_A, Itália (baixado em 2026-11-02).",
+  "url": "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=ITA&format=.csv",
+  "uso": "Composição ocupacional de cada seção ISIC.",
+  "paises": [
+   "ITA"
+  ],
+  "tipo": "dado"
+ },
+ {
+  "chave": "eurostat_io",
+  "nome": "Eurostat. naio_10_cp1700: tabela simétrica de insumo-produto a preços básicos (produto por produto).",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/naio_10_cp1700/default/table?lang=en",
+  "uso": "Multiplicadores da Itália (inversa de Leontief), 2022.",
+  "paises": [
+   "ITA"
+  ],
+  "tipo": "dado"
+ },
+ {
+  "chave": "eurostat_emp",
+  "nome": "Eurostat. nama_10_a64_e: emprego por atividade (64 ramos), contas nacionais.",
+  "url": "https://ec.europa.eu/eurostat/databrowser/view/nama_10_a64_e/default/table?lang=en",
+  "uso": "Emprego por atividade (A64) da Itália.",
+  "paises": [
+   "ITA"
+  ],
+  "tipo": "dado"
+ },
+ {
+  "chave": "socx",
+  "nome": "OCDE. Social Expenditure Database (SOCX), gasto público em família (programa TP51), % do PIB; conferido em 2026-11-02 pela API pública SDMX da OCDE (sdmx.oecd.org).",
+  "url": "https://www.oecd.org/en/data/datasets/social-expenditure-database-socx.html",
+  "uso": "Gasto público em família (% do PIB) onde a base cobre o país.",
+  "paises": [
+   "ITA",
+   "KOR",
+   "JPN",
+   "MEX",
+   "USA",
+   "FRA"
+  ],
+  "tipo": "dado"
+ },
+ {
+  "chave": "kor_bokjiro",
+  "nome": "Ministério da Saúde e Bem-Estar da Coreia (Bokjiro). Comunicado de 24/04/2026: abono infantil ampliado para menores de 9 anos, pagamento de abril com retroativo (₩ 389,2 bi no total, ₩ 168,7 bi retroativos).",
+  "url": "https://www.bokjiro.go.kr/ssis-tbu/cms/pc/news/news/1309692_1114.html",
+  "uso": "Custo do abono infantil da Coreia do Sul.",
+  "paises": [
+   "KOR"
+  ],
+  "tipo": "dado"
+ },
+ {
+  "chave": "bra_mds",
+  "nome": "MDS, notícia de 23/12/2025: Bolsa Família com investimento de quase R$ 160 bilhões de janeiro a dezembro de 2025 e cerca de 19,8 milhões de famílias por mês.",
+  "url": "https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/bolsa-familia-amplia-inclusao-e-fortalece-gestoes-estaduais-e-municipais",
+  "uso": "Custo do Bolsa Família em 2025.",
+  "paises": [
+   "BRA"
+  ],
+  "tipo": "dado"
+ },
+ {
+  "chave": "bra_dgt",
+  "nome": "Receita Federal. Demonstrativo dos Gastos Tributários PLOA 2026 (quadros): PIB assumido de R$ 13.826,3 bi.",
+  "url": "https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/relatorios/renuncia/gastos-tributarios-ploa/dgt-previsao-ploa-2026-quadros.xlsx",
+  "uso": "PIB de 2026 usado no percentual do Bolsa Família.",
+  "paises": [
+   "BRA"
+  ],
+  "tipo": "dado"
+ },
+ {
+  "chave": "kor_orcamento",
+  "nome": "Newsis, 29/08/2025: projeto de orçamento de 2026 do governo coreano, abono infantil de ₩ 2,4822 tri (2025: ₩ 1,9588 tri). Fonte de imprensa que cita o governo; o orçamento aprovado não foi lido.",
+  "url": "https://www.newsis.com/view/NISX20250829_0003307926",
+  "uso": "Ordem de grandeza do custo anual do abono infantil da Coreia do Sul (conferência da estimativa derivada).",
+  "paises": [
+   "KOR"
+  ],
+  "tipo": "dado"
+ },
+ {
+  "chave": "usa_ccdf_ara",
+  "nome": "HHS/ACF. Aviso no Federal Register de 27/05/2025 (American Relief Act 2025, Disaster Supplemental Funds for Child Care): a lei destinou US$ 250 milhões a ajuda por desastres para o cuidado infantil.",
+  "url": "https://public-inspection.federalregister.gov/2025-09381.pdf",
+  "uso": "Suplemento do CCDF (US$ 0,25 bi) na aba dos EUA.",
+  "paises": [
+   "USA"
+  ],
+  "tipo": "dado"
+ }
+]

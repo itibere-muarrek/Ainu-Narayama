@@ -68,3 +68,6 @@ ainu.log
 
 # Variáveis do Streamlit
 .streamlit/secrets.toml
+
+# Diretório do AINU.systems (fase 0): saída gerada da planilha do Paper 3; não versionar até o autor liberar a publicação
+data/diretorio/

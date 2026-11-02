@@ -1,0 +1,195 @@
+{
+ "_nota": "Conferência manual de conteúdo (2026-11-02): o assistente abriu a página ou leu o início do arquivo e comparou com o que a fonte cita. Estados: confere (assunto confirmado), ressalva (confirmado com limite descrito em 'nota'), lida_antes (lida em rodada anterior; o servidor recusa robôs agora), nao_confirmada (a página não abriu em nenhuma tentativa; só o endereço registrado na pesquisa). Só o assunto da fonte é conferido, não cada número.",
+ "https://arca.gob.ar/gananciasYBienes/ganancias/personas-humanas-sucesiones-indivisas/deducciones/documentos/Deducciones-personales-art-30-liq-anual-2025.pdf": {
+  "estado": "confere",
+  "nota": "ARCA: deduções do art. 30 da lei de Ganancias, período 2025"
+ },
+ "https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/relatorios/renuncia/gastos-tributarios-ploa/dgt-previsao-ploa-2026-base-conceitual.pdf": {
+  "estado": "confere",
+  "nota": "Demonstrativo dos Gastos Tributários PLOA 2026 (Receita Federal)"
+ },
+ "https://opendata.pku.edu.cn/dataset.xhtml?persistentId=doi%3A10.18170%2FDVN%2F45LCSO&version=19.0": {
+  "estado": "ressalva",
+  "nota": "É o painel CFPS (China Family Panel Studies), que traz consumo, mas não é uma pesquisa de orçamento familiar no sentido estrito"
+ },
+ "https://www.stats.gov.cn/sj/ndsj/2022/html/sme03.htm": {
+  "estado": "ressalva",
+  "nota": "Nota metodológica do anuário estatístico sobre as contas nacionais (cita as tabelas de insumo-produto); não é a tabela"
+ },
+ "https://www.insee.fr/fr/statistiques/8988861": {
+  "estado": "confere",
+  "nota": "INSEE: tableaux de synthèse TES e TEE (tabelas de insumo-produto)"
+ },
+ "https://datacatalog.ihsn.org/catalog/12933": {
+  "estado": "ressalva",
+  "nota": "Catálogo do HCES 2022-23 da Índia; o levantamento mais recente é o de 2023-24"
+ },
+ "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2150113&reg=48&lang=2": {
+  "estado": "confere",
+  "nota": "Comunicado do MoSPI sobre as tabelas de oferta e uso de 2020-21 e 2021-22"
+ },
+ "https://www.cfa.go.jp/policies/kokoseido/jidouteate/annai/": {
+  "estado": "confere",
+  "nota": "Agência de Crianças e Famílias: guia do abono infantil (児童手当)"
+ },
+ "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180.htm": {
+  "estado": "confere",
+  "nota": "Agência Nacional de Tributos: resposta nº 1180, dedução por dependente (扶養控除)"
+ },
+ "https://www.cfa.go.jp/policies/kokoseido/mushouka": {
+  "estado": "confere",
+  "nota": "Agência de Crianças e Famílias: gratuidade da educação e cuidado infantil (幼児教育・保育の無償化)"
+ },
+ "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1bd66626-02b3-4966-8f38-20659fea0f1f/457e5ee9/20250318_councils_jigyounushi-kyougi_1bd66626_04.pdf": {
+  "estado": "confere",
+  "nota": "Material sobre a contribuição para crianças e criação de filhos (子ども・子育て拠出金)"
+ },
+ "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cf58692-19b3-47a6-af76-1d6df3602740/bf2fe881/20250130_policies_budget_tokubetsukaikei_ikujikyugyo_06.pdf": {
+  "estado": "confere",
+  "nota": "Resumo do benefício de licença parental (育児休業給付)"
+ },
+ "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/13c14507-66d3-4212-9cda-7afd707c1083/eae3eab8/20250402_policies_budget_tokubetsukaikei_kodomokosodate_08.pdf": {
+  "estado": "confere",
+  "nota": "Orçamento da conta especial de crianças e criação de filhos, ano fiscal 2025"
+ },
+ "https://mods.go.kr/menu.es?mid=a20206010000": {
+  "estado": "confere",
+  "nota": "Ministry of Data and Statistics: Household Income and Expenditure Survey (pesquisa de renda e despesa dos domicílios)"
+ },
+ "https://bok.or.kr/eng/bbs/E0000634/view.do?menuNo=400069&nttId=10083839&pageIndex=": {
+  "estado": "confere",
+  "nota": "Banco da Coreia: tabelas de insumo-produto de referência de 2020"
+ },
+ "https://data2x.org/wp-content/uploads/2025/03/South-Korea-TUCS-Korean-WR.pdf": {
+  "estado": "confere",
+  "nota": "Documento sobre o uso da pesquisa de uso do tempo na formulação de políticas da Coreia (em coreano)"
+ },
+ "https://www.inegi.org.mx/rnm/index.php/catalog/1116": {
+  "estado": "confere",
+  "nota": "INEGI: ENIGH 2024"
+ },
+ "https://www.sat.gob.mx/minisitio/DeduccionesPersonales/colegiaturas.html": {
+  "estado": "confere",
+  "nota": "SAT: deduções pessoais, colegiaturas"
+ },
+ "https://microdata.worldbank.org/catalog/3827": {
+  "estado": "confere",
+  "nota": "Nigéria: Living Standards Survey 2018-2019 (pesquisa de orçamento e padrão de vida)"
+ },
+ "https://www.gtap.agecon.purdue.edu/databases/IO/table_display.asp?IO_ID=468": {
+  "estado": "ressalva",
+  "nota": "Registro da tabela de insumo-produto da Nigéria no GTAP; o acesso à tabela pode exigir conta"
+ },
+ "https://www.bea.gov/industry/input-output-accounts-data": {
+  "estado": "confere",
+  "nota": "BEA: Input-Output Accounts Data"
+ },
+ "https://www.soumu.go.jp/english/dgpp_ss/data/io/io20_00001.html": {
+  "estado": "confere",
+  "nota": "Ministério de Assuntos Internos: 2020 Input-Output Tables for Japan"
+ },
+ "https://www.e-stat.go.jp/en/stat-search/files?toukei=00200603&layout=dataset": {
+  "estado": "confere",
+  "nota": "e-Stat: Input-Output Tables for Japan, com os anos 2005, 2011, 2015 e 2020"
+ },
+ "https://www.e-stat.go.jp/en/stat-search?kikan=00200&toukei=00200561&page=1": {
+  "estado": "confere",
+  "nota": "e-Stat: Family Income and Expenditure Survey (Ministério de Assuntos Internos)"
+ },
+ "https://www.inegi.org.mx/programas/enut/2019/?ps=microdatos": {
+  "estado": "ressalva",
+  "nota": "Título confirmado (ENUT 2019); a oferta de microdados na página não foi confirmada, pois o conteúdo é carregado por JavaScript"
+ },
+ "https://www.bancaditalia.it/statistiche/tematiche/indagini-famiglie-imprese/bilanci-famiglie/distribuzione-microdati/index.html": {
+  "estado": "confere",
+  "nota": "Banca d'Italia: distribuição dos microdados do SHIW, com arquivos de 2020 e 2022"
+ },
+ "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.02.assegno-unico-2026-presentazione-domanda-e-aggiornamento-importi.html": {
+  "estado": "ressalva",
+  "nota": "Título confirmado (Assegno unico 2026: domanda e aggiornamento importi); o texto, longo, não foi relido nesta conferência"
+ },
+ "https://population.un.org/wpp/": {
+  "estado": "confere",
+  "nota": "ONU, World Population Prospects (página do portal)"
+ },
+ "https://ilostat.ilo.org/data/": {
+  "estado": "lida_antes",
+  "nota": "Portal ILOSTAT; o servidor recusa acesso automático (403). Os dados foram baixados pela API"
+ },
+ "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html": {
+  "estado": "lida_antes",
+  "nota": "OCDE, Inter-Country Input-Output Tables; lida em rodada anterior, o servidor recusa acesso automático (403)"
+ },
+ "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm": {
+  "estado": "lida_antes",
+  "nota": "Lei 14.601/2023 no Planalto; lida em rodada anterior, o servidor reinicia a conexão de acessos automáticos"
+ },
+ "https://www.isss.pku.edu.cn/cfps/en": {
+  "estado": "nao_confirmada",
+  "nota": "Página do CFPS; o certificado do servidor não passa na verificação automática"
+ },
+ "https://microdata.gov.in/NADA/index.php/catalog/236": {
+  "estado": "nao_confirmada",
+  "nota": "Portal de microdados do MoSPI; não abriu da rede do autor nem da do assistente"
+ },
+ "http://mdis.kostat.go.kr/eng/index.do": {
+  "estado": "nao_confirmada",
+  "nota": "Serviço de microdados da Coreia (MDIS); sem resposta no teste, endereço anterior ao novo domínio mods.go.kr"
+ },
+ "https://microdata.nigerianstat.gov.ng/index.php/catalog/178": {
+  "estado": "nao_confirmada",
+  "nota": "Catálogo da pesquisa de uso do tempo da Nigéria; o servidor não completou a conexão segura no teste"
+ },
+ "https://ec.europa.eu/eurostat/databrowser/view/naio_10_cp1700/default/table?lang=en": {
+  "estado": "lida_antes",
+  "nota": "Tabela usada nos cálculos da Itália; dados obtidos por download em rodada anterior; a página é o navegador de dados do Eurostat (JavaScript)"
+ },
+ "https://ec.europa.eu/eurostat/databrowser/view/nama_10_a64_e/default/table?lang=en": {
+  "estado": "lida_antes",
+  "nota": "Tabela usada nos cálculos da Itália; dados obtidos por download em rodada anterior; a página é o navegador de dados do Eurostat (JavaScript)"
+ },
+ "https://www.bls.gov/soc/crosswalks.htm": {
+  "estado": "confere",
+  "nota": "BLS: página das tabelas de correspondência SOC; o arquivo ISCO_SOC_Crosswalk foi baixado e usado"
+ },
+ "https://www.ilo.org/sites/default/files/2025-05/WP140_web.pdf": {
+  "estado": "lida_antes",
+  "nota": "ILO Working Paper 140 (2025), Tabela A1 usada nos cálculos; o servidor recusa acesso automático (403)"
+ },
+ "https://www.oecd.org/en/data/datasets/social-expenditure-database-socx.html": {
+  "estado": "lida_antes",
+  "nota": "Base SOCX; valores coletados em rodada anterior (aba P4_Matriz_Instrumentos); o servidor recusa acesso automático (403)"
+ },
+ "https://www.oxfordmartin.ox.ac.uk/downloads/academic/The_Future_of_Employment.pdf": {
+  "estado": "confere",
+  "nota": "PDF de Frey e Osborne (2013) baixado e usado (702 ocupações); o endereço redireciona"
+ },
+ "https://www.inegi.org.mx/programas/enigh/nc/2024/": {
+  "estado": "ressalva",
+  "nota": "Página da ENIGH 2024 carregada por JavaScript; a pesquisa foi confirmada no catálogo do INEGI (rnm/catalog/1116)"
+ },
+ "https://www.bokjiro.go.kr/ssis-tbu/cms/pc/news/news/1309692_1114.html": {
+  "estado": "confere",
+  "nota": "Comunicado do ministério: total de abril ₩ 3.892억, retroativo ₩ 1.687억 para cerca de 430 mil crianças, 2,55 milhões de crianças"
+ },
+ "https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/bolsa-familia-amplia-inclusao-e-fortalece-gestoes-estaduais-e-municipais": {
+  "estado": "ressalva",
+  "nota": "Lida em 2026-11-02 por um leitor de páginas (notícia de 23/12/2025: \"quase R$ 160 bilhões\" e 19,8 milhões de famílias por mês), mas o teste automático recebeu 404 do servidor; se o link não abrir no seu navegador, procure a notícia pelo título"
+ },
+ "https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/relatorios/renuncia/gastos-tributarios-ploa/dgt-previsao-ploa-2026-quadros.xlsx": {
+  "estado": "confere",
+  "nota": "Planilha dos quadros do DGT PLOA 2026: PIB de R$ 13.826.294 mi"
+ },
+ "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2025": {
+  "estado": "confere",
+  "nota": "Receita Federal, Tributação de 2025: dedução anual por dependente de R$ 2.275,08 (exercício 2026, ano-calendário 2025); alíquotas de 7,5% a 27,5%"
+ },
+ "https://www.newsis.com/view/NISX20250829_0003307926": {
+  "estado": "ressalva",
+  "nota": "Artigo de imprensa de 29/08/2025 que cita o projeto de orçamento do governo; não é o documento orçamentário nem o valor aprovado"
+ },
+ "https://public-inspection.federalregister.gov/2025-09381.pdf": {
+  "estado": "confere",
+  "nota": "Aviso do HHS/ACF: a American Relief Act, 2025 destinou US$ 250.000.000 a ajuda por desastres para o cuidado infantil"
+ }
+}
