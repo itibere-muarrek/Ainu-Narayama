@@ -42,6 +42,7 @@ except Exception:
 
 t = G.T[lang if lang in G.T else "pt"] if ok else {"d_titulo": "Dados verificáveis", "x_sem": "Os dados do Diretório ainda não foram liberados neste ambiente."}
 st.title(t["d_titulo"])
+st.caption(ts("dados_abertos_nota", lang))
 if not ok:
     st.warning(t["x_sem"])
     st.stop()

@@ -1,12 +1,10 @@
 """
-Configurações centrais do projeto AINU-Narayama.
+Configurações centrais do projeto AINU.Systems.
 
-Contém o cadastro dos 28 países cobertos pela tese v8.0 (Anexo 5),
-os limiares críticos do Índice de Narayama Sistêmico (N*) e os
-caminhos padrão de dados usados pelo restante do pipeline.
+Contém o cadastro dos 28 países da amostra, os limiares do Índice de Narayama Sistêmico (N*), a composição de perfis
+estruturais, os ajustes da calibração histórica do autor (usados só nos cenários e em N*_cal) e os caminhos de dados.
 
-Fonte: V1_EcoPol_062426_v8.0.docx (pesquisa independente, Cap. 3, V.III,
-Capítulo 5, Anexo 5, Anexo 8, Tabela 4, Tabela 14).
+Fonte: pesquisa independente "Do Dilema de Narayama ao Oicoceno Civilizacional" (V1_1).
 """
 
 import math
@@ -139,36 +137,21 @@ FATOR_ALOCATIVO_SUPERIOR = FATOR_ALOCATIVO_LIMIARES["superior"]
 FATOR_ALOCATIVO_INFERIOR = FATOR_ALOCATIVO_LIMIARES["inferior"]
 
 # ---------------------------------------------------------------------------
-# Fórmulas (Anexo 1, A1.2 — NGII_puro com 2 componentes)
+# Fórmulas (valor publicado = N*_Obs; ver docs/definitions.md, seção 1)
 # ---------------------------------------------------------------------------
 
 FORMULAS = {
-    "ngii_puro": "NGII_puro = (Pop_Base / Pop_Topo) x (Nascimentos / Mortes)",
-    "componente_1": "Razao Geracional = Pop_Base / Pop_Topo (faixa etaria varia por perfil, ver FAIXAS_ETARIAS_POR_PERFIL_TABELA14)",
-    "componente_2": "Vitalidade = Nascimentos / Mortes",
+    "ngii_obs": "NGII_Obs = (Pop_Base / Pop_Topo) x (Nascimentos / Mortes)",
     "fator_geracional": "Fator_Geracional = TFR_atual / TFR_25_anos_atras",
-    "n_base": "N* = N_Base = NGII_puro x Fator_Geracional",
+    "n_base": "N_Base = NGII_Obs x Fator_Geracional",
+    "n_estrela": "N*_Obs = raiz quadrada de N_Base",
     "fator_alocativo": "Fator_Alocativo = NTA(0-25) / NTA(65+)",
-    "nota": (
-        "Decisao vigente (atualizada em 2026-07-03): NGII_puro usa a "
-        "formula de 2 componentes do Anexo 1 / Secao V.III, sem o "
-        "terceiro fator de escolaridade do Capitulo 5 (removido). "
-        "Pop_Base/Pop_Topo usam as faixas etarias por perfil da Tabela "
-        "14 (5 niveis, mais granular que a Secao V.III — ver "
-        "FAIXAS_ETARIAS_POR_PERFIL_TABELA14 abaixo). O Anexo 1 nao "
-        "especifica nenhum passo de normalizacao do N_Base — valores "
-        "altos em paises jovens/alta fecundidade sao uma consequencia "
-        "matematica da formula tal como publicada (ver docs/definitions.md)."
-    ),
 }
 
 # ---------------------------------------------------------------------------
 # Faixas etárias por Perfil Estrutural — Tabela 14 (decisão vigente)
 # ---------------------------------------------------------------------------
-# A tese define as faixas de Pop_Base/Pop_Topo por perfil de duas
-# formas diferentes (V.III, com 2 níveis, vs. Tabela 14, com 5
-# níveis, mais granular — ver docs/definitions.md). Decisão
-# confirmada em 2026-07-03: usar a Tabela 14 (5 níveis) para todos os
+# Faixas de Pop_Base/Pop_Topo por perfil: Tabela 14 (5 níveis) para todos os
 # 28 países, calibrando os cortes etários por perfil individualmente
 # em vez da faixa binária da Seção V.III (A/B vs. C/D/E). A fórmula
 # do NGII_puro usa a versão de 2 componentes do Anexo 1 (2026-07-02)
@@ -187,37 +170,12 @@ FAIXAS_ETARIAS_POR_PERFIL_TABELA14 = {
 }
 
 # ---------------------------------------------------------------------------
-# Faixas etárias por Perfil Estrutural — Seção V.III (referência, não usada)
+# Composição de perfis por país
 # ---------------------------------------------------------------------------
-# Versão anterior, de 2 níveis (A/B vs. C/D/E), usada até 2026-07-02.
-# Mantida aqui só como referência/histórico.
-# Seção V.III: "Pop_Base = coorte 0–25 (Perfis A/B) ou 0–21 (Perfis
-# C/D/E); Pop_Topo = coorte 55+ (Perfis A/B) ou 61+ (Perfis C/D/E)".
-
-FAIXAS_ETARIAS_POR_PERFIL_V3 = {
-    "A": {"pop_base_max": 25, "pop_topo_min": 55},
-    "B": {"pop_base_max": 25, "pop_topo_min": 55},
-    "C": {"pop_base_max": 21, "pop_topo_min": 61},
-    "D": {"pop_base_max": 21, "pop_topo_min": 61},
-    "E": {"pop_base_max": 21, "pop_topo_min": 61},
-}
-
-# ---------------------------------------------------------------------------
-# Composição de perfis por país — Seção 5.2 (decisão de 2026-07-04)
-# ---------------------------------------------------------------------------
-# CORREÇÃO: até 2026-07-03 este arquivo atribuía UM único perfil (A-E) a
-# cada país. Isso estava errado — a Seção 5.2 do docx v8.0 (verificada
-# diretamente, e confirmada país a país com o usuário) classifica cada um
-# dos 28 países como uma COMPOSIÇÃO PONDERADA de 2-3 perfis adjacentes
-# (ex.: Brasil = 30% B + 40% C + 30% D — não "Perfil C" puro). Isso também
-# corrige a afirmação (antes nesta seção) de que nenhum país é Perfil E:
-# Japão usa 40% Perfil E.
-#
-# pop_base_max/pop_topo_min de cada país (ver _cortes_ponderados) são a
-# média ponderada dos cortes de FAIXAS_ETARIAS_POR_PERFIL_TABELA14 pelos
-# pesos abaixo, arredondada ao inteiro mais próximo (round-half-up, não o
-# banker's rounding padrão do Python — só muda o resultado de IRN, SAU e
-# POL, os três únicos países cuja média cai exatamente em ",5").
+# Cada país é uma composição ponderada de 2–3 perfis estruturais adjacentes (ex.: Brasil = 30% B + 40% C + 30% D), não um perfil
+# único. pop_base_max/pop_topo_min de cada país (ver _cortes_ponderados) são a média ponderada dos cortes de
+# FAIXAS_ETARIAS_POR_PERFIL_TABELA14 pelos pesos abaixo, com arredondamento round-half-up (muda só IRN, SAU e POL, cuja média
+# cai exatamente em ",5").
 
 COMPOSICAO_PERFIL_POR_PAIS = {
     "NGA": {"A": 0.35, "B": 0.40, "C": 0.25},
@@ -352,23 +310,12 @@ PAISES = {
 }
 
 # ---------------------------------------------------------------------------
-# Protocolo de Falseabilidade quantitativo — Anexo 9 (v9.0, 2026-07-07)
+# Ajustes da calibração histórica do autor (4 ajustes multiplicativos)
 # ---------------------------------------------------------------------------
-# A v9.0 da tese (V1_EcoPol_070726_v9.0.docx) reescreveu o Anexo 9: os 7
-# testes qualitativos da v8.0 (ver src/falseability.py,
-# aplicar_protocolo_falseabilidade — mantida como referência histórica)
-# foram substituídos por uma fórmula quantitativa de 4 ajustes
-# multiplicativos, calibrados país a país e aprovados pelo usuário com um
-# pesquisador colaborador da Unicamp:
+# Valores por país fornecidos pelo autor, sem fonte automatizável. NÃO entram no valor publicado (N*_Obs): servem aos cenários
+# unitários (n_estrela_mig/ine/pol/sub) e à calibração combinada (*_cal) — ver ajustes_da_cadeia e docs/definitions.md, seção 6.
 #
-#   NGII_Puro = NGII_Bruto × (1-migratorio) × (1-inercia) × (1-politicas) × (1-subregistro)
-#
-# Critério de aceitação da v9.0: redução total composta entre 25% e 45%.
-# Os percentuais abaixo foram fornecidos pelo usuário; a fórmula de
-# aplicação (multiplicativa, não aditiva) foi corrigida por este projeto
-# antes de incorporar — a primeira versão da tabela tinha os percentuais
-# certos mas o resultado final publicado batia com uma soma simples dos
-# percentuais, não com a fórmula multiplicativa declarada.
+#   NGII_cal = NGII_Obs × (1-migratorio) × (1-inercia) × (1-politicas) × (1-subregistro)
 
 AJUSTES_FALSEABILIDADE_POR_PAIS = {
     "SAU": {"migratorio": 0.22, "inercia": 0.12, "politicas": 0.12, "subregistro": 0.06},
@@ -401,21 +348,29 @@ AJUSTES_FALSEABILIDADE_POR_PAIS = {
     "JPN": {"migratorio": 0.08, "inercia": 0.18, "politicas": 0.04, "subregistro": 0.13},
 }
 
-# O critério de aceitação "redução total entre 25% e 45%" (v9.0) foi ELIMINADO no PQDF-N*
-# (EcoPol V1_1, Anexo 9): os ajustes passam a ser estimados por fonte e método documentados,
-# independentemente do resultado que produzem, e entram como cenários separados (N*_k) ao lado do
-# N*_Obs. Estes valores seguem como referência histórica da calibração v9.0 usada pelo pipeline
-# atual; aqui só se valida o domínio [0, 1) e se registra a redução total, sem faixa de aceitação.
-REDUCAO_TOTAL_V9_POR_PAIS: dict[str, float] = {}
+# Não há faixa de aceitação para a redução total (PQDF-N*): aqui só se valida o domínio [0, 1) e se registra a redução composta.
+REDUCAO_TOTAL_CAL_POR_PAIS: dict[str, float] = {}
 for _codigo, _ajustes in AJUSTES_FALSEABILIDADE_POR_PAIS.items():
     assert all(0 <= v < 1 for v in _ajustes.values()), f"ajuste fora de [0,1) em {_codigo}: {_ajustes}"
-    REDUCAO_TOTAL_V9_POR_PAIS[_codigo] = 1 - (
+    REDUCAO_TOTAL_CAL_POR_PAIS[_codigo] = 1 - (
         (1 - _ajustes["migratorio"])
         * (1 - _ajustes["inercia"])
         * (1 - _ajustes["politicas"])
         * (1 - _ajustes["subregistro"])
     )
 del _codigo, _ajustes
+
+# PQDF-N* (EcoPol V1_1, Anexo 9, camada A): o N* publicado é o N*_Obs, calculado das fontes oficiais sem
+# nenhum ajuste contrafactual: N*_Obs = √(NGII_Obs × F_Geracional), com NGII_Obs = NGII_Bruto. Os 4 ajustes
+# acima entram só como CENÁRIOS separados (N*_k = √(NGII_Obs × (1−a_k) × F_Geracional)) e como calibração
+# histórica combinada (colunas *_cal), nunca como valor publicado.
+AJUSTES_NULOS = {"migratorio": 0.0, "inercia": 0.0, "politicas": 0.0, "subregistro": 0.0}
+CENARIOS_PQDF = {"mig": "migratorio", "ine": "inercia", "pol": "politicas", "sub": "subregistro"}
+
+
+def ajustes_da_cadeia(pais: str) -> dict:
+    """Ajustes aplicados ao valor PUBLICADO (N*_Obs): nenhum. A calibração histórica fica em *_cal."""
+    return AJUSTES_NULOS
 
 # ---------------------------------------------------------------------------
 # Plataformas (Anexo 14 — Glossário Técnico, "AINU")

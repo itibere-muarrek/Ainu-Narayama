@@ -6,12 +6,12 @@ Social Expenditure Database) a partir de data/raw/ e prepara os
 DataFrames usados pelo motor de cálculo em src/indices.py.
 
 Nota: `pop_base` e `pop_topo` já vêm agregadas com o corte etário
-correto por perfil do país (Seção V.III: Perfis A/B = 0-25/55+;
-Perfis C/D/E = 0-21/61+ — ver src.config.FAIXAS_ETARIAS_POR_PERFIL_V3),
+correto por perfil do país (ver
+src.config.FAIXAS_ETARIAS_POR_PERFIL_TABELA14),
 não uma faixa fixa — por isso os nomes das colunas não têm a idade
 embutida.
 
-A fórmula do NGII_puro (Anexo 1, 2 componentes) não usa escolaridade;
+A fórmula do NGII (2 componentes) não usa escolaridade;
 as colunas de gasto social da OECD abaixo servem apenas para o
 Fator_Alocativo (Fase 2b, ainda não integrado — ver src/data_pipeline.py).
 """

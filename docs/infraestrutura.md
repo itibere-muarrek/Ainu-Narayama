@@ -133,7 +133,7 @@ Ainu.Narayama/
 │   ├── config.py                 # 28 países, limiares, faixas etárias por perfil
 │   ├── data_loader.py             # leitura/validação de CSVs brutos
 │   ├── data_pipeline.py           # orquestra o cálculo de N* (Fase 2a: só UN WPP)
-│   ├── indices.py                 # fórmulas: NGII_puro, Fator_Geracional, N*, Fator_Alocativo
+│   ├── indices.py                 # fórmulas: NGII, Fator_Geracional, N*, Fator_Alocativo
 │   └── falseability.py            # Protocolo de Falseabilidade (7 testes, Anexo 9)
 ├── app/
 │   ├── ainu_systems/app.py      # plataforma restrita (28 países, gate de senha)
@@ -159,18 +159,16 @@ vazios.
 
 | Fonte | Status | Uso |
 |---|---|---|
-| UN World Population Prospects 2024 | ✅ Integrada, dados reais (28 países, idade simples 1999+2024) | NGII_puro, Fator_Geracional |
+| UN World Population Prospects 2024 | ✅ Integrada, dados reais (28 países, idade simples 1999+2024) | NGII_Obs, Fator_Geracional |
 | OECD Social Expenditure Database | ⏳ Planejada (Fase 2b) | Fator_Alocativo/farol — cobertura parcial (só ~15 dos 28 países são OCDE) |
 | National Transfer Accounts (NTA) | ⏳ Planejada (Fase 2b) | Fator_Alocativo (fonte alternativa/complementar à OECD) |
-| UNESCO / World Bank Education Stats | ⏳ Planejada (Fase 2b) | Versão Expandida do NGII_puro (fator de escolaridade) |
+| UNESCO / World Bank Education Stats | ⏳ Planejada (Fase 2b) | Versão expandida do NGII (fator de escolaridade) |
 
-Fórmula vigente (Versão Básica, ver definitions.md seção 3):
+Fórmula vigente (ver definitions.md, seções 1 e 3):
 ```
-NGII_puro = (Pop_Base / Pop_Topo) × (Nascimentos / Mortes)
-N* = NGII_puro × Fator_Geracional
+NGII_Obs = (Pop_Base / Pop_Topo) × (Nascimentos / Mortes)
+N*_Obs = √(NGII_Obs × Fator_Geracional)
 ```
-Sem normalização definida pela tese — valores altos em países jovens/alta
-fecundidade são esperados (ver definitions.md, seção 8).
 
 ## 8. Segurança e segredos
 

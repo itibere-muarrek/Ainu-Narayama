@@ -44,6 +44,7 @@ except Exception:  # dados ausentes: avisa e não quebra
 
 t = G.T[lang if lang in G.T else "pt"] if ok else {"titulo": "Contas Nacionais por Nascimentos", "x_sem": "Os dados do Diretório ainda não foram liberados neste ambiente."}
 st.title(t["titulo"])
+st.caption(ts("dados_abertos_nota", lang))
 if not ok:
     st.warning(t["x_sem"])
     st.stop()

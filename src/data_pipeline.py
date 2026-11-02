@@ -1,59 +1,18 @@
 """
-Orquestração do cálculo de N* para os 28 países (Fase 2a).
+Orquestração do cálculo de N* para os 28 países.
 
-Lê data/raw/un_wpp.csv (via src.data_loader) e grava
-data/processed/n_index_{ano}.csv com NGII_Bruto, NGII_puro (pós
-falseabilidade), Fator_Geracional, N_Base e a zona de classificação,
-para todos os países presentes no ano solicitado e em ano-25.
+Lê data/raw/un_wpp.csv (via src.data_loader) e grava data/processed/n_index_{ano}.csv. Valor publicado = N*_Obs (PQDF-N*,
+camada A): NGII_Obs = (Pop_Base/Pop_Topo) × (Nascimentos/Mortes), N_Base = NGII_Obs × Fator_Geracional, N* = √N_Base, sem
+nenhum ajuste. Junto vêm, só como referência, a calibração histórica do autor (colunas *_cal) e os cenários unitários
+(n_estrela_mig/ine/pol/sub) — ver src.falseability e docs/definitions.md, seção 6.
 
-IMPORTANTE — escopo desta fase (confirmado em 2026-07-01): esta
-função usa **apenas UN World Population Prospects**. Ainda não
-calcula Fator_Alocativo / farol institucional (+/n/-): depende de
-dados de NTA (National Transfer Accounts) e/ou OECD Social
-Expenditure Database, que não cobrem boa parte dos 28 países (OCDE
-só tem ~15 membros na nossa lista). Fonte alternativa ainda não definida.
+Pop_Base/Pop_Topo: cada país usa o corte etário da média ponderada de sua composição de perfis
+(src.config.COMPOSICAO_PERFIL_POR_PAIS), já agregada em data/raw/un_wpp.csv por scripts/build_un_wpp_raw.py.
 
-NGII_puro (atualizado em 2026-07-02): usa a fórmula de 2 componentes
-do Anexo 1 — (Pop_Base/Pop_Topo) × (Nasc/Mort) — sem fator de
-escolaridade (o terceiro fator do Capítulo 5 foi removido, ver
-src/indices.py). O Anexo 1 não especifica normalização do N_Base:
-valores altos em países jovens/alta fecundidade são esperados (ver
-docs/definitions.md, seção 8).
+A zona (`status`) é classificada com src.indices.classificar_zona_5 a partir do N_Base (a raiz é monotônica). Fator_Alocativo e
+farol ficam vazios: dependem de National Transfer Accounts ainda não integradas.
 
-Pop_Base/Pop_Topo (atualizado em 2026-07-04): cada país usa o corte
-etário da média ponderada de sua composição de perfis (Seção 5.2 —
-ver src.config.COMPOSICAO_PERFIL_POR_PAIS e src.config.PAISES), já
-agregadas em data/raw/un_wpp.csv (colunas pop_base/pop_topo) pelo
-script scripts/build_un_wpp_raw.py.
-
-Protocolo de Falseabilidade (atualizado em 2026-07-07): a razão
-calculada diretamente de Pop_Base/Pop_Topo/Nasc/Mort é o NGII_Bruto,
-não o NGII_puro — antes desta data, o pipeline tratava um como o
-outro por falta de dado real de falseabilidade. Agora o NGII_Bruto
-passa pelo Protocolo de Falseabilidade quantitativo da v9.0
-(V1_EcoPol_070726_v9.0.docx, Anexo 9 — ver
-src.falseability.aplicar_falseabilidade_quantitativa e
-src.config.AJUSTES_FALSEABILIDADE_POR_PAIS) para se tornar o
-NGII_puro real, que então alimenta o N_Base.
-
-Normalização (atualizada em 2026-07-09): `n_base` é o valor demográfico
-bruto (N_Base = NGII_puro × Fator_Geracional). `n_estrela` é o N*
-reportado publicamente — `sqrt(n_base)`, decisão do autor incorporada
-diretamente na tese (ver src.indices.normalizar_n_base pro racional
-completo). A zona (`status`) continua classificada a partir do
-`n_base` bruto — matematicamente equivalente, já que a raiz é
-monotônica.
-
-Zonas (atualizado em 2026-07-13): `status` usa
-`src.indices.classificar_zona_5` (5 zonas, revisão do autor de
-12/07/2026), não mais `classificar_zona_n_base` (4 zonas, mantida
-como referência histórica). Principal mudança: PEEC passa a ser
-também um limiar de N_Base/N*, não só diagnosticado por TFR.
-
-Fonte de dados: UN World Population Prospects 2024
-(population.un.org/wpp), arquivos "Demographic Indicators" e
-"Population by Single Age" (não os grupos de 5 anos — os cortes em
-21 e 61 anos exigem idade simples), variante "Medium".
+Fonte de dados: UN World Population Prospects 2024 (population.un.org/wpp), variante média, idade simples.
 """
 
 from pathlib import Path
@@ -63,6 +22,7 @@ import pandas as pd
 
 from src.config import (
     AJUSTES_FALSEABILIDADE_POR_PAIS,
+    CENARIOS_PQDF,
     ANOS_ALVO_HISTORICO,
     DATA_PROCESSED_DIR,
     DATA_RAW_DIR,
@@ -81,10 +41,43 @@ from src.indices import (
 CICLO_GERACIONAL_ANOS = 25
 
 
+def _arred(v):
+    return round(v, 4) if v is not None else None
+
+
+def _linha_n(linha, tfr_ano_base, codigo: str) -> dict:
+    """Cadeia do N* de um país/ano. Valor publicado = N*_Obs (PQDF-N*, camada A, sem ajustes); `_cal` = calibração
+    histórica do autor (4 ajustes combinados); n_estrela_<mig|ine|pol|sub> = cenários unitários."""
+    ngii_obs = calcular_ngii_puro(
+        pop_base=linha["pop_base"], pop_topo=linha["pop_topo"], nascimentos=linha["nascimentos"], mortes=linha["mortes"]
+    )
+    fg = calcular_fator_geracional(tfr_atual=linha["tfr"], tfr_25_anos_atras=tfr_ano_base)
+    n_base = calcular_n_base(ngii_obs, fg)
+    ajustes = AJUSTES_FALSEABILIDADE_POR_PAIS[codigo]
+    ngii_cal = aplicar_falseabilidade_quantitativa(ngii_obs, ajustes) if ngii_obs is not None else None
+    n_base_cal = calcular_n_base(ngii_cal, fg)
+    out = {
+        "codigo": codigo,
+        "n_base": _arred(n_base),
+        "n_estrela": _arred(normalizar_n_base(n_base)),
+        "ngii_obs": _arred(ngii_obs),
+        "fator_geracional": _arred(fg),
+        "status": classificar_zona_5(n_base),
+        "ngii_cal": _arred(ngii_cal),
+        "n_base_cal": _arred(n_base_cal),
+        "n_estrela_cal": _arred(normalizar_n_base(n_base_cal)),
+        "status_cal": classificar_zona_5(n_base_cal),
+    }
+    for sufixo, chave in CENARIOS_PQDF.items():
+        nb_k = calcular_n_base(ngii_obs * (1 - ajustes[chave]) if ngii_obs is not None else None, fg)
+        out[f"n_estrela_{sufixo}"] = _arred(normalizar_n_base(nb_k))
+    return out
+
+
 def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> pd.DataFrame:
     """
-    Calcula N* (NGII_puro x Fator_Geracional) para os 28 países da
-    amostra, usando dados da UN WPP para `ano` e `ano - 25`.
+    Calcula o N*_Obs (NGII_Obs x Fator_Geracional, raiz quadrada) para os 28
+    países da amostra, usando dados da UN WPP para `ano` e `ano - 25`.
 
     Args:
         ano: Ano de referência (ex.: 2024). Requer que data/raw/un_wpp.csv
@@ -95,10 +88,13 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
     Returns:
         DataFrame com uma linha por país (só os países com dados em
         ambos os anos), colunas: codigo, n_base, n_estrela, farol,
-        ngii_bruto, ngii_puro, fator_geracional, fator_alocativo,
-        status, populacao. `farol` e `fator_alocativo` ficam None
-        nesta fase (ver docstring do módulo). Também grava o resultado
-        em data/processed/n_index_{ano}.csv.
+        ngii_obs, fator_geracional, fator_alocativo, status, populacao
+        (valor publicado = N*_Obs, PQDF-N*) e, como referência, a
+        calibração histórica do autor (ngii_cal, n_base_cal,
+        n_estrela_cal, status_cal) e os cenários unitários
+        n_estrela_mig/ine/pol/sub. `farol` e `fator_alocativo` ficam
+        None nesta fase. Também grava o resultado em
+        data/processed/n_index_{ano}.csv.
     """
     caminho_un = caminho_un or (DATA_RAW_DIR / "un_wpp.csv")
     df = carregar_dados_un(caminho_un)
@@ -116,40 +112,12 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
 
         linha = df_ano.loc[codigo]
 
-        ngii_bruto = calcular_ngii_puro(
-            pop_base=linha["pop_base"],
-            pop_topo=linha["pop_topo"],
-            nascimentos=linha["nascimentos"],
-            mortes=linha["mortes"],
-        )
-        ngii_puro = (
-            aplicar_falseabilidade_quantitativa(ngii_bruto, AJUSTES_FALSEABILIDADE_POR_PAIS[codigo])
-            if ngii_bruto is not None
-            else None
-        )
-        fator_geracional = calcular_fator_geracional(
-            tfr_atual=linha["tfr"],
-            tfr_25_anos_atras=df_base.loc[codigo, "tfr"],
-        )
-        n_base = calcular_n_base(ngii_puro, fator_geracional)
-        n_estrela = normalizar_n_base(n_base)
+        linha_n = _linha_n(linha, df_base.loc[codigo, "tfr"], codigo)
+        resultados.append({**linha_n, "farol": None, "fator_alocativo": None, "populacao": round(linha["pop_total"], 3)})
 
-        resultados.append(
-            {
-                "codigo": codigo,
-                "n_base": round(n_base, 4) if n_base is not None else None,
-                "n_estrela": round(n_estrela, 4) if n_estrela is not None else None,
-                "farol": None,  # Fator_Alocativo pendente (Fase 2b)
-                "ngii_bruto": round(ngii_bruto, 4) if ngii_bruto is not None else None,
-                "ngii_puro": round(ngii_puro, 4) if ngii_puro is not None else None,
-                "fator_geracional": round(fator_geracional, 4) if fator_geracional is not None else None,
-                "fator_alocativo": None,  # pendente (Fase 2b)
-                "status": classificar_zona_5(n_base),
-                "populacao": round(linha["pop_total"], 3),
-            }
-        )
-
+    ordem = ["codigo", "n_base", "n_estrela", "farol", "ngii_obs", "fator_geracional", "fator_alocativo", "status", "populacao"]
     resultado_df = pd.DataFrame(resultados).sort_values("codigo").reset_index(drop=True)
+    resultado_df = resultado_df[ordem + [c for c in resultado_df.columns if c not in ordem]]
 
     DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     caminho_saida = DATA_PROCESSED_DIR / f"n_index_{ano}.csv"
@@ -185,7 +153,8 @@ def executar_pipeline_historico(
 
     Returns:
         DataFrame com uma linha por (país, ano), colunas: codigo, ano,
-        n_base, n_estrela. Também grava o resultado em
+        n_base, n_estrela (N*_Obs) e n_base_cal, n_estrela_cal (calibração
+        histórica do autor). Também grava o resultado em
         data/processed/n_index_historico.csv.
     """
     anos = anos or ANOS_ALVO_HISTORICO
@@ -208,32 +177,8 @@ def executar_pipeline_historico(
             if pd.isna(linha["pop_base"]) or pd.isna(linha["pop_topo"]):
                 continue
 
-            ngii_bruto = calcular_ngii_puro(
-                pop_base=linha["pop_base"],
-                pop_topo=linha["pop_topo"],
-                nascimentos=linha["nascimentos"],
-                mortes=linha["mortes"],
-            )
-            ngii_puro = (
-                aplicar_falseabilidade_quantitativa(ngii_bruto, AJUSTES_FALSEABILIDADE_POR_PAIS[codigo])
-                if ngii_bruto is not None
-                else None
-            )
-            fator_geracional = calcular_fator_geracional(
-                tfr_atual=linha["tfr"],
-                tfr_25_anos_atras=df_base.loc[codigo, "tfr"],
-            )
-            n_base = calcular_n_base(ngii_puro, fator_geracional)
-            n_estrela = normalizar_n_base(n_base)
-
-            resultados.append(
-                {
-                    "codigo": codigo,
-                    "ano": ano,
-                    "n_base": round(n_base, 4) if n_base is not None else None,
-                    "n_estrela": round(n_estrela, 4) if n_estrela is not None else None,
-                }
-            )
+            linha_n = _linha_n(linha, df_base.loc[codigo, "tfr"], codigo)
+            resultados.append({"codigo": codigo, "ano": ano, **{k: linha_n[k] for k in ("n_base", "n_estrela", "n_base_cal", "n_estrela_cal")}})
 
     resultado_df = pd.DataFrame(resultados).sort_values(["codigo", "ano"]).reset_index(drop=True)
 

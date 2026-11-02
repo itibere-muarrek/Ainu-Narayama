@@ -56,6 +56,7 @@ def carregar():
 
 dados = carregar()
 st.title(tr("r_titulo", lang))
+st.caption(ts("dados_abertos_nota", lang))
 st.markdown(tr("r_intro", lang))
 st.caption(tr("r_nota", lang))
 if dados is None:

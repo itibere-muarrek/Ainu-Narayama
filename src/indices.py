@@ -1,30 +1,12 @@
 """
-Motor de cálculo dos índices do AINU-Narayama.
+Motor de cálculo dos índices do AINU.Systems.
 
-Implementa as fórmulas centrais da tese v8.0 para obtenção do Índice
-de Narayama Sistêmico (N*). Ver docs/definitions.md para a
-fundamentação teórica completa, exemplos numéricos e a nota sobre
-inconsistências internas identificadas no texto da tese.
+Implementa a cadeia do Índice de Narayama Sistêmico observado (N*_Obs, PQDF-N*, camada A): a razão do NGII
+((Pop_Base/Pop_Topo) × (Nasc/Mort), sem ajustes), o Fator_Geracional (TFR(t)/TFR(t-25)), o N_Base, o N* = √N_Base e a
+classificação em 5 zonas. Ver docs/definitions.md.
 
-Fonte: V1_EcoPol_062426_v8.0.docx — Anexo 1 (A1.2, Formalização
-Matemática do Modelo — fórmula de referência do NGII_puro), V.III
-(Fator_Geracional; faixas etárias de Pop_Base/Pop_Topo por perfil),
-V.III-bis (Fator_Alocativo).
-
-Decisão vigente (atualizada em 2026-07-02): NGII_puro usa a fórmula
-de 2 componentes do Anexo 1/V.III — (Pop_Base/Pop_Topo) × (Nasc/Mort)
-— sem o terceiro fator de escolaridade do Capítulo 5, que foi
-removido. O Anexo 1 (seção mais formal da tese) não inclui
-escolaridade na fórmula do NGII_puro, e não especifica nenhum passo
-de normalização — valores muito altos em países jovens/alta
-fecundidade são uma consequência matemática da fórmula tal como
-publicada, não um bug da implementação (ver docs/definitions.md,
-seção 8).
-
-Tratamento de erro: todas as funções retornam None quando as
-entradas tornam o cálculo indefinido (ex.: divisão por zero) ou
-quando alguma entrada já é None (propagação), em vez de levantar
-exceção.
+Tratamento de erro: todas as funções retornam None quando as entradas tornam o cálculo indefinido (ex.: divisão por zero) ou
+quando alguma entrada já é None (propagação), em vez de levantar exceção.
 """
 
 import math
@@ -223,43 +205,11 @@ def classificar_farol_alocativo(fator_alocativo: Optional[float]) -> Optional[st
     return "n"
 
 
-def classificar_zona_n_base(n_base: Optional[float]) -> Optional[str]:
-    """
-    Classifica o N_Base em uma das quatro zonas da Tabela 4 / Anexo 8.
-
-    Args:
-        n_base: Resultado de calcular_n_base().
-
-    Returns:
-        Uma entre: "Expansão Forte", "Ponto de Equilíbrio Autossustentável (PEA)",
-        "Tensão Acelerada", "Colapso de Narayama (PEC)", ou None se
-        n_base for None.
-
-    Exemplo:
-        >>> classificar_zona_n_base(0.6647727272727274)
-        'Tensão Acelerada'
-    """
-    if n_base is None:
-        return None
-
-    from src.config import LIMIAR_EXPANSAO_FORTE, LIMIAR_PEA_INFERIOR, LIMIAR_TENSAO_INFERIOR
-
-    if n_base > LIMIAR_EXPANSAO_FORTE:
-        return "Expansão Forte"
-    if n_base >= LIMIAR_PEA_INFERIOR:
-        return "Ponto de Equilíbrio Autossustentável (PEA)"
-    if n_base >= LIMIAR_TENSAO_INFERIOR:
-        return "Tensão Acelerada"
-    return "Colapso de Narayama (PEC)"
-
-
 def classificar_zona_5(n_base: Optional[float]) -> Optional[str]:
     """
-    Classifica o N_Base em uma das cinco zonas da revisão do autor
-    (12/07/2026, Seção 9-A.3/9-A.7), que substitui a convenção de 4
-    zonas (classificar_zona_n_base) como a oficial da tese. Principal
-    mudança: PEEC deixa de ser diagnosticado só por TFR e passa a ser
-    também um limiar de N_Base/N*.
+    Classifica o N_Base em uma das cinco zonas (PEC, Tensão Acelerada,
+    PEA, Tensão Populacional, PEEC). O PEEC é também um limiar de
+    N_Base/N*, além do diagnóstico por TFR.
 
     Limiares (N_Base bruto — ver src.config.LIMIARES_5_ZONAS):
         N_Base < 0,50                  -> Colapso de Narayama (PEC)
@@ -322,7 +272,7 @@ def normalizar_n_base(n_base: Optional[float]) -> Optional[float]:
 
     Os limiares de zona (Tabela 4/Anexo 8) foram recalculados na mesma
     escala — ver src.config.LIMIARES_SIMPLES_NORMALIZADOS. A
-    classificação de zona em si (classificar_zona_n_base) não muda:
+    classificação de zona em si (classificar_zona_5) não muda:
     como a raiz é estritamente monotônica para valores não-negativos,
     classificar o N_Base bruto contra os limiares brutos dá exatamente
     a mesma zona que classificar o N* normalizado contra os limiares

@@ -1,0 +1,158 @@
+{
+  "data": "2026-11-02",
+  "ano_referencia": 2024,
+  "aviso": "Sensibilidades de F4 e leitura de F5 definidas junto com a execução, não pré-registradas: valem como diagnóstico, não como confirmação nem refutação formal. Resultados de F1–F9 não executados constam como tal.",
+  "F1": {
+    "teste": "Reprodutibilidade",
+    "criterio": "diferença numérica > 1e-8 ou artefato não reconstruível",
+    "dif_max_duas_execucoes": 0.0,
+    "dif_max_recalculo_independente_vs_csv": 4.680353175989804e-05,
+    "tolerancia_do_csv": "5e-5 (o CSV publica 4 casas decimais)",
+    "resultado": "passa",
+    "limite": "Parte da tabela data/raw/un_wpp.csv (derivada do WPP 2024); não refaz o download dos arquivos de ~200 MB da ONU."
+  },
+  "F4": {
+    "teste": "Robustez classificatória",
+    "criterio": "Spearman < 0,85 ou concordância de zonas < 80% nas sensibilidades definidas",
+    "sensibilidades": {
+      "cortes etários -1 ano": {
+        "spearman": 0.9989,
+        "concordancia_de_zonas": 0.7143,
+        "paises_que_mudam_de_zona": [
+          "BRA",
+          "CHN",
+          "FRA",
+          "IRN",
+          "MAR",
+          "MEX",
+          "POL",
+          "ZAF"
+        ]
+      },
+      "cortes etários +1 ano": {
+        "spearman": 0.9989,
+        "concordancia_de_zonas": 0.9643,
+        "paises_que_mudam_de_zona": [
+          "THA"
+        ]
+      },
+      "cenário migratorio (N*_mig)": {
+        "spearman": 0.996,
+        "concordancia_de_zonas": 0.6429,
+        "paises_que_mudam_de_zona": [
+          "BRA",
+          "CHN",
+          "FRA",
+          "GBR",
+          "IRN",
+          "MAR",
+          "MEX",
+          "POL",
+          "SWE",
+          "ZAF"
+        ]
+      },
+      "cenário inercia (N*_ine)": {
+        "spearman": 0.994,
+        "concordancia_de_zonas": 0.7143,
+        "paises_que_mudam_de_zona": [
+          "BRA",
+          "CHN",
+          "FRA",
+          "IRN",
+          "MAR",
+          "MEX",
+          "POL",
+          "ZAF"
+        ]
+      },
+      "cenário politicas (N*_pol)": {
+        "spearman": 0.9978,
+        "concordancia_de_zonas": 0.7857,
+        "paises_que_mudam_de_zona": [
+          "BRA",
+          "CHN",
+          "FRA",
+          "IRN",
+          "MAR",
+          "MEX"
+        ]
+      },
+      "cenário subregistro (N*_sub)": {
+        "spearman": 0.9962,
+        "concordancia_de_zonas": 0.7857,
+        "paises_que_mudam_de_zona": [
+          "BRA",
+          "FRA",
+          "IRN",
+          "MAR",
+          "MEX",
+          "ZAF"
+        ]
+      },
+      "calibração histórica combinada (N*_cal)": {
+        "spearman": 0.9955,
+        "concordancia_de_zonas": 0.5,
+        "paises_que_mudam_de_zona": [
+          "BRA",
+          "CHL",
+          "CHN",
+          "DEU",
+          "FRA",
+          "GBR",
+          "IND",
+          "IRN",
+          "MAR",
+          "MEX",
+          "POL",
+          "RUS",
+          "SWE",
+          "ZAF"
+        ]
+      }
+    },
+    "atende_o_criterio": {
+      "cortes etários -1 ano": false,
+      "cortes etários +1 ano": true,
+      "cenário migratorio (N*_mig)": false,
+      "cenário inercia (N*_ine)": false,
+      "cenário politicas (N*_pol)": false,
+      "cenário subregistro (N*_sub)": false,
+      "calibração histórica combinada (N*_cal)": false
+    },
+    "resultado": "falha em: cortes etários -1 ano; cenário migratorio (N*_mig); cenário inercia (N*_ine); cenário politicas (N*_pol); cenário subregistro (N*_sub); calibração histórica combinada (N*_cal)",
+    "decisao_prevista_pelo_protocolo": "Publicar zonas como provisórias."
+  },
+  "F5": {
+    "teste": "Migração e inércia",
+    "criterio": "mudanças extensas de zona, ou ajuste de inércia redundante com Pop_Base/Pop_Topo (o protocolo não fixa limiar numérico)",
+    "por_ajuste_isolado": {
+      "migratorio": {
+        "paises_que_mudam_de_zona": 10,
+        "reducao_mediana_do_N*_%": 5.66
+      },
+      "inercia": {
+        "paises_que_mudam_de_zona": 8,
+        "reducao_mediana_do_N*_%": 6.72
+      },
+      "politicas": {
+        "paises_que_mudam_de_zona": 6,
+        "reducao_mediana_do_N*_%": 3.05
+      },
+      "subregistro": {
+        "paises_que_mudam_de_zona": 6,
+        "reducao_mediana_do_N*_%": 3.56
+      }
+    },
+    "resultado": "indeterminado",
+    "motivo": "O limiar de 'extensas' não está definido e o teste de redundância da inércia exige o estimador do ajuste (modelo com e sem o tamanho da coorte reprodutiva), que o repositório não tem: os ajustes são valores calibrados, não estimados."
+  },
+  "nao_executados": {
+    "F2": "Validade convergente: exige especificações pré-registradas e medidas demográficas externas definidas; não há registro prévio.",
+    "F3": "Valor incremental: exige variável-alvo e previsão fora da amostra com benchmarks (TFR, razão de dependência); não definidos.",
+    "F6": "Políticas e conjuntura: exige desenho de efeito causal (diferença-em-diferenças etc.) por política; não há estimativas.",
+    "F7": "NTAI/Farol: o Farol depende do Fator_Alocativo (NTA), ainda não integrado.",
+    "F8": "IES/EIS: o índice não está implementado neste repositório.",
+    "F9": "Replicação externa: precisa de equipe independente; não é executável pelo autor nem por este sistema."
+  }
+}

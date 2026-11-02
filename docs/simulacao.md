@@ -9,10 +9,10 @@ mortalidade e migração seguem a tendência verificada (projeção média da UN
 
 1. O usuário escolhe um país (os 11 do panorama) e uma TFR-alvo.
 2. A TFR converge **linearmente** ao alvo em 25 anos e se mantém nos 25
-   seguintes (mesma convenção do P_eq da tese — `definitions.md`, seção 8-B).
+   seguintes (mesma convenção do P_eq da tese — `definitions.md`, seção 8).
 3. O motor projeta a população por idade simples e sexo e calcula, ano a ano,
-   o N* pela mesma cadeia do projeto (NGII_bruto → NGII_puro → N_Base →
-   N* = √N_Base).
+   o N* pela mesma cadeia do projeto (NGII_Obs → N_Base →
+   N*_Obs = √N_Base).
 4. A página mostra o resumo (2049 e 2074), três leituras de **ponto de
    virada**, e gráficos (população, N* sobre as 5 zonas, nascimentos e óbitos,
    estrutura etária com as faixas Pop_Base/Pop_Topo).
@@ -46,8 +46,7 @@ Componentes de coorte, passo anual de 1º de julho a 1º de julho:
   quinquenal, escalada por `TFR_cenário/TFR_ONU` (preserva o padrão etário) e
   calibrada ao total oficial de nascimentos (`c(t)`, entre 0,99 e 1,01).
 - **N\*:** cortes de Pop_Base/Pop_Topo calculados **na hora** a partir de
-  `COMPOSICAO_PERFIL_POR_PAIS`; ajustes de falseabilidade constantes por país
-  (calibrados em 2024 — mesma simplificação da série histórica).
+  `COMPOSICAO_PERFIL_POR_PAIS`; valor observado (N*_Obs), sem ajustes de falseabilidade.
 
 ## Ajuste à mão dos perfis (até 3 por país)
 

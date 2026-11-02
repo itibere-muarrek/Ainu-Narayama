@@ -1,29 +1,29 @@
-codigo,n_base,n_estrela,farol,ngii_bruto,ngii_puro,fator_geracional,fator_alocativo,status,populacao
-ARG,1.1339,1.0649,,2.7582,1.9922,0.5692,,Ponto de Equilíbrio Autossustentável (PEA),45.696
-AUS,1.1555,1.075,,1.8956,1.2445,0.9285,,Ponto de Equilíbrio Autossustentável (PEA),26.713
-BRA,1.3761,1.1731,,2.9493,1.9908,0.6913,,Ponto de Equilíbrio Autossustentável (PEA),211.999
-CHL,0.6604,0.8126,,1.7372,1.2017,0.5495,,Tensão Acelerada,19.765
-CHN,0.3514,0.5928,,0.82,0.5308,0.662,,Colapso de Narayama (PEC),1419.321
-COD,11.616,3.4082,,23.5033,12.9976,0.8937,,Saturação por Excesso de Contingente (PEEC),109.276
-DEU,0.397,0.6301,,0.5559,0.3757,1.0567,,Colapso de Narayama (PEC),84.552
-EGY,6.8241,2.6123,,14.0135,8.9797,0.7599,,Saturação por Excesso de Contingente (PEEC),116.538
-ETH,8.9968,2.9995,,27.4569,15.4674,0.5817,,Saturação por Excesso de Contingente (PEEC),132.06
-FRA,0.5648,0.7515,,0.906,0.6189,0.9126,,Tensão Acelerada,66.548
-GBR,0.6439,0.8025,,1.0134,0.6983,0.9222,,Tensão Acelerada,69.138
-IDN,2.0986,1.4487,,3.8544,2.5483,0.8235,,Tensão Populacional,283.488
-IND,1.8702,1.3676,,5.0524,3.2246,0.58,,Ponto de Equilíbrio Autossustentável (PEA),1450.936
-IRN,2.7471,1.6574,,5.1987,3.4079,0.8061,,Tensão Populacional,91.568
-ITA,0.2444,0.4944,,0.3764,0.2489,0.982,,Colapso de Narayama (PEC),59.343
-JPN,0.1813,0.4258,,0.3168,0.1996,0.9083,,Colapso de Narayama (PEC),123.753
-KOR,0.1344,0.3666,,0.4167,0.2691,0.4994,,Colapso de Narayama (PEC),51.718
-MAR,2.757,1.6604,,5.4304,3.5994,0.766,,Tensão Populacional,38.081
-MEX,2.7925,1.6711,,6.1623,4.0789,0.6846,,Tensão Populacional,130.861
-NGA,6.6544,2.5796,,15.6827,9.2362,0.7205,,Saturação por Excesso de Contingente (PEEC),232.68
-POL,0.3882,0.6231,,0.5673,0.4102,0.9464,,Colapso de Narayama (PEC),38.539
-RUS,0.6193,0.7869,,0.7767,0.5028,1.2315,,Tensão Acelerada,144.82
-SAU,9.311,3.0514,,30.9364,17.5654,0.5301,,Saturação por Excesso de Contingente (PEEC),33.963
-SWE,0.6177,0.7859,,0.9672,0.6465,0.9554,,Tensão Acelerada,10.607
-THA,0.3059,0.5531,,0.6707,0.4493,0.6808,,Colapso de Narayama (PEC),71.668
-USA,0.9234,0.9609,,1.6128,1.133,0.815,,Ponto de Equilíbrio Autossustentável (PEA),345.427
-VNM,2.1883,1.4793,,3.3763,2.3081,0.9481,,Tensão Populacional,100.988
-ZAF,2.7571,1.6604,,5.1685,3.1999,0.8616,,Tensão Populacional,64.007
+codigo,n_base,n_estrela,farol,ngii_obs,fator_geracional,fator_alocativo,status,populacao,ngii_cal,n_base_cal,n_estrela_cal,status_cal,n_estrela_mig,n_estrela_ine,n_estrela_pol,n_estrela_sub
+ARG,1.5699,1.2529,,2.7582,0.5692,,Ponto de Equilíbrio Autossustentável (PEA),45.696,1.9922,1.1339,1.0649,Ponto de Equilíbrio Autossustentável (PEA),1.1886,1.1754,1.2212,1.2276
+AUS,1.7601,1.3267,,1.8956,0.9285,,Ponto de Equilíbrio Autossustentável (PEA),26.713,1.2445,1.1555,1.075,Ponto de Equilíbrio Autossustentável (PEA),1.149,1.2863,1.2999,1.3066
+BRA,2.0387,1.4278,,2.9493,0.6913,,Tensão Populacional,211.999,1.9908,1.3761,1.1731,Ponto de Equilíbrio Autossustentável (PEA),1.3394,1.3164,1.3843,1.399
+CHL,0.9546,0.977,,1.7372,0.5495,,Ponto de Equilíbrio Autossustentável (PEA),19.765,1.2017,0.6604,0.8126,Tensão Acelerada,0.9113,0.9269,0.9422,0.9523
+CHN,0.5428,0.7368,,0.82,0.662,,Tensão Acelerada,1419.321,0.5308,0.3514,0.5928,Colapso de Narayama (PEC),0.7028,0.6833,0.6912,0.7143
+COD,21.0049,4.5831,,23.5033,0.8937,,Saturação por Excesso de Contingente (PEEC),109.276,12.9976,11.616,3.4082,Saturação por Excesso de Contingente (PEEC),4.3479,4.2005,4.4671,4.0217
+DEU,0.5875,0.7665,,0.5559,1.0567,,Tensão Acelerada,84.552,0.3757,0.397,0.6301,Colapso de Narayama (PEC),0.7108,0.719,0.747,0.7431
+EGY,10.6494,3.2633,,14.0135,0.7599,,Saturação por Excesso de Contingente (PEEC),116.538,8.9797,6.8241,2.6123,Saturação por Excesso de Contingente (PEEC),3.1301,3.0263,3.113,3.0786
+ETH,15.9706,3.9963,,27.4569,0.5817,,Saturação por Excesso de Contingente (PEEC),132.06,15.4674,8.9968,2.9995,Saturação por Excesso de Contingente (PEEC),3.7701,3.6188,3.8539,3.6408
+FRA,0.8268,0.9093,,0.906,0.9126,,Ponto de Equilíbrio Autossustentável (PEA),66.548,0.6189,0.5648,0.7515,Tensão Acelerada,0.8383,0.8674,0.8721,0.8909
+GBR,0.9345,0.9667,,1.0134,0.9222,,Ponto de Equilíbrio Autossustentável (PEA),69.138,0.6983,0.6439,0.8025,Tensão Acelerada,0.8807,0.9272,0.9372,0.9472
+IDN,3.1743,1.7817,,3.8544,0.8235,,Tensão Populacional,283.488,2.5483,2.0986,1.4487,Tensão Populacional,1.7182,1.6329,1.7182,1.6996
+IND,2.9304,1.7118,,5.0524,0.58,,Tensão Populacional,1450.936,3.2246,1.8702,1.3676,Ponto de Equilíbrio Autossustentável (PEA),1.6597,1.5501,1.6419,1.624
+IRN,4.1907,2.0471,,5.1987,0.8061,,Saturação por Excesso de Contingente (PEEC),91.568,3.4079,2.7471,1.6574,Tensão Populacional,1.9528,1.9094,1.9421,1.9635
+ITA,0.3696,0.6079,,0.3764,0.982,,Colapso de Narayama (PEC),59.343,0.2489,0.2444,0.4944,Colapso de Narayama (PEC),0.5735,0.5605,0.5894,0.5863
+JPN,0.2877,0.5364,,0.3168,0.9083,,Colapso de Narayama (PEC),123.753,0.1996,0.1813,0.4258,Colapso de Narayama (PEC),0.5145,0.4857,0.5256,0.5003
+KOR,0.2081,0.4562,,0.4167,0.4994,,Colapso de Narayama (PEC),51.718,0.2691,0.1344,0.3666,Colapso de Narayama (PEC),0.4399,0.4181,0.4446,0.4255
+MAR,4.1595,2.0395,,5.4304,0.766,,Saturação por Excesso de Contingente (PEEC),38.081,3.5994,2.757,1.6604,Tensão Populacional,1.924,1.9132,1.9668,1.9455
+MEX,4.2188,2.054,,6.1623,0.6846,,Saturação por Excesso de Contingente (PEEC),130.861,4.0789,2.7925,1.6711,Tensão Populacional,1.9048,1.9377,1.9914,1.9701
+NGA,11.2989,3.3614,,15.6827,0.7205,,Saturação por Excesso de Contingente (PEEC),232.68,9.2362,6.6544,2.5796,Saturação por Excesso de Contingente (PEEC),3.2066,3.099,3.259,3.0252
+POL,0.5369,0.7328,,0.5673,0.9464,,Tensão Acelerada,38.539,0.4102,0.3882,0.6231,Colapso de Narayama (PEC),0.7028,0.6874,0.7142,0.7104
+RUS,0.9566,0.978,,0.7767,1.2315,,Ponto de Equilíbrio Autossustentável (PEA),144.82,0.5028,0.6193,0.7869,Tensão Acelerada,0.9175,0.907,0.9483,0.933
+SAU,16.3986,4.0495,,30.9364,0.5301,,Saturação por Excesso de Contingente (PEEC),33.963,17.5654,9.311,3.0514,Saturação por Excesso de Contingente (PEEC),3.5764,3.7988,3.7988,3.9262
+SWE,0.924,0.9613,,0.9672,0.9554,,Ponto de Equilíbrio Autossustentável (PEA),10.607,0.6465,0.6177,0.7859,Tensão Acelerada,0.849,0.927,0.9369,0.9467
+THA,0.4566,0.6757,,0.6707,0.6808,,Colapso de Narayama (PEC),71.668,0.4493,0.3059,0.5531,Colapso de Narayama (PEC),0.641,0.6303,0.6481,0.6516
+USA,1.3144,1.1465,,1.6128,0.815,,Ponto de Equilíbrio Autossustentável (PEA),345.427,1.133,0.9234,0.9609,Ponto de Equilíbrio Autossustentável (PEA),1.0382,1.0997,1.1233,1.1291
+VNM,3.201,1.7891,,3.3763,0.9481,,Tensão Populacional,100.988,2.3081,2.1883,1.4793,Tensão Populacional,1.7346,1.6495,1.7161,1.7254
+ZAF,4.4532,2.1103,,5.1685,0.8616,,Saturação por Excesso de Contingente (PEEC),64.007,3.1999,2.7571,1.6604,Tensão Populacional,1.9456,1.9908,2.0351,1.9796

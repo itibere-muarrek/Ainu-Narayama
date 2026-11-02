@@ -2,18 +2,20 @@
 ainu.systems — Plataforma restrita a pesquisadores e formuladores de política.
 
 Cálculos detalhados, filtros por perfil/região e os componentes brutos
-do N* (NGII_puro, Fator_Geracional, Fator_Alocativo) para os 28
+do N* (NGII_Obs, Fator_Geracional, Fator_Alocativo) para os 28
 países da amostra. Versão pública e minimalista: ver
 app/narayama_live/app.py (8 países destaque, sem detalhamento técnico).
 
-Fonte: V1_EcoPol_062426_v8.0.docx, Anexo 14 (Glossário — "AINU"):
+Fonte: pesquisa independente (V1_1), Anexo 14 (Glossário — "AINU"):
 "Interface pública: Narayama.live (7 países destaque); interface
 restrita a pesquisadores: ainu.systems."
 
 Fontes de dados esperadas (produzidas pelo pipeline da Fase 2+):
 - data/processed/n_index_2024.csv: snapshot 2024, uma linha por país,
-  colunas: codigo, n_base, n_estrela, farol, ngii_bruto, ngii_puro,
-  fator_geracional, fator_alocativo, status, populacao.
+  colunas: codigo, n_base, n_estrela, farol, ngii_obs, fator_geracional,
+  fator_alocativo, status, populacao (valores observados, N*_Obs) e, como
+  referência, ngii_cal, n_base_cal, n_estrela_cal, status_cal e os cenários
+  n_estrela_mig/ine/pol/sub.
 - data/processed/n_index_historico.csv: série histórica, colunas:
   codigo, ano, n_base.
 
@@ -22,8 +24,8 @@ duplicados no CSV) e TFR 2024 vem de docs/paises_perfil.csv, usado só
 para o diagnóstico de PEEC (que é feito pela TFR, não pelo N*).
 
 Normalização (decisão de 2026-07-09, ver src.indices.normalizar_n_base):
-`n_base` é o valor demográfico bruto (N_Base); `n_estrela` é o N*
-reportado publicamente (sqrt(n_base)). Os limiares abaixo são os
+`n_base` é o valor demográfico observado (N_Base_Obs); `n_estrela` é o
+N*_Obs reportado publicamente (sqrt(n_base)). Os limiares abaixo são os
 brutos, usados pra classificar a zona (`status`) — a UI usa a versão
 normalizada (src.config.LIMIARES_SIMPLES_NORMALIZADOS) só pra colorir
 a tabela na escala exibida; a classificação em si é idêntica nas duas
@@ -255,8 +257,8 @@ if not df_filtrado.empty:
             "n_estrela": "N*",
             "n_base": "N_Base",
             "farol": _col_farol,
-            "ngii_bruto": "NGII_Bruto",
-            "ngii_puro": "NGII_puro",
+            "ngii_obs": "NGII_Obs",
+            "n_estrela_cal": "N*_cal",
             "fator_geracional": "Fator_Ger",
             "fator_alocativo": "Fator_Aloc",
         }
@@ -264,7 +266,7 @@ if not df_filtrado.empty:
 
     colunas_exibidas = [
         c
-        for c in [_col_pais, "N*", "N_Base", _col_farol, "NGII_Bruto", "NGII_puro", "Fator_Ger", "Fator_Aloc", _col_status]
+        for c in [_col_pais, "N*", "N_Base", _col_farol, "NGII_Obs", "Fator_Ger", "Fator_Aloc", "N*_cal", _col_status]
         if c in df_tabela.columns
     ]
 
@@ -280,27 +282,29 @@ if not df_filtrado.empty:
         df_tabela[colunas_exibidas].style.apply(colorir_por_zona, axis=1),
         use_container_width=True,
     )
+    if {"status", "status_cal"}.issubset(df.columns):
+        st.caption(t("n_obs_nota", lang, n=int((df["status"] != df["status_cal"]).sum()), total=len(df)))
 else:
     st.write(t("nenhum_pais_filtro", lang))
 
 # -----------------------------------------------------------------------
-# Gráfico 1 — Scatter Plot (NGII_puro vs Fator_Geracional)
+# Gráfico 1 — Scatter Plot (NGII_Obs vs Fator_Geracional)
 # -----------------------------------------------------------------------
 # Trocado de Fator_Alocativo pra Fator_Geracional em 2026-07-21: o
 # usuário reportou o gráfico "não carregando" — não era bug de
 # renderização, era fator_alocativo com 0/28 países preenchidos (NTA
 # ainda não integrado, ver farol_gap_caption). Fator_Geracional é o
-# outro componente real do N_Base (N_Base = NGII_puro × Fator_Geracional),
+# outro componente real do N_Base (N_Base = NGII_Obs × Fator_Geracional),
 # sempre disponível pros 28 países — ver src/indices.py:calcular_n_base.
 
 st.header(t("scatter_header", lang))
 st.caption(t("scatter_caption_leitura", lang))
 
-colunas_scatter = {"ngii_puro", "fator_geracional", "perfil", "populacao"}
+colunas_scatter = {"ngii_obs", "fator_geracional", "perfil", "populacao"}
 if not df_filtrado.empty and colunas_scatter.issubset(df_filtrado.columns):
     fig_scatter = px.scatter(
         df_filtrado,
-        x="ngii_puro",
+        x="ngii_obs",
         y="fator_geracional",
         color="perfil",
         size="populacao",
@@ -308,7 +312,7 @@ if not df_filtrado.empty and colunas_scatter.issubset(df_filtrado.columns):
         hover_name="nome_exibicao",
         title=t("scatter_header", lang),
         log_x=True,
-        labels={"ngii_puro": t("scatter_eixo_x_label", lang), "fator_geracional": "Fator_Geracional"},
+        labels={"ngii_obs": t("scatter_eixo_x_label", lang), "fator_geracional": "Fator_Geracional"},
     )
     fig_scatter.update_traces(textposition="top center", textfont_size=10)
     st.plotly_chart(fig_scatter, use_container_width=True)
@@ -399,16 +403,15 @@ if not df.empty and {"status", "n_estrela", "codigo", "nome", "populacao"}.issub
             # por extenso; aqui é só um atalho pra quem passa o mouse
             # direto no card da Tabela Geracional (2026-07-30).
             _n_base = getattr(_linha, "n_base", None)
-            _ngii_bruto = getattr(_linha, "ngii_bruto", None)
-            _ngii_puro = getattr(_linha, "ngii_puro", None)
+            _ngii_obs = getattr(_linha, "ngii_obs", None)
             _fator_ger = getattr(_linha, "fator_geracional", None)
             _fator_aloc = getattr(_linha, "fator_alocativo", None)
             _fator_aloc_txt = f"{_fator_aloc:.4f}" if pd.notna(_fator_aloc) else _sd
             _tooltip = (
-                f"N_Base: {_n_base:.4f} | NGII_Bruto: {_ngii_bruto:.4f} | "
-                f"NGII_puro: {_ngii_puro:.4f} | Fator_Geracional: {_fator_ger:.4f} | "
+                f"N_Base: {_n_base:.4f} | NGII_Obs: {_ngii_obs:.4f} | "
+                f"Fator_Geracional: {_fator_ger:.4f} | "
                 f"Fator_Alocativo: {_fator_aloc_txt}"
-                if pd.notna(_n_base) and pd.notna(_ngii_bruto) and pd.notna(_ngii_puro) and pd.notna(_fator_ger)
+                if pd.notna(_n_base) and pd.notna(_ngii_obs) and pd.notna(_fator_ger)
                 else f"N_Base: {_n_base} | Fator_Alocativo: {_fator_aloc_txt}"
             )
             _cards.append(
@@ -445,7 +448,7 @@ else:
     st.write(t("dados_insuficientes_tabela_geracional", lang))
 
 # -----------------------------------------------------------------------
-# Glossário (versão completa — Anexo 14 da tese V12)
+# Glossário (versão completa — Anexo 14 da tese V1_1)
 # -----------------------------------------------------------------------
 
 st.markdown("---")

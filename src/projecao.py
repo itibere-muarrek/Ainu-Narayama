@@ -37,7 +37,6 @@ from typing import Optional
 import numpy as np
 
 from src.config import (
-    AJUSTES_FALSEABILIDADE_POR_PAIS,
     COMPOSICAO_PERFIL_POR_PAIS,
     DATA_PROCESSED_DIR,
     cortes_por_composicao,
@@ -49,7 +48,6 @@ from src.indices import (
     classificar_zona_5,
     normalizar_n_base,
 )
-from src.falseability import aplicar_falseabilidade_quantitativa
 
 ARQUIVO_INSUMOS = DATA_PROCESSED_DIR / "projecao_inputs.npz"
 CICLO = 25
@@ -232,46 +230,41 @@ def projetar(
 
 
 # ---------------------------------------------------------------------------
-# N* ao longo da trajetória (mesma cadeia da tese: NGII_bruto -> NGII_puro ->
-# N_Base -> N*), com os cortes etários recalculados na hora a partir da
+# N* ao longo da trajetória (cadeia PQDF-N*, camada A: NGII_Obs ->
+# N_Base_Obs -> N*_Obs), com os cortes etários recalculados na hora a partir da
 # composição de perfis (editável à mão em src/config.py).
 # ---------------------------------------------------------------------------
 
 def n_estrela_serie(res: Resultado, composicao: Optional[dict] = None) -> dict:
     """Série anual do N* e seus componentes para o resultado de `projetar`.
 
-    Ajustes de falseabilidade: constantes por país, calibradas para 2024 — a
-    mesma simplificação já assumida na série histórica (docs/definitions.md,
-    seção 8-A). Fator_Geracional(t) = TFR(t)/TFR(t-25): usa a TFR da ONU para
+    Valor observado (PQDF-N*, camada A): sem ajustes de falseabilidade — o N*
+    da trajetória é o N*_Obs. Fator_Geracional(t) = TFR(t)/TFR(t-25): usa a TFR da ONU para
     anos < 2024 e a do cenário a partir de 2024.
     """
     ins = _insumos()
     composicao = composicao or COMPOSICAO_PERFIL_POR_PAIS[res.pais]
     base_max, topo_min = cortes_por_composicao(composicao)
-    ajustes = AJUSTES_FALSEABILIDADE_POR_PAIS[res.pais]
     anos = res.anos
     tot = res.pop.sum(axis=0)  # [idade, ano]
     pop_base = tot[0 : base_max + 1, :].sum(axis=0) / 1000.0  # milhões
     pop_topo = tot[topo_min:, :].sum(axis=0) / 1000.0
-    n_est, n_base_l, ngii_b, ngii_p, fg_l = [], [], [], [], []
+    n_est, n_base_l, ngii_b, fg_l = [], [], [], []
     for k, ano in enumerate(anos):
         bruto = calcular_ngii_puro(pop_base[k], pop_topo[k], res.nascimentos[k] / 1000.0, res.obitos[k] / 1000.0)
-        puro = aplicar_falseabilidade_quantitativa(bruto, ajustes) if bruto is not None else None
         ano_ant = ano - CICLO
         tfr_ant = res.tfr[ano_ant - anos[0]] if ano_ant >= anos[0] else tfr_historico(res.pais, ano_ant)
         fg = calcular_fator_geracional(res.tfr[k], tfr_ant)
-        nb = calcular_n_base(puro, fg)
+        nb = calcular_n_base(bruto, fg)
         n_est.append(normalizar_n_base(nb) if nb is not None else np.nan)
         n_base_l.append(nb if nb is not None else np.nan)
         ngii_b.append(bruto if bruto is not None else np.nan)
-        ngii_p.append(puro if puro is not None else np.nan)
         fg_l.append(fg if fg is not None else np.nan)
     return {
         "anos": anos,
         "n_estrela": np.array(n_est),
         "n_base": np.array(n_base_l),
-        "ngii_bruto": np.array(ngii_b),
-        "ngii_puro": np.array(ngii_p),
+        "ngii_obs": np.array(ngii_b),
         "fator_geracional": np.array(fg_l),
         "pop_base": pop_base,
         "pop_topo": pop_topo,

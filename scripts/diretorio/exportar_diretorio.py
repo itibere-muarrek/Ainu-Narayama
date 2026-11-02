@@ -17,7 +17,7 @@ Regras do filtro (documentadas também em meta.json):
     não aberta); N vai para as lacunas.
   - campos das fichas: retidos se o texto cita nível L2.
   - N*: retido do conjunto público enquanto o N*_Obs (PQDF-N*) não for
-    recalculado; hoje a planilha só tem o N* consolidado do pipeline (v9.0).
+    recalculado; a planilha só tem o N* consolidado com a calibração histórica do autor.
   - auditoria interna (Auditoria_Pendencias): só no conjunto privado.
 """
 from __future__ import annotations
@@ -340,8 +340,8 @@ def construir(wb):
         a = amostra[iso]
         f["n_star"] = {
             "valor_plano_v5": a[2], "valor_pipeline_2024": a[4], "zona_sigla": a[3], "zona": ZONAS.get(a[3], a[3]),
-            "natureza": "CONSOLIDADO_v9.0",
-            "aviso": "N* consolidado do pipeline (com a calibração de falseabilidade da v9.0). Não é o N*_Obs do PQDF-N*, ainda não recalculado.",
+            "natureza": "CONSOLIDADO_CAL",
+            "aviso": "N* consolidado com a calibração histórica do autor. Não é o N*_Obs do PQDF-N*.",
         }
         i = colunas[iso]
         for bloco, itens in CAMPOS_P6.items():

@@ -29,8 +29,8 @@ jobs:
           python -c "
           import pandas as pd
           from src.config import PAISES, AJUSTES_FALSEABILIDADE_POR_PAIS
-          from src.indices import calcular_ngii_puro, calcular_fator_geracional, calcular_n_base, classificar_zona_n_base, normalizar_n_base
-          from src.falseability import aplicar_protocolo_falseabilidade, aplicar_protocolo_falseabilidade_simplificado, aplicar_falseabilidade_quantitativa
+          from src.indices import calcular_ngii_puro, calcular_fator_geracional, calcular_n_base, classificar_zona_5, normalizar_n_base
+          from src.falseability import aplicar_falseabilidade_quantitativa
 
           assert len(PAISES) == 28, f'esperado 28 paises, encontrado {len(PAISES)}'
 
@@ -42,7 +42,7 @@ jobs:
           n = calcular_n_base(ngii_puro, calcular_fator_geracional(1.60, 2.40))
           n_estrela = normalizar_n_base(n)
           assert n_estrela is not None and n_estrela > 0, 'normalizar_n_base falhou'
-          classificar_zona_n_base(n)
+          classificar_zona_5(n)
 
           print('Checagem de regressão: OK')
           "
@@ -76,6 +76,16 @@ jobs:
           assert (df['p_tendencia'] > 0).all(), 'p_tendencia com valores nao positivos'
 
           print('Checagem de regressão (convergência): OK')
+          "
+
+      - name: Testes PQDF-N* (F1 reprodutibilidade; F4 informativo)
+        run: |
+          python scripts/testes_pqdf.py > /dev/null
+          python -c "
+          import json
+          r = json.load(open('docs/testes_pqdf_n_estrela.json', encoding='utf-8'))
+          assert r['F1']['resultado'] == 'passa', 'F1 (reprodutibilidade) falhou'
+          print('F1:', r['F1']['resultado'], '| F4:', r['F4']['resultado'])
           "
 
       - name: Rodar teste de cálculo (Brasil, informativo)

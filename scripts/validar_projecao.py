@@ -113,6 +113,7 @@ def main() -> str:
 
     # V3 ---------------------------------------------------------------
     L.append("## V3 — N* de 2024: motor vs pipeline de produção\n")
+    L.append("Teste de **consistência**, não de validação independente: o motor e o pipeline usam a mesma cadeia de cálculo (N*_Obs).\n")
     ref = pd.read_csv(DATA_PROCESSED_DIR / "n_index_2024.csv").set_index("codigo")
     L.append("| País | N* produção | N* motor | dif. relativa |\n|---|---|---|---|")
     max_dif = 0.0

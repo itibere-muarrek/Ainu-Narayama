@@ -5,7 +5,7 @@ Mostra o Índice de Narayama Sistêmico (N*) apenas para os 8 países
 destaque, sem os filtros e componentes técnicos detalhados (esses
 ficam na plataforma restrita: ver app/ainu_systems/app.py).
 
-Fonte: V1_EcoPol_062426_v8.0.docx, Anexo 14 (Glossário — "AINU"):
+Fonte: pesquisa independente (V1_1), Anexo 14 (Glossário — "AINU"):
 "Interface pública: Narayama.live (7 países destaque); interface
 restrita a pesquisadores: ainu.systems." (citação literal do
 documento-fonte na data original — mantida como "7" de propósito,
@@ -202,6 +202,7 @@ df["nome_exibicao"] = df["codigo"].map(lambda c: nome_pais(c, lang))
 # em 2026-07-16, a pedido do autor.
 
 st.header(t("tabela_geracional_header", lang))
+st.caption(t("n_obs_nota_publica", lang))
 st.caption(t("narayama_caption_grade", lang))
 st.caption(t("farol_provisorio_caption", lang))
 st.caption(t("projecoes_resumo_curto", lang))
@@ -297,6 +298,7 @@ df_tabela = df_tabela.sort_values("n_estrela")
 
 colunas_exibidas = [c for c in [_col_pais, "N*", _col_status] if c in df_tabela.columns]
 st.dataframe(df_tabela[colunas_exibidas], use_container_width=True, hide_index=True)
+st.caption(t("n_obs_nota_publica", lang))
 
 # -----------------------------------------------------------------------
 # Gráfico — N* por país
