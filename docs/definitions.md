@@ -43,7 +43,7 @@ Onde:
 
 - Pop_Base = população da coorte formadora. Faixa etária por perfil
   (Tabela 14): **0–16** (A), **0–18** (B), **0–21** (C), **0–23** (D), **0–25** (E).
-- Pop_Topo = população da coorte legatária/dependente. Faixa etária
+- Pop_Topo = população da coorte legadora/dependente. Faixa etária
   por perfil (Tabela 14): **44+** (A), **55+** (B), **60+** (C), **62+** (D), **65+** (E).
 - Nascimentos = nascimentos no ano
 - Mortes = mortes no ano
@@ -79,7 +79,7 @@ Exemplo (Brasil — composição 30% B / 40% C / 30% D, dados reais UN WPP 2024)
 > após o deploy inicial), não mais a Seção V.III (2 níveis, usada até
 > 2026-07-02 — ver `FAIXAS_ETARIAS_POR_PERFIL_V3` em `src/config.py`,
 > mantida como referência histórica). `Pop_Topo` continua sendo a
-> coorte **idosa/legatária**, não provedora.
+> coorte **idosa/legadora**, não provedora.
 >
 > A Tabela 14 **reduz, mas não elimina**, a inflação do NGII_puro em
 > países jovens/alta fecundidade: RD Congo caiu de N*>41 (Seção V.III)

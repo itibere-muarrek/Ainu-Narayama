@@ -42,7 +42,7 @@ def calcular_ngii_puro(
 
     Mede a capacidade real de uma sociedade gerar, formar e sustentar
     os futuros provedores: combina o peso relativo da coorte formadora
-    frente à coorte legatária/dependente com o saldo vegetativo do
+    frente à coorte legadora/dependente com o saldo vegetativo do
     período.
 
     Fórmula (Anexo 1, A1.2 — faixas etárias da Seção V.III):
@@ -55,7 +55,7 @@ def calcular_ngii_puro(
             src.config.COMPOSICAO_PERFIL_POR_PAIS e src.config.PAISES,
             não duplicado aqui para evitar uma segunda fonte que pode
             ficar desatualizada.
-        pop_topo: População da coorte legatária/dependente, em
+        pop_topo: População da coorte legadora/dependente, em
             milhões. Mesma fonte de faixa etária que pop_base, acima.
         nascimentos: Nascimentos anuais, em milhões.
         mortes: Mortes anuais, em milhões.

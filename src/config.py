@@ -175,7 +175,7 @@ FORMULAS = {
 # — o terceiro fator de escolaridade do Capítulo 5 continua removido.
 #
 # pop_base_max: idade máxima da coorte formadora (Prometidos/Ativo Primário)
-# pop_topo_min: idade mínima da coorte legatária (dependente idosa)
+# pop_topo_min: idade mínima da coorte legadora (dependente idosa)
 # Nenhum dos 28 países do Anexo 5 é classificado como Perfil E.
 
 FAIXAS_ETARIAS_POR_PERFIL_TABELA14 = {
@@ -401,18 +401,21 @@ AJUSTES_FALSEABILIDADE_POR_PAIS = {
     "JPN": {"migratorio": 0.08, "inercia": 0.18, "politicas": 0.04, "subregistro": 0.13},
 }
 
+# O critério de aceitação "redução total entre 25% e 45%" (v9.0) foi ELIMINADO no PQDF-N*
+# (EcoPol V1_1, Anexo 9): os ajustes passam a ser estimados por fonte e método documentados,
+# independentemente do resultado que produzem, e entram como cenários separados (N*_k) ao lado do
+# N*_Obs. Estes valores seguem como referência histórica da calibração v9.0 usada pelo pipeline
+# atual; aqui só se valida o domínio [0, 1) e se registra a redução total, sem faixa de aceitação.
+REDUCAO_TOTAL_V9_POR_PAIS: dict[str, float] = {}
 for _codigo, _ajustes in AJUSTES_FALSEABILIDADE_POR_PAIS.items():
     assert all(0 <= v < 1 for v in _ajustes.values()), f"ajuste fora de [0,1) em {_codigo}: {_ajustes}"
-    _reducao_total = 1 - (
+    REDUCAO_TOTAL_V9_POR_PAIS[_codigo] = 1 - (
         (1 - _ajustes["migratorio"])
         * (1 - _ajustes["inercia"])
         * (1 - _ajustes["politicas"])
         * (1 - _ajustes["subregistro"])
     )
-    assert 0.25 <= _reducao_total <= 0.45, (
-        f"redução total de {_codigo} ({_reducao_total:.1%}) fora do critério de aceitação da v9.0 (25%-45%)"
-    )
-del _codigo, _ajustes, _reducao_total
+del _codigo, _ajustes
 
 # ---------------------------------------------------------------------------
 # Plataformas (Anexo 14 — Glossário Técnico, "AINU")
