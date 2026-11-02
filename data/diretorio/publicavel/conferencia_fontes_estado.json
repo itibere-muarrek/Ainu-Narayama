@@ -147,6 +147,9 @@
   "estado": "confere"
  },
  "https://biblioteca.ibge.gov.br/visualizacao/livros/liv101604.pdf": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2025": {
   "estado": "confere"
  },
  "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm": {
@@ -168,7 +171,7 @@
   "estado": "confere"
  },
  "https://opendata.pku.edu.cn/dataset.xhtml?persistentId=doi%3A10.18170%2FDVN%2F45LCSO&version=19.0": {
-  "estado": "revisar"
+  "estado": "nao_verificavel"
  },
  "https://www.stats.gov.cn/sj/ndsj/2022/html/sme03.htm": {
   "estado": "revisar"
@@ -251,7 +254,7 @@
  "https://www.stat.go.jp/english/data/shakai/2021/gaiyo.html": {
   "estado": "confere"
  },
- "https://mods.go.kr/menu.es?mid=a20206020000": {
+ "https://mods.go.kr/menu.es?mid=a20206010000": {
   "estado": "revisar"
  },
  "https://bok.or.kr/eng/bbs/E0000634/view.do?menuNo=400069&nttId=10083839&pageIndex=": {
@@ -297,7 +300,7 @@
   "estado": "confere"
  },
  "https://microdata.nigerianstat.gov.ng/index.php/catalog/178": {
-  "estado": "nao_verificavel"
+  "estado": "confere"
  },
  "https://www.bls.gov/news.release/atus.t01.htm": {
   "estado": "confere"

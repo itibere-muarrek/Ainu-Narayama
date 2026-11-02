@@ -18,6 +18,7 @@ Uso: python scripts/diretorio/testar_links.py
 from __future__ import annotations
 
 import json
+import time
 import ssl
 import threading
 import urllib.error
@@ -45,7 +46,9 @@ def _semaforo(host: str) -> threading.Semaphore:
 
 def _pedido(url: str, metodo: str):
     req = urllib.request.Request(url, method=metodo, headers={"User-Agent": UA, "Accept": "*/*"})
-    return urllib.request.urlopen(req, timeout=TIMEOUT, context=ssl.create_default_context())
+    # cookies aceitos como qualquer cliente comum (alguns servidores respondem 302 com um cookie na primeira visita)
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(), urllib.request.HTTPSHandler(context=ssl.create_default_context()))
+    return opener.open(req, timeout=TIMEOUT)
 
 
 def testar(url: str) -> dict:
@@ -81,6 +84,12 @@ def main():
         res = list(ex.map(testar, urls))
     for k, r in enumerate(res):                                 # uma segunda tentativa, sequencial, para falhas que podem ser passageiras
         if r["estado"] in ("sem_resposta", "erro_servidor"):
+            r2 = testar(urls[k])
+            r2["tentativas"] = 2
+            res[k] = r2
+    for k, r in enumerate(res):                                 # 429 = limite de requisições: repete devagar, um por vez
+        if r.get("codigo") == 429:
+            time.sleep(5)
             r2 = testar(urls[k])
             r2["tentativas"] = 2
             res[k] = r2

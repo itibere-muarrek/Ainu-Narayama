@@ -1,5 +1,5 @@
 {
- "testado_em": "2026-11-02T13:36:00",
+ "testado_em": "2026-11-02T19:24:43",
  "agente": "AINU-Directory-linkcheck/1.0 (independent research; link availability check)",
  "links": {
   "http://mdis.kostat.go.kr/eng/index.do": {
@@ -244,16 +244,18 @@
    "codigo": 200
   },
   "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=CHN&format=.csv": {
-   "estado": "bloqueado",
-   "codigo": 429
+   "estado": "ok",
+   "codigo": 200,
+   "tentativas": 2
   },
   "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=FRA&format=.csv": {
    "estado": "ok",
-   "codigo": 200
+   "codigo": 200,
+   "tentativas": 2
   },
   "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=IND&format=.csv": {
-   "estado": "bloqueado",
-   "codigo": 429
+   "estado": "ok",
+   "codigo": 200
   },
   "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=ITA&format=.csv": {
    "estado": "ok",
@@ -269,7 +271,8 @@
   },
   "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=MEX&format=.csv": {
    "estado": "ok",
-   "codigo": 200
+   "codigo": 200,
+   "tentativas": 2
   },
   "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=NGA&format=.csv": {
    "estado": "ok",
@@ -277,7 +280,8 @@
   },
   "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=USA&format=.csv": {
    "estado": "ok",
-   "codigo": 200
+   "codigo": 200,
+   "tentativas": 2
   },
   "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=ARG&format=.csv": {
    "estado": "ok",
@@ -288,8 +292,9 @@
    "codigo": 200
   },
   "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=ITA&format=.csv": {
-   "estado": "bloqueado",
-   "codigo": 429
+   "estado": "ok",
+   "codigo": 200,
+   "tentativas": 2
   },
   "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=MEX&format=.csv": {
    "estado": "ok",
@@ -392,9 +397,8 @@
    "codigo": 200
   },
   "https://www.anses.gob.ar/sites/default/files/2026-07/Bolet%C3%ADn%20Asignaciones%20para%20Protecci%C3%B3n%20Social_marzo%202026.pdf": {
-   "estado": "sem_resposta",
-   "codigo": 302,
-   "tentativas": 2
+   "estado": "ok",
+   "codigo": 200
   },
   "https://www.argentina.gob.ar/sites/default/files/informe_sobre_gastos_tributarios._anos_2023-2025.pdf": {
    "estado": "ok",
@@ -620,8 +624,8 @@
    "url_final": "https://oms-www.files.svdcdn.com/production/downloads/academic/The_Future_of_Employment.pdf"
   },
   "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2150113&reg=48&lang=2": {
-   "estado": "bloqueado",
-   "codigo": 401
+   "estado": "ok",
+   "codigo": 200
   },
   "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm": {
    "estado": "sem_resposta",

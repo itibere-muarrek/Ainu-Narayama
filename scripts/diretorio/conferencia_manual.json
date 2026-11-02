@@ -191,5 +191,9 @@
  "https://public-inspection.federalregister.gov/2025-09381.pdf": {
   "estado": "confere",
   "nota": "Aviso do HHS/ACF: a American Relief Act, 2025 destinou US$ 250.000.000 a ajuda por desastres para o cuidado infantil"
+ },
+ "https://biblioteca.ibge.gov.br/visualizacao/livros/liv101604.pdf": {
+  "estado": "lida_antes",
+  "nota": "IBGE, matriz de insumo-produto 2015 (tabelas de recursos e usos); lida em rodada anterior; o servidor devolve 'Request Rejected' a acessos automáticos, embora responda 200"
  }
 }
