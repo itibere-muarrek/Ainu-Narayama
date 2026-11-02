@@ -1,0 +1,2768 @@
+{
+ "natureza": "SIM",
+ "regra": "O custo do Dividendo é proporcional à porcentagem x do gasto privado por Descendente: custo(x) = x/10 × custo(10%). A escala foi conferida contra os 25% e 50% da planilha.",
+ "paises": {
+  "ITA": {
+   "iso": "ITA",
+   "nome": "Itália",
+   "natureza_dividendo": "SIM",
+   "dividendo_10pct_pib": 0.75,
+   "base_consumo_descendentes": "SHIW (microdados) ancorado no NTA 2008",
+   "programa": {
+    "nome": "Assegno Unico",
+    "pct_pib": 0.87,
+    "ano": "2025",
+    "texto": "Assegno Unico: 0,87% do PIB (2025)",
+    "retido": false,
+    "ressalva": false
+   },
+   "gasto_publico_familia": {
+    "pct_pib": 1.43,
+    "ano": 2021,
+    "fonte": "OECD SOCX"
+   },
+   "incremento_crianca": {
+    "disponivel": true,
+    "natureza": "EST",
+    "n_pontos": 6,
+    "unidade_consumo": "€ de 2022",
+    "unidade_vad": "€ de 2022",
+    "vad_por_crianca_ano": {
+     "mediana": 16878,
+     "min": 16837,
+     "max": 16964
+    },
+    "cfcc_por_crianca_ano": 23396,
+    "vad_sobre_cfcc": 0.72,
+    "empregos_brutos_por_crianca": {
+     "mediana": 0.251,
+     "min": 0.25,
+     "max": 0.251
+    },
+    "empregos_liquidos_50": 0.133,
+    "empregos_liquidos_100": 0.0155,
+    "criancas_por_emprego_bruto": 4,
+    "aviso": "Limite superior de demanda por criança adicional e por ano na coorte; não é efeito causal nem inclui a produção futura da criança.",
+    "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
+   },
+   "horizontes": [
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "S1 Queda a 1,0 até 2040",
+     "tft": 1.14,
+     "delta_desc_pct": -0.6,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.1,
+     "delta_consumo_publico_pct": -0.2
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "S3 WPP Medium",
+     "tft": 1.25,
+     "delta_desc_pct": 0.3,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.1,
+     "delta_consumo_publico_pct": 0.1
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "S6 Rápida a 2,1 até 2035",
+     "tft": 1.66,
+     "delta_desc_pct": 3.8,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.6,
+     "delta_consumo_publico_pct": 1.0
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "S1 Queda a 1,0 até 2040",
+     "tft": 1.0,
+     "delta_desc_pct": -5.6,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.8,
+     "delta_consumo_publico_pct": -1.3
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "S3 WPP Medium",
+     "tft": 1.3,
+     "delta_desc_pct": 2.6,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.4,
+     "delta_consumo_publico_pct": 0.6
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "S6 Rápida a 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 30.7,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 4.5,
+     "delta_consumo_publico_pct": 6.8
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "S1 Queda a 1,0 até 2040",
+     "tft": 1.0,
+     "delta_desc_pct": -16.1,
+     "delta_estr_pct": -0.7,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -2.6,
+     "delta_consumo_publico_pct": -3.7
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "S3 WPP Medium",
+     "tft": 1.37,
+     "delta_desc_pct": 8.6,
+     "delta_estr_pct": 0.4,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 1.4,
+     "delta_consumo_publico_pct": 2.0
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "S6 Rápida a 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 73.5,
+     "delta_estr_pct": 4.5,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 12.2,
+     "delta_consumo_publico_pct": 17.2
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "S1 Queda a 1,0 até 2040",
+     "tft": 1.0,
+     "delta_desc_pct": -23.7,
+     "delta_estr_pct": -8.8,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -6.4,
+     "delta_consumo_publico_pct": -7.2
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "S3 WPP Medium",
+     "tft": 1.43,
+     "delta_desc_pct": 18.8,
+     "delta_estr_pct": 4.5,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 4.2,
+     "delta_consumo_publico_pct": 5.1
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "S6 Rápida a 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 137.4,
+     "delta_estr_pct": 41.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 33.9,
+     "delta_consumo_publico_pct": 39.2
+    }
+   ],
+   "fontes": [
+    {
+     "nome": "INPS, Assegno unico e universale: circolare n. 7 de 30/01/2026 (aggiornamento importi 2026)",
+     "url": "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.02.assegno-unico-2026-presentazione-domanda-e-aggiornamento-importi.html",
+     "ids": [
+      "AINU-ITA-AUU-2025-000534"
+     ]
+    },
+    {
+     "nome": "Indagine sulle spese delle famiglie 2023 (ISTAT), arquivo público",
+     "url": "https://www.istat.it/microdati/indagine-sulle-spese-delle-famiglie-uso-pubblico/",
+     "ids": [
+      "AINU-ITA-HBS-2023-000537"
+     ]
+    },
+    {
+     "nome": "ISTAT Indagine sulle spese delle famiglie — microdados de uso público (download livre) + arquivos para pesquisa (MFR, edição 2022 reemitida em 18/jul/2024) (Itália)",
+     "url": "https://www.istat.it/microdati/indagine-sulle-spese-delle-famiglie-file-ricerca/",
+     "ids": [
+      "AINU-ITA-HBS-2024-000036",
+      "AINU-ITA-HBS-2024-000450"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto nacional / tabelas de recursos e usos (IO)",
+     "url": "https://www.istat.it/tavole-di-dati/il-sistema-di-tavole-input-output-anni-2020-2021/",
+     "ids": [
+      "AINU-ITA-IO-2021-000449"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional — OECD ICIO, edição 2025 (Itália)",
+     "url": "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf",
+     "ids": [
+      "AINU-ITA-MRIO-2022-000020"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional (conteúdo importado direto e indireto) (ICIO 2025)",
+     "url": "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html",
+     "ids": [
+      "AINU-ITA-MRIO-2022-000448"
+     ]
+    },
+    {
+     "nome": "NTA — perfis por idade (consumo, renda do trabalho, transferências); 1 ano-base (Itália)",
+     "url": "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf",
+     "ids": [
+      "AINU-ITA-NTA-2008-000009",
+      "AINU-ITA-NTA-2008-000447",
+      "AINU-ITA-NTA-2025-000536"
+     ]
+    },
+    {
+     "nome": "Indagine sui bilanci delle famiglie italiane, SHIW 2022 (Banca d'Italia)",
+     "url": "https://www.bancaditalia.it/statistiche/tematiche/indagini-famiglie-imprese/bilanci-famiglie/distribuzione-microdati/index.html",
+     "ids": [
+      "AINU-ITA-SHIW-2022-000538"
+     ]
+    },
+    {
+     "nome": "ISTAT Multiscopo — Uso del tempo 2023: microdados liberados só do módulo de voluntariado; diário será liberado em separado (Itália)",
+     "url": "https://www.istat.it/microdati/multiscopo-sulle-famiglie-uso-del-tempo/",
+     "ids": [
+      "AINU-ITA-TUS-2023-000035",
+      "AINU-ITA-TUS-2023-000451"
+     ]
+    },
+    {
+     "nome": "População por idade simples e sexo (hist. 1950–2023; proj. 2024–2100) (hist.csv.gz / proj.csv.gz)",
+     "url": "https://population.un.org/wpp/",
+     "ids": [
+      "AINU-ITA-WPP-2023-000444",
+      "AINU-ITA-WPP-2025-000445",
+      "AINU-ITA-WPP-2025-000446"
+     ]
+    },
+    {
+     "nome": "Eurostat. naio_10_cp1700: tabela simétrica de insumo-produto a preços básicos (produto por produto).",
+     "url": "https://ec.europa.eu/eurostat/databrowser/view/naio_10_cp1700/default/table?lang=en",
+     "ids": []
+    },
+    {
+     "nome": "Eurostat. nama_10_a64_e: emprego por atividade (64 ramos), contas nacionais.",
+     "url": "https://ec.europa.eu/eurostat/databrowser/view/nama_10_a64_e/default/table?lang=en",
+     "ids": []
+    },
+    {
+     "nome": "OCDE. Social Expenditure Database (SOCX), gasto público em família (programa TP51), % do PIB; conferido em 2026-11-02 pela API pública SDMX da OCDE (sdmx.oecd.org).",
+     "url": "https://www.oecd.org/en/data/datasets/social-expenditure-database-socx.html",
+     "ids": []
+    }
+   ]
+  },
+  "KOR": {
+   "iso": "KOR",
+   "nome": "Coreia do Sul",
+   "natureza_dividendo": "SIM",
+   "dividendo_10pct_pib": 0.92,
+   "base_consumo_descendentes": "Pesos NTA 2010",
+   "programa": {
+    "nome": "Abono infantil",
+    "pct_pib": 0.103,
+    "ano": "2026, derivado",
+    "texto": "Abono infantil: 0,103% do PIB (2026, derivado)",
+    "retido": false,
+    "ressalva": true
+   },
+   "gasto_publico_familia": {
+    "pct_pib": 1.65,
+    "ano": 2022,
+    "fonte": "OECD SOCX"
+   },
+   "incremento_crianca": {
+    "disponivel": false
+   },
+   "horizontes": [
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "K2 Recuperação lenta: 1,2 até 2060",
+     "tft": 0.81,
+     "delta_desc_pct": 0.8,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.1,
+     "delta_consumo_publico_pct": 0.2
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "K1 WPP Medium",
+     "tft": 0.81,
+     "delta_desc_pct": 0.8,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.1,
+     "delta_consumo_publico_pct": 0.2
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "K4 Rápida: 2,1 até 2045",
+     "tft": 1.09,
+     "delta_desc_pct": 4.3,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.7,
+     "delta_consumo_publico_pct": 0.9
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "K2 Recuperação lenta: 1,2 até 2060",
+     "tft": 0.94,
+     "delta_desc_pct": 8.1,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 1.0,
+     "delta_consumo_publico_pct": 1.2
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "K1 WPP Medium",
+     "tft": 0.93,
+     "delta_desc_pct": 8.0,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.9,
+     "delta_consumo_publico_pct": 1.2
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "K4 Rápida: 2,1 até 2045",
+     "tft": 1.76,
+     "delta_desc_pct": 42.7,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 5.1,
+     "delta_consumo_publico_pct": 6.3
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "K2 Recuperação lenta: 1,2 até 2060",
+     "tft": 1.14,
+     "delta_desc_pct": 31.7,
+     "delta_estr_pct": 1.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 3.8,
+     "delta_consumo_publico_pct": 4.3
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "K1 WPP Medium",
+     "tft": 1.06,
+     "delta_desc_pct": 28.3,
+     "delta_estr_pct": 1.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 3.4,
+     "delta_consumo_publico_pct": 3.9
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "K4 Rápida: 2,1 até 2045",
+     "tft": 2.1,
+     "delta_desc_pct": 148.9,
+     "delta_estr_pct": 5.7,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 18.0,
+     "delta_consumo_publico_pct": 20.4
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "K2 Recuperação lenta: 1,2 até 2060",
+     "tft": 1.2,
+     "delta_desc_pct": 73.5,
+     "delta_estr_pct": 15.3,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 11.5,
+     "delta_consumo_publico_pct": 10.9
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "K1 WPP Medium",
+     "tft": 1.19,
+     "delta_desc_pct": 63.9,
+     "delta_estr_pct": 13.9,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 10.2,
+     "delta_consumo_publico_pct": 9.6
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "K4 Rápida: 2,1 até 2045",
+     "tft": 2.1,
+     "delta_desc_pct": 321.8,
+     "delta_estr_pct": 74.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 52.8,
+     "delta_consumo_publico_pct": 49.2
+    }
+   ],
+   "fontes": [
+    {
+     "nome": "Pesquisa de orçamento familiar (consumo por domicílio/idade) (HBS)",
+     "url": "https://mods.go.kr/menu.es?mid=a20206010000",
+     "ids": [
+      "AINU-KOR-HBS-2021-000466"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto nacional / tabelas de recursos e usos (IO)",
+     "url": "https://bok.or.kr/eng/bbs/E0000634/view.do?menuNo=400069&nttId=10083839&pageIndex=",
+     "ids": [
+      "AINU-KOR-IO-2020-000465"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional — OECD ICIO, edição 2025 (Coreia do Sul)",
+     "url": "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf",
+     "ids": [
+      "AINU-KOR-MRIO-2022-000022"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional (conteúdo importado direto e indireto) (ICIO 2025)",
+     "url": "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html",
+     "ids": [
+      "AINU-KOR-MRIO-2022-000464"
+     ]
+    },
+    {
+     "nome": "NTA — perfis por idade (consumo, renda do trabalho, transferências); 1 ano-base (Coreia do Sul)",
+     "url": "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf",
+     "ids": [
+      "AINU-KOR-NTA-2010-000011",
+      "AINU-KOR-NTA-2010-000463"
+     ]
+    },
+    {
+     "nome": "KOSTAT/MDIS — serviço de microdados (download público, acesso remoto, on-site) (Coreia do Sul)",
+     "url": "http://mdis.kostat.go.kr/eng/index.do",
+     "ids": [
+      "AINU-KOR-SURVEY-NA-000038"
+     ]
+    },
+    {
+     "nome": "Uso do tempo / cuidado / trabalho não remunerado (TUS)",
+     "url": "https://data2x.org/wp-content/uploads/2025/03/South-Korea-TUCS-Korean-WR.pdf",
+     "ids": [
+      "AINU-KOR-TUS-2024-000467"
+     ]
+    },
+    {
+     "nome": "População por idade simples e sexo (hist. 1950–2023; proj. 2024–2100) (hist.csv.gz / proj.csv.gz)",
+     "url": "https://population.un.org/wpp/",
+     "ids": [
+      "AINU-KOR-WPP-2023-000460",
+      "AINU-KOR-WPP-2025-000461",
+      "AINU-KOR-WPP-2025-000462"
+     ]
+    },
+    {
+     "nome": "OCDE. Social Expenditure Database (SOCX), gasto público em família (programa TP51), % do PIB; conferido em 2026-11-02 pela API pública SDMX da OCDE (sdmx.oecd.org).",
+     "url": "https://www.oecd.org/en/data/datasets/social-expenditure-database-socx.html",
+     "ids": []
+    }
+   ]
+  },
+  "JPN": {
+   "iso": "JPN",
+   "nome": "Japão",
+   "natureza_dividendo": "SIM",
+   "dividendo_10pct_pib": 0.81,
+   "base_consumo_descendentes": "Pesos NTA 2004",
+   "programa": {
+    "nome": "Abono infantil",
+    "pct_pib": 0.34,
+    "ano": "FY2025",
+    "texto": "Abono infantil: 0,34% do PIB (FY2025)",
+    "retido": false,
+    "ressalva": false
+   },
+   "gasto_publico_familia": {
+    "pct_pib": 1.98,
+    "ano": 2022,
+    "fonte": "OECD SOCX"
+   },
+   "incremento_crianca": {
+    "disponivel": true,
+    "natureza": "EST",
+    "n_pontos": 8,
+    "unidade_consumo": "¥ de 2022",
+    "unidade_vad": "¥ de 2022",
+    "vad_por_crianca_ano": {
+     "mediana": 2651515,
+     "min": 2500000,
+     "max": 3000000
+    },
+    "cfcc_por_crianca_ano": 3004647,
+    "vad_sobre_cfcc": 0.88,
+    "empregos_brutos_por_crianca": {
+     "mediana": 0.311,
+     "min": 0.302,
+     "max": 0.357
+    },
+    "empregos_liquidos_50": 0.157,
+    "empregos_liquidos_100": 0.0028,
+    "criancas_por_emprego_bruto": 3.2,
+    "aviso": "Limite superior de demanda por criança adicional e por ano na coorte; não é efeito causal nem inclui a produção futura da criança.",
+    "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
+   },
+   "horizontes": [
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C1 Queda: 1,00 até 2040",
+     "tft": 1.15,
+     "delta_desc_pct": -0.6,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.1,
+     "delta_consumo_publico_pct": -0.1
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.26,
+     "delta_desc_pct": 0.3,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.0,
+     "delta_consumo_publico_pct": 0.1
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 1.66,
+     "delta_desc_pct": 3.3,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.6,
+     "delta_consumo_publico_pct": 0.8
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C1 Queda: 1,00 até 2040",
+     "tft": 1.0,
+     "delta_desc_pct": -5.3,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.8,
+     "delta_consumo_publico_pct": -1.1
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.31,
+     "delta_desc_pct": 2.3,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.3,
+     "delta_consumo_publico_pct": 0.5
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 27.0,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 4.1,
+     "delta_consumo_publico_pct": 5.8
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C1 Queda: 1,00 até 2040",
+     "tft": 1.0,
+     "delta_desc_pct": -15.9,
+     "delta_estr_pct": -0.4,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -2.6,
+     "delta_consumo_publico_pct": -3.5
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.37,
+     "delta_desc_pct": 7.6,
+     "delta_estr_pct": 0.2,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 1.2,
+     "delta_consumo_publico_pct": 1.7
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 68.7,
+     "delta_estr_pct": 2.4,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 11.4,
+     "delta_consumo_publico_pct": 15.2
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C1 Queda: 1,00 até 2040",
+     "tft": 1.0,
+     "delta_desc_pct": -23.4,
+     "delta_estr_pct": -8.2,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -6.4,
+     "delta_consumo_publico_pct": -6.7
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.43,
+     "delta_desc_pct": 16.7,
+     "delta_estr_pct": 3.7,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 3.8,
+     "delta_consumo_publico_pct": 4.3
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 122.3,
+     "delta_estr_pct": 36.5,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 31.3,
+     "delta_consumo_publico_pct": 33.7
+    }
+   ],
+   "fontes": [
+    {
+     "nome": "Abono infantil (児童手当, Kodomo Teate), ampliado em out/2024",
+     "url": "https://www.cfa.go.jp/policies/kokoseido/jidouteate/annai/",
+     "ids": [
+      "AINU-JPN-ABONOCFA-2025-000609"
+     ]
+    },
+    {
+     "nome": "Dedução por dependente do imposto de renda (扶養控除)",
+     "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180.htm",
+     "ids": [
+      "AINU-JPN-DEPNTA-2026-000613"
+     ]
+    },
+    {
+     "nome": "Educação e cuidado infantil gratuitos (幼児教育・保育の無償化) e benefícios de educação e cuidado",
+     "url": "https://www.cfa.go.jp/policies/kokoseido/mushouka",
+     "ids": [
+      "AINU-JPN-ECECCFA-2024-000614"
+     ]
+    },
+    {
+     "nome": "Contribuição para crianças e criação de filhos (子ども・子育て拠出金)",
+     "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1bd66626-02b3-4966-8f38-20659fea0f1f/457e5ee9/20250318_councils_jigyounushi-kyougi_1bd66626_04.pdf",
+     "ids": [
+      "AINU-JPN-EMPLCONTR-2025-000611"
+     ]
+    },
+    {
+     "nome": "Pesquisa de orçamento familiar (consumo por domicílio/idade) (HBS)",
+     "url": "https://www.e-stat.go.jp/en/stat-search?kikan=00200&toukei=00200561&page=1",
+     "ids": [
+      "AINU-JPN-HBS-2025-000458"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto nacional / tabelas de recursos e usos (IO)",
+     "url": "https://www.soumu.go.jp/english/dgpp_ss/data/io/io20_00001.html",
+     "ids": [
+      "AINU-JPN-IO-2020-000457"
+     ]
+    },
+    {
+     "nome": "e-Stat, tabelas de insumo-produto do Japão 2015",
+     "url": "https://www.e-stat.go.jp/en/stat-search/files?toukei=00200603&layout=dataset",
+     "ids": [
+      "AINU-JPN-IO2015-2015-000606",
+      "AINU-JPN-SUT2020-2020-000607"
+     ]
+    },
+    {
+     "nome": "Licença parental remunerada (育児休業給付)",
+     "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cf58692-19b3-47a6-af76-1d6df3602740/bf2fe881/20250130_policies_budget_tokubetsukaikei_ikujikyugyo_06.pdf",
+     "ids": [
+      "AINU-JPN-LICENCA-2025-000612"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional — OECD ICIO, edição 2025 (Japão)",
+     "url": "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf",
+     "ids": [
+      "AINU-JPN-MRIO-2022-000021"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional (conteúdo importado direto e indireto) (ICIO 2025)",
+     "url": "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html",
+     "ids": [
+      "AINU-JPN-MRIO-2022-000456"
+     ]
+    },
+    {
+     "nome": "NTA — perfis por idade (consumo, renda do trabalho, transferências); 1 ano-base (Japão)",
+     "url": "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf",
+     "ids": [
+      "AINU-JPN-NTA-2004-000010",
+      "AINU-JPN-NTA-2004-000455"
+     ]
+    },
+    {
+     "nome": "Abono infantil (児童手当, Kodomo Teate), ampliado em out/2024",
+     "url": "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/13c14507-66d3-4212-9cda-7afd707c1083/eae3eab8/20250402_policies_budget_tokubetsukaikei_kodomokosodate_08.pdf",
+     "ids": [
+      "AINU-JPN-ORCCFA-2025-000610"
+     ]
+    },
+    {
+     "nome": "Survey on Time Use and Leisure Activities 2021 (10ª; quinquenal desde 1976) — tabelas no e-Stat (Japão)",
+     "url": "https://www.stat.go.jp/english/data/shakai/2021/gaiyo.html",
+     "ids": [
+      "AINU-JPN-TUS-2021-000037",
+      "AINU-JPN-TUS-2021-000459"
+     ]
+    },
+    {
+     "nome": "População por idade simples e sexo (hist. 1950–2023; proj. 2024–2100) (hist.csv.gz / proj.csv.gz)",
+     "url": "https://population.un.org/wpp/",
+     "ids": [
+      "AINU-JPN-WPP-2023-000452",
+      "AINU-JPN-WPP-2025-000453",
+      "AINU-JPN-WPP-2025-000454"
+     ]
+    },
+    {
+     "nome": "OCDE. Social Expenditure Database (SOCX), gasto público em família (programa TP51), % do PIB; conferido em 2026-11-02 pela API pública SDMX da OCDE (sdmx.oecd.org).",
+     "url": "https://www.oecd.org/en/data/datasets/social-expenditure-database-socx.html",
+     "ids": []
+    }
+   ]
+  },
+  "MEX": {
+   "iso": "MEX",
+   "nome": "México",
+   "natureza_dividendo": "SIM",
+   "dividendo_10pct_pib": 1.52,
+   "base_consumo_descendentes": "ENIGH 2024 ancorada",
+   "programa": {
+    "nome": "S174",
+    "pct_pib": 0.0095,
+    "ano": "2025",
+    "texto": "S174: 0,0095% do PIB (2025)",
+    "retido": false,
+    "ressalva": false
+   },
+   "gasto_publico_familia": {
+    "pct_pib": 0.55,
+    "ano": 2023,
+    "fonte": "OECD SOCX"
+   },
+   "incremento_crianca": {
+    "disponivel": true,
+    "natureza": "EST",
+    "n_pontos": 10,
+    "unidade_consumo": "pesos de 2018",
+    "unidade_vad": "pesos de 2018",
+    "vad_por_crianca_ano": {
+     "mediana": 86283,
+     "min": 66667,
+     "max": 90196
+    },
+    "cfcc_por_crianca_ano": 115900,
+    "vad_sobre_cfcc": 0.74,
+    "empregos_brutos_por_crianca": {
+     "mediana": 0.244,
+     "min": 0.24,
+     "max": 0.246
+    },
+    "empregos_liquidos_50": 0.127,
+    "empregos_liquidos_100": 0.0105,
+    "criancas_por_emprego_bruto": 4.1,
+    "aviso": "Limite superior de demanda por criança adicional e por ano na coorte; não é efeito causal nem inclui a produção futura da criança.",
+    "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
+   },
+   "horizontes": [
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "M1 Queda: 1,5 até 2040",
+     "tft": 1.75,
+     "delta_desc_pct": -0.9,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.3,
+     "delta_consumo_publico_pct": -0.4
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "M3 WPP Medium",
+     "tft": 1.79,
+     "delta_desc_pct": -0.6,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.2,
+     "delta_consumo_publico_pct": -0.3
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "M5 Rápida: 2,1 até 2035",
+     "tft": 1.98,
+     "delta_desc_pct": 0.8,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.2,
+     "delta_consumo_publico_pct": 0.4
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "M1 Queda: 1,5 até 2040",
+     "tft": 1.5,
+     "delta_desc_pct": -7.5,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -1.9,
+     "delta_consumo_publico_pct": -3.1
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "M3 WPP Medium",
+     "tft": 1.73,
+     "delta_desc_pct": -3.5,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.9,
+     "delta_consumo_publico_pct": -1.4
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "M5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 6.1,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 1.6,
+     "delta_consumo_publico_pct": 2.5
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "M1 Queda: 1,5 até 2040",
+     "tft": 1.5,
+     "delta_desc_pct": -19.7,
+     "delta_estr_pct": -1.6,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -5.3,
+     "delta_consumo_publico_pct": -7.9
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "M3 WPP Medium",
+     "tft": 1.69,
+     "delta_desc_pct": -8.6,
+     "delta_estr_pct": -0.9,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -2.4,
+     "delta_consumo_publico_pct": -3.5
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "M5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 13.5,
+     "delta_estr_pct": 1.5,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 3.9,
+     "delta_consumo_publico_pct": 5.6
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "M1 Queda: 1,5 até 2040",
+     "tft": 1.5,
+     "delta_desc_pct": -30.3,
+     "delta_estr_pct": -12.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -12.0,
+     "delta_consumo_publico_pct": -14.5
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "M3 WPP Medium",
+     "tft": 1.68,
+     "delta_desc_pct": -15.2,
+     "delta_estr_pct": -5.5,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -5.7,
+     "delta_consumo_publico_pct": -7.1
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "M5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 23.2,
+     "delta_estr_pct": 8.7,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 8.9,
+     "delta_consumo_publico_pct": 10.9
+    }
+   ],
+   "fontes": [
+    {
+     "nome": "ENIGH 2024 (INEGI), microdados",
+     "url": "https://www.inegi.org.mx/programas/enigh/nc/2024/",
+     "ids": [
+      "AINU-MEX-ENIGH-2024-000561",
+      "AINU-MEX-HBS-2024-000026"
+     ]
+    },
+    {
+     "nome": "Encuesta de Uso del Tiempo (INDEC 2021; INEGI/INMUJERES 2019), microdados",
+     "url": "https://www.inegi.org.mx/programas/enut/2019/?ps=microdatos",
+     "ids": [
+      "AINU-MEX-ENUT-2019-000564"
+     ]
+    },
+    {
+     "nome": "Pesquisa de orçamento familiar (consumo por domicílio/idade) (HBS)",
+     "url": "https://www.inegi.org.mx/rnm/index.php/catalog/1116",
+     "ids": [
+      "AINU-MEX-HBS-2024-000394"
+     ]
+    },
+    {
+     "nome": "Seguro de Guarderías y Prestaciones Sociales (IMSS)",
+     "url": "http://www.imss.gob.mx/sites/all/statics/pdf/informes/20232024/10-Cap06.pdf",
+     "ids": [
+      "AINU-MEX-IMSSGUA-2024-000575"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto nacional / tabelas de recursos e usos (IO)",
+     "url": "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2024/COU/COUyMIP-Estatales2018.pdf",
+     "ids": [
+      "AINU-MEX-IO-2018-000393"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional — OECD ICIO, edição 2025 (México)",
+     "url": "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf",
+     "ids": [
+      "AINU-MEX-MRIO-2022-000013"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional (conteúdo importado direto e indireto) (ICIO 2025)",
+     "url": "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html",
+     "ids": [
+      "AINU-MEX-MRIO-2022-000392"
+     ]
+    },
+    {
+     "nome": "NTA — perfis por idade (consumo, renda do trabalho, transferências); 1 ano-base (México)",
+     "url": "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf",
+     "ids": [
+      "AINU-MEX-NTA-2010-000002",
+      "AINU-MEX-NTA-2010-000391"
+     ]
+    },
+    {
+     "nome": "Programa de Apoyo para el Bienestar de las Niñas y Niños, Hijos de Madres Trabajadoras (S174)",
+     "url": "https://www.gob.mx/cms/uploads/attachment/file/969771/RO_PABNNHMT_2025_01_24.pdf",
+     "ids": [
+      "AINU-MEX-S174-2025-000574"
+     ]
+    },
+    {
+     "nome": "Dedução de ISR por colegiaturas",
+     "url": "https://www.sat.gob.mx/minisitio/DeduccionesPersonales/colegiaturas.html",
+     "ids": [
+      "AINU-MEX-SATCOLEG-2024-000576"
+     ]
+    },
+    {
+     "nome": "Uso do tempo / cuidado / trabalho não remunerado (TUS)",
+     "url": "https://www.inegi.org.mx/rnm/index.php/catalog/618",
+     "ids": [
+      "AINU-MEX-TUS-2019-000395"
+     ]
+    },
+    {
+     "nome": "População por idade simples e sexo (hist. 1950–2023; proj. 2024–2100) (hist.csv.gz / proj.csv.gz)",
+     "url": "https://population.un.org/wpp/",
+     "ids": [
+      "AINU-MEX-WPP-2023-000388",
+      "AINU-MEX-WPP-2025-000389",
+      "AINU-MEX-WPP-2025-000390"
+     ]
+    },
+    {
+     "nome": "OCDE. Social Expenditure Database (SOCX), gasto público em família (programa TP51), % do PIB; conferido em 2026-11-02 pela API pública SDMX da OCDE (sdmx.oecd.org).",
+     "url": "https://www.oecd.org/en/data/datasets/social-expenditure-database-socx.html",
+     "ids": []
+    }
+   ]
+  },
+  "ARG": {
+   "iso": "ARG",
+   "nome": "Argentina",
+   "natureza_dividendo": "SIM",
+   "dividendo_10pct_pib": 1.46,
+   "base_consumo_descendentes": "ENGHo 2017/18 ancorada",
+   "programa": {
+    "nome": "AUH",
+    "pct_pib": 0.61,
+    "ano": "2018",
+    "texto": "AUH: 0,61% do PIB (2018)",
+    "retido": false,
+    "ressalva": false
+   },
+   "gasto_publico_familia": null,
+   "incremento_crianca": {
+    "disponivel": true,
+    "natureza": "EST",
+    "n_pontos": 9,
+    "unidade_consumo": "pesos de 2018",
+    "unidade_vad": "pesos de 2018",
+    "vad_por_crianca_ano": {
+     "mediana": 158763,
+     "min": 157831,
+     "max": 166667
+    },
+    "cfcc_por_crianca_ano": 200000,
+    "vad_sobre_cfcc": 0.79,
+    "empregos_brutos_por_crianca": {
+     "mediana": 0.233,
+     "min": 0.233,
+     "max": 0.24
+    },
+    "empregos_liquidos_50": 0.121,
+    "empregos_liquidos_100": 0.0089,
+    "criancas_por_emprego_bruto": 4.3,
+    "aviso": "Limite superior de demanda por criança adicional e por ano na coorte; não é efeito causal nem inclui a produção futura da criança.",
+    "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
+   },
+   "horizontes": [
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "A1 Queda: 1,2 até 2040",
+     "tft": 1.4,
+     "delta_desc_pct": -0.8,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.2,
+     "delta_consumo_publico_pct": -0.3
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "A3 WPP Medium",
+     "tft": 1.51,
+     "delta_desc_pct": 0.1,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.0,
+     "delta_consumo_publico_pct": 0.0
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "A5 Rápida: 2,1 até 2035",
+     "tft": 1.8,
+     "delta_desc_pct": 2.2,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.5,
+     "delta_consumo_publico_pct": 0.8
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "A1 Queda: 1,2 até 2040",
+     "tft": 1.2,
+     "delta_desc_pct": -7.3,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -1.3,
+     "delta_consumo_publico_pct": -2.2
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "A3 WPP Medium",
+     "tft": 1.52,
+     "delta_desc_pct": 0.5,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.1,
+     "delta_consumo_publico_pct": 0.2
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "A5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 18.7,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 3.4,
+     "delta_consumo_publico_pct": 5.5
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "A1 Queda: 1,2 até 2040",
+     "tft": 1.2,
+     "delta_desc_pct": -19.2,
+     "delta_estr_pct": -1.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -3.8,
+     "delta_consumo_publico_pct": -5.7
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "A3 WPP Medium",
+     "tft": 1.55,
+     "delta_desc_pct": 1.7,
+     "delta_estr_pct": 0.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.3,
+     "delta_consumo_publico_pct": 0.5
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "A5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 41.1,
+     "delta_estr_pct": 3.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 8.5,
+     "delta_consumo_publico_pct": 12.5
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "A1 Queda: 1,2 até 2040",
+     "tft": 1.2,
+     "delta_desc_pct": -28.4,
+     "delta_estr_pct": -10.7,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -8.8,
+     "delta_consumo_publico_pct": -10.5
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "A3 WPP Medium",
+     "tft": 1.56,
+     "delta_desc_pct": 4.0,
+     "delta_estr_pct": 0.9,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 1.0,
+     "delta_consumo_publico_pct": 1.2
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "A5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 73.3,
+     "delta_estr_pct": 23.9,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 21.1,
+     "delta_consumo_publico_pct": 25.6
+    }
+   ],
+   "fontes": [
+    {
+     "nome": "Asignación Universal por Hijo (AUH), e AUH com deficiência",
+     "url": "https://www.anses.gob.ar/sites/default/files/2026-07/Bolet%C3%ADn%20Asignaciones%20para%20Protecci%C3%B3n%20Social_marzo%202026.pdf",
+     "ids": [
+      "AINU-ARG-AUHANSES-2026-000570"
+     ]
+    },
+    {
+     "nome": "INDEC, ENGHo 2017/18: manual de uso das bases",
+     "url": "https://www.indec.gob.ar/ftp/cuadros/menusuperior/engho/engho2017_18_manual_uso_bases.pdf",
+     "ids": [
+      "AINU-ARG-ENGHO-2018-000566",
+      "AINU-ARG-HBS-2018-000029",
+      "AINU-ARG-HBS-2018-000418"
+     ]
+    },
+    {
+     "nome": "INDEC, ENUT 2021: manual de uso da base",
+     "url": "https://www.indec.gob.ar/ftp/cuadros/menusuperior/enut/enut2021_manual_uso_base.pdf",
+     "ids": [
+      "AINU-ARG-ENUT-2021-000569",
+      "AINU-ARG-TUS-2021-000419"
+     ]
+    },
+    {
+     "nome": "Dedução de Ganancias por filho (cargas de familia)",
+     "url": "https://arca.gob.ar/gananciasYBienes/ganancias/personas-humanas-sucesiones-indivisas/deducciones/documentos/Deducciones-personales-art-30-liq-anual-2025.pdf",
+     "ids": [
+      "AINU-ARG-GANANC-2025-000572"
+     ]
+    },
+    {
+     "nome": "Gasto tributário total (Secretaría de Hacienda)",
+     "url": "https://www.argentina.gob.ar/sites/default/files/informe_sobre_gastos_tributarios._anos_2023-2025.pdf",
+     "ids": [
+      "AINU-ARG-GTRIB-2025-000571"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto nacional / tabelas de recursos e usos (IO)",
+     "url": "https://www.indec.gob.ar/ftp/cuadros/economia/cou_2018_08_21.pdf",
+     "ids": [
+      "AINU-ARG-IO-2023-000417"
+     ]
+    },
+    {
+     "nome": "Sala maternal / guardería obrigatória (art. 179 da LCT, Decreto 144/2022)",
+     "url": "https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=362578",
+     "ids": [
+      "AINU-ARG-LCT179-2022-000573"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional — OECD ICIO, edição 2025 (Argentina)",
+     "url": "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf",
+     "ids": [
+      "AINU-ARG-MRIO-2022-000016"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional (conteúdo importado direto e indireto) (ICIO 2025)",
+     "url": "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html",
+     "ids": [
+      "AINU-ARG-MRIO-2022-000416"
+     ]
+    },
+    {
+     "nome": "NTA — perfis por idade (consumo, renda do trabalho, transferências); 1 ano-base (Argentina)",
+     "url": "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf",
+     "ids": [
+      "AINU-ARG-NTA-2010-000005",
+      "AINU-ARG-NTA-2010-000415"
+     ]
+    },
+    {
+     "nome": "OPC, execução orçamentária da administração nacional, dez/2025 (AUH)",
+     "url": "https://www.opc.gob.ar/wp-content/uploads/ANALISIS-DE-LA-EJECUCION-PRESUPUESTARIA-DE-LA-ADMINISTRACION-NACIONAL-DICIEMBRE-2025.pdf",
+     "ids": [
+      "AINU-ARG-OPC-2025-000578"
+     ]
+    },
+    {
+     "nome": "População por idade simples e sexo (hist. 1950–2023; proj. 2024–2100) (hist.csv.gz / proj.csv.gz)",
+     "url": "https://population.un.org/wpp/",
+     "ids": [
+      "AINU-ARG-WPP-2023-000412",
+      "AINU-ARG-WPP-2025-000413",
+      "AINU-ARG-WPP-2025-000414"
+     ]
+    }
+   ]
+  },
+  "BRA": {
+   "iso": "BRA",
+   "nome": "Brasil",
+   "natureza_dividendo": "SIM",
+   "dividendo_10pct_pib": 1.22,
+   "base_consumo_descendentes": "POF 2017-18 ancorada",
+   "programa": {
+    "nome": "Bolsa Família",
+    "pct_pib": 1.11,
+    "ano": "2026",
+    "texto": "Bolsa Família: 1,11% do PIB (2026)",
+    "retido": false,
+    "ressalva": false
+   },
+   "gasto_publico_familia": null,
+   "incremento_crianca": {
+    "disponivel": true,
+    "natureza": "EST",
+    "n_pontos": 9,
+    "unidade_consumo": "R$ de 2018",
+    "unidade_vad": "R$ de 2015",
+    "vad_por_crianca_ano": {
+     "mediana": 13659,
+     "min": 12000,
+     "max": 16000
+    },
+    "cfcc_por_crianca_ano": 20171,
+    "vad_sobre_cfcc": 0.68,
+    "empregos_brutos_por_crianca": {
+     "mediana": 0.238,
+     "min": 0.22,
+     "max": 0.258
+    },
+    "empregos_liquidos_50": 0.123,
+    "empregos_liquidos_100": 0.0071,
+    "criancas_por_emprego_bruto": 4.2,
+    "aviso": "Limite superior de demanda por criança adicional e por ano na coorte; não é efeito causal nem inclui a produção futura da criança.",
+    "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
+   },
+   "horizontes": [
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C1 Queda: 1,25 até 2040",
+     "tft": 1.48,
+     "delta_desc_pct": -0.9,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.2,
+     "delta_consumo_publico_pct": -0.3
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.58,
+     "delta_desc_pct": -0.2,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.0,
+     "delta_consumo_publico_pct": -0.1
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 1.85,
+     "delta_desc_pct": 1.9,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.4,
+     "delta_consumo_publico_pct": 0.6
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C1 Queda: 1,25 até 2040",
+     "tft": 1.25,
+     "delta_desc_pct": -7.6,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -1.3,
+     "delta_consumo_publico_pct": -2.1
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.57,
+     "delta_desc_pct": -1.1,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.2,
+     "delta_consumo_publico_pct": -0.3
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 14.3,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 2.5,
+     "delta_consumo_publico_pct": 4.0
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C1 Queda: 1,25 até 2040",
+     "tft": 1.25,
+     "delta_desc_pct": -20.9,
+     "delta_estr_pct": -1.2,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -3.9,
+     "delta_consumo_publico_pct": -5.7
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.56,
+     "delta_desc_pct": -2.2,
+     "delta_estr_pct": -0.3,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.5,
+     "delta_consumo_publico_pct": -0.7
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 32.8,
+     "delta_estr_pct": 2.7,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 6.4,
+     "delta_consumo_publico_pct": 9.3
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C1 Queda: 1,25 até 2040",
+     "tft": 1.25,
+     "delta_desc_pct": -30.6,
+     "delta_estr_pct": -11.9,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -9.6,
+     "delta_consumo_publico_pct": -11.6
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.58,
+     "delta_desc_pct": -3.4,
+     "delta_estr_pct": -1.4,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -1.1,
+     "delta_consumo_publico_pct": -1.3
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 56.5,
+     "delta_estr_pct": 19.5,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 16.7,
+     "delta_consumo_publico_pct": 20.5
+    }
+   ],
+   "fontes": [
+    {
+     "nome": "Programa Bolsa Família (Lei 14.601/2023)",
+     "url": "https://www.gov.br/secom/pt-br/acompanhe-a-secom/noticias/2026/04/bolsa-familia-chega-a-18-9-milhoes-de-beneficiarios-em-todo-o-brasil-a-partir-desta-quinta-16",
+     "ids": [
+      "AINU-BRA-BOLSAFAM-2026-000587"
+     ]
+    },
+    {
+     "nome": "Deduções de IRPF com educação e saúde",
+     "url": "https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/relatorios/renuncia/gastos-tributarios-ploa/dgt-previsao-ploa-2026-base-conceitual.pdf",
+     "ids": [
+      "AINU-BRA-DGTPLOA-2026-000590"
+     ]
+    },
+    {
+     "nome": "Programa Empresa Cidadã (Lei 11.770/2008)",
+     "url": "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/beneficios-fiscais/programa-empresa-cidada/orientacoes",
+     "ids": [
+      "AINU-BRA-EMPCID-2026-000591"
+     ]
+    },
+    {
+     "nome": "Pesquisa de orçamento familiar (consumo por domicílio/idade) (HBS)",
+     "url": "https://ftp.ibge.gov.br/Orcamentos_Familiares/Pesquisa_de_Orcamentos_Familiares_2017_2018/Microdados/",
+     "ids": [
+      "AINU-BRA-HBS-2018-000410",
+      "AINU-BRA-POF-2018-000583"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto nacional / tabelas de recursos e usos (IO)",
+     "url": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv101604.pdf",
+     "ids": [
+      "AINU-BRA-IO-2015-000409"
+     ]
+    },
+    {
+     "nome": "Dedução de IRPF por dependente",
+     "url": "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2025",
+     "ids": [
+      "AINU-BRA-IRPFDEP-2026-000593"
+     ]
+    },
+    {
+     "nome": "Programa Bolsa Família (Lei 14.601/2023)",
+     "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm",
+     "ids": [
+      "AINU-BRA-LEI14601-2023-000588"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional — OECD ICIO, edição 2025 (Brasil)",
+     "url": "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf",
+     "ids": [
+      "AINU-BRA-MRIO-2022-000015"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional (conteúdo importado direto e indireto) (ICIO 2025)",
+     "url": "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html",
+     "ids": [
+      "AINU-BRA-MRIO-2022-000408"
+     ]
+    },
+    {
+     "nome": "NTA — perfis por idade (consumo, renda do trabalho, transferências); 1 ano-base (Brasil)",
+     "url": "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf",
+     "ids": [
+      "AINU-BRA-NTA-2002-000004",
+      "AINU-BRA-NTA-2002-000407"
+     ]
+    },
+    {
+     "nome": "IBGE, PNAD Contínua, Outras formas de trabalho 2022 (informativo)",
+     "url": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv102020_informativo.pdf",
+     "ids": [
+      "AINU-BRA-PNADOFT-2022-000617"
+     ]
+    },
+    {
+     "nome": "Salário-família (RGPS)",
+     "url": "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-familia/valor-limite-para-direito-ao-salario-familia",
+     "ids": [
+      "AINU-BRA-SALFAM-2026-000589"
+     ]
+    },
+    {
+     "nome": "Salário-maternidade (RGPS)",
+     "url": "https://www.gov.br/previdencia/pt-br/assuntos/previdencia-social/Dados-estatisticos-previdencia-social-e-inss/boletins-da-previdencia-social/2025/beps112025_final.pdf",
+     "ids": [
+      "AINU-BRA-SALMAT-2025-000592"
+     ]
+    },
+    {
+     "nome": "Uso do tempo / cuidado / trabalho não remunerado (TUS)",
+     "url": "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Anual/Outras_Formas_de_Trabalho_2017/",
+     "ids": [
+      "AINU-BRA-TUS-2017-000411"
+     ]
+    },
+    {
+     "nome": "PNAD Contínua — módulo 'Outras formas de trabalho' (afazeres domésticos e cuidado de pessoas), microdados anuais (Brasil)",
+     "url": "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Anual/Outras_Formas_de_Trabalho_2017/Selecao_de_Variaveis.pdf",
+     "ids": [
+      "AINU-BRA-TUS-2022-000028"
+     ]
+    },
+    {
+     "nome": "População por idade simples e sexo (hist. 1950–2023; proj. 2024–2100) (hist.csv.gz / proj.csv.gz)",
+     "url": "https://population.un.org/wpp/",
+     "ids": [
+      "AINU-BRA-WPP-2023-000404",
+      "AINU-BRA-WPP-2025-000405",
+      "AINU-BRA-WPP-2025-000406"
+     ]
+    }
+   ]
+  },
+  "USA": {
+   "iso": "USA",
+   "nome": "Estados Unidos",
+   "natureza_dividendo": "SIM",
+   "dividendo_10pct_pib": 1.22,
+   "base_consumo_descendentes": "CE 2023-24 ancorado",
+   "programa": {
+    "nome": "Child credit",
+    "pct_pib": 0.245,
+    "ano": "FY2025",
+    "texto": "Child credit: 0,245% do PIB (FY2025)",
+    "retido": false,
+    "ressalva": false
+   },
+   "gasto_publico_familia": {
+    "pct_pib": 0.6,
+    "ano": 2023,
+    "fonte": "OECD SOCX"
+   },
+   "incremento_crianca": {
+    "disponivel": true,
+    "natureza": "EST",
+    "n_pontos": 8,
+    "unidade_consumo": "US$ de 2023",
+    "unidade_vad": "US$ de 2023",
+    "vad_por_crianca_ano": {
+     "mediana": 42029,
+     "min": 40909,
+     "max": 46667
+    },
+    "cfcc_por_crianca_ano": 45717,
+    "vad_sobre_cfcc": 0.92,
+    "empregos_brutos_por_crianca": {
+     "mediana": 0.255,
+     "min": 0.247,
+     "max": 0.278
+    },
+    "empregos_liquidos_50": 0.128,
+    "empregos_liquidos_100": 0.0007,
+    "criancas_por_emprego_bruto": 3.9,
+    "aviso": "Limite superior de demanda por criança adicional e por ano na coorte; não é efeito causal nem inclui a produção futura da criança.",
+    "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
+   },
+   "horizontes": [
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C1 Queda: 1,27 até 2040",
+     "tft": 1.51,
+     "delta_desc_pct": -0.8,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.2,
+     "delta_consumo_publico_pct": -0.2
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.63,
+     "delta_desc_pct": 0.0,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.0,
+     "delta_consumo_publico_pct": 0.0
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 1.86,
+     "delta_desc_pct": 1.7,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.3,
+     "delta_consumo_publico_pct": 0.5
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C1 Queda: 1,27 até 2040",
+     "tft": 1.27,
+     "delta_desc_pct": -7.1,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -1.2,
+     "delta_consumo_publico_pct": -2.0
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.64,
+     "delta_desc_pct": 0.3,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.1,
+     "delta_consumo_publico_pct": 0.1
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 12.5,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 2.2,
+     "delta_consumo_publico_pct": 3.5
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C1 Queda: 1,27 até 2040",
+     "tft": 1.27,
+     "delta_desc_pct": -19.6,
+     "delta_estr_pct": -0.8,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -3.7,
+     "delta_consumo_publico_pct": -5.5
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.64,
+     "delta_desc_pct": 1.0,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.2,
+     "delta_consumo_publico_pct": 0.3
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 29.3,
+     "delta_estr_pct": 1.6,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 5.7,
+     "delta_consumo_publico_pct": 8.3
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C1 Queda: 1,27 até 2040",
+     "tft": 1.27,
+     "delta_desc_pct": -29.7,
+     "delta_estr_pct": -11.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -9.8,
+     "delta_consumo_publico_pct": -10.6
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.64,
+     "delta_desc_pct": 1.5,
+     "delta_estr_pct": 0.5,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.5,
+     "delta_consumo_publico_pct": 0.5
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 50.7,
+     "delta_estr_pct": 17.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 15.8,
+     "delta_consumo_publico_pct": 17.5
+    }
+   ],
+   "fontes": [
+    {
+     "nome": "BLS, American Time Use Survey 2025 (tabela 1)",
+     "url": "https://www.bls.gov/news.release/atus.t01.htm",
+     "ids": [
+      "AINU-USA-ATUS-2025-000616"
+     ]
+    },
+    {
+     "nome": "Consumer Expenditure Survey 2023–24 (BLS), microdados",
+     "url": "https://www.bls.gov/cex/pumd_data.htm",
+     "ids": [
+      "AINU-USA-CE-2023-000594",
+      "AINU-USA-HBS-2025-000426"
+     ]
+    },
+    {
+     "nome": "Child Tax Credit (CTC) — IRC §24, alterado pela Lei 119-21",
+     "url": "https://www.congress.gov/crs_external_products/R/PDF/R41873/R41873.32.pdf",
+     "ids": [
+      "AINU-USA-CTCCRS-2025-000598"
+     ]
+    },
+    {
+     "nome": "Earned Income Tax Credit (EITC)",
+     "url": "https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-tax-credit-statistics",
+     "ids": [
+      "AINU-USA-EITCIRS-2023-000600"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto nacional / tabelas de recursos e usos (IO)",
+     "url": "https://www.bea.gov/industry/input-output-accounts-data",
+     "ids": [
+      "AINU-USA-IO-1996-000425",
+      "AINU-USA-IOBEA-2023-000596"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional — OECD ICIO, edição 2025 (Estados Unidos)",
+     "url": "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf",
+     "ids": [
+      "AINU-USA-MRIO-2022-000017"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional (conteúdo importado direto e indireto) (ICIO 2025)",
+     "url": "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html",
+     "ids": [
+      "AINU-USA-MRIO-2022-000424"
+     ]
+    },
+    {
+     "nome": "NTA — perfis por idade (consumo, renda do trabalho, transferências); 1 ano-base (Estados Unidos)",
+     "url": "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf",
+     "ids": [
+      "AINU-USA-NTA-2011-000006",
+      "AINU-USA-NTA-2011-000423"
+     ]
+    },
+    {
+     "nome": "Supplemental Nutrition Assistance Program (SNAP)",
+     "url": "https://www.ers.usda.gov/topics/food-nutrition-assistance/supplemental-nutrition-assistance-program-snap/key-statistics-and-research",
+     "ids": [
+      "AINU-USA-SNAPERS-2025-000601"
+     ]
+    },
+    {
+     "nome": "Child Tax Credit (CTC) — IRC §24, alterado pela Lei 119-21",
+     "url": "https://home.treasury.gov/policy-issues/tax-policy/tax-expenditures",
+     "ids": [
+      "AINU-USA-TREASTE-2027-000599"
+     ]
+    },
+    {
+     "nome": "ATUS 2003–2024 — arquivos Respondent, Roster, Activity, Who, ATUS-CPS, Eldercare Roster (2011–2024), pesos (Estados Unidos)",
+     "url": "https://www.bls.gov/tus/data/datafiles-0324.htm",
+     "ids": [
+      "AINU-USA-TUS-2024-000030",
+      "AINU-USA-TUS-2024-000427"
+     ]
+    },
+    {
+     "nome": "Special Supplemental Nutrition Program for Women, Infants, and Children (WIC)",
+     "url": "https://www.ers.usda.gov/media/29245/eib-304.pdf?v=28095",
+     "ids": [
+      "AINU-USA-WICERS-2025-000602"
+     ]
+    },
+    {
+     "nome": "População por idade simples e sexo (hist. 1950–2023; proj. 2024–2100) (hist.csv.gz / proj.csv.gz)",
+     "url": "https://population.un.org/wpp/",
+     "ids": [
+      "AINU-USA-WPP-2023-000420",
+      "AINU-USA-WPP-2025-000421",
+      "AINU-USA-WPP-2025-000422"
+     ]
+    },
+    {
+     "nome": "OCDE. Social Expenditure Database (SOCX), gasto público em família (programa TP51), % do PIB; conferido em 2026-11-02 pela API pública SDMX da OCDE (sdmx.oecd.org).",
+     "url": "https://www.oecd.org/en/data/datasets/social-expenditure-database-socx.html",
+     "ids": []
+    }
+   ]
+  },
+  "IND": {
+   "iso": "IND",
+   "nome": "Índia",
+   "natureza_dividendo": "SIM",
+   "dividendo_10pct_pib": 1.35,
+   "base_consumo_descendentes": "Pesos NTA 2004",
+   "programa": {
+    "nome": null,
+    "pct_pib": null,
+    "ano": null,
+    "texto": null,
+    "retido": true
+   },
+   "gasto_publico_familia": null,
+   "incremento_crianca": {
+    "disponivel": false
+   },
+   "horizontes": [
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C1 Queda: 1,59 até 2040",
+     "tft": 1.83,
+     "delta_desc_pct": -0.9,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.2,
+     "delta_consumo_publico_pct": -0.3
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.88,
+     "delta_desc_pct": -0.5,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.1,
+     "delta_consumo_publico_pct": -0.2
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.02,
+     "delta_desc_pct": 0.6,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.1,
+     "delta_consumo_publico_pct": 0.2
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C1 Queda: 1,59 até 2040",
+     "tft": 1.59,
+     "delta_desc_pct": -7.7,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -1.4,
+     "delta_consumo_publico_pct": -2.2
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.8,
+     "delta_desc_pct": -3.5,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.6,
+     "delta_consumo_publico_pct": -1.0
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 4.5,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.8,
+     "delta_consumo_publico_pct": 1.3
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C1 Queda: 1,59 até 2040",
+     "tft": 1.59,
+     "delta_desc_pct": -18.2,
+     "delta_estr_pct": -2.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -4.0,
+     "delta_consumo_publico_pct": -5.4
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.75,
+     "delta_desc_pct": -8.7,
+     "delta_estr_pct": -1.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -1.9,
+     "delta_consumo_publico_pct": -2.6
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 8.4,
+     "delta_estr_pct": 1.4,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 2.1,
+     "delta_consumo_publico_pct": 2.7
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C1 Queda: 1,59 até 2040",
+     "tft": 1.59,
+     "delta_desc_pct": -27.9,
+     "delta_estr_pct": -12.3,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -9.6,
+     "delta_consumo_publico_pct": -10.7
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.71,
+     "delta_desc_pct": -16.1,
+     "delta_estr_pct": -5.9,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -5.0,
+     "delta_consumo_publico_pct": -5.8
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 14.8,
+     "delta_estr_pct": 6.2,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 4.9,
+     "delta_consumo_publico_pct": 5.5
+    }
+   ],
+   "fontes": [
+    {
+     "nome": "Pesquisa de orçamento familiar (consumo por domicílio/idade) (HBS)",
+     "url": "https://datacatalog.ihsn.org/catalog/12933",
+     "ids": [
+      "AINU-IND-HBS-2024-000402"
+     ]
+    },
+    {
+     "nome": "MoSPI, Household Consumption Expenditure Survey 2023-24 (NSS Report nº 592), relatório final",
+     "url": "https://mospi.gov.in/sites/default/files/publication_reports/Final_Report_HCES_2023-24L.pdf",
+     "ids": [
+      "AINU-IND-HCES-2024-000633"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto nacional / tabelas de recursos e usos (IO)",
+     "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2150113&reg=48&lang=2",
+     "ids": [
+      "AINU-IND-IO-2024-000401"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional — OECD ICIO, edição 2025 (Índia)",
+     "url": "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf",
+     "ids": [
+      "AINU-IND-MRIO-2022-000014"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional (conteúdo importado direto e indireto) (ICIO 2025)",
+     "url": "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html",
+     "ids": [
+      "AINU-IND-MRIO-2022-000400"
+     ]
+    },
+    {
+     "nome": "NTA — perfis por idade (consumo, renda do trabalho, transferências); 1 ano-base (Índia)",
+     "url": "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf",
+     "ids": [
+      "AINU-IND-NTA-2004-000003",
+      "AINU-IND-NTA-2004-000399"
+     ]
+    },
+    {
+     "nome": "Time Use Survey 2024 (NSO/MoSPI) — dados de nível unitário (Índia)",
+     "url": "https://microdata.gov.in/NADA/index.php/catalog/236",
+     "ids": [
+      "AINU-IND-TUS-2024-000027"
+     ]
+    },
+    {
+     "nome": "Uso do tempo / cuidado / trabalho não remunerado (TUS)",
+     "url": "https://catalog.ihsn.org/catalog/12937",
+     "ids": [
+      "AINU-IND-TUS-2024-000403"
+     ]
+    },
+    {
+     "nome": "População por idade simples e sexo (hist. 1950–2023; proj. 2024–2100) (hist.csv.gz / proj.csv.gz)",
+     "url": "https://population.un.org/wpp/",
+     "ids": [
+      "AINU-IND-WPP-2023-000396",
+      "AINU-IND-WPP-2025-000397",
+      "AINU-IND-WPP-2025-000398"
+     ]
+    }
+   ]
+  },
+  "NGA": {
+   "iso": "NGA",
+   "nome": "Nigéria",
+   "natureza_dividendo": "SIM",
+   "dividendo_10pct_pib": null,
+   "base_consumo_descendentes": "Pesos NTA 2009 (só participações)",
+   "programa": {
+    "nome": null,
+    "pct_pib": null,
+    "ano": null,
+    "texto": "n/d",
+    "retido": false
+   },
+   "gasto_publico_familia": null,
+   "incremento_crianca": {
+    "disponivel": false
+   },
+   "horizontes": [
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C1 Queda: 3,95 até 2040",
+     "tft": 4.18,
+     "delta_desc_pct": -0.5,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.3,
+     "delta_consumo_publico_pct": -0.3
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C3 WPP Medium",
+     "tft": 3.82,
+     "delta_desc_pct": -2.1,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -1.0,
+     "delta_consumo_publico_pct": -1.2
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 3.2,
+     "delta_desc_pct": -4.8,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -2.4,
+     "delta_consumo_publico_pct": -2.7
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C1 Queda: 3,95 até 2040",
+     "tft": 3.95,
+     "delta_desc_pct": -3.9,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -1.9,
+     "delta_consumo_publico_pct": -2.1
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C3 WPP Medium",
+     "tft": 3.1,
+     "delta_desc_pct": -14.6,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -7.0,
+     "delta_consumo_publico_pct": -8.0
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": -31.8,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -15.3,
+     "delta_consumo_publico_pct": -17.4
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C1 Queda: 3,95 até 2040",
+     "tft": 3.95,
+     "delta_desc_pct": -8.5,
+     "delta_estr_pct": -1.5,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -4.7,
+     "delta_consumo_publico_pct": -5.2
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C3 WPP Medium",
+     "tft": 2.51,
+     "delta_desc_pct": -36.0,
+     "delta_estr_pct": -5.9,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -19.8,
+     "delta_consumo_publico_pct": -21.8
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": -53.8,
+     "delta_estr_pct": -14.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -31.7,
+     "delta_consumo_publico_pct": -34.5
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C1 Queda: 3,95 até 2040",
+     "tft": 3.95,
+     "delta_desc_pct": -13.8,
+     "delta_estr_pct": -7.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -9.4,
+     "delta_consumo_publico_pct": -10.0
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C3 WPP Medium",
+     "tft": 2.13,
+     "delta_desc_pct": -60.3,
+     "delta_estr_pct": -29.9,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -41.0,
+     "delta_consumo_publico_pct": -43.4
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": -72.5,
+     "delta_estr_pct": -47.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -53.8,
+     "delta_consumo_publico_pct": -56.2
+    }
+   ],
+   "fontes": [
+    {
+     "nome": "Pesquisa de orçamento familiar (consumo por domicílio/idade) (HBS)",
+     "url": "https://microdata.worldbank.org/catalog/3827",
+     "ids": [
+      "AINU-NGA-HBS-2019-000386"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto nacional / tabelas de recursos e usos (IO)",
+     "url": "https://www.gtap.agecon.purdue.edu/databases/IO/table_display.asp?IO_ID=468",
+     "ids": [
+      "AINU-NGA-IO-2006-000385"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional — OECD ICIO, edição 2025 (Nigéria)",
+     "url": "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf",
+     "ids": [
+      "AINU-NGA-MRIO-2022-000012"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional (conteúdo importado direto e indireto) (ICIO 2025)",
+     "url": "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html",
+     "ids": [
+      "AINU-NGA-MRIO-2022-000384"
+     ]
+    },
+    {
+     "nome": "NTA — perfis por idade (consumo, renda do trabalho, transferências); 1 ano-base (Nigéria)",
+     "url": "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf",
+     "ids": [
+      "AINU-NGA-NTA-2009-000001",
+      "AINU-NGA-NTA-2009-000383"
+     ]
+    },
+    {
+     "nome": "GHS-Panel (NBS/Banco Mundial) — roster e módulo de uso do tempo na onda 5 (2023-24), segundo resultado de busca (Nigéria)",
+     "url": "https://microdata.worldbank.org/catalog/6410",
+     "ids": [
+      "AINU-NGA-SURVEY-2024-000025"
+     ]
+    },
+    {
+     "nome": "Nigeria Time Use Survey 2024 (NTUS) — roster, roster de cuidado, rendimentos do domicílio, diário 24h (ICATUS 2016) (Nigéria)",
+     "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/178",
+     "ids": [
+      "AINU-NGA-TUS-2025-000024",
+      "AINU-NGA-TUS-2025-000387"
+     ]
+    },
+    {
+     "nome": "População por idade simples e sexo (hist. 1950–2023; proj. 2024–2100) (hist.csv.gz / proj.csv.gz)",
+     "url": "https://population.un.org/wpp/",
+     "ids": [
+      "AINU-NGA-WPP-2023-000380",
+      "AINU-NGA-WPP-2025-000381",
+      "AINU-NGA-WPP-2025-000382"
+     ]
+    }
+   ]
+  },
+  "FRA": {
+   "iso": "FRA",
+   "nome": "França",
+   "natureza_dividendo": "SIM",
+   "dividendo_10pct_pib": 0.9,
+   "base_consumo_descendentes": "Pesos NTA 2011",
+   "programa": {
+    "nome": "Allocations familiales",
+    "pct_pib": 0.46,
+    "ano": "2024",
+    "texto": "Allocations familiales: 0,46% do PIB (2024)",
+    "retido": false,
+    "ressalva": false
+   },
+   "gasto_publico_familia": {
+    "pct_pib": 2.64,
+    "ano": 2022,
+    "fonte": "OECD SOCX"
+   },
+   "incremento_crianca": {
+    "disponivel": false
+   },
+   "horizontes": [
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C1 Queda: 1,29 até 2040",
+     "tft": 1.52,
+     "delta_desc_pct": -0.9,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.2,
+     "delta_consumo_publico_pct": -0.2
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.64,
+     "delta_desc_pct": 0.0,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.0,
+     "delta_consumo_publico_pct": 0.0
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 1.87,
+     "delta_desc_pct": 1.7,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.3,
+     "delta_consumo_publico_pct": 0.5
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C1 Queda: 1,29 até 2040",
+     "tft": 1.29,
+     "delta_desc_pct": -7.7,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -1.3,
+     "delta_consumo_publico_pct": -1.9
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.64,
+     "delta_desc_pct": 0.1,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.0,
+     "delta_consumo_publico_pct": 0.0
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 13.4,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 2.3,
+     "delta_consumo_publico_pct": 3.3
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C1 Queda: 1,29 até 2040",
+     "tft": 1.29,
+     "delta_desc_pct": -20.0,
+     "delta_estr_pct": -1.3,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -4.2,
+     "delta_consumo_publico_pct": -5.5
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.65,
+     "delta_desc_pct": 0.5,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.1,
+     "delta_consumo_publico_pct": 0.1
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 28.7,
+     "delta_estr_pct": 2.6,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 6.3,
+     "delta_consumo_publico_pct": 8.1
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C1 Queda: 1,29 até 2040",
+     "tft": 1.29,
+     "delta_desc_pct": -29.2,
+     "delta_estr_pct": -12.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -10.2,
+     "delta_consumo_publico_pct": -10.9
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.65,
+     "delta_desc_pct": 1.0,
+     "delta_estr_pct": 0.3,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.3,
+     "delta_consumo_publico_pct": 0.3
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 49.3,
+     "delta_estr_pct": 18.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 16.1,
+     "delta_consumo_publico_pct": 17.6
+    }
+   ],
+   "fontes": [
+    {
+     "nome": "INSEE Budget de famille 2017 — resultados detalhados; nova edição em preparação (França)",
+     "url": "https://www.insee.fr/fr/metadonnees/source/serie/s1194",
+     "ids": [
+      "AINU-FRA-HBS-2017-000032",
+      "AINU-FRA-HBS-2017-000434"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto nacional / tabelas de recursos e usos (IO)",
+     "url": "https://www.insee.fr/fr/statistiques/8988861",
+     "ids": [
+      "AINU-FRA-IO-2025-000433"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional — OECD ICIO, edição 2025 (França)",
+     "url": "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf",
+     "ids": [
+      "AINU-FRA-MRIO-2022-000018"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional (conteúdo importado direto e indireto) (ICIO 2025)",
+     "url": "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html",
+     "ids": [
+      "AINU-FRA-MRIO-2022-000432"
+     ]
+    },
+    {
+     "nome": "NTA — perfis por idade (consumo, renda do trabalho, transferências); 1 ano-base (França)",
+     "url": "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf",
+     "ids": [
+      "AINU-FRA-NTA-2011-000007",
+      "AINU-FRA-NTA-2011-000431"
+     ]
+    },
+    {
+     "nome": "INSEE Enquête Emploi du temps 2025-2026 (em campo; coleta até set/2026) (França)",
+     "url": "https://www.insee.fr/fr/information/6659349",
+     "ids": [
+      "AINU-FRA-TUS-2026-000031",
+      "AINU-FRA-TUS-2026-000435"
+     ]
+    },
+    {
+     "nome": "População por idade simples e sexo (hist. 1950–2023; proj. 2024–2100) (hist.csv.gz / proj.csv.gz)",
+     "url": "https://population.un.org/wpp/",
+     "ids": [
+      "AINU-FRA-WPP-2023-000428",
+      "AINU-FRA-WPP-2025-000429",
+      "AINU-FRA-WPP-2025-000430"
+     ]
+    },
+    {
+     "nome": "OCDE. Social Expenditure Database (SOCX), gasto público em família (programa TP51), % do PIB; conferido em 2026-11-02 pela API pública SDMX da OCDE (sdmx.oecd.org).",
+     "url": "https://www.oecd.org/en/data/datasets/social-expenditure-database-socx.html",
+     "ids": []
+    }
+   ]
+  },
+  "CHN": {
+   "iso": "CHN",
+   "nome": "China",
+   "natureza_dividendo": "SIM",
+   "dividendo_10pct_pib": 0.93,
+   "base_consumo_descendentes": "Pesos NTA 2007",
+   "programa": {
+    "nome": "Subsídio de criação de filhos",
+    "pct_pib": 0.07,
+    "ano": "2025",
+    "texto": "Subsídio de criação de filhos: ≈ 0,07% do PIB (2025)",
+    "retido": false,
+    "ressalva": true
+   },
+   "gasto_publico_familia": null,
+   "incremento_crianca": {
+    "disponivel": false
+   },
+   "horizontes": [
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C1 Queda: 1,00 até 2040",
+     "tft": 1.01,
+     "delta_desc_pct": -0.1,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.0,
+     "delta_consumo_publico_pct": 0.0
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.06,
+     "delta_desc_pct": 0.3,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.1,
+     "delta_consumo_publico_pct": 0.1
+    },
+    {
+     "horizonte": "0–5 anos",
+     "ano": 2030,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 1.56,
+     "delta_desc_pct": 4.4,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 1.0,
+     "delta_consumo_publico_pct": 1.2
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C1 Queda: 1,00 até 2040",
+     "tft": 1.0,
+     "delta_desc_pct": -0.7,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.1,
+     "delta_consumo_publico_pct": -0.1
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.13,
+     "delta_desc_pct": 3.6,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 0.6,
+     "delta_consumo_publico_pct": 0.7
+    },
+    {
+     "horizonte": "5–15 anos",
+     "ano": 2040,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 44.9,
+     "delta_estr_pct": 0.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 6.8,
+     "delta_consumo_publico_pct": 8.3
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C1 Queda: 1,00 até 2040",
+     "tft": 1.0,
+     "delta_desc_pct": -1.9,
+     "delta_estr_pct": -0.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.3,
+     "delta_consumo_publico_pct": -0.3
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.21,
+     "delta_desc_pct": 12.7,
+     "delta_estr_pct": 0.4,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 1.9,
+     "delta_consumo_publico_pct": 2.2
+    },
+    {
+     "horizonte": "15–30 anos",
+     "ano": 2055,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 108.0,
+     "delta_estr_pct": 5.9,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 17.2,
+     "delta_consumo_publico_pct": 19.4
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C1 Queda: 1,00 até 2040",
+     "tft": 1.0,
+     "delta_desc_pct": -3.0,
+     "delta_estr_pct": -1.0,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": -0.6,
+     "delta_consumo_publico_pct": -0.6
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C3 WPP Medium",
+     "tft": 1.28,
+     "delta_desc_pct": 28.7,
+     "delta_estr_pct": 6.3,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 5.0,
+     "delta_consumo_publico_pct": 5.1
+    },
+    {
+     "horizonte": "30–50 anos",
+     "ano": 2075,
+     "cenario": "C5 Rápida: 2,1 até 2035",
+     "tft": 2.1,
+     "delta_desc_pct": 228.3,
+     "delta_estr_pct": 58.1,
+     "delta_asc_pct": 0.0,
+     "delta_cfcc_total_pct": 42.9,
+     "delta_consumo_publico_pct": 42.8
+    }
+   ],
+   "fontes": [
+    {
+     "nome": "Pesquisa de orçamento familiar (consumo por domicílio/idade) (HBS)",
+     "url": "https://opendata.pku.edu.cn/dataset.xhtml?persistentId=doi%3A10.18170%2FDVN%2F45LCSO&version=19.0",
+     "ids": [
+      "AINU-CHN-HBS-2016-000442"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto nacional / tabelas de recursos e usos (IO)",
+     "url": "https://www.stats.gov.cn/sj/ndsj/2022/html/sme03.htm",
+     "ids": [
+      "AINU-CHN-IO-2020-000441"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional — OECD ICIO, edição 2025 (China)",
+     "url": "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf",
+     "ids": [
+      "AINU-CHN-MRIO-2022-000019"
+     ]
+    },
+    {
+     "nome": "Matriz insumo-produto multirregional (conteúdo importado direto e indireto) (ICIO 2025)",
+     "url": "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html",
+     "ids": [
+      "AINU-CHN-MRIO-2022-000440"
+     ]
+    },
+    {
+     "nome": "NTA — perfis por idade (consumo, renda do trabalho, transferências); 1 ano-base (China)",
+     "url": "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf",
+     "ids": [
+      "AINU-CHN-NTA-2007-000008",
+      "AINU-CHN-NTA-2007-000439"
+     ]
+    },
+    {
+     "nome": "China Family Panel Studies (CFPS), Univ. de Pequim — painel bienal desde 2010 (China)",
+     "url": "https://www.isss.pku.edu.cn/cfps/en",
+     "ids": [
+      "AINU-CHN-SURVEY-2020-000033"
+     ]
+    },
+    {
+     "nome": "NBS Time Use Survey 2018 (11 províncias, 48.580 pessoas); 3ª pesquisa nacional (comunicado nov/2024) (China)",
+     "url": "https://www.stats.gov.cn/english/PressRelease/202411/t20241115_1957435.html",
+     "ids": [
+      "AINU-CHN-TUS-2024-000034",
+      "AINU-CHN-TUS-2024-000443"
+     ]
+    },
+    {
+     "nome": "População por idade simples e sexo (hist. 1950–2023; proj. 2024–2100) (hist.csv.gz / proj.csv.gz)",
+     "url": "https://population.un.org/wpp/",
+     "ids": [
+      "AINU-CHN-WPP-2023-000436",
+      "AINU-CHN-WPP-2025-000437",
+      "AINU-CHN-WPP-2025-000438"
+     ]
+    }
+   ]
+  }
+ }
+}

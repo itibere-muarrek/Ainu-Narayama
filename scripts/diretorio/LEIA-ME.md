@@ -90,3 +90,6 @@ e a lista de referências de método. Cada fonte mostra o link, os identificador
   e não o documento (ex.: Treasury), ou porque o número é derivado.
 - `conferencia_numeros_manual.json`: os números de maior peso conferidos à mão contra o original (Treasury, CFA, CNAF, INPS, OPC, 3º informe do México,
   HCES) e refeitos com o PIB do Banco Mundial; aparece em `dados.html`, seção "Números conferidos contra a fonte", com o estado de cada um.
+
+### Liberado em 2026-11-02
+`data/diretorio/publicavel/simulacoes.json` foi liberado pelo autor e entra no git com `git add -f` (o resto de `data/diretorio/` continua ignorado). Depois de rodar `exportar_diretorio.py`, o arquivo aparece como modificado: revise o diff antes de commitar, porque o commit atualiza a página de simulação do app (Render reimplanta). Contém só valores já exibidos nas fichas, sem microdados; itens de nível L2 saem sem valor.
