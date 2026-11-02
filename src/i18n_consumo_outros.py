@@ -1,0 +1,282 @@
+"""
+Traduções da página "Consumo por coorte e Dividendo" para es, fr, it, ko, ja, zh e fi.
+
+Mesmas chaves de src/i18n_consumo.TX_CONS (que já traz pt e en). Mesclado lá.
+Traduções feitas por IA (2026-11-02), sem revisão por falante nativo, a pedido do autor
+(que as revisará depois). Termos próprios do projeto (Descendentes, Estruturadores,
+Ascendentes, Legadores, Prometidos, TFR, SOCX, Paper 3) ficam como no resto do site.
+
+Marcadores de formato ({nome}, {pct}, {ano}, {base}, {x}, {un}, {motivo}) devem permanecer
+idênticos em todos os idiomas.
+"""
+
+TRAD: dict[str, dict[str, str]] = {
+    "c_titulo": {
+        "es": "Consumo por cohorte y Dividendo Intergeneracional (beta)",
+        "fr": "Consommation par cohorte et Dividende Intergénérationnel (bêta)",
+        "it": "Consumo per coorte e Dividendo Intergenerazionale (beta)",
+        "ko": "코호트별 소비와 세대 간 배당 (베타)",
+        "ja": "コホート別消費と世代間配当(ベータ版)",
+        "zh": "分队列消费与代际红利(测试版)",
+        "fi": "Kohorttikohtainen kulutus ja sukupolvien välinen osinko (beta)",
+    },
+    "c_intro": {
+        "es": "Esta página reescala números que el Paper 3 ya calculó (un borrador de investigación independiente, sin revisión por pares). Usted cambia el porcentaje del Dividendo y el número de niños adicionales; la página muestra el resultado a la escala elegida. **Ningún modelo nuevo, ninguna previsión y ninguna estimación de efecto causal.**",
+        "fr": "Cette page remet à l'échelle des chiffres que le Paper 3 a déjà calculés (un brouillon de recherche indépendante, non évalué par des pairs). Vous modifiez le pourcentage du Dividende et le nombre d'enfants supplémentaires ; la page affiche le résultat à l'échelle choisie. **Aucun nouveau modèle, aucune prévision et aucune estimation d'effet causal.**",
+        "it": "Questa pagina riscala numeri che il Paper 3 ha già calcolato (una bozza di ricerca indipendente, non sottoposta a revisione tra pari). Si modifica la percentuale del Dividendo e il numero di bambini aggiuntivi; la pagina mostra il risultato alla scala scelta. **Nessun nuovo modello, nessuna previsione e nessuna stima di effetto causale.**",
+        "ko": "이 페이지는 Paper 3에서 이미 계산한 수치를 선택한 규모로 다시 환산합니다(동료 심사를 받지 않은 독립 연구 초안). 배당 비율과 추가 아동 수를 바꾸면 선택한 규모의 결과가 표시됩니다. **새 모형도, 예측도, 인과효과 추정도 없습니다.**",
+        "ja": "このページは、Paper 3 ですでに計算された数値を、選んだ規模に換算して表示します(査読を受けていない独立研究の草稿)。配当の割合と追加の子どもの数を変えると、その規模での結果が表示されます。**新しいモデルも、予測も、因果効果の推定もありません。**",
+        "zh": "本页将 Paper 3 已经算出的数字按所选规模重新换算(独立研究草稿,未经同行评审)。您可以调整红利比例和新增儿童人数,页面会显示相应规模下的结果。**没有新模型,没有预测,也没有因果效应估计。**",
+        "fi": "Tämä sivu skaalaa Paper 3:ssa jo laskettuja lukuja (riippumaton tutkimusluonnos, jota ei ole vertaisarvioitu). Voit muuttaa osingon prosenttia ja lisälasten määrää; sivu näyttää tuloksen valitussa mittakaavassa. **Ei uutta mallia, ei ennustetta eikä syy-seuraus-vaikutuksen arviota.**",
+    },
+    "c_sem_dados": {
+        "es": "Los datos del Directorio aún no se han liberado en este entorno (falta el archivo simulacoes.json). La página solo funciona cuando el autor libera los datos.",
+        "fr": "Les données du Répertoire n'ont pas encore été publiées dans cet environnement (le fichier simulacoes.json est absent). La page ne fonctionne que lorsque l'auteur libère les données.",
+        "it": "I dati del Repertorio non sono ancora stati rilasciati in questo ambiente (manca il file simulacoes.json). La pagina funziona solo quando l'autore rilascia i dati.",
+        "ko": "이 환경에서는 디렉터리 데이터가 아직 공개되지 않았습니다(simulacoes.json 파일 없음). 저자가 데이터를 공개한 뒤에야 이 페이지가 작동합니다.",
+        "ja": "この環境ではディレクトリのデータがまだ公開されていません(simulacoes.json がありません)。著者がデータを公開した後にのみ、このページは動作します。",
+        "zh": "此环境中尚未发布名录数据(缺少 simulacoes.json 文件)。只有作者发布数据后,本页才能使用。",
+        "fi": "Hakemiston tietoja ei ole vielä julkaistu tässä ympäristössä (tiedosto simulacoes.json puuttuu). Sivu toimii vasta, kun kirjoittaja julkaisee tiedot.",
+    },
+    "c_pais": {"es": "País", "fr": "Pays", "it": "Paese", "ko": "국가", "ja": "国", "zh": "国家", "fi": "Maa"},
+    "c_naturezas": {
+        "es": "Etiquetas: **SIM** simulación de mecanismo (costo), **EST** estimación por modelo, **PROJ** proyección condicionada a un escenario.",
+        "fr": "Étiquettes : **SIM** simulation de mécanisme (coût), **EST** estimation par modèle, **PROJ** projection conditionnelle à un scénario.",
+        "it": "Etichette: **SIM** simulazione di meccanismo (costo), **EST** stima da modello, **PROJ** proiezione condizionata a uno scenario.",
+        "ko": "표시: **SIM** 메커니즘 시뮬레이션(비용), **EST** 모형 추정, **PROJ** 시나리오 조건부 전망.",
+        "ja": "ラベル:**SIM** メカニズムのシミュレーション(費用)、**EST** モデルによる推定、**PROJ** シナリオを条件とする推計。",
+        "zh": "标签:**SIM** 机制模拟(成本),**EST** 模型估计,**PROJ** 以情景为条件的预测。",
+        "fi": "Merkinnät: **SIM** mekanismin simulaatio (kustannus), **EST** mallin arvio, **PROJ** skenaarioon sidottu ennuste.",
+    },
+    "c_div_titulo": {
+        "es": "1. ¿Cuánto costaría el Dividendo Intergeneracional?",
+        "fr": "1. Combien coûterait le Dividende Intergénérationnel ?",
+        "it": "1. Quanto costerebbe il Dividendo Intergenerazionale?",
+        "ko": "1. 세대 간 배당에는 얼마가 들까요?",
+        "ja": "1. 世代間配当にはいくらかかるか",
+        "zh": "1. 代际红利要花多少钱?",
+        "fi": "1. Paljonko sukupolvien välinen osinko maksaisi?",
+    },
+    "c_div_ajuda": {
+        "es": "El Dividendo se paga a los Estruturadores y equivale a x% del gasto privado por Descendente, aplicado a toda la cohorte. El costo es proporcional a x (verificado con los 25% y 50% de la hoja de cálculo). Mide solo el costo, no el efecto.",
+        "fr": "Le Dividende est versé aux Estruturadores et équivaut à x % des dépenses privées par Descendente, appliqué à toute la cohorte. Le coût est proportionnel à x (vérifié avec les 25 % et 50 % du tableur). Il ne mesure que le coût, pas l'effet.",
+        "it": "Il Dividendo è pagato agli Estruturadores e equivale a x% della spesa privata per Descendente, applicata all'intera coorte. Il costo è proporzionale a x (verificato con il 25% e il 50% del foglio di calcolo). Misura solo il costo, non l'effetto.",
+        "ko": "배당은 Estruturadores에게 지급되며, Descendente 1인당 민간 지출의 x%를 코호트 전체에 적용한 금액입니다. 비용은 x에 비례합니다(스프레드시트의 25%와 50%로 확인함). 효과가 아니라 비용만 측정합니다.",
+        "ja": "配当は Estruturadores に支払われ、Descendente 1人当たり民間支出の x% をコホート全体に適用した額です。費用は x に比例します(スプレッドシートの 25% と 50% で確認済み)。測るのは費用だけで、効果ではありません。",
+        "zh": "红利发放给 Estruturadores,金额为每名 Descendente 私人支出的 x%,适用于整个队列。成本与 x 成正比(已用电子表格中的 25% 和 50% 核对)。只衡量成本,不衡量效果。",
+        "fi": "Osinko maksetaan Estruturadoreille, ja se on x % Descendentea kohti lasketusta yksityisestä kulutuksesta koko kohortille sovellettuna. Kustannus on suoraan verrannollinen x:ään (tarkistettu taulukon 25 %:lla ja 50 %:lla). Se mittaa vain kustannusta, ei vaikutusta.",
+    },
+    "c_div_slider": {
+        "es": "Dividendo, en % del gasto privado por Descendente",
+        "fr": "Dividende, en % des dépenses privées par Descendente",
+        "it": "Dividendo, in % della spesa privata per Descendente",
+        "ko": "배당, Descendente 1인당 민간 지출 대비 %",
+        "ja": "配当(Descendente 1人当たり民間支出に対する %)",
+        "zh": "红利,占每名 Descendente 私人支出的百分比",
+        "fi": "Osinko, % Descendentea kohti lasketusta yksityisestä kulutuksesta",
+    },
+    "c_div_custo": {
+        "es": "Costo anual (% del PIB)", "fr": "Coût annuel (% du PIB)", "it": "Costo annuo (% del PIL)",
+        "ko": "연간 비용(GDP 대비 %)", "ja": "年間費用(GDP比 %)", "zh": "年成本(占 GDP 的 %)", "fi": "Vuosikustannus (% BKT:stä)",
+    },
+    "c_div_prog": {
+        "es": "Costo ÷ mayor programa infantil de renta", "fr": "Coût ÷ plus grand programme de revenu pour enfants",
+        "it": "Costo ÷ maggiore programma di reddito per l'infanzia", "ko": "비용 ÷ 최대 아동 소득 프로그램",
+        "ja": "費用 ÷ 最大の児童向け現金給付プログラム", "zh": "成本 ÷ 最大的儿童现金项目", "fi": "Kustannus ÷ suurin lapsille suunnattu tulonsiirto-ohjelma",
+    },
+    "c_div_prog_nome": {
+        "es": "Mayor programa: {nome}, {pct} del PIB ({ano})", "fr": "Plus grand programme : {nome}, {pct} du PIB ({ano})",
+        "it": "Programma maggiore: {nome}, {pct} del PIL ({ano})", "ko": "최대 프로그램: {nome}, GDP의 {pct} ({ano})",
+        "ja": "最大のプログラム:{nome}、GDP の {pct}({ano})", "zh": "最大项目:{nome},占 GDP 的 {pct}({ano})",
+        "fi": "Suurin ohjelma: {nome}, {pct} BKT:stä ({ano})",
+    },
+    "c_div_prog_ressalva": {
+        "es": "Valor aproximado o derivado; consulte la ficha del país antes de citarlo.",
+        "fr": "Valeur approximative ou dérivée ; consultez la fiche du pays avant de la citer.",
+        "it": "Valore approssimato o derivato; consultare la scheda del paese prima di citarlo.",
+        "ko": "근삿값 또는 파생값입니다. 인용하기 전에 국가 페이지를 확인하세요.",
+        "ja": "概算値または導出値です。引用する前に国別ページを確認してください。",
+        "zh": "为近似值或推算值;引用前请查看该国页面。",
+        "fi": "Likiarvo tai johdettu arvo; tarkista maasivu ennen lainaamista.",
+    },
+    "c_div_prog_nd": {
+        "es": "No hay un programa con nivel de fuente confirmado para comparar.",
+        "fr": "Aucun programme dont le niveau de source soit confirmé à comparer.",
+        "it": "Nessun programma con livello di fonte confermato da confrontare.",
+        "ko": "비교할 수 있는, 출처 수준이 확인된 프로그램이 없습니다.",
+        "ja": "比較できる、出典水準が確認済みのプログラムはありません。",
+        "zh": "没有可比较的、来源等级已确认的项目。",
+        "fi": "Ei vertailtavaa ohjelmaa, jonka lähdetaso on vahvistettu.",
+    },
+    "c_div_fam": {
+        "es": "Costo ÷ gasto público en familia", "fr": "Coût ÷ dépenses publiques pour la famille",
+        "it": "Costo ÷ spesa pubblica per la famiglia", "ko": "비용 ÷ 가족 관련 공공지출",
+        "ja": "費用 ÷ 家族向け公的支出", "zh": "成本 ÷ 家庭公共支出", "fi": "Kustannus ÷ perheisiin kohdistuva julkinen menot",
+    },
+    "c_div_fam_nome": {
+        "es": "Gasto público en familia: {pct} del PIB ({ano}, OECD SOCX)", "fr": "Dépenses publiques pour la famille : {pct} du PIB ({ano}, OECD SOCX)",
+        "it": "Spesa pubblica per la famiglia: {pct} del PIL ({ano}, OECD SOCX)", "ko": "가족 관련 공공지출: GDP의 {pct} ({ano}, OECD SOCX)",
+        "ja": "家族向け公的支出:GDP の {pct}({ano}、OECD SOCX)", "zh": "家庭公共支出:占 GDP 的 {pct}({ano},OECD SOCX)",
+        "fi": "Perheisiin kohdistuvat julkiset menot: {pct} BKT:stä ({ano}, OECD SOCX)",
+    },
+    "c_div_fam_nd": {
+        "es": "La OECD SOCX no cubre este país.", "fr": "La base OECD SOCX ne couvre pas ce pays.", "it": "La OECD SOCX non copre questo paese.",
+        "ko": "OECD SOCX는 이 국가를 포함하지 않습니다.", "ja": "OECD SOCX はこの国を対象としていません。", "zh": "OECD SOCX 未涵盖该国。", "fi": "OECD SOCX ei kata tätä maata.",
+    },
+    "c_div_base": {
+        "es": "Base del consumo de los Descendentes: {base}.", "fr": "Base de la consommation des Descendentes : {base}.",
+        "it": "Base del consumo dei Descendentes: {base}.", "ko": "Descendentes 소비의 기준: {base}.",
+        "ja": "Descendentes の消費の基礎:{base}。", "zh": "Descendentes 消费的依据:{base}。", "fi": "Descendentes-kulutuksen perusta: {base}.",
+    },
+    "c_div_nd": {
+        "es": "No se puede calcular el Dividendo para este país (no hay niveles de consumo).",
+        "fr": "Le Dividende ne peut pas être calculé pour ce pays (pas de niveaux de consommation).",
+        "it": "Il Dividendo non può essere calcolato per questo paese (mancano i livelli di consumo).",
+        "ko": "이 국가는 소비 수준 자료가 없어 배당을 계산할 수 없습니다.",
+        "ja": "この国は消費水準のデータがないため、配当を計算できません。",
+        "zh": "该国没有消费水平数据,无法计算红利。",
+        "fi": "Osinkoa ei voi laskea tälle maalle (kulutustasoja ei ole).",
+    },
+    "c_vezes": {
+        "es": "{x} veces", "fr": "{x} fois", "it": "{x} volte", "ko": "{x}배", "ja": "{x}倍", "zh": "{x} 倍", "fi": "{x} kertaa",
+    },
+    "c_inc_titulo": {
+        "es": "2. ¿Qué sostiene cada niño adicional?", "fr": "2. Que soutient chaque enfant supplémentaire ?",
+        "it": "2. Che cosa sostiene ogni bambino aggiuntivo?", "ko": "2. 추가 아동 1명은 무엇을 뒷받침할까요?",
+        "ja": "2. 追加の子ども1人は何を支えるか", "zh": "2. 每增加一名儿童能支撑什么?", "fi": "2. Mitä jokainen lisälapsi tukee?",
+    },
+    "c_inc_ajuda": {
+        "es": "Valor por niño y por año del Paper 3 (la demanda de consumo, privado y público, que el niño representa), multiplicado por el número de niños. Es un límite superior: usa el consumo medio por Descendente, vale por año en la cohorte, no acumula ni descuenta y excluye la producción futura del niño.",
+        "fr": "Valeur par enfant et par an du Paper 3 (la demande de consommation, privée et publique, que l'enfant représente), multipliée par le nombre d'enfants. C'est une borne supérieure : elle utilise la consommation moyenne par Descendente, vaut par année dans la cohorte, ne cumule ni n'actualise, et exclut la production future de l'enfant.",
+        "it": "Valore per bambino e per anno del Paper 3 (la domanda di consumo, privato e pubblico, che il bambino rappresenta), moltiplicato per il numero di bambini. È un limite superiore: usa il consumo medio per Descendente, vale per anno nella coorte, non accumula né sconta e esclude la produzione futura del bambino.",
+        "ko": "Paper 3의 아동 1명당·연간 값(아동이 나타내는 민간·공공 소비 수요)에 아동 수를 곱한 것입니다. 상한값입니다. Descendente 1인당 평균 소비를 사용하고, 코호트에 있는 해마다의 값이며, 누적하거나 할인하지 않고, 아동의 미래 생산은 제외합니다.",
+        "ja": "Paper 3 の、子ども1人・1年当たりの値(その子どもが表す民間・公的消費需要)に子どもの数を掛けたものです。上限値です。Descendente 1人当たりの平均消費を用い、コホートに属する年ごとの値で、累積も割引もせず、子どもの将来の生産は含みません。",
+        "zh": "Paper 3 中每名儿童每年的数值(该儿童所代表的私人和公共消费需求)乘以儿童人数。这是上限:使用每名 Descendente 的平均消费,按其在队列中的每一年计算,不累计也不贴现,且不含儿童未来的产出。",
+        "fi": "Paper 3:n lasta ja vuotta kohti laskettu arvo (lapsen edustama yksityinen ja julkinen kulutuskysyntä) kerrottuna lasten määrällä. Se on yläraja: siinä käytetään keskimääräistä kulutusta Descendentea kohti, se pätee kohortissa vietettyä vuotta kohti, sitä ei kumuloida eikä diskontata, eikä siinä ole mukana lapsen tulevaa tuotantoa.",
+    },
+    "c_inc_n": {
+        "es": "Niños adicionales", "fr": "Enfants supplémentaires", "it": "Bambini aggiuntivi", "ko": "추가 아동 수",
+        "ja": "追加の子どもの数", "zh": "新增儿童人数", "fi": "Lisälapset",
+    },
+    "c_inc_desloc": {
+        "es": "Parte del gasto que desplaza otro consumo (%)", "fr": "Part des dépenses qui se substitue à une autre consommation (%)",
+        "it": "Quota della spesa che sposta altro consumo (%)", "ko": "다른 소비를 대체하는 지출 비중(%)",
+        "ja": "他の消費を置き換える支出の割合(%)", "zh": "挤占其他消费的支出比例(%)", "fi": "Muuta kulutusta syrjäyttävän menon osuus (%)",
+    },
+    "c_inc_consumo": {
+        "es": "Consumo atribuido por año ({un})", "fr": "Consommation attribuée par an ({un})", "it": "Consumo attribuito per anno ({un})",
+        "ko": "연간 귀속 소비({un})", "ja": "年間に帰属する消費({un})", "zh": "每年归属的消费({un})", "fi": "Vuodessa kohdistettu kulutus ({un})",
+    },
+    "c_inc_vad": {
+        "es": "Valor agregado doméstico por año ({un})", "fr": "Valeur ajoutée intérieure par an ({un})", "it": "Valore aggiunto interno per anno ({un})",
+        "ko": "연간 국내 부가가치({un})", "ja": "年間の国内付加価値({un})", "zh": "每年国内增加值({un})", "fi": "Kotimainen arvonlisä vuodessa ({un})",
+    },
+    "c_inc_emp_bruto": {
+        "es": "Empleos brutos por año", "fr": "Emplois bruts par an", "it": "Posti di lavoro lordi per anno",
+        "ko": "연간 총 일자리", "ja": "年間の総雇用", "zh": "每年总就业岗位", "fi": "Bruttotyöpaikat vuodessa",
+    },
+    "c_inc_emp_liq": {
+        "es": "Empleos con el desplazamiento elegido", "fr": "Emplois avec la substitution choisie", "it": "Posti di lavoro con lo spostamento scelto",
+        "ko": "선택한 대체율에서의 일자리", "ja": "選んだ置き換え率での雇用", "zh": "按所选挤占比例的就业岗位", "fi": "Työpaikat valitulla syrjäytyksellä",
+    },
+    "c_inc_nd": {
+        "es": "No calculado para este país: {motivo}", "fr": "Non calculé pour ce pays : {motivo}", "it": "Non calcolato per questo paese: {motivo}",
+        "ko": "이 국가는 계산하지 않았습니다: {motivo}", "ja": "この国では計算していません:{motivo}", "zh": "该国未计算:{motivo}", "fi": "Ei laskettu tälle maalle: {motivo}",
+    },
+    "c_inc_motivo_default": {
+        "es": "no hay tabla de insumo-producto en esta ronda.", "fr": "pas de tableau entrées-sorties dans cette étape.",
+        "it": "nessuna tavola input-output in questo ciclo.", "ko": "이번 단계에는 투입산출표가 없습니다.",
+        "ja": "今回は産業連関表がありません。", "zh": "本轮没有投入产出表。", "fi": "tällä kierroksella ei ole panos-tuotostaulukkoa.",
+    },
+    "c_inc_nota": {
+        "es": "Estos empleos son los que la demanda sostiene en la economía, no puestos ocupados por el niño. Con 100% de desplazamiento, el niño casi no agrega empleos, porque el gasto solo cambia de lugar.",
+        "fr": "Ces emplois sont ceux que la demande soutient dans l'économie, et non des emplois occupés par l'enfant. Avec 100 % de substitution, l'enfant n'ajoute presque aucun emploi, car la dépense ne fait que se déplacer.",
+        "it": "Questi posti di lavoro sono quelli che la domanda sostiene nell'economia, non posti occupati dal bambino. Con il 100% di spostamento, il bambino non aggiunge quasi alcun posto, perché la spesa si limita a spostarsi altrove.",
+        "ko": "이 일자리는 수요가 경제에서 뒷받침하는 일자리이며, 아동이 차지하는 일자리가 아닙니다. 대체율 100%에서는 지출이 다른 곳으로 옮겨 갈 뿐이므로 아동이 늘리는 일자리는 거의 없습니다.",
+        "ja": "ここでの雇用は、需要が経済全体で支える雇用であり、その子どもが就く仕事ではありません。置き換え率が100%なら、支出が別の場所に移るだけなので、子どもが増やす雇用はほとんどありません。",
+        "zh": "这些岗位是需求在整个经济中所支撑的岗位,并非儿童本人从事的工作。若挤占比例为 100%,支出只是转移到别处,儿童几乎不会增加岗位。",
+        "fi": "Nämä työpaikat ovat niitä, joita kysyntä tukee taloudessa, eivät lapsen itsensä työpaikkoja. Täydellä (100 %) syrjäytyksellä lapsi ei lisää juuri lainkaan työpaikkoja, koska meno vain siirtyy muualle.",
+    },
+    "c_cen_titulo": {
+        "es": "3. ¿Y si cambia la fecundidad?", "fr": "3. Et si la fécondité change ?", "it": "3. E se cambia la fecondità?",
+        "ko": "3. 출산율이 바뀌면 어떻게 될까요?", "ja": "3. 出生率が変わったら", "zh": "3. 如果生育率改变会怎样?", "fi": "3. Entä jos hedelmällisyys muuttuu?",
+    },
+    "c_cen_ajuda": {
+        "es": "Variación respecto de una trayectoria con TFR constante, con el consumo por persona constante (Paper 3, hoja P5). Son escenarios del modelo de cohortes del Paper 3 (los nombres y metas de TFR pueden variar según el país) y no previsiones. Elija un escenario para ver el cambio en cada horizonte.",
+        "fr": "Variation par rapport à une trajectoire à TFR constant, avec une consommation par personne constante (Paper 3, feuille P5). Ce sont des scénarios du modèle de cohortes du Paper 3 (les noms et cibles de TFR peuvent varier selon le pays) et non des prévisions. Choisissez un scénario pour voir la variation à chaque horizon.",
+        "it": "Variazione rispetto a una traiettoria con TFR costante, con consumo per persona costante (Paper 3, foglio P5). Sono scenari del modello a coorti del Paper 3 (i nomi e gli obiettivi di TFR possono variare da paese a paese) e non previsioni. Scegliere uno scenario per vedere la variazione a ciascun orizzonte.",
+        "ko": "TFR이 일정한 경로 대비 변화이며, 1인당 소비는 일정하다고 가정합니다(Paper 3, P5 시트). Paper 3 코호트 모형의 시나리오이며(이름과 TFR 목표는 국가마다 다를 수 있음) 예측이 아닙니다. 시나리오를 고르면 각 시점의 변화를 볼 수 있습니다.",
+        "ja": "TFR が一定の経路との差で、1人当たり消費は一定としています(Paper 3、P5 シート)。Paper 3 のコホート・モデルのシナリオであり(名称や TFR の目標は国によって異なる場合があります)、予測ではありません。シナリオを選ぶと、各時点の変化が表示されます。",
+        "zh": "相对于 TFR 保持不变的路径的变化,假定人均消费不变(Paper 3,P5 工作表)。这些是 Paper 3 队列模型的情景(名称和 TFR 目标可能因国家而异),不是预测。选择情景即可查看各个时点的变化。",
+        "fi": "Muutos suhteessa vakio-TFR-polkuun, kun henkilökohtainen kulutus pidetään vakiona (Paper 3, taulukko P5). Nämä ovat Paper 3:n kohorttimallin skenaarioita (nimet ja TFR-tavoitteet voivat vaihdella maittain), eivät ennusteita. Valitse skenaario nähdäksesi muutoksen kullakin ajanjaksolla.",
+    },
+    "c_cen_escolha": {
+        "es": "Escenario de fecundidad", "fr": "Scénario de fécondité", "it": "Scenario di fecondità", "ko": "출산율 시나리오",
+        "ja": "出生率シナリオ", "zh": "生育率情景", "fi": "Hedelmällisyysskenaario",
+    },
+    "c_cen_horizonte": {"es": "Horizonte", "fr": "Horizon", "it": "Orizzonte", "ko": "기간", "ja": "期間", "zh": "时间跨度", "fi": "Aikajänne"},
+    "c_cen_ano": {"es": "Año", "fr": "Année", "it": "Anno", "ko": "연도", "ja": "年", "zh": "年份", "fi": "Vuosi"},
+    "c_cen_tft": {
+        "es": "TFR en el año", "fr": "TFR dans l'année", "it": "TFR nell'anno", "ko": "해당 연도 TFR", "ja": "その年の TFR", "zh": "当年 TFR", "fi": "TFR kyseisenä vuonna",
+    },
+    "c_cen_desc": {
+        "es": "Δ Descendentes (%)", "fr": "Δ Descendentes (%)", "it": "Δ Descendentes (%)", "ko": "Δ Descendentes (%)",
+        "ja": "Δ Descendentes(%)", "zh": "Δ Descendentes(%)", "fi": "Δ Descendentes (%)",
+    },
+    "c_cen_estr": {
+        "es": "Δ Estruturadores (%)", "fr": "Δ Estruturadores (%)", "it": "Δ Estruturadores (%)", "ko": "Δ Estruturadores (%)",
+        "ja": "Δ Estruturadores(%)", "zh": "Δ Estruturadores(%)", "fi": "Δ Estruturadores (%)",
+    },
+    "c_cen_asc": {
+        "es": "Δ Ascendentes (%)", "fr": "Δ Ascendentes (%)", "it": "Δ Ascendentes (%)", "ko": "Δ Ascendentes (%)",
+        "ja": "Δ Ascendentes(%)", "zh": "Δ Ascendentes(%)", "fi": "Δ Ascendentes (%)",
+    },
+    "c_cen_cfcc": {
+        "es": "Δ consumo total (%)", "fr": "Δ consommation totale (%)", "it": "Δ consumo totale (%)", "ko": "Δ 총소비 (%)",
+        "ja": "Δ 総消費(%)", "zh": "Δ 总消费(%)", "fi": "Δ kokonaiskulutus (%)",
+    },
+    "c_cen_pub": {
+        "es": "Δ consumo público (%)", "fr": "Δ consommation publique (%)", "it": "Δ consumo pubblico (%)", "ko": "Δ 공공소비 (%)",
+        "ja": "Δ 公的消費(%)", "zh": "Δ 公共消费(%)", "fi": "Δ julkinen kulutus (%)",
+    },
+    "c_cen_nota": {
+        "es": "Los Estruturadores solo se apartan del contrafactual después de unas dos décadas; por eso la variación de corto plazo proviene casi toda de los Descendentes.",
+        "fr": "Les Estruturadores ne s'écartent du contrefactuel qu'après une vingtaine d'années ; la variation à court terme provient donc presque entièrement des Descendentes.",
+        "it": "Gli Estruturadores si discostano dal controfattuale solo dopo circa due decenni; la variazione di breve periodo proviene quindi quasi interamente dai Descendentes.",
+        "ko": "Estruturadores는 약 20년이 지나서야 반사실 경로와 달라지므로, 단기 변화는 거의 전부 Descendentes에서 나옵니다.",
+        "ja": "Estruturadores が反実仮想の経路から外れるのは約20年後からなので、短期の変化はほとんどが Descendentes によるものです。",
+        "zh": "Estruturadores 大约要二十年后才会偏离反事实路径,因此短期变化几乎全部来自 Descendentes。",
+        "fi": "Estruturadores poikkeavat vastatosiasiallisesta polusta vasta noin kahden vuosikymmenen kuluttua, joten lyhyen aikavälin muutos tulee lähes kokonaan Descendentesistä.",
+    },
+    "c_rodape": {
+        "es": "Fuente: Directorio de AINU.Systems (Paper 3, borrador v0.1; vista previa privada). Cada número tiene un identificador de evidencia en la ficha del país. Itiberê L. G. C. Muarrek, investigación independiente. Términos: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores).",
+        "fr": "Source : Répertoire d'AINU.Systems (Paper 3, brouillon v0.1 ; aperçu privé). Chaque chiffre a un identifiant de preuve sur la fiche du pays. Itiberê L. G. C. Muarrek, recherche indépendante. Termes : Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores).",
+        "it": "Fonte: Repertorio di AINU.Systems (Paper 3, bozza v0.1; anteprima privata). Ogni numero ha un identificativo di evidenza nella scheda del paese. Itiberê L. G. C. Muarrek, ricerca indipendente. Termini: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores).",
+        "ko": "출처: AINU.Systems 디렉터리(Paper 3, 초안 v0.1, 비공개 미리보기). 모든 수치는 국가 페이지에 근거 식별자가 있습니다. Itiberê L. G. C. Muarrek, 독립 연구. 용어: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores).",
+        "ja": "出典:AINU.Systems ディレクトリ(Paper 3、草稿 v0.1、非公開プレビュー)。各数値には国別ページに根拠識別子があります。Itiberê L. G. C. Muarrek、独立研究。用語:Descendentes (Prometidos)、Estruturadores、Ascendentes (Legadores)。",
+        "zh": "来源:AINU.Systems 名录(Paper 3,草稿 v0.1,私密预览)。每个数字在国家页面上都有证据标识符。Itiberê L. G. C. Muarrek,独立研究。术语:Descendentes (Prometidos)、Estruturadores、Ascendentes (Legadores)。",
+        "fi": "Lähde: AINU.Systems-hakemisto (Paper 3, luonnos v0.1; yksityinen esikatselu). Jokaisella luvulla on todistetunniste maasivulla. Itiberê L. G. C. Muarrek, riippumaton tutkimus. Termit: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores).",
+    },
+    "c_fontes_titulo": {
+        "es": "Fuentes y referencias de esta página", "fr": "Sources et références de cette page", "it": "Fonti e riferimenti di questa pagina",
+        "ko": "이 페이지의 출처와 참고문헌", "ja": "このページの出典と参考文献", "zh": "本页的来源与参考文献", "fi": "Tämän sivun lähteet ja viitteet",
+    },
+    "c_fontes_nota": {
+        "es": "Fuentes del país elegido (menos las series del Banco Mundial y de la OIT, que están en la ficha del país en el Directorio), con el enlace para verificar y el identificador de evidencia. Cálculos del autor (Paper 3, borrador sin revisar). La comprobación de cada fuente (si la dirección abre y si el tema coincide) está en el Directorio, en Datos verificables.",
+        "fr": "Sources du pays choisi (hors séries de la Banque mondiale et de l'OIT, qui figurent sur la fiche du pays dans le Répertoire), avec le lien de vérification et l'identifiant de preuve. Calculs de l'auteur (Paper 3, brouillon non relu). Le contrôle de chaque source (l'adresse s'ouvre-t-elle, le sujet correspond-il) se trouve dans le Répertoire, sous Données vérifiables.",
+        "it": "Fonti del paese scelto (escluse le serie della Banca mondiale e dell'OIL, che si trovano nella scheda del paese nel Repertorio), con il link per la verifica e l'identificativo di evidenza. Calcoli dell'autore (Paper 3, bozza non rivista). Il controllo di ogni fonte (se l'indirizzo si apre e se l'argomento corrisponde) è nel Repertorio, in Dati verificabili.",
+        "ko": "선택한 국가의 출처입니다(세계은행과 ILO 시계열은 디렉터리의 국가 페이지에 있으므로 제외). 확인용 링크와 근거 식별자를 함께 제공합니다. 저자의 계산(Paper 3, 검토 전 초안). 각 출처의 점검(주소가 열리는지, 주제가 맞는지)은 디렉터리의 '검증 가능한 데이터'에 있습니다.",
+        "ja": "選択した国の出典です(世界銀行と ILO の系列は、ディレクトリの国別ページにあるため除く)。確認用のリンクと根拠識別子を付けています。著者の計算(Paper 3、未校閲の草稿)。各出典の点検(アドレスが開くか、主題が合っているか)は、ディレクトリの「検証可能なデータ」にあります。",
+        "zh": "所选国家的来源(世界银行和国际劳工组织的序列除外,这些在名录的国家页面中),附核对链接和证据标识符。作者的计算(Paper 3,未经审校的草稿)。对每个来源的检查(地址能否打开、主题是否相符)见名录中的“可核实数据”。",
+        "fi": "Valitun maan lähteet (lukuun ottamatta Maailmanpankin ja ILO:n aikasarjoja, jotka ovat maasivulla hakemistossa), tarkistuslinkin ja todistetunnisteen kanssa. Kirjoittajan laskelmat (Paper 3, tarkistamaton luonnos). Kunkin lähteen tarkistus (aukeaako osoite ja vastaako aihe) on hakemistossa kohdassa Todennettavat tiedot.",
+    },
+    "c_nota_idioma": {
+        "es": "Traducción hecha con IA, sin revisión nativa; en caso de duda, vale el texto en portugués.",
+        "fr": "Traduction faite par IA, sans relecture native ; en cas de doute, le texte en portugais fait foi.",
+        "it": "Traduzione realizzata con IA, senza revisione madrelingua; in caso di dubbio fa fede il testo in portoghese.",
+        "ko": "AI로 번역했으며 원어민 검수를 거치지 않았습니다. 의심스러우면 포르투갈어 원문이 기준입니다.",
+        "ja": "AI による翻訳で、ネイティブの校閲を受けていません。疑問がある場合はポルトガル語の原文を基準とします。",
+        "zh": "本译文由 AI 完成,未经母语者审校;如有疑问,以葡萄牙语原文为准。",
+        "fi": "Tekoälyllä tehty käännös ilman äidinkielisen tarkistusta; epäselvissä tapauksissa portugalinkielinen teksti on ratkaiseva.",
+    },
+}

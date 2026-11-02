@@ -50,7 +50,7 @@ st.title(tc("c_titulo", lang))
 st.markdown(tc("c_intro", lang))
 st.caption(tc("c_naturezas", lang))
 if lang not in ("pt", "en"):
-    st.caption(tc("c_nota_idioma", "en"))
+    st.caption(tc("c_nota_idioma", lang))
 
 dados = carregar()
 if dados is None:

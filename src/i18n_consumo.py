@@ -96,8 +96,15 @@ TX_CONS: dict[str, dict[str, str]] = {
         "pt": "Fontes do país escolhido (menos as séries do Banco Mundial e da OIT, que ficam na ficha do país no Diretório), com o link para conferir e o identificador de evidência. Cálculos do autor (Paper 3, rascunho não revisado). A conferência de cada fonte (se o endereço abre e se o assunto confere) está no Diretório, em Dados verificáveis.",
         "en": "Sources for the chosen country (except the World Bank and ILO series, which are on the country page in the Directory), with a link to check and the evidence identifier. Author's calculations (Paper 3, unreviewed draft). The check of each source (whether the address opens and the subject matches) is in the Directory, under Verifiable data.",
     },
-    "c_nota_idioma": {"pt": "", "en": "Text of this page is available in Portuguese and English; other languages show Portuguese."},
+    "c_nota_idioma": {"pt": "", "en": "Translation made with AI, without native review; in case of doubt, the Portuguese text prevails."},
 }
+
+
+# mescla as demais línguas (es, fr, it, ko, ja, zh, fi), traduzidas por IA e ainda sem revisão nativa
+from src.i18n_consumo_outros import TRAD  # noqa: E402
+
+for _chave, _traducoes in TRAD.items():
+    TX_CONS[_chave].update(_traducoes)
 
 
 def tc(chave: str, lang: str, **fmt) -> str:
