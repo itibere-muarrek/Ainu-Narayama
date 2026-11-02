@@ -96,6 +96,17 @@ TX_CONS: dict[str, dict[str, str]] = {
         "pt": "Fontes do país escolhido (menos as séries do Banco Mundial e da OIT, que ficam na ficha do país no Diretório), com o link para conferir e o identificador de evidência. Cálculos do autor (Paper 3, rascunho não revisado). A conferência de cada fonte (se o endereço abre e se o assunto confere) está no Diretório, em Dados verificáveis.",
         "en": "Sources for the chosen country (except the World Bank and ILO series, which are on the country page in the Directory), with a link to check and the evidence identifier. Author's calculations (Paper 3, unreviewed draft). The check of each source (whether the address opens and the subject matches) is in the Directory, under Verifiable data.",
     },
+    "c_aviso_sup": {
+        "pt": "SUPOSIÇÕES PARA PESQUISADORES. Esta página escala estimativas de modelo (marcas EST, PROJ e SIM) que dependem de premissas declaradas. Não são dados levantados nem testados contra uma fonte: os dados levantados e testados estão no Diretório (páginas Contas por Nascimentos e Dados Verificaveis).",
+        "en": "ASSUMPTIONS FOR RESEARCHERS. This page rescales model estimates (labels EST, PROJ and SIM) that depend on declared premises. They are not data gathered or tested against a source: the gathered and tested data are in the Directory (pages Contas por Nascimentos and Dados Verificaveis).",
+    },
+    "c_est_titulo": {"pt": "4. Estimativas e projeções de modelo, por país (suposições)", "en": "4. Model estimates and projections, by country (assumptions)"},
+    "c_est_ajuda": {
+        "pt": "Tudo o que o Paper 3 estima ou projeta para o país escolhido acima (consumo por coorte, projeção demográfica, multiplicadores, composição por grupo, exposição à automação e Dividendo), e a comparação entre países. São suposições de modelo, não dados observados.",
+        "en": "Everything Paper 3 estimates or projects for the country chosen above (cohort consumption, demographic projection, multipliers, group composition, automation exposure and Dividend), and the comparison across countries. They are model assumptions, not observed data.",
+    },
+    "c_est_comp": {"pt": "Comparação entre países", "en": "Comparison across countries"},
+    "c_est_pais": {"pt": "País escolhido acima", "en": "Country chosen above"},
     "c_nota_idioma": {"pt": "", "en": "Translation made with AI, without native review; in case of doubt, the Portuguese text prevails."},
 }
 

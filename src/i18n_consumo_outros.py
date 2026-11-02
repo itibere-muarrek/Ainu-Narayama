@@ -270,6 +270,37 @@ TRAD: dict[str, dict[str, str]] = {
         "zh": "所选国家的来源(世界银行和国际劳工组织的序列除外,这些在名录的国家页面中),附核对链接和证据标识符。作者的计算(Paper 3,未经审校的草稿)。对每个来源的检查(地址能否打开、主题是否相符)见名录中的“可核实数据”。",
         "fi": "Valitun maan lähteet (lukuun ottamatta Maailmanpankin ja ILO:n aikasarjoja, jotka ovat maasivulla hakemistossa), tarkistuslinkin ja todistetunnisteen kanssa. Kirjoittajan laskelmat (Paper 3, tarkistamaton luonnos). Kunkin lähteen tarkistus (aukeaako osoite ja vastaako aihe) on hakemistossa kohdassa Todennettavat tiedot.",
     },
+    "c_aviso_sup": {
+        "es": "SUPOSICIONES PARA INVESTIGADORES. Esta página reescala estimaciones de modelo (etiquetas EST, PROJ y SIM) que dependen de premisas declaradas. No son datos recopilados ni contrastados con una fuente: los datos recopilados y contrastados están en el Directorio (páginas Contas por Nascimentos y Dados Verificaveis).",
+        "fr": "HYPOTHÈSES POUR LES CHERCHEURS. Cette page remet à l'échelle des estimations de modèle (étiquettes EST, PROJ et SIM) qui dépendent de prémisses déclarées. Ce ne sont pas des données recueillies ni testées par rapport à une source : les données recueillies et testées figurent dans le Répertoire (pages Contas por Nascimentos et Dados Verificaveis).",
+        "it": "IPOTESI PER I RICERCATORI. Questa pagina riscala stime di modello (etichette EST, PROJ e SIM) che dipendono da premesse dichiarate. Non sono dati raccolti né verificati rispetto a una fonte: i dati raccolti e verificati sono nel Repertorio (pagine Contas por Nascimentos e Dados Verificaveis).",
+        "ko": "연구자를 위한 가정입니다. 이 페이지는 명시된 전제에 의존하는 모형 추정치(EST, PROJ, SIM 표시)를 환산합니다. 수집되었거나 출처로 검증된 데이터가 아닙니다. 수집·검증된 데이터는 디렉터리(Contas por Nascimentos 및 Dados Verificaveis 페이지)에 있습니다.",
+        "ja": "研究者向けの仮定です。このページは、明示された前提に依存するモデル推定値(EST、PROJ、SIM のラベル)を換算します。収集された、または出典で検証されたデータではありません。収集・検証済みのデータはディレクトリ(Contas por Nascimentos と Dados Verificaveis のページ)にあります。",
+        "zh": "供研究者使用的假设。本页换算的是依赖于所声明前提的模型估计(标记 EST、PROJ 和 SIM)。它们不是收集到或经来源检验的数据:收集并检验过的数据在名录中(Contas por Nascimentos 和 Dados Verificaveis 页面)。",
+        "fi": "OLETUKSIA TUTKIJOILLE. Tämä sivu skaalaa mallin arvioita (merkinnät EST, PROJ ja SIM), jotka riippuvat ilmoitetuista oletuksista. Ne eivät ole kerättyä tai lähteeseen verrattua dataa: kerätty ja testattu data on hakemistossa (sivut Contas por Nascimentos ja Dados Verificaveis).",
+    },
+    "c_est_titulo": {
+        "es": "4. Estimaciones y proyecciones de modelo, por país (suposiciones)", "fr": "4. Estimations et projections de modèle, par pays (hypothèses)",
+        "it": "4. Stime e proiezioni di modello, per paese (ipotesi)", "ko": "4. 국가별 모형 추정과 전망(가정)",
+        "ja": "4. 国別のモデル推定と推計(仮定)", "zh": "4. 分国家的模型估计与预测(假设)", "fi": "4. Mallin arviot ja ennusteet maittain (oletukset)",
+    },
+    "c_est_ajuda": {
+        "es": "Todo lo que el Paper 3 estima o proyecta para el país elegido arriba (consumo por cohorte, proyección demográfica, multiplicadores, composición por grupo, exposición a la automatización y Dividendo) y la comparación entre países. Son suposiciones de modelo, no datos observados.",
+        "fr": "Tout ce que le Paper 3 estime ou projette pour le pays choisi ci-dessus (consommation par cohorte, projection démographique, multiplicateurs, composition par groupe, exposition à l'automatisation et Dividende) et la comparaison entre pays. Ce sont des hypothèses de modèle, non des données observées.",
+        "it": "Tutto ciò che il Paper 3 stima o proietta per il paese scelto sopra (consumo per coorte, proiezione demografica, moltiplicatori, composizione per gruppo, esposizione all'automazione e Dividendo) e il confronto tra paesi. Sono ipotesi di modello, non dati osservati.",
+        "ko": "위에서 고른 국가에 대해 Paper 3가 추정하거나 전망한 모든 것(코호트별 소비, 인구 전망, 승수, 집단별 구성, 자동화 노출, 배당)과 국가 간 비교입니다. 관측 데이터가 아니라 모형의 가정입니다.",
+        "ja": "上で選んだ国について Paper 3 が推定または推計したすべて(コホート別消費、人口推計、乗数、グループ別構成、自動化への曝露、配当)と、国どうしの比較です。観測データではなく、モデルの仮定です。",
+        "zh": "Paper 3 对上方所选国家的全部估计或预测(分队列消费、人口预测、乘数、分组构成、自动化暴露和红利),以及国家间的比较。这些是模型假设,不是观测数据。",
+        "fi": "Kaikki, mitä Paper 3 arvioi tai ennustaa yllä valitulle maalle (kohorttikulutus, väestöennuste, kertoimet, ryhmäkoostumus, automaatioaltistus ja osinko) sekä maiden vertailu. Ne ovat mallin oletuksia, eivät havaittua dataa.",
+    },
+    "c_est_comp": {
+        "es": "Comparación entre países", "fr": "Comparaison entre pays", "it": "Confronto tra paesi", "ko": "국가 간 비교",
+        "ja": "国どうしの比較", "zh": "国家间比较", "fi": "Maiden vertailu",
+    },
+    "c_est_pais": {
+        "es": "País elegido arriba", "fr": "Pays choisi ci-dessus", "it": "Paese scelto sopra", "ko": "위에서 고른 국가",
+        "ja": "上で選んだ国", "zh": "上方所选国家", "fi": "Yllä valittu maa",
+    },
     "c_nota_idioma": {
         "es": "Traducción hecha con IA, sin revisión nativa; en caso de duda, vale el texto en portugués.",
         "fr": "Traduction faite par IA, sans relecture native ; en cas de doute, le texte en portugais fait foi.",

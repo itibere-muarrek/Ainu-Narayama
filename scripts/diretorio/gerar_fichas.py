@@ -32,12 +32,18 @@ T = {  # textos de interface
         "nav_paises": "Países", "nav_dados": "Dados verificáveis", "nav_sim": "Simulações",
         "hub_paises": "Países", "hub_paises_d": "Onze fichas com demografia, consumo por coorte, produção e emprego, instrumentos e lacunas.",
         "hub_dados": "Dados verificáveis", "hub_dados_d": "Cada dado com seu identificador, a fonte, o período e o link para conferir no original.",
-        "hub_sim": "Simulações", "hub_sim_d": "Custo do Dividendo Intergeracional, efeito de crianças adicionais e cenários de fecundidade.",
+        "hub_sim": "Simulações", "hub_sim_d": "Suposições para pesquisadores: custo do Dividendo Intergeracional, crianças adicionais e cenários de fecundidade.",
         "d_titulo": "Dados verificáveis", "d_intro": "Lista de todos os dados do Diretório que têm fonte externa, com o link para conferir. O código de verificação diz o que foi feito com a fonte (legenda abaixo); o identificador liga cada número das fichas à sua fonte.",
         "d_filtro": "Filtrar por país, fonte ou identificador", "d_global": "Global / vários países",
         "d_resumo_total": "dados com fonte externa", "d_resumo_link": "com link para conferir", "d_resumo_sem": "link ainda a registrar", "d_resumo_der": "produtos derivados do próprio estudo (sem fonte externa)",
         "d_col_pais": "País", "d_col_dado": "Dado e fonte", "d_col_serie": "Série", "d_col_per": "Período", "d_col_verif": "Verificação", "d_col_link": "Conferir",
         "d_conferir": "abrir fonte ↗", "d_sem_link": "link a registrar", "d_leg": "Legenda da verificação",
+        "aviso_dados": "Esta parte do Diretório só traz dados levantados em fontes e testados (marcas Observado e Derivado). Estimativas, projeções e simulações ficam em Simulações, como suposições para pesquisadores.",
+        "aviso_suposicao": "SUPOSIÇÕES PARA PESQUISADORES: o que está nesta página são estimativas de modelo, projeções e simulações (marcas Estimado, Projeção e Simulação). Não são dados levantados nem testados contra uma fonte: dependem de premissas declaradas (por exemplo, a ancoragem aos pesos do NTA) e não estimam efeito causal. Os dados levantados e testados estão no Diretório.",
+        "intro_sup": "Estimativas de modelo, projeções e simulações do Paper 3 para os onze países. São suposições para pesquisadores, não dados observados.",
+        "sub_sup": "Suposições de modelo para pesquisadores",
+        "tabela_sup": "Comparação das suposições",
+        "demo_dados": "Demografia", "valor_dados": "Gasto público e programas para crianças",
         "n_titulo": "Números conferidos contra a fonte", "n_intro": "Conferência dos números de maior peso, feita em {data}: o número da pesquisa foi comparado com o texto da fonte e, nos percentuais do PIB, refeito com o PIB do Banco Mundial. Itens que não deu para conferir ficam marcados.",
         "n_col_item": "Número", "n_col_fonte": "Fonte", "n_col_estado": "Resultado", "n_col_nota": "O que foi conferido",
         "n_confere": "confere", "n_confere_parcial": "confere em parte", "n_nao_conferido": "não conferido",
@@ -54,7 +60,7 @@ T = {  # textos de interface
         "l_erro_servidor": "erro do servidor no teste", "l_sem_resposta": "não respondeu no teste; tente no navegador", "l_nao_testado": "não testado",
         "l_resumo": "endereços únicos testados em", "l_ok_n": "abriram", "l_prob_n": "não confirmados (recusa de robôs, sem resposta ou erro)",
         "d_nota": "Os links vêm do registro da pesquisa; o teste automático só confirma que o endereço responde, não que o conteúdo é o dado citado. Fontes oficiais mudam de endereço, e um link que não abre deve ser avisado ao autor. Dados marcados B (resultado de busca, página não aberta) não entram aqui. Os produtos derivados (cálculos do próprio estudo) têm identificador na planilha, mas não têm link externo.",
-        "s_titulo": "Simulações", "s_intro": "As simulações interativas ficam no app do ainu.systems, atrás de login (menu «Consumo e Dividendo»). Elas escalam números que o Paper 3 já calculou; não há modelo novo, previsão nem estimativa de efeito causal. Esta página resume o que há lá.",
+        "s_titulo": "Simulações", "s_intro": "SUPOSIÇÕES PARA PESQUISADORES, não dados levantados: os dados levantados e testados estão no Diretório. As simulações interativas ficam no app do ainu.systems, atrás de login (menu «Consumo e Dividendo»). Elas escalam números que o Paper 3 já calculou; não há modelo novo, previsão nem estimativa de efeito causal. Esta página resume o que há lá.",
         "s_l1": "Dividendo Intergeracional: escolha x% (0 a 50) do gasto privado por Descendente e veja o custo em % do PIB, comparado ao maior programa infantil de renda e ao gasto público em família.",
         "s_l2": "Criança adicional: escolha o número de crianças e a parcela do gasto que desloca outro consumo; veja consumo, valor adicionado e empregos sustentados (limite superior, por ano).",
         "s_l3": "Cenários de fecundidade: variação de Descendentes, Estruturadores, Ascendentes e consumo por horizonte, em relação à continuidade da TFT.",
@@ -137,12 +143,18 @@ T = {  # textos de interface
         "nav_paises": "Countries", "nav_dados": "Verifiable data", "nav_sim": "Simulations",
         "hub_paises": "Countries", "hub_paises_d": "Eleven country pages with demography, cohort consumption, output and jobs, instruments and gaps.",
         "hub_dados": "Verifiable data", "hub_dados_d": "Every data point with its identifier, source, period and a link to check it at the original.",
-        "hub_sim": "Simulations", "hub_sim_d": "Cost of the Intergenerational Dividend, effect of additional children and fertility scenarios.",
+        "hub_sim": "Simulations", "hub_sim_d": "Assumptions for researchers: cost of the Intergenerational Dividend, additional children and fertility scenarios.",
         "d_titulo": "Verifiable data", "d_intro": "List of all Directory data that has an external source, with a link to check it. The verification code says what was done with the source (legend below); the identifier ties each number on the country pages to its source.",
         "d_filtro": "Filter by country, source or identifier", "d_global": "Global / several countries",
         "d_resumo_total": "data points with an external source", "d_resumo_link": "with a link to check", "d_resumo_sem": "link still to be registered", "d_resumo_der": "products derived from the study itself (no external source)",
         "d_col_pais": "Country", "d_col_dado": "Data and source", "d_col_serie": "Series", "d_col_per": "Period", "d_col_verif": "Verification", "d_col_link": "Check",
         "d_conferir": "open source ↗", "d_sem_link": "link to be registered", "d_leg": "Verification legend",
+        "aviso_dados": "This part of the Directory only has data gathered from sources and tested (labels Observed and Derived). Estimates, projections and simulations are under Simulations, as assumptions for researchers.",
+        "aviso_suposicao": "ASSUMPTIONS FOR RESEARCHERS: this page holds model estimates, projections and simulations (labels Estimated, Projection and Simulation). They are not data gathered or tested against a source: they depend on declared premises (for example, anchoring to NTA weights) and do not estimate causal effects. The gathered and tested data are in the Directory.",
+        "intro_sup": "Model estimates, projections and simulations from Paper 3 for the eleven countries. They are assumptions for researchers, not observed data.",
+        "sub_sup": "Model assumptions for researchers",
+        "tabela_sup": "Comparison of assumptions",
+        "demo_dados": "Demography", "valor_dados": "Public spending and programmes for children",
         "n_titulo": "Numbers checked against the source", "n_intro": "Check of the most important numbers, made on {data}: the research number was compared with the source text and, for percentages of GDP, recomputed with World Bank GDP. Items that could not be checked are marked.",
         "n_col_item": "Number", "n_col_fonte": "Source", "n_col_estado": "Result", "n_col_nota": "What was checked",
         "n_confere": "matches", "n_confere_parcial": "partly matches", "n_nao_conferido": "not checked",
@@ -159,7 +171,7 @@ T = {  # textos de interface
         "l_erro_servidor": "server error in the test", "l_sem_resposta": "no response in the test; try in a browser", "l_nao_testado": "not tested",
         "l_resumo": "unique addresses tested on", "l_ok_n": "opened", "l_prob_n": "not confirmed (robot refusal, no response or error)",
         "d_nota": "The links come from the research record; the automatic test only confirms the address responds, not that the content is the cited data. Official sources change address, so tell the author if one does not open. Items marked B (search result, page not opened) are not listed. Derived products (the study's own calculations) have an identifier in the workbook but no external link.",
-        "s_titulo": "Simulations", "s_intro": "The interactive simulations live in the ainu.systems app, behind login (menu «Consumo e Dividendo»). They rescale numbers Paper 3 has already computed; there is no new model, forecast or causal effect estimate. This page summarises what is there.",
+        "s_titulo": "Simulations", "s_intro": "ASSUMPTIONS FOR RESEARCHERS, not gathered data: the gathered and tested data are in the Directory. The interactive simulations live in the ainu.systems app, behind login (menu «Consumo e Dividendo»). They rescale numbers Paper 3 has already computed; there is no new model, forecast or causal effect estimate. This page summarises what is there.",
         "s_l1": "Intergenerational Dividend: pick x% (0 to 50) of private spending per Descendente and see the cost as % of GDP, compared with the largest child cash programme and with public family spending.",
         "s_l2": "Additional child: pick the number of children and the share of spending that displaces other consumption; see the consumption, value added and jobs sustained (upper bound, per year).",
         "s_l3": "Fertility scenarios: change in Descendentes, Estruturadores, Ascendentes and consumption by horizon, relative to a constant TFR.",
@@ -249,6 +261,9 @@ NATUREZA_DESC = {
     "en": {"OBS": "Observed in a source", "DER": "Simple calculation on observed data", "EST": "Model estimate",
            "PROJ": "Scenario-conditional projection", "SIM": "Mechanism simulation", "ENTRADA": "Research-plan input, not validated"},
 }
+NAT_DADOS = {"OBS", "DER"}          # dados levantados em fonte, ou conta simples sobre eles
+NAT_SUP = {"EST", "PROJ", "SIM"}     # suposições: estimativa de modelo, projeção e simulação
+
 ROT = {  # (bloco, chave) -> (pt, en, unidade)
     ("coortes", "descendentes"): ("Descendentes (Prometidos)", "Descendants (Promised)", ""),
     ("coortes", "estruturadores"): ("Estruturadores", "Builders (Estruturadores)", ""),
@@ -569,7 +584,7 @@ EMBED = False   # True dentro do app (iframe): sem faixa de prévia nem navegaç
 
 
 def _sem_links_internos(h: str) -> str:
-    return re.sub(r"""href=(['"])(?:\.\./(?:pt|en)/)?(?:index|dados|simulacoes|[A-Z]{3})\.html[^'"]*\1""", "href='#' target='_self'", h)
+    return re.sub(r"""href=(['"])(?:\.\./(?:pt|en)/)?(?:index|dados|simulacoes|[A-Z]{3})(?:_sup)?\.html[^'"]*\1""", "href='#' target='_self'", h)
 
 
 def pagina(lang: str, titulo: str, corpo: str, caminho_outra: str, raiz: str = "../", rodape_extra: str = "") -> str:
@@ -591,17 +606,25 @@ def pagina(lang: str, titulo: str, corpo: str, caminho_outra: str, raiz: str = "
 <footer>{rodape_extra}{e(t['rodape'])} {datetime.now().strftime('%Y-%m-%d')}. {e(t['aviso_indep'])}</footer></body></html>"""
 
 
-def tabela_bloco(p: dict, bloco: str, lang: str) -> str:
+def tabela_bloco(p: dict, bloco: str, lang: str, modo: str = "dados"):
+    """Tabela de um bloco da ficha. modo "dados": só OBS e DER; modo "suposicoes": só EST, PROJ e SIM. Vazia se não há linhas."""
     t = T[lang]
+    permitidas = NAT_DADOS if modo == "dados" else NAT_SUP
     linhas, tem_pt = [], False
     for chave, reg in p[bloco].items():
         if (bloco, chave) == ("cobertura", "classe_provisoria"):
             continue  # já aparece no resumo da ficha
+        if bloco != "cobertura" and reg.get("natureza") not in permitidas:
+            continue
+        if bloco == "cobertura" and modo != "dados":
+            continue
         pt, en, un = ROT[(bloco, chave)]
         val, livre = valor_txt(reg, lang, un)
         tem_pt = tem_pt or livre
         nat_td = "" if bloco == "cobertura" else f"<td>{chip(reg['natureza'], lang)}</td>"
         linhas.append(f"<tr><td>{e(pt if lang == 'pt' else en)}</td><td class='v'>{val}</td>{nat_td}</tr>")
+    if not linhas:
+        return "", False
     nat_th = "" if bloco == "cobertura" else f"<th>{e(t['nat'])}</th>"
     return (f"<div class='tw'><table><thead><tr><th>{e(t['ind'])}</th><th>{e(t['valor'])}</th>{nat_th}</tr></thead>"
             f"<tbody>{''.join(linhas)}</tbody></table></div>"), tem_pt
@@ -711,53 +734,62 @@ def rodape_fontes(iso: str | None, evid: list, lang: str) -> str:
     return "".join(out)
 
 
-def ficha(p: dict, instrs, evid, lacunas, lang: str) -> str:
+def ficha(p: dict, instrs, evid, lacunas, lang: str, modo: str = "dados") -> str:
+    """Ficha do país. modo "dados": dados levantados e testados (OBS e DER), instrumentos, lacunas e fontes.
+    modo "suposicoes": estimativas de modelo, projeções e simulações (EST, PROJ, SIM), para pesquisadores."""
     t = T[lang]
     iso = p["iso"]
     c = p["coortes"]
+    sup = modo != "dados"
     classe = (p["cobertura"]["classe_provisoria"].get("texto") or "")[:1]
     nome_ = nome(p, lang)
-    corpo = [f"<div class='crumb'><a href='index.html'>← {e(t['voltar'])}</a></div>",
+    corpo = [f"<div class='crumb'><a href='{'index_sup' if sup else 'index'}.html'>← {e(t['voltar'])}</a></div>",
              f"<h1>{e(nome_)} <span class='muted' style='font-size:1rem'>{e(iso)}</span></h1>",
-             f"<p class='sub'>{e(t['sub'])}</p>",
+             f"<p class='sub'>{e(t['sub_sup'] if sup else t['sub'])}</p>",
              "<div class='kv'>"
              f"<div><small>{e(t['classe'])}</small><b>{e(t['classes'].get(classe, classe))}</b></div>"
              f"<div><small>{e(ROT[('coortes','descendentes')][0 if lang=='pt' else 1])}</small><b>{e(c['descendentes'])}</b></div>"
              f"<div><small>{e(ROT[('coortes','estruturadores')][0 if lang=='pt' else 1])}</small><b>{e(c['estruturadores'])}</b></div>"
              f"<div><small>{e(ROT[('coortes','ascendentes')][0 if lang=='pt' else 1])}</small><b>{e(c['ascendentes'])}</b></div></div>",
-             f"<div class='avisos'><p>{e(t['aviso_cortes'])}</p><p>{e(t['aviso_nstar'])}</p></div>"]
+             (f"<div class='avisos'><p>{e(t['aviso_suposicao'])}</p><p>{e(t['aviso_cortes'])}</p></div>" if sup else
+              f"<div class='avisos'><p>{e(t['aviso_dados'])}</p><p>{e(t['aviso_cortes'])}</p><p>{e(t['aviso_nstar'])}</p></div>")]
     notas = {"demografia": t["nota_demog"], "consumo": t["nota_consumo"], "valorizacao": t["nota_valor"]}
     for b in BLOCOS:
-        tab, _ = tabela_bloco(p, b, lang)
-        corpo.append(f"<h2>{e(t[b])}</h2>{tab}")
+        tab, _ = tabela_bloco(p, b, lang, modo)
+        if tab:
+            titulo_b = t["demo_dados"] if (not sup and b == "demografia") else t["valor_dados"] if (not sup and b == "valorizacao") else t[b]
+            corpo.append(f"<h2>{e(titulo_b)}</h2>{tab}")
+            if sup and b in notas:
+                corpo.append(f"<p class='nota'>{e(notas[b])}</p>")
         if b == "multiplicadores":
-            corpo.append(incremento_html(p, lang))
-            corpo.append(grupos_html(p, lang))
-            corpo.append(consumo_obs_html(p, lang))
-            corpo.append(mult_html(p, lang))
-            corpo.append(exp_html(p, lang))
-            corpo.append(iag_html(p, lang))
-        if b in notas:
-            corpo.append(f"<p class='nota'>{e(notas[b])}</p>")
-        if b == "valorizacao":
+            if sup:
+                corpo.append(incremento_html(p, lang))
+                corpo.append(grupos_html(p, lang))
+                corpo.append(mult_html(p, lang))
+                corpo.append(exp_html(p, lang))
+                corpo.append(iag_html(p, lang))
+            else:
+                corpo.append(consumo_obs_html(p, lang))      # consumo observado (Índia, relatório do HCES): é dado levantado
+        if b == "valorizacao" and not sup:
             corpo.append(f"<h2>{e(t['instrumentos'])}</h2>")
             if lang == "en":
                 corpo.append(f"<p class='nota'>{e(t['aviso_texto_pt'])}</p>")
             corpo.append(instrumentos_html(iso, instrs, lang))
-    lac = [x for x in lacunas if x["pais"] in (iso, p["nome"])]
-    corpo.append(f"<h2>{e(t['lacunas'])}</h2>")
-    if lac:
-        corpo.append("<ul>" + "".join(f"<li lang='pt'>{e(x['item'])}" + (f" <span class='muted'>— {e(x['situacao'])}</span>" if x.get('situacao') else "") + "</li>" for x in lac) + "</ul>")
-    else:
-        corpo.append(f"<p class='muted'>{e(t['sem_lac'])}</p>")
-    ev = [x for x in evid if x["iso"] == iso]
-    linhas = "".join(
-        f"<tr><td><code>{link_id(x['id'])}</code></td><td lang='pt'>{e(x['variavel'] or '')}</td><td lang='pt'>{e(x['fonte'] or '')}</td>"
-        f"<td>{e(x['serie'] or '')}</td><td>{e((x['ano_inicial'] or '') + '–' + (x['ano_final'] or ''))}</td><td>{e(x['verificacao'])}</td></tr>" for x in ev)
-    corpo.append(f"<h2>{e(t['fontes'])}</h2><details><summary>{len(ev)} {e(t['n_evid'])}</summary><div class='tw'><table><thead><tr>"
-                 f"<th>{e(t['id'])}</th><th>{e(t['variavel'])}</th><th>{e(t['fonte'])}</th><th>{e(t['serie'])}</th><th>{e(t['periodo'])}</th><th>{e(t['verif'])}</th></tr></thead><tbody>{linhas}</tbody></table></div></details>")
+    if not sup:
+        lac = [x for x in lacunas if x["pais"] in (iso, p["nome"])]
+        corpo.append(f"<h2>{e(t['lacunas'])}</h2>")
+        if lac:
+            corpo.append("<ul>" + "".join(f"<li lang='pt'>{e(x['item'])}" + (f" <span class='muted'>— {e(x['situacao'])}</span>" if x.get('situacao') else "") + "</li>" for x in lac) + "</ul>")
+        else:
+            corpo.append(f"<p class='muted'>{e(t['sem_lac'])}</p>")
+        ev = [x for x in evid if x["iso"] == iso]
+        linhas = "".join(
+            f"<tr><td><code>{link_id(x['id'])}</code></td><td lang='pt'>{e(x['variavel'] or '')}</td><td lang='pt'>{e(x['fonte'] or '')}</td>"
+            f"<td>{e(x['serie'] or '')}</td><td>{e((x['ano_inicial'] or '') + '–' + (x['ano_final'] or ''))}</td><td>{e(x['verificacao'])}</td></tr>" for x in ev)
+        corpo.append(f"<h2>{e(t['fontes'])}</h2><details><summary>{len(ev)} {e(t['n_evid'])}</summary><div class='tw'><table><thead><tr>"
+                     f"<th>{e(t['id'])}</th><th>{e(t['variavel'])}</th><th>{e(t['fonte'])}</th><th>{e(t['serie'])}</th><th>{e(t['periodo'])}</th><th>{e(t['verif'])}</th></tr></thead><tbody>{linhas}</tbody></table></div></details>")
     outra = "en" if lang == "pt" else "pt"
-    return pagina(lang, nome_, "".join(corpo), f"../{outra}/{iso}.html", rodape_extra=rodape_fontes(iso, evid, lang))
+    return pagina(lang, nome_, "".join(corpo), f"../{outra}/{iso}{'_sup' if sup else ''}.html", rodape_extra=rodape_fontes(iso, evid, lang))
 
 
 def inc_txt(p: dict, lang: str) -> str:
@@ -767,14 +799,18 @@ def inc_txt(p: dict, lang: str) -> str:
     return dec(i["empregos_brutos_por_crianca"]["mediana"], 2, lang)
 
 
-def indice(paises, glos, lang: str) -> str:
+def indice(paises, glos, lang: str, modo: str = "dados") -> str:
+    """Índice e comparação entre países. modo "dados": só o que é dado levantado; modo "suposicoes": carga, Dividendo e incremento por criança."""
     t = T[lang]
+    sup = modo != "dados"
     cols = [("classe", t["classe"]), ("tft", "TFT 2025" if lang == "pt" else "TFR 2025"),
-            ("pop", "D / E / A (%)" if lang == "pt" else "D / B / A (%)"),
-            ("carga", "Carga/Estr. 2075" if lang == "pt" else "Burden/Builder 2075"),
-            ("div", "Dividendo 10% (% PIB)" if lang == "pt" else "10% Dividend (% GDP)"),
-            ("inc", T[lang]["incr_col"])]
+            ("pop", "D / E / A (%)" if lang == "pt" else "D / B / A (%)")]
+    if sup:
+        cols = [("carga", "Carga/Estr. 2075" if lang == "pt" else "Burden/Builder 2075"),
+                ("div", "Dividendo 10% (% PIB)" if lang == "pt" else "10% Dividend (% GDP)"),
+                ("inc", T[lang]["incr_col"])]
     th = "".join(f"<th>{e(x[1])}</th>" for x in cols)
+    sufixo = "_sup" if sup else ""
     linhas, cards = [], []
     for p in paises:
         d, v = p["demografia"], p["valorizacao"]
@@ -782,27 +818,32 @@ def indice(paises, glos, lang: str) -> str:
 
         def g(reg):
             return valor_txt(reg, lang, "")[0]
-        linhas.append(f"<tr><td><a href='{e(p['iso'])}.html'>{e(nome(p, lang))}</a></td><td>{e(cl)}</td><td class='v'>{g(d['tft_2025'])}</td>"
-                      f"<td class='v'>{g(d['pop_2025_pct'])}</td><td class='v'>{g(d['carga_estr_2075_wpp'])}</td><td class='v'>{g(v['dividendo_10pct_pib'])}</td><td class='v'>{inc_txt(p, lang)}</td></tr>")
-        cards.append(f"<a class='card' href='{e(p['iso'])}.html'><b>{e(nome(p, lang))}</b><span>{e(p['iso'])} · {e(t['classes'].get(cl, cl))}</span></a>")
-    leg = "".join(f"<span>{chip(k, lang)} {e(NATUREZA_DESC[lang][k])}</span>" for k in NATUREZA[lang])
+        if sup:
+            celulas = f"<td class='v'>{g(d['carga_estr_2075_wpp'])}</td><td class='v'>{g(v['dividendo_10pct_pib'])}</td><td class='v'>{inc_txt(p, lang)}</td>"
+        else:
+            celulas = f"<td>{e(cl)}</td><td class='v'>{g(d['tft_2025'])}</td><td class='v'>{g(d['pop_2025_pct'])}</td>"
+        linhas.append(f"<tr><td><a href='{e(p['iso'])}{sufixo}.html'>{e(nome(p, lang))}</a></td>{celulas}</tr>")
+        cards.append(f"<a class='card' href='{e(p['iso'])}{sufixo}.html'><b>{e(nome(p, lang))}</b><span>{e(p['iso'])} · {e(t['classes'].get(cl, cl))}</span></a>")
+    permitidas = NAT_SUP if sup else NAT_DADOS | {"ENTRADA"}
+    leg = "".join(f"<span>{chip(k, lang)} {e(NATUREZA_DESC[lang][k])}</span>" for k in NATUREZA[lang] if k in permitidas)
     gl = []
     for g in glos:
         termo, defin = g["termo"], g["definicao"]
         if lang == "en":
             termo, defin = GLOSS_EN[g["termo"]]
         gl.append(f"<details><summary>{e(termo)}</summary><p>{e(defin)}</p></details>")
-    hub = "" if EMBED else (f"<div class='hub'><a href='#paises'><b>{e(t['hub_paises'])}</b><span>{e(t['hub_paises_d'])}</span></a>"
-                            f"<a href='dados.html'><b>{e(t['hub_dados'])}</b><span>{e(t['hub_dados_d'])}</span></a>"
-                            f"<a href='simulacoes.html'><b>{e(t['hub_sim'])}</b><span>{e(t['hub_sim_d'])}</span></a></div>")
-    corpo = (f"<h1>{e(t['titulo'])}</h1><p class='sub'>{e(t['sub'])}</p><p class='lead'>{e(t['intro'])}</p>"
-             f"<div class='avisos'><p>{e(t['aviso_cortes'])}</p><p>{e(t['aviso_nstar'])}</p><p>{e(t['aviso_indep'])}</p></div>"
-             f"{hub}<h2 id='paises'>{e(t['hub_paises'])}</h2><div class='grid'>{''.join(cards)}</div><h2>{e(t['tabela'])}</h2>"
+    hub = "" if (EMBED or sup) else (f"<div class='hub'><a href='#paises'><b>{e(t['hub_paises'])}</b><span>{e(t['hub_paises_d'])}</span></a>"
+                                     f"<a href='dados.html'><b>{e(t['hub_dados'])}</b><span>{e(t['hub_dados_d'])}</span></a>"
+                                     f"<a href='simulacoes.html'><b>{e(t['hub_sim'])}</b><span>{e(t['hub_sim_d'])}</span></a></div>")
+    avisos = (f"<div class='avisos'><p>{e(t['aviso_suposicao'])}</p><p>{e(t['aviso_cortes'])}</p></div>" if sup else
+              f"<div class='avisos'><p>{e(t['aviso_dados'])}</p><p>{e(t['aviso_cortes'])}</p><p>{e(t['aviso_nstar'])}</p><p>{e(t['aviso_indep'])}</p></div>")
+    corpo = (f"<h1>{e(t['titulo'])}</h1><p class='sub'>{e(t['sub_sup'] if sup else t['sub'])}</p><p class='lead'>{e(t['intro_sup'] if sup else t['intro'])}</p>"
+             f"{avisos}{hub}<h2 id='paises'>{e(t['hub_paises'])}</h2><div class='grid'>{''.join(cards)}</div><h2>{e(t['tabela_sup'] if sup else t['tabela'])}</h2>"
              f"<div class='tw'><table><thead><tr><th>{'País' if lang == 'pt' else 'Country'}</th>{th}</tr></thead><tbody>{''.join(linhas)}</tbody></table></div>"
-             f"<p class='nota'>{e(t['nota_demog'])}</p><h2>{e(t['legenda'])}</h2><div class='lg'>{leg}</div>"
-             f"<h2>{e(t['glossario'])}</h2>{''.join(gl)}")
+             + (f"<p class='nota'>{e(t['nota_demog'])}</p>" if sup else "")
+             + f"<h2>{e(t['legenda'])}</h2><div class='lg'>{leg}</div><h2>{e(t['glossario'])}</h2>{''.join(gl)}")
     outra = "en" if lang == "pt" else "pt"
-    return pagina(lang, t["titulo"], corpo, f"../{outra}/index.html", rodape_extra=rodape_fontes(None, EVID, lang))
+    return pagina(lang, t["titulo"], corpo, f"../{outra}/index{sufixo}.html", rodape_extra=rodape_fontes(None, EVID, lang))
 
 
 def dados_pagina(evid, fontes, legenda: str, paises, lang: str, links: dict | None = None) -> str:
@@ -851,6 +892,7 @@ def dados_pagina(evid, fontes, legenda: str, paises, lang: str, links: dict | No
              f"<th>{e(t['d_col_verif'])}</th><th>{e(t['d_col_link'])}</th></tr></thead><tbody>{''.join(linhas)}</tbody></table></div>"
              f"<h2>{e(t['d_leg'])}</h2><p class='nota' lang='pt'>{e(legenda)}</p><p class='nota'>{e(t['d_nota'])}</p>{js}")
     nums = json.loads((DADOS / "conferencia_numeros_manual.json").read_text(encoding="utf-8")) if (DADOS / "conferencia_numeros_manual.json").exists() else []
+    nums = [n for n in nums if n.get("tipo") != "simulacao"]            # simulações são suposições: não entram nos dados conferidos
     if nums:
         lin = "".join(
             f"<tr><td><b lang='pt'>{e(n['item'])}</b><br><small>{e(n['iso'])}</small></td><td lang='pt'>{('<a href=' + chr(39) + e(n['url']) + chr(39) + ' rel=noopener target=_blank>' + e(n['fonte']) + '</a>') if n['url'] else e(n['fonte'])}</td>"
@@ -881,7 +923,7 @@ def simulacoes_pagina(sim: dict, lang: str) -> str:
         else:
             ptxt, razao = f"<span class='muted'>{e(nd)}</span>", "—"
         c10, c25, c50 = (num(format(d10 * k, ".2f"), lang) for k in (1, 2.5, 5))
-        linhas.append(f"<tr><td>{e(nm)}</td><td class='v'>{c10}</td><td class='v'>{c25}</td><td class='v'>{c50}</td><td>{ptxt}</td><td class='v'>{razao}</td></tr>")
+        linhas.append(f"<tr><td><a href='{e(iso)}_sup.html'>{e(nm)}</a></td><td class='v'>{c10}</td><td class='v'>{c25}</td><td class='v'>{c50}</td><td>{ptxt}</td><td class='v'>{razao}</td></tr>")
     corpo = (f"<div class='crumb'><a href='index.html'>← {e(t['titulo'])}</a></div><h1>{e(t['s_titulo'])}</h1><p class='lead'>{e(t['s_intro'])}</p>"
              f"<ul><li>{e(t['s_l1'])}</li><li>{e(t['s_l2'])}</li><li>{e(t['s_l3'])}</li></ul>"
              f"<div class='avisos'><p>{e(t['s_acesso'])}</p></div>"
@@ -910,15 +952,15 @@ def _lang_ok(lang: str) -> str:
     return lang if lang in T else "pt"
 
 
-def html_indice(lang: str) -> str:
+def html_indice(lang: str, modo: str = "dados") -> str:
     d = carregar()
-    return indice(d["paises"], d["glos"], _lang_ok(lang))
+    return indice(d["paises"], d["glos"], _lang_ok(lang), modo)
 
 
-def html_ficha(iso: str, lang: str) -> str:
+def html_ficha(iso: str, lang: str, modo: str = "dados") -> str:
     d = carregar()
     p = next(x for x in d["paises"] if x["iso"] == iso)
-    return ficha(p, d["instr"], d["evid"], d["lac"], _lang_ok(lang))
+    return ficha(p, d["instr"], d["evid"], d["lac"], _lang_ok(lang), modo)
 
 
 def html_dados(lang: str) -> str:
@@ -940,10 +982,12 @@ def main():
         pasta = PREVIA / lang
         pasta.mkdir()
         (pasta / "index.html").write_text(indice(paises, glos, lang), encoding="utf-8")
+        (pasta / "index_sup.html").write_text(indice(paises, glos, lang, "suposicoes"), encoding="utf-8")
         (pasta / "dados.html").write_text(dados_pagina(evid, fontes_lista, legenda_verif, paises, lang, links), encoding="utf-8")
         (pasta / "simulacoes.html").write_text(simulacoes_pagina(sim, lang), encoding="utf-8")
         for p in paises:
             (pasta / f"{p['iso']}.html").write_text(ficha(p, instr, evid, lac, lang), encoding="utf-8")
+            (pasta / f"{p['iso']}_sup.html").write_text(ficha(p, instr, evid, lac, lang, "suposicoes"), encoding="utf-8")
     (PREVIA / "index.html").write_text('<!DOCTYPE html><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=pt/index.html">', encoding="utf-8")
     n = len(list(PREVIA.rglob("*.html")))
     print(f"{n} páginas em {PREVIA}")

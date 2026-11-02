@@ -28,6 +28,16 @@ from src.i18n import nome_pais, seletor_idioma
 from src.i18n_consumo import tc
 from src.i18n_simulacao import ts
 
+def _mostrar_html(h: str, altura: int) -> None:
+    """HTML gerado por nós (dados do Diretório) num iframe: st.iframe nas versões novas do Streamlit, components.html nas antigas."""
+    if hasattr(st, "iframe"):
+        st.iframe(h, height=altura)
+    else:
+        import streamlit.components.v1 as components
+
+        components.html(h, height=altura, scrolling=True)
+
+
 st.set_page_config(page_title="ainu.systems — Consumo e Dividendo", layout="wide")
 lang = seletor_idioma()
 exigir_login(lambda k: ts(k, lang))
@@ -48,6 +58,7 @@ def pct_txt(v: float) -> str:
 
 st.title(tc("c_titulo", lang))
 st.markdown(tc("c_intro", lang))
+st.warning(tc("c_aviso_sup", lang))
 st.caption(tc("c_naturezas", lang))
 if lang not in ("pt", "en"):
     st.caption(tc("c_nota_idioma", lang))
@@ -146,6 +157,26 @@ if hs:
     }
     st.table(tabela)
     st.caption(tc("c_cen_nota", lang))
+
+# ---------------------------------------------------------------------------
+# 4. Estimativas e projeções de modelo (suposições): as mesmas páginas do Diretório, em modo "suposicoes"
+# ---------------------------------------------------------------------------
+
+st.header(tc("c_est_titulo", lang))
+st.markdown(tc("c_est_ajuda", lang))
+try:
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent.parent / "scripts" / "diretorio"))
+    import gerar_fichas as G
+
+    G.EMBED = True
+    G.carregar()
+    aba_c, aba_p = st.tabs([tc("c_est_comp", lang), tc("c_est_pais", lang)])
+    with aba_c:
+        _mostrar_html(G.html_indice(lang, "suposicoes"), 1300)
+    with aba_p:
+        _mostrar_html(G.html_ficha(iso, lang, "suposicoes"), 2200)
+except Exception:  # sem os dados do Diretório, a seção 4 simplesmente não aparece
+    pass
 
 st.divider()
 with st.expander(f"{tc('c_fontes_titulo', lang)} ({len(p.get('fontes', []))})", expanded=False):

@@ -141,7 +141,8 @@
   "fonte": "Cálculo do autor (Paper 3)",
   "url": "",
   "estado": "confere_parcial",
-  "nota": "A aritmética por amostra fecha (ex.: França, 9,0% do PIB × 10% = 0,90%), e a escala linear reproduz os 25% e 50% da planilha. Não é conferência de fonte: depende do ancoramento ao NTA, que é a principal incerteza do estudo."
+  "nota": "A aritmética por amostra fecha (ex.: França, 9,0% do PIB × 10% = 0,90%), e a escala linear reproduz os 25% e 50% da planilha. Não é conferência de fonte: depende do ancoramento ao NTA, que é a principal incerteza do estudo.",
+  "tipo": "simulacao"
  },
  {
   "iso": "ALL",
