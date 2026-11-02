@@ -1,0 +1,312 @@
+{
+ "nao_encontrados": [
+  {
+   "pais": "Nigéria",
+   "item": "Tabela insumo-produto oficial do NBS",
+   "situacao": "Não encontrado",
+   "tentativas": "Busca no NBS/web; só achou tabela GTAP 2006 (terceiros)"
+  },
+  {
+   "pais": "Índia",
+   "item": "IOTT oficial posterior a 2007-08",
+   "situacao": "Não confirmado",
+   "tentativas": "Busca no MoSPI; versões 2015-16 só de terceiros"
+  },
+  {
+   "pais": "Argentina",
+   "item": "Matriz insumo-produto oficial posterior a 1997",
+   "situacao": "Não confirmado",
+   "tentativas": "Busca no INDEC; AAEP (2025) diz que a MIPar 1997 é a única"
+  },
+  {
+   "pais": "França",
+   "item": "Microdados Budget de famille 2017",
+   "situacao": "Não confirmado",
+   "tentativas": "Página da série INSEE aberta: lista edições 2006/2011/2017/2026 sem arquivos individuais"
+  },
+  {
+   "pais": "China",
+   "item": "Microdados de orçamento familiar do NBS",
+   "situacao": "Não encontrado",
+   "tentativas": "Busca web; só CHFS e CFPS (privados/universitários); página do CFPS falhou no certificado SSL"
+  },
+  {
+   "pais": "Japão",
+   "item": "Microdados FIES / NSFIE 2019",
+   "situacao": "Não oferecidos na página do e-Stat",
+   "tentativas": "Página FIES aberta: só tabelas (banco de dados = 0)"
+  },
+  {
+   "pais": "Brasil",
+   "item": "Microdados do módulo de cuidados da PNADC",
+   "situacao": "Não localizados",
+   "tentativas": "Pasta oficial 'Outras formas de trabalho 2017' aberta: só tabulações xls/ods e arquivo de variáveis"
+  },
+  {
+   "pais": "Itália",
+   "item": "Inclusão do diário no MFR Uso del tempo 2023",
+   "situacao": "Conflito entre fontes",
+   "tentativas": "Página MFR lista 2023 e 2013; busca anterior dizia que só o módulo de voluntariado fora liberado"
+  },
+  {
+   "pais": "Brasil",
+   "item": "Página do portal do IBGE da MIP/TRU; MIP 2020",
+   "situacao": "Portal: HTTP 403. MIP 2020: não localizada",
+   "tentativas": "A MIP 2015 foi confirmada pela publicação oficial Contas Nacionais n.62 (biblioteca do IBGE)"
+  },
+  {
+   "pais": "Índia",
+   "item": "Portal microdata.gov.in (HCES nacional de nível unitário)",
+   "situacao": "Não abriu (conexão recusada); espelho só com arquivos de 7 cidades",
+   "tentativas": "Catálogos 236 e 237; opencity.in aberto"
+  },
+  {
+   "pais": "Coreia do Sul",
+   "item": "Portal MDIS e comunicado da Time Use Survey 2024",
+   "situacao": "Não abriu (conexão recusada); comunicado não localizado",
+   "tentativas": "mdis.kostat.go.kr; busca em kostat/kosis/mods"
+  },
+  {
+   "pais": "China",
+   "item": "CFPS (ICPSR 403; SSL) e CHFS (404)",
+   "situacao": "Não abriu",
+   "tentativas": "Páginas do ICPSR e da SWUFE"
+  },
+  {
+   "pais": "México",
+   "item": "Filhos nascidos vivos (hijos_viv) no ENIGH 2024",
+   "situacao": "ENCONTRADO — registro",
+   "tentativas": "Variável na tabela POBLACION do PDF oficial de descrição da base"
+  },
+  {
+   "pais": "México",
+   "item": "ENUT 2024",
+   "situacao": "Não encontrada",
+   "tentativas": "ENIGH 2024 e ENUT 2019 confirmadas pelo catálogo RNM do INEGI; ENUT mais nova não apareceu"
+  },
+  {
+   "pais": "Estados Unidos",
+   "item": "Série atual de tabelas insumo-produto do BEA",
+   "situacao": "Anos não confirmados",
+   "tentativas": "Página histórica lista 1996–1999; a atual remete a aplicações interativas"
+  },
+  {
+   "pais": "Coreia do Sul",
+   "item": "Microdados HIES e Time Use Survey",
+   "situacao": "Não confirmado",
+   "tentativas": "Busca KOSTAT/MDIS; elegibilidade de estrangeiros (2019) restritiva"
+  },
+  {
+   "pais": "China",
+   "item": "Microdados NBS Time Use Survey 2018 e 2024",
+   "situacao": "Não encontrado",
+   "tentativas": "Comunicado da 3ª pesquisa (2024; 38.500 domicílios, nacional) lido: não menciona microdados"
+  },
+  {
+   "pais": "Argentina",
+   "item": "Link de download dos microdados da ENUT 2021 e da ENGHo 2017/18",
+   "situacao": "Não confirmado",
+   "tentativas": "Manuais das bases usuárias lidos (arquivos descritos), mas a página de download não foi aberta"
+  },
+  {
+   "pais": "França",
+   "item": "Enquête Emploi du temps (edição anterior)",
+   "situacao": "Não pesquisado",
+   "tentativas": "Só a edição 2025–26 apareceu"
+  },
+  {
+   "pais": "Nigéria",
+   "item": "FBCF, consumo das famílias, consumo do governo e receita tributária (WDI)",
+   "situacao": "Sem série no WDI",
+   "tentativas": "API do Banco Mundial 2026-10-31"
+  },
+  {
+   "pais": "China",
+   "item": "FBCF real e consumo do governo real (WDI)",
+   "situacao": "Só 1 ano no WDI",
+   "tentativas": "API do Banco Mundial"
+  },
+  {
+   "pais": "Japão",
+   "item": "Receita tributária %PIB (WDI)",
+   "situacao": "Só 1991–93",
+   "tentativas": "API do Banco Mundial"
+  },
+  {
+   "pais": "Estados Unidos / França / Itália / Japão",
+   "item": "Cobertura de valor adicionado por setor no WDI com poucos anos",
+   "situacao": "Parcial",
+   "tentativas": "API: USA 1997–2021 (25), ITA 1990–2025 (36), JPN 1994–2024 (31), NGA 1981–2025 (45)"
+  },
+  {
+   "pais": "Todos",
+   "item": "Responsabilidade financeira por criança fora do domicílio (nível D da URSS)",
+   "situacao": "Não encontrado em nenhuma fonte verificada",
+   "tentativas": "Auditoria de uso do tempo e microdados"
+  },
+  {
+   "pais": "Todos",
+   "item": "Filhos tidos / histórico de fecundidade (separar Cumprida de Inativa)",
+   "situacao": "Não verificado",
+   "tentativas": "Não pesquisado fonte a fonte"
+  },
+  {
+   "pais": "Todos",
+   "item": "Guarda, tutela e adoção (estatísticas administrativas)",
+   "situacao": "Não pesquisado",
+   "tentativas": "—"
+  },
+  {
+   "pais": "Todos",
+   "item": "Remuneração do trabalho nas CONTAS NACIONAIS (D.1 por indústria) e remuneração por coorte",
+   "situacao": "Não verificado",
+   "tentativas": "Rendimentos médios de empregados por atividade: OIT consultada (cobertura em P1_Disponibilidade). UNSD Tabela 2.6 tem D.1 por indústria, mas a cobertura dos 11 não foi verificada"
+  },
+  {
+   "pais": "Nigéria, Índia, China, Japão, Coreia",
+   "item": "Rendimento por setor (OIT, 3 setores) ou horas por setor",
+   "situacao": "Ausente ou insuficiente",
+   "tentativas": "NGA 4 anos de rendimento e 3 de horas; IND 11 e 8; CHN, JPN e KOR sem rendimento completo por 3 setores; CHN e JPN sem horas por 3 setores"
+  },
+  {
+   "pais": "Todos",
+   "item": "ETI com jornada padrão e correção por setor informal",
+   "situacao": "Não definido",
+   "tentativas": "ETI viável só como emprego × horas médias por setor; jornada padrão e tratamento de subemprego não definidos"
+  },
+  {
+   "pais": "Todos",
+   "item": "Despesas familiares por criança",
+   "situacao": "Não pesquisado (só NTA em ano-base único)",
+   "tentativas": "—"
+  },
+  {
+   "pais": "Todos",
+   "item": "Transferências privadas e poupança por coorte",
+   "situacao": "Só NTA em ano-base único",
+   "tentativas": "NTA Data Sheet 2016"
+  },
+  {
+   "pais": "Todos",
+   "item": "NTA: anos mais recentes e NTTA por país",
+   "situacao": "Não verificado",
+   "tentativas": "Grade 'Database Contents' ilegível por leitura automática"
+  },
+  {
+   "pais": "Todos",
+   "item": "Arranjos familiares e domiciliares",
+   "situacao": "Fonte global localizada, não aberta",
+   "tentativas": "UN DESA Household Size and Composition (edição 2026) e CORESIDENCE (156 países)"
+  },
+  {
+   "pais": "NGA",
+   "item": "Matriz insumo-produto nacional / tabelas de recursos e usos (C Produção e emprego)",
+   "situacao": "Não encontrado"
+  },
+  {
+   "pais": "KOR",
+   "item": "Licença parental remunerada e creche gratuita (Nuri)",
+   "situacao": "A confirmar"
+  },
+  {
+   "pais": "KOR",
+   "item": "IFVI formal / análogo do empregador",
+   "situacao": "Lacuna explícita"
+  },
+  {
+   "pais": "MEX",
+   "item": "Bolsas Rita Cetina e outros apoios ao ensino",
+   "situacao": "A confirmar"
+  },
+  {
+   "pais": "MEX",
+   "item": "Instrumento do tipo IFVI como política formal",
+   "situacao": "Lacuna explícita"
+  },
+  {
+   "pais": "ARG",
+   "item": "Instrumento do tipo IFVI (incentivo fiscal por valorização intergeracional) como política formal",
+   "situacao": "Lacuna explícita"
+  },
+  {
+   "pais": "BRA",
+   "item": "Reembolso-creche (art. 389 da CLT) e creches de empregadores",
+   "situacao": "A confirmar"
+  },
+  {
+   "pais": "BRA",
+   "item": "Instrumento do tipo IFVI como política formal",
+   "situacao": "Lacuna explícita"
+  },
+  {
+   "pais": "USA",
+   "item": "Head Start / Early Head Start e Medicaid/CHIP",
+   "situacao": "A confirmar"
+  },
+  {
+   "pais": "USA",
+   "item": "Instrumento do tipo IFVI como política formal",
+   "situacao": "Lacuna explícita"
+  },
+  {
+   "pais": "IND",
+   "item": "Benefício de maternidade (PMMVY) e Lei de Benefício de Maternidade (licença remunerada pelo empregador e creche obrigatória)",
+   "situacao": "A confirmar (possível análogo de IFVI)"
+  },
+  {
+   "pais": "IND",
+   "item": "Orçamento da criança (Declaração 12 do orçamento da União)",
+   "situacao": "Lacuna"
+  },
+  {
+   "pais": "IND",
+   "item": "Gasto público em família (OECD SOCX)",
+   "situacao": "n/d"
+  },
+  {
+   "pais": "IND",
+   "item": "IFVI formal / análogo do empregador",
+   "situacao": "A confirmar"
+  },
+  {
+   "pais": "NGA",
+   "item": "Alimentação escolar com produtos locais (Home-Grown School Feeding)",
+   "situacao": "A confirmar"
+  },
+  {
+   "pais": "NGA",
+   "item": "Educação básica universal (UBEC) e licença-maternidade da Lei do Trabalho (12 semanas, a 50% do salário)",
+   "situacao": "A confirmar"
+  },
+  {
+   "pais": "NGA",
+   "item": "Gasto público em família (OECD SOCX)",
+   "situacao": "n/d"
+  },
+  {
+   "pais": "NGA",
+   "item": "IFVI formal / análogo do empregador",
+   "situacao": "Lacuna explícita"
+  },
+  {
+   "pais": "FRA",
+   "item": "Quociente familiar (imposto de renda)",
+   "situacao": "Lacuna"
+  },
+  {
+   "pais": "CHN",
+   "item": "Seguro maternidade ampliado, licença-maternidade estendida e licença parental",
+   "situacao": "A confirmar"
+  },
+  {
+   "pais": "CHN",
+   "item": "Educação pré-escolar gratuita",
+   "situacao": "A confirmar"
+  },
+  {
+   "pais": "CHN",
+   "item": "IFVI formal / análogo do empregador",
+   "situacao": "Lacuna explícita"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "esquema": "0.1.0",
+ "gerado_em": "2026-11-02T13:34:21",
+ "planilha": "Matrizes_Operacionais_NTA_URSS_Narayama_v2.xlsx",
+ "planilha_sha256": "cf79cb76cecb175d563b71f1023dbe64ff4ef5ed3a47f290aba1b1875e3ab9eb",
+ "idioma": "pt",
+ "naturezas": {
+  "OBS": "Observado em fonte (equivale a [E] na tese)",
+  "DER": "Derivado de dado observado por conta simples ([E])",
+  "EST": "Estimado por modelo ([S])",
+  "PROJ": "Projeção condicional a cenário ([C])",
+  "SIM": "Simulação de mecanismo ([S])",
+  "PROP": "Proposta conceitual do autor ([H])",
+  "ENTRADA": "Entrada do plano ou regra provisória, não validada"
+ },
+ "legenda_verificacao": "Legenda de verificação: L = arquivo local do projeto lido; A = API do Banco Mundial consultada em 2026-10-31 (dados atualizados em 2026-10-08); P = página/PDF aberto e lido; B = resultado de busca (página NÃO aberta — confirmar antes de usar); N = não encontrado. 'Nº de anos' conta apenas anos com valor dentro de 1976–2025 (para NTA/IO/HBS/TUS é o intervalo declarado, não o número de levantamentos).",
+ "contagens": {
+  "paises": 11,
+  "evidencias": {
+   "lacuna": 1,
+   "publicavel": 480,
+   "retido": 3
+  },
+  "instrumentos": {
+   "lacuna": 21,
+   "publicavel": 38,
+   "publicavel_com_ressalva": 12,
+   "retido": 10
+  },
+  "ids_citados": 625,
+  "ids_citados_sem_registro_em_P1": 141,
+  "fontes": {
+   "registrado": 564,
+   "a_registrar": 2,
+   "nao_aplicavel": 59
+  }
+ },
+ "filtro": "(documentadas também em meta.json):\n  - instrumentos: publicável só com fonte L1; \"misto\" (L1 + L2) sai como\n    \"publicavel_com_ressalva\"; L2, \"A confirmar\" e indeterminado ficam retidos.\n  - evidências (P1_Disponibilidade): publicáveis A, L e P; B é retido (página\n    não aberta); N vai para as lacunas.\n  - campos das fichas: retidos se o texto cita nível L2.\n  - N*: retido do conjunto público enquanto o N*_Obs (PQDF-N*) não for\n    recalculado; hoje a planilha só tem o N* consolidado do pipeline (v9.0).\n  - auditoria interna (Auditoria_Pendencias): só no conjunto privado.",
+ "avisos": [
+  "Termos: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores); a tese V1_1 ainda usa Legatários."
+ ],
+ "publicacao": "Nada deste conjunto foi publicado. Uso interno até a fase 1 e a decisão do autor.",
+ "autoria": "Itiberê L. G. C. Muarrek (pesquisa independente; AINU.Systems / Narayama)",
+ "conjunto": "publicavel"
+}

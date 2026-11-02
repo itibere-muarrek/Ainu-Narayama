@@ -1,0 +1,653 @@
+{
+ "testado_em": "2026-11-02T13:36:00",
+ "agente": "AINU-Directory-linkcheck/1.0 (independent research; link availability check)",
+ "links": {
+  "http://mdis.kostat.go.kr/eng/index.do": {
+   "estado": "sem_resposta",
+   "codigo": null,
+   "erro": "URLError: timed out",
+   "tentativas": 2
+  },
+  "http://www.imss.gob.mx/sites/all/statics/pdf/informes/20232024/10-Cap06.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://arca.gob.ar/gananciasYBienes/ganancias/personas-humanas-sucesiones-indivisas/deducciones/documentos/Deducciones-personales-art-30-liq-anual-2025.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://biblioteca.ibge.gov.br/visualizacao/livros/liv101604.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://biblioteca.ibge.gov.br/visualizacao/livros/liv102020_informativo.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://bok.or.kr/eng/bbs/E0000634/view.do?menuNo=400069&nttId=10083839&pageIndex=": {
+   "estado": "redirecionado",
+   "codigo": 200,
+   "url_final": "https://www.bok.or.kr:443/eng/bbs/E0000634/view.do?menuNo=400069&nttId=10083839&pageIndex="
+  },
+  "https://catalog.ihsn.org/catalog/12937": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/GC.TAX.TOTL.GD.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/NE.CON.GOVT.KD": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/NE.CON.PRVT.KD": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/NE.CON.PRVT.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/NE.GDI.FTOT.KD": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/NE.GDI.FTOT.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/NE.IMP.GNFS.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/NV.IND.TOTL.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/NV.SRV.TOTL.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SE.XPD.TOTL.GD.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SH.DYN.MORT": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SL.AGR.EMPL.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SL.IND.EMPL.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SL.SRV.EMPL.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SL.TLF.CACT.FE.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SL.TLF.CACT.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SM.POP.NETM": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SP.DYN.CBRT.IN": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SP.DYN.IMRT.IN": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SP.DYN.LE00.IN": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SP.POP.0014.TO.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SP.POP.1564.TO.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SP.POP.DPND": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data.worldbank.org/indicator/SP.POP.TOTL": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://data2x.org/wp-content/uploads/2025/03/South-Korea-TUCS-Korean-WR.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://datacatalog.ihsn.org/catalog/12933": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://ec.europa.eu/eurostat/databrowser/view/naio_10_cp1700/default/table?lang=en": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://ec.europa.eu/eurostat/databrowser/view/nama_10_a64_e/default/table?lang=en": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://eora.org/": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://ftp.ibge.gov.br/Orcamentos_Familiares/Pesquisa_de_Orcamentos_Familiares_2017_2018/Microdados/": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Anual/Outras_Formas_de_Trabalho_2017/": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Anual/Outras_Formas_de_Trabalho_2017/Selecao_de_Variaveis.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://home.treasury.gov/policy-issues/tax-policy/tax-expenditures": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://ilostat.ilo.org/data/": {
+   "estado": "bloqueado",
+   "codigo": 403
+  },
+  "https://microdata.gov.in/NADA/index.php/catalog/236": {
+   "estado": "sem_resposta",
+   "codigo": null,
+   "erro": "URLError: timed out",
+   "tentativas": 2
+  },
+  "https://microdata.nigerianstat.gov.ng/index.php/catalog/178": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://microdata.worldbank.org/catalog/3827": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://microdata.worldbank.org/catalog/6410": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://mods.go.kr/menu.es?mid=a20206010000": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://mospi.gov.in/sites/default/files/publication_reports/Final_Report_HCES_2023-24L.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://opendata.pku.edu.cn/dataset.xhtml?persistentId=doi%3A10.18170%2FDVN%2F45LCSO&version=19.0": {
+   "estado": "bloqueado",
+   "codigo": 403
+  },
+  "https://population.un.org/wpp/": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://public-inspection.federalregister.gov/2025-09381.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=ARG&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=BRA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=CHN&format=.csv": {
+   "estado": "bloqueado",
+   "codigo": 429
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=FRA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=IND&format=.csv": {
+   "estado": "bloqueado",
+   "codigo": 429
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=ITA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=JPN&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=KOR&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=MEX&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=NGA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EAR_EMTA_SEX_ECO_NB_A&ref_area=USA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=ARG&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=BRA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=ITA&format=.csv": {
+   "estado": "bloqueado",
+   "codigo": 429
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=MEX&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_ECO_OCU_NB_A&ref_area=USA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_SEX_ECO_NB_A&ref_area=ARG&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_SEX_ECO_NB_A&ref_area=BRA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_SEX_ECO_NB_A&ref_area=CHN&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_SEX_ECO_NB_A&ref_area=FRA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_SEX_ECO_NB_A&ref_area=IND&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_SEX_ECO_NB_A&ref_area=ITA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_SEX_ECO_NB_A&ref_area=JPN&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_SEX_ECO_NB_A&ref_area=KOR&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_SEX_ECO_NB_A&ref_area=MEX&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_SEX_ECO_NB_A&ref_area=NGA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=EMP_TEMP_SEX_ECO_NB_A&ref_area=USA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=HOW_TEMP_SEX_ECO_NB_A&ref_area=ARG&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=HOW_TEMP_SEX_ECO_NB_A&ref_area=BRA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=HOW_TEMP_SEX_ECO_NB_A&ref_area=CHN&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=HOW_TEMP_SEX_ECO_NB_A&ref_area=FRA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=HOW_TEMP_SEX_ECO_NB_A&ref_area=IND&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=HOW_TEMP_SEX_ECO_NB_A&ref_area=ITA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=HOW_TEMP_SEX_ECO_NB_A&ref_area=JPN&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=HOW_TEMP_SEX_ECO_NB_A&ref_area=KOR&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=HOW_TEMP_SEX_ECO_NB_A&ref_area=MEX&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=HOW_TEMP_SEX_ECO_NB_A&ref_area=NGA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://rplumber.ilo.org/data/indicator/?id=HOW_TEMP_SEX_ECO_NB_A&ref_area=USA&format=.csv": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=362578": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.anses.gob.ar/sites/default/files/2026-07/Bolet%C3%ADn%20Asignaciones%20para%20Protecci%C3%B3n%20Social_marzo%202026.pdf": {
+   "estado": "sem_resposta",
+   "codigo": 302,
+   "tentativas": 2
+  },
+  "https://www.argentina.gob.ar/sites/default/files/informe_sobre_gastos_tributarios._anos_2023-2025.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.bancaditalia.it/statistiche/tematiche/indagini-famiglie-imprese/bilanci-famiglie/distribuzione-microdati/index.html": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.bea.gov/industry/input-output-accounts-data": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.bls.gov/cex/pumd_data.htm": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.bls.gov/news.release/atus.t01.htm": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.bls.gov/soc/crosswalks.htm": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.bls.gov/tus/data/datafiles-0324.htm": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.bokjiro.go.kr/ssis-tbu/cms/pc/news/news/1309692_1114.html": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/13c14507-66d3-4212-9cda-7afd707c1083/eae3eab8/20250402_policies_budget_tokubetsukaikei_kodomokosodate_08.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1bd66626-02b3-4966-8f38-20659fea0f1f/457e5ee9/20250318_councils_jigyounushi-kyougi_1bd66626_04.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cf58692-19b3-47a6-af76-1d6df3602740/bf2fe881/20250130_policies_budget_tokubetsukaikei_ikujikyugyo_06.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.cfa.go.jp/policies/kokoseido/jidouteate/annai/": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.cfa.go.jp/policies/kokoseido/mushouka": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.congress.gov/crs_external_products/R/PDF/R41873/R41873.32.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.e-stat.go.jp/en/stat-search/files?toukei=00200603&layout=dataset": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.e-stat.go.jp/en/stat-search?kikan=00200&toukei=00200561&page=1": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.ers.usda.gov/media/29245/eib-304.pdf?v=28095": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.ers.usda.gov/topics/food-nutrition-assistance/supplemental-nutrition-assistance-program-snap/key-statistics-and-research": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.gob.mx/cms/uploads/attachment/file/969771/RO_PABNNHMT_2025_01_24.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-familia/valor-limite-para-direito-ao-salario-familia": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/bolsa-familia-amplia-inclusao-e-fortalece-gestoes-estaduais-e-municipais": {
+   "estado": "nao_encontrado",
+   "codigo": 404
+  },
+  "https://www.gov.br/previdencia/pt-br/assuntos/previdencia-social/Dados-estatisticos-previdencia-social-e-inss/boletins-da-previdencia-social/2025/beps112025_final.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2025": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/beneficios-fiscais/programa-empresa-cidada/orientacoes": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/relatorios/renuncia/gastos-tributarios-ploa/dgt-previsao-ploa-2026-base-conceitual.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/relatorios/renuncia/gastos-tributarios-ploa/dgt-previsao-ploa-2026-quadros.xlsx": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.gov.br/secom/pt-br/acompanhe-a-secom/noticias/2026/04/bolsa-familia-chega-a-18-9-milhoes-de-beneficiarios-em-todo-o-brasil-a-partir-desta-quinta-16": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.gtap.agecon.purdue.edu/databases/IO/table_display.asp?IO_ID=468": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.ilo.org/sites/default/files/2025-05/WP140_web.pdf": {
+   "estado": "bloqueado",
+   "codigo": 403
+  },
+  "https://www.indec.gob.ar/ftp/cuadros/economia/cou_2018_08_21.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.indec.gob.ar/ftp/cuadros/menusuperior/engho/engho2017_18_manual_uso_bases.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.indec.gob.ar/ftp/cuadros/menusuperior/enut/enut2021_manual_uso_base.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2024/COU/COUyMIP-Estatales2018.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.inegi.org.mx/programas/enigh/nc/2024/": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.inegi.org.mx/programas/enut/2019/?ps=microdatos": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.inegi.org.mx/rnm/index.php/catalog/1116": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.inegi.org.mx/rnm/index.php/catalog/618": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.02.assegno-unico-2026-presentazione-domanda-e-aggiornamento-importi.html": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.insee.fr/fr/information/6659349": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.insee.fr/fr/metadonnees/source/serie/s1194": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.insee.fr/fr/statistiques/8988861": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-tax-credit-statistics": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.isss.pku.edu.cn/cfps/en": {
+   "estado": "sem_resposta",
+   "codigo": null,
+   "erro": "URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer cer",
+   "tentativas": 2
+  },
+  "https://www.istat.it/microdati/indagine-sulle-spese-delle-famiglie-file-ricerca/": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.istat.it/microdati/indagine-sulle-spese-delle-famiglie-uso-pubblico/": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.istat.it/microdati/multiscopo-sulle-famiglie-uso-del-tempo/": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.istat.it/tavole-di-dati/il-sistema-di-tavole-input-output-anni-2020-2021/": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.newsis.com/view/NISX20250829_0003307926": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180.htm": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html": {
+   "estado": "bloqueado",
+   "codigo": 403
+  },
+  "https://www.oecd.org/en/data/datasets/social-expenditure-database-socx.html": {
+   "estado": "bloqueado",
+   "codigo": 403
+  },
+  "https://www.opc.gob.ar/wp-content/uploads/ANALISIS-DE-LA-EJECUCION-PRESUPUESTARIA-DE-LA-ADMINISTRACION-NACIONAL-DICIEMBRE-2025.pdf": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.oxfordmartin.ox.ac.uk/downloads/academic/The_Future_of_Employment.pdf": {
+   "estado": "redirecionado",
+   "codigo": 200,
+   "url_final": "https://oms-www.files.svdcdn.com/production/downloads/academic/The_Future_of_Employment.pdf"
+  },
+  "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2150113&reg=48&lang=2": {
+   "estado": "bloqueado",
+   "codigo": 401
+  },
+  "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm": {
+   "estado": "sem_resposta",
+   "codigo": null,
+   "erro": "ConnectionResetError: [WinError 10054] Foi forçado o cancelamento de uma conexão existente pelo host remoto",
+   "tentativas": 2
+  },
+  "https://www.sat.gob.mx/minisitio/DeduccionesPersonales/colegiaturas.html": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.soumu.go.jp/english/dgpp_ss/data/io/io20_00001.html": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.stat.go.jp/english/data/shakai/2021/gaiyo.html": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.stats.gov.cn/english/PressRelease/202411/t20241115_1957435.html": {
+   "estado": "ok",
+   "codigo": 200
+  },
+  "https://www.stats.gov.cn/sj/ndsj/2022/html/sme03.htm": {
+   "estado": "ok",
+   "codigo": 200
+  }
+ }
+}

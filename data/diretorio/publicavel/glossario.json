@@ -1,0 +1,82 @@
+[
+ {
+  "termo": "Descendentes (Prometidos)",
+  "definicao": "Coorte de base (população jovem), com corte de idade próprio de cada país. Na tese V1_1: Prometidos.",
+  "fonte": "AINU.Systems; EcoPol V1_1 (tabela de perfis)"
+ },
+ {
+  "termo": "Estruturadores",
+  "definicao": "Coorte de idades intermediárias; corresponde ao Provedor Geracional da tese (referência de 25 a 65 anos).",
+  "fonte": "AINU.Systems; EcoPol V1_1"
+ },
+ {
+  "termo": "Ascendentes (Legadores)",
+  "definicao": "Coorte de topo (população idosa). Termo 'Legadores' confirmado pelo autor em 2026-11-01; a tese V1_1 ainda escreve 'Legatários'.",
+  "fonte": "Decisão do autor, 2026-11-01"
+ },
+ {
+  "termo": "URSS (Unidade de Reprodução Social Sustentável)",
+  "definicao": "Estrutura funcional de caráter privado, familiar e civil que assume responsabilidade efetiva pela formação de Capital Humano Relacional (CHR) e pela continuidade geracional. Ativo civilizacional primário, não beneficiária de política social. Condição URSS: Ativa, Cumprida ou Inativa, por critério observável e independente da situação laboral.",
+  "fonte": "EcoPol V1_1, tabela V.I; src/i18n.py; Leia-me da planilha"
+ },
+ {
+  "termo": "CHR (Capital Humano Relacional)",
+  "definicao": "A formação profissionalizante e socializante que os pais exercem sobre os filhos. Insubstituível, inelástica, sem remuneração.",
+  "fonte": "src/i18n.py"
+ },
+ {
+  "termo": "UDE (Unidade Demográfica de Estado)",
+  "definicao": "O conjunto real das URSS existentes num dado momento; pertence a ela quem exerce responsabilidade efetiva pela formação e sustentação de ao menos um descendente de 0 a 25 anos, biológico ou adotivo. Leitura econômica: Investimento Total em UDE = NTA(0-25) + NTA(25-65) restrito aos Provedores em URSS (segundo termo sem fonte consolidada).",
+  "fonte": "EcoPol V1_1, seção 4.6"
+ },
+ {
+  "termo": "CFCc",
+  "definicao": "Consumo Final por Coorte: despesa final atribuída à coorte.",
+  "fonte": "Leia-me da planilha"
+ },
+ {
+  "termo": "CIEc",
+  "definicao": "Conteúdo Importado por Coorte: conteúdo estrangeiro direto e indireto.",
+  "fonte": "Leia-me da planilha"
+ },
+ {
+  "termo": "VADc",
+  "definicao": "Valor Adicionado Doméstico atribuível à demanda final da coorte (não é PIB da coorte e não soma ao PIB).",
+  "fonte": "Leia-me da planilha"
+ },
+ {
+  "termo": "EDPc",
+  "definicao": "Empregos Domésticos Sustentados pela demanda da coorte (bruto, deslocamento e líquido separados).",
+  "fonte": "Leia-me da planilha"
+ },
+ {
+  "termo": "REAc",
+  "definicao": "Renda do trabalho apropriada por Estruturadores em URSS-Ativa; exige microdados.",
+  "fonte": "Leia-me da planilha"
+ },
+ {
+  "termo": "AFI (Ativo de Formação Intergeracional)",
+  "definicao": "Investimento que os Estruturadores realizam em alimentação, habitação, saúde, educação, vestuário, transporte, proteção, desenvolvimento, cuidado cotidiano e acompanhamento e educação não remunerados. Nesta pesquisa é medido de forma operacional (gasto privado com a coorte de Descendentes, líquido de transferências, mais o valor do tempo de cuidado); as fórmulas seguem como proposta não aprovada.",
+  "fonte": "Protocolo v2.3 (seção A de Prompt 4)"
+ },
+ {
+  "termo": "Dividendo Intergeracional",
+  "definicao": "Retorno parcial aos Estruturadores pelo investimento na formação de novas gerações. Não é salário, restituição integral dos gastos nem assistência convencional. Proposta do Narayama; aqui só simulado em custo.",
+  "fonte": "Protocolo v2.3"
+ },
+ {
+  "termo": "IFVI (Incentivos Fiscais à Valorização Intergeracional)",
+  "definicao": "Benefícios tributários a agentes que ofereçam bens, serviços e infraestruturas que reduzam os custos e ampliem a sustentabilidade das URSS. Distinto do AFI e do Dividendo.",
+  "fonte": "Protocolo v2.3 (seção C de Prompt 4)"
+ },
+ {
+  "termo": "N* (Índice de Narayama Sistêmico)",
+  "definicao": "N* = raiz quadrada de N_Base, com N_Base = NGII_puro × Fator_Geracional. Zonas: PEC < 0,71; Tensão Acelerada 0,71–0,90; PEA 0,90–1,40; Tensão Populacional 1,40–2,00; PEEC ≥ 2,00.",
+  "fonte": "EcoPol V1_1, seções V.II e 9-A.3"
+ },
+ {
+  "termo": "PQDF-N*",
+  "definicao": "Protocolo de Qualidade, Decomposição e Falseabilidade do N*: o N*_Obs é sempre publicado; ajustes de migração, inércia, políticas e sub-registro são cenários separados (N*_k).",
+  "fonte": "EcoPol V1_1, Anexo 9"
+ }
+]

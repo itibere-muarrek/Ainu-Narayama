@@ -110,6 +110,9 @@ def main():
         res = dict(ex.map(avaliar, itens))
     out = {"conferido_em": datetime.now().isoformat(timespec="seconds"), "agente": UA, "urls": {u: {**r, "ids": ids[u][:6], "n_ids": len(ids[u])} for u, r in res.items()}}
     (DADOS / "privado" / "conferencia_fontes.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    (DADOS / "publicavel").mkdir(parents=True, exist_ok=True)
+    (DADOS / "publicavel" / "conferencia_fontes_estado.json").write_text(
+        json.dumps({u: {"estado": r["estado"]} for u, r in out["urls"].items()}, ensure_ascii=False, indent=1), encoding="utf-8")   # só o estado, para o app
     cont = defaultdict(int)
     for r in res.values():
         cont[r["estado"]] += 1

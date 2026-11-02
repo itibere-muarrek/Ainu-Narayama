@@ -69,5 +69,7 @@ ainu.log
 # Variáveis do Streamlit
 .streamlit/secrets.toml
 
-# Diretório do AINU.systems (fase 0): saída gerada da planilha do Paper 3; não versionar até o autor liberar a publicação
-data/diretorio/
+# Diretório do AINU.systems: saída gerada da planilha do Paper 3. Só a pasta publicavel/ (já passou pelo filtro de auditoria) vai para o git, liberada pelo autor em 2026-11-02;
+# privado/ (auditoria interna, resultados completos) e preview/ (HTML estático) ficam de fora.
+data/diretorio/*
+!data/diretorio/publicavel/

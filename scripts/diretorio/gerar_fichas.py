@@ -565,8 +565,22 @@ footer{max-width:1040px;margin:0 auto;padding:1.5rem 1.2rem 3rem;font-size:.78re
 """
 
 
+EMBED = False   # True dentro do app (iframe): sem faixa de prévia nem navegação, e os links entre páginas viram "#"
+
+
+def _sem_links_internos(h: str) -> str:
+    return re.sub(r"""href=(['"])(?:\.\./(?:pt|en)/)?(?:index|dados|simulacoes|[A-Z]{3})\.html[^'"]*\1""", "href='#' target='_self'", h)
+
+
 def pagina(lang: str, titulo: str, corpo: str, caminho_outra: str, raiz: str = "../", rodape_extra: str = "") -> str:
     t = T[lang]
+    if EMBED:
+        return _sem_links_internos(f"""<!DOCTYPE html>
+<html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><base target="_blank"><title>{e(titulo)}</title>
+<style>{CSS}body{{background:transparent}}main{{padding-top:.5rem}}</style></head><body>
+<main>{corpo}</main>
+<footer>{rodape_extra}{e(t['rodape'])} {datetime.now().strftime('%Y-%m-%d')}. {e(t['aviso_indep'])}</footer></body></html>""")
     return f"""<!DOCTYPE html>
 <html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow"><title>{e(titulo)} · AINU.SYSTEMS</title>
@@ -626,9 +640,9 @@ def _carga():
         return _CARGA
     pri = DADOS.parent / "privado"
     ler = lambda a: json.loads(a.read_text(encoding="utf-8")) if a.exists() else {}
-    _CARGA["auto"] = ler(pri / "conferencia_fontes.json").get("urls", {})
+    _CARGA["auto"] = ler(pri / "conferencia_fontes.json").get("urls", {}) or ler(DADOS / "conferencia_fontes_estado.json")
     _CARGA["man"] = {k: v for k, v in ler(DADOS / "conferencia_manual.json").items() if not k.startswith("_")}
-    _CARGA["links"] = ler(pri / "links_status.json")
+    _CARGA["links"] = ler(pri / "links_status.json") or ler(DADOS / "links_status.json")
     _CARGA["refs"] = ler(DADOS / "referencias.json") or []
     return _CARGA
 
@@ -778,12 +792,12 @@ def indice(paises, glos, lang: str) -> str:
         if lang == "en":
             termo, defin = GLOSS_EN[g["termo"]]
         gl.append(f"<details><summary>{e(termo)}</summary><p>{e(defin)}</p></details>")
+    hub = "" if EMBED else (f"<div class='hub'><a href='#paises'><b>{e(t['hub_paises'])}</b><span>{e(t['hub_paises_d'])}</span></a>"
+                            f"<a href='dados.html'><b>{e(t['hub_dados'])}</b><span>{e(t['hub_dados_d'])}</span></a>"
+                            f"<a href='simulacoes.html'><b>{e(t['hub_sim'])}</b><span>{e(t['hub_sim_d'])}</span></a></div>")
     corpo = (f"<h1>{e(t['titulo'])}</h1><p class='sub'>{e(t['sub'])}</p><p class='lead'>{e(t['intro'])}</p>"
              f"<div class='avisos'><p>{e(t['aviso_cortes'])}</p><p>{e(t['aviso_nstar'])}</p><p>{e(t['aviso_indep'])}</p></div>"
-             f"<div class='hub'><a href='#paises'><b>{e(t['hub_paises'])}</b><span>{e(t['hub_paises_d'])}</span></a>"
-             f"<a href='dados.html'><b>{e(t['hub_dados'])}</b><span>{e(t['hub_dados_d'])}</span></a>"
-             f"<a href='simulacoes.html'><b>{e(t['hub_sim'])}</b><span>{e(t['hub_sim_d'])}</span></a></div>"
-             f"<h2 id='paises'>{e(t['hub_paises'])}</h2><div class='grid'>{''.join(cards)}</div><h2>{e(t['tabela'])}</h2>"
+             f"{hub}<h2 id='paises'>{e(t['hub_paises'])}</h2><div class='grid'>{''.join(cards)}</div><h2>{e(t['tabela'])}</h2>"
              f"<div class='tw'><table><thead><tr><th>{'País' if lang == 'pt' else 'Country'}</th>{th}</tr></thead><tbody>{''.join(linhas)}</tbody></table></div>"
              f"<p class='nota'>{e(t['nota_demog'])}</p><h2>{e(t['legenda'])}</h2><div class='lg'>{leg}</div>"
              f"<h2>{e(t['glossario'])}</h2>{''.join(gl)}")
@@ -877,21 +891,45 @@ def simulacoes_pagina(sim: dict, lang: str) -> str:
     return pagina(lang, t["s_titulo"], corpo, f"../{outra}/simulacoes.html", rodape_extra=rodape_fontes(None, EVID, lang))
 
 
-def main():
-    paises = json.loads((DADOS / "paises.json").read_text(encoding="utf-8"))
-    instr = json.loads((DADOS / "instrumentos.json").read_text(encoding="utf-8"))["instrumentos"]
-    evid = json.loads((DADOS / "evidencias.json").read_text(encoding="utf-8"))
-    lac = json.loads((DADOS / "lacunas.json").read_text(encoding="utf-8"))["nao_encontrados"]
-    glos = json.loads((DADOS / "glossario.json").read_text(encoding="utf-8"))
+def carregar() -> dict:
+    """Lê os JSON publicáveis e prepara FONTES e EVID (usados pelo rodapé). Devolve tudo num dicionário."""
     global FONTES, EVID
+    ler = lambda nome: json.loads((DADOS / nome).read_text(encoding="utf-8"))
+    evid = ler("evidencias.json")
     EVID = evid
-    fontes_lista = json.loads((DADOS / "fontes.json").read_text(encoding="utf-8"))
+    fontes_lista = ler("fontes.json")
     FONTES = {f["id"]: f for f in fontes_lista}
-    legenda_verif = json.loads((DADOS / "meta.json").read_text(encoding="utf-8")).get("legenda_verificacao") or ""
-    sim = json.loads((DADOS / "simulacoes.json").read_text(encoding="utf-8"))
-    arq_links = DADOS.parent / "privado" / "links_status.json"
-    links = json.loads(arq_links.read_text(encoding="utf-8")) if arq_links.exists() else None
+    links = _carga()["links"] or None
+    glos = ler("glossario.json")
     assert {g["termo"] for g in glos} == set(GLOSS_EN), "glossário PT e EN fora de sincronia"
+    return {"paises": ler("paises.json"), "instr": ler("instrumentos.json")["instrumentos"], "evid": evid, "lac": ler("lacunas.json")["nao_encontrados"],
+            "glos": glos, "fontes": fontes_lista, "legenda": ler("meta.json").get("legenda_verificacao") or "", "sim": ler("simulacoes.json"), "links": links}
+
+
+def _lang_ok(lang: str) -> str:
+    return lang if lang in T else "pt"
+
+
+def html_indice(lang: str) -> str:
+    d = carregar()
+    return indice(d["paises"], d["glos"], _lang_ok(lang))
+
+
+def html_ficha(iso: str, lang: str) -> str:
+    d = carregar()
+    p = next(x for x in d["paises"] if x["iso"] == iso)
+    return ficha(p, d["instr"], d["evid"], d["lac"], _lang_ok(lang))
+
+
+def html_dados(lang: str) -> str:
+    d = carregar()
+    return dados_pagina(d["evid"], d["fontes"], d["legenda"], d["paises"], _lang_ok(lang), d["links"])
+
+
+def main():
+    d = carregar()
+    paises, instr, evid, lac, glos = d["paises"], d["instr"], d["evid"], d["lac"], d["glos"]
+    fontes_lista, legenda_verif, sim, links = d["fontes"], d["legenda"], d["sim"], d["links"]
     if PREVIA.exists():
         shutil.rmtree(PREVIA)
     (PREVIA / "assets").mkdir(parents=True)

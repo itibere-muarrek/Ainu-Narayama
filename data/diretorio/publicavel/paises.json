@@ -1,0 +1,6313 @@
+[
+ {
+  "iso": "ITA",
+  "nome": "Itália",
+  "coortes": {
+   "composicao_perfis": "C50 D50",
+   "descendentes": "0–22",
+   "estruturadores": "23–60",
+   "ascendentes": "61+",
+   "ano_referencia": 2025,
+   "fonte": "P1_Coortes_Narayama"
+  },
+  "cobertura": {
+   "classe_provisoria": {
+    "texto": "1",
+    "valor": 1.0,
+    "natureza": "ENTRADA"
+   },
+   "perfil_consumo": {
+    "texto": "SHIW (microdados) ancorado no NTA 2008",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "insumo_produto": {
+    "texto": "Eurostat 2010–2022 (64 setores)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "ano_contas": {
+    "texto": "2022",
+    "valor": 2022.0,
+    "natureza": "OBS"
+   },
+   "afi_tempo": {
+    "texto": "Sim (tempo de 2010)",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "demografia": {
+   "tft_2025": {
+    "texto": "1.21",
+    "valor": 1.21,
+    "natureza": "OBS"
+   },
+   "pop_2025_pct": {
+    "texto": "20 / 49 / 31",
+    "valor": [
+     20.0,
+     49.0,
+     31.0
+    ],
+    "natureza": "DER"
+   },
+   "asc_estr_2025": {
+    "texto": "0.63",
+    "valor": 0.63,
+    "natureza": "DER"
+   },
+   "asc_estr_2075_tft_constante": {
+    "texto": "1.09",
+    "valor": 1.09,
+    "natureza": "PROJ"
+   },
+   "asc_estr_2075_wpp": {
+    "texto": "1.04",
+    "valor": 1.04,
+    "natureza": "PROJ"
+   },
+   "dependencia_2025_2075_wpp": {
+    "texto": "1.03 → 1.48",
+    "valor": [
+     1.03,
+     1.48
+    ],
+    "natureza": "PROJ"
+   },
+   "estruturadores_2075_rel": {
+    "texto": "58",
+    "valor": 58.0,
+    "natureza": "PROJ"
+   },
+   "descendentes_2075_rel": {
+    "texto": "63",
+    "valor": 63.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_wpp": {
+    "texto": "109",
+    "valor": 109.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_tft_constante": {
+    "texto": "96",
+    "valor": 96.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_rapida": {
+    "texto": "161",
+    "valor": 161.0,
+    "natureza": "PROJ"
+   }
+  },
+  "consumo": {
+   "cfcc_total_pct_desc_estr_asc": {
+    "texto": "18.4 / 47.5 / 34.1",
+    "valor": [
+     18.4,
+     47.5,
+     34.1
+    ],
+    "natureza": "EST"
+   },
+   "desc_privado_pesos_nta": {
+    "texto": "12.6",
+    "valor": 12.6,
+    "natureza": "EST"
+   },
+   "desc_privado_microdados_ancorados": {
+    "texto": "15.1",
+    "valor": 15.1,
+    "natureza": "EST"
+   },
+   "desc_privado_regressao_bruta": {
+    "texto": "n/d",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "razao_0_24_sobre_25_64": {
+    "texto": "0.58 / 0.29 / 0.74",
+    "valor": [
+     0.58,
+     0.29,
+     0.74
+    ],
+    "natureza": "EST"
+   },
+   "fator_ancoragem": {
+    "texto": "2.00",
+    "valor": 2.0,
+    "natureza": "EST"
+   }
+  },
+  "multiplicadores": {
+   "valor_adicionado": {
+    "texto": "0.637",
+    "valor": 0.637,
+    "natureza": "EST"
+   },
+   "importacoes": {
+    "texto": "0.232",
+    "valor": 0.232,
+    "natureza": "EST"
+   },
+   "edpc_sobre_emprego": {
+    "texto": "61%",
+    "valor": null,
+    "natureza": "EST"
+   }
+  },
+  "valorizacao": {
+   "gasto_publico_familia_socx": {
+    "texto": "1,43 (2021)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_10pct_pib": {
+    "texto": "0.75",
+    "valor": 0.75,
+    "natureza": "SIM"
+   },
+   "maior_programa_infantil": {
+    "texto": "Assegno Unico: 0,87% do PIB (2025)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_sobre_programa": {
+    "texto": "0.9×",
+    "valor": null,
+    "natureza": "SIM"
+   },
+   "analogo_ifvi_empregador": {
+    "texto": "Esonero de 100% dos encargos na contratação de mães de 3 ou mais filhos (€ 5,7 mi autorizados); IVA reduzido em itens infantis",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "consumo_observado": {
+   "disponivel": false
+  },
+  "exposicao_iagen": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "media": 0.27,
+     "baixa": 0.21,
+     "alta": 0.32,
+     "fracao_alta": 0.12,
+     "fracao_baixa": 0.76
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "media": 0.3,
+     "baixa": 0.24,
+     "alta": 0.35,
+     "fracao_alta": 0.15,
+     "fracao_baixa": 0.7
+    },
+    {
+     "grupo": "Saúde",
+     "media": 0.33,
+     "baixa": 0.26,
+     "alta": 0.39,
+     "fracao_alta": 0.16,
+     "fracao_baixa": 0.65
+    },
+    {
+     "grupo": "Educação",
+     "media": 0.36,
+     "baixa": 0.28,
+     "alta": 0.44,
+     "fracao_alta": 0.21,
+     "fracao_baixa": 0.6
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "media": 0.3,
+     "baixa": 0.23,
+     "alta": 0.34,
+     "fracao_alta": 0.13,
+     "fracao_baixa": 0.72
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "media": 0.3,
+     "baixa": 0.24,
+     "alta": 0.35,
+     "fracao_alta": 0.16,
+     "fracao_baixa": 0.69
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "media": 0.29,
+     "baixa": 0.23,
+     "alta": 0.33,
+     "fracao_alta": 0.1,
+     "fracao_baixa": 0.75
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "media": 0.26,
+     "baixa": 0.2,
+     "alta": 0.31,
+     "fracao_alta": 0.1,
+     "fracao_baixa": 0.77
+    }
+   ],
+   "coortes": {
+    "descendentes_marginal": {
+     "media": 0.29,
+     "baixa": 0.22,
+     "alta": 0.34,
+     "fracao_alta": 0.12,
+     "fracao_baixa": 0.73
+    },
+    "descendentes_médio": {
+     "media": 0.29,
+     "baixa": 0.22,
+     "alta": 0.34,
+     "fracao_alta": 0.12,
+     "fracao_baixa": 0.73
+    },
+    "ascendentes_marginal": {
+     "media": 0.29,
+     "baixa": 0.22,
+     "alta": 0.34,
+     "fracao_alta": 0.13,
+     "fracao_baixa": 0.73
+    },
+    "ascendentes_médio": {
+     "media": 0.29,
+     "baixa": 0.22,
+     "alta": 0.34,
+     "fracao_alta": 0.13,
+     "fracao_baixa": 0.73
+    }
+   },
+   "natureza": "EST",
+   "fonte": "OIT, Working Paper 140 (2025), Tabela A1, e OIT/ILOSTAT (emprego por atividade e ocupação)",
+   "disponivel": true,
+   "aviso": "Exposição das tarefas ocupacionais à IA generativa (índice global da OIT); indica sobretudo transformação de ocupações, não previsão de perda de emprego."
+  },
+  "exposicao_automacao": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "media": 0.61,
+     "baixa": 0.47,
+     "alta": 0.78,
+     "fracao_alta": 0.47,
+     "fracao_baixa": 0.19
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "media": 0.59,
+     "baixa": 0.44,
+     "alta": 0.76,
+     "fracao_alta": 0.46,
+     "fracao_baixa": 0.23
+    },
+    {
+     "grupo": "Saúde",
+     "media": 0.51,
+     "baixa": 0.34,
+     "alta": 0.71,
+     "fracao_alta": 0.36,
+     "fracao_baixa": 0.32
+    },
+    {
+     "grupo": "Educação",
+     "media": 0.31,
+     "baixa": 0.19,
+     "alta": 0.38,
+     "fracao_alta": 0.19,
+     "fracao_baixa": 0.61
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "media": 0.58,
+     "baixa": 0.43,
+     "alta": 0.78,
+     "fracao_alta": 0.45,
+     "fracao_baixa": 0.23
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "media": 0.6,
+     "baixa": 0.46,
+     "alta": 0.78,
+     "fracao_alta": 0.48,
+     "fracao_baixa": 0.22
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "media": 0.54,
+     "baixa": 0.38,
+     "alta": 0.75,
+     "fracao_alta": 0.4,
+     "fracao_baixa": 0.27
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "media": 0.61,
+     "baixa": 0.46,
+     "alta": 0.81,
+     "fracao_alta": 0.48,
+     "fracao_baixa": 0.18
+    }
+   ],
+   "coortes": {
+    "descendentes_marginal": {
+     "media": 0.58,
+     "baixa": 0.43,
+     "alta": 0.76,
+     "fracao_alta": 0.44,
+     "fracao_baixa": 0.23
+    },
+    "descendentes_médio": {
+     "media": 0.58,
+     "baixa": 0.43,
+     "alta": 0.77,
+     "fracao_alta": 0.45,
+     "fracao_baixa": 0.23
+    },
+    "ascendentes_marginal": {
+     "media": 0.59,
+     "baixa": 0.44,
+     "alta": 0.77,
+     "fracao_alta": 0.45,
+     "fracao_baixa": 0.22
+    },
+    "ascendentes_médio": {
+     "media": 0.59,
+     "baixa": 0.44,
+     "alta": 0.77,
+     "fracao_alta": 0.45,
+     "fracao_baixa": 0.22
+    }
+   },
+   "natureza": "EST",
+   "fonte": "Frey e Osborne (2013), cruzamento BLS SOC-ISCO e OIT (emprego por atividade e ocupação)",
+   "disponivel": true,
+   "aviso": "Exposição técnica à automação (probabilidade de informatização de ocupações dos EUA em 2013), não previsão de perda de emprego; a IA generativa está na aba P11, só como base de referência."
+  },
+  "multiplicadores_grupos": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "parcela_gasto_pct": 18,
+     "vad_por_unidade": 0.587,
+     "importacao_direta": 0.094,
+     "empregos_por_milhao": 10.22,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 24,
+       "medio": 18.7
+      },
+      "ascendentes": {
+       "marginal": 18,
+       "medio": 17.4
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 31.2,
+       "medio": 26.2
+      },
+      "ascendentes": {
+       "marginal": 30.3,
+       "medio": 29.4
+      }
+     }
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "parcela_gasto_pct": 27.4,
+     "vad_por_unidade": 0.763,
+     "importacao_direta": 0.042,
+     "empregos_por_milhao": 2.85,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 33,
+       "medio": 40.3
+      },
+      "ascendentes": {
+       "marginal": 54.5,
+       "medio": 54.6
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 9.2,
+       "medio": 12.1
+      },
+      "ascendentes": {
+       "marginal": 19.7,
+       "medio": 19.7
+      }
+     }
+    },
+    {
+     "grupo": "Saúde",
+     "parcela_gasto_pct": 3.6,
+     "vad_por_unidade": 0.589,
+     "importacao_direta": 0.149,
+     "empregos_por_milhao": 9.5,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 2.9,
+       "medio": 3.3
+      },
+      "ascendentes": {
+       "marginal": 5.4,
+       "medio": 5.1
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 3.5,
+       "medio": 4.3
+      },
+      "ascendentes": {
+       "marginal": 8.5,
+       "medio": 8
+      }
+     }
+    },
+    {
+     "grupo": "Educação",
+     "parcela_gasto_pct": 1.1,
+     "vad_por_unidade": 0.832,
+     "importacao_direta": 0,
+     "empregos_por_milhao": 18,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 1.7,
+       "medio": 1.3
+      },
+      "ascendentes": {
+       "marginal": 0,
+       "medio": 0.1
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 2.7,
+       "medio": 2.3
+      },
+      "ascendentes": {
+       "marginal": 0,
+       "medio": 0.2
+      }
+     }
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "parcela_gasto_pct": 5.5,
+     "vad_por_unidade": 0.449,
+     "importacao_direta": 0.311,
+     "empregos_por_milhao": 7.6,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 5.8,
+       "medio": 3.5
+      },
+      "ascendentes": {
+       "marginal": 1.6,
+       "medio": 1.7
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 7.3,
+       "medio": 4.8
+      },
+      "ascendentes": {
+       "marginal": 2.6,
+       "medio": 2.8
+      }
+     }
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "parcela_gasto_pct": 15.3,
+     "vad_por_unidade": 0.457,
+     "importacao_direta": 0.253,
+     "empregos_por_milhao": 6.69,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 8.3,
+       "medio": 10.4
+      },
+      "ascendentes": {
+       "marginal": 6.6,
+       "medio": 6.7
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 9.1,
+       "medio": 12.2
+      },
+      "ascendentes": {
+       "marginal": 9.4,
+       "medio": 9.5
+      }
+     }
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "parcela_gasto_pct": 12.7,
+     "vad_por_unidade": 0.725,
+     "importacao_direta": 0.007,
+     "empregos_por_milhao": 13.71,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 17.6,
+       "medio": 13.3
+      },
+      "ascendentes": {
+       "marginal": 5.8,
+       "medio": 6.4
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 24.9,
+       "medio": 20.2
+      },
+      "ascendentes": {
+       "marginal": 10.6,
+       "medio": 11.6
+      }
+     }
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "parcela_gasto_pct": 16.2,
+     "vad_por_unidade": 0.639,
+     "importacao_direta": 0.129,
+     "empregos_por_milhao": 15.31,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 6.7,
+       "medio": 9.3
+      },
+      "ascendentes": {
+       "marginal": 8.1,
+       "medio": 8.1
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 12.1,
+       "medio": 17.9
+      },
+      "ascendentes": {
+       "marginal": 18.9,
+       "medio": 18.9
+      }
+     }
+    }
+   ],
+   "unidade_emprego": "pessoas por € milhão (2022)",
+   "metodo_emprego": "atividades A64 do Eurostat (2022)",
+   "ano_base": 2022,
+   "natureza": "EST",
+   "disponivel": true,
+   "aviso": "Emprego por produto da própria tabela de insumo-produto, conferido com as seções ISIC da OIT."
+  },
+  "composicao_grupos": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "descendentes": {
+      "marginal": 26,
+      "marginal_p5": 23.9,
+      "marginal_p95": 28.4,
+      "medio": 20.5
+     },
+     "estruturadores": {
+      "marginal": 19.1,
+      "marginal_p5": 18.8,
+      "marginal_p95": 19.4,
+      "medio": 18.7
+     },
+     "ascendentes": {
+      "marginal": 20.4,
+      "marginal_p5": 20.1,
+      "marginal_p95": 20.7,
+      "medio": 19.8
+     }
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "descendentes": {
+      "marginal": 27.6,
+      "marginal_p5": 24,
+      "marginal_p95": 30.7,
+      "medio": 34
+     },
+     "estruturadores": {
+      "marginal": 35.5,
+      "marginal_p5": 35,
+      "marginal_p95": 36,
+      "medio": 37.5
+     },
+     "ascendentes": {
+      "marginal": 47.7,
+      "marginal_p5": 47.1,
+      "marginal_p95": 48.3,
+      "medio": 47.7
+     }
+    },
+    {
+     "grupo": "Saúde",
+     "descendentes": {
+      "marginal": 3.1,
+      "marginal_p5": 2.4,
+      "marginal_p95": 3.7,
+      "medio": 3.6
+     },
+     "estruturadores": {
+      "marginal": 3.7,
+      "marginal_p5": 3.6,
+      "marginal_p95": 3.9,
+      "medio": 3.7
+     },
+     "ascendentes": {
+      "marginal": 6.1,
+      "marginal_p5": 5.9,
+      "marginal_p95": 6.3,
+      "medio": 5.8
+     }
+    },
+    {
+     "grupo": "Educação",
+     "descendentes": {
+      "marginal": 1.3,
+      "marginal_p5": 1,
+      "marginal_p95": 1.6,
+      "medio": 1
+     },
+     "estruturadores": {
+      "marginal": 1,
+      "marginal_p5": 0.9,
+      "marginal_p95": 1.1,
+      "medio": 0.7
+     },
+     "ascendentes": {
+      "marginal": 0,
+      "marginal_p5": 0,
+      "marginal_p95": 0,
+      "medio": 0.1
+     }
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "descendentes": {
+      "marginal": 8.2,
+      "marginal_p5": 7.4,
+      "marginal_p95": 9.2,
+      "medio": 5
+     },
+     "estruturadores": {
+      "marginal": 4.1,
+      "marginal_p5": 4,
+      "marginal_p95": 4.2,
+      "medio": 4.1
+     },
+     "ascendentes": {
+      "marginal": 2.4,
+      "marginal_p5": 2.2,
+      "marginal_p95": 2.5,
+      "medio": 2.5
+     }
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "descendentes": {
+      "marginal": 11.6,
+      "marginal_p5": 9.7,
+      "marginal_p95": 13.4,
+      "medio": 14.6
+     },
+     "estruturadores": {
+      "marginal": 15.9,
+      "marginal_p5": 15.6,
+      "marginal_p95": 16.2,
+      "medio": 14.8
+     },
+     "ascendentes": {
+      "marginal": 9.6,
+      "marginal_p5": 9.3,
+      "marginal_p95": 10.1,
+      "medio": 9.7
+     }
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "descendentes": {
+      "marginal": 15.5,
+      "marginal_p5": 14.1,
+      "marginal_p95": 17.1,
+      "medio": 11.8
+     },
+     "estruturadores": {
+      "marginal": 10.7,
+      "marginal_p5": 10.5,
+      "marginal_p95": 10.9,
+      "medio": 10.7
+     },
+     "ascendentes": {
+      "marginal": 5.3,
+      "marginal_p5": 5.1,
+      "marginal_p95": 5.5,
+      "medio": 5.8
+     }
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "descendentes": {
+      "marginal": 6.7,
+      "marginal_p5": 5.1,
+      "marginal_p95": 8.6,
+      "medio": 9.4
+     },
+     "estruturadores": {
+      "marginal": 10.1,
+      "marginal_p5": 9.7,
+      "marginal_p95": 10.4,
+      "medio": 9.9
+     },
+     "ascendentes": {
+      "marginal": 8.5,
+      "marginal_p5": 8.2,
+      "marginal_p95": 8.8,
+      "medio": 8.5
+     }
+    }
+   ],
+   "fonte": "HBS 2023 (ISTAT), arquivo público",
+   "natureza": "EST",
+   "domicilios": 28180,
+   "cobertura_gastos": 1,
+   "sobreposicao_desc_asc": {
+    "marginal": 0.75,
+    "medio": 0.84
+   },
+   "sobreposicao_desc_estr": {
+    "marginal": 0.84,
+    "medio": 0.96
+   },
+   "disponivel": true,
+   "aviso": "Só gasto privado das famílias; marginal = o que mais uma pessoa da coorte acrescenta ao gasto do domicílio, médio = divisão igual do gasto do domicílio."
+  },
+  "incremento_crianca": {
+   "disponivel": true,
+   "natureza": "EST",
+   "n_pontos": 6,
+   "unidade_consumo": "€ de 2022",
+   "unidade_vad": "€ de 2022",
+   "vad_por_crianca_ano": {
+    "mediana": 16878,
+    "min": 16837,
+    "max": 16964
+   },
+   "cfcc_por_crianca_ano": 23396,
+   "vad_sobre_cfcc": 0.72,
+   "empregos_brutos_por_crianca": {
+    "mediana": 0.251,
+    "min": 0.25,
+    "max": 0.251
+   },
+   "empregos_liquidos_50": 0.133,
+   "empregos_liquidos_100": 0.0155,
+   "criancas_por_emprego_bruto": 4,
+   "aviso": "Limite superior de demanda por criança adicional e por ano na coorte; não é efeito causal nem inclui a produção futura da criança.",
+   "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
+  },
+  "disponibilidade_de_dados": {
+   "N* (pipeline 2024)": {
+    "texto": "0.49",
+    "verificacao": null
+   },
+   "Demografia anual (WPP local)": {
+    "texto": "1950–2101 (L)",
+    "verificacao": null
+   },
+   "PIB real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "VA por setor (WDI)": {
+    "texto": "1990–2025 (36)",
+    "verificacao": null
+   },
+   "Emprego por setor (WDI)": {
+    "texto": "1991–2025 (35)",
+    "verificacao": null
+   },
+   "FBCF %PIB (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Consumo das famílias real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "NTA (ano-base)": {
+    "texto": "2008",
+    "verificacao": null
+   },
+   "ICIO 2025": {
+    "texto": "1995–2022",
+    "verificacao": null
+   },
+   "IO nacional": {
+    "texto": "[P] ISTAT, tavole input-output 2020–2021 (publ. 25/03/2025): recursos e usos a preços correntes e do ano anterior (63 ramos/produtos e versão de 20) e simétricas a 63 ramos; base ESA 2010. Edição 2020–2022 aparece em busca (não aberta).",
+    "verificacao": "P"
+   },
+   "Orçamento familiar": {
+    "texto": "[P] ISTAT: arquivos para pesquisa (MFR) de 'Spese delle famiglie' listados para 2014–2024 (2014–2021 também reconstruídos em COICOP 2018); atualização 16/12/2025. Elegibilidade e procedimento de pedido NÃO constam na página (remete à seção de microdados).",
+    "verificacao": "P"
+   },
+   "Uso do tempo": {
+    "texto": "[P] ISTAT: arquivos para pesquisa (MFR) 'Uso del tempo' listados para 2023 e 2013, com diário de 24h descrito. Se o MFR 2023 inclui o diário NÃO está claro (busca anterior dizia que só o módulo de voluntariado fora liberado).",
+    "verificacao": "P"
+   }
+  },
+  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+ },
+ {
+  "iso": "KOR",
+  "nome": "Coreia do Sul",
+  "coortes": {
+   "composicao_perfis": "C80 D20",
+   "descendentes": "0–21",
+   "estruturadores": "22–59",
+   "ascendentes": "60+",
+   "ano_referencia": 2025,
+   "fonte": "P1_Coortes_Narayama"
+  },
+  "cobertura": {
+   "classe_provisoria": {
+    "texto": "3",
+    "valor": 3.0,
+    "natureza": "ENTRADA"
+   },
+   "perfil_consumo": {
+    "texto": "Pesos NTA 2010 (sem microdados)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "insumo_produto": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "OBS"
+   },
+   "ano_contas": {
+    "texto": "2022",
+    "valor": 2022.0,
+    "natureza": "OBS"
+   },
+   "afi_tempo": {
+    "texto": "Não",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "demografia": {
+   "tft_2025": {
+    "texto": "0.75",
+    "valor": 0.75,
+    "natureza": "OBS"
+   },
+   "pop_2025_pct": {
+    "texto": "17 / 55 / 28",
+    "valor": [
+     17.0,
+     55.0,
+     28.0
+    ],
+    "natureza": "DER"
+   },
+   "asc_estr_2025": {
+    "texto": "0.52",
+    "valor": 0.52,
+    "natureza": "DER"
+   },
+   "asc_estr_2075_tft_constante": {
+    "texto": "1.85",
+    "valor": 1.85,
+    "natureza": "PROJ"
+   },
+   "asc_estr_2075_wpp": {
+    "texto": "1.62",
+    "valor": 1.62,
+    "natureza": "PROJ"
+   },
+   "dependencia_2025_2075_wpp": {
+    "texto": "0.82 → 1.97",
+    "valor": [
+     0.82,
+     1.97
+    ],
+    "natureza": "PROJ"
+   },
+   "estruturadores_2075_rel": {
+    "texto": "38",
+    "valor": 38.0,
+    "natureza": "PROJ"
+   },
+   "descendentes_2075_rel": {
+    "texto": "44",
+    "valor": 44.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_wpp": {
+    "texto": "116",
+    "valor": 116.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_tft_constante": {
+    "texto": "80",
+    "valor": 80.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_rapida": {
+    "texto": "195",
+    "valor": 195.0,
+    "natureza": "PROJ"
+   }
+  },
+  "consumo": {
+   "cfcc_total_pct_desc_estr_asc": {
+    "texto": "16.7 / 50.6 / 32.7",
+    "valor": [
+     16.7,
+     50.6,
+     32.7
+    ],
+    "natureza": "EST"
+   },
+   "desc_privado_pesos_nta": {
+    "texto": "15.8",
+    "valor": 15.8,
+    "natureza": "EST"
+   },
+   "desc_privado_microdados_ancorados": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "desc_privado_regressao_bruta": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "razao_0_24_sobre_25_64": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "fator_ancoragem": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   }
+  },
+  "multiplicadores": {
+   "valor_adicionado": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "importacoes": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "edpc_sobre_emprego": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   }
+  },
+  "valorizacao": {
+   "gasto_publico_familia_socx": {
+    "texto": "1,65 (2022)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_10pct_pib": {
+    "texto": "0.92",
+    "valor": 0.92,
+    "natureza": "SIM"
+   },
+   "maior_programa_infantil": {
+    "texto": "Abono infantil: 0,103% do PIB (2026, derivado)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_sobre_programa": {
+    "texto": "8,9×",
+    "valor": null,
+    "natureza": "SIM"
+   },
+   "analogo_ifvi_empregador": {
+    "texto": "Não encontrado nas fontes lidas",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "consumo_observado": {
+   "disponivel": false
+  },
+  "exposicao_iagen": {
+   "disponivel": false,
+   "motivo": "sem multiplicadores por grupo nesta rodada"
+  },
+  "exposicao_automacao": {
+   "disponivel": false,
+   "motivo": "sem multiplicadores por grupo nesta rodada"
+  },
+  "multiplicadores_grupos": {
+   "disponivel": false,
+   "motivo": "sem tabela de insumo-produto com microdados de orçamento harmonizados nesta rodada"
+  },
+  "composicao_grupos": {
+   "disponivel": false,
+   "motivo": "sem microdados de orçamento familiar harmonizados nesta rodada"
+  },
+  "incremento_crianca": {
+   "disponivel": false,
+   "motivo": "sem tabela de insumo-produto nesta rodada"
+  },
+  "disponibilidade_de_dados": {
+   "N* (pipeline 2024)": {
+    "texto": "0.37",
+    "verificacao": null
+   },
+   "Demografia anual (WPP local)": {
+    "texto": "1950–2101 (L)",
+    "verificacao": null
+   },
+   "PIB real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "VA por setor (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Emprego por setor (WDI)": {
+    "texto": "1991–2025 (35)",
+    "verificacao": null
+   },
+   "FBCF %PIB (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Consumo das famílias real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "NTA (ano-base)": {
+    "texto": "2010",
+    "verificacao": null
+   },
+   "ICIO 2025": {
+    "texto": "1995–2022",
+    "verificacao": null
+   },
+   "IO nacional": {
+    "texto": "[P] Bank of Korea: '2020 Benchmark Input-Output Tables' (postado 29/04/2024): Excel a preços do produtor (large-sized) + classificação de produtos + comunicado. '2021-2022 Updated IO Tables' (postado 26/11/2024) aparece em busca (página não aberta).",
+    "verificacao": "P"
+   },
+   "Orçamento familiar": {
+    "retido": true,
+    "motivo": "resultado de busca, página não aberta"
+   },
+   "Uso do tempo": {
+    "texto": "[P] Fonte SECUNDÁRIA aberta (estudo de caso Data2X, mar/2025): Time Use Survey nacional quinquenal obrigatória desde 1999 (1999, 2004, 2009, 2014, 2019; 12.435 domicílios e ~29.000 respondentes em 2019); ciclo 2024 'a ser divulgado em 2025'. Reportagem aberta (Newsis) confirma divulgação dos resultados de 2024 em 28/07/2025. Divulgação oficial e microdados NÃO abertos.",
+    "verificacao": "P"
+   }
+  },
+  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+ },
+ {
+  "iso": "JPN",
+  "nome": "Japão",
+  "coortes": {
+   "composicao_perfis": "D60 E40",
+   "descendentes": "0–24",
+   "estruturadores": "25–62",
+   "ascendentes": "63+",
+   "ano_referencia": 2025,
+   "fonte": "P1_Coortes_Narayama"
+  },
+  "cobertura": {
+   "classe_provisoria": {
+    "texto": "3",
+    "valor": 3.0,
+    "natureza": "ENTRADA"
+   },
+   "perfil_consumo": {
+    "texto": "Pesos NTA 2004 (microdados do NSFIE dependem de pedido ao NSTAC)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "insumo_produto": {
+    "texto": "e-Stat: coeficientes de 2015 e tabela de uso 2020",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "ano_contas": {
+    "texto": "2022",
+    "valor": 2022.0,
+    "natureza": "OBS"
+   },
+   "afi_tempo": {
+    "texto": "Não",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "demografia": {
+   "tft_2025": {
+    "texto": "1.23",
+    "valor": 1.23,
+    "natureza": "OBS"
+   },
+   "pop_2025_pct": {
+    "texto": "21 / 47 / 32",
+    "valor": [
+     21.0,
+     47.0,
+     32.0
+    ],
+    "natureza": "DER"
+   },
+   "asc_estr_2025": {
+    "texto": "0.69",
+    "valor": 0.69,
+    "natureza": "DER"
+   },
+   "asc_estr_2075_tft_constante": {
+    "texto": "1.02",
+    "valor": 1.02,
+    "natureza": "PROJ"
+   },
+   "asc_estr_2075_wpp": {
+    "texto": "0.98",
+    "valor": 0.98,
+    "natureza": "PROJ"
+   },
+   "dependencia_2025_2075_wpp": {
+    "texto": "1.14 → 1.48",
+    "valor": [
+     1.14,
+     1.48
+    ],
+    "natureza": "PROJ"
+   },
+   "estruturadores_2075_rel": {
+    "texto": "61",
+    "valor": 61.0,
+    "natureza": "PROJ"
+   },
+   "descendentes_2075_rel": {
+    "texto": "68",
+    "valor": 68.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_wpp": {
+    "texto": "111",
+    "valor": 111.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_tft_constante": {
+    "texto": "99",
+    "valor": 99.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_rapida": {
+    "texto": "161",
+    "valor": 161.0,
+    "natureza": "PROJ"
+   }
+  },
+  "consumo": {
+   "cfcc_total_pct_desc_estr_asc": {
+    "texto": "18.0 / 43.4 / 38.5",
+    "valor": [
+     18.0,
+     43.4,
+     38.5
+    ],
+    "natureza": "EST"
+   },
+   "desc_privado_pesos_nta": {
+    "texto": "14.6",
+    "valor": 14.6,
+    "natureza": "EST"
+   },
+   "desc_privado_microdados_ancorados": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "desc_privado_regressao_bruta": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "razao_0_24_sobre_25_64": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "fator_ancoragem": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   }
+  },
+  "multiplicadores": {
+   "valor_adicionado": {
+    "texto": "0.855",
+    "valor": 0.855,
+    "natureza": "EST"
+   },
+   "importacoes": {
+    "texto": "0.145",
+    "valor": 0.145,
+    "natureza": "EST"
+   },
+   "edpc_sobre_emprego": {
+    "texto": "68%",
+    "valor": null,
+    "natureza": "EST"
+   }
+  },
+  "valorizacao": {
+   "gasto_publico_familia_socx": {
+    "texto": "1,98 (2022)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_10pct_pib": {
+    "texto": "0.81",
+    "valor": 0.81,
+    "natureza": "SIM"
+   },
+   "maior_programa_infantil": {
+    "texto": "Abono infantil: 0,34% do PIB (FY2025)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_sobre_programa": {
+    "texto": "2.2×",
+    "valor": null,
+    "natureza": "SIM"
+   },
+   "analogo_ifvi_empregador": {
+    "texto": "Contribuição só dos empregadores de 0,36% (¥ 0,75 tri, desde 1971) financia o abono e creches de empresas",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "consumo_observado": {
+   "disponivel": false
+  },
+  "exposicao_iagen": {
+   "disponivel": false,
+   "motivo": "sem multiplicadores por grupo nesta rodada"
+  },
+  "exposicao_automacao": {
+   "disponivel": false,
+   "motivo": "sem multiplicadores por grupo nesta rodada"
+  },
+  "multiplicadores_grupos": {
+   "disponivel": false,
+   "motivo": "sem tabela de insumo-produto com microdados de orçamento harmonizados nesta rodada"
+  },
+  "composicao_grupos": {
+   "disponivel": false,
+   "motivo": "sem microdados de orçamento familiar harmonizados nesta rodada"
+  },
+  "incremento_crianca": {
+   "disponivel": true,
+   "natureza": "EST",
+   "n_pontos": 8,
+   "unidade_consumo": "¥ de 2022",
+   "unidade_vad": "¥ de 2022",
+   "vad_por_crianca_ano": {
+    "mediana": 2651515,
+    "min": 2500000,
+    "max": 3000000
+   },
+   "cfcc_por_crianca_ano": 3004647,
+   "vad_sobre_cfcc": 0.88,
+   "empregos_brutos_por_crianca": {
+    "mediana": 0.311,
+    "min": 0.302,
+    "max": 0.357
+   },
+   "empregos_liquidos_50": 0.157,
+   "empregos_liquidos_100": 0.0028,
+   "criancas_por_emprego_bruto": 3.2,
+   "aviso": "Limite superior de demanda por criança adicional e por ano na coorte; não é efeito causal nem inclui a produção futura da criança.",
+   "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
+  },
+  "disponibilidade_de_dados": {
+   "N* (pipeline 2024)": {
+    "texto": "0.43",
+    "verificacao": null
+   },
+   "Demografia anual (WPP local)": {
+    "texto": "1950–2101 (L)",
+    "verificacao": null
+   },
+   "PIB real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "VA por setor (WDI)": {
+    "texto": "1994–2024 (31)",
+    "verificacao": null
+   },
+   "Emprego por setor (WDI)": {
+    "texto": "1991–2025 (35)",
+    "verificacao": null
+   },
+   "FBCF %PIB (WDI)": {
+    "texto": "1976–2024 (49)",
+    "verificacao": null
+   },
+   "Consumo das famílias real (WDI)": {
+    "texto": "1976–2024 (49)",
+    "verificacao": null
+   },
+   "NTA (ano-base)": {
+    "texto": "2004",
+    "verificacao": null
+   },
+   "ICIO 2025": {
+    "texto": "1995–2022",
+    "verificacao": null
+   },
+   "IO nacional": {
+    "texto": "[P] MIC: Tabelas Insumo-Produto 2020 publicadas em 24/06/2024; Excel a preços básicos + nota metodológica (PDF); tabelas completas no e-Stat. Nº de setores não consta na página.",
+    "verificacao": "P"
+   },
+   "Orçamento familiar": {
+    "texto": "[P] e-Stat, Family Income and Expenditure Survey: só tabelas (Excel 3.586, relatórios 793, banco de dados 0); último ano listado 2026 (atualização 23/10/2026). Microdados NÃO oferecidos nessa página; acesso on-site existe por outra via.",
+    "verificacao": "P"
+   },
+   "Uso do tempo": {
+    "texto": "[P] Statistics Bureau, 2021 Survey on Time Use and Leisure Activities (10ª): ~7.600 distritos, ~91.000 domicílios e ~190.000 membros de 10+ anos; data de referência 20/out; quinquenal desde 1976. A página NÃO menciona microdados.",
+    "verificacao": "P"
+   }
+  },
+  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+ },
+ {
+  "iso": "MEX",
+  "nome": "México",
+  "coortes": {
+   "composicao_perfis": "B40 C60",
+   "descendentes": "0–20",
+   "estruturadores": "21–57",
+   "ascendentes": "58+",
+   "ano_referencia": 2025,
+   "fonte": "P1_Coortes_Narayama"
+  },
+  "cobertura": {
+   "classe_provisoria": {
+    "texto": "1",
+    "valor": 1.0,
+    "natureza": "ENTRADA"
+   },
+   "perfil_consumo": {
+    "texto": "ENIGH 2024 ancorada no NTA 2010",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "insumo_produto": {
+    "texto": "MIP 2018 (263 produtos)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "ano_contas": {
+    "texto": "2024",
+    "valor": 2024.0,
+    "natureza": "OBS"
+   },
+   "afi_tempo": {
+    "texto": "Sim (ENUT 2019)",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "demografia": {
+   "tft_2025": {
+    "texto": "1.87",
+    "valor": 1.87,
+    "natureza": "OBS"
+   },
+   "pop_2025_pct": {
+    "texto": "34 / 51 / 14",
+    "valor": [
+     34.0,
+     51.0,
+     14.0
+    ],
+    "natureza": "DER"
+   },
+   "asc_estr_2025": {
+    "texto": "0.28",
+    "valor": 0.28,
+    "natureza": "DER"
+   },
+   "asc_estr_2075_tft_constante": {
+    "texto": "0.77",
+    "valor": 0.77,
+    "natureza": "PROJ"
+   },
+   "asc_estr_2075_wpp": {
+    "texto": "0.82",
+    "valor": 0.82,
+    "natureza": "PROJ"
+   },
+   "dependencia_2025_2075_wpp": {
+    "texto": "0.95 → 1.29",
+    "valor": [
+     0.95,
+     1.29
+    ],
+    "natureza": "PROJ"
+   },
+   "estruturadores_2075_rel": {
+    "texto": "94",
+    "valor": 94.0,
+    "natureza": "PROJ"
+   },
+   "descendentes_2075_rel": {
+    "texto": "67",
+    "valor": 67.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_wpp": {
+    "texto": "71",
+    "valor": 71.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_tft_constante": {
+    "texto": "79",
+    "valor": 79.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_rapida": {
+    "texto": "90",
+    "valor": 90.0,
+    "natureza": "PROJ"
+   }
+  },
+  "consumo": {
+   "cfcc_total_pct_desc_estr_asc": {
+    "texto": "25.3 / 59.6 / 15.1",
+    "valor": [
+     25.3,
+     59.6,
+     15.1
+    ],
+    "natureza": "EST"
+   },
+   "desc_privado_pesos_nta": {
+    "texto": "28.2",
+    "valor": 28.2,
+    "natureza": "EST"
+   },
+   "desc_privado_microdados_ancorados": {
+    "texto": "21.5",
+    "valor": 21.5,
+    "natureza": "EST"
+   },
+   "desc_privado_regressao_bruta": {
+    "texto": "6.6",
+    "valor": 6.6,
+    "natureza": "EST"
+   },
+   "razao_0_24_sobre_25_64": {
+    "texto": "0.73 / 0.19 / 0.74",
+    "valor": [
+     0.73,
+     0.19,
+     0.74
+    ],
+    "natureza": "EST"
+   },
+   "fator_ancoragem": {
+    "texto": "3.85",
+    "valor": 3.85,
+    "natureza": "EST"
+   }
+  },
+  "multiplicadores": {
+   "valor_adicionado": {
+    "texto": "0.718",
+    "valor": 0.718,
+    "natureza": "EST"
+   },
+   "importacoes": {
+    "texto": "0.215",
+    "valor": 0.215,
+    "natureza": "EST"
+   },
+   "edpc_sobre_emprego": {
+    "texto": "n/d",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   }
+  },
+  "valorizacao": {
+   "gasto_publico_familia_socx": {
+    "texto": "0,55 (2023)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_10pct_pib": {
+    "texto": "1.52",
+    "valor": 1.52,
+    "natureza": "SIM"
+   },
+   "maior_programa_infantil": {
+    "texto": "S174: 0,0095% do PIB (2025)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_sobre_programa": {
+    "texto": "160×",
+    "valor": null,
+    "natureza": "SIM"
+   },
+   "analogo_ifvi_empregador": {
+    "texto": "Prima de 1% do salário paga pelos empregadores ao IMSS para guarderías (receita ≈ 0,13% do PIB)",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "consumo_observado": {
+   "disponivel": false
+  },
+  "exposicao_iagen": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "media": 0.21,
+     "baixa": 0.16,
+     "alta": 0.25,
+     "fracao_alta": 0.04,
+     "fracao_baixa": 0.88
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "media": 0.25,
+     "baixa": 0.2,
+     "alta": 0.3,
+     "fracao_alta": 0.07,
+     "fracao_baixa": 0.81
+    },
+    {
+     "grupo": "Saúde",
+     "media": 0.32,
+     "baixa": 0.25,
+     "alta": 0.38,
+     "fracao_alta": 0.15,
+     "fracao_baixa": 0.68
+    },
+    {
+     "grupo": "Educação",
+     "media": 0.36,
+     "baixa": 0.29,
+     "alta": 0.44,
+     "fracao_alta": 0.2,
+     "fracao_baixa": 0.61
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "media": 0.25,
+     "baixa": 0.19,
+     "alta": 0.29,
+     "fracao_alta": 0.06,
+     "fracao_baixa": 0.82
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "media": 0.26,
+     "baixa": 0.2,
+     "alta": 0.3,
+     "fracao_alta": 0.08,
+     "fracao_baixa": 0.81
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "media": 0.25,
+     "baixa": 0.19,
+     "alta": 0.28,
+     "fracao_alta": 0.06,
+     "fracao_baixa": 0.82
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "media": 0.24,
+     "baixa": 0.18,
+     "alta": 0.28,
+     "fracao_alta": 0.07,
+     "fracao_baixa": 0.82
+    }
+   ],
+   "coortes": {
+    "descendentes_marginal": {
+     "media": 0.28,
+     "baixa": 0.22,
+     "alta": 0.33,
+     "fracao_alta": 0.11,
+     "fracao_baixa": 0.76
+    },
+    "descendentes_médio": {
+     "media": 0.25,
+     "baixa": 0.19,
+     "alta": 0.29,
+     "fracao_alta": 0.07,
+     "fracao_baixa": 0.82
+    },
+    "ascendentes_marginal": {
+     "media": 0.23,
+     "baixa": 0.18,
+     "alta": 0.27,
+     "fracao_alta": 0.06,
+     "fracao_baixa": 0.84
+    },
+    "ascendentes_médio": {
+     "media": 0.24,
+     "baixa": 0.18,
+     "alta": 0.28,
+     "fracao_alta": 0.06,
+     "fracao_baixa": 0.84
+    }
+   },
+   "natureza": "EST",
+   "fonte": "OIT, Working Paper 140 (2025), Tabela A1, e OIT/ILOSTAT (emprego por atividade e ocupação)",
+   "disponivel": true,
+   "aviso": "Exposição das tarefas ocupacionais à IA generativa (índice global da OIT); indica sobretudo transformação de ocupações, não previsão de perda de emprego."
+  },
+  "exposicao_automacao": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "media": 0.66,
+     "baixa": 0.55,
+     "alta": 0.81,
+     "fracao_alta": 0.53,
+     "fracao_baixa": 0.1
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "media": 0.61,
+     "baixa": 0.46,
+     "alta": 0.81,
+     "fracao_alta": 0.48,
+     "fracao_baixa": 0.18
+    },
+    {
+     "grupo": "Saúde",
+     "media": 0.49,
+     "baixa": 0.33,
+     "alta": 0.64,
+     "fracao_alta": 0.35,
+     "fracao_baixa": 0.36
+    },
+    {
+     "grupo": "Educação",
+     "media": 0.3,
+     "baixa": 0.17,
+     "alta": 0.37,
+     "fracao_alta": 0.17,
+     "fracao_baixa": 0.63
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "media": 0.63,
+     "baixa": 0.48,
+     "alta": 0.82,
+     "fracao_alta": 0.5,
+     "fracao_baixa": 0.16
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "media": 0.63,
+     "baixa": 0.48,
+     "alta": 0.81,
+     "fracao_alta": 0.51,
+     "fracao_baixa": 0.17
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "media": 0.61,
+     "baixa": 0.45,
+     "alta": 0.81,
+     "fracao_alta": 0.47,
+     "fracao_baixa": 0.18
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "media": 0.64,
+     "baixa": 0.51,
+     "alta": 0.81,
+     "fracao_alta": 0.52,
+     "fracao_baixa": 0.15
+    }
+   ],
+   "coortes": {
+    "descendentes_marginal": {
+     "media": 0.5,
+     "baixa": 0.38,
+     "alta": 0.63,
+     "fracao_alta": 0.38,
+     "fracao_baixa": 0.33
+    },
+    "descendentes_médio": {
+     "media": 0.6,
+     "baixa": 0.47,
+     "alta": 0.76,
+     "fracao_alta": 0.47,
+     "fracao_baixa": 0.2
+    },
+    "ascendentes_marginal": {
+     "media": 0.63,
+     "baixa": 0.51,
+     "alta": 0.8,
+     "fracao_alta": 0.51,
+     "fracao_baixa": 0.15
+    },
+    "ascendentes_médio": {
+     "media": 0.63,
+     "baixa": 0.5,
+     "alta": 0.79,
+     "fracao_alta": 0.5,
+     "fracao_baixa": 0.16
+    }
+   },
+   "natureza": "EST",
+   "fonte": "Frey e Osborne (2013), cruzamento BLS SOC-ISCO e OIT (emprego por atividade e ocupação)",
+   "disponivel": true,
+   "aviso": "Exposição técnica à automação (probabilidade de informatização de ocupações dos EUA em 2013), não previsão de perda de emprego; a IA generativa está na aba P11, só como base de referência."
+  },
+  "multiplicadores_grupos": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "parcela_gasto_pct": 25.2,
+     "vad_por_unidade": 0.745,
+     "importacao_direta": 0.061,
+     "empregos_por_milhao": 2.55,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 42,
+       "medio": 40.7
+      },
+      "ascendentes": {
+       "marginal": 46.8,
+       "medio": 44.4
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 44.3,
+       "medio": 45.9
+      },
+      "ascendentes": {
+       "marginal": 54,
+       "medio": 51.1
+      }
+     }
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "parcela_gasto_pct": 6,
+     "vad_por_unidade": 0.636,
+     "importacao_direta": 0.093,
+     "empregos_por_milhao": 1.37,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 4,
+       "medio": 13
+      },
+      "ascendentes": {
+       "marginal": 16.3,
+       "medio": 16.1
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 2.7,
+       "medio": 9.2
+      },
+      "ascendentes": {
+       "marginal": 11.8,
+       "medio": 11.6
+      }
+     }
+    },
+    {
+     "grupo": "Saúde",
+     "parcela_gasto_pct": 2.8,
+     "vad_por_unidade": 0.651,
+     "importacao_direta": 0.161,
+     "empregos_por_milhao": 1.71,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 2.5
+      },
+      "ascendentes": {
+       "marginal": 7.2,
+       "medio": 5.4
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 2.2
+      },
+      "ascendentes": {
+       "marginal": 6.4,
+       "medio": 4.8
+      }
+     }
+    },
+    {
+     "grupo": "Educação",
+     "parcela_gasto_pct": 1.6,
+     "vad_por_unidade": 0.881,
+     "importacao_direta": 0,
+     "empregos_por_milhao": 2.75,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 43.5,
+       "medio": 12
+      },
+      "ascendentes": {
+       "marginal": 0.3,
+       "medio": 3.1
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 41.8,
+       "medio": 12.4
+      },
+      "ascendentes": {
+       "marginal": 0.3,
+       "medio": 3.2
+      }
+     }
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "parcela_gasto_pct": 2.8,
+     "vad_por_unidade": 0.532,
+     "importacao_direta": 0.259,
+     "empregos_por_milhao": 2.17,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 3.5,
+       "medio": 3.2
+      },
+      "ascendentes": {
+       "marginal": 2,
+       "medio": 2.4
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 4.4,
+       "medio": 4.3
+      },
+      "ascendentes": {
+       "marginal": 2.8,
+       "medio": 3.3
+      }
+     }
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "parcela_gasto_pct": 24.3,
+     "vad_por_unidade": 0.613,
+     "importacao_direta": 0.086,
+     "empregos_por_milhao": 1.34,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 0.3,
+       "medio": 16.6
+      },
+      "ascendentes": {
+       "marginal": 16.5,
+       "medio": 17.2
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 0.2,
+       "medio": 12
+      },
+      "ascendentes": {
+       "marginal": 12.2,
+       "medio": 12.6
+      }
+     }
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "parcela_gasto_pct": 8.2,
+     "vad_por_unidade": 0.789,
+     "importacao_direta": 0.023,
+     "empregos_por_milhao": 3.34,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 4
+      },
+      "ascendentes": {
+       "marginal": 2.6,
+       "medio": 3.3
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 5.5
+      },
+      "ascendentes": {
+       "marginal": 3.7,
+       "medio": 4.7
+      }
+     }
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "parcela_gasto_pct": 17.7,
+     "vad_por_unidade": 0.716,
+     "importacao_direta": 0.105,
+     "empregos_por_milhao": 2.29,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 6.7,
+       "medio": 8.1
+      },
+      "ascendentes": {
+       "marginal": 8.3,
+       "medio": 8.2
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 6.6,
+       "medio": 8.6
+      },
+      "ascendentes": {
+       "marginal": 8.9,
+       "medio": 8.7
+      }
+     }
+    }
+   ],
+   "unidade_emprego": "puestos por milhão de pesos (2018)",
+   "metodo_emprego": "puestos da MIP por produto (conferido com OIT 2018)",
+   "ano_base": 2018,
+   "natureza": "EST",
+   "disponivel": true,
+   "aviso": "Emprego por produto da própria tabela de insumo-produto, conferido com as seções ISIC da OIT."
+  },
+  "composicao_grupos": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "descendentes": {
+      "marginal": 43.9,
+      "marginal_p5": 41.4,
+      "marginal_p95": 45.6,
+      "medio": 38.5
+     },
+     "estruturadores": {
+      "marginal": 37.3,
+      "marginal_p5": 36.9,
+      "marginal_p95": 37.7,
+      "medio": 38.1
+     },
+     "ascendentes": {
+      "marginal": 43.2,
+      "marginal_p5": 42.3,
+      "marginal_p95": 44,
+      "medio": 41.2
+     }
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "descendentes": {
+      "marginal": 4.9,
+      "marginal_p5": 2.9,
+      "marginal_p95": 6.5,
+      "medio": 14.4
+     },
+     "estruturadores": {
+      "marginal": 15.5,
+      "marginal_p5": 15.2,
+      "marginal_p95": 15.8,
+      "medio": 16
+     },
+     "ascendentes": {
+      "marginal": 17.6,
+      "marginal_p5": 17.2,
+      "marginal_p95": 18.1,
+      "medio": 17.5
+     }
+    },
+    {
+     "grupo": "Saúde",
+     "descendentes": {
+      "marginal": 0,
+      "marginal_p5": 0,
+      "marginal_p95": 0,
+      "medio": 2.7
+     },
+     "estruturadores": {
+      "marginal": 2.9,
+      "marginal_p5": 2.8,
+      "marginal_p95": 3,
+      "medio": 3
+     },
+     "ascendentes": {
+      "marginal": 7.6,
+      "marginal_p5": 7.1,
+      "marginal_p95": 8.1,
+      "medio": 5.7
+     }
+    },
+    {
+     "grupo": "Educação",
+     "descendentes": {
+      "marginal": 38.4,
+      "marginal_p5": 35.7,
+      "marginal_p95": 40.6,
+      "medio": 9.6
+     },
+     "estruturadores": {
+      "marginal": 4.8,
+      "marginal_p5": 4.6,
+      "marginal_p95": 5.1,
+      "medio": 6
+     },
+     "ascendentes": {
+      "marginal": 0.2,
+      "marginal_p5": 0,
+      "marginal_p95": 0.5,
+      "medio": 2.4
+     }
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "descendentes": {
+      "marginal": 5.1,
+      "marginal_p5": 4.4,
+      "marginal_p95": 5.5,
+      "medio": 4.2
+     },
+     "estruturadores": {
+      "marginal": 4.2,
+      "marginal_p5": 4.2,
+      "marginal_p95": 4.3,
+      "medio": 4.1
+     },
+     "ascendentes": {
+      "marginal": 2.6,
+      "marginal_p5": 2.5,
+      "marginal_p95": 2.7,
+      "medio": 3.1
+     }
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "descendentes": {
+      "marginal": 0.4,
+      "marginal_p5": 0,
+      "marginal_p95": 3.9,
+      "medio": 19
+     },
+     "estruturadores": {
+      "marginal": 22.7,
+      "marginal_p5": 22.3,
+      "marginal_p95": 22.9,
+      "medio": 20.8
+     },
+     "ascendentes": {
+      "marginal": 18.5,
+      "marginal_p5": 17.7,
+      "marginal_p95": 19.3,
+      "medio": 19.3
+     }
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "descendentes": {
+      "marginal": 0,
+      "marginal_p5": 0,
+      "marginal_p95": 0.4,
+      "medio": 3.5
+     },
+     "estruturadores": {
+      "marginal": 4.3,
+      "marginal_p5": 4.2,
+      "marginal_p95": 4.4,
+      "medio": 4
+     },
+     "ascendentes": {
+      "marginal": 2.3,
+      "marginal_p5": 2,
+      "marginal_p95": 2.5,
+      "medio": 2.9
+     }
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "descendentes": {
+      "marginal": 7.3,
+      "marginal_p5": 6.3,
+      "marginal_p95": 8,
+      "medio": 8
+     },
+     "estruturadores": {
+      "marginal": 8.3,
+      "marginal_p5": 8.2,
+      "marginal_p95": 8.5,
+      "medio": 8
+     },
+     "ascendentes": {
+      "marginal": 8,
+      "marginal_p5": 7.7,
+      "marginal_p95": 8.2,
+      "medio": 7.9
+     }
+    }
+   ],
+   "fonte": "ENIGH 2024 (INEGI)",
+   "natureza": "EST",
+   "domicilios": 91414,
+   "cobertura_gastos": 0.973,
+   "sobreposicao_desc_asc": {
+    "marginal": 0.59,
+    "medio": 0.91
+   },
+   "sobreposicao_desc_estr": {
+    "marginal": 0.59,
+    "medio": 0.96
+   },
+   "disponivel": true,
+   "aviso": "Só gasto privado das famílias; marginal = o que mais uma pessoa da coorte acrescenta ao gasto do domicílio, médio = divisão igual do gasto do domicílio."
+  },
+  "incremento_crianca": {
+   "disponivel": true,
+   "natureza": "EST",
+   "n_pontos": 10,
+   "unidade_consumo": "pesos de 2018",
+   "unidade_vad": "pesos de 2018",
+   "vad_por_crianca_ano": {
+    "mediana": 86283,
+    "min": 66667,
+    "max": 90196
+   },
+   "cfcc_por_crianca_ano": 115900,
+   "vad_sobre_cfcc": 0.74,
+   "empregos_brutos_por_crianca": {
+    "mediana": 0.244,
+    "min": 0.24,
+    "max": 0.246
+   },
+   "empregos_liquidos_50": 0.127,
+   "empregos_liquidos_100": 0.0105,
+   "criancas_por_emprego_bruto": 4.1,
+   "aviso": "Limite superior de demanda por criança adicional e por ano na coorte; não é efeito causal nem inclui a produção futura da criança.",
+   "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
+  },
+  "disponibilidade_de_dados": {
+   "N* (pipeline 2024)": {
+    "texto": "1.67",
+    "verificacao": null
+   },
+   "Demografia anual (WPP local)": {
+    "texto": "1950–2101 (L)",
+    "verificacao": null
+   },
+   "PIB real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "VA por setor (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Emprego por setor (WDI)": {
+    "texto": "1991–2025 (35)",
+    "verificacao": null
+   },
+   "FBCF %PIB (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Consumo das famílias real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "NTA (ano-base)": {
+    "texto": "2010",
+    "verificacao": null
+   },
+   "ICIO 2025": {
+    "texto": "1995–2022",
+    "verificacao": null
+   },
+   "IO nacional": {
+    "texto": "[P] INEGI, comunicado 236/24 (23/abr/2024): COU e MIP estaduais e multiestaduais atualizados ao ano-base 2018 (35 indústrias, 78 produtos); o Sistema de Cuentas Nacionales base 2018 inclui COU nacional; o marco insumo-produto do INEGI é publicado a cada 5 anos. Último ano nacional além de 2018 não confirmado.",
+    "verificacao": "P"
+   },
+   "Orçamento familiar": {
+    "texto": "[P] INEGI, catálogo RNM 1116 (lido): ENIGH 2024 Nueva Serie, uso público; 105.718 moradias selecionadas (106.884 domicílios); campo 21/ago–28/nov/2024. PDF 'Descrição da base de dados' lido: tabelas POBLACION (com catálogo de parentesco, e a variável hijos_viv = filhos nascidos vivos), GASTOSHOGAR, GASTOSPERSONA, INGRESOS, TRABAJOS.",
+    "verificacao": "P"
+   },
+   "Uso do tempo": {
+    "texto": "[P] INEGI/INMUJERES, catálogo RNM 618 (lido): ENUT 2019 — 32.009 moradias selecionadas, 28.679 entrevistas completas; residentes de 12+ anos; cobertura nacional; microdados de 'uso público' com download direto; tabelas TVIVIENDA, THOGAR, TSDEM e TMODULO. A página registra datas de campo divergentes entre texto e cronograma.",
+    "verificacao": "P"
+   }
+  },
+  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+ },
+ {
+  "iso": "ARG",
+  "nome": "Argentina",
+  "coortes": {
+   "composicao_perfis": "C85 D15",
+   "descendentes": "0–21",
+   "estruturadores": "22–59",
+   "ascendentes": "60+",
+   "ano_referencia": 2025,
+   "fonte": "P1_Coortes_Narayama"
+  },
+  "cobertura": {
+   "classe_provisoria": {
+    "texto": "1",
+    "valor": 1.0,
+    "natureza": "ENTRADA"
+   },
+   "perfil_consumo": {
+    "texto": "ENGHo 2017/18 ancorada no NTA 2010",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "insumo_produto": {
+    "texto": "COU 2018 (223 produtos × 107 indústrias)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "ano_contas": {
+    "texto": "2018",
+    "valor": 2018.0,
+    "natureza": "OBS"
+   },
+   "afi_tempo": {
+    "texto": "Sim (ENUT 2021)",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "demografia": {
+   "tft_2025": {
+    "texto": "1.50",
+    "valor": 1.5,
+    "natureza": "OBS"
+   },
+   "pop_2025_pct": {
+    "texto": "32 / 51 / 17",
+    "valor": [
+     32.0,
+     51.0,
+     17.0
+    ],
+    "natureza": "DER"
+   },
+   "asc_estr_2025": {
+    "texto": "0.33",
+    "valor": 0.33,
+    "natureza": "DER"
+   },
+   "asc_estr_2075_tft_constante": {
+    "texto": "0.89",
+    "valor": 0.89,
+    "natureza": "PROJ"
+   },
+   "asc_estr_2075_wpp": {
+    "texto": "0.88",
+    "valor": 0.88,
+    "natureza": "PROJ"
+   },
+   "dependencia_2025_2075_wpp": {
+    "texto": "0.96 → 1.32",
+    "valor": [
+     0.96,
+     1.32
+    ],
+    "natureza": "PROJ"
+   },
+   "estruturadores_2075_rel": {
+    "texto": "83",
+    "valor": 83.0,
+    "natureza": "PROJ"
+   },
+   "descendentes_2075_rel": {
+    "texto": "59",
+    "valor": 59.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_wpp": {
+    "texto": "71",
+    "valor": 71.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_tft_constante": {
+    "texto": "68",
+    "valor": 68.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_rapida": {
+    "texto": "96",
+    "valor": 96.0,
+    "natureza": "PROJ"
+   }
+  },
+  "consumo": {
+   "cfcc_total_pct_desc_estr_asc": {
+    "texto": "25.0 / 56.0 / 19.0",
+    "valor": [
+     25.0,
+     56.0,
+     19.0
+    ],
+    "natureza": "EST"
+   },
+   "desc_privado_pesos_nta": {
+    "texto": "21.5",
+    "valor": 21.5,
+    "natureza": "EST"
+   },
+   "desc_privado_microdados_ancorados": {
+    "texto": "21.0",
+    "valor": 21.0,
+    "natureza": "EST"
+   },
+   "desc_privado_regressao_bruta": {
+    "texto": "6.0",
+    "valor": 6.0,
+    "natureza": "EST"
+   },
+   "razao_0_24_sobre_25_64": {
+    "texto": "0.58 / 0.13 / 0.72",
+    "valor": [
+     0.58,
+     0.13,
+     0.72
+    ],
+    "natureza": "EST"
+   },
+   "fator_ancoragem": {
+    "texto": "4.37",
+    "valor": 4.37,
+    "natureza": "EST"
+   }
+  },
+  "multiplicadores": {
+   "valor_adicionado": {
+    "texto": "0.741",
+    "valor": 0.741,
+    "natureza": "EST"
+   },
+   "importacoes": {
+    "texto": "0.218",
+    "valor": 0.218,
+    "natureza": "EST"
+   },
+   "edpc_sobre_emprego": {
+    "texto": "78%",
+    "valor": null,
+    "natureza": "EST"
+   }
+  },
+  "valorizacao": {
+   "gasto_publico_familia_socx": {
+    "texto": "n/d",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "OBS"
+   },
+   "dividendo_10pct_pib": {
+    "texto": "1.46",
+    "valor": 1.46,
+    "natureza": "SIM"
+   },
+   "maior_programa_infantil": {
+    "texto": "AUH: 0,61% do PIB (2018)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_sobre_programa": {
+    "texto": "2.4×",
+    "valor": null,
+    "natureza": "SIM"
+   },
+   "analogo_ifvi_empregador": {
+    "texto": "Obrigação de sala maternal para ≥ 100 pessoas (Decreto 144/2022); dedução de Ganancias por filho",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "consumo_observado": {
+   "disponivel": false
+  },
+  "exposicao_iagen": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "media": 0.26,
+     "baixa": 0.21,
+     "alta": 0.3,
+     "fracao_alta": 0.09,
+     "fracao_baixa": 0.8
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "media": 0.27,
+     "baixa": 0.21,
+     "alta": 0.31,
+     "fracao_alta": 0.1,
+     "fracao_baixa": 0.78
+    },
+    {
+     "grupo": "Saúde",
+     "media": 0.34,
+     "baixa": 0.27,
+     "alta": 0.41,
+     "fracao_alta": 0.19,
+     "fracao_baixa": 0.63
+    },
+    {
+     "grupo": "Educação",
+     "media": 0.34,
+     "baixa": 0.27,
+     "alta": 0.42,
+     "fracao_alta": 0.19,
+     "fracao_baixa": 0.64
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "media": 0.25,
+     "baixa": 0.2,
+     "alta": 0.29,
+     "fracao_alta": 0.08,
+     "fracao_baixa": 0.82
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "media": 0.28,
+     "baixa": 0.22,
+     "alta": 0.33,
+     "fracao_alta": 0.12,
+     "fracao_baixa": 0.76
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "media": 0.28,
+     "baixa": 0.22,
+     "alta": 0.33,
+     "fracao_alta": 0.1,
+     "fracao_baixa": 0.76
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "media": 0.25,
+     "baixa": 0.19,
+     "alta": 0.29,
+     "fracao_alta": 0.09,
+     "fracao_baixa": 0.79
+    }
+   ],
+   "coortes": {
+    "descendentes_marginal": {
+     "media": 0.28,
+     "baixa": 0.22,
+     "alta": 0.33,
+     "fracao_alta": 0.12,
+     "fracao_baixa": 0.76
+    },
+    "descendentes_médio": {
+     "media": 0.28,
+     "baixa": 0.22,
+     "alta": 0.32,
+     "fracao_alta": 0.11,
+     "fracao_baixa": 0.76
+    },
+    "ascendentes_marginal": {
+     "media": 0.28,
+     "baixa": 0.22,
+     "alta": 0.33,
+     "fracao_alta": 0.11,
+     "fracao_baixa": 0.75
+    },
+    "ascendentes_médio": {
+     "media": 0.28,
+     "baixa": 0.22,
+     "alta": 0.33,
+     "fracao_alta": 0.11,
+     "fracao_baixa": 0.76
+    }
+   },
+   "natureza": "EST",
+   "fonte": "OIT, Working Paper 140 (2025), Tabela A1, e OIT/ILOSTAT (emprego por atividade e ocupação)",
+   "disponivel": true,
+   "aviso": "Exposição das tarefas ocupacionais à IA generativa (índice global da OIT); indica sobretudo transformação de ocupações, não previsão de perda de emprego."
+  },
+  "exposicao_automacao": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "media": 0.63,
+     "baixa": 0.5,
+     "alta": 0.79,
+     "fracao_alta": 0.52,
+     "fracao_baixa": 0.18
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "media": 0.62,
+     "baixa": 0.49,
+     "alta": 0.79,
+     "fracao_alta": 0.51,
+     "fracao_baixa": 0.19
+    },
+    {
+     "grupo": "Saúde",
+     "media": 0.5,
+     "baixa": 0.34,
+     "alta": 0.65,
+     "fracao_alta": 0.36,
+     "fracao_baixa": 0.36
+    },
+    {
+     "grupo": "Educação",
+     "media": 0.37,
+     "baixa": 0.24,
+     "alta": 0.46,
+     "fracao_alta": 0.24,
+     "fracao_baixa": 0.53
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "media": 0.63,
+     "baixa": 0.51,
+     "alta": 0.79,
+     "fracao_alta": 0.53,
+     "fracao_baixa": 0.17
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "media": 0.62,
+     "baixa": 0.49,
+     "alta": 0.78,
+     "fracao_alta": 0.52,
+     "fracao_baixa": 0.2
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "media": 0.57,
+     "baixa": 0.41,
+     "alta": 0.78,
+     "fracao_alta": 0.44,
+     "fracao_baixa": 0.23
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "media": 0.62,
+     "baixa": 0.48,
+     "alta": 0.8,
+     "fracao_alta": 0.5,
+     "fracao_baixa": 0.17
+    }
+   ],
+   "coortes": {
+    "descendentes_marginal": {
+     "media": 0.56,
+     "baixa": 0.43,
+     "alta": 0.7,
+     "fracao_alta": 0.45,
+     "fracao_baixa": 0.27
+    },
+    "descendentes_médio": {
+     "media": 0.59,
+     "baixa": 0.45,
+     "alta": 0.76,
+     "fracao_alta": 0.47,
+     "fracao_baixa": 0.23
+    },
+    "ascendentes_marginal": {
+     "media": 0.59,
+     "baixa": 0.45,
+     "alta": 0.76,
+     "fracao_alta": 0.48,
+     "fracao_baixa": 0.22
+    },
+    "ascendentes_médio": {
+     "media": 0.59,
+     "baixa": 0.46,
+     "alta": 0.77,
+     "fracao_alta": 0.48,
+     "fracao_baixa": 0.22
+    }
+   },
+   "natureza": "EST",
+   "fonte": "Frey e Osborne (2013), cruzamento BLS SOC-ISCO e OIT (emprego por atividade e ocupação)",
+   "disponivel": true,
+   "aviso": "Exposição técnica à automação (probabilidade de informatização de ocupações dos EUA em 2013), não previsão de perda de emprego; a IA generativa está na aba P11, só como base de referência."
+  },
+  "multiplicadores_grupos": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "parcela_gasto_pct": 23.6,
+     "vad_por_unidade": 0.832,
+     "importacao_direta": 0.025,
+     "empregos_por_milhao": 0.73,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 58.9,
+       "medio": 27
+      },
+      "ascendentes": {
+       "marginal": 28.3,
+       "medio": 26.3
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 48.6,
+       "medio": 18.8
+      },
+      "ascendentes": {
+       "marginal": 19.9,
+       "medio": 18.3
+      }
+     }
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "parcela_gasto_pct": 7,
+     "vad_por_unidade": 0.699,
+     "importacao_direta": 0.108,
+     "empregos_por_milhao": 0.67,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 11.3,
+       "medio": 17.9
+      },
+      "ascendentes": {
+       "marginal": 18.6,
+       "medio": 19.8
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 10.3,
+       "medio": 13.7
+      },
+      "ascendentes": {
+       "marginal": 14.5,
+       "medio": 15.2
+      }
+     }
+    },
+    {
+     "grupo": "Saúde",
+     "parcela_gasto_pct": 10.6,
+     "vad_por_unidade": 0.795,
+     "importacao_direta": 0.096,
+     "empregos_por_milhao": 1.11,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 5
+      },
+      "ascendentes": {
+       "marginal": 15.4,
+       "medio": 12.3
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 5.6
+      },
+      "ascendentes": {
+       "marginal": 17.3,
+       "medio": 13.8
+      }
+     }
+    },
+    {
+     "grupo": "Educação",
+     "parcela_gasto_pct": 2.9,
+     "vad_por_unidade": 0.926,
+     "importacao_direta": 0,
+     "empregos_por_milhao": 1.47,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 17.7,
+       "medio": 5.8
+      },
+      "ascendentes": {
+       "marginal": 0,
+       "medio": 1
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 26.6,
+       "medio": 7.3
+      },
+      "ascendentes": {
+       "marginal": 0,
+       "medio": 1.3
+      }
+     }
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "parcela_gasto_pct": 3.1,
+     "vad_por_unidade": 0.575,
+     "importacao_direta": 0.263,
+     "empregos_por_milhao": 0.58,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 9.8,
+       "medio": 5.9
+      },
+      "ascendentes": {
+       "marginal": 2.9,
+       "medio": 3.9
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 9.3,
+       "medio": 4.7
+      },
+      "ascendentes": {
+       "marginal": 2.4,
+       "medio": 3.1
+      }
+     }
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "parcela_gasto_pct": 18.8,
+     "vad_por_unidade": 0.673,
+     "importacao_direta": 0.173,
+     "empregos_por_milhao": 0.86,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 17.2
+      },
+      "ascendentes": {
+       "marginal": 16,
+       "medio": 16.2
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 17.6
+      },
+      "ascendentes": {
+       "marginal": 16.5,
+       "medio": 16.7
+      }
+     }
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "parcela_gasto_pct": 12.2,
+     "vad_por_unidade": 0.708,
+     "importacao_direta": 0.185,
+     "empregos_por_milhao": 1.16,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 14.2
+      },
+      "ascendentes": {
+       "marginal": 11.7,
+       "medio": 13
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 18.5
+      },
+      "ascendentes": {
+       "marginal": 15.5,
+       "medio": 17.1
+      }
+     }
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "parcela_gasto_pct": 15.3,
+     "vad_por_unidade": 0.857,
+     "importacao_direta": 0.046,
+     "empregos_por_milhao": 2.1,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 2.3,
+       "medio": 7.1
+      },
+      "ascendentes": {
+       "marginal": 7.1,
+       "medio": 7.4
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 5.2,
+       "medio": 13.8
+      },
+      "ascendentes": {
+       "marginal": 14,
+       "medio": 14.5
+      }
+     }
+    }
+   ],
+   "unidade_emprego": "empregos por milhão de pesos (2018)",
+   "metodo_emprego": "seções ISIC (OIT 2019, urbano, escalado ao emprego nacional)",
+   "ano_base": 2018,
+   "natureza": "EST",
+   "disponivel": true,
+   "aviso": "Emprego por grupo por seção ISIC da OIT (20 seções): separa, por exemplo, educação de finanças, mas produtos da mesma seção têm a mesma intensidade."
+  },
+  "composicao_grupos": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "descendentes": {
+      "marginal": 56.3,
+      "marginal_p5": 49.4,
+      "marginal_p95": 62.2,
+      "medio": 24.1
+     },
+     "estruturadores": {
+      "marginal": 20.2,
+      "marginal_p5": 19.7,
+      "marginal_p95": 20.8,
+      "medio": 21.6
+     },
+     "ascendentes": {
+      "marginal": 25.5,
+      "marginal_p5": 24.3,
+      "marginal_p95": 26.6,
+      "medio": 23.5
+     }
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "descendentes": {
+      "marginal": 12.9,
+      "marginal_p5": 8,
+      "marginal_p95": 16.6,
+      "medio": 19
+     },
+     "estruturadores": {
+      "marginal": 19,
+      "marginal_p5": 18.5,
+      "marginal_p95": 19.5,
+      "medio": 20.1
+     },
+     "ascendentes": {
+      "marginal": 19.9,
+      "marginal_p5": 19.2,
+      "marginal_p95": 20.8,
+      "medio": 21.1
+     }
+    },
+    {
+     "grupo": "Saúde",
+     "descendentes": {
+      "marginal": 0,
+      "marginal_p5": 0,
+      "marginal_p95": 0,
+      "medio": 4.7
+     },
+     "estruturadores": {
+      "marginal": 4.9,
+      "marginal_p5": 4.6,
+      "marginal_p95": 5.4,
+      "medio": 5.4
+     },
+     "ascendentes": {
+      "marginal": 14.5,
+      "marginal_p5": 13.5,
+      "marginal_p95": 15.3,
+      "medio": 11.5
+     }
+    },
+    {
+     "grupo": "Educação",
+     "descendentes": {
+      "marginal": 15.2,
+      "marginal_p5": 12.5,
+      "marginal_p95": 18,
+      "medio": 4.6
+     },
+     "estruturadores": {
+      "marginal": 2.9,
+      "marginal_p5": 2.5,
+      "marginal_p95": 3.2,
+      "medio": 3.1
+     },
+     "ascendentes": {
+      "marginal": 0,
+      "marginal_p5": 0,
+      "marginal_p95": 0.1,
+      "medio": 0.8
+     }
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "descendentes": {
+      "marginal": 13.5,
+      "marginal_p5": 10.7,
+      "marginal_p95": 15.7,
+      "medio": 7.6
+     },
+     "estruturadores": {
+      "marginal": 6.9,
+      "marginal_p5": 6.6,
+      "marginal_p95": 7.3,
+      "medio": 7.1
+     },
+     "ascendentes": {
+      "marginal": 3.8,
+      "marginal_p5": 3.5,
+      "marginal_p95": 4.2,
+      "medio": 5
+     }
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "descendentes": {
+      "marginal": 0,
+      "marginal_p5": 0,
+      "marginal_p95": 1.4,
+      "medio": 19
+     },
+     "estruturadores": {
+      "marginal": 22.4,
+      "marginal_p5": 21.8,
+      "marginal_p95": 23,
+      "medio": 20.2
+     },
+     "ascendentes": {
+      "marginal": 17.8,
+      "marginal_p5": 16.7,
+      "marginal_p95": 18.6,
+      "medio": 17.9
+     }
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "descendentes": {
+      "marginal": 0,
+      "marginal_p5": 0,
+      "marginal_p95": 4.2,
+      "medio": 14.8
+     },
+     "estruturadores": {
+      "marginal": 17,
+      "marginal_p5": 16.6,
+      "marginal_p95": 17.4,
+      "medio": 15.9
+     },
+     "ascendentes": {
+      "marginal": 12.3,
+      "marginal_p5": 11.2,
+      "marginal_p95": 13.4,
+      "medio": 13.6
+     }
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "descendentes": {
+      "marginal": 2.1,
+      "marginal_p5": 0,
+      "marginal_p95": 4.1,
+      "medio": 6.1
+     },
+     "estruturadores": {
+      "marginal": 6.7,
+      "marginal_p5": 6.4,
+      "marginal_p95": 7,
+      "medio": 6.5
+     },
+     "ascendentes": {
+      "marginal": 6.2,
+      "marginal_p5": 5.7,
+      "marginal_p95": 6.7,
+      "medio": 6.5
+     }
+    }
+   ],
+   "fonte": "ENGHo 2017/18 (INDEC)",
+   "natureza": "EST",
+   "domicilios": 21547,
+   "cobertura_gastos": 1,
+   "sobreposicao_desc_asc": {
+    "marginal": 0.44,
+    "medio": 0.91
+   },
+   "sobreposicao_desc_estr": {
+    "marginal": 0.45,
+    "medio": 0.96
+   },
+   "disponivel": true,
+   "aviso": "Só gasto privado das famílias; marginal = o que mais uma pessoa da coorte acrescenta ao gasto do domicílio, médio = divisão igual do gasto do domicílio."
+  },
+  "incremento_crianca": {
+   "disponivel": true,
+   "natureza": "EST",
+   "n_pontos": 9,
+   "unidade_consumo": "pesos de 2018",
+   "unidade_vad": "pesos de 2018",
+   "vad_por_crianca_ano": {
+    "mediana": 158763,
+    "min": 157831,
+    "max": 166667
+   },
+   "cfcc_por_crianca_ano": 200000,
+   "vad_sobre_cfcc": 0.79,
+   "empregos_brutos_por_crianca": {
+    "mediana": 0.233,
+    "min": 0.233,
+    "max": 0.24
+   },
+   "empregos_liquidos_50": 0.121,
+   "empregos_liquidos_100": 0.0089,
+   "criancas_por_emprego_bruto": 4.3,
+   "aviso": "Limite superior de demanda por criança adicional e por ano na coorte; não é efeito causal nem inclui a produção futura da criança.",
+   "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
+  },
+  "disponibilidade_de_dados": {
+   "N* (pipeline 2024)": {
+    "texto": "1.06",
+    "verificacao": null
+   },
+   "Demografia anual (WPP local)": {
+    "texto": "1950–2101 (L)",
+    "verificacao": null
+   },
+   "PIB real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "VA por setor (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Emprego por setor (WDI)": {
+    "texto": "1991–2025 (35)",
+    "verificacao": null
+   },
+   "FBCF %PIB (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Consumo das famílias real (WDI)": {
+    "texto": "1993–2025 (33)",
+    "verificacao": null
+   },
+   "NTA (ano-base)": {
+    "texto": "2010",
+    "verificacao": null
+   },
+   "ICIO 2025": {
+    "texto": "1995–2022",
+    "verificacao": null
+   },
+   "IO nacional": {
+    "texto": "[P] INDEC: Cuadro de oferta y utilización (COU) 2018, publ. ago/2021 (PDF aberto). Arquivos COU 2021 e 2023 aparecem em resultado de busca (não abertos). MIP oficial: só a MIPAr 1997 (AAEP 2025, via busca).",
+    "verificacao": "P"
+   },
+   "Orçamento familiar": {
+    "texto": "[P] INDEC, manual de uso da base usuária da ENGHo 2017-2018 (dez/2020, PDF lido): arquivos ENGHo2018_personas.txt e ENGHo2018_gastos.txt; campo nov/2017–nov/2018; inclui 'relação de parentesco com o chefe do domicílio'. Link de download dos arquivos não aberto.",
+    "verificacao": "P"
+   },
+   "Uso do tempo": {
+    "texto": "[P] INDEC, manual de uso da base usuária da ENUT 2021 (nov/2022, PDF lido): quatro arquivos — base, miembros (1 registro por integrante do domicílio), diario (faixas de 10 min) e replicas; o questionário inclui 'relação de parentesco com o chefe do domicílio'. Link de download não aberto.",
+    "verificacao": "P"
+   }
+  },
+  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+ },
+ {
+  "iso": "BRA",
+  "nome": "Brasil",
+  "coortes": {
+   "composicao_perfis": "B30 C40 D30",
+   "descendentes": "0–21",
+   "estruturadores": "22–58",
+   "ascendentes": "59+",
+   "ano_referencia": 2025,
+   "fonte": "P1_Coortes_Narayama"
+  },
+  "cobertura": {
+   "classe_provisoria": {
+    "texto": "2",
+    "valor": 2.0,
+    "natureza": "ENTRADA"
+   },
+   "perfil_consumo": {
+    "texto": "POF 2017-18 ancorada no NTA 2002",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "insumo_produto": {
+    "texto": "MIP 2015 (127 produtos × 67 atividades)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "ano_contas": {
+    "texto": "2018",
+    "valor": 2018.0,
+    "natureza": "OBS"
+   },
+   "afi_tempo": {
+    "texto": "Lacuna mantida: a PNAD Contínua não separa o cuidado de crianças",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "demografia": {
+   "tft_2025": {
+    "texto": "1.60",
+    "valor": 1.6,
+    "natureza": "OBS"
+   },
+   "pop_2025_pct": {
+    "texto": "29 / 53 / 18",
+    "valor": [
+     29.0,
+     53.0,
+     18.0
+    ],
+    "natureza": "DER"
+   },
+   "asc_estr_2025": {
+    "texto": "0.33",
+    "valor": 0.33,
+    "natureza": "DER"
+   },
+   "asc_estr_2075_tft_constante": {
+    "texto": "0.90",
+    "valor": 0.9,
+    "natureza": "PROJ"
+   },
+   "asc_estr_2075_wpp": {
+    "texto": "0.91",
+    "valor": 0.91,
+    "natureza": "PROJ"
+   },
+   "dependencia_2025_2075_wpp": {
+    "texto": "0.88 → 1.38",
+    "valor": [
+     0.88,
+     1.38
+    ],
+    "natureza": "PROJ"
+   },
+   "estruturadores_2075_rel": {
+    "texto": "73",
+    "valor": 73.0,
+    "natureza": "PROJ"
+   },
+   "descendentes_2075_rel": {
+    "texto": "61",
+    "valor": 61.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_wpp": {
+    "texto": "85",
+    "valor": 85.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_tft_constante": {
+    "texto": "86",
+    "valor": 86.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_rapida": {
+    "texto": "113",
+    "valor": 113.0,
+    "natureza": "PROJ"
+   }
+  },
+  "consumo": {
+   "cfcc_total_pct_desc_estr_asc": {
+    "texto": "23.2 / 58.8 / 18.0",
+    "valor": [
+     23.2,
+     58.8,
+     18.0
+    ],
+    "natureza": "EST"
+   },
+   "desc_privado_pesos_nta": {
+    "texto": "18.1",
+    "valor": 18.1,
+    "natureza": "EST"
+   },
+   "desc_privado_microdados_ancorados": {
+    "texto": "18.9",
+    "valor": 18.9,
+    "natureza": "EST"
+   },
+   "desc_privado_regressao_bruta": {
+    "texto": "6.6",
+    "valor": 6.6,
+    "natureza": "EST"
+   },
+   "razao_0_24_sobre_25_64": {
+    "texto": "0.54 / 0.16 / 0.72",
+    "valor": [
+     0.54,
+     0.16,
+     0.72
+    ],
+    "natureza": "EST"
+   },
+   "fator_ancoragem": {
+    "texto": "3.39",
+    "valor": 3.39,
+    "natureza": "EST"
+   }
+  },
+  "multiplicadores": {
+   "valor_adicionado": {
+    "texto": "0.719",
+    "valor": 0.719,
+    "natureza": "EST"
+   },
+   "importacoes": {
+    "texto": "0.117",
+    "valor": 0.117,
+    "natureza": "EST"
+   },
+   "edpc_sobre_emprego": {
+    "texto": "74%",
+    "valor": null,
+    "natureza": "EST"
+   }
+  },
+  "valorizacao": {
+   "gasto_publico_familia_socx": {
+    "texto": "n/d",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "OBS"
+   },
+   "dividendo_10pct_pib": {
+    "texto": "1.22",
+    "valor": 1.22,
+    "natureza": "SIM"
+   },
+   "maior_programa_infantil": {
+    "texto": "Bolsa Família: 1,11% do PIB (2026)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_sobre_programa": {
+    "texto": "1.1×",
+    "valor": null,
+    "natureza": "SIM"
+   },
+   "analogo_ifvi_empregador": {
+    "texto": "Empresa Cidadã (dedução do IRPJ, R$ 0,51 bi); doações dedutíveis aos fundos da criança (R$ 1,02 bi)",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "consumo_observado": {
+   "disponivel": false
+  },
+  "exposicao_iagen": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "media": 0.23,
+     "baixa": 0.18,
+     "alta": 0.27,
+     "fracao_alta": 0.06,
+     "fracao_baixa": 0.84
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "media": 0.27,
+     "baixa": 0.21,
+     "alta": 0.31,
+     "fracao_alta": 0.09,
+     "fracao_baixa": 0.78
+    },
+    {
+     "grupo": "Saúde",
+     "media": 0.31,
+     "baixa": 0.25,
+     "alta": 0.37,
+     "fracao_alta": 0.15,
+     "fracao_baixa": 0.69
+    },
+    {
+     "grupo": "Educação",
+     "media": 0.35,
+     "baixa": 0.28,
+     "alta": 0.42,
+     "fracao_alta": 0.2,
+     "fracao_baixa": 0.62
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "media": 0.26,
+     "baixa": 0.2,
+     "alta": 0.3,
+     "fracao_alta": 0.08,
+     "fracao_baixa": 0.8
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "media": 0.26,
+     "baixa": 0.21,
+     "alta": 0.31,
+     "fracao_alta": 0.09,
+     "fracao_baixa": 0.79
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "media": 0.26,
+     "baixa": 0.2,
+     "alta": 0.3,
+     "fracao_alta": 0.07,
+     "fracao_baixa": 0.79
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "media": 0.23,
+     "baixa": 0.17,
+     "alta": 0.27,
+     "fracao_alta": 0.06,
+     "fracao_baixa": 0.83
+    }
+   ],
+   "coortes": {
+    "descendentes_marginal": {
+     "media": 0.31,
+     "baixa": 0.24,
+     "alta": 0.37,
+     "fracao_alta": 0.15,
+     "fracao_baixa": 0.7
+    },
+    "descendentes_médio": {
+     "media": 0.27,
+     "baixa": 0.21,
+     "alta": 0.32,
+     "fracao_alta": 0.1,
+     "fracao_baixa": 0.77
+    },
+    "ascendentes_marginal": {
+     "media": 0.27,
+     "baixa": 0.21,
+     "alta": 0.31,
+     "fracao_alta": 0.1,
+     "fracao_baixa": 0.78
+    },
+    "ascendentes_médio": {
+     "media": 0.27,
+     "baixa": 0.21,
+     "alta": 0.31,
+     "fracao_alta": 0.1,
+     "fracao_baixa": 0.78
+    }
+   },
+   "natureza": "EST",
+   "fonte": "OIT, Working Paper 140 (2025), Tabela A1, e OIT/ILOSTAT (emprego por atividade e ocupação)",
+   "disponivel": true,
+   "aviso": "Exposição das tarefas ocupacionais à IA generativa (índice global da OIT); indica sobretudo transformação de ocupações, não previsão de perda de emprego."
+  },
+  "exposicao_automacao": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "media": 0.64,
+     "baixa": 0.51,
+     "alta": 0.8,
+     "fracao_alta": 0.51,
+     "fracao_baixa": 0.15
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "media": 0.6,
+     "baixa": 0.46,
+     "alta": 0.79,
+     "fracao_alta": 0.48,
+     "fracao_baixa": 0.2
+    },
+    {
+     "grupo": "Saúde",
+     "media": 0.52,
+     "baixa": 0.37,
+     "alta": 0.69,
+     "fracao_alta": 0.39,
+     "fracao_baixa": 0.32
+    },
+    {
+     "grupo": "Educação",
+     "media": 0.37,
+     "baixa": 0.24,
+     "alta": 0.47,
+     "fracao_alta": 0.25,
+     "fracao_baixa": 0.52
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "media": 0.61,
+     "baixa": 0.46,
+     "alta": 0.8,
+     "fracao_alta": 0.48,
+     "fracao_baixa": 0.19
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "media": 0.62,
+     "baixa": 0.48,
+     "alta": 0.79,
+     "fracao_alta": 0.5,
+     "fracao_baixa": 0.19
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "media": 0.58,
+     "baixa": 0.42,
+     "alta": 0.79,
+     "fracao_alta": 0.44,
+     "fracao_baixa": 0.22
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "media": 0.64,
+     "baixa": 0.51,
+     "alta": 0.82,
+     "fracao_alta": 0.53,
+     "fracao_baixa": 0.14
+    }
+   ],
+   "coortes": {
+    "descendentes_marginal": {
+     "media": 0.47,
+     "baixa": 0.34,
+     "alta": 0.6,
+     "fracao_alta": 0.35,
+     "fracao_baixa": 0.38
+    },
+    "descendentes_médio": {
+     "media": 0.57,
+     "baixa": 0.44,
+     "alta": 0.74,
+     "fracao_alta": 0.45,
+     "fracao_baixa": 0.24
+    },
+    "ascendentes_marginal": {
+     "media": 0.59,
+     "baixa": 0.46,
+     "alta": 0.77,
+     "fracao_alta": 0.47,
+     "fracao_baixa": 0.21
+    },
+    "ascendentes_médio": {
+     "media": 0.59,
+     "baixa": 0.45,
+     "alta": 0.77,
+     "fracao_alta": 0.47,
+     "fracao_baixa": 0.21
+    }
+   },
+   "natureza": "EST",
+   "fonte": "Frey e Osborne (2013), cruzamento BLS SOC-ISCO e OIT (emprego por atividade e ocupação)",
+   "disponivel": true,
+   "aviso": "Exposição técnica à automação (probabilidade de informatização de ocupações dos EUA em 2013), não previsão de perda de emprego; a IA generativa está na aba P11, só como base de referência."
+  },
+  "multiplicadores_grupos": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "parcela_gasto_pct": 20.2,
+     "vad_por_unidade": 0.72,
+     "importacao_direta": 0.022,
+     "empregos_por_milhao": 16.52,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 18,
+       "medio": 16.5
+      },
+      "ascendentes": {
+       "marginal": 15.2,
+       "medio": 15.4
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 23.6,
+       "medio": 21.6
+      },
+      "ascendentes": {
+       "marginal": 20.5,
+       "medio": 20.6
+      }
+     }
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "parcela_gasto_pct": 9.7,
+     "vad_por_unidade": 0.711,
+     "importacao_direta": 0.018,
+     "empregos_por_milhao": 8.62,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 4.4,
+       "medio": 30.1
+      },
+      "ascendentes": {
+       "marginal": 43,
+       "medio": 41.3
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 3.1,
+       "medio": 20.7
+      },
+      "ascendentes": {
+       "marginal": 30.7,
+       "medio": 29.3
+      }
+     }
+    },
+    {
+     "grupo": "Saúde",
+     "parcela_gasto_pct": 6.9,
+     "vad_por_unidade": 0.754,
+     "importacao_direta": 0.056,
+     "empregos_por_milhao": 14.06,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 1.1,
+       "medio": 8.3
+      },
+      "ascendentes": {
+       "marginal": 19.1,
+       "medio": 15.8
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 1.1,
+       "medio": 8.8
+      },
+      "ascendentes": {
+       "marginal": 21,
+       "medio": 17.2
+      }
+     }
+    },
+    {
+     "grupo": "Educação",
+     "parcela_gasto_pct": 2.8,
+     "vad_por_unidade": 0.875,
+     "importacao_direta": 0.008,
+     "empregos_por_milhao": 13.73,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 67.8,
+       "medio": 17.6
+      },
+      "ascendentes": {
+       "marginal": 1.3,
+       "medio": 4
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 60.6,
+       "medio": 15.7
+      },
+      "ascendentes": {
+       "marginal": 1.2,
+       "medio": 3.7
+      }
+     }
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "parcela_gasto_pct": 6.2,
+     "vad_por_unidade": 0.628,
+     "importacao_direta": 0.076,
+     "empregos_por_milhao": 13.17,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 4.2,
+       "medio": 3.8
+      },
+      "ascendentes": {
+       "marginal": 2.1,
+       "medio": 2.5
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 5,
+       "medio": 4.5
+      },
+      "ascendentes": {
+       "marginal": 2.6,
+       "medio": 3.1
+      }
+     }
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "parcela_gasto_pct": 17.7,
+     "vad_por_unidade": 0.567,
+     "importacao_direta": 0.047,
+     "empregos_por_milhao": 10.02,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 13
+      },
+      "ascendentes": {
+       "marginal": 10.6,
+       "medio": 11.7
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 13
+      },
+      "ascendentes": {
+       "marginal": 11,
+       "medio": 12.1
+      }
+     }
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "parcela_gasto_pct": 7.4,
+     "vad_por_unidade": 0.679,
+     "importacao_direta": 0.082,
+     "empregos_por_milhao": 19.28,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 1.2,
+       "medio": 2.6
+      },
+      "ascendentes": {
+       "marginal": 1.6,
+       "medio": 1.9
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 2,
+       "medio": 4.3
+      },
+      "ascendentes": {
+       "marginal": 2.7,
+       "medio": 3.2
+      }
+     }
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "parcela_gasto_pct": 18.4,
+     "vad_por_unidade": 0.733,
+     "importacao_direta": 0.044,
+     "empregos_por_milhao": 18.29,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 3.3,
+       "medio": 8
+      },
+      "ascendentes": {
+       "marginal": 7,
+       "medio": 7.4
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 4.7,
+       "medio": 11.4
+      },
+      "ascendentes": {
+       "marginal": 10.3,
+       "medio": 10.8
+      }
+     }
+    }
+   ],
+   "unidade_emprego": "empregos por R$ milhão (2015)",
+   "metodo_emprego": "seções ISIC (OIT 2015)",
+   "ano_base": 2015,
+   "natureza": "EST",
+   "disponivel": true,
+   "aviso": "Emprego por grupo por seção ISIC da OIT (20 seções): separa, por exemplo, educação de finanças, mas produtos da mesma seção têm a mesma intensidade."
+  },
+  "composicao_grupos": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "descendentes": {
+      "marginal": 20.4,
+      "marginal_p5": 18.5,
+      "marginal_p95": 22.5,
+      "medio": 16.4
+     },
+     "estruturadores": {
+      "marginal": 15.9,
+      "marginal_p5": 15.6,
+      "marginal_p95": 16.2,
+      "medio": 16.2
+     },
+     "ascendentes": {
+      "marginal": 14.8,
+      "marginal_p5": 14.4,
+      "marginal_p95": 15.2,
+      "medio": 15
+     }
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "descendentes": {
+      "marginal": 5.1,
+      "marginal_p5": 0.5,
+      "marginal_p95": 8.4,
+      "medio": 30.2
+     },
+     "estruturadores": {
+      "marginal": 32.5,
+      "marginal_p5": 32.1,
+      "marginal_p95": 33,
+      "medio": 32.9
+     },
+     "ascendentes": {
+      "marginal": 42.4,
+      "marginal_p5": 41.7,
+      "marginal_p95": 43.4,
+      "medio": 40.8
+     }
+    },
+    {
+     "grupo": "Saúde",
+     "descendentes": {
+      "marginal": 1.1,
+      "marginal_p5": 0,
+      "marginal_p95": 2.8,
+      "medio": 7.9
+     },
+     "estruturadores": {
+      "marginal": 8.2,
+      "marginal_p5": 8,
+      "marginal_p95": 8.4,
+      "medio": 8.5
+     },
+     "ascendentes": {
+      "marginal": 17.8,
+      "marginal_p5": 17.2,
+      "marginal_p95": 18.4,
+      "medio": 14.7
+     }
+    },
+    {
+     "grupo": "Educação",
+     "descendentes": {
+      "marginal": 62.9,
+      "marginal_p5": 58.1,
+      "marginal_p95": 68.2,
+      "medio": 14.3
+     },
+     "estruturadores": {
+      "marginal": 7,
+      "marginal_p5": 6.6,
+      "marginal_p95": 7.3,
+      "medio": 8.9
+     },
+     "ascendentes": {
+      "marginal": 1.1,
+      "marginal_p5": 0.7,
+      "marginal_p95": 1.5,
+      "medio": 3.2
+     }
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "descendentes": {
+      "marginal": 5.4,
+      "marginal_p5": 4.8,
+      "marginal_p95": 5.9,
+      "medio": 4.3
+     },
+     "estruturadores": {
+      "marginal": 4.4,
+      "marginal_p5": 4.3,
+      "marginal_p95": 4.4,
+      "medio": 4.1
+     },
+     "ascendentes": {
+      "marginal": 2.4,
+      "marginal_p5": 2.2,
+      "marginal_p95": 2.5,
+      "medio": 2.8
+     }
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "descendentes": {
+      "marginal": 0,
+      "marginal_p5": 0,
+      "marginal_p95": 0,
+      "medio": 16.3
+     },
+     "estruturadores": {
+      "marginal": 20.3,
+      "marginal_p5": 19.9,
+      "marginal_p95": 20.7,
+      "medio": 18.3
+     },
+     "ascendentes": {
+      "marginal": 13.1,
+      "marginal_p5": 12.3,
+      "marginal_p95": 14.1,
+      "medio": 14.5
+     }
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "descendentes": {
+      "marginal": 1.5,
+      "marginal_p5": 0.7,
+      "marginal_p95": 2,
+      "medio": 2.8
+     },
+     "estruturadores": {
+      "marginal": 3.1,
+      "marginal_p5": 3,
+      "marginal_p95": 3.2,
+      "medio": 2.8
+     },
+     "ascendentes": {
+      "marginal": 1.7,
+      "marginal_p5": 1.5,
+      "marginal_p95": 1.8,
+      "medio": 2
+     }
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "descendentes": {
+      "marginal": 3.6,
+      "marginal_p5": 2.2,
+      "marginal_p95": 5.1,
+      "medio": 7.8
+     },
+     "estruturadores": {
+      "marginal": 8.8,
+      "marginal_p5": 8.5,
+      "marginal_p95": 9,
+      "medio": 8.2
+     },
+     "ascendentes": {
+      "marginal": 6.7,
+      "marginal_p5": 6.4,
+      "marginal_p95": 7.1,
+      "medio": 7.1
+     }
+    }
+   ],
+   "fonte": "POF 2017–18 (IBGE)",
+   "natureza": "EST",
+   "domicilios": 58039,
+   "cobertura_gastos": 1,
+   "sobreposicao_desc_asc": {
+    "marginal": 0.3,
+    "medio": 0.83
+   },
+   "sobreposicao_desc_estr": {
+    "marginal": 0.39,
+    "medio": 0.94
+   },
+   "disponivel": true,
+   "aviso": "Só gasto privado das famílias; marginal = o que mais uma pessoa da coorte acrescenta ao gasto do domicílio, médio = divisão igual do gasto do domicílio."
+  },
+  "incremento_crianca": {
+   "disponivel": true,
+   "natureza": "EST",
+   "n_pontos": 9,
+   "unidade_consumo": "R$ de 2018",
+   "unidade_vad": "R$ de 2015",
+   "vad_por_crianca_ano": {
+    "mediana": 13659,
+    "min": 12000,
+    "max": 16000
+   },
+   "cfcc_por_crianca_ano": 20171,
+   "vad_sobre_cfcc": 0.68,
+   "empregos_brutos_por_crianca": {
+    "mediana": 0.238,
+    "min": 0.22,
+    "max": 0.258
+   },
+   "empregos_liquidos_50": 0.123,
+   "empregos_liquidos_100": 0.0071,
+   "criancas_por_emprego_bruto": 4.2,
+   "aviso": "Limite superior de demanda por criança adicional e por ano na coorte; não é efeito causal nem inclui a produção futura da criança.",
+   "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
+  },
+  "disponibilidade_de_dados": {
+   "N* (pipeline 2024)": {
+    "texto": "1.17",
+    "verificacao": null
+   },
+   "Demografia anual (WPP local)": {
+    "texto": "1950–2101 (L)",
+    "verificacao": null
+   },
+   "PIB real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "VA por setor (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Emprego por setor (WDI)": {
+    "texto": "1991–2025 (35)",
+    "verificacao": null
+   },
+   "FBCF %PIB (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Consumo das famílias real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "NTA (ano-base)": {
+    "texto": "2002",
+    "verificacao": null
+   },
+   "ICIO 2025": {
+    "texto": "1995–2022",
+    "verificacao": null
+   },
+   "IO nacional": {
+    "texto": "[P] IBGE, Contas Nacionais n.62 — Matriz de Insumo-Produto Brasil 2015 (PDF oficial lido, com tabelas básicas de recursos e usos 2015); MIP 2010 e TRU 2000–2020 aparecem em busca (não abertas). MIP 2020 não localizada. A página do portal segue respondendo 403.",
+    "verificacao": "P"
+   },
+   "Orçamento familiar": {
+    "texto": "[P] POF 2017-2018: FTP do IBGE com Dados_20230713.zip (140 MB), documentação, questionários, tradutores e programas de leitura; acesso público (FTP).",
+    "verificacao": "P"
+   },
+   "Uso do tempo": {
+    "texto": "[P] IBGE, PNAD Contínua 'Outras formas de trabalho' 2016–2017: a pasta oficial contém TABULAÇÕES (afazeres domésticos, cuidado de pessoas, trabalho voluntário etc., xls/ods, de 18/04/2018) e o arquivo de seleção de variáveis; MICRODADOS não estão nesta pasta.",
+    "verificacao": "P"
+   }
+  },
+  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+ },
+ {
+  "iso": "USA",
+  "nome": "Estados Unidos",
+  "coortes": {
+   "composicao_perfis": "C20 D80",
+   "descendentes": "0–23",
+   "estruturadores": "24–61",
+   "ascendentes": "62+",
+   "ano_referencia": 2025,
+   "fonte": "P1_Coortes_Narayama"
+  },
+  "cobertura": {
+   "classe_provisoria": {
+    "texto": "2",
+    "valor": 2.0,
+    "natureza": "ENTRADA"
+   },
+   "perfil_consumo": {
+    "texto": "CE 2023-24 ancorado no NTA 2011",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "insumo_produto": {
+    "texto": "BEA 2023 (73 commodities × 71 indústrias)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "ano_contas": {
+    "texto": "2023",
+    "valor": 2023.0,
+    "natureza": "OBS"
+   },
+   "afi_tempo": {
+    "texto": "Sim (ATUS 2025, só cuidado primário, tabelas publicadas)",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "demografia": {
+   "tft_2025": {
+    "texto": "1.62",
+    "valor": 1.62,
+    "natureza": "OBS"
+   },
+   "pop_2025_pct": {
+    "texto": "29 / 49 / 22",
+    "valor": [
+     29.0,
+     49.0,
+     22.0
+    ],
+    "natureza": "DER"
+   },
+   "asc_estr_2025": {
+    "texto": "0.45",
+    "valor": 0.45,
+    "natureza": "DER"
+   },
+   "asc_estr_2075_tft_constante": {
+    "texto": "0.67",
+    "valor": 0.67,
+    "natureza": "PROJ"
+   },
+   "asc_estr_2075_wpp": {
+    "texto": "0.67",
+    "valor": 0.67,
+    "natureza": "PROJ"
+   },
+   "dependencia_2025_2075_wpp": {
+    "texto": "1.04 → 1.21",
+    "valor": [
+     1.04,
+     1.21
+    ],
+    "natureza": "PROJ"
+   },
+   "estruturadores_2075_rel": {
+    "texto": "107",
+    "valor": 107.0,
+    "natureza": "PROJ"
+   },
+   "descendentes_2075_rel": {
+    "texto": "98",
+    "valor": 98.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_wpp": {
+    "texto": "91",
+    "valor": 91.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_tft_constante": {
+    "texto": "90",
+    "valor": 90.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_rapida": {
+    "texto": "116",
+    "valor": 116.0,
+    "natureza": "PROJ"
+   }
+  },
+  "consumo": {
+   "cfcc_total_pct_desc_estr_asc": {
+    "texto": "20.3 / 51.4 / 28.3",
+    "valor": [
+     20.3,
+     51.4,
+     28.3
+    ],
+    "natureza": "EST"
+   },
+   "desc_privado_pesos_nta": {
+    "texto": "17.5",
+    "valor": 17.5,
+    "natureza": "EST"
+   },
+   "desc_privado_microdados_ancorados": {
+    "texto": "18.0",
+    "valor": 18.0,
+    "natureza": "EST"
+   },
+   "desc_privado_regressao_bruta": {
+    "texto": "8.1",
+    "valor": 8.1,
+    "natureza": "EST"
+   },
+   "razao_0_24_sobre_25_64": {
+    "texto": "0.54 / 0.21 / 0.68",
+    "valor": [
+     0.54,
+     0.21,
+     0.68
+    ],
+    "natureza": "EST"
+   },
+   "fator_ancoragem": {
+    "texto": "2.57",
+    "valor": 2.57,
+    "natureza": "EST"
+   }
+  },
+  "multiplicadores": {
+   "valor_adicionado": {
+    "texto": "0.910",
+    "valor": 0.91,
+    "natureza": "EST"
+   },
+   "importacoes": {
+    "texto": "0.090",
+    "valor": 0.09,
+    "natureza": "EST"
+   },
+   "edpc_sobre_emprego": {
+    "texto": "74%",
+    "valor": null,
+    "natureza": "EST"
+   }
+  },
+  "valorizacao": {
+   "gasto_publico_familia_socx": {
+    "texto": "0,60 (2023)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_10pct_pib": {
+    "texto": "1.22",
+    "valor": 1.22,
+    "natureza": "SIM"
+   },
+   "maior_programa_infantil": {
+    "texto": "Child credit: 0,245% do PIB (FY2025)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_sobre_programa": {
+    "texto": "4.5×",
+    "valor": null,
+    "natureza": "SIM"
+   },
+   "analogo_ifvi_empregador": {
+    "texto": "Crédito e exclusão de cuidado infantil do empregador (US$ 0,86 bi); crédito de licença familiar (US$ 0,11 bi)",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "consumo_observado": {
+   "disponivel": false
+  },
+  "exposicao_iagen": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "media": 0.29,
+     "baixa": 0.23,
+     "alta": 0.34,
+     "fracao_alta": 0.11,
+     "fracao_baixa": 0.75
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "media": 0.3,
+     "baixa": 0.24,
+     "alta": 0.35,
+     "fracao_alta": 0.12,
+     "fracao_baixa": 0.73
+    },
+    {
+     "grupo": "Saúde",
+     "media": 0.35,
+     "baixa": 0.28,
+     "alta": 0.42,
+     "fracao_alta": 0.17,
+     "fracao_baixa": 0.63
+    },
+    {
+     "grupo": "Educação",
+     "media": 0.34,
+     "baixa": 0.27,
+     "alta": 0.41,
+     "fracao_alta": 0.16,
+     "fracao_baixa": 0.65
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "media": 0.29,
+     "baixa": 0.23,
+     "alta": 0.34,
+     "fracao_alta": 0.11,
+     "fracao_baixa": 0.74
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "media": 0.3,
+     "baixa": 0.24,
+     "alta": 0.36,
+     "fracao_alta": 0.13,
+     "fracao_baixa": 0.72
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "media": 0.29,
+     "baixa": 0.23,
+     "alta": 0.34,
+     "fracao_alta": 0.1,
+     "fracao_baixa": 0.75
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "media": 0.33,
+     "baixa": 0.27,
+     "alta": 0.39,
+     "fracao_alta": 0.16,
+     "fracao_baixa": 0.67
+    }
+   ],
+   "coortes": {
+    "descendentes_marginal": {
+     "media": 0.3,
+     "baixa": 0.24,
+     "alta": 0.35,
+     "fracao_alta": 0.12,
+     "fracao_baixa": 0.73
+    },
+    "descendentes_médio": {
+     "media": 0.31,
+     "baixa": 0.24,
+     "alta": 0.36,
+     "fracao_alta": 0.13,
+     "fracao_baixa": 0.72
+    },
+    "ascendentes_marginal": {
+     "media": 0.31,
+     "baixa": 0.25,
+     "alta": 0.37,
+     "fracao_alta": 0.13,
+     "fracao_baixa": 0.71
+    },
+    "ascendentes_médio": {
+     "media": 0.31,
+     "baixa": 0.25,
+     "alta": 0.37,
+     "fracao_alta": 0.13,
+     "fracao_baixa": 0.71
+    }
+   },
+   "natureza": "EST",
+   "fonte": "OIT, Working Paper 140 (2025), Tabela A1, e OIT/ILOSTAT (emprego por atividade e ocupação)",
+   "disponivel": true,
+   "aviso": "Exposição das tarefas ocupacionais à IA generativa (índice global da OIT); indica sobretudo transformação de ocupações, não previsão de perda de emprego."
+  },
+  "exposicao_automacao": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "media": 0.54,
+     "baixa": 0.4,
+     "alta": 0.7,
+     "fracao_alta": 0.41,
+     "fracao_baixa": 0.29
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "media": 0.49,
+     "baixa": 0.36,
+     "alta": 0.63,
+     "fracao_alta": 0.37,
+     "fracao_baixa": 0.36
+    },
+    {
+     "grupo": "Saúde",
+     "media": 0.41,
+     "baixa": 0.24,
+     "alta": 0.56,
+     "fracao_alta": 0.26,
+     "fracao_baixa": 0.47
+    },
+    {
+     "grupo": "Educação",
+     "media": 0.38,
+     "baixa": 0.24,
+     "alta": 0.5,
+     "fracao_alta": 0.25,
+     "fracao_baixa": 0.51
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "media": 0.54,
+     "baixa": 0.39,
+     "alta": 0.71,
+     "fracao_alta": 0.41,
+     "fracao_baixa": 0.29
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "media": 0.51,
+     "baixa": 0.38,
+     "alta": 0.66,
+     "fracao_alta": 0.39,
+     "fracao_baixa": 0.34
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "media": 0.51,
+     "baixa": 0.35,
+     "alta": 0.69,
+     "fracao_alta": 0.36,
+     "fracao_baixa": 0.33
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "media": 0.45,
+     "baixa": 0.3,
+     "alta": 0.6,
+     "fracao_alta": 0.32,
+     "fracao_baixa": 0.42
+    }
+   ],
+   "coortes": {
+    "descendentes_marginal": {
+     "media": 0.5,
+     "baixa": 0.36,
+     "alta": 0.65,
+     "fracao_alta": 0.38,
+     "fracao_baixa": 0.34
+    },
+    "descendentes_médio": {
+     "media": 0.49,
+     "baixa": 0.35,
+     "alta": 0.64,
+     "fracao_alta": 0.37,
+     "fracao_baixa": 0.36
+    },
+    "ascendentes_marginal": {
+     "media": 0.48,
+     "baixa": 0.34,
+     "alta": 0.63,
+     "fracao_alta": 0.35,
+     "fracao_baixa": 0.37
+    },
+    "ascendentes_médio": {
+     "media": 0.49,
+     "baixa": 0.34,
+     "alta": 0.64,
+     "fracao_alta": 0.35,
+     "fracao_baixa": 0.37
+    }
+   },
+   "natureza": "EST",
+   "fonte": "Frey e Osborne (2013), cruzamento BLS SOC-ISCO e OIT (emprego por atividade e ocupação)",
+   "disponivel": true,
+   "aviso": "Exposição técnica à automação (probabilidade de informatização de ocupações dos EUA em 2013), não previsão de perda de emprego; a IA generativa está na aba P11, só como base de referência."
+  },
+  "multiplicadores_grupos": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "parcela_gasto_pct": 17.6,
+     "vad_por_unidade": 0.916,
+     "importacao_direta": 0.03,
+     "empregos_por_milhao": 5.45,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 28.5,
+       "medio": 21.6
+      },
+      "ascendentes": {
+       "marginal": 19.5,
+       "medio": 19.3
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 29.7,
+       "medio": 22.1
+      },
+      "ascendentes": {
+       "marginal": 18.9,
+       "medio": 18.9
+      }
+     }
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "parcela_gasto_pct": 3,
+     "vad_por_unidade": 0.822,
+     "importacao_direta": 0.117,
+     "empregos_por_milhao": 3.92,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 37.9,
+       "medio": 35.9
+      },
+      "ascendentes": {
+       "marginal": 34.6,
+       "medio": 35.9
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 31.6,
+       "medio": 29.4
+      },
+      "ascendentes": {
+       "marginal": 26.9,
+       "medio": 28.2
+      }
+     }
+    },
+    {
+     "grupo": "Saúde",
+     "parcela_gasto_pct": 17,
+     "vad_por_unidade": 0.954,
+     "importacao_direta": 0.003,
+     "empregos_por_milhao": 8.41,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 4.2,
+       "medio": 7.8
+      },
+      "ascendentes": {
+       "marginal": 17,
+       "medio": 15.2
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 6.5,
+       "medio": 11.8
+      },
+      "ascendentes": {
+       "marginal": 24.4,
+       "medio": 22.2
+      }
+     }
+    },
+    {
+     "grupo": "Educação",
+     "parcela_gasto_pct": 2.4,
+     "vad_por_unidade": 0.96,
+     "importacao_direta": 0.005,
+     "empregos_por_milhao": 4.95,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 4.2,
+       "medio": 3.7
+      },
+      "ascendentes": {
+       "marginal": 0.3,
+       "medio": 0.8
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 3.8,
+       "medio": 3.3
+      },
+      "ascendentes": {
+       "marginal": 0.3,
+       "medio": 0.6
+      }
+     }
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "parcela_gasto_pct": 1.8,
+     "vad_por_unidade": 0.503,
+     "importacao_direta": 0.464,
+     "empregos_por_milhao": 2.89,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 3.9,
+       "medio": 1.9
+      },
+      "ascendentes": {
+       "marginal": 1,
+       "medio": 1.1
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 3.9,
+       "medio": 1.9
+      },
+      "ascendentes": {
+       "marginal": 1,
+       "medio": 1
+      }
+     }
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "parcela_gasto_pct": 12.2,
+     "vad_por_unidade": 0.816,
+     "importacao_direta": 0.101,
+     "empregos_por_milhao": 4.81,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 14.4,
+       "medio": 20.2
+      },
+      "ascendentes": {
+       "marginal": 16.7,
+       "medio": 17.4
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 14.9,
+       "medio": 20.5
+      },
+      "ascendentes": {
+       "marginal": 16.1,
+       "medio": 16.9
+      }
+     }
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "parcela_gasto_pct": 10.1,
+     "vad_por_unidade": 0.957,
+     "importacao_direta": 0.002,
+     "empregos_por_milhao": 7.65,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 6.9,
+       "medio": 5.7
+      },
+      "ascendentes": {
+       "marginal": 6.1,
+       "medio": 6.1
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 9.7,
+       "medio": 7.8
+      },
+      "ascendentes": {
+       "marginal": 7.9,
+       "medio": 8
+      }
+     }
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "parcela_gasto_pct": 19.6,
+     "vad_por_unidade": 0.884,
+     "importacao_direta": 0.056,
+     "empregos_por_milhao": 5.06,
+     "vad_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 3.1
+      },
+      "ascendentes": {
+       "marginal": 4.7,
+       "medio": 4.3
+      }
+     },
+     "emprego_participacao": {
+      "descendentes": {
+       "marginal": 0,
+       "medio": 3.1
+      },
+      "ascendentes": {
+       "marginal": 4.4,
+       "medio": 4.1
+      }
+     }
+    }
+   ],
+   "unidade_emprego": "empregos por US$ milhão (2023)",
+   "metodo_emprego": "seções ISIC (OIT 2023; O e P juntas)",
+   "ano_base": 2023,
+   "natureza": "EST",
+   "disponivel": true,
+   "aviso": "Emprego por grupo por seção ISIC da OIT (20 seções): separa, por exemplo, educação de finanças, mas produtos da mesma seção têm a mesma intensidade."
+  },
+  "composicao_grupos": {
+   "grupos": [
+    {
+     "grupo": "Alimentos e bebidas",
+     "descendentes": {
+      "marginal": 26.2,
+      "marginal_p5": 22.6,
+      "marginal_p95": 30.3,
+      "medio": 20.1
+     },
+     "estruturadores": {
+      "marginal": 18.8,
+      "marginal_p5": 18.3,
+      "marginal_p95": 19.3,
+      "medio": 19.2
+     },
+     "ascendentes": {
+      "marginal": 18.4,
+      "marginal_p5": 17.8,
+      "marginal_p95": 18.8,
+      "medio": 18.1
+     }
+    },
+    {
+     "grupo": "Habitação, energia e equipamento do lar",
+     "descendentes": {
+      "marginal": 38.9,
+      "marginal_p5": 33.2,
+      "marginal_p95": 45,
+      "medio": 37.2
+     },
+     "estruturadores": {
+      "marginal": 36.9,
+      "marginal_p5": 36,
+      "marginal_p95": 37.8,
+      "medio": 38.1
+     },
+     "ascendentes": {
+      "marginal": 36.4,
+      "marginal_p5": 35.3,
+      "marginal_p95": 37.5,
+      "medio": 37.5
+     }
+    },
+    {
+     "grupo": "Saúde",
+     "descendentes": {
+      "marginal": 3.7,
+      "marginal_p5": 2.1,
+      "marginal_p95": 5.6,
+      "medio": 7
+     },
+     "estruturadores": {
+      "marginal": 7.5,
+      "marginal_p5": 7.1,
+      "marginal_p95": 7.8,
+      "medio": 7.6
+     },
+     "ascendentes": {
+      "marginal": 15.4,
+      "marginal_p5": 14.7,
+      "marginal_p95": 16.1,
+      "medio": 13.7
+     }
+    },
+    {
+     "grupo": "Educação",
+     "descendentes": {
+      "marginal": 3.7,
+      "marginal_p5": 0.8,
+      "marginal_p95": 7,
+      "medio": 3.3
+     },
+     "estruturadores": {
+      "marginal": 2.7,
+      "marginal_p5": 2.2,
+      "marginal_p95": 3.3,
+      "medio": 2.7
+     },
+     "ascendentes": {
+      "marginal": 0.3,
+      "marginal_p5": 0,
+      "marginal_p95": 0.6,
+      "medio": 0.7
+     }
+    },
+    {
+     "grupo": "Vestuário e calçado",
+     "descendentes": {
+      "marginal": 6.5,
+      "marginal_p5": 5.4,
+      "marginal_p95": 8,
+      "medio": 3.2
+     },
+     "estruturadores": {
+      "marginal": 2.4,
+      "marginal_p5": 2.2,
+      "marginal_p95": 2.6,
+      "medio": 2.5
+     },
+     "ascendentes": {
+      "marginal": 1.8,
+      "marginal_p5": 1.7,
+      "marginal_p95": 1.9,
+      "medio": 1.9
+     }
+    },
+    {
+     "grupo": "Transporte e comunicação",
+     "descendentes": {
+      "marginal": 14.9,
+      "marginal_p5": 5.3,
+      "marginal_p95": 23.3,
+      "medio": 21.1
+     },
+     "estruturadores": {
+      "marginal": 22.8,
+      "marginal_p5": 21.2,
+      "marginal_p95": 24.7,
+      "medio": 21.2
+     },
+     "ascendentes": {
+      "marginal": 17.7,
+      "marginal_p5": 16,
+      "marginal_p95": 19.5,
+      "medio": 18.4
+     }
+    },
+    {
+     "grupo": "Recreação, cultura, restaurantes e hotéis",
+     "descendentes": {
+      "marginal": 6.1,
+      "marginal_p5": 3.7,
+      "marginal_p95": 8.9,
+      "medio": 5.1
+     },
+     "estruturadores": {
+      "marginal": 5,
+      "marginal_p5": 4.6,
+      "marginal_p95": 5.4,
+      "medio": 5.1
+     },
+     "ascendentes": {
+      "marginal": 5.5,
+      "marginal_p5": 4.8,
+      "marginal_p95": 6.3,
+      "medio": 5.5
+     }
+    },
+    {
+     "grupo": "Cuidados pessoais, serviços e outros bens",
+     "descendentes": {
+      "marginal": 0,
+      "marginal_p5": 0,
+      "marginal_p95": 0,
+      "medio": 3
+     },
+     "estruturadores": {
+      "marginal": 3.9,
+      "marginal_p5": 3.7,
+      "marginal_p95": 4.1,
+      "medio": 3.8
+     },
+     "ascendentes": {
+      "marginal": 4.6,
+      "marginal_p5": 4.1,
+      "marginal_p95": 5.3,
+      "medio": 4.2
+     }
+    }
+   ],
+   "fonte": "Consumer Expenditure Survey 2023–24 (BLS)",
+   "natureza": "EST",
+   "domicilios": 18871,
+   "cobertura_gastos": 0.846,
+   "sobreposicao_desc_asc": {
+    "marginal": 0.81,
+    "medio": 0.91
+   },
+   "sobreposicao_desc_estr": {
+    "marginal": 0.84,
+    "medio": 0.98
+   },
+   "disponivel": true,
+   "aviso": "Só gasto privado das famílias; marginal = o que mais uma pessoa da coorte acrescenta ao gasto do domicílio, médio = divisão igual do gasto do domicílio."
+  },
+  "incremento_crianca": {
+   "disponivel": true,
+   "natureza": "EST",
+   "n_pontos": 8,
+   "unidade_consumo": "US$ de 2023",
+   "unidade_vad": "US$ de 2023",
+   "vad_por_crianca_ano": {
+    "mediana": 42029,
+    "min": 40909,
+    "max": 46667
+   },
+   "cfcc_por_crianca_ano": 45717,
+   "vad_sobre_cfcc": 0.92,
+   "empregos_brutos_por_crianca": {
+    "mediana": 0.255,
+    "min": 0.247,
+    "max": 0.278
+   },
+   "empregos_liquidos_50": 0.128,
+   "empregos_liquidos_100": 0.0007,
+   "criancas_por_emprego_bruto": 3.9,
+   "aviso": "Limite superior de demanda por criança adicional e por ano na coorte; não é efeito causal nem inclui a produção futura da criança.",
+   "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
+  },
+  "disponibilidade_de_dados": {
+   "N* (pipeline 2024)": {
+    "texto": "0.96",
+    "verificacao": null
+   },
+   "Demografia anual (WPP local)": {
+    "texto": "1950–2101 (L)",
+    "verificacao": null
+   },
+   "PIB real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "VA por setor (WDI)": {
+    "texto": "1997–2021 (25)",
+    "verificacao": null
+   },
+   "Emprego por setor (WDI)": {
+    "texto": "1991–2025 (35)",
+    "verificacao": null
+   },
+   "FBCF %PIB (WDI)": {
+    "texto": "1976–2024 (49)",
+    "verificacao": null
+   },
+   "Consumo das famílias real (WDI)": {
+    "texto": "1976–2024 (49)",
+    "verificacao": null
+   },
+   "NTA (ano-base)": {
+    "texto": "2011",
+    "verificacao": null
+   },
+   "ICIO 2025": {
+    "texto": "1995–2022",
+    "verificacao": null
+   },
+   "IO nacional": {
+    "texto": "[P] BEA: a página de tabelas anuais históricas lista 1996–1999 (base SIC, 97 indústrias); a página atual informa que as tabelas Supply-Use e Make-Use migraram para aplicações interativas. Anos disponíveis da série atual NÃO confirmados nas páginas abertas.",
+    "verificacao": "P"
+   },
+   "Orçamento familiar": {
+    "texto": "[P] Consumer Expenditure Surveys PUMD: Interview 1980–2025 (sem 1982–83) e Diary 1980–2025 (sem 1982–89), segundo a página do BLS.",
+    "verificacao": "P"
+   },
+   "Uso do tempo": {
+    "texto": "[P] American Time Use Survey 2003–2024: Respondent, Roster, Activity, Who, ATUS-CPS, Eldercare Roster (2011–2024).",
+    "verificacao": "P"
+   }
+  },
+  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+ },
+ {
+  "iso": "IND",
+  "nome": "Índia",
+  "coortes": {
+   "composicao_perfis": "B100",
+   "descendentes": "0–18",
+   "estruturadores": "19–54",
+   "ascendentes": "55+",
+   "ano_referencia": 2025,
+   "fonte": "P1_Coortes_Narayama"
+  },
+  "cobertura": {
+   "classe_provisoria": {
+    "texto": "2",
+    "valor": 2.0,
+    "natureza": "ENTRADA"
+   },
+   "perfil_consumo": {
+    "texto": "Pesos NTA 2004 (sem microdados)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "insumo_produto": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "OBS"
+   },
+   "ano_contas": {
+    "texto": "2022",
+    "valor": 2022.0,
+    "natureza": "OBS"
+   },
+   "afi_tempo": {
+    "texto": "Não",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "demografia": {
+   "tft_2025": {
+    "texto": "1.94",
+    "valor": 1.94,
+    "natureza": "OBS"
+   },
+   "pop_2025_pct": {
+    "texto": "31 / 53 / 16",
+    "valor": [
+     31.0,
+     53.0,
+     16.0
+    ],
+    "natureza": "DER"
+   },
+   "asc_estr_2025": {
+    "texto": "0.29",
+    "valor": 0.29,
+    "natureza": "DER"
+   },
+   "asc_estr_2075_tft_constante": {
+    "texto": "0.84",
+    "valor": 0.84,
+    "natureza": "PROJ"
+   },
+   "asc_estr_2075_wpp": {
+    "texto": "0.89",
+    "valor": 0.89,
+    "natureza": "PROJ"
+   },
+   "dependencia_2025_2075_wpp": {
+    "texto": "0.87 → 1.34",
+    "valor": [
+     0.87,
+     1.34
+    ],
+    "natureza": "PROJ"
+   },
+   "estruturadores_2075_rel": {
+    "texto": "91",
+    "valor": 91.0,
+    "natureza": "PROJ"
+   },
+   "descendentes_2075_rel": {
+    "texto": "70",
+    "valor": 70.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_wpp": {
+    "texto": "77",
+    "valor": 77.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_tft_constante": {
+    "texto": "86",
+    "valor": 86.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_rapida": {
+    "texto": "93",
+    "valor": 93.0,
+    "natureza": "PROJ"
+   }
+  },
+  "consumo": {
+   "cfcc_total_pct_desc_estr_asc": {
+    "texto": "24.0 / 58.3 / 17.7",
+    "valor": [
+     24.0,
+     58.3,
+     17.7
+    ],
+    "natureza": "EST"
+   },
+   "desc_privado_pesos_nta": {
+    "texto": "20.8",
+    "valor": 20.8,
+    "natureza": "EST"
+   },
+   "desc_privado_microdados_ancorados": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "desc_privado_regressao_bruta": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "razao_0_24_sobre_25_64": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "fator_ancoragem": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   }
+  },
+  "multiplicadores": {
+   "valor_adicionado": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "importacoes": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "edpc_sobre_emprego": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   }
+  },
+  "valorizacao": {
+   "gasto_publico_familia_socx": {
+    "texto": "n/d",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "OBS"
+   },
+   "dividendo_10pct_pib": {
+    "texto": "1.35",
+    "valor": 1.35,
+    "natureza": "SIM"
+   },
+   "maior_programa_infantil": {
+    "retido": true,
+    "motivo": "fonte de nível L2 (original não lido)",
+    "natureza": "OBS"
+   },
+   "dividendo_sobre_programa": {
+    "texto": "14×",
+    "valor": null,
+    "natureza": "SIM"
+   },
+   "analogo_ifvi_empregador": {
+    "texto": "Licença e creche pagas pelo empregador (a confirmar)",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "consumo_observado": {
+   "disponivel": true,
+   "natureza": "OBS",
+   "niveis": [
+    {
+     "indicador": "MPCE médio 2023-24",
+     "rural": 4122,
+     "urbano": 6996,
+     "pagina": "30–31 (Tabela 3.5)"
+    },
+    {
+     "indicador": "MPCE médio 2023-24, com imputação de itens de programas sociais",
+     "rural": 4247,
+     "urbano": 7078,
+     "pagina": "Statement 15 (S68)"
+    },
+    {
+     "indicador": "Mediana do MPCE (P50) 2023-24",
+     "rural": 3674,
+     "urbano": 5956,
+     "pagina": "27"
+    },
+    {
+     "indicador": "P10",
+     "rural": 2260,
+     "urbano": 3313,
+     "pagina": "27 (Tabela 3.4R) e 28 (Tabela 3.4U)"
+    },
+    {
+     "indicador": "P20",
+     "rural": 2665,
+     "urbano": 4032,
+     "pagina": "27"
+    },
+    {
+     "indicador": "P30",
+     "rural": 2997,
+     "urbano": 4673,
+     "pagina": "27"
+    },
+    {
+     "indicador": "P40",
+     "rural": 3326,
+     "urbano": 5294,
+     "pagina": "27"
+    },
+    {
+     "indicador": "P60",
+     "rural": 4067,
+     "urbano": 6738,
+     "pagina": "27"
+    },
+    {
+     "indicador": "P70",
+     "rural": 4565,
+     "urbano": 7714,
+     "pagina": "27"
+    },
+    {
+     "indicador": "P80",
+     "rural": 5242,
+     "urbano": 9080,
+     "pagina": "27"
+    },
+    {
+     "indicador": "P90",
+     "rural": 6414,
+     "urbano": 11546,
+     "pagina": "27"
+    },
+    {
+     "indicador": "Média dos 5% mais pobres",
+     "rural": 1677,
+     "urbano": 2376,
+     "pagina": "23"
+    },
+    {
+     "indicador": "Média dos 5% mais ricos",
+     "rural": 10137,
+     "urbano": 20310,
+     "pagina": "23"
+    },
+    {
+     "indicador": "Coeficiente de Gini do consumo por pessoa",
+     "rural": 0.237,
+     "urbano": 0.284,
+     "pagina": "Statement 9 (S36)"
+    },
+    {
+     "indicador": "Coeficiente de Gini, com imputação",
+     "rural": 0.23,
+     "urbano": 0.279,
+     "pagina": "Statement 15 (S68)"
+    }
+   ],
+   "grupos": [
+    {
+     "grupo": "cereais e substitutos",
+     "rural_rs": 206,
+     "urbano_rs": 263,
+     "rural_pct": 4.99,
+     "urbano_pct": 3.76,
+     "tipo": "alimento"
+    },
+    {
+     "grupo": "leguminosas e derivados",
+     "rural_rs": 84,
+     "urbano_rs": 98,
+     "rural_pct": 2.04,
+     "urbano_pct": 1.4,
+     "tipo": "alimento"
+    },
+    {
+     "grupo": "açúcar e sal",
+     "rural_rs": 37,
+     "urbano_rs": 40,
+     "rural_pct": 0.89,
+     "urbano_pct": 0.57,
+     "tipo": "alimento"
+    },
+    {
+     "grupo": "leite e derivados",
+     "rural_rs": 348,
+     "urbano_rs": 503,
+     "rural_pct": 8.44,
+     "urbano_pct": 7.19,
+     "tipo": "alimento"
+    },
+    {
+     "grupo": "hortaliças",
+     "rural_rs": 248,
+     "urbano_rs": 288,
+     "rural_pct": 6.03,
+     "urbano_pct": 4.12,
+     "tipo": "alimento"
+    },
+    {
+     "grupo": "frutas",
+     "rural_rs": 158,
+     "urbano_rs": 271,
+     "rural_pct": 3.85,
+     "urbano_pct": 3.87,
+     "tipo": "alimento"
+    },
+    {
+     "grupo": "ovos, peixe e carne",
+     "rural_rs": 203,
+     "urbano_rs": 249,
+     "rural_pct": 4.92,
+     "urbano_pct": 3.56,
+     "tipo": "alimento"
+    },
+    {
+     "grupo": "óleos comestíveis",
+     "rural_rs": 114,
+     "urbano_rs": 127,
+     "rural_pct": 2.77,
+     "urbano_pct": 1.82,
+     "tipo": "alimento"
+    },
+    {
+     "grupo": "temperos",
+     "rural_rs": 135,
+     "urbano_rs": 161,
+     "rural_pct": 3.27,
+     "urbano_pct": 2.3,
+     "tipo": "alimento"
+    },
+    {
+     "grupo": "bebidas, lanches e alimentos processados (inclui refeições prontas compradas)",
+     "rural_rs": 406,
+     "urbano_rs": 776,
+     "rural_pct": 9.84,
+     "urbano_pct": 11.09,
+     "tipo": "alimento"
+    },
+    {
+     "grupo": "ALIMENTOS, total",
+     "rural_rs": 1939,
+     "urbano_rs": 2776,
+     "rural_pct": 47.04,
+     "urbano_pct": 39.68,
+     "tipo": "total"
+    },
+    {
+     "grupo": "pan, tabaco e intoxicantes",
+     "rural_rs": 158,
+     "urbano_rs": 166,
+     "rural_pct": 3.84,
+     "urbano_pct": 2.37,
+     "tipo": "não alimento"
+    },
+    {
+     "grupo": "combustível e luz",
+     "rural_rs": 252,
+     "urbano_rs": 391,
+     "rural_pct": 6.11,
+     "urbano_pct": 5.59,
+     "tipo": "não alimento"
+    },
+    {
+     "grupo": "educação",
+     "rural_rs": 133,
+     "urbano_rs": 418,
+     "rural_pct": 3.24,
+     "urbano_pct": 5.97,
+     "tipo": "não alimento"
+    },
+    {
+     "grupo": "saúde (medical)",
+     "rural_rs": 282,
+     "urbano_rs": 409,
+     "rural_pct": 6.83,
+     "urbano_pct": 5.85,
+     "tipo": "não alimento"
+    },
+    {
+     "grupo": "transporte (conveyance)",
+     "rural_rs": 313,
+     "urbano_rs": 592,
+     "rural_pct": 7.59,
+     "urbano_pct": 8.46,
+     "tipo": "não alimento"
+    },
+    {
+     "grupo": "serviços ao consumidor, exceto transporte",
+     "rural_rs": 217,
+     "urbano_rs": 400,
+     "rural_pct": 5.25,
+     "urbano_pct": 5.72,
+     "tipo": "não alimento"
+    },
+    {
+     "grupo": "bens diversos e entretenimento",
+     "rural_rs": 256,
+     "urbano_rs": 484,
+     "rural_pct": 6.22,
+     "urbano_pct": 6.92,
+     "tipo": "não alimento"
+    },
+    {
+     "grupo": "aluguel",
+     "rural_rs": 23,
+     "urbano_rs": 460,
+     "rural_pct": 0.56,
+     "urbano_pct": 6.58,
+     "tipo": "não alimento"
+    },
+    {
+     "grupo": "impostos e taxas",
+     "rural_rs": 9,
+     "urbano_rs": 23,
+     "rural_pct": 0.21,
+     "urbano_pct": 0.33,
+     "tipo": "não alimento"
+    },
+    {
+     "grupo": "vestuário, roupa de cama e calçado",
+     "rural_rs": 273,
+     "urbano_rs": 396,
+     "rural_pct": 6.63,
+     "urbano_pct": 5.66,
+     "tipo": "não alimento"
+    },
+    {
+     "grupo": "bens duráveis",
+     "rural_rs": 267,
+     "urbano_rs": 481,
+     "rural_pct": 6.48,
+     "urbano_pct": 6.87,
+     "tipo": "não alimento"
+    },
+    {
+     "grupo": "NÃO ALIMENTOS, total",
+     "rural_rs": 2183,
+     "urbano_rs": 4220,
+     "rural_pct": 52.96,
+     "urbano_pct": 60.32,
+     "tipo": "total"
+    },
+    {
+     "grupo": "TODOS OS ITENS",
+     "rural_rs": 4122,
+     "urbano_rs": 6996,
+     "rural_pct": 100,
+     "urbano_pct": 100,
+     "tipo": "total"
+    }
+   ],
+   "id": "AINU-IND-HCES-2024-000633",
+   "fonte": "MoSPI, NSO, Survey on Household Consumption Expenditure 2023-24 (NSS Report nº 592), capítulo 3 e Statements 9 e 15",
+   "aviso": "Médias sobre toda a população; os grupos são os do relatório, não os 8 grupos do Paper 3. O relatório não traz idade nem composição por coorte."
+  },
+  "exposicao_iagen": {
+   "disponivel": false,
+   "motivo": "sem multiplicadores por grupo nesta rodada"
+  },
+  "exposicao_automacao": {
+   "disponivel": false,
+   "motivo": "sem multiplicadores por grupo nesta rodada"
+  },
+  "multiplicadores_grupos": {
+   "disponivel": false,
+   "motivo": "sem tabela de insumo-produto com microdados de orçamento harmonizados nesta rodada"
+  },
+  "composicao_grupos": {
+   "disponivel": false,
+   "motivo": "sem microdados de orçamento familiar harmonizados nesta rodada"
+  },
+  "incremento_crianca": {
+   "disponivel": false,
+   "motivo": "sem tabela de insumo-produto nesta rodada"
+  },
+  "disponibilidade_de_dados": {
+   "N* (pipeline 2024)": {
+    "texto": "1.37",
+    "verificacao": null
+   },
+   "Demografia anual (WPP local)": {
+    "texto": "1950–2101 (L)",
+    "verificacao": null
+   },
+   "PIB real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "VA por setor (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Emprego por setor (WDI)": {
+    "texto": "1991–2025 (35)",
+    "verificacao": null
+   },
+   "FBCF %PIB (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Consumo das famílias real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "NTA (ano-base)": {
+    "texto": "2004",
+    "verificacao": null
+   },
+   "ICIO 2025": {
+    "texto": "1995–2022",
+    "verificacao": null
+   },
+   "IO nacional": {
+    "retido": true,
+    "motivo": "resultado de busca, página não aberta"
+   },
+   "Orçamento familiar": {
+    "texto": "[P] HCES 2022-23, catálogo IHSN (lido): campo ago/2022–jul/2023, 15.016 unidades de primeiro estágio no amostra central, módulo de características demográficas dos membros do domicílio e despesas de consumo; links 'Get Microdata' e dicionário; licença não declarada. MoSPI informa (em notas de imprensa vistas em busca) que os dados de nível unitário saíram em jun/2024; HCES 2023-24 está no catálogo 237. O portal oficial segue fora do ar. Parentesco no roster NÃO confirmado.",
+    "verificacao": "P"
+   },
+   "Uso do tempo": {
+    "texto": "[P] Time Use Survey 2024 (NSO/MoSPI), catálogo IHSN: campo jan–dez/2024, entrevistas presenciais, 10.024 unidades de primeiro estágio; contagem de domicílios/pessoas e arquivos não constam na página; licença não declarada.",
+    "verificacao": "P"
+   }
+  },
+  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+ },
+ {
+  "iso": "NGA",
+  "nome": "Nigéria",
+  "coortes": {
+   "composicao_perfis": "A35 B40 C25",
+   "descendentes": "0–18",
+   "estruturadores": "19–51",
+   "ascendentes": "52+",
+   "ano_referencia": 2025,
+   "fonte": "P1_Coortes_Narayama"
+  },
+  "cobertura": {
+   "classe_provisoria": {
+    "texto": "2",
+    "valor": 2.0,
+    "natureza": "ENTRADA"
+   },
+   "perfil_consumo": {
+    "texto": "Pesos NTA 2009 (só participações; sem consumo em nível)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "insumo_produto": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "OBS"
+   },
+   "ano_contas": {
+    "texto": "2022 (índice)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "afi_tempo": {
+    "texto": "Não",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "demografia": {
+   "tft_2025": {
+    "texto": "4.30",
+    "valor": 4.3,
+    "natureza": "OBS"
+   },
+   "pop_2025_pct": {
+    "texto": "50 / 41 / 9",
+    "valor": [
+     50.0,
+     41.0,
+     9.0
+    ],
+    "natureza": "DER"
+   },
+   "asc_estr_2025": {
+    "texto": "0.22",
+    "valor": 0.22,
+    "natureza": "DER"
+   },
+   "asc_estr_2075_tft_constante": {
+    "texto": "0.29",
+    "valor": 0.29,
+    "natureza": "PROJ"
+   },
+   "asc_estr_2075_wpp": {
+    "texto": "0.42",
+    "valor": 0.42,
+    "natureza": "PROJ"
+   },
+   "dependencia_2025_2075_wpp": {
+    "texto": "1.42 → 1.04",
+    "valor": [
+     1.42,
+     1.04
+    ],
+    "natureza": "PROJ"
+   },
+   "estruturadores_2075_rel": {
+    "texto": "224",
+    "valor": 224.0,
+    "natureza": "PROJ"
+   },
+   "descendentes_2075_rel": {
+    "texto": "115",
+    "valor": 115.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_wpp": {
+    "texto": "51",
+    "valor": 51.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_tft_constante": {
+    "texto": "91",
+    "valor": 91.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_rapida": {
+    "texto": "47",
+    "valor": 47.0,
+    "natureza": "PROJ"
+   }
+  },
+  "consumo": {
+   "cfcc_total_pct_desc_estr_asc": {
+    "texto": "52.6 / 39.3 / 8.1",
+    "valor": [
+     52.6,
+     39.3,
+     8.1
+    ],
+    "natureza": "EST"
+   },
+   "desc_privado_pesos_nta": {
+    "texto": "44.9",
+    "valor": 44.9,
+    "natureza": "EST"
+   },
+   "desc_privado_microdados_ancorados": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "desc_privado_regressao_bruta": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "razao_0_24_sobre_25_64": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "fator_ancoragem": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   }
+  },
+  "multiplicadores": {
+   "valor_adicionado": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "importacoes": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "edpc_sobre_emprego": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   }
+  },
+  "valorizacao": {
+   "gasto_publico_familia_socx": {
+    "texto": "n/d",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "OBS"
+   },
+   "dividendo_10pct_pib": {
+    "texto": "n/d",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "SIM"
+   },
+   "maior_programa_infantil": {
+    "texto": "n/d",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "OBS"
+   },
+   "dividendo_sobre_programa": {
+    "texto": "n/d",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "SIM"
+   },
+   "analogo_ifvi_empregador": {
+    "texto": "Instrumentos oficiais não pesquisados",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "consumo_observado": {
+   "disponivel": false
+  },
+  "exposicao_iagen": {
+   "disponivel": false,
+   "motivo": "sem multiplicadores por grupo nesta rodada"
+  },
+  "exposicao_automacao": {
+   "disponivel": false,
+   "motivo": "sem multiplicadores por grupo nesta rodada"
+  },
+  "multiplicadores_grupos": {
+   "disponivel": false,
+   "motivo": "sem tabela de insumo-produto com microdados de orçamento harmonizados nesta rodada"
+  },
+  "composicao_grupos": {
+   "disponivel": false,
+   "motivo": "sem microdados de orçamento familiar harmonizados nesta rodada"
+  },
+  "incremento_crianca": {
+   "disponivel": false,
+   "motivo": "sem tabela de insumo-produto nesta rodada"
+  },
+  "disponibilidade_de_dados": {
+   "N* (pipeline 2024)": {
+    "texto": "2.58",
+    "verificacao": null
+   },
+   "Demografia anual (WPP local)": {
+    "texto": "1950–2101 (L)",
+    "verificacao": null
+   },
+   "PIB real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "VA por setor (WDI)": {
+    "texto": "1981–2025 (45)",
+    "verificacao": null
+   },
+   "Emprego por setor (WDI)": {
+    "texto": "1991–2025 (35)",
+    "verificacao": null
+   },
+   "FBCF %PIB (WDI)": {
+    "texto": "—",
+    "verificacao": null
+   },
+   "Consumo das famílias real (WDI)": {
+    "texto": "—",
+    "verificacao": null
+   },
+   "NTA (ano-base)": {
+    "texto": "2009",
+    "verificacao": null
+   },
+   "ICIO 2025": {
+    "texto": "1995–2022",
+    "verificacao": null
+   },
+   "IO nacional": {
+    "texto": "[N] Tabela insumo-produto oficial do NBS NÃO encontrada; existe tabela GTAP 2006 compilada por terceiros (IFPRI).",
+    "verificacao": "N"
+   },
+   "Orçamento familiar": {
+    "texto": "[P] Living Standards Survey (NLSS) 2018/19, NBS: campo 28/09/2018–28/09/2019; amostra nacional por 36 estados + FCT (60 setores de enumeração × 10 domicílios; ~22 mil domicílios é cálculo meu, não consta); áreas inacessíveis excluídas. Despesa de consumo: sim; roster: não confirmado. Acesso condicionado a termos (cadastro).",
+    "verificacao": "P"
+   },
+   "Uso do tempo": {
+    "texto": "[P] Nigeria Time Use Survey 2024 (NBS), só Borno, Cross River, Kaduna e Lagos; 3.600 domicílios.",
+    "verificacao": "P"
+   }
+  },
+  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+ },
+ {
+  "iso": "FRA",
+  "nome": "França",
+  "coortes": {
+   "composicao_perfis": "C80 D20",
+   "descendentes": "0–21",
+   "estruturadores": "22–59",
+   "ascendentes": "60+",
+   "ano_referencia": 2025,
+   "fonte": "P1_Coortes_Narayama"
+  },
+  "cobertura": {
+   "classe_provisoria": {
+    "texto": "3",
+    "valor": 3.0,
+    "natureza": "ENTRADA"
+   },
+   "perfil_consumo": {
+    "texto": "Pesos NTA 2011 (sem microdados)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "insumo_produto": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "OBS"
+   },
+   "ano_contas": {
+    "texto": "2022",
+    "valor": 2022.0,
+    "natureza": "OBS"
+   },
+   "afi_tempo": {
+    "texto": "Não",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "demografia": {
+   "tft_2025": {
+    "texto": "1.64",
+    "valor": 1.64,
+    "natureza": "OBS"
+   },
+   "pop_2025_pct": {
+    "texto": "25 / 46 / 29",
+    "valor": [
+     25.0,
+     46.0,
+     29.0
+    ],
+    "natureza": "DER"
+   },
+   "asc_estr_2025": {
+    "texto": "0.62",
+    "valor": 0.62,
+    "natureza": "DER"
+   },
+   "asc_estr_2075_tft_constante": {
+    "texto": "0.80",
+    "valor": 0.8,
+    "natureza": "PROJ"
+   },
+   "asc_estr_2075_wpp": {
+    "texto": "0.80",
+    "valor": 0.8,
+    "natureza": "PROJ"
+   },
+   "dependencia_2025_2075_wpp": {
+    "texto": "1.17 → 1.30",
+    "valor": [
+     1.17,
+     1.3
+    ],
+    "natureza": "PROJ"
+   },
+   "estruturadores_2075_rel": {
+    "texto": "96",
+    "valor": 96.0,
+    "natureza": "PROJ"
+   },
+   "descendentes_2075_rel": {
+    "texto": "89",
+    "valor": 89.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_wpp": {
+    "texto": "93",
+    "valor": 93.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_tft_constante": {
+    "texto": "92",
+    "valor": 92.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_rapida": {
+    "texto": "116",
+    "valor": 116.0,
+    "natureza": "PROJ"
+   }
+  },
+  "consumo": {
+   "cfcc_total_pct_desc_estr_asc": {
+    "texto": "20.5 / 47.3 / 32.2",
+    "valor": [
+     20.5,
+     47.3,
+     32.2
+    ],
+    "natureza": "EST"
+   },
+   "desc_privado_pesos_nta": {
+    "texto": "16.7",
+    "valor": 16.7,
+    "natureza": "EST"
+   },
+   "desc_privado_microdados_ancorados": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "desc_privado_regressao_bruta": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "razao_0_24_sobre_25_64": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "fator_ancoragem": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   }
+  },
+  "multiplicadores": {
+   "valor_adicionado": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "importacoes": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "edpc_sobre_emprego": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   }
+  },
+  "valorizacao": {
+   "gasto_publico_familia_socx": {
+    "texto": "2,64 (2022)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_10pct_pib": {
+    "texto": "0.90",
+    "valor": 0.9,
+    "natureza": "SIM"
+   },
+   "maior_programa_infantil": {
+    "texto": "Allocations familiales: 0,46% do PIB (2024)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_sobre_programa": {
+    "texto": "2,0×",
+    "valor": null,
+    "natureza": "SIM"
+   },
+   "analogo_ifvi_empregador": {
+    "texto": "Contribuição patronal para a branch Família (taxa não lida)",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "consumo_observado": {
+   "disponivel": false
+  },
+  "exposicao_iagen": {
+   "disponivel": false,
+   "motivo": "sem multiplicadores por grupo nesta rodada"
+  },
+  "exposicao_automacao": {
+   "disponivel": false,
+   "motivo": "sem multiplicadores por grupo nesta rodada"
+  },
+  "multiplicadores_grupos": {
+   "disponivel": false,
+   "motivo": "sem tabela de insumo-produto com microdados de orçamento harmonizados nesta rodada"
+  },
+  "composicao_grupos": {
+   "disponivel": false,
+   "motivo": "sem microdados de orçamento familiar harmonizados nesta rodada"
+  },
+  "incremento_crianca": {
+   "disponivel": false,
+   "motivo": "sem tabela de insumo-produto nesta rodada"
+  },
+  "disponibilidade_de_dados": {
+   "N* (pipeline 2024)": {
+    "texto": "0.75",
+    "verificacao": null
+   },
+   "Demografia anual (WPP local)": {
+    "texto": "1950–2101 (L)",
+    "verificacao": null
+   },
+   "PIB real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "VA por setor (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Emprego por setor (WDI)": {
+    "texto": "1991–2025 (35)",
+    "verificacao": null
+   },
+   "FBCF %PIB (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Consumo das famílias real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "NTA (ano-base)": {
+    "texto": "2011",
+    "verificacao": null
+   },
+   "ICIO 2025": {
+    "texto": "1995–2022",
+    "verificacao": null
+   },
+   "IO nacional": {
+    "texto": "[P] INSEE, 'TES et TEE en 2025' (base 2020, publ. 05/08/2026): TES níveis 17 e 38 para 2020–2024 (+ zips 1949–2019 e 1978–2019); TES simétrico nível 38 para 2019–2022 (2023–24 previstos para set/2026); TEE 2021–2025.",
+    "verificacao": "P"
+   },
+   "Orçamento familiar": {
+    "texto": "[P] INSEE: a página da série Budget de famille lista as edições 2006, 2011, 2017 e 2026; NÃO menciona arquivos individuais nem condições de acesso.",
+    "verificacao": "P"
+   },
+   "Uso do tempo": {
+    "texto": "[P] INSEE: Enquête Emploi du temps realizada em 2025 e 2026 (visto de 16/04/2025); edição anterior em 2010; periodicidade ~10 anos; respostas guardadas 10 anos após o fim da coleta. Nada sobre liberação de microdados.",
+    "verificacao": "P"
+   }
+  },
+  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+ },
+ {
+  "iso": "CHN",
+  "nome": "China",
+  "coortes": {
+   "composicao_perfis": "B25 C60 D15",
+   "descendentes": "0–21",
+   "estruturadores": "22–58",
+   "ascendentes": "59+",
+   "ano_referencia": 2025,
+   "fonte": "P1_Coortes_Narayama"
+  },
+  "cobertura": {
+   "classe_provisoria": {
+    "texto": "3",
+    "valor": 3.0,
+    "natureza": "ENTRADA"
+   },
+   "perfil_consumo": {
+    "texto": "Pesos NTA 2007 (sem microdados)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "insumo_produto": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "OBS"
+   },
+   "ano_contas": {
+    "texto": "2022",
+    "valor": 2022.0,
+    "natureza": "OBS"
+   },
+   "afi_tempo": {
+    "texto": "Não",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "demografia": {
+   "tft_2025": {
+    "texto": "1.02",
+    "valor": 1.02,
+    "natureza": "OBS"
+   },
+   "pop_2025_pct": {
+    "texto": "24 / 53 / 23",
+    "valor": [
+     24.0,
+     53.0,
+     23.0
+    ],
+    "natureza": "DER"
+   },
+   "asc_estr_2025": {
+    "texto": "0.43",
+    "valor": 0.43,
+    "natureza": "DER"
+   },
+   "asc_estr_2075_tft_constante": {
+    "texto": "1.60",
+    "valor": 1.6,
+    "natureza": "PROJ"
+   },
+   "asc_estr_2075_wpp": {
+    "texto": "1.51",
+    "valor": 1.51,
+    "natureza": "PROJ"
+   },
+   "dependencia_2025_2075_wpp": {
+    "texto": "0.88 → 1.85",
+    "valor": [
+     0.88,
+     1.85
+    ],
+    "natureza": "PROJ"
+   },
+   "estruturadores_2075_rel": {
+    "texto": "43",
+    "valor": 43.0,
+    "natureza": "PROJ"
+   },
+   "descendentes_2075_rel": {
+    "texto": "34",
+    "valor": 34.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_wpp": {
+    "texto": "77",
+    "valor": 77.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_tft_constante": {
+    "texto": "64",
+    "valor": 64.0,
+    "natureza": "PROJ"
+   },
+   "carga_estr_2075_rapida": {
+    "texto": "133",
+    "valor": 133.0,
+    "natureza": "PROJ"
+   }
+  },
+  "consumo": {
+   "cfcc_total_pct_desc_estr_asc": {
+    "texto": "26.1 / 53.5 / 20.4",
+    "valor": [
+     26.1,
+     53.5,
+     20.4
+    ],
+    "natureza": "EST"
+   },
+   "desc_privado_pesos_nta": {
+    "texto": "23.7",
+    "valor": 23.7,
+    "natureza": "EST"
+   },
+   "desc_privado_microdados_ancorados": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "desc_privado_regressao_bruta": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "razao_0_24_sobre_25_64": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "fator_ancoragem": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   }
+  },
+  "multiplicadores": {
+   "valor_adicionado": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "importacoes": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   },
+   "edpc_sobre_emprego": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST"
+   }
+  },
+  "valorizacao": {
+   "gasto_publico_familia_socx": {
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "OBS"
+   },
+   "dividendo_10pct_pib": {
+    "texto": "0.93",
+    "valor": 0.93,
+    "natureza": "SIM"
+   },
+   "maior_programa_infantil": {
+    "texto": "Subsídio de criação de filhos: ≈ 0,07% do PIB (2025)",
+    "valor": null,
+    "natureza": "OBS"
+   },
+   "dividendo_sobre_programa": {
+    "texto": "12×",
+    "valor": null,
+    "natureza": "SIM"
+   },
+   "analogo_ifvi_empregador": {
+    "texto": "Não encontrado (seguro-maternidade a confirmar)",
+    "valor": null,
+    "natureza": "OBS"
+   }
+  },
+  "consumo_observado": {
+   "disponivel": false
+  },
+  "exposicao_iagen": {
+   "disponivel": false,
+   "motivo": "sem multiplicadores por grupo nesta rodada"
+  },
+  "exposicao_automacao": {
+   "disponivel": false,
+   "motivo": "sem multiplicadores por grupo nesta rodada"
+  },
+  "multiplicadores_grupos": {
+   "disponivel": false,
+   "motivo": "sem tabela de insumo-produto com microdados de orçamento harmonizados nesta rodada"
+  },
+  "composicao_grupos": {
+   "disponivel": false,
+   "motivo": "sem microdados de orçamento familiar harmonizados nesta rodada"
+  },
+  "incremento_crianca": {
+   "disponivel": false,
+   "motivo": "sem tabela de insumo-produto nesta rodada"
+  },
+  "disponibilidade_de_dados": {
+   "N* (pipeline 2024)": {
+    "texto": "0.59",
+    "verificacao": null
+   },
+   "Demografia anual (WPP local)": {
+    "texto": "1950–2101 (L)",
+    "verificacao": null
+   },
+   "PIB real (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "VA por setor (WDI)": {
+    "texto": "1976–2025 (50)",
+    "verificacao": null
+   },
+   "Emprego por setor (WDI)": {
+    "texto": "1991–2025 (35)",
+    "verificacao": null
+   },
+   "FBCF %PIB (WDI)": {
+    "texto": "1976–2024 (49)",
+    "verificacao": null
+   },
+   "Consumo das famílias real (WDI)": {
+    "texto": "1995–2024 (30)",
+    "verificacao": null
+   },
+   "NTA (ano-base)": {
+    "texto": "2007",
+    "verificacao": null
+   },
+   "ICIO 2025": {
+    "texto": "1995–2022",
+    "verificacao": null
+   },
+   "IO nacional": {
+    "texto": "[P] NBS, anuário 2022 (página lida): tabelas insumo-produto 2020 competitiva e não competitiva, em 17×17 produtos/departamentos, compiladas a partir da pesquisa de 2017 e dados de 2020. Detalhe de 42/153 setores só em fontes de terceiros.",
+    "verificacao": "P"
+   },
+   "Orçamento familiar": {
+    "retido": true,
+    "motivo": "resultado de busca, página não aberta"
+   },
+   "Uso do tempo": {
+    "texto": "[P] NBS, comunicado da 3ª Pesquisa Nacional de Uso do Tempo (lido): campo 11–31/mai/2024; 38.500 domicílios e 107.000 indivíduos de 6+ anos; todas as 31 províncias/regiões/municípios (+ Corpo de Produção de Xinjiang). O comunicado NÃO menciona microdados. (Substitui a leitura anterior de 2018 em 11 províncias.)",
+    "verificacao": "P"
+   }
+  },
+  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+ }
+]

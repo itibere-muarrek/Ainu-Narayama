@@ -87,6 +87,8 @@ def main():
     out = {"testado_em": datetime.now().isoformat(timespec="seconds"), "agente": UA, "links": dict(zip(urls, res))}
     (DADOS / "privado").mkdir(parents=True, exist_ok=True)
     (DADOS / "privado" / "links_status.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    (DADOS / "publicavel").mkdir(parents=True, exist_ok=True)
+    (DADOS / "publicavel" / "links_status.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")   # o app lê a cópia publicável
     cont: dict[str, int] = defaultdict(int)
     for r in res:
         cont[r["estado"]] += 1

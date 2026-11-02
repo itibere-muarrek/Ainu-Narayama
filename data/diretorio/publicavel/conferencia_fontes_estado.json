@@ -1,0 +1,329 @@
+{
+ "https://eora.org/": {
+  "estado": "confere"
+ },
+ "https://www.anses.gob.ar/sites/default/files/2026-07/Bolet%C3%ADn%20Asignaciones%20para%20Protecci%C3%B3n%20Social_marzo%202026.pdf": {
+  "estado": "confere"
+ },
+ "https://www.indec.gob.ar/ftp/cuadros/menusuperior/engho/engho2017_18_manual_uso_bases.pdf": {
+  "estado": "confere"
+ },
+ "https://www.indec.gob.ar/ftp/cuadros/menusuperior/enut/enut2021_manual_uso_base.pdf": {
+  "estado": "confere"
+ },
+ "https://arca.gob.ar/gananciasYBienes/ganancias/personas-humanas-sucesiones-indivisas/deducciones/documentos/Deducciones-personales-art-30-liq-anual-2025.pdf": {
+  "estado": "revisar"
+ },
+ "https://www.argentina.gob.ar/sites/default/files/informe_sobre_gastos_tributarios._anos_2023-2025.pdf": {
+  "estado": "confere"
+ },
+ "https://ilostat.ilo.org/data/": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.indec.gob.ar/ftp/cuadros/economia/cou_2018_08_21.pdf": {
+  "estado": "confere"
+ },
+ "https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=362578": {
+  "estado": "confere"
+ },
+ "https://www.iioa.org/conferences/32nd/papers/files/5640_ICIO-tiva-ghg2025annex.pdf": {
+  "estado": "confere"
+ },
+ "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.ntaccounts.org/doc/repository/NTA%20Data%20Sheet%202016.pdf": {
+  "estado": "confere"
+ },
+ "https://www.opc.gob.ar/wp-content/uploads/ANALISIS-DE-LA-EJECUCION-PRESUPUESTARIA-DE-LA-ADMINISTRACION-NACIONAL-DICIEMBRE-2025.pdf": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SH.XPD.CHEX.GD.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SE.XPD.TOTL.GD.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SP.DYN.CBRT.IN": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SP.DYN.LE00.IN": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SP.DYN.IMRT.IN": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SH.DYN.MORT": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/GC.TAX.TOTL.GD.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SP.POP.TOTL": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SP.POP.0014.TO.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SP.POP.1564.TO.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SP.POP.65UP.TO.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SP.POP.DPND": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SM.POP.NETM": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/NV.IND.TOTL.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/NV.SRV.TOTL.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SL.AGR.EMPL.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SL.IND.EMPL.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SL.SRV.EMPL.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SL.TLF.CACT.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SL.TLF.CACT.FE.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/NE.GDI.FTOT.KD": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/NE.GDI.FTOT.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/NE.CON.PRVT.KD": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/NE.CON.PRVT.ZS": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/NE.CON.GOVT.KD": {
+  "estado": "confere"
+ },
+ "https://data.worldbank.org/indicator/NE.IMP.GNFS.ZS": {
+  "estado": "confere"
+ },
+ "https://population.un.org/wpp/": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.gov.br/secom/pt-br/acompanhe-a-secom/noticias/2026/04/bolsa-familia-chega-a-18-9-milhoes-de-beneficiarios-em-todo-o-brasil-a-partir-desta-quinta-16": {
+  "estado": "confere"
+ },
+ "https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/publicacoes/relatorios/renuncia/gastos-tributarios-ploa/dgt-previsao-ploa-2026-base-conceitual.pdf": {
+  "estado": "revisar"
+ },
+ "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria/beneficios-fiscais/programa-empresa-cidada/orientacoes": {
+  "estado": "confere"
+ },
+ "https://ftp.ibge.gov.br/Orcamentos_Familiares/Pesquisa_de_Orcamentos_Familiares_2017_2018/Microdados/": {
+  "estado": "confere"
+ },
+ "https://biblioteca.ibge.gov.br/visualizacao/livros/liv101604.pdf": {
+  "estado": "confere"
+ },
+ "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm": {
+  "estado": "nao_verificavel"
+ },
+ "https://biblioteca.ibge.gov.br/visualizacao/livros/liv102020_informativo.pdf": {
+  "estado": "confere"
+ },
+ "https://www.gov.br/inss/pt-br/direitos-e-deveres/salario-familia/valor-limite-para-direito-ao-salario-familia": {
+  "estado": "confere"
+ },
+ "https://www.gov.br/previdencia/pt-br/assuntos/previdencia-social/Dados-estatisticos-previdencia-social-e-inss/boletins-da-previdencia-social/2025/beps112025_final.pdf": {
+  "estado": "confere"
+ },
+ "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Anual/Outras_Formas_de_Trabalho_2017/": {
+  "estado": "confere"
+ },
+ "https://ftp.ibge.gov.br/Trabalho_e_Rendimento/Pesquisa_Nacional_por_Amostra_de_Domicilios_continua/Anual/Outras_Formas_de_Trabalho_2017/Selecao_de_Variaveis.pdf": {
+  "estado": "confere"
+ },
+ "https://opendata.pku.edu.cn/dataset.xhtml?persistentId=doi%3A10.18170%2FDVN%2F45LCSO&version=19.0": {
+  "estado": "revisar"
+ },
+ "https://www.stats.gov.cn/sj/ndsj/2022/html/sme03.htm": {
+  "estado": "revisar"
+ },
+ "https://www.isss.pku.edu.cn/cfps/en": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.stats.gov.cn/english/PressRelease/202411/t20241115_1957435.html": {
+  "estado": "confere"
+ },
+ "https://www.insee.fr/fr/metadonnees/source/serie/s1194": {
+  "estado": "confere"
+ },
+ "https://www.insee.fr/fr/statistiques/8988861": {
+  "estado": "revisar"
+ },
+ "https://www.insee.fr/fr/information/6659349": {
+  "estado": "confere"
+ },
+ "https://datacatalog.ihsn.org/catalog/12933": {
+  "estado": "revisar"
+ },
+ "https://mospi.gov.in/sites/default/files/publication_reports/Final_Report_HCES_2023-24L.pdf": {
+  "estado": "confere"
+ },
+ "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2150113&reg=48&lang=2": {
+  "estado": "revisar"
+ },
+ "https://microdata.gov.in/NADA/index.php/catalog/236": {
+  "estado": "nao_verificavel"
+ },
+ "https://catalog.ihsn.org/catalog/12937": {
+  "estado": "confere"
+ },
+ "https://www.inps.it/it/it/inps-comunica/notizie/dettaglio-news-page.news.2026.02.assegno-unico-2026-presentazione-domanda-e-aggiornamento-importi.html": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.istat.it/microdati/indagine-sulle-spese-delle-famiglie-uso-pubblico/": {
+  "estado": "confere"
+ },
+ "https://www.istat.it/microdati/indagine-sulle-spese-delle-famiglie-file-ricerca/": {
+  "estado": "confere"
+ },
+ "https://www.istat.it/tavole-di-dati/il-sistema-di-tavole-input-output-anni-2020-2021/": {
+  "estado": "confere"
+ },
+ "https://www.bancaditalia.it/statistiche/tematiche/indagini-famiglie-imprese/bilanci-famiglie/distribuzione-microdati/index.html": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.istat.it/microdati/multiscopo-sulle-famiglie-uso-del-tempo/": {
+  "estado": "confere"
+ },
+ "https://www.cfa.go.jp/policies/kokoseido/jidouteate/annai/": {
+  "estado": "revisar"
+ },
+ "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180.htm": {
+  "estado": "revisar"
+ },
+ "https://www.cfa.go.jp/policies/kokoseido/mushouka": {
+  "estado": "revisar"
+ },
+ "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/1bd66626-02b3-4966-8f38-20659fea0f1f/457e5ee9/20250318_councils_jigyounushi-kyougi_1bd66626_04.pdf": {
+  "estado": "revisar"
+ },
+ "https://www.e-stat.go.jp/en/stat-search?kikan=00200&toukei=00200561&page=1": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.soumu.go.jp/english/dgpp_ss/data/io/io20_00001.html": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.e-stat.go.jp/en/stat-search/files?toukei=00200603&layout=dataset": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/4cf58692-19b3-47a6-af76-1d6df3602740/bf2fe881/20250130_policies_budget_tokubetsukaikei_ikujikyugyo_06.pdf": {
+  "estado": "revisar"
+ },
+ "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/13c14507-66d3-4212-9cda-7afd707c1083/eae3eab8/20250402_policies_budget_tokubetsukaikei_kodomokosodate_08.pdf": {
+  "estado": "revisar"
+ },
+ "https://www.stat.go.jp/english/data/shakai/2021/gaiyo.html": {
+  "estado": "confere"
+ },
+ "https://mods.go.kr/menu.es?mid=a20206020000": {
+  "estado": "revisar"
+ },
+ "https://bok.or.kr/eng/bbs/E0000634/view.do?menuNo=400069&nttId=10083839&pageIndex=": {
+  "estado": "revisar"
+ },
+ "http://mdis.kostat.go.kr/eng/index.do": {
+  "estado": "nao_verificavel"
+ },
+ "https://data2x.org/wp-content/uploads/2025/03/South-Korea-TUCS-Korean-WR.pdf": {
+  "estado": "revisar"
+ },
+ "https://www.inegi.org.mx/programas/enigh/nc/2024/": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.inegi.org.mx/programas/enut/2019/?ps=microdatos": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.inegi.org.mx/rnm/index.php/catalog/1116": {
+  "estado": "revisar"
+ },
+ "http://www.imss.gob.mx/sites/all/statics/pdf/informes/20232024/10-Cap06.pdf": {
+  "estado": "confere"
+ },
+ "https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2024/COU/COUyMIP-Estatales2018.pdf": {
+  "estado": "confere"
+ },
+ "https://www.gob.mx/cms/uploads/attachment/file/969771/RO_PABNNHMT_2025_01_24.pdf": {
+  "estado": "confere"
+ },
+ "https://www.sat.gob.mx/minisitio/DeduccionesPersonales/colegiaturas.html": {
+  "estado": "revisar"
+ },
+ "https://www.inegi.org.mx/rnm/index.php/catalog/618": {
+  "estado": "confere"
+ },
+ "https://microdata.worldbank.org/catalog/3827": {
+  "estado": "revisar"
+ },
+ "https://www.gtap.agecon.purdue.edu/databases/IO/table_display.asp?IO_ID=468": {
+  "estado": "revisar"
+ },
+ "https://microdata.worldbank.org/catalog/6410": {
+  "estado": "confere"
+ },
+ "https://microdata.nigerianstat.gov.ng/index.php/catalog/178": {
+  "estado": "nao_verificavel"
+ },
+ "https://www.bls.gov/news.release/atus.t01.htm": {
+  "estado": "confere"
+ },
+ "https://www.bls.gov/cex/pumd_data.htm": {
+  "estado": "confere"
+ },
+ "https://www.congress.gov/crs_external_products/R/PDF/R41873/R41873.32.pdf": {
+  "estado": "confere"
+ },
+ "https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-tax-credit-statistics": {
+  "estado": "confere"
+ },
+ "https://www.bea.gov/industry/input-output-accounts-data": {
+  "estado": "revisar"
+ },
+ "https://www.ers.usda.gov/topics/food-nutrition-assistance/supplemental-nutrition-assistance-program-snap/key-statistics-and-research": {
+  "estado": "confere"
+ },
+ "https://home.treasury.gov/policy-issues/tax-policy/tax-expenditures": {
+  "estado": "confere"
+ },
+ "https://www.bls.gov/tus/data/datafiles-0324.htm": {
+  "estado": "confere"
+ },
+ "https://www.ers.usda.gov/media/29245/eib-304.pdf?v=28095": {
+  "estado": "confere"
+ }
+}
