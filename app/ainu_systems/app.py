@@ -1,49 +1,22 @@
 """
-ainu.systems — Plataforma restrita a pesquisadores e formuladores de política.
+ainu.systems — plataforma restrita a pesquisadores e formuladores de política.
 
-Cálculos detalhados, filtros por perfil/região e os componentes brutos
-do N* (NGII_Obs, Fator_Geracional, Fator_Alocativo) para os 28
-países da amostra. Versão pública e minimalista: ver
-app/narayama_live/app.py (8 países destaque, sem detalhamento técnico).
+Cálculos detalhados e os componentes do N* (NGII_Obs, Fator_Geracional, Fator_Alocativo) para os 28 países da amostra. A versão
+pública e minimalista está em app/narayama_live/app.py (11 países).
 
-Fonte: pesquisa independente (V1_1), Anexo 14 (Glossário — "AINU"):
-"Interface pública: Narayama.live (7 países destaque); interface
-restrita a pesquisadores: ainu.systems."
+Dados:
+- data/processed/n_index_2024.csv: snapshot 2024, uma linha por país: codigo, n_base, n_estrela, farol, ngii_obs,
+  fator_geracional, fator_alocativo, status, populacao (valores observados, N*_Obs) e, como referência, ngii_cal, n_base_cal,
+  n_estrela_cal, status_cal e os cenários n_estrela_mig/ine/pol/sub.
+- data/processed/n_index_historico.csv: série histórica (codigo, ano, n_base, n_estrela, n_base_cal, n_estrela_cal).
+Nome/perfil/região dos países vêm de src.config.PAISES; a TFR 2024 vem de docs/paises_perfil.csv.
 
-Fontes de dados esperadas (produzidas pelo pipeline da Fase 2+):
-- data/processed/n_index_2024.csv: snapshot 2024, uma linha por país,
-  colunas: codigo, n_base, n_estrela, farol, ngii_obs, fator_geracional,
-  fator_alocativo, status, populacao (valores observados, N*_Obs) e, como
-  referência, ngii_cal, n_base_cal, n_estrela_cal, status_cal e os cenários
-  n_estrela_mig/ine/pol/sub.
-- data/processed/n_index_historico.csv: série histórica, colunas:
-  codigo, ano, n_base.
+`n_base` é o valor demográfico observado (N_Base_Obs); `n_estrela` é o N*_Obs (√n_base). A zona (`status`) é classificada com
+src.indices.classificar_zona_5 a partir do N_Base (a raiz é monotônica); as zonas são provisórias (teste F4,
+docs/testes_pqdf_n_estrela.md). O PEEC também é diagnosticado por TFR > 2,8.
 
-Nome/perfil/região dos países vêm de src.config.PAISES (não são
-duplicados no CSV) e TFR 2024 vem de docs/paises_perfil.csv, usado só
-para o diagnóstico de PEEC (que é feito pela TFR, não pelo N*).
-
-Normalização (decisão de 2026-07-09, ver src.indices.normalizar_n_base):
-`n_base` é o valor demográfico observado (N_Base_Obs); `n_estrela` é o
-N*_Obs reportado publicamente (sqrt(n_base)). Os limiares abaixo são os
-brutos, usados pra classificar a zona (`status`) — a UI usa a versão
-normalizada (src.config.LIMIARES_SIMPLES_NORMALIZADOS) só pra colorir
-a tabela na escala exibida; a classificação em si é idêntica nas duas
-escalas (raiz é monotônica).
-
-Convenção de zonas do N_Base adotada (Tabela 4 / Anexo 8 da tese — ver
-docs/definitions.md, seções 6 e 8): N_Base alto é melhor.
-    N_Base > 1.10          -> Expansão Forte
-    0.80 <= N_Base <= 1.10  -> Ponto de Equilíbrio Autossustentável (PEA)
-    0.50 <= N_Base < 0.80   -> Tensão Acelerada
-    N_Base < 0.50           -> Colapso de Narayama (PEC)
-PEEC não é um limiar de N*: é diagnosticado por TFR > 2.8 (Cap. 3.2.1).
-
-Seletor de idioma (2026-07-18, decisão do autor): barra superior com
-9 idiomas (PT padrão/fonte + EN/ES/JA/KO/IT/FI/FR/ZH), via
-src.i18n — ver esse módulo pra convenções de tradução. Nomes de
-região são traduzidos; códigos de "perfil" (ex.: A35/B40/C25) são
-alfanuméricos e não precisam de tradução.
+Interface em 9 idiomas (PT fonte + EN/ES/JA/KO/IT/FI/FR/ZH), via src.i18n. Nomes de região são traduzidos; códigos de "perfil"
+(ex.: A35/B40/C25) não precisam de tradução.
 """
 
 import os

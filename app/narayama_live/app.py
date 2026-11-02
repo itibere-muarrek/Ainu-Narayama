@@ -1,55 +1,19 @@
 """
-narayama.live — Interface pública minimalista do AINU-Narayama.
+narayama.live — interface pública e minimalista do Índice de Narayama Sistêmico.
 
-Mostra o Índice de Narayama Sistêmico (N*) apenas para os 8 países
-destaque, sem os filtros e componentes técnicos detalhados (esses
-ficam na plataforma restrita: ver app/ainu_systems/app.py).
+Mostra os mesmos 11 países do ainu.systems (8 destaque: Argentina, Brasil, China, Coreia do Sul, EUA, Índia, Itália, Japão; mais
+França, México e Nigéria, marcados "exemplo", que cobrem as 5 zonas). Análise técnica dos 28 países: app/ainu_systems/app.py.
 
-Fonte: pesquisa independente (V1_1), Anexo 14 (Glossário — "AINU"):
-"Interface pública: Narayama.live (7 países destaque); interface
-restrita a pesquisadores: ainu.systems." (citação literal do
-documento-fonte na data original — mantida como "7" de propósito,
-não é reescrita aqui.) Lista original de 7 países destaque confirmada
-pelo autor da tese em 2026-07-01; Índia (IND) acrescentada em
-2026-08-31 (decisão do autor, ver memória
-evolucao_futura_ainu_narayama_sites) pra completar um grid 4+4 nas
-landing pages — ver src.config.PAISES_DESTAQUE_NARAYAMA_LIVE: Argentina,
-Brasil, China, Coreia do Sul, EUA, Índia, Itália, Japão.
+Fonte de dados: data/processed/n_index_2024.csv (colunas codigo, n_base, n_estrela, farol, status). O N* mostrado é o N*_Obs
+(`n_estrela` = √n_base, valor observado, sem ajustes — ver src.indices.normalizar_n_base e docs/definitions.md). As zonas são
+provisórias (teste F4, docs/testes_pqdf_n_estrela.md).
 
-Países-exemplo pedagógicos (2026-07-30, decisão do autor): os países
-destaque caem só em 2 das 5 zonas do N* (PEC e PEA) — sem nenhum
-exemplo de Tensão Acelerada, Tensão Populacional ou PEEC, enfraquecendo
-a leitura visual da escala completa (situação que persiste com os 8
-atuais, já que Índia também é PEA). Acrescenta França, México e
-Nigéria (src.config.PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE) só pra cobertura
-pedagógica das 5 zonas — não substitui nem se mistura com a lista
-oficial de destaque (marcados com a tag "exemplo" nos cards).
+Zonas do N*: não é "quanto maior melhor" — é um equilíbrio no meio da escala. N* < 0,71 é Colapso de Narayama (PEC); N* ≥ 2,00 é
+Saturação por Excesso de Contingente (PEEC); o ideal fica entre 0,90 e 1,40 (Ponto de Equilíbrio Autossustentável / PEA).
+(src.indices.classificar_zona_5)
 
-Fonte de dados esperada (produzida pelo pipeline da Fase 2+):
-data/processed/n_index_2024.csv — colunas: codigo, n_base, n_estrela,
-farol, status. O N* mostrado aqui é `n_estrela` (sqrt(n_base) —
-normalização de 2026-07-09, ver src.indices.normalizar_n_base), o
-valor comprimido pra faixa plausível, mais adequado pra uma interface
-pública minimalista do que o N_Base bruto.
-
-Convenção de zonas do N* (atualizada em 2026-07-15 — a nota antiga
-deste docstring, "N* alto é melhor", ficou desatualizada pela
-classificação de 5 zonas de 12/07/2026, ver
-src.indices.classificar_zona_5): não é "quanto maior melhor" — é um
-equilíbrio no meio da escala. N* muito baixo (< 0,71) é Colapso de
-Narayama (PEC); N* muito alto (≥ 2,00) é Saturação por Excesso de
-Contingente (PEEC); o ideal fica no meio, entre 0,90 e 1,40 (Ponto de
-Equilíbrio Autossustentável / PEA).
-
-Ordem da página (reorganizada em 2026-07-16, a pedido do autor: "a
-tabela geracional de narayama deve encabeçar a página"): a Tabela
-Geracional agora é o primeiro conteúdo visual da página, logo após o
-cabeçalho/legenda — a tabela minimalista e o gráfico de barras viram
-detalhe de apoio, abaixo dela.
-
-Seletor de idioma (2026-07-18, decisão do autor): barra superior com
-9 idiomas (PT padrão/fonte + EN/ES/JA/KO/IT/FI/FR/ZH), via
-src.i18n — ver esse módulo pra convenções de tradução.
+Ordem da página: Tabela Geracional primeiro; tabela minimalista e gráfico de barras como apoio. Interface em 9 idiomas
+(PT fonte + EN/ES/JA/KO/IT/FI/FR/ZH), via src.i18n.
 """
 
 import sys
@@ -284,10 +248,13 @@ if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
 
 st.header(t("n_star_header_destaque", lang))
 
-# Só os 8 países destaque oficiais aqui (não os 3 exemplos pedagógicos,
-# que ficam restritos à Tabela Geracional acima) — mantém o cabeçalho
-# "8 Países Destaque" literalmente correto.
-_df_destaque_oficial = df[~df["eh_exemplo"]] if "eh_exemplo" in df.columns else df
+# Os mesmos 11 países do ainu.systems (8 destaque + 3 exemplos pedagógicos, que ganham a tag "exemplo" no nome).
+_df_destaque_oficial = df.copy()
+if "eh_exemplo" in _df_destaque_oficial.columns:
+    _tag = t("exemplo_pedagogico_tag", lang)
+    _df_destaque_oficial["nome_exibicao"] = _df_destaque_oficial.apply(
+        lambda r: f"{r['nome_exibicao']} ({_tag})" if r["eh_exemplo"] else r["nome_exibicao"], axis=1
+    )
 
 _col_pais = t("col_pais", lang)
 _col_status = t("col_status", lang)
