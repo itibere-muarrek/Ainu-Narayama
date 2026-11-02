@@ -79,7 +79,7 @@ for p in paises:
 G.EMBED = True
 d = G.carregar()
 chip = lambda h, n: len(re.findall(rf'class="chip c-{n}"', h))
-for lang in ("pt", "en"):
+for lang in ("pt", "en", "es", "fr", "it", "ko", "ja", "zh", "fi"):
     for p in paises:
         h = G.html_ficha(p["iso"], lang, "dados")
         for n in ("EST", "PROJ", "SIM"):
@@ -101,7 +101,7 @@ for lang in ("pt", "en"):
 # 5. IDs citados nas páginas existem no registro
 ids_reg = {f["id"] for f in fontes} | {e["id"] for e in ler(PUB / "evidencias.json")}
 citados = set()
-for lang in ("pt", "en"):
+for lang in ("pt", "en", "es", "fr", "it", "ko", "ja", "zh", "fi"):
     for p in paises:
         citados |= set(re.findall(r"AINU-[A-Z0-9]+-[A-Z0-9]+-\d{4}-\d{6}", G.html_ficha(p["iso"], lang, "dados")))
 faltam = sorted(citados - ids_reg)

@@ -32,14 +32,6 @@ st.set_page_config(page_title="ainu.systems — Dados verificáveis", layout="wi
 lang = seletor_idioma()
 exigir_login(lambda k: ts(k, lang))
 
-TX = {
-    "pt": {"t": "Dados verificáveis", "sem": "Os dados do Diretório ainda não foram liberados neste ambiente.",
-           "idioma": "Esta página está em português e inglês; os outros idiomas mostram português."},
-    "en": {"t": "Verifiable data", "sem": "The Directory data has not been released in this environment.",
-           "idioma": "This page is in Portuguese and English; other languages show Portuguese."},
-}
-tx = TX["en" if lang == "en" else "pt"]
-
 try:
     import gerar_fichas as G
     G.EMBED = True
@@ -48,10 +40,11 @@ try:
 except Exception:
     ok = False
 
-st.title(tx["t"])
+t = G.T[lang if lang in G.T else "pt"] if ok else {"d_titulo": "Dados verificáveis", "x_sem": "Os dados do Diretório ainda não foram liberados neste ambiente."}
+st.title(t["d_titulo"])
 if not ok:
-    st.warning(tx["sem"])
+    st.warning(t["x_sem"])
     st.stop()
-if lang not in ("pt", "en"):
-    st.caption(tx["idioma"])
+if lang != "pt":
+    st.caption(t["aviso_texto_pt"])
 mostrar_html(G.html_dados(lang), 2600)

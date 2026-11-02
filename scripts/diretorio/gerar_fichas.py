@@ -10,6 +10,8 @@ Uso:
 from __future__ import annotations
 
 import html
+import importlib
+import sys
 import json
 import re
 import shutil
@@ -44,6 +46,8 @@ T = {  # textos de interface
         "sub_sup": "Suposições de modelo para pesquisadores",
         "tabela_sup": "Comparação das suposições",
         "demo_dados": "Demografia", "valor_dados": "Gasto público e programas para crianças",
+        "x_pais": "País", "x_tft": "TFT 2025", "x_pop": "D / E / A (%)", "x_ficha": "Ficha do país", "x_sem": "Os dados do Diretório ainda não foram liberados neste ambiente.",
+        "x_nota_app": "Aqui constam só dados levantados em fontes e testados. A lista completa, com links para conferir cada fonte, está na página Dados Verificaveis. Estimativas, projeções e simulações são suposições para pesquisadores e ficam na página Simulacao Dividendo.",
         "n_titulo": "Números conferidos contra a fonte", "n_intro": "Conferência dos números de maior peso, feita em {data}: o número da pesquisa foi comparado com o texto da fonte e, nos percentuais do PIB, refeito com o PIB do Banco Mundial. Itens que não deu para conferir ficam marcados.",
         "n_col_item": "Número", "n_col_fonte": "Fonte", "n_col_estado": "Resultado", "n_col_nota": "O que foi conferido",
         "n_confere": "confere", "n_confere_parcial": "confere em parte", "n_nao_conferido": "não conferido",
@@ -155,6 +159,8 @@ T = {  # textos de interface
         "sub_sup": "Model assumptions for researchers",
         "tabela_sup": "Comparison of assumptions",
         "demo_dados": "Demography", "valor_dados": "Public spending and programmes for children",
+        "x_pais": "Country", "x_tft": "TFR 2025", "x_pop": "D / B / A (%)", "x_ficha": "Country page", "x_sem": "The Directory data has not been released in this environment.",
+        "x_nota_app": "This page only has data gathered from sources and tested. The full list, with links to check each source, is on the Verifiable Data page. Estimates, projections and simulations are assumptions for researchers and are on the Simulacao Dividendo page.",
         "n_titulo": "Numbers checked against the source", "n_intro": "Check of the most important numbers, made on {data}: the research number was compared with the source text and, for percentages of GDP, recomputed with World Bank GDP. Items that could not be checked are marked.",
         "n_col_item": "Number", "n_col_fonte": "Source", "n_col_estado": "Result", "n_col_nota": "What was checked",
         "n_confere": "matches", "n_confere_parcial": "partly matches", "n_nao_conferido": "not checked",
@@ -324,7 +330,7 @@ def e(s) -> str:
 
 
 def num(texto: str, lang: str) -> str:
-    sep = "," if lang == "pt" else "."
+    sep = "," if lang in VIRGULA else "."
     return re.sub(r"(?<=\d)[.,](?=\d)", sep, texto)
 
 
@@ -342,8 +348,8 @@ def valor_txt(reg: dict, lang: str, unidade: str) -> tuple[str, bool]:
     if re.fullmatch(r"[\d.,]+ \(\d{4}\)", t):
         return e(num(t, lang)), False
     if reg.get("valor") is not None:
-        if lang == "en":
-            unidade = unidade.replace("% do PIB", "% of GDP")
+        if lang != "pt":
+            unidade = unidade.replace("% do PIB", PCT_PIB.get(lang, "% of GDP"))
         u = f" {unidade}" if unidade and unidade != "×" else ""
         pos = "×" if unidade == "×" else ""
         return e(num(t, lang) + u + pos), False
@@ -363,16 +369,45 @@ def sig2(n):
 
 def milhar(n, lang: str) -> str:
     t = f"{round(sig2(n)):,}"
-    return t.replace(",", ".") if lang == "pt" else t
+    return t.replace(",", MILHAR.get(lang, ","))
 
 
 def dec(n, casas: int, lang: str) -> str:
-    return f"{n:.{casas}f}".replace(".", ",") if lang == "pt" else f"{n:.{casas}f}"
+    return f"{n:.{casas}f}".replace(".", "," if lang in VIRGULA else ".")
 
 
 def faixa(lo, hi, fmt, t) -> str:
     a, b = fmt(lo), fmt(hi)
     return "" if a == b else f" · {e(t['incr_faixa'])}: {a}–{b}"
+
+
+VIRGULA = {"pt", "es", "fr", "it", "fi"}
+MILHAR = {"pt": ".", "es": ".", "it": ".", "fr": "\u202f", "fi": "\u00a0"}               # separador de milhar por idioma (padrão: vírgula)
+PCT_PIB = {"en": "% of GDP", "es": "% del PIB", "fr": "% du PIB", "it": "% del PIL", "ko": "GDP 대비 %", "ja": "GDP比 %", "zh": "占 GDP 的 %", "fi": "% BKT:stä"}                      # idiomas com vírgula decimal
+EXTRAS = ["es", "fr", "it", "ko", "ja", "zh", "fi"]          # traduzidos por IA, sem revisão nativa; o que falta cai no inglês
+ROT_I18N: dict = {}
+INSTR_I18N: dict = {}
+GLOSS_I18N: dict = {}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(RAIZ))
+for _l in EXTRAS:
+    _d = importlib.import_module(f"i18n_dir.{_l}").D
+    T[_l] = {**T["en"], **_d["T"], "classes": _d["classes"]}
+    NATUREZA[_l] = {**NATUREZA["en"], **_d["NAT"]}
+    NATUREZA_DESC[_l] = {**NATUREZA_DESC["en"], **_d["NATD"]}
+    ROT_I18N[_l] = _d["ROT"]
+    INSTR_I18N[_l] = _d["INSTR"]
+    GLOSS_I18N[_l] = _d["GLOSS"]
+    assert set(_d["GLOSS"]) == set(GLOSS_EN), f"glossário {_l} fora de sincronia"
+    assert set(_d["ROT"]) == {f"{b}.{c}" for (b, c) in ROT}, f"rótulos {_l} fora de sincronia"
+    assert {k for k in _d["T"]} <= set(T["en"]), (_l, sorted(set(_d["T"]) - set(T["en"]))[:3])
+
+
+def rot_label(bloco: str, chave: str, lang: str) -> str:
+    pt, en, _ = ROT[(bloco, chave)]
+    if lang == "pt":
+        return pt
+    return ROT_I18N.get(lang, {}).get(f"{bloco}.{chave}", en)
 
 
 GRUPOS_EN = {"Alimentos e bebidas": "Food and beverages", "Habitação, energia e equipamento do lar": "Housing, energy and household equipment",
@@ -481,7 +516,7 @@ def consumo_obs_html(p: dict, lang: str) -> str:
         return ""
     t = T[lang]
     sel = [n for n in c["niveis"] if n["indicador"] in ("MPCE médio 2023-24", "Mediana do MPCE (P50) 2023-24", "Coeficiente de Gini do consumo por pessoa", "P10", "P90")]
-    val = lambda v: (f"{int(v):,}".replace(",", ".") if lang == "pt" else f"{int(v):,}") if v > 1 else dec(v, 3, lang)   # valores observados: sem arredondar
+    val = lambda v: f"{int(v):,}".replace(",", MILHAR.get(lang, ",")) if v > 1 else dec(v, 3, lang)   # valores observados: sem arredondar
     lin = "".join(f"<tr><td>{e(n['indicador'] if lang == 'pt' else CO_IND_EN.get(n['indicador'], n['indicador']))}</td><td class='v'>{e(val(n['rural']))}</td>"
                   f"<td class='v'>{e(val(n['urbano']))}</td><td>{e(n['pagina'])}</td></tr>" for n in sel)
     gl = "".join(f"<tr><td>{e(r['grupo'] if lang == 'pt' else CO_EN.get(r['grupo'], r['grupo']))}</td><td class='v'>{dec(r['rural_pct'], 1, lang)}</td><td class='v'>{dec(r['urbano_pct'], 1, lang)}</td></tr>" for r in c["grupos"])
@@ -499,7 +534,7 @@ def incremento_html(p: dict, lang: str) -> str:
         return cab + f"<p class='muted'>{e(t['incr_nd'])}</p>"
     em, vd = i["empregos_brutos_por_crianca"], i["vad_por_crianca_ano"]
     un = i["unidade_vad"]
-    if lang == "en":
+    if lang != "pt":
         un = {"€ de 2022": "2022 euros (€)", "pesos de 2018": "2018 pesos", "R$ de 2015": "2015 reais (R$)", "R$ de 2018": "2018 reais (R$)",
               "US$ de 2023": "2023 US dollars (US$)", "¥ de 2022": "2022 yen (¥)"}.get(un, un)
     cards = (
@@ -517,7 +552,15 @@ def chip(nat: str, lang: str) -> str:
 
 
 def nome(p: dict, lang: str) -> str:
-    return p["nome"] if lang == "pt" else PAISES_EN.get(p["nome"], p["nome"])
+    if lang == "pt":
+        return p["nome"]
+    if lang == "en" or "iso" not in p:
+        return PAISES_EN.get(p["nome"], p["nome"])
+    try:
+        from src.i18n import nome_pais
+        return nome_pais(p["iso"], lang)
+    except Exception:
+        return PAISES_EN.get(p["nome"], p["nome"])
 
 
 FONTES: dict = {}
@@ -622,7 +665,7 @@ def tabela_bloco(p: dict, bloco: str, lang: str, modo: str = "dados"):
         val, livre = valor_txt(reg, lang, un)
         tem_pt = tem_pt or livre
         nat_td = "" if bloco == "cobertura" else f"<td>{chip(reg['natureza'], lang)}</td>"
-        linhas.append(f"<tr><td>{e(pt if lang == 'pt' else en)}</td><td class='v'>{val}</td>{nat_td}</tr>")
+        linhas.append(f"<tr><td>{e(rot_label(bloco, chave, lang))}</td><td class='v'>{val}</td>{nat_td}</tr>")
     if not linhas:
         return "", False
     nat_th = "" if bloco == "cobertura" else f"<th>{e(t['nat'])}</th>"
@@ -643,7 +686,7 @@ def instrumentos_html(iso: str, instrs: list, lang: str) -> str:
         for rot_pt, rot_en, k in (("Beneficiário", "Beneficiary", "beneficiario"), ("Valor", "Amount", "valor"),
                                   ("Financiamento", "Funding", "duracao_financiamento"), ("Custo fiscal", "Fiscal cost", "custo_fiscal")):
             if i.get(k):
-                det.append(f"<dt>{e(rot_pt if lang == 'pt' else rot_en)}</dt><dd lang='pt'>{e(i[k])}</dd>")
+                det.append(f"<dt>{e(rot_pt if lang == 'pt' else INSTR_I18N.get(lang, {}).get(k, rot_en))}</dt><dd lang='pt'>{e(i[k])}</dd>")
         ids = ", ".join(link_id(x) for x in i["evidencias"])
         if ids:
             det.append(f"<dt>{e(t['id'])}</dt><dd><code>{ids}</code></dd>")
@@ -748,9 +791,9 @@ def ficha(p: dict, instrs, evid, lacunas, lang: str, modo: str = "dados") -> str
              f"<p class='sub'>{e(t['sub_sup'] if sup else t['sub'])}</p>",
              "<div class='kv'>"
              f"<div><small>{e(t['classe'])}</small><b>{e(t['classes'].get(classe, classe))}</b></div>"
-             f"<div><small>{e(ROT[('coortes','descendentes')][0 if lang=='pt' else 1])}</small><b>{e(c['descendentes'])}</b></div>"
-             f"<div><small>{e(ROT[('coortes','estruturadores')][0 if lang=='pt' else 1])}</small><b>{e(c['estruturadores'])}</b></div>"
-             f"<div><small>{e(ROT[('coortes','ascendentes')][0 if lang=='pt' else 1])}</small><b>{e(c['ascendentes'])}</b></div></div>",
+             f"<div><small>{e(rot_label('coortes', 'descendentes', lang))}</small><b>{e(c['descendentes'])}</b></div>"
+             f"<div><small>{e(rot_label('coortes', 'estruturadores', lang))}</small><b>{e(c['estruturadores'])}</b></div>"
+             f"<div><small>{e(rot_label('coortes', 'ascendentes', lang))}</small><b>{e(c['ascendentes'])}</b></div></div>",
              (f"<div class='avisos'><p>{e(t['aviso_suposicao'])}</p><p>{e(t['aviso_cortes'])}</p></div>" if sup else
               f"<div class='avisos'><p>{e(t['aviso_dados'])}</p><p>{e(t['aviso_cortes'])}</p><p>{e(t['aviso_nstar'])}</p></div>")]
     notas = {"demografia": t["nota_demog"], "consumo": t["nota_consumo"], "valorizacao": t["nota_valor"]}
@@ -772,7 +815,7 @@ def ficha(p: dict, instrs, evid, lacunas, lang: str, modo: str = "dados") -> str
                 corpo.append(consumo_obs_html(p, lang))      # consumo observado (Índia, relatório do HCES): é dado levantado
         if b == "valorizacao" and not sup:
             corpo.append(f"<h2>{e(t['instrumentos'])}</h2>")
-            if lang == "en":
+            if lang != "pt":
                 corpo.append(f"<p class='nota'>{e(t['aviso_texto_pt'])}</p>")
             corpo.append(instrumentos_html(iso, instrs, lang))
     if not sup:
@@ -803,8 +846,8 @@ def indice(paises, glos, lang: str, modo: str = "dados") -> str:
     """Índice e comparação entre países. modo "dados": só o que é dado levantado; modo "suposicoes": carga, Dividendo e incremento por criança."""
     t = T[lang]
     sup = modo != "dados"
-    cols = [("classe", t["classe"]), ("tft", "TFT 2025" if lang == "pt" else "TFR 2025"),
-            ("pop", "D / E / A (%)" if lang == "pt" else "D / B / A (%)")]
+    cols = [("classe", t["classe"]), ("tft", t["x_tft"]),
+            ("pop", t["x_pop"])]
     if sup:
         cols = [("carga", "Carga/Estr. 2075" if lang == "pt" else "Burden/Builder 2075"),
                 ("div", "Dividendo 10% (% PIB)" if lang == "pt" else "10% Dividend (% GDP)"),
@@ -831,6 +874,8 @@ def indice(paises, glos, lang: str, modo: str = "dados") -> str:
         termo, defin = g["termo"], g["definicao"]
         if lang == "en":
             termo, defin = GLOSS_EN[g["termo"]]
+        elif lang in GLOSS_I18N:
+            termo, defin = GLOSS_I18N[lang][g["termo"]]
         gl.append(f"<details><summary>{e(termo)}</summary><p>{e(defin)}</p></details>")
     hub = "" if (EMBED or sup) else (f"<div class='hub'><a href='#paises'><b>{e(t['hub_paises'])}</b><span>{e(t['hub_paises_d'])}</span></a>"
                                      f"<a href='dados.html'><b>{e(t['hub_dados'])}</b><span>{e(t['hub_dados_d'])}</span></a>"
@@ -839,7 +884,7 @@ def indice(paises, glos, lang: str, modo: str = "dados") -> str:
               f"<div class='avisos'><p>{e(t['aviso_dados'])}</p><p>{e(t['aviso_cortes'])}</p><p>{e(t['aviso_nstar'])}</p><p>{e(t['aviso_indep'])}</p></div>")
     corpo = (f"<h1>{e(t['titulo'])}</h1><p class='sub'>{e(t['sub_sup'] if sup else t['sub'])}</p><p class='lead'>{e(t['intro_sup'] if sup else t['intro'])}</p>"
              f"{avisos}{hub}<h2 id='paises'>{e(t['hub_paises'])}</h2><div class='grid'>{''.join(cards)}</div><h2>{e(t['tabela_sup'] if sup else t['tabela'])}</h2>"
-             f"<div class='tw'><table><thead><tr><th>{'País' if lang == 'pt' else 'Country'}</th>{th}</tr></thead><tbody>{''.join(linhas)}</tbody></table></div>"
+             f"<div class='tw'><table><thead><tr><th>{e(t['x_pais'])}</th>{th}</tr></thead><tbody>{''.join(linhas)}</tbody></table></div>"
              + (f"<p class='nota'>{e(t['nota_demog'])}</p>" if sup else "")
              + f"<h2>{e(t['legenda'])}</h2><div class='lg'>{leg}</div><h2>{e(t['glossario'])}</h2>{''.join(gl)}")
     outra = "en" if lang == "pt" else "pt"
@@ -911,7 +956,7 @@ def simulacoes_pagina(sim: dict, lang: str) -> str:
     for iso, d in sim["paises"].items():
         d10 = d["dividendo_10pct_pib"]
         pr = d["programa"]
-        nm = PAISES_EN.get(d["nome"], d["nome"]) if lang == "en" else d["nome"]
+        nm = nome({"nome": d["nome"], "iso": iso}, lang)
         if d10 is None:
             linhas.append(f"<tr><td>{e(nm)}</td><td colspan='5'><span class='muted'>{e(nd)}</span></td></tr>")
             continue
