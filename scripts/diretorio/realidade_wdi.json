@@ -1,0 +1,217 @@
+{
+ "coletado_em": "2026-11-02T19:33:51",
+ "fonte": "Banco Mundial, World Development Indicators (API pública)",
+ "series": {
+  "consumo_familias_pib": {
+   "codigo": "NE.CON.PRVT.ZS",
+   "descricao": "Consumo final das famílias, % do PIB",
+   "url": "https://data.worldbank.org/indicator/NE.CON.PRVT.ZS"
+  },
+  "consumo_governo_pib": {
+   "codigo": "NE.CON.GOVT.ZS",
+   "descricao": "Consumo final do governo geral, % do PIB",
+   "url": "https://data.worldbank.org/indicator/NE.CON.GOVT.ZS"
+  },
+  "consumo_familias_pc": {
+   "codigo": "NE.CON.PRVT.PC.KD",
+   "descricao": "Consumo final das famílias per capita, US$ constantes de 2015",
+   "url": "https://data.worldbank.org/indicator/NE.CON.PRVT.PC.KD"
+  },
+  "pib_pc": {
+   "codigo": "NY.GDP.PCAP.KD",
+   "descricao": "PIB per capita, US$ constantes de 2015",
+   "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD"
+  }
+ },
+ "paises": {
+  "ITA": {
+   "consumo_familias_pib": {
+    "valor": 57.5688159427208,
+    "ano": 2025
+   },
+   "consumo_governo_pib": {
+    "valor": 18.2507578335224,
+    "ano": 2025
+   },
+   "consumo_familias_pc": {
+    "valor": 19965.4267270979,
+    "ano": 2025
+   },
+   "pib_pc": {
+    "valor": 34716.1405786348,
+    "ano": 2025
+   }
+  },
+  "KOR": {
+   "consumo_familias_pib": {
+    "valor": 48.0219630775252,
+    "ano": 2025
+   },
+   "consumo_governo_pib": {
+    "valor": 17.6476657565572,
+    "ano": 2025
+   },
+   "consumo_familias_pc": {
+    "valor": 17853.405694672,
+    "ano": 2025
+   },
+   "pib_pc": {
+    "valor": 37469.6600233386,
+    "ano": 2025
+   }
+  },
+  "JPN": {
+   "consumo_familias_pib": {
+    "valor": 53.069552493906,
+    "ano": 2024
+   },
+   "consumo_governo_pib": {
+    "valor": 20.1443964769656,
+    "ano": 2024
+   },
+   "consumo_familias_pc": {
+    "valor": 19750.8446067881,
+    "ano": 2024
+   },
+   "pib_pc": {
+    "valor": 38619.3367073485,
+    "ano": 2025
+   }
+  },
+  "MEX": {
+   "consumo_familias_pib": {
+    "valor": 70.2317168382282,
+    "ano": 2025
+   },
+   "consumo_governo_pib": {
+    "valor": 11.7906956206298,
+    "ano": 2025
+   },
+   "consumo_familias_pc": {
+    "valor": 7471.0709801905,
+    "ano": 2025
+   },
+   "pib_pc": {
+    "valor": 10256.6867661121,
+    "ano": 2025
+   }
+  },
+  "ARG": {
+   "consumo_familias_pib": {
+    "valor": 69.9826713951755,
+    "ano": 2025
+   },
+   "consumo_governo_pib": {
+    "valor": 14.9273063065132,
+    "ano": 2025
+   },
+   "consumo_familias_pc": {
+    "valor": 9022.12811675111,
+    "ano": 2025
+   },
+   "pib_pc": {
+    "valor": 13287.1159527489,
+    "ano": 2025
+   }
+  },
+  "BRA": {
+   "consumo_familias_pib": {
+    "valor": 63.4399037108374,
+    "ano": 2025
+   },
+   "consumo_governo_pib": {
+    "valor": 19.1341362432545,
+    "ano": 2025
+   },
+   "consumo_familias_pc": {
+    "valor": 6275.90136098575,
+    "ano": 2025
+   },
+   "pib_pc": {
+    "valor": 9747.99557762692,
+    "ano": 2025
+   }
+  },
+  "USA": {
+   "consumo_familias_pib": {
+    "valor": 67.9090728780822,
+    "ano": 2024
+   },
+   "consumo_governo_pib": {
+    "valor": 13.6249512893588,
+    "ano": 2024
+   },
+   "consumo_familias_pc": {
+    "valor": 46040.5990673111,
+    "ano": 2024
+   },
+   "pib_pc": {
+    "valor": 67945.6146497427,
+    "ano": 2025
+   }
+  },
+  "IND": {
+   "consumo_familias_pib": {
+    "valor": 56.670997869197,
+    "ano": 2025
+   },
+   "consumo_governo_pib": {
+    "valor": 10.769509367472,
+    "ano": 2025
+   },
+   "consumo_familias_pc": {
+    "valor": 1502.63961820116,
+    "ano": 2025
+   },
+   "pib_pc": {
+    "valor": 2523.43601851376,
+    "ano": 2025
+   }
+  },
+  "NGA": {
+   "consumo_familias_pib": null,
+   "consumo_governo_pib": null,
+   "consumo_familias_pc": null,
+   "pib_pc": {
+    "valor": 2368.53866265659,
+    "ano": 2025
+   }
+  },
+  "FRA": {
+   "consumo_familias_pib": {
+    "valor": 54.1059871032217,
+    "ano": 2025
+   },
+   "consumo_governo_pib": {
+    "valor": 24.362352052313,
+    "ano": 2025
+   },
+   "consumo_familias_pc": {
+    "valor": 21275.5616963438,
+    "ano": 2025
+   },
+   "pib_pc": {
+    "valor": 39918.8850568745,
+    "ano": 2025
+   }
+  },
+  "CHN": {
+   "consumo_familias_pib": {
+    "valor": 39.9704554568611,
+    "ano": 2024
+   },
+   "consumo_governo_pib": {
+    "valor": 16.7084895385701,
+    "ano": 2024
+   },
+   "consumo_familias_pc": {
+    "valor": 5364.45721008498,
+    "ano": 2024
+   },
+   "pib_pc": {
+    "valor": 13793.2056196996,
+    "ano": 2025
+   }
+  }
+ }
+}

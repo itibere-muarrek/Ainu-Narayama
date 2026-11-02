@@ -1,0 +1,620 @@
+{
+ "natureza": "OBS",
+ "series": {
+  "consumo_familias_pib": {
+   "codigo": "NE.CON.PRVT.ZS",
+   "descricao": "Consumo final das famílias, % do PIB",
+   "url": "https://data.worldbank.org/indicator/NE.CON.PRVT.ZS"
+  },
+  "consumo_governo_pib": {
+   "codigo": "NE.CON.GOVT.ZS",
+   "descricao": "Consumo final do governo geral, % do PIB",
+   "url": "https://data.worldbank.org/indicator/NE.CON.GOVT.ZS"
+  },
+  "consumo_familias_pc": {
+   "codigo": "NE.CON.PRVT.PC.KD",
+   "descricao": "Consumo final das famílias per capita, US$ constantes de 2015",
+   "url": "https://data.worldbank.org/indicator/NE.CON.PRVT.PC.KD"
+  },
+  "pib_pc": {
+   "codigo": "NY.GDP.PCAP.KD",
+   "descricao": "PIB per capita, US$ constantes de 2015",
+   "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.KD"
+  }
+ },
+ "coletado_em": "2026-11-02T19:33:51",
+ "paises": {
+  "ITA": {
+   "iso": "ITA",
+   "nome": "Itália",
+   "wdi": {
+    "consumo_familias_pib": {
+     "valor": 57.5688159427208,
+     "ano": 2025
+    },
+    "consumo_governo_pib": {
+     "valor": 18.2507578335224,
+     "ano": 2025
+    },
+    "consumo_familias_pc": {
+     "valor": 19965.4267270979,
+     "ano": 2025
+    },
+    "pib_pc": {
+     "valor": 34716.1405786348,
+     "ano": 2025
+    }
+   },
+   "gasto_publico_familia": {
+    "pct_pib": 1.43,
+    "ano": 2021,
+    "fonte": "OECD SOCX"
+   },
+   "programa": {
+    "nome": "Assegno Unico",
+    "pct_pib": 0.87,
+    "ano": "2025",
+    "texto": "Assegno Unico: 0,87% do PIB (2025)",
+    "retido": false,
+    "ressalva": false
+   },
+   "instrumentos": [
+    {
+     "instrumento": "Assegno Unico e Universale (AUU)",
+     "tipo": "Benefício direto, universal e escalonado por ISEE",
+     "valor": "2026: € 58,30 a € 203,80 por mês por filho menor (ISEE ≤ 17.468,51 = máximo; ≥ 46.582,71 ou sem ISEE = mínimo); +50% abaixo de 1 ano; +€ 150 forfait com ≥ 4 filhos; +€ 34,90 ao segundo receptor",
+     "custo_fiscal": "€ 19,7 bi em 2025 (INPS); 9,48 mi de filhos; take-up ≈ 98,5% dos residentes de 0–20 anos",
+     "nivel": "misto"
+    }
+   ]
+  },
+  "KOR": {
+   "iso": "KOR",
+   "nome": "Coreia do Sul",
+   "wdi": {
+    "consumo_familias_pib": {
+     "valor": 48.0219630775252,
+     "ano": 2025
+    },
+    "consumo_governo_pib": {
+     "valor": 17.6476657565572,
+     "ano": 2025
+    },
+    "consumo_familias_pc": {
+     "valor": 17853.405694672,
+     "ano": 2025
+    },
+    "pib_pc": {
+     "valor": 37469.6600233386,
+     "ano": 2025
+    }
+   },
+   "gasto_publico_familia": {
+    "pct_pib": 1.65,
+    "ano": 2022,
+    "fonte": "OECD SOCX"
+   },
+   "programa": {
+    "nome": "Abono infantil",
+    "pct_pib": 0.103,
+    "ano": "2026, derivado",
+    "texto": "Abono infantil: 0,103% do PIB (2026, derivado)",
+    "retido": false,
+    "ressalva": true
+   },
+   "instrumentos": [
+    {
+     "instrumento": "Abono infantil (아동수당)",
+     "tipo": "Benefício direto universal, por criança",
+     "valor": "₩ 100.000 por mês na área metropolitana; até ₩ 20.000 a mais fora dela e em áreas de despovoamento (2026: ₩ 105.000 fora da capital e ₩ 110.000 a ₩ 120.000 nas áreas despovoadas, L2).",
+     "custo_fiscal": "Pagamento de abril de 2026: ₩ 389,2 bi no mês, dos quais ₩ 168,7 bi são retroativos de janeiro a março para cerca de 430 mil crianças (Ministério da Saúde e Bem-Estar, comunicado de 24/04/2026, L1); sem o retroativo, ₩ 220,5 bi no mês ≈ ₩ 2,65 tri ao ano (derivado, supondo que o mês sem retroativo seja regular). CORREÇÃO de 2026-11-02: a versão anterior multiplicava por 12 os ₩ 389,2 bi (≈ ₩ 4,7 tri), que incluíam o retroativo. O orçamento anual do programa não foi lido.",
+     "nivel": "misto"
+    },
+    {
+     "instrumento": "Benefício parental (부모급여, antigo abono de bebê)",
+     "tipo": "Benefício direto por criança de 0 a 1 ano",
+     "valor": "₩ 1.000.000 por mês aos 0 anos e ₩ 500.000 por mês aos 1 ano (página oficial do Ministério da Saúde e Bem-Estar, vigente em março de 2026) em dinheiro ou voucher de creche; o aumento de 2024 (antes ₩ 700.000 e ₩ 350.000) vem de resumo de busca (L2).",
+     "custo_fiscal": "Não encontrado.",
+     "nivel": "misto"
+    }
+   ]
+  },
+  "JPN": {
+   "iso": "JPN",
+   "nome": "Japão",
+   "wdi": {
+    "consumo_familias_pib": {
+     "valor": 53.069552493906,
+     "ano": 2024
+    },
+    "consumo_governo_pib": {
+     "valor": 20.1443964769656,
+     "ano": 2024
+    },
+    "consumo_familias_pc": {
+     "valor": 19750.8446067881,
+     "ano": 2024
+    },
+    "pib_pc": {
+     "valor": 38619.3367073485,
+     "ano": 2025
+    }
+   },
+   "gasto_publico_familia": {
+    "pct_pib": 1.98,
+    "ano": 2022,
+    "fonte": "OECD SOCX"
+   },
+   "programa": {
+    "nome": "Abono infantil",
+    "pct_pib": 0.34,
+    "ano": "FY2025",
+    "texto": "Abono infantil: 0,34% do PIB (FY2025)",
+    "retido": false,
+    "ressalva": false
+   },
+   "instrumentos": [
+    {
+     "instrumento": "Abono infantil (児童手当, Kodomo Teate), ampliado em out/2024",
+     "tipo": "Benefício direto, universal, por criança",
+     "valor": "Por criança por mês: ¥ 15.000 até 3 anos incompletos e ¥ 10.000 de 3 anos até o ensino médio; ¥ 30.000 para o 3º filho em diante em qualquer idade. Pago a cada dois meses (fev, abr, jun, ago, out, dez).",
+     "custo_fiscal": "Conta especial de crianças e criação de filhos, FY2025: ¥ 2,1666 tri (FY2024: ¥ 1,5246 tri), sendo ¥ 1,0553 tri do orçamento do Estado, ¥ 0,1491 tri da contribuição dos empregadores e ¥ 0,9622 tri de títulos de transição. = 0,34% do PIB de 2024; ≈ ¥ 9.500 por criança de 0 a 18 anos por mês (derivado).",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Benefício de apoio para gestantes (妊婦のための支援給付)",
+     "tipo": "Benefício direto",
+     "valor": "Valores unitários não lidos.",
+     "custo_fiscal": "FY2025: ¥ 83,8 bi.",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Licença parental remunerada (育児休業給付)",
+     "tipo": "Benefício direto ao trabalhador, financiado pelo seguro-desemprego",
+     "valor": "67% do salário anterior até 180 dias e 50% depois (cerca de 80% líquido, porque o benefício é isento de imposto e há isenção de contribuições); com o suplemento, 80% (100% líquido) por até 28 dias.",
+     "custo_fiscal": "Transferência da conta de crianças para a conta de licença em FY2025: ¥ 80,5 bi. O custo total da licença não foi encontrado.",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Contribuição para crianças e criação de filhos (子ども・子育て拠出金)",
+     "tipo": "Contribuição do empregador (IFVI de fato)",
+     "valor": "Taxa aplicada de 0,36% (teto legal de 0,40%), cobrada junto com a contribuição de previdência; taxa mantida em FY2025.",
+     "custo_fiscal": "Receita da conta em FY2025: ¥ 751,4 bi (FY2024: ¥ 730,9 bi), o que implica uma base de remuneração de ≈ ¥ 208,7 tri (derivado). O quadro geral do orçamento da Agência soma ¥ 889,5 bi de contribuições (inclui outras contas).",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Dedução por dependente do imposto de renda (扶養控除)",
+     "tipo": "Dedução tributária ao contribuinte",
+     "valor": "¥ 380.000 por dependente de 16 anos ou mais, ¥ 630.000 para 19 a 22 anos, ¥ 480.000 para idosos (¥ 580.000 se coabitam com o contribuinte). Economia de imposto de renda de ¥ 19.000 (alíquota de 5%) a ¥ 171.000 (45%) por dependente de ¥ 380.000 (derivado; sem o imposto residencial).",
+     "custo_fiscal": "NÃO encontrado.",
+     "nivel": "misto"
+    },
+    {
+     "instrumento": "Bônus de parto e criação de filhos (出産育児一時金)",
+     "tipo": "Benefício direto, valor único",
+     "valor": "¥ 500.000 desde abr/2023 (antes ¥ 420.000).",
+     "custo_fiscal": "Não lido.",
+     "nivel": "L1"
+    }
+   ]
+  },
+  "MEX": {
+   "iso": "MEX",
+   "nome": "México",
+   "wdi": {
+    "consumo_familias_pib": {
+     "valor": 70.2317168382282,
+     "ano": 2025
+    },
+    "consumo_governo_pib": {
+     "valor": 11.7906956206298,
+     "ano": 2025
+    },
+    "consumo_familias_pc": {
+     "valor": 7471.0709801905,
+     "ano": 2025
+    },
+    "pib_pc": {
+     "valor": 10256.6867661121,
+     "ano": 2025
+    }
+   },
+   "gasto_publico_familia": {
+    "pct_pib": 0.55,
+    "ano": 2023,
+    "fonte": "OECD SOCX"
+   },
+   "programa": {
+    "nome": "S174",
+    "pct_pib": 0.0095,
+    "ano": "2025",
+    "texto": "S174: 0,0095% do PIB (2025)",
+    "retido": false,
+    "ressalva": false
+   },
+   "instrumentos": [
+    {
+     "instrumento": "Programa de Apoyo para el Bienestar de las Niñas y Niños, Hijos de Madres Trabajadoras (S174)",
+     "tipo": "Benefício direto condicionado, por criança",
+     "valor": "Modalidade A (2025): $ 1.650 por bimestre por criança e $ 3.720 com deficiência (≈ $ 825 e $ 1.860 por mês). Modalidade B: $ 830 (0–15 anos), $ 1.130 (16–18) e $ 1.240 (19–23) por bimestre.",
+     "custo_fiscal": "Orçamento original 2025: $ 3.185,0 milhões (≈ 0,0095% do PIB 2024, proxy); modificado em 30/set: $ 2.829,31 milhões; ejercido até set: $ 1.479,11 milhões (62,2% do calendarizado), dos quais $ 1.433,48 milhões em apoios. Meta de 2025: incorporar 140.000 crianças na A; 4.355 incorporadas até setembro.",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Seguro de Guarderías y Prestaciones Sociales (IMSS)",
+     "tipo": "Contribuição do empregador (IFVI de fato) + serviço de cuidado",
+     "valor": "Prima de 1% do salário base de cotização (art. 211 LSS); no máximo 20% pode ir a prestações sociales (L2).",
+     "custo_fiscal": "2023: receitas $ 43,7 mil milhões e gastos $ 26,9 mil milhões (pesos de 2024), superávit de $ 16,8 mil milhões; as receitas vêm principalmente da prima de 1%. ≈ 0,13% do PIB (receita) e 0,08% (gasto), usando o PIB de 2024.",
+     "nivel": "misto"
+    },
+    {
+     "instrumento": "Dedução de ISR por colegiaturas",
+     "tipo": "Dedução tributária ao contribuinte (educação privada)",
+     "valor": "Limites anuais por aluno: pré-escola $ 14.200; primária $ 12.900; secundária $ 19.900; profissional técnico $ 17.100; bachillerato $ 24.500. Só colegiaturas (não matrícula, bolsas, uniformes); o aluno não pode ter renda anual acima da UMA anual; fora do teto geral das deduções pessoais (L2 nesse ponto).",
+     "custo_fiscal": "NÃO encontrado.",
+     "nivel": "L1"
+    }
+   ]
+  },
+  "ARG": {
+   "iso": "ARG",
+   "nome": "Argentina",
+   "wdi": {
+    "consumo_familias_pib": {
+     "valor": 69.9826713951755,
+     "ano": 2025
+    },
+    "consumo_governo_pib": {
+     "valor": 14.9273063065132,
+     "ano": 2025
+    },
+    "consumo_familias_pc": {
+     "valor": 9022.12811675111,
+     "ano": 2025
+    },
+    "pib_pc": {
+     "valor": 13287.1159527489,
+     "ano": 2025
+    }
+   },
+   "gasto_publico_familia": null,
+   "programa": {
+    "nome": "AUH",
+    "pct_pib": 0.61,
+    "ano": "2018",
+    "texto": "AUH: 0,61% do PIB (2018)",
+    "retido": false,
+    "ressalva": false
+   },
+   "instrumentos": [
+    {
+     "instrumento": "Asignación Universal por Hijo (AUH), e AUH com deficiência",
+     "tipo": "Benefício direto condicionado (transferência em dinheiro)",
+     "valor": "Mar/2026 (valor geral, sem adicional de zona): $ 132.814 por filho e $ 432.461 por filho com deficiência, por mês. Paga-se 80% mensal; os 20% retidos só são pagos mediante a libreta (saúde, vacinação, escolaridade).",
+     "custo_fiscal": "Montos liquidados (80%) em mar/2026: $ 496,65 bi/mês; a 100% e anualizado ≈ $ 7,45 tri (calculado, a preços de mar/2026). Dez/2018: $ 6,04 bi/mês liquidados ⇒ ≈ $ 90,6 bi/ano a 100% = 0,61% do PIB 2018 e 4,2% do gasto privado com Descendentes (ARG_Contas_2018). Gasto 2025 (OPC, ejecución de dez/2025): Asignaciones Universales $ 5,6 billones (+18,9% real); asignaciones familiares no total $ 8,8 billones = 1,0% do PIB, logo AUH ≈ 0,64% do PIB (5,6 ÷ 8,8 × 1,0%; derivado).",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Asignación por Embarazo e Apoyo Alimentario (Ley de 1000 días)",
+     "tipo": "Benefício direto na gestação e primeira infância",
+     "valor": "Mar/2026: Embarazo $ 132.814/mês; Apoyo Alimentario $ 50.094/mês por beneficiário.",
+     "custo_fiscal": "Mar/2026: Embarazo $ 7,15 bi/mês liquidados; Apoyo Alimentario $ 32,46 bi/mês liquidados.",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Asignaciones familiares contributivas (SUAF)",
+     "tipo": "Benefício direto para trabalhadores formais",
+     "valor": "Valores por faixa de renda não lidos.",
+     "custo_fiscal": "Mar/2026: $ 186,70 bi/mês liquidados (Cuadro 3.2).",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Dedução de Ganancias por filho (cargas de familia)",
+     "tipo": "Dedução/crédito tributário ao contribuinte",
+     "valor": "Régimen de retención, período anual 2025: $ 2.140.852,77 por filho; $ 4.281.705,53 por filho incapacitado (atualização por IPC, art. 73 da Lei 27.743). O valor $ 2.000.447,87 vem de outro documento (jul–dez/2025, acumulado) e não é o valor anual.",
+     "custo_fiscal": "Não calculado: a Secretaría de Hacienda classifica o mínimo não imponível e as deduções por cargas de família como detrações estruturais, que NÃO entram no gasto tributário de 3,54% do PIB.",
+     "nivel": "L1"
+    }
+   ]
+  },
+  "BRA": {
+   "iso": "BRA",
+   "nome": "Brasil",
+   "wdi": {
+    "consumo_familias_pib": {
+     "valor": 63.4399037108374,
+     "ano": 2025
+    },
+    "consumo_governo_pib": {
+     "valor": 19.1341362432545,
+     "ano": 2025
+    },
+    "consumo_familias_pc": {
+     "valor": 6275.90136098575,
+     "ano": 2025
+    },
+    "pib_pc": {
+     "valor": 9747.99557762692,
+     "ano": 2025
+    }
+   },
+   "gasto_publico_familia": null,
+   "programa": {
+    "nome": "Bolsa Família",
+    "pct_pib": 1.11,
+    "ano": "2026",
+    "texto": "Bolsa Família: 1,11% do PIB (2026)",
+    "retido": false,
+    "ressalva": false
+   },
+   "instrumentos": [
+    {
+     "instrumento": "Programa Bolsa Família (Lei 14.601/2023)",
+     "tipo": "Benefício direto condicionado, por família e por criança",
+     "valor": "Benefício de Renda de Cidadania R$ 142 por integrante; Complementar até o mínimo de R$ 600 por família; Primeira Infância R$ 150 por criança de 0 a 7 anos incompletos; Variável Familiar R$ 50 para gestantes, nutrizes, crianças de 7 a 12 e adolescentes de 12 a 18 anos incompletos.",
+     "custo_fiscal": "Abr/2026: R$ 12,79 bi no mês (média de R$ 678,22 por família), ou R$ 153,5 bi ao ano (derivado) = 1,11% do PIB 2026 (PLOA). Em 2025: 'quase R$ 160 bi' (MDS). Primeira Infância: R$ 1,17 bi/mês (≈ R$ 141 por criança); Variável: R$ 689,6 mi/mês; regra de proteção: R$ 856 mi/mês.",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Salário-família (RGPS)",
+     "tipo": "Benefício direto a trabalhadores formais de baixa renda",
+     "valor": "2025: R$ 65,00 por filho (remuneração ≤ R$ 1.906,04). 2026: R$ 67,54 (≤ R$ 1.980,38).",
+     "custo_fiscal": "NÃO encontrado: o Boletim Estatístico da Previdência de nov/2025 só traz a definição e o valor, não a despesa.",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Salário-maternidade (RGPS)",
+     "tipo": "Benefício direto (licença remunerada)",
+     "valor": "Valor médio de R$ 1.776,35 por mês em nov/2025.",
+     "custo_fiscal": "Nov/2025: R$ 239,9 mi no mês; × 12 = R$ 2,9 bi/ano (derivado de um só mês).",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Dedução de IRPF por dependente",
+     "tipo": "Dedução tributária ao contribuinte",
+     "valor": "Ano-calendário 2025: R$ 2.275,08 por dependente por ano ⇒ economia de R$ 170,63 (alíquota de 7,5%) a R$ 625,65 (27,5%) por dependente (derivado).",
+     "custo_fiscal": "NÃO consta como item do DGT (não aparece entre os gastos tributários do IRPF), então não há custo oficial.",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Deduções de IRPF com educação e saúde",
+     "tipo": "Dedução tributária (educação privada e saúde)",
+     "valor": "Educação: teto de R$ 3.561,50 por pessoa por ano; saúde: sem teto (valores de L2).",
+     "custo_fiscal": "DGT PLOA 2026: Despesas com Educação R$ 6,25 bi (0,045% do PIB); Despesas Médicas R$ 35,44 bi (0,256% do PIB).",
+     "nivel": "misto"
+    }
+   ]
+  },
+  "USA": {
+   "iso": "USA",
+   "nome": "Estados Unidos",
+   "wdi": {
+    "consumo_familias_pib": {
+     "valor": 67.9090728780822,
+     "ano": 2024
+    },
+    "consumo_governo_pib": {
+     "valor": 13.6249512893588,
+     "ano": 2024
+    },
+    "consumo_familias_pc": {
+     "valor": 46040.5990673111,
+     "ano": 2024
+    },
+    "pib_pc": {
+     "valor": 67945.6146497427,
+     "ano": 2025
+    }
+   },
+   "gasto_publico_familia": {
+    "pct_pib": 0.6,
+    "ano": 2023,
+    "fonte": "OECD SOCX"
+   },
+   "programa": {
+    "nome": "Child credit",
+    "pct_pib": 0.245,
+    "ano": "FY2025",
+    "texto": "Child credit: 0,245% do PIB (FY2025)",
+    "retido": false,
+    "ressalva": false
+   },
+   "instrumentos": [
+    {
+     "instrumento": "Child Tax Credit (CTC) — IRC §24, alterado pela Lei 119-21",
+     "tipo": "Crédito tributário por criança, parcialmente reembolsável",
+     "valor": "2025: até US$ 2.200 por criança (indexado à inflação); ACTC até US$ 1.700. Um crédito de US$ 500 existe para dependentes que não dão direito ao CTC.",
+     "custo_fiscal": "Treasury FY2027, tabelas 1 e 5: FY2025 US$ 32,81 bi de receita não arrecadada + US$ 42,54 bi em gasto direto (ACTC) = US$ 75,35 bi (0,245% do PIB 2025); FY2026: US$ 82,42 bi. O CRS cita US$ 118 bi em 2022 (dados do IRS, dólares de 2022).",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Other Dependent Tax Credit",
+     "tipo": "Crédito tributário para outros dependentes",
+     "valor": "US$ 500 por dependente (CRS).",
+     "custo_fiscal": "Treasury FY2027: US$ 8,94 bi (FY2025) e US$ 8,66 bi (FY2026).",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Earned Income Tax Credit (EITC)",
+     "tipo": "Crédito tributário reembolsável ligado ao trabalho",
+     "valor": "Média de ≈ US$ 2.780 por declaração no ano-base 2023 (derivado).",
+     "custo_fiscal": "Treasury FY2027: FY2025 US$ 0,90 bi de receita + US$ 67,73 bi de gasto direto = US$ 68,6 bi (0,223% do PIB 2025); FY2026: US$ 69,5 bi. IRS: 23 mi de declarações e US$ 64 bi no ano-base 2023.",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Child and Dependent Care Credit (CDCTC)",
+     "tipo": "Crédito tributário por despesas de cuidado",
+     "valor": "Até 35% das despesas em 2022; a Lei 119-21 eleva a taxa máxima a 50% (com piso de 35%) nos anos a partir de 2026 (L2).",
+     "custo_fiscal": "Treasury FY2027: US$ 3,22 bi (FY2025) e US$ 4,19 bi (FY2026).",
+     "nivel": "misto"
+    },
+    {
+     "instrumento": "Supplemental Nutrition Assistance Program (SNAP)",
+     "tipo": "Benefício direto em espécie (cartão de alimentos)",
+     "valor": "Benefício médio de US$ 187,94 por participante por mês (FY2025).",
+     "custo_fiscal": "FY2025: US$ 101,7 bi federais (0,33% do PIB 2025). Parte das crianças ≈ US$ 39,7 bi se o benefício médio fosse igual para todos (derivado).",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Special Supplemental Nutrition Program for Women, Infants, and Children (WIC)",
+     "tipo": "Benefício direto em espécie",
+     "valor": "Custo de alimentos de ≈ US$ 64,71 por pessoa por mês.",
+     "custo_fiscal": "FY2025: US$ 7,7 bi (+6% sobre FY2024; L1: ERS).",
+     "nivel": "L1"
+    }
+   ]
+  },
+  "IND": {
+   "iso": "IND",
+   "nome": "Índia",
+   "wdi": {
+    "consumo_familias_pib": {
+     "valor": 56.670997869197,
+     "ano": 2025
+    },
+    "consumo_governo_pib": {
+     "valor": 10.769509367472,
+     "ano": 2025
+    },
+    "consumo_familias_pc": {
+     "valor": 1502.63961820116,
+     "ano": 2025
+    },
+    "pib_pc": {
+     "valor": 2523.43601851376,
+     "ano": 2025
+    }
+   },
+   "gasto_publico_familia": null,
+   "programa": {
+    "nome": null,
+    "pct_pib": null,
+    "ano": null,
+    "texto": null,
+    "retido": true
+   },
+   "instrumentos": []
+  },
+  "NGA": {
+   "iso": "NGA",
+   "nome": "Nigéria",
+   "wdi": {
+    "consumo_familias_pib": null,
+    "consumo_governo_pib": null,
+    "consumo_familias_pc": null,
+    "pib_pc": {
+     "valor": 2368.53866265659,
+     "ano": 2025
+    }
+   },
+   "gasto_publico_familia": null,
+   "programa": {
+    "nome": null,
+    "pct_pib": null,
+    "ano": null,
+    "texto": "n/d",
+    "retido": false
+   },
+   "instrumentos": []
+  },
+  "FRA": {
+   "iso": "FRA",
+   "nome": "França",
+   "wdi": {
+    "consumo_familias_pib": {
+     "valor": 54.1059871032217,
+     "ano": 2025
+    },
+    "consumo_governo_pib": {
+     "valor": 24.362352052313,
+     "ano": 2025
+    },
+    "consumo_familias_pc": {
+     "valor": 21275.5616963438,
+     "ano": 2025
+    },
+    "pib_pc": {
+     "valor": 39918.8850568745,
+     "ano": 2025
+    }
+   },
+   "gasto_publico_familia": {
+    "pct_pib": 2.64,
+    "ano": 2022,
+    "fonte": "OECD SOCX"
+   },
+   "programa": {
+    "nome": "Allocations familiales",
+    "pct_pib": 0.46,
+    "ano": "2024",
+    "texto": "Allocations familiales: 0,46% do PIB (2024)",
+    "retido": false,
+    "ressalva": false
+   },
+   "instrumentos": [
+    {
+     "instrumento": "Allocations familiales (CAF)",
+     "tipo": "Benefício direto por família com 2 ou mais filhos",
+     "valor": "€ 233 por lar por mês em média em 2024 (valor por filho não lido).",
+     "custo_fiscal": "€ 13,4 bi em 2024 (régime général; +3,0% sobre 2023) ≈ 0,46% do PIB de 2024 (PIB de € 2.919,9 bi, WDI).",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Complément familial e allocation de soutien familial",
+     "tipo": "Benefício direto",
+     "valor": "Complément familial € 243 e soutien familial € 286 por lar por mês em média em 2024.",
+     "custo_fiscal": "Complément familial € 2,46 bi e allocation de soutien familial € 3,12 bi em 2024 (régime général, L1).",
+     "nivel": "L1"
+    }
+   ]
+  },
+  "CHN": {
+   "iso": "CHN",
+   "nome": "China",
+   "wdi": {
+    "consumo_familias_pib": {
+     "valor": 39.9704554568611,
+     "ano": 2024
+    },
+    "consumo_governo_pib": {
+     "valor": 16.7084895385701,
+     "ano": 2024
+    },
+    "consumo_familias_pc": {
+     "valor": 5364.45721008498,
+     "ano": 2024
+    },
+    "pib_pc": {
+     "valor": 13793.2056196996,
+     "ano": 2025
+    }
+   },
+   "gasto_publico_familia": null,
+   "programa": {
+    "nome": "Subsídio de criação de filhos",
+    "pct_pib": 0.07,
+    "ano": "2025",
+    "texto": "Subsídio de criação de filhos: ≈ 0,07% do PIB (2025)",
+    "retido": false,
+    "ressalva": true
+   },
+   "instrumentos": [
+    {
+     "instrumento": "Subsídio de criação de filhos (育儿补贴), 2025",
+     "tipo": "Benefício direto, por criança, universal por idade",
+     "valor": "¥ 3.600 por criança por ano, até os 3 anos completos.",
+     "custo_fiscal": "Orçamento inicial do governo central de 2025: cerca de ¥ 90 bi (L1), ≈ ¥ 100 bi no total se o governo central pagar 90% (derivado); isenta de imposto de renda e não conta na renda para benefícios de assistência.",
+     "nivel": "L1"
+    },
+    {
+     "instrumento": "Dedução especial do imposto de renda para cuidado de bebês de 0 a 3 anos",
+     "tipo": "Dedução tributária",
+     "valor": "¥ 2.000 por criança por mês (a dedução já existia antes do subsídio).",
+     "custo_fiscal": "NÃO encontrado.",
+     "nivel": "L1"
+    }
+   ]
+  }
+ },
+ "aviso": "Valores observados em fontes oficiais; nada aqui é estimativa, projeção ou simulação."
+}

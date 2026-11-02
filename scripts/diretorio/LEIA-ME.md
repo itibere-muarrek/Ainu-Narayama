@@ -1,6 +1,6 @@
 # Diretório do AINU.systems — fase 0
 
-Exporta a planilha `Matrizes_Operacionais_NTA_URSS_Narayama_v2.xlsx` (Paper 3) para JSON em `data/diretorio/`
+Exporta a planilha `Matrizes_Operacionais_NTA_URSS_Narayama_v2.xlsx` (AINU) para JSON em `data/diretorio/`
 (ignorado pelo git até o autor liberar). Nada é publicado.
 
 ```

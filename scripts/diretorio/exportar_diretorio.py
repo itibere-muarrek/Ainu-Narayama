@@ -1,4 +1,4 @@
-"""Fase 0 do Diretório do AINU.systems: exporta a planilha do Paper 3 para JSON.
+"""Fase 0 do Diretório do AINU.systems: exporta a planilha de análises do AINU para JSON.
 
 Lê Matrizes_Operacionais_NTA_URSS_Narayama_v2.xlsx (fora do repositório) e
 grava dois conjuntos em data/diretorio/:
@@ -51,7 +51,7 @@ DESCRICAO_TIPO = {
 }
 VERSAO_ESQUEMA = "0.1.0"
 
-PAISES = [  # ordem do Paper 3
+PAISES = [  # ordem das análises do AINU
     ("ITA", "Itália"), ("KOR", "Coreia do Sul"), ("JPN", "Japão"), ("MEX", "México"),
     ("ARG", "Argentina"), ("BRA", "Brasil"), ("USA", "Estados Unidos"), ("IND", "Índia"),
     ("NGA", "Nigéria"), ("FRA", "França"), ("CHN", "China"),
@@ -142,6 +142,7 @@ def texto(v) -> str | None:
     if v is None:
         return None
     s = str(v).strip()
+    s = re.sub(r"\bPaper 3\b", "AINU.Systems", s)      # o AINU não se baseia no Paper 3: o Paper 3 sairá das análises do AINU
     return s or None
 
 
@@ -328,7 +329,7 @@ def construir(wb):
         grupos_ind.append({"grupo": r[0], "rural_rs": r[1], "urbano_rs": r[2], "rural_pct": r[3], "urbano_pct": r[4], "tipo": r[5]})
     consumo_ind = {"disponivel": True, "natureza": "OBS", "niveis": niveis, "grupos": grupos_ind, "id": "AINU-IND-HCES-2024-000633",
                    "fonte": "MoSPI, NSO, Survey on Household Consumption Expenditure 2023-24 (NSS Report nº 592), capítulo 3 e Statements 9 e 15",
-                   "aviso": "Médias sobre toda a população; os grupos são os do relatório, não os 8 grupos do Paper 3. O relatório não traz idade nem composição por coorte."}
+                   "aviso": "Médias sobre toda a população; os grupos são os do relatório, não os 8 grupos de demanda do AINU.Systems. O relatório não traz idade nem composição por coorte."}
 
     fichas = []
     for iso, nome in PAISES:
@@ -600,6 +601,24 @@ def montar_simulacoes(wb, fichas: list[dict], fontes: list[dict] | None = None, 
     }
 
 
+REALIDADE_WDI = Path(__file__).with_name("realidade_wdi.json")
+
+
+def montar_realidade(sim: dict, instrumentos: list[dict]) -> dict:
+    """O que é observado em cada país: consumo (Banco Mundial), gasto público em família (OCDE SOCX), maior programa infantil e
+    instrumentos de transferência às famílias. Nenhum cálculo, projeção nem simulação: só valores lidos em fontes."""
+    wdi = json.loads(REALIDADE_WDI.read_text(encoding="utf-8")) if REALIDADE_WDI.exists() else {"series": {}, "paises": {}}
+    out = {}
+    for iso, d in sim["paises"].items():
+        diretos = [{"instrumento": i["instrumento"], "tipo": i["tipo"], "valor": i["valor"], "custo_fiscal": i["custo_fiscal"], "nivel": i["nivel"]}
+                   for i in instrumentos if i["iso"] == iso and i["status_publicacao"] in ("publicavel", "publicavel_com_ressalva")
+                   and re.match(r"(Benefício direto|Crédito tributário|Dedução|Contribuição)", i["tipo"] or "")]
+        out[iso] = {"iso": iso, "nome": d["nome"], "wdi": wdi["paises"].get(iso, {}), "gasto_publico_familia": d["gasto_publico_familia"],
+                    "programa": d["programa"], "instrumentos": diretos}
+    return {"natureza": "OBS", "series": wdi.get("series", {}), "coletado_em": wdi.get("coletado_em"), "paises": out,
+            "aviso": "Valores observados em fontes oficiais; nada aqui é estimativa, projeção ou simulação."}
+
+
 def gravar(pasta: Path, nome: str, obj):
     pasta.mkdir(parents=True, exist_ok=True)
     (pasta / nome).write_text(json.dumps(obj, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -663,6 +682,10 @@ def main():
         + [{"pais": e["iso"], "item": f"{e['variavel']} ({e['bloco']})", "situacao": "Não encontrado"} for e in evid if e["status_publicacao"] == "lacuna"]
         + [{"pais": i["iso"], "item": i["instrumento"], "situacao": i["status"] or i["nivel"]} for i in instr if i["status_publicacao"] == "lacuna"]})
     gravar(pub, "glossario.json", glos)
+    sim_pub = montar_simulacoes(wb, [filtrar_ficha(f) for f in fichas], fontes, evid, ref_lista)
+    instr_pub = [i for i in instr if i["status_publicacao"] in ("publicavel", "publicavel_com_ressalva")]
+    gravar(pub, "realidade.json", montar_realidade(sim_pub, instr_pub))
+    gravar(priv, "realidade.json", montar_realidade(montar_simulacoes(wb, fichas, fontes, evid, ref_lista), instr))
     gravar(pub, "referencias.json", ref_lista)
     gravar(pub, "conferencia_manual.json", conf_man)
     gravar(pub, "conferencia_numeros_manual.json", conf_num)

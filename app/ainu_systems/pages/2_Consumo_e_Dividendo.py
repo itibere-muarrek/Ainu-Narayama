@@ -1,188 +1,113 @@
 """
-ainu.systems — Consumo por coorte e Dividendo Intergeracional (beta).
+ainu.systems — Consumo e Dividendo: a realidade dos países.
 
-Página separada, só para usuários logados. Escala números do Paper 3 exportados pelo Diretório
-(data/diretorio/publicavel/simulacoes.json); não roda modelo novo. Cálculos em src/consumo_dividendo.py.
+Página só para usuários logados. Mostra o que é OBSERVADO em fontes oficiais: o consumo de cada país (Banco Mundial, WDI), o gasto
+público em família (OCDE SOCX) e as transferências que cada país já paga às famílias com crianças. Nada aqui é estimativa,
+projeção ou simulação; as suposições (custo do Dividendo, crianças adicionais, cenários) ficam na página Simulacao Dividendo.
+Dados: data/diretorio/publicavel/realidade.json, gerado por scripts/diretorio/exportar_diretorio.py.
 """
 
+import json
 import sys
 from pathlib import Path
 
 import streamlit as st
-from urllib.parse import urlsplit
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent.parent))
+RAIZ = Path(__file__).resolve().parent.parent.parent.parent
+sys.path.insert(0, str(RAIZ))
 
 from src.auth import exigir_login
-from src.consumo_dividendo import (
-    carregar,
-    cenarios,
-    custo_dividendo,
-    empregos_liquidos,
-    horizontes_do_cenario,
-    incremento,
-    razao_gasto_familia,
-    razao_programa,
-)
 from src.i18n import nome_pais, seletor_idioma
-from src.i18n_consumo import tc
+from src.i18n_realidade import tr
 from src.i18n_simulacao import ts
-
-def _mostrar_html(h: str, altura: int) -> None:
-    """HTML gerado por nós (dados do Diretório) num iframe: st.iframe nas versões novas do Streamlit, components.html nas antigas."""
-    if hasattr(st, "iframe"):
-        st.iframe(h, height=altura)
-    else:
-        import streamlit.components.v1 as components
-
-        components.html(h, height=altura, scrolling=True)
-
 
 st.set_page_config(page_title="ainu.systems — Consumo e Dividendo", layout="wide")
 lang = seletor_idioma()
 exigir_login(lambda k: ts(k, lang))
 
+ORDEM = ["ITA", "KOR", "JPN", "MEX", "ARG", "BRA", "USA", "IND", "NGA", "FRA", "CHN"]
 VIRGULA = lang in {"pt", "es", "fr", "it", "fi"}
 
 
-def fmt(x, casas: int = 2) -> str:
+def fmt(x, casas: int = 1) -> str:
     s = f"{x:,.{casas}f}"
     return s.translate(str.maketrans(",.", ".,")) if VIRGULA else s
 
 
-def pct_txt(v: float) -> str:
-    """Porcentagem sem zeros à direita (0,0095; 0,87; 1,11)."""
-    s = f"{v:g}"
+def pct(x: float) -> str:
+    s = f"{x:g}"
     return s.replace(".", ",") if VIRGULA else s
 
 
-st.title(tc("c_titulo", lang))
-st.markdown(tc("c_intro", lang))
-st.warning(tc("c_aviso_sup", lang))
-st.caption(tc("c_naturezas", lang))
-if lang not in ("pt", "en"):
-    st.caption(tc("c_nota_idioma", lang))
+def com_ano(v, casas: int = 1) -> str:
+    """'57,6 (2025)' ou 'sem dado'."""
+    if not v or v.get("valor") is None:
+        return tr("r_nd", lang)
+    return f"{fmt(v['valor'], casas)} ({v['ano']})"
+
+
+def carregar():
+    try:
+        d = json.loads((RAIZ / "data" / "diretorio" / "publicavel" / "realidade.json").read_text(encoding="utf-8"))
+        return d if isinstance(d.get("paises"), dict) else None
+    except (OSError, ValueError):
+        return None
+
 
 dados = carregar()
+st.title(tr("r_titulo", lang))
+st.markdown(tr("r_intro", lang))
+st.caption(tr("r_nota", lang))
 if dados is None:
-    st.warning(tc("c_sem_dados", lang))
+    st.warning(tr("r_sem", lang))
     st.stop()
-
 paises = dados["paises"]
-iso = st.selectbox(tc("c_pais", lang), sorted(paises, key=lambda c: nome_pais(c, lang)), format_func=lambda c: nome_pais(c, lang))
-p = paises[iso]
 
 # ---------------------------------------------------------------------------
-# 1. Dividendo
+# Comparação entre países
 # ---------------------------------------------------------------------------
 
-st.header(tc("c_div_titulo", lang))
-st.markdown(tc("c_div_ajuda", lang))
-base10 = p["dividendo_10pct_pib"]
-if base10 is None:
-    st.info(tc("c_div_nd", lang))
-else:
-    x = st.slider(tc("c_div_slider", lang), min_value=0, max_value=50, value=10, step=1)
-    custo = custo_dividendo(x, base10)
-    c1, c2, c3 = st.columns(3)
-    c1.metric(tc("c_div_custo", lang), f"{fmt(custo)}%", help="SIM")
-
-    prog = p["programa"]
-    r_prog = razao_programa(custo, prog.get("pct_pib"))
-    if r_prog is None:
-        c2.metric(tc("c_div_prog", lang), "—")
-        c2.caption(tc("c_div_prog_nd", lang))
-    else:
-        c2.metric(tc("c_div_prog", lang), tc("c_vezes", lang, x=fmt(r_prog, 1)), help="SIM")
-        c2.caption(tc("c_div_prog_nome", lang, nome=prog["nome"], pct=f"{pct_txt(prog['pct_pib'])}%", ano=prog["ano"]))
-        if prog.get("ressalva"):
-            c2.caption(tc("c_div_prog_ressalva", lang))
-
+st.header(tr("r_comp", lang))
+linhas = []
+for iso in ORDEM:
+    p = paises[iso]
+    w = p["wdi"]
     fam = p["gasto_publico_familia"]
-    r_fam = razao_gasto_familia(custo, fam["pct_pib"] if fam else None)
-    if r_fam is None:
-        c3.metric(tc("c_div_fam", lang), "—")
-        c3.caption(tc("c_div_fam_nd", lang))
+    pr = p["programa"]
+    if pr.get("pct_pib") is not None:
+        prog = f"{'≈ ' if pr.get('ressalva') else ''}{pct(pr['pct_pib'])}: {pr['nome']} ({pr['ano']})"
     else:
-        c3.metric(tc("c_div_fam", lang), f"{fmt(100 * r_fam, 0)}%", help="SIM")
-        c3.caption(tc("c_div_fam_nome", lang, pct=f"{fmt(fam['pct_pib'])}%", ano=fam["ano"]))
-    if p.get("base_consumo_descendentes"):
-        st.caption(tc("c_div_base", lang, base=p["base_consumo_descendentes"]))
+        prog = tr("r_nd", lang)
+    linhas.append({
+        tr("r_pais", lang): nome_pais(iso, lang),
+        tr("r_cons", lang): com_ano(w.get("consumo_familias_pib")),
+        tr("r_gov", lang): com_ano(w.get("consumo_governo_pib")),
+        tr("r_pc", lang): com_ano(w.get("consumo_familias_pc"), 0),
+        tr("r_fam", lang): f"{fmt(fam['pct_pib'], 2)} ({fam['ano']})" if fam else tr("r_nd", lang),
+        tr("r_prog", lang): prog,
+    })
+st.dataframe(linhas, hide_index=True, width="stretch")
+series = dados.get("series", {})
+if series:
+    st.caption(" · ".join(f"[{v['codigo']}]({v['url']})" for v in series.values()))
+st.caption(tr("r_fontes", lang))
 
 # ---------------------------------------------------------------------------
-# 2. Criança adicional
+# Transferências às famílias, país a país
 # ---------------------------------------------------------------------------
 
-st.header(tc("c_inc_titulo", lang))
-st.markdown(tc("c_inc_ajuda", lang))
-inc = p["incremento_crianca"]
-if not inc.get("disponivel"):
-    st.info(tc("c_inc_nd", lang, motivo=inc.get("motivo") or tc("c_inc_motivo_default", lang)))
-else:
-    cn, cd = st.columns(2)
-    with cn:
-        n = st.number_input(tc("c_inc_n", lang), min_value=0, max_value=50_000_000, value=1000, step=1000)
-    with cd:
-        desloc = st.slider(tc("c_inc_desloc", lang), min_value=0, max_value=100, value=0, step=5)
-    un_c, un_v = inc["unidade_consumo"], inc["unidade_vad"]
-    emp_b = inc["empregos_brutos_por_crianca"]["mediana"]
-    emp_l = empregos_liquidos(emp_b, inc["empregos_liquidos_50"], inc["empregos_liquidos_100"], desloc)
-    m1, m2, m3, m4 = st.columns(4)
-    m1.metric(tc("c_inc_consumo", lang, un=un_c), fmt(incremento(n, inc["cfcc_por_crianca_ano"]), 0), help="EST")
-    m2.metric(tc("c_inc_vad", lang, un=un_v), fmt(incremento(n, inc["vad_por_crianca_ano"]["mediana"]), 0), help="EST")
-    m3.metric(tc("c_inc_emp_bruto", lang), fmt(incremento(n, emp_b), 0), help="EST")
-    m4.metric(tc("c_inc_emp_liq", lang), fmt(incremento(n, emp_l), 0), help="EST")
-    st.caption(tc("c_inc_nota", lang))
-    st.caption(inc.get("aviso", ""))
-
-# ---------------------------------------------------------------------------
-# 3. Cenários de fecundidade
-# ---------------------------------------------------------------------------
-
-st.header(tc("c_cen_titulo", lang))
-st.markdown(tc("c_cen_ajuda", lang))
-hs = p["horizontes"]
-if hs:
-    cen = st.selectbox(tc("c_cen_escolha", lang), cenarios(hs))
-    linhas = horizontes_do_cenario(hs, cen)
-    tabela = {
-        tc("c_cen_horizonte", lang): [h["horizonte"] for h in linhas],
-        tc("c_cen_ano", lang): [h["ano"] for h in linhas],
-        tc("c_cen_tft", lang): [fmt(h["tft"]) for h in linhas],
-        tc("c_cen_desc", lang): [fmt(h["delta_desc_pct"], 1) for h in linhas],
-        tc("c_cen_estr", lang): [fmt(h["delta_estr_pct"], 1) for h in linhas],
-        tc("c_cen_asc", lang): [fmt(h["delta_asc_pct"], 1) for h in linhas],
-        tc("c_cen_cfcc", lang): [fmt(h["delta_cfcc_total_pct"], 1) for h in linhas],
-        tc("c_cen_pub", lang): [fmt(h["delta_consumo_publico_pct"], 1) for h in linhas],
-    }
-    st.table(tabela)
-    st.caption(tc("c_cen_nota", lang))
-
-# ---------------------------------------------------------------------------
-# 4. Estimativas e projeções de modelo (suposições): as mesmas páginas do Diretório, em modo "suposicoes"
-# ---------------------------------------------------------------------------
-
-st.header(tc("c_est_titulo", lang))
-st.markdown(tc("c_est_ajuda", lang))
-try:
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent.parent / "scripts" / "diretorio"))
-    import gerar_fichas as G
-
-    G.EMBED = True
-    G.carregar()
-    aba_c, aba_p = st.tabs([tc("c_est_comp", lang), tc("c_est_pais", lang)])
-    with aba_c:
-        _mostrar_html(G.html_indice(lang, "suposicoes"), 1300)
-    with aba_p:
-        _mostrar_html(G.html_ficha(iso, lang, "suposicoes"), 2200)
-except Exception:  # sem os dados do Diretório, a seção 4 simplesmente não aparece
-    pass
-
-st.divider()
-with st.expander(f"{tc('c_fontes_titulo', lang)} ({len(p.get('fontes', []))})", expanded=False):
-    st.caption(tc("c_fontes_nota", lang))
-    for f in p.get("fontes", []):
-        host = urlsplit(f["url"]).netloc.removeprefix("www.")
-        ids = f", {', '.join(sorted(set(f['ids']))[:2])}" if f.get("ids") else ""
-        st.markdown(f"- [{f['nome']}]({f['url']}) <small>({host}{ids})</small>", unsafe_allow_html=True)
-st.caption(tc("c_rodape", lang))
+st.header(tr("r_det", lang))
+iso = st.selectbox(tr("r_pais", lang), ORDEM, format_func=lambda c: nome_pais(c, lang))
+instr = paises[iso]["instrumentos"]
+if lang != "pt":
+    st.caption(tr("r_texto_pt", lang))
+if not instr:
+    st.info(tr("r_nenhum", lang))
+for i in instr:
+    with st.container(border=True):
+        st.markdown(f"**{i['instrumento']}**")
+        st.caption(i["tipo"])
+        if i.get("valor"):
+            st.markdown(f"**{tr('r_valor', lang)}.** {i['valor']}")
+        if i.get("custo_fiscal"):
+            st.markdown(f"**{tr('r_custo', lang)}.** {i['custo_fiscal']}")

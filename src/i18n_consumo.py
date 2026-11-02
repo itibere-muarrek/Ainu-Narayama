@@ -12,12 +12,12 @@ TX_CONS: dict[str, dict[str, str]] = {
     "c_titulo": {"pt": "Consumo por coorte e Dividendo Intergeracional (beta)", "en": "Cohort consumption and Intergenerational Dividend (beta)"},
     "c_intro": {
         "pt": (
-            "Esta página escala números que o Paper 3 já calculou (rascunho de pesquisa independente, não revisado). "
+            "Esta página escala números que o AINU.Systems já calculou (rascunho de pesquisa independente, não revisado). "
             "Você muda a porcentagem do Dividendo e o número de crianças adicionais; a página mostra o resultado na escala escolhida. "
             "**Nenhum modelo novo, nenhuma previsão e nenhuma estimativa de efeito causal.**"
         ),
         "en": (
-            "This page rescales numbers that Paper 3 has already computed (an independent research draft, not peer reviewed). "
+            "This page rescales numbers that AINU.Systems has already computed (an independent research draft, not peer reviewed). "
             "You change the Dividend percentage and the number of additional children; the page shows the result at the chosen scale. "
             "**No new model, no forecast, and no causal effect estimate.**"
         ),
@@ -52,8 +52,8 @@ TX_CONS: dict[str, dict[str, str]] = {
     # --- criança adicional --------------------------------------------------
     "c_inc_titulo": {"pt": "2. O que sustenta cada criança adicional?", "en": "2. What does each additional child sustain?"},
     "c_inc_ajuda": {
-        "pt": "Valor por criança e por ano, do Paper 3 (demanda de consumo, privado e público, que a criança representa), multiplicado pelo número de crianças. É um limite superior: usa o consumo médio por Descendente, vale por ano na coorte, não acumula nem desconta e não inclui a produção futura da criança.",
-        "en": "Per-child, per-year value from Paper 3 (the consumption demand, private and public, that the child represents), times the number of children. It is an upper bound: it uses average consumption per Descendente, holds per year in the cohort, does not accumulate or discount, and excludes the child's future output.",
+        "pt": "Valor por criança e por ano, do AINU.Systems (demanda de consumo, privado e público, que a criança representa), multiplicado pelo número de crianças. É um limite superior: usa o consumo médio por Descendente, vale por ano na coorte, não acumula nem desconta e não inclui a produção futura da criança.",
+        "en": "Per-child, per-year value from AINU.Systems (the consumption demand, private and public, that the child represents), times the number of children. It is an upper bound: it uses average consumption per Descendente, holds per year in the cohort, does not accumulate or discount, and excludes the child's future output.",
     },
     "c_inc_n": {"pt": "Crianças adicionais", "en": "Additional children"},
     "c_inc_desloc": {"pt": "Parcela do gasto que desloca outro consumo (%)", "en": "Share of spending that displaces other consumption (%)"},
@@ -70,8 +70,8 @@ TX_CONS: dict[str, dict[str, str]] = {
     # --- cenários ------------------------------------------------------------
     "c_cen_titulo": {"pt": "3. E se a fecundidade mudar?", "en": "3. What if fertility changes?"},
     "c_cen_ajuda": {
-        "pt": "Variação em relação à continuidade da TFT, com consumo por pessoa constante (Paper 3, aba P5). São cenários do modelo de coortes do Paper 3 (os nomes e as metas de TFT podem variar por país) e não previsões. Escolha o cenário para ver a variação em cada horizonte.",
-        "en": "Change relative to a constant-TFR path, with per-person consumption held constant (Paper 3, sheet P5). These are scenarios of the Paper 3 cohort model (names and TFR targets can vary by country) and not forecasts. Pick a scenario to see the change at each horizon.",
+        "pt": "Variação em relação à continuidade da TFT, com consumo por pessoa constante (aba P5). São cenários do modelo de coortes do AINU.Systems (os nomes e as metas de TFT podem variar por país) e não previsões. Escolha o cenário para ver a variação em cada horizonte.",
+        "en": "Change relative to a constant-TFR path, with per-person consumption held constant (sheet P5). These are scenarios of the AINU.Systems cohort model (names and TFR targets can vary by country) and not forecasts. Pick a scenario to see the change at each horizon.",
     },
     "c_cen_escolha": {"pt": "Cenário de fecundidade", "en": "Fertility scenario"},
     "c_cen_horizonte": {"pt": "Horizonte", "en": "Horizon"},
@@ -88,13 +88,13 @@ TX_CONS: dict[str, dict[str, str]] = {
     },
     # --- rodapé --------------------------------------------------------------
     "c_rodape": {
-        "pt": "Fonte: Diretório do AINU.Systems (Paper 3, rascunho v0.1; prévia privada). Cada número tem identificador de evidência na ficha do país. Itiberê L. G. C. Muarrek, pesquisa independente. Termos: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores).",
-        "en": "Source: AINU.Systems Directory (Paper 3, draft v0.1; private preview). Each number has an evidence identifier on the country page. Itiberê L. G. C. Muarrek, independent research. Terms: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores).",
+        "pt": "Fonte: Diretório do AINU.Systems (rascunho v0.1; prévia privada). Cada número tem identificador de evidência na ficha do país. Itiberê L. G. C. Muarrek, pesquisa independente. Termos: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores).",
+        "en": "Source: AINU.Systems Directory (draft v0.1; private preview). Each number has an evidence identifier on the country page. Itiberê L. G. C. Muarrek, independent research. Terms: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores).",
     },
     "c_fontes_titulo": {"pt": "Fontes e referências desta página", "en": "Sources and references for this page"},
     "c_fontes_nota": {
-        "pt": "Fontes do país escolhido (menos as séries do Banco Mundial e da OIT, que ficam na ficha do país no Diretório), com o link para conferir e o identificador de evidência. Cálculos do autor (Paper 3, rascunho não revisado). A conferência de cada fonte (se o endereço abre e se o assunto confere) está no Diretório, em Dados verificáveis.",
-        "en": "Sources for the chosen country (except the World Bank and ILO series, which are on the country page in the Directory), with a link to check and the evidence identifier. Author's calculations (Paper 3, unreviewed draft). The check of each source (whether the address opens and the subject matches) is in the Directory, under Verifiable data.",
+        "pt": "Fontes do país escolhido (menos as séries do Banco Mundial e da OIT, que ficam na ficha do país no Diretório), com o link para conferir e o identificador de evidência. Cálculos do autor (rascunho não revisado). A conferência de cada fonte (se o endereço abre e se o assunto confere) está no Diretório, em Dados verificáveis.",
+        "en": "Sources for the chosen country (except the World Bank and ILO series, which are on the country page in the Directory), with a link to check and the evidence identifier. Author's calculations (unreviewed draft). The check of each source (whether the address opens and the subject matches) is in the Directory, under Verifiable data.",
     },
     "c_aviso_sup": {
         "pt": "SUPOSIÇÕES PARA PESQUISADORES. Esta página escala estimativas de modelo (marcas EST, PROJ e SIM) que dependem de premissas declaradas. Não são dados levantados nem testados contra uma fonte: os dados levantados e testados estão no Diretório (páginas Contas por Nascimentos e Dados Verificaveis).",
@@ -102,8 +102,8 @@ TX_CONS: dict[str, dict[str, str]] = {
     },
     "c_est_titulo": {"pt": "4. Estimativas e projeções de modelo, por país (suposições)", "en": "4. Model estimates and projections, by country (assumptions)"},
     "c_est_ajuda": {
-        "pt": "Tudo o que o Paper 3 estima ou projeta para o país escolhido acima (consumo por coorte, projeção demográfica, multiplicadores, composição por grupo, exposição à automação e Dividendo), e a comparação entre países. São suposições de modelo, não dados observados.",
-        "en": "Everything Paper 3 estimates or projects for the country chosen above (cohort consumption, demographic projection, multipliers, group composition, automation exposure and Dividend), and the comparison across countries. They are model assumptions, not observed data.",
+        "pt": "Tudo o que o AINU.Systems estima ou projeta para o país escolhido acima (consumo por coorte, projeção demográfica, multiplicadores, composição por grupo, exposição à automação e Dividendo), e a comparação entre países. São suposições de modelo, não dados observados.",
+        "en": "Everything AINU.Systems estimates or projects for the country chosen above (cohort consumption, demographic projection, multipliers, group composition, automation exposure and Dividend), and the comparison across countries. They are model assumptions, not observed data.",
     },
     "c_est_comp": {"pt": "Comparação entre países", "en": "Comparison across countries"},
     "c_est_pais": {"pt": "País escolhido acima", "en": "Country chosen above"},

@@ -1,7 +1,7 @@
 """
 Cálculos da página "Consumo por coorte e Dividendo" (ainu.systems, atrás do login).
 
-Tudo aqui é ESCALA LINEAR de números que o Paper 3 já calculou e que o Diretório exporta
+Tudo aqui é ESCALA LINEAR de números que o AINU.Systems já calculou e que o Diretório exporta
 (data/diretorio/publicavel/simulacoes.json, gerado por scripts/diretorio/exportar_diretorio.py).
 Nenhum modelo novo: a página deixa o usuário mudar a porcentagem do Dividendo e o número de
 crianças adicionais, e mostra o que as fichas já mostram, na escala escolhida.
@@ -21,7 +21,7 @@ from typing import Optional
 
 RAIZ = Path(__file__).resolve().parent.parent
 ARQUIVO = RAIZ / "data" / "diretorio" / "publicavel" / "simulacoes.json"
-BASE_PCT = 10.0  # o Paper 3 simula 10%, 25% e 50%; a escala parte dos 10%
+BASE_PCT = 10.0  # o AINU.Systems simula 10%, 25% e 50%; a escala parte dos 10%
 
 
 def carregar(caminho: Path = ARQUIVO) -> Optional[dict]:
