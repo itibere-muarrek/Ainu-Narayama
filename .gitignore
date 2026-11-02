@@ -73,3 +73,6 @@ ainu.log
 # privado/ (auditoria interna, resultados completos) e preview/ (HTML estático) ficam de fora.
 data/diretorio/*
 !data/diretorio/publicavel/
+
+# Material restrito ao administrador (nunca vai para o repositorio publico)
+docs/privado/
