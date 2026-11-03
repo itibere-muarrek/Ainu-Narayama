@@ -712,6 +712,22 @@
     .footer-link:hover { color: var(--sky); }
     .footer-social { display: inline-flex; align-items: center; }
 
+    .footer-note {
+      margin-top: 0.45rem;
+      max-width: 64ch;
+      font-size: 0.68rem;
+      letter-spacing: 0.02em;
+      line-height: 1.5;
+      opacity: 0.85;
+    }
+    .footer-note a { color: var(--sky); text-decoration: none; border-bottom: 1px solid currentColor; }
+    .wake-note {
+      margin-top: 0.9rem;
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      opacity: 0.7;
+    }
+
     /* ─── RESPONSIVE ──────────────────────────────────────────── */
     @media (max-width: 768px) {
       nav { padding: 0 1.2rem; }
@@ -775,6 +791,7 @@
         <span class="btn-caption" data-i18n="btn_observatory_caption">(conteúdo aberto)</span>
       </div>
     </div>
+    <p class="wake-note" data-i18n="wake_note">O app roda em servidor gratuito: na primeira visita pode levar 30–60 s para acordar.</p>
   </div>
 
   <!-- STATS STRIP -->
@@ -903,6 +920,7 @@
       → Ver Análise Completa do Índice (11 Países)
     </a>
   </div>
+  <p class="wake-note" data-i18n="wake_note">O app roda em servidor gratuito: na primeira visita pode levar 30–60 s para acordar.</p>
   <p class="snapshot-note" data-i18n="snapshot_note">Amostra reduzida — a análise completa dos 28 países da amostra, com todos os componentes técnicos, é exclusiva da plataforma (colaboradores).</p>
 </article>
 
@@ -1011,6 +1029,8 @@
   <div class="footer-left">
     <div class="footer-framework"><img src="framework-icon.png" alt="">AINU–Narayama Intergenerational Sustainability Framework</div>
     AINU · Ancestral Isonomic Nexus Unit · © 2026 Itiberê Muarrek
+    <div class="footer-note" data-i18n="ai_translation_note">Traduções feitas por IA, ainda sem revisão nativa; em caso de dúvida, vale o texto em português.</div>
+    <div class="footer-note" data-i18n="review_invite">Quer revisar a tradução do seu idioma ou criticar o método? Escreva para <a href="mailto:narayama.live@gmail.com">narayama.live@gmail.com</a>.</div>
   </div>
   <div class="footer-right">
     <a class="footer-link lang-link" data-base="https://narayama.live" href="https://narayama.live" target="_blank" rel="noopener">Narayama.live</a>
@@ -1025,6 +1045,9 @@
 <script>
 const i18n = {
   pt: {
+    wake_note: "O app roda em servidor gratuito: na primeira visita pode levar 30–60 s para acordar.",
+    ai_translation_note: "Traduções feitas por IA, ainda sem revisão nativa; em caso de dúvida, vale o texto em português.",
+    review_invite: "Quer revisar a tradução do seu idioma ou criticar o método? Escreva para <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
     nav_observatory: "Observatório",
     nav_platform: "Plataforma",
     hero_eyebrow: "Infraestrutura de Pesquisa Aberta · Narayama Framework",
@@ -1090,6 +1113,9 @@ const i18n = {
     paper2_academia_note: "Também disponível no Academia.edu: <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
   },
   en: {
+    wake_note: "The app runs on a free server: on the first visit it may take 30–60 s to wake up.",
+    ai_translation_note: "Translations made by AI, not yet reviewed by native speakers; in case of doubt, the Portuguese text prevails.",
+    review_invite: "Would you like to review the translation in your language or critique the method? Write to <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
     nav_observatory: "Observatory",
     nav_platform: "Platform",
     hero_eyebrow: "Open Research Infrastructure · Narayama Framework",
@@ -1155,6 +1181,9 @@ const i18n = {
     paper2_academia_note: "Also available on Academia.edu: <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
   },
   es: {
+    wake_note: "La app funciona en un servidor gratuito: en la primera visita puede tardar 30–60 s en despertar.",
+    ai_translation_note: "Traducciones hechas por IA, aún sin revisión de hablantes nativos; en caso de duda, prevalece el texto en portugués.",
+    review_invite: "¿Quiere revisar la traducción a su idioma o criticar el método? Escriba a <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
     nav_observatory: "Observatorio",
     nav_platform: "Plataforma",
     hero_eyebrow: "Infraestructura de Investigación Abierta · Marco Narayama",
@@ -1220,6 +1249,9 @@ const i18n = {
     paper2_academia_note: "También disponible en Academia.edu: <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
   },
   fr: {
+    wake_note: "L'application tourne sur un serveur gratuit : à la première visite, elle peut mettre 30 à 60 s à se réveiller.",
+    ai_translation_note: "Traductions réalisées par IA, pas encore relues par des locuteurs natifs ; en cas de doute, le texte portugais fait foi.",
+    review_invite: "Vous souhaitez relire la traduction dans votre langue ou critiquer la méthode ? Écrivez à <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
     nav_observatory: "Observatoire",
     nav_platform: "Plateforme",
     hero_eyebrow: "Infrastructure de Recherche Ouverte · Cadre Narayama",
@@ -1285,6 +1317,9 @@ const i18n = {
     paper2_academia_note: "Également disponible sur Academia.edu : <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
   },
   ko: {
+    wake_note: "앱은 무료 서버에서 실행됩니다. 처음 접속하면 깨어나는 데 30~60초가 걸릴 수 있습니다.",
+    ai_translation_note: "번역은 AI로 작성되었으며 원어민 검수를 거치지 않았습니다. 의문이 있을 경우 포르투갈어 원문이 우선합니다.",
+    review_invite: "해당 언어 번역을 검수하거나 방법론에 대해 비평하고 싶으신가요? 다음 주소로 연락해 주세요: <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>",
     nav_observatory: "관측소",
     nav_platform: "플랫폼",
     hero_eyebrow: "개방형 연구 인프라 · 나라야마 프레임워크",
@@ -1350,6 +1385,9 @@ const i18n = {
     paper2_academia_note: "Academia.edu에서도 확인 가능: <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
   },
   it: {
+    wake_note: "L'app gira su un server gratuito: alla prima visita può impiegare 30–60 s a riattivarsi.",
+    ai_translation_note: "Traduzioni realizzate con IA, non ancora riviste da madrelingua; in caso di dubbio fa fede il testo in portoghese.",
+    review_invite: "Vuoi rivedere la traduzione nella tua lingua o criticare il metodo? Scrivi a <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
     nav_observatory: "Osservatorio",
     nav_platform: "Piattaforma",
     hero_eyebrow: "Infrastruttura di Ricerca Aperta · Framework Narayama",
@@ -1415,6 +1453,9 @@ const i18n = {
     paper2_academia_note: "Disponibile anche su Academia.edu: <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
   },
   zh: {
+    wake_note: "该应用运行在免费服务器上，首次访问时可能需要 30–60 秒才能唤醒。",
+    ai_translation_note: "译文由人工智能生成，尚未经母语者审校；如有疑义，以葡萄牙语原文为准。",
+    review_invite: "愿意审校您所用语言的译文，或对方法提出批评吗？请写信至 <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>。",
     nav_observatory: "观测站",
     nav_platform: "平台",
     hero_eyebrow: "开放研究基础设施 · Narayama框架",
@@ -1480,6 +1521,9 @@ const i18n = {
     paper2_academia_note: "也可在 Academia.edu 上查看：<a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
   },
   ja: {
+    wake_note: "このアプリは無料サーバーで動作しており、初回アクセス時は起動に30〜60秒かかることがあります。",
+    ai_translation_note: "翻訳はAIによるもので、ネイティブによる校閲はまだ行われていません。疑義がある場合はポルトガル語の原文が優先されます。",
+    review_invite: "お使いの言語の翻訳の校閲や、手法へのご批判をいただけませんか。連絡先：<a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>",
     nav_observatory: "観測所",
     nav_platform: "プラットフォーム",
     hero_eyebrow: "オープン研究インフラ · ナラヤマフレームワーク",
@@ -1545,6 +1589,9 @@ const i18n = {
     paper2_academia_note: "Academia.eduでも公開中：<a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
   },
   fi: {
+    wake_note: "Sovellus toimii ilmaisella palvelimella: ensimmäisellä käynnillä sen herääminen voi kestää 30–60 s.",
+    ai_translation_note: "Käännökset on tehty tekoälyllä, eikä äidinkielinen puhuja ole vielä tarkistanut niitä; epäselvissä tapauksissa portugalinkielinen teksti on ensisijainen.",
+    review_invite: "Haluatko tarkistaa oman kielesi käännöksen tai kritisoida menetelmää? Kirjoita osoitteeseen <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
     nav_observatory: "Observatorio",
     nav_platform: "Alusta",
     hero_eyebrow: "Avoin tutkimusinfrastruktuuri · Narayama-viitekehys",
