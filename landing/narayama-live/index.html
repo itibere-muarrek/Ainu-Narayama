@@ -688,6 +688,56 @@
       opacity: 0.7;
     }
 
+
+    /* ─── LANDING v2 (narayama.live): só o índice ─────────────── */
+    html { scroll-padding-top: 76px; }
+    .hero-body { padding: 3rem 2rem 1.5rem; }
+    .hero-logo { width: min(520px, 80vw); margin-bottom: 2rem; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 0; }
+    .sec-head { margin-bottom: 1.6rem; }
+    .sec-head .section-title { margin-bottom: 0.5rem; }
+    .zgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.9rem; align-items: start; }
+    .zhead { font-size: 0.78rem; font-weight: 600; line-height: 1.3; color: var(--ink); text-align: center; min-height: 3.1rem; display: flex; align-items: flex-end; justify-content: center; }
+    .zrange { font-family: var(--f-mono); font-size: 0.68rem; opacity: 0.7; text-align: center; margin: 0.25rem 0 0.7rem; }
+    .zcard { border: 1px solid rgba(13,27,42,0.16); border-radius: var(--radius); padding: 0.8rem 0.5rem; text-align: center; margin-bottom: 0.7rem; }
+    .zcard .country-flag { font-size: 1.3rem; }
+    .zcard .country-nstar { font-size: 1.25rem; }
+    .cta-row { margin-top: 1.8rem; }
+    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch; }
+    .box { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--divider); border-top: 3px solid var(--glow); border-radius: var(--radius); padding: 1.5rem 1.6rem; min-width: 0; }
+    .box-tag { font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sky); margin-bottom: 0.5rem; }
+    .box-lines p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.55; padding: 0.45rem 0 0.45rem 0.9rem; border-left: 2px solid var(--divider); }
+    .box-lines p + p { margin-top: 0.25rem; }
+    .box-foot { margin-top: auto; padding-top: 1.3rem; min-height: 9.5rem; }
+    .box-foot .btn-ghost { padding: 0.6rem 1.2rem; font-size: 0.82rem; }
+    .box .btn-row { justify-content: flex-start; gap: 0.6rem; }
+    .box .paper-card-mirror { font-size: 0.76rem; margin-top: 0.7rem; }
+    .read-lines { max-width: 760px; }
+    .read-lines p { background: var(--white); border: 1px solid var(--divider); border-left: 3px solid var(--glow); border-radius: var(--radius); padding: 0.8rem 1.1rem; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.6; }
+    .read-lines p + p { margin-top: 0.6rem; }
+    .paper-t { font-family: var(--f-display); font-size: 1.15rem; font-weight: 600; line-height: 1.3; color: var(--ink); margin-bottom: 0.4rem; }
+    .paper-st { font-size: 0.8rem; font-style: italic; color: var(--ink-soft); line-height: 1.45; margin-bottom: 0.9rem; }
+    .paper-m { font-family: var(--f-mono); font-size: 0.68rem; color: var(--ink-soft); opacity: 0.8; margin-top: 0.9rem; }
+    .paper-note { font-size: 0.76rem; font-style: italic; color: var(--ink-soft); margin-top: 0.6rem; }
+    footer.foot { display: block; text-align: left; padding: 2.4rem 2.5rem 1.6rem; margin-top: 4rem; }
+    .foot-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+    .foot-name { font-family: var(--f-mono); font-size: 0.78rem; letter-spacing: 0.12em; color: var(--ink); margin: 0.2rem 0 0.3rem; }
+    .foot-desc { font-size: 0.82rem; color: var(--ink-soft); }
+    .foot-ainu { color: var(--sky); font-weight: 600; font-size: 0.85rem; text-decoration: none; }
+    .foot-ainu:hover { text-decoration: underline; }
+    .foot-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; flex-wrap: wrap; margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid var(--divider); }
+    .foot-bottom .footer-left { font-size: 0.7rem; }
+    @media (max-width: 800px) { .pair { grid-template-columns: 1fr; } .box-foot { min-height: 0; } }
+    @media (max-width: 640px) {
+      .wrap { padding: 2.4rem 1.2rem 0; }
+      .zgrid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .zcol { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+      .zcol .zhead, .zcol .zrange { grid-column: 1 / -1; min-height: 0; margin-bottom: 0; }
+      .zcard { margin-bottom: 0; }
+      .box-foot .btn-ghost, .cta-row .btn-primary { width: 100%; justify-content: center; }
+      footer.foot { padding: 2rem 1.2rem 1.4rem; }
+    }
+
     /* ─── RESPONSIVE ──────────────────────────────────────────── */
     @media (max-width: 768px) {
       nav { padding: 0 1.2rem; }
@@ -721,8 +771,6 @@
       <option value="ko">🇰🇷 KO</option>
       <option value="fi">🇫🇮 FI</option>
     </select>
-    <a class="nav-link lang-link" data-base="https://narayama-live.onrender.com" href="https://narayama-live.onrender.com" target="_blank" rel="noopener" data-i18n="nav_observatory">Observatório</a>
-    <a class="nav-link lang-link" data-base="https://ainu.systems" href="https://ainu.systems" target="_blank" rel="noopener" data-i18n="nav_platform">AINU.systems</a>
   </div>
 </nav>
 
@@ -731,230 +779,62 @@
   <div class="hero-body">
     <img src="live-transparent.png" alt="Narayama.live — Generational Sustainability Index" class="hero-logo">
     <p class="hero-eyebrow" data-i18n="hero_eyebrow">Termômetro do Índice de Narayama Sistêmico</p>
-    <h1 class="hero-title" data-i18n="hero_title">
-      O retrato público da capacidade de cada país <em>de renovar sua população e prover seu futuro</em> de forma sustentável.
-    </h1>
-    <p class="hero-sub" data-i18n="hero_sub">
-      Narayama.live traduz o Índice N* — calculado pelo AINU — num mapa simples de 11 países, atualizado trimestralmente. Para a análise técnica completa dos 28 países da amostra, veja ainu.systems.
-    </p>
+    <h1 class="hero-title" data-i18n="n_hero_title">Onde cada sociedade está na escala da renovação geracional?</h1>
+    <p class="hero-sub" data-i18n="n_hero_sub" style="margin-bottom:0">O Índice N* mostra, de forma simples, a capacidade de 11 países de renovar suas gerações. Valores observados de fontes oficiais, com atualização trimestral.</p>
   </div>
+</section>
 
-  <!-- STATS STRIP -->
-  <div class="stats-strip">
-    <div class="stat-item">
-      <span class="stat-num">11</span>
-      <span class="stat-label" data-i18n="stat_countries">Países no panorama</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">5</span>
-      <span class="stat-label" data-i18n="stat_zones">Zonas geracionais</span>
-    </div>
-    <div class="stat-item">
-      <a class="stat-social-link" href="https://www.linkedin.com/company/ainu-systems" target="_blank" rel="noopener" aria-label="AINU no LinkedIn">
-        <span class="stat-num stat-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z"/></svg></span>
-        <span class="stat-label" data-i18n="stat_follow">Siga-nos</span>
-      </a>
+<!-- ─── O ÍNDICE ──────────────────────────────────────────────── -->
+<section class="wrap" id="indice">
+  <div class="sec-head">
+    <h2 class="section-title" data-i18n="snapshot_title">Onde os 11 países estão agora</h2>
+    <p class="section-sub" data-i18n="snapshot_obs">Valores observados (N*_Obs), calculados das fontes oficiais sem ajustes. Zonas provisórias (teste F4).</p>
+  </div>
+  <div class="zgrid"><div class="zcol"><div class="zhead" data-i18n="zone_peec">Saturação</div><div class="zrange">≥ 2.00</div><div class="zcard" style="background:#ffd60a"><span class="country-flag">🇳🇬</span><span class="country-name" data-i18n="country_nga">Nigéria</span><span class="country-example-tag" data-i18n="example_tag">(exemplo)</span><span class="country-nstar">3.36</span></div><div class="zcard" style="background:#ffd60a"><span class="country-flag">🇲🇽</span><span class="country-name" data-i18n="country_mex">México</span><span class="country-example-tag" data-i18n="example_tag">(exemplo)</span><span class="country-nstar">2.05</span></div></div><div class="zcol"><div class="zhead" data-i18n="zone_tp">Tensão Populacional</div><div class="zrange">1.40 – 2.00</div><div class="zcard" style="background:#fff3cd"><span class="country-flag">🇮🇳</span><span class="country-name" data-i18n="country_ind">Índia</span><span class="country-nstar">1.71</span></div><div class="zcard" style="background:#fff3cd"><span class="country-flag">🇧🇷</span><span class="country-name" data-i18n="country_bra">Brasil</span><span class="country-nstar">1.43</span></div></div><div class="zcol"><div class="zhead" data-i18n="zone_pea">Equilíbrio</div><div class="zrange">0.90 – 1.40</div><div class="zcard" style="background:#cfe2ff"><span class="country-flag">🇺🇸</span><span class="country-name" data-i18n="country_usa">Estados Unidos</span><span class="country-nstar">1.15</span></div><div class="zcard" style="background:#cfe2ff"><span class="country-flag">🇫🇷</span><span class="country-name" data-i18n="country_fra">França</span><span class="country-example-tag" data-i18n="example_tag">(exemplo)</span><span class="country-nstar">0.91</span></div><div class="zcard" style="background:#cfe2ff"><span class="country-flag">🇦🇷</span><span class="country-name" data-i18n="country_arg">Argentina</span><span class="country-nstar">1.25</span></div></div><div class="zcol"><div class="zhead" data-i18n="zone_ta">Tensão Acelerada</div><div class="zrange">0.71 – 0.90</div><div class="zcard" style="background:#ffdba8"><span class="country-flag">🇨🇳</span><span class="country-name" data-i18n="country_chn">China</span><span class="country-nstar">0.74</span></div></div><div class="zcol"><div class="zhead" data-i18n="zone_pec">Colapso de Narayama (PEC)</div><div class="zrange">&lt; 0.71</div><div class="zcard" style="background:#f5c2c7"><span class="country-flag">🇯🇵</span><span class="country-name" data-i18n="country_jpn">Japão</span><span class="country-nstar">0.54</span></div><div class="zcard" style="background:#f5c2c7"><span class="country-flag">🇮🇹</span><span class="country-name" data-i18n="country_ita">Itália</span><span class="country-nstar">0.61</span></div><div class="zcard" style="background:#f5c2c7"><span class="country-flag">🇰🇷</span><span class="country-name" data-i18n="country_kor">Coreia do Sul</span><span class="country-nstar">0.46</span></div></div></div>
+  <div class="btn-row cta-row">
+    <div class="btn-group">
+      <a class="btn-primary lang-link" data-base="https://narayama-live.onrender.com" href="https://narayama-live.onrender.com" target="_blank" rel="noopener" data-i18n="n_cta">Ver a Tabela Geracional completa</a>
+      <p class="wake-note" style="margin-top:0.2rem" data-i18n="wake_note">O app roda em servidor gratuito: na primeira visita pode levar 30–60 s para acordar.</p>
     </div>
   </div>
 </section>
 
-<!-- ─── FIVE ZONES ────────────────────────────────────────────── -->
-<article class="section" style="padding-bottom:0">
-  <p class="section-eyebrow" data-i18n="zones_eyebrow">Os Cinco Regimes Geracionais</p>
-  <h2 class="section-title" data-i18n="formula_label">Índice de Narayama Sistêmico</h2>
-  <div class="zones-ruler">
-    <div class="zone-seg" style="background:#f5c2c7">
-      <div class="zone-seg-name" data-i18n="zone_pec">Colapso de Narayama (PEC)</div>
-      <div class="zone-seg-range">&lt; 0.71</div>
-    </div>
-    <div class="zone-seg" style="background:#ffdba8">
-      <div class="zone-seg-name" data-i18n="zone_ta">Tensão Acelerada</div>
-      <div class="zone-seg-range">0.71 – 0.90</div>
-    </div>
-    <div class="zone-seg" style="background:#cfe2ff">
-      <div class="zone-seg-name" data-i18n="zone_pea">Ponto de Equilíbrio Autossustentável (PEA)</div>
-      <div class="zone-seg-range">0.90 – 1.40</div>
-    </div>
-    <div class="zone-seg" style="background:#fff3cd">
-      <div class="zone-seg-name" data-i18n="zone_tp">Tensão Populacional</div>
-      <div class="zone-seg-range">1.40 – 2.00</div>
-    </div>
-    <div class="zone-seg" style="background:#ffd60a">
-      <div class="zone-seg-name" data-i18n="zone_peec">Saturação por Excesso de Contingente (PEEC)</div>
-      <div class="zone-seg-range">&ge; 2.00</div>
-    </div>
+<!-- ─── COMO LER ──────────────────────────────────────────────── -->
+<section class="wrap" id="como-ler">
+  <div class="sec-head"><h2 class="section-title" data-i18n="n_read">Como ler o N*</h2></div>
+  <div class="read-lines">
+    <p data-i18n="n_l1">O N* compara a base e o topo da pirâmide etária, os nascimentos e as mortes, e a fecundidade de hoje com a da geração anterior.</p>
+    <p data-i18n="n_l2">Abaixo de 0,90 a renovação é insuficiente; de 0,90 a 1,40 há equilíbrio; acima de 1,40 há excesso.</p>
+    <p data-i18n="n_l3">Valores observados (UN WPP 2024), sem ajustes; as zonas ainda são provisórias.</p>
   </div>
-  <p class="formula-note" data-i18n="formula_note">Normalização por raiz quadrada · Atualização trimestral · Versionamento Git rastreável</p>
+</section>
 
-  <p class="section-eyebrow snapshot-eyebrow" data-i18n="snapshot_eyebrow">Panorama Real</p>
-  <h2 class="section-title" data-i18n="snapshot_title">Onde os 11 países estão agora</h2>
-  <p class="snapshot-note" data-i18n="snapshot_obs">Valores observados (N*_Obs), calculados das fontes oficiais sem ajustes. Zonas provisórias (teste F4).</p>
-  <div class="country-snapshot">
-    <div class="country-card">
-      <span class="country-flag">🇳🇬</span>
-      <span class="country-name" data-i18n="country_nga">Nigéria</span>
-      <span class="country-example-tag" data-i18n="example_tag">(exemplo)</span>
-      <span class="country-nstar">3.36</span>
-      <span class="country-zone-badge" style="background:#ffd60a">PEEC</span>
-    </div>
-    <div class="country-card">
-      <span class="country-flag">🇲🇽</span>
-      <span class="country-name" data-i18n="country_mex">México</span>
-      <span class="country-example-tag" data-i18n="example_tag">(exemplo)</span>
-      <span class="country-nstar">2.05</span>
-      <span class="country-zone-badge" style="background:#ffd60a">PEEC</span>
-    </div>
-    <div class="country-card">
-      <span class="country-flag">🇮🇳</span>
-      <span class="country-name" data-i18n="country_ind">Índia</span>
-      <span class="country-nstar">1.71</span>
-      <span class="country-zone-badge" style="background:#fff3cd">TP</span>
-    </div>
-    <div class="country-card">
-      <span class="country-flag">🇧🇷</span>
-      <span class="country-name" data-i18n="country_bra">Brasil</span>
-      <span class="country-nstar">1.43</span>
-      <span class="country-zone-badge" style="background:#fff3cd">TP</span>
-    </div>
-    <div class="country-card">
-      <span class="country-flag">🇦🇷</span>
-      <span class="country-name" data-i18n="country_arg">Argentina</span>
-      <span class="country-nstar">1.25</span>
-      <span class="country-zone-badge" style="background:#cfe2ff">PEA</span>
-    </div>
-    <div class="country-card">
-      <span class="country-flag">🇺🇸</span>
-      <span class="country-name" data-i18n="country_usa">Estados Unidos</span>
-      <span class="country-nstar">1.15</span>
-      <span class="country-zone-badge" style="background:#cfe2ff">PEA</span>
-    </div>
-    <div class="country-card">
-      <span class="country-flag">🇫🇷</span>
-      <span class="country-name" data-i18n="country_fra">França</span>
-      <span class="country-example-tag" data-i18n="example_tag">(exemplo)</span>
-      <span class="country-nstar">0.91</span>
-      <span class="country-zone-badge" style="background:#cfe2ff">PEA</span>
-    </div>
-    <div class="country-card">
-      <span class="country-flag">🇨🇳</span>
-      <span class="country-name" data-i18n="country_chn">China</span>
-      <span class="country-nstar">0.74</span>
-      <span class="country-zone-badge" style="background:#ffdba8">TA</span>
-    </div>
-    <div class="country-card">
-      <span class="country-flag">🇮🇹</span>
-      <span class="country-name" data-i18n="country_ita">Itália</span>
-      <span class="country-nstar">0.61</span>
-      <span class="country-zone-badge" style="background:#f5c2c7">PEC</span>
-    </div>
-    <div class="country-card">
-      <span class="country-flag">🇯🇵</span>
-      <span class="country-name" data-i18n="country_jpn">Japão</span>
-      <span class="country-nstar">0.54</span>
-      <span class="country-zone-badge" style="background:#f5c2c7">PEC</span>
-    </div>
-    <div class="country-card">
-      <span class="country-flag">🇰🇷</span>
-      <span class="country-name" data-i18n="country_kor">Coreia do Sul</span>
-      <span class="country-nstar">0.46</span>
-      <span class="country-zone-badge" style="background:#f5c2c7">PEC</span>
-    </div>
+<!-- ─── PUBLICAÇÕES ───────────────────────────────────────────── -->
+<section class="wrap" id="publicacoes">
+  <div class="sec-head"><h2 class="section-title" data-i18n="papers_title">Publicações</h2></div>
+  <div class="pair">
+    <div class="box"><p class="box-tag">PAPER 2</p><h3 class="paper-t">Por que o Índice Narayama? Extensão da vida e redução do potencial geracional: custos da reprodução social e a necessidade de uma nova métrica demográfica</h3><p class="paper-st">Why the Narayama Index? Life Extension and the Reduction of Generational Potential: Costs of Social Reproduction and the Need for a New Demographic Metric</p><div class="box-lines"><p data-i18n="p2_l1">As sociedades prolongam a vida das gerações existentes enquanto perdem capacidade de produzir a seguinte.</p><p data-i18n="p2_l2">Introduz a Unidade de Reprodução Social Sustentável (URSS).</p><p data-i18n="p2_l3">Propõe o N* como hipótese testável de mensuração, não como medida definitiva.</p></div><p class="paper-m">Itiberê L. G. C. Muarrek · Working Paper · 10/2026</p><div class="box-foot"><div class="btn-row"><a class="btn-ghost" href="papers/paper-indice-narayama-pt.pdf" target="_blank" rel="noopener" data-i18n="paper_read_pt">Ler em Português (PDF)</a><a class="btn-ghost" href="papers/paper-indice-narayama-en.pdf" target="_blank" rel="noopener" data-i18n="paper_read_en">Read in English (PDF)</a></div><p class="paper-card-mirror" data-i18n="paper2_academia_note">Também disponível no Academia.edu: <a href="https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica" target="_blank" rel="noopener">PT</a> · <a href="https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric" target="_blank" rel="noopener">EN</a></p><p class="paper-card-mirror" data-i18n="paper_doi_note">ResearchGate: <a href="https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA" target="_blank" rel="noopener">PT</a> · <a href="https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX" target="_blank" rel="noopener">EN</a> · DOI da versão original em português: <a href="https://doi.org/10.13140/RG.2.2.16911.55206" target="_blank" rel="noopener">10.13140/RG.2.2.16911.55206</a></p></div></div>
+    <div class="box"><p class="box-tag">PAPER 1</p><h3 class="paper-t">Glocalização Destruída, Reprodução Geracional Colapsada: A Floresta como Lápide Demográfica nas Cidades Pequenas e Médias da Itália</h3><p class="paper-st">Glocalization Collapse and Generational Reproduction Failure in Small and Medium Italian Cities: The Narayama Systemic and the Forest as Demographic Tombstone</p><div class="box-lines"><p data-i18n="p1_l1">Aplica o Índice de Narayama Sistêmico ao caso italiano: TFR 1,21, N* 0,61, zona PEC.</p><p data-i18n="p1_l2">Propõe a expansão da floresta como marca territorial da perda de reprodução geracional.</p><p data-i18n="p1_l3">Propõe IVAT e glocalização ativa como reversão.</p></div><p class="paper-note" data-i18n="p1_note">O PDF está em revisão: a versão 2 trará os valores atuais do AINU.</p><p class="paper-m">Itiberê L. G. C. Muarrek · Working Paper · 09/2026</p><div class="box-foot"><div class="btn-row"><a class="btn-ghost" href="papers/paper-floresta-italia-pt.pdf" target="_blank" rel="noopener" data-i18n="paper_read_pt">Ler em Português (PDF)</a><a class="btn-ghost" href="papers/paper-floresta-italia-en.pdf" target="_blank" rel="noopener" data-i18n="paper_read_en">Read in English (PDF)</a></div><p class="paper-card-mirror" data-i18n="paper_academia_note">Também disponível no Academia.edu: <a href="https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia" target="_blank" rel="noopener">PT</a> · <a href="https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone" target="_blank" rel="noopener">EN</a></p><p class="paper-card-mirror" data-i18n="paper_floresta_doi_note">DOI da versão original em português: <a href="https://doi.org/10.13140/RG.2.2.29067.25122" target="_blank" rel="noopener">10.13140/RG.2.2.29067.25122</a></p></div></div>
   </div>
-  <div class="btn-row" style="margin-top:1.5rem">
-    <a class="btn-primary lang-link" data-base="https://narayama-live.onrender.com" href="https://narayama-live.onrender.com" target="_blank" rel="noopener" data-i18n="snapshot_cta">
-      → Ver Análise Completa do Índice (11 Países)
-    </a>
-  </div>
-  <p class="wake-note" data-i18n="wake_note">O app roda em servidor gratuito: na primeira visita pode levar 30–60 s para acordar.</p>
-</article>
-
-<!-- ─── ABOUT ─────────────────────────────────────────────────── -->
-<article class="section">
-  <p class="section-eyebrow" data-i18n="about_eyebrow">O que é o Narayama.live</p>
-  <h2 class="section-title" data-i18n="about_title">A porta pública do Índice de Narayama Sistêmico</h2>
-  <div class="section-body">
-    <p data-i18n="about_p1">
-      O AINU calcula, a cada trimestre, a capacidade de cada sociedade renovar suas próprias gerações — o Índice de Narayama Sistêmico (N*). O narayama.live é a porta pública dessa pesquisa: sem jargão técnico, mostra onde cada um dos 11 países está nessa escala, agora.
-    </p>
-    <p data-i18n="about_p2">
-      Desenvolvido no contexto de uma pesquisa independente em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o narayama.live é atualizado a cada trimestre, com a mesma metodologia rastreável usada na análise técnica completa em ainu.systems.
-    </p>
-  </div>
-</article>
-
-<!-- ─── OPEN RESEARCH ──────────────────────────────────────────── -->
-<article class="section" style="padding-top:0">
-  <p class="section-eyebrow" data-i18n="open_eyebrow">Arquitetura AINU–Narayama</p>
-  <h2 class="section-title" data-i18n="open_title">Laboratório e observatório — separados por público-alvo</h2>
-  <div class="pillars">
-    <div class="pillar-card pillar-card-secondary">
-      <span class="pillar-icon">⚙️</span>
-      <p class="pillar-title">AINU.systems</p>
-      <p class="pillar-text" data-i18n="pillar_ainu">
-        A análise técnica completa dos 28 países da amostra.
-      </p>
-      <a class="pillar-link lang-link" data-base="https://ainu.systems" href="https://ainu.systems" target="_blank" rel="noopener" data-i18n="pillar_link_ainu">
-        Ver a plataforma técnica →
-      </a>
-    </div>
-    <div class="pillar-card pillar-card-primary">
-      <span class="pillar-icon">🌐</span>
-      <p class="pillar-title">Narayama.live</p>
-      <p class="pillar-text" data-i18n="pillar_narayama">
-        Observatório público. Publica resultados, documenta a evolução metodológica e exibe o mapa periódico dos 11 países em 9 idiomas. Onde os dados são <em>apresentados</em>.
-      </p>
-    </div>
-  </div>
-</article>
-
-<!-- ─── PAPERS ─────────────────────────────────────────────────── -->
-<article class="section" style="padding-top:0">
-  <p class="section-eyebrow" data-i18n="papers_eyebrow">Pesquisa Publicada</p>
-  <h2 class="section-title" data-i18n="papers_title">Publicações</h2>
-  <div class="paper-card">
-    <p class="paper-card-title">Por que o Índice Narayama? Extensão da vida e redução do potencial geracional: custos da reprodução social e a necessidade de uma nova métrica demográfica</p>
-    <p class="paper-card-subtitle">Why the Narayama Index? Life Extension and the Reduction of Generational Potential: Costs of Social Reproduction and the Need for a New Demographic Metric</p>
-    <p class="paper-card-summary" data-i18n="paper_narayama_summary">
-      As sociedades prolongam a vida das gerações existentes enquanto perdem capacidade de produzir a seguinte. O paper introduz a Unidade de Reprodução Social Sustentável (URSS) e propõe o Índice de Narayama (N*) como hipótese de mensuração testável do núcleo demográfico da capacidade de renovação geracional — não como medida definitiva da sustentabilidade civilizacional.
-    </p>
-    <p class="paper-card-meta">Itiberê L. G. C. Muarrek · AINU.Systems Research · Working Paper · Outubro de 2026</p>
-    <div class="btn-row">
-      <a class="btn-ghost" href="papers/paper-indice-narayama-pt.pdf" target="_blank" rel="noopener" data-i18n="paper_read_pt">Ler em Português (PDF)</a>
-      <a class="btn-ghost" href="papers/paper-indice-narayama-en.pdf" target="_blank" rel="noopener" data-i18n="paper_read_en">Read in English (PDF)</a>
-    </div>
-    <p class="paper-card-mirror" data-i18n="paper2_academia_note">Também disponível no Academia.edu: <a href="https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica" target="_blank" rel="noopener">PT</a> · <a href="https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric" target="_blank" rel="noopener">EN</a></p>
-    <p class="paper-card-mirror" style="margin-top:0.35rem" data-i18n="paper_doi_note">ResearchGate: <a href="https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA" target="_blank" rel="noopener">PT</a> · <a href="https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX" target="_blank" rel="noopener">EN</a> · DOI da versão original em português: <a href="https://doi.org/10.13140/RG.2.2.16911.55206" target="_blank" rel="noopener">10.13140/RG.2.2.16911.55206</a></p>
-  </div>
-  <div class="paper-card">
-    <p class="paper-card-title">Glocalização Destruída, Reprodução Geracional Colapsada: A Floresta como Lápide Demográfica nas Cidades Pequenas e Médias da Itália</p>
-    <p class="paper-card-subtitle">Glocalization Collapse and Generational Reproduction Failure in Small and Medium Italian Cities: The Narayama Systemic and the Forest as Demographic Tombstone</p>
-    <p class="paper-card-summary" data-i18n="paper_floresta_summary">
-      A Itália perdeu cerca de 38% do seu território pra floresta espontânea — não é conquista ambiental, é a marca geográfica do colapso da URSS nas cidades pequenas e médias do interior. Este paper aplica o Índice de Narayama Sistêmico ao caso italiano (TFR 1,21, N* 0,61, Zona PEC) e propõe IVAT + Glocalização ativa como reversão.
-    </p>
-    <p class="paper-card-meta">Itiberê L. G. C. Muarrek · AINU.Systems Research · Working Paper · Setembro de 2026</p>
-    <div class="btn-row">
-      <a class="btn-ghost" href="papers/paper-floresta-italia-pt.pdf" target="_blank" rel="noopener" data-i18n="paper_read_pt">Ler em Português (PDF)</a>
-      <a class="btn-ghost" href="papers/paper-floresta-italia-en.pdf" target="_blank" rel="noopener" data-i18n="paper_read_en">Read in English (PDF)</a>
-    </div>
-    <p class="paper-card-mirror" data-i18n="paper_academia_note">Também disponível no Academia.edu: <a href="https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia" target="_blank" rel="noopener">PT</a> · <a href="https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone" target="_blank" rel="noopener">EN</a></p>
-    <p class="paper-card-mirror" style="margin-top:0.35rem" data-i18n="paper_floresta_doi_note">DOI da versão original em português: <a href="https://doi.org/10.13140/RG.2.2.29067.25122" target="_blank" rel="noopener">10.13140/RG.2.2.29067.25122</a></p>
-  </div>
-</article>
+</section>
 
 <!-- ─── FOOTER ─────────────────────────────────────────────────── -->
-<footer>
-  <div class="footer-left">
-    <div class="footer-framework"><img src="framework-icon.png" alt="">AINU–Narayama Intergenerational Sustainability Framework</div>
-    Narayama.live · Observatório Público do Índice de Narayama Sistêmico · © 2026 Itiberê Muarrek
-    <div class="footer-note" data-i18n="ai_translation_note">Traduções feitas por IA, ainda sem revisão nativa; em caso de dúvida, vale o texto em português.</div>
-    <div class="footer-note" data-i18n="review_invite">Quer revisar a tradução do seu idioma ou criticar o método? Escreva para <a href="mailto:narayama.live@gmail.com">narayama.live@gmail.com</a>.</div>
+<footer class="foot">
+  <div class="foot-top">
+    <div>
+      <div class="footer-framework"><img src="framework-icon.png" alt="">AINU–Narayama Intergenerational Sustainability Framework</div>
+      <p class="foot-name">NARAYAMA.LIVE</p>
+      <p class="foot-desc" data-i18n="n_foot_desc">Observatório público do Índice de Narayama Sistêmico.</p>
+    </div>
+    <a class="foot-ainu lang-link" data-base="https://ainu.systems" href="https://ainu.systems" target="_blank" rel="noopener" data-i18n="n_foot_ainu">Pesquisa e metodologia: AINU.Systems →</a>
   </div>
-  <div class="footer-right">
-    <a class="footer-link lang-link" data-base="https://ainu.systems" href="https://ainu.systems" target="_blank" rel="noopener">AINU.systems</a>
-    <a class="footer-link lang-link" data-base="https://narayama-live.onrender.com" href="https://narayama-live.onrender.com" target="_blank" rel="noopener" data-i18n="nav_observatory">Observatório</a>
-    <a class="footer-link footer-social" href="https://www.linkedin.com/company/ainu-systems" target="_blank" rel="noopener" aria-label="AINU no LinkedIn">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z"/></svg>
-    </a>
+  <div class="foot-bottom">
+    <div class="footer-left">
+      <div>© 2026 Narayama.live · Itiberê Muarrek</div>
+      <div class="footer-note" data-i18n="ai_translation_note">Traduções feitas por IA, ainda sem revisão nativa; em caso de dúvida, vale o texto em português.</div>
+      <div class="footer-note" data-i18n="review_invite">Quer revisar a tradução do seu idioma ou criticar o método? Escreva para <a href="mailto:narayama.live@gmail.com">narayama.live@gmail.com</a>.</div>
+    </div>
+    <a class="footer-link footer-social" href="https://www.linkedin.com/company/ainu-systems" target="_blank" rel="noopener" aria-label="AINU no LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z"/></svg></a>
   </div>
 </footer>
 
@@ -962,509 +842,437 @@
 <script>
 const i18n = {
   pt: {
-    wake_note: "O app roda em servidor gratuito: na primeira visita pode levar 30–60 s para acordar.",
     ai_translation_note: "Traduções feitas por IA, ainda sem revisão nativa; em caso de dúvida, vale o texto em português.",
-    review_invite: "Quer revisar a tradução do seu idioma ou criticar o método? Escreva para <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
-    nav_observatory: "Observatório",
-    nav_platform: "AINU.systems",
-    hero_eyebrow: "Termômetro do Índice de Narayama Sistêmico",
-    hero_title: "O retrato público da capacidade de cada país <em>de renovar sua população e prover seu futuro</em> de forma sustentável.",
-    hero_sub: "Narayama.live traduz o Índice N* — calculado pelo AINU — num mapa simples de 11 países, atualizado trimestralmente. Para a análise técnica completa dos 28 países da amostra, veja ainu.systems.",
-    stat_countries: "Países no panorama",
-    stat_zones: "Zonas geracionais",
-    stat_follow: "Siga-nos",
-    about_eyebrow: "O que é o Narayama.live",
-    about_title: "A porta pública do Índice de Narayama Sistêmico",
-    about_p1: "O AINU calcula, a cada trimestre, a capacidade de cada sociedade renovar suas próprias gerações — o Índice de Narayama Sistêmico (N*). O narayama.live é a porta pública dessa pesquisa: sem jargão técnico, mostra onde cada um dos 11 países está nessa escala, agora.",
-    about_p2: "Desenvolvido no contexto de uma pesquisa independente em Economia Política <em>Do Dilema de Narayama ao Oicoceno Civilizacional</em>, o narayama.live é atualizado a cada trimestre, com a mesma metodologia rastreável usada na análise técnica completa em ainu.systems.",
-    formula_label: "Índice de Narayama Sistêmico",
-    formula_note: "Normalização por raiz quadrada · Atualização trimestral · Versionamento Git rastreável",
-    snapshot_eyebrow: "Panorama Real",
-    snapshot_obs: "Valores observados (N*_Obs), calculados das fontes oficiais sem ajustes. Zonas provisórias (teste F4).",
-    snapshot_title: "Onde os 11 países estão agora",
-    country_ind: "Índia",
-    country_fra: "França",
-    country_mex: "México",
-    country_nga: "Nigéria",
-    example_tag: "(exemplo)",
-    snapshot_cta: "→ Ver Análise Completa do Índice (11 Países)",
-    country_bra: "Brasil",
     country_arg: "Argentina",
-    country_usa: "Estados Unidos",
+    country_bra: "Brasil",
     country_chn: "China",
+    country_fra: "França",
+    country_ind: "Índia",
     country_ita: "Itália",
     country_jpn: "Japão",
     country_kor: "Coreia do Sul",
-    zones_eyebrow: "Os Cinco Regimes Geracionais",
-    zone_pec: "Colapso de Narayama (PEC)",
-    zone_ta: "Tensão Acelerada",
-    zone_pea: "Equilíbrio",
-    zone_tp: "Tensão Populacional",
-    zone_peec: "Saturação",
-    open_eyebrow: "Arquitetura AINU–Narayama",
-    open_title: "Laboratório e observatório — separados por público-alvo",
-    pillar_ainu: "A análise técnica completa dos 28 países da amostra.",
-    pillar_link_ainu: "Ver a plataforma técnica →",
-    pillar_narayama: "Observatório público. Publica resultados, documenta a evolução metodológica e exibe o mapa periódico dos 11 países em 9 idiomas. Onde os dados são <em>apresentados</em>.",
-    papers_eyebrow: "Pesquisa Publicada",
-    papers_title: "Publicações",
-    paper_floresta_summary: "A Itália perdeu cerca de 38% do seu território pra floresta espontânea — não é conquista ambiental, é a marca geográfica do colapso da URSS nas cidades pequenas e médias do interior. Este paper aplica o Índice de Narayama Sistêmico ao caso italiano (TFR 1,21, N* 0,61, Zona PEC) e propõe IVAT + Glocalização ativa como reversão.",
-    paper_read_pt: "Ler em Português (PDF)",
-    paper_read_en: "Read in English (PDF)",
-    paper_academia_note: "Também disponível no Academia.edu: <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
-    paper_floresta_doi_note: "DOI da versão original em português: <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
-    paper_narayama_summary: "As sociedades prolongam a vida das gerações existentes enquanto perdem capacidade de produzir a seguinte. O paper introduz a Unidade de Reprodução Social Sustentável (URSS) e propõe o Índice de Narayama (N*) como hipótese de mensuração testável do núcleo demográfico da capacidade de renovação geracional — não como medida definitiva da sustentabilidade civilizacional.",
-    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · DOI da versão original em português: <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    country_mex: "México",
+    country_nga: "Nigéria",
+    country_usa: "Estados Unidos",
+    example_tag: "(exemplo)",
+    hero_eyebrow: "Termômetro do Índice de Narayama Sistêmico",
+    n_cta: "Ver a Tabela Geracional completa",
+    n_foot_ainu: "Pesquisa e metodologia: AINU.Systems →",
+    n_foot_desc: "Observatório público do Índice de Narayama Sistêmico.",
+    n_hero_sub: "O Índice N* mostra, de forma simples, a capacidade de 11 países de renovar suas gerações. Valores observados de fontes oficiais, com atualização trimestral.",
+    n_hero_title: "Onde cada sociedade está na escala da renovação geracional?",
+    n_l1: "O N* compara a base e o topo da pirâmide etária, os nascimentos e as mortes, e a fecundidade de hoje com a da geração anterior.",
+    n_l2: "Abaixo de 0,90 a renovação é insuficiente; de 0,90 a 1,40 há equilíbrio; acima de 1,40 há excesso.",
+    n_l3: "Valores observados (UN WPP 2024), sem ajustes; as zonas ainda são provisórias.",
+    n_read: "Como ler o N*",
+    p1_l1: "Aplica o Índice de Narayama Sistêmico ao caso italiano: TFR 1,21, N* 0,61, zona PEC.",
+    p1_l2: "Propõe a expansão da floresta como marca territorial da perda de reprodução geracional.",
+    p1_l3: "Propõe IVAT e glocalização ativa como reversão.",
+    p1_note: "O PDF está em revisão: a versão 2 trará os valores atuais do AINU.",
+    p2_l1: "As sociedades prolongam a vida das gerações existentes enquanto perdem capacidade de produzir a seguinte.",
+    p2_l2: "Introduz a Unidade de Reprodução Social Sustentável (URSS).",
+    p2_l3: "Propõe o N* como hipótese testável de mensuração, não como medida definitiva.",
     paper2_academia_note: "Também disponível no Academia.edu: <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_academia_note: "Também disponível no Academia.edu: <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · DOI da versão original em português: <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    paper_floresta_doi_note: "DOI da versão original em português: <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
+    paper_read_en: "Read in English (PDF)",
+    paper_read_pt: "Ler em Português (PDF)",
+    papers_title: "Publicações",
+    review_invite: "Quer revisar a tradução do seu idioma ou criticar o método? Escreva para <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
+    snapshot_obs: "Valores observados (N*_Obs), calculados das fontes oficiais sem ajustes. Zonas provisórias (teste F4).",
+    snapshot_title: "Onde os 11 países estão agora",
+    wake_note: "O app roda em servidor gratuito: na primeira visita pode levar 30–60 s para acordar.",
+    zone_pea: "Equilíbrio",
+    zone_pec: "Colapso de Narayama (PEC)",
+    zone_peec: "Saturação",
+    zone_ta: "Tensão Acelerada",
+    zone_tp: "Tensão Populacional",
   },
   en: {
-    wake_note: "The app runs on a free server: on the first visit it may take 30–60 s to wake up.",
     ai_translation_note: "Translations made by AI, not yet reviewed by native speakers; in case of doubt, the Portuguese text prevails.",
-    review_invite: "Would you like to review the translation in your language or critique the method? Write to <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
-    nav_observatory: "Observatory",
-    nav_platform: "AINU.systems",
-    hero_eyebrow: "Thermometer of the Systemic Narayama Index",
-    hero_title: "A public portrait of each country's capacity <em>to renew its population and sustainably provide for its future</em>.",
-    hero_sub: "Narayama.live translates the N* Index — computed by AINU — into a simple map of 11 countries, updated quarterly. For the full technical analysis of all 28 sample countries, see ainu.systems.",
-    stat_countries: "Countries in the snapshot",
-    stat_zones: "Generational zones",
-    stat_follow: "Follow us",
-    about_eyebrow: "What is Narayama.live",
-    about_title: "The public gateway to the Systemic Narayama Index",
-    about_p1: "AINU computes, quarter by quarter, each society's capacity to renew its own generations — the Systemic Narayama Index (N*). Narayama.live is the public gateway to that research: with no technical jargon, it shows where each of the 11 countries stands on that scale, right now.",
-    about_p2: "Developed within independent research in Political Economy <em>From the Narayama Dilemma to the Civilizational Oikocene</em>, narayama.live is updated every quarter, using the same traceable methodology behind the full technical analysis on ainu.systems.",
-    formula_label: "Narayama Systemic Index",
-    formula_note: "Square root normalization · Quarterly updates · Traceable Git versioning",
-    snapshot_eyebrow: "Real Snapshot",
-    snapshot_obs: "Observed values (N*_Obs), computed from official sources with no adjustments. Zones are provisional (test F4).",
-    snapshot_title: "Where the 11 countries stand now",
-    country_ind: "India",
-    country_fra: "France",
-    country_mex: "Mexico",
-    country_nga: "Nigeria",
-    example_tag: "(example)",
-    snapshot_cta: "→ See the Full Index Analysis (11 Countries)",
-    country_bra: "Brazil",
     country_arg: "Argentina",
-    country_usa: "United States",
+    country_bra: "Brazil",
     country_chn: "China",
+    country_fra: "France",
+    country_ind: "India",
     country_ita: "Italy",
     country_jpn: "Japan",
     country_kor: "South Korea",
-    zones_eyebrow: "The Five Generational Regimes",
-    zone_pec: "Narayama Collapse (PEC)",
-    zone_ta: "Accelerated Tension",
-    zone_pea: "Equilibrium",
-    zone_tp: "Population Tension",
-    zone_peec: "Saturation",
-    open_eyebrow: "AINU–Narayama Architecture",
-    open_title: "Laboratory and observatory — separated by audience",
-    pillar_ainu: "The full technical analysis of all 28 sample countries.",
-    pillar_link_ainu: "See the technical platform →",
-    pillar_narayama: "Public observatory. Publishes results, documents methodological evolution, and displays the periodic map of 11 countries in 9 languages. Where data is <em>presented</em>.",
-    papers_eyebrow: "Published Research",
-    papers_title: "Publications",
-    paper_floresta_summary: "Italy has lost about 38% of its territory to spontaneous forest growth — not an environmental win, but the geographic signature of URSS collapse in small and medium interior cities. This paper applies the Systemic Narayama Index to the Italian case (TFR 1.21, N* 0.61, PEC Zone) and proposes IVAT plus active Glocalization as the path to reversal.",
-    paper_read_pt: "Ler em Português (PDF)",
-    paper_read_en: "Read in English (PDF)",
-    paper_academia_note: "Also available on Academia.edu: <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
-    paper_floresta_doi_note: "DOI of the original Portuguese version: <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
-    paper_narayama_summary: "Societies are extending the lives of existing generations while becoming less able to produce the next one. The paper introduces the Sustainable Social Reproductive Unit (URSS) and proposes the Narayama Index (N*) as a testable measurement hypothesis for the demographic core of generational renewal capacity — not as a definitive measure of civilizational sustainability.",
-    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · DOI of the original Portuguese version: <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    country_mex: "Mexico",
+    country_nga: "Nigeria",
+    country_usa: "United States",
+    example_tag: "(example)",
+    hero_eyebrow: "Thermometer of the Systemic Narayama Index",
+    n_cta: "See the full Generational Table",
+    n_foot_ainu: "Research and methodology: AINU.Systems →",
+    n_foot_desc: "Public observatory of the Systemic Narayama Index.",
+    n_hero_sub: "The N* Index shows, in simple terms, the capacity of 11 countries to renew their generations. Observed values from official sources, updated quarterly.",
+    n_hero_title: "Where does each society stand on the scale of generational renewal?",
+    n_l1: "N* compares the base and the top of the age pyramid, births and deaths, and today's fertility with that of the previous generation.",
+    n_l2: "Below 0.90 renewal is insufficient; from 0.90 to 1.40 there is balance; above 1.40 there is excess.",
+    n_l3: "Observed values (UN WPP 2024), no adjustments; the zones are still provisional.",
+    n_read: "How to read N*",
+    p1_l1: "Applies the Systemic Narayama Index to the Italian case: TFR 1.21, N* 0.61, PEC zone.",
+    p1_l2: "Proposes forest expansion as the territorial mark of lost generational reproduction.",
+    p1_l3: "Proposes IVAT and active glocalization as the reversal.",
+    p1_note: "The PDF is under revision: version 2 will carry AINU's current values.",
+    p2_l1: "Societies prolong the lives of existing generations while losing the capacity to produce the next.",
+    p2_l2: "Introduces the Sustainable Social Reproduction Unit (URSS).",
+    p2_l3: "Proposes N* as a testable measurement hypothesis, not a definitive measure.",
     paper2_academia_note: "Also available on Academia.edu: <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_academia_note: "Also available on Academia.edu: <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · DOI of the original Portuguese version: <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    paper_floresta_doi_note: "DOI of the original Portuguese version: <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
+    paper_read_en: "Read in English (PDF)",
+    paper_read_pt: "Ler em Português (PDF)",
+    papers_title: "Publications",
+    review_invite: "Would you like to review the translation in your language or critique the method? Write to <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
+    snapshot_obs: "Observed values (N*_Obs), computed from official sources with no adjustments. Zones are provisional (test F4).",
+    snapshot_title: "Where the 11 countries stand now",
+    wake_note: "The app runs on a free server: on the first visit it may take 30–60 s to wake up.",
+    zone_pea: "Equilibrium",
+    zone_pec: "Narayama Collapse (PEC)",
+    zone_peec: "Saturation",
+    zone_ta: "Accelerated Tension",
+    zone_tp: "Population Tension",
   },
   es: {
-    wake_note: "La app funciona en un servidor gratuito: en la primera visita puede tardar 30–60 s en despertar.",
     ai_translation_note: "Traducciones hechas por IA, aún sin revisión de hablantes nativos; en caso de duda, prevalece el texto en portugués.",
-    review_invite: "¿Quiere revisar la traducción a su idioma o criticar el método? Escriba a <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
-    nav_observatory: "Observatorio",
-    nav_platform: "AINU.systems",
-    hero_eyebrow: "Termómetro del Índice de Narayama Sistémico",
-    hero_title: "El retrato público de la capacidad de cada país <em>para renovar su población y proveer su futuro</em> de forma sostenible.",
-    hero_sub: "Narayama.live traduce el Índice N* — calculado por AINU — en un mapa simple de 11 países, actualizado trimestralmente. Para el análisis técnico completo de los 28 países de la muestra, vea ainu.systems.",
-    stat_countries: "Países en el panorama",
-    stat_zones: "Regímenes generacionales",
-    stat_follow: "Síganos",
-    about_eyebrow: "Qué es Narayama.live",
-    about_title: "La puerta pública del Índice de Narayama Sistémico",
-    about_p1: "AINU calcula, trimestre a trimestre, la capacidad de cada sociedad de renovar sus propias generaciones — el Índice de Narayama Sistémico (N*). Narayama.live es la puerta pública de esa investigación: sin jerga técnica, muestra dónde está cada uno de los 11 países en esa escala, ahora mismo.",
-    about_p2: "Desarrollado en el contexto de una investigación independiente en Economía Política <em>Del Dilema de Narayama al Oicoceno Civilizacional</em>, narayama.live se actualiza cada trimestre, con la misma metodología trazable usada en el análisis técnico completo de ainu.systems.",
-    formula_label: "Índice Sistémico de Narayama",
-    formula_note: "Normalización por raíz cuadrada · Actualización trimestral · Versionado Git trazable",
-    snapshot_eyebrow: "Panorama Real",
-    snapshot_obs: "Valores observados (N*_Obs), calculados de fuentes oficiales sin ajustes. Zonas provisionales (prueba F4).",
-    snapshot_title: "Dónde están ahora los 11 países",
-    country_ind: "India",
-    country_fra: "Francia",
-    country_mex: "México",
-    country_nga: "Nigeria",
-    example_tag: "(ejemplo)",
-    snapshot_cta: "→ Ver el Análisis Completo del Índice (11 Países)",
-    country_bra: "Brasil",
     country_arg: "Argentina",
-    country_usa: "Estados Unidos",
+    country_bra: "Brasil",
     country_chn: "China",
+    country_fra: "Francia",
+    country_ind: "India",
     country_ita: "Italia",
     country_jpn: "Japón",
     country_kor: "Corea del Sur",
-    zones_eyebrow: "Los Cinco Regímenes Generacionales",
-    zone_pec: "Colapso de Narayama (PEC)",
-    zone_ta: "Tensión Acelerada",
-    zone_pea: "Equilibrio",
-    zone_tp: "Tensión Poblacional",
-    zone_peec: "Saturación",
-    open_eyebrow: "Arquitectura AINU–Narayama",
-    open_title: "Laboratorio y observatorio — separados por público",
-    pillar_ainu: "El análisis técnico completo de los 28 países de la muestra.",
-    pillar_link_ainu: "Ver la plataforma técnica →",
-    pillar_narayama: "Observatorio público. Publica resultados y exhibe el mapa periódico de 11 países en 9 idiomas. Donde los datos son <em>presentados</em>.",
-    papers_eyebrow: "Investigación Publicada",
-    papers_title: "Publicaciones",
-    paper_floresta_summary: "Italia perdió cerca del 38% de su territorio ante el avance espontáneo del bosque — no es una conquista ambiental, es la firma geográfica del colapso de la URSS en las ciudades pequeñas y medianas del interior. Este paper aplica el Índice de Narayama Sistémico al caso italiano (TFR 1,21, N* 0,61, Zona PEC) y propone el IVAT y la Glocalización activa como reversión.",
-    paper_read_pt: "Ler em Português (PDF)",
-    paper_read_en: "Read in English (PDF)",
-    paper_academia_note: "También disponible en Academia.edu: <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
-    paper_floresta_doi_note: "DOI de la versión original en portugués: <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
-    paper_narayama_summary: "Las sociedades prolongan la vida de las generaciones existentes mientras pierden capacidad de producir la siguiente. El artículo introduce la Unidad de Reproducción Social Sostenible (URSS) y propone el Índice de Narayama (N*) como hipótesis de medición contrastable del núcleo demográfico de la capacidad de renovación generacional, no como medida definitiva de la sostenibilidad civilizatoria.",
-    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · DOI de la versión original en portugués: <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    country_mex: "México",
+    country_nga: "Nigeria",
+    country_usa: "Estados Unidos",
+    example_tag: "(ejemplo)",
+    hero_eyebrow: "Termómetro del Índice de Narayama Sistémico",
+    n_cta: "Ver la Tabla Generacional completa",
+    n_foot_ainu: "Investigación y metodología: AINU.Systems →",
+    n_foot_desc: "Observatorio público del Índice de Narayama Sistémico.",
+    n_hero_sub: "El Índice N* muestra, de forma simple, la capacidad de 11 países para renovar sus generaciones. Valores observados de fuentes oficiales, con actualización trimestral.",
+    n_hero_title: "¿Dónde está cada sociedad en la escala de la renovación generacional?",
+    n_l1: "El N* compara la base y la cima de la pirámide de edades, los nacimientos y las muertes, y la fecundidad de hoy con la de la generación anterior.",
+    n_l2: "Por debajo de 0,90 la renovación es insuficiente; de 0,90 a 1,40 hay equilibrio; por encima de 1,40 hay exceso.",
+    n_l3: "Valores observados (UN WPP 2024), sin ajustes; las zonas aún son provisionales.",
+    n_read: "Cómo leer el N*",
+    p1_l1: "Aplica el Índice de Narayama Sistémico al caso italiano: TFR 1,21, N* 0,61, zona PEC.",
+    p1_l2: "Propone la expansión del bosque como marca territorial de la pérdida de reproducción generacional.",
+    p1_l3: "Propone IVAT y glocalización activa como reversión.",
+    p1_note: "El PDF está en revisión: la versión 2 traerá los valores actuales del AINU.",
+    p2_l1: "Las sociedades prolongan la vida de las generaciones existentes mientras pierden capacidad de producir la siguiente.",
+    p2_l2: "Introduce la Unidad de Reproducción Social Sostenible (URSS).",
+    p2_l3: "Propone el N* como hipótesis de medición contrastable, no como medida definitiva.",
     paper2_academia_note: "También disponible en Academia.edu: <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_academia_note: "También disponible en Academia.edu: <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · DOI de la versión original en portugués: <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    paper_floresta_doi_note: "DOI de la versión original en portugués: <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
+    paper_read_en: "Read in English (PDF)",
+    paper_read_pt: "Ler em Português (PDF)",
+    papers_title: "Publicaciones",
+    review_invite: "¿Quiere revisar la traducción a su idioma o criticar el método? Escriba a <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
+    snapshot_obs: "Valores observados (N*_Obs), calculados de fuentes oficiales sin ajustes. Zonas provisionales (prueba F4).",
+    snapshot_title: "Dónde están ahora los 11 países",
+    wake_note: "La app funciona en un servidor gratuito: en la primera visita puede tardar 30–60 s en despertar.",
+    zone_pea: "Equilibrio",
+    zone_pec: "Colapso de Narayama (PEC)",
+    zone_peec: "Saturación",
+    zone_ta: "Tensión Acelerada",
+    zone_tp: "Tensión Poblacional",
   },
   fr: {
-    wake_note: "L'application tourne sur un serveur gratuit : à la première visite, elle peut mettre 30 à 60 s à se réveiller.",
     ai_translation_note: "Traductions réalisées par IA, pas encore relues par des locuteurs natifs ; en cas de doute, le texte portugais fait foi.",
-    review_invite: "Vous souhaitez relire la traduction dans votre langue ou critiquer la méthode ? Écrivez à <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
-    nav_observatory: "Observatoire",
-    nav_platform: "AINU.systems",
-    hero_eyebrow: "Thermomètre de l'indice de Narayama systémique",
-    hero_title: "Le portrait public de la capacité de chaque pays <em>à renouveler sa population et assurer durablement son avenir</em>.",
-    hero_sub: "Narayama.live traduit l'Indice N* — calculé par AINU — en une carte simple de 11 pays, mise à jour trimestriellement. Pour l'analyse technique complète des 28 pays de l'échantillon, voir ainu.systems.",
-    stat_countries: "Pays dans l'aperçu",
-    stat_zones: "Régimes générationnels",
-    stat_follow: "Suivez-nous",
-    about_eyebrow: "Qu'est-ce que Narayama.live",
-    about_title: "La porte publique de l'indice de Narayama systémique",
-    about_p1: "AINU calcule, trimestre après trimestre, la capacité de chaque société à renouveler ses propres générations — l'indice de Narayama systémique (N*). Narayama.live est la porte publique de cette recherche : sans jargon technique, elle montre où se situe chacun des 11 pays sur cette échelle, dès maintenant.",
-    about_p2: "Développé dans le cadre d'une recherche indépendante en Économie Politique <em>Du Dilemme de Narayama à l'Oïcocène Civilisationnel</em>, narayama.live est mis à jour chaque trimestre, avec la même méthodologie traçable utilisée dans l'analyse technique complète sur ainu.systems.",
-    formula_label: "Indice Systémique de Narayama",
-    formula_note: "Normalisation par racine carrée · Mise à jour trimestrielle · Versionnement Git traçable",
-    snapshot_eyebrow: "Aperçu réel",
-    snapshot_obs: "Valeurs observées (N*_Obs), calculées à partir de sources officielles sans ajustements. Zones provisoires (test F4).",
-    snapshot_title: "Où en sont les 11 pays",
-    country_ind: "Inde",
-    country_fra: "France",
-    country_mex: "Mexique",
-    country_nga: "Nigéria",
-    example_tag: "(exemple)",
-    snapshot_cta: "→ Voir l'analyse complète de l'indice (11 pays)",
-    country_bra: "Brésil",
     country_arg: "Argentine",
-    country_usa: "États-Unis",
+    country_bra: "Brésil",
     country_chn: "Chine",
+    country_fra: "France",
+    country_ind: "Inde",
     country_ita: "Italie",
     country_jpn: "Japon",
     country_kor: "Corée du Sud",
-    zones_eyebrow: "Les Cinq Régimes Générationnels",
-    zone_pec: "Effondrement de Narayama (PEC)",
-    zone_ta: "Tension Accélérée",
-    zone_pea: "Équilibre",
-    zone_tp: "Tension Démographique",
-    zone_peec: "Saturation",
-    open_eyebrow: "Architecture AINU–Narayama",
-    open_title: "Laboratoire et observatoire — séparés par public",
-    pillar_ainu: "L'analyse technique complète des 28 pays de l'échantillon.",
-    pillar_link_ainu: "Voir la plateforme technique →",
-    pillar_narayama: "Observatoire public. Publie les résultats en 9 langues. Là où les données sont <em>présentées</em>.",
-    papers_eyebrow: "Recherche Publiée",
-    papers_title: "Publications",
-    paper_floresta_summary: "L'Italie a perdu environ 38 % de son territoire au profit de la forêt spontanée — non pas une victoire environnementale, mais la signature géographique de l'effondrement de l'URSS dans les petites et moyennes villes de l'intérieur. Ce paper applique l'Indice de Narayama Systémique au cas italien (TFR 1,21, N* 0,61, Zone PEC) et propose l'IVAT et la Glocalisation active comme voie de réversion.",
-    paper_read_pt: "Ler em Português (PDF)",
-    paper_read_en: "Read in English (PDF)",
-    paper_academia_note: "Également disponible sur Academia.edu : <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
-    paper_floresta_doi_note: "DOI de la version originale en portugais : <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
-    paper_narayama_summary: "Les sociétés prolongent la vie des générations existantes tout en devenant moins capables de produire la suivante. L'article introduit l'Unité de Reproduction Sociale Soutenable (URSS) et propose l'Indice de Narayama (N*) comme hypothèse de mesure testable du noyau démographique de la capacité de renouvellement générationnel, et non comme mesure définitive de la soutenabilité civilisationnelle.",
-    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · DOI de la version originale en portugais : <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    country_mex: "Mexique",
+    country_nga: "Nigéria",
+    country_usa: "États-Unis",
+    example_tag: "(exemple)",
+    hero_eyebrow: "Thermomètre de l'indice de Narayama systémique",
+    n_cta: "Voir le tableau générationnel complet",
+    n_foot_ainu: "Recherche et méthodologie : AINU.Systems →",
+    n_foot_desc: "Observatoire public de l'Indice de Narayama Systémique.",
+    n_hero_sub: "L'indice N* montre, de façon simple, la capacité de 11 pays à renouveler leurs générations. Valeurs observées issues de sources officielles, mises à jour chaque trimestre.",
+    n_hero_title: "Où se situe chaque société sur l'échelle du renouvellement générationnel ?",
+    n_l1: "Le N* compare la base et le sommet de la pyramide des âges, les naissances et les décès, et la fécondité d'aujourd'hui à celle de la génération précédente.",
+    n_l2: "En dessous de 0,90, le renouvellement est insuffisant ; de 0,90 à 1,40, il y a équilibre ; au-dessus de 1,40, il y a excès.",
+    n_l3: "Valeurs observées (UN WPP 2024), sans ajustements ; les zones restent provisoires.",
+    n_read: "Comment lire le N*",
+    p1_l1: "Applique l'Indice de Narayama Systémique au cas italien : TFR 1,21, N* 0,61, zone PEC.",
+    p1_l2: "Propose l'expansion de la forêt comme marque territoriale de la perte de reproduction générationnelle.",
+    p1_l3: "Propose l'IVAT et la glocalisation active comme renversement.",
+    p1_note: "Le PDF est en révision : la version 2 reprendra les valeurs actuelles de l'AINU.",
+    p2_l1: "Les sociétés prolongent la vie des générations existantes tout en perdant la capacité de produire la suivante.",
+    p2_l2: "Introduit l'Unité de Reproduction Sociale Durable (URSS).",
+    p2_l3: "Propose le N* comme hypothèse de mesure testable, et non comme mesure définitive.",
     paper2_academia_note: "Également disponible sur Academia.edu : <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_academia_note: "Également disponible sur Academia.edu : <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · DOI de la version originale en portugais : <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    paper_floresta_doi_note: "DOI de la version originale en portugais : <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
+    paper_read_en: "Read in English (PDF)",
+    paper_read_pt: "Ler em Português (PDF)",
+    papers_title: "Publications",
+    review_invite: "Vous souhaitez relire la traduction dans votre langue ou critiquer la méthode ? Écrivez à <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
+    snapshot_obs: "Valeurs observées (N*_Obs), calculées à partir de sources officielles sans ajustements. Zones provisoires (test F4).",
+    snapshot_title: "Où en sont les 11 pays",
+    wake_note: "L'application tourne sur un serveur gratuit : à la première visite, elle peut mettre 30 à 60 s à se réveiller.",
+    zone_pea: "Équilibre",
+    zone_pec: "Effondrement de Narayama (PEC)",
+    zone_peec: "Saturation",
+    zone_ta: "Tension Accélérée",
+    zone_tp: "Tension Démographique",
   },
   ko: {
-    wake_note: "앱은 무료 서버에서 실행됩니다. 처음 접속하면 깨어나는 데 30~60초가 걸릴 수 있습니다.",
     ai_translation_note: "번역은 AI로 작성되었으며 원어민 검수를 거치지 않았습니다. 의문이 있을 경우 포르투갈어 원문이 우선합니다.",
-    review_invite: "해당 언어 번역을 검수하거나 방법론에 대해 비평하고 싶으신가요? 다음 주소로 연락해 주세요: <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>",
-    nav_observatory: "관측소",
-    nav_platform: "AINU.systems",
-    hero_eyebrow: "체계적 나라야마 지수 온도계",
-    hero_title: "각 나라가 <em>인구를 재생산하고 지속가능하게 미래를 마련할</em> 능력을 보여주는 공개 초상.",
-    hero_sub: "narayama.live는 AINU가 계산하는 N* 지수를 11개국의 간단한 지도로 변환하여 분기별로 갱신합니다. 표본 28개국에 대한 전체 기술 분석은 ainu.systems를 참고하세요.",
-    stat_countries: "파노라마 속 국가",
-    stat_zones: "세대 구역",
-    stat_follow: "팔로우하기",
-    about_eyebrow: "Narayama.live란",
-    about_title: "체계적 나라야마 지수의 공개 관문",
-    about_p1: "AINU는 분기마다 각 사회가 스스로 세대를 재생산하는 능력—체계적 나라야마 지수(N*)—을 계산합니다. narayama.live는 이 연구의 공개 관문으로, 전문 용어 없이 11개국이 지금 이 척도에서 어디에 있는지 보여줍니다.",
-    about_p2: "정치경제학 독립 연구 <em>나라야마의 딜레마에서 문명적 오이코세까지</em>의 맥락에서 개발된 narayama.live는 분기마다 갱신되며, ainu.systems의 전체 기술 분석에 사용되는 것과 동일한 추적 가능한 방법론을 사용합니다.",
-    formula_label: "나라야마 체계 지수",
-    formula_note: "제곱근 정규화 · 분기별 갱신 · 추적 가능한 Git 버전 관리",
-    snapshot_eyebrow: "실제 현황",
-    snapshot_obs: "관측값(N*_Obs)으로, 공식 자료에서 조정 없이 산출했습니다. 구간은 잠정적입니다(F4 검정).",
-    snapshot_title: "지금 11개국의 현황",
-    country_ind: "인도",
-    country_fra: "프랑스",
-    country_mex: "멕시코",
-    country_nga: "나이지리아",
-    example_tag: "(예시)",
-    snapshot_cta: "→ 지수 전체 분석 보기 (11개국)",
-    country_bra: "브라질",
     country_arg: "아르헨티나",
-    country_usa: "미국",
+    country_bra: "브라질",
     country_chn: "중국",
+    country_fra: "프랑스",
+    country_ind: "인도",
     country_ita: "이탈리아",
     country_jpn: "일본",
     country_kor: "대한민국",
-    zones_eyebrow: "다섯 가지 세대적 체제",
-    zone_pec: "나라야마 붕괴 (PEC)",
-    zone_ta: "가속 긴장",
-    zone_pea: "균형",
-    zone_tp: "인구 긴장",
-    zone_peec: "포화",
-    open_eyebrow: "AINU–나라야마 아키텍처",
-    open_title: "실험실과 관측소 — 대상 독자별로 구분",
-    pillar_ainu: "표본 28개국에 대한 전체 기술 분석.",
-    pillar_link_ainu: "기술 플랫폼 보기 →",
-    pillar_narayama: "공개 관측소. 결과를 발표하고, 방법론적 발전을 문서화하며, 9개 언어로 11개국의 주기율표를 표시합니다. 데이터가 <em>제시되는</em> 곳.",
-    papers_eyebrow: "발표된 연구",
-    papers_title: "출판물",
-    paper_floresta_summary: "이탈리아는 국토의 약 38%를 자연발생적 숲에 내주었습니다 — 이는 환경적 성과가 아니라, 내륙 중소도시들의 URSS 붕괴를 보여주는 지리적 흔적입니다. 이 논문은 나라야마 체계 지수를 이탈리아 사례에 적용하고(TFR 1.21, N* 0.61, PEC 구역), IVAT와 적극적 글로컬화를 반전의 방안으로 제안합니다.",
-    paper_read_pt: "Ler em Português (PDF)",
-    paper_read_en: "Read in English (PDF)",
-    paper_academia_note: "Academia.edu에서도 확인 가능: <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
-    paper_floresta_doi_note: "포르투갈어 원본 DOI: <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
-    paper_narayama_summary: "사회는 기존 세대의 수명을 늘리는 동시에 다음 세대를 만들어 낼 능력은 잃어 가고 있습니다. 이 논문은 지속가능한 사회적 재생산 단위(URSS)를 도입하고, 나라야마 지수(N*)를 세대 갱신 능력의 인구학적 핵심을 측정하기 위한 검증 가능한 측정 가설로 제안합니다. 문명적 지속가능성의 최종 척도로 제시하는 것은 아닙니다.",
-    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · 포르투갈어 원본 DOI: <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    country_mex: "멕시코",
+    country_nga: "나이지리아",
+    country_usa: "미국",
+    example_tag: "(예시)",
+    hero_eyebrow: "체계적 나라야마 지수 온도계",
+    n_cta: "세대표 전체 보기",
+    n_foot_ainu: "연구와 방법론: AINU.Systems →",
+    n_foot_desc: "체계적 나라야마 지수의 공개 관측소.",
+    n_hero_sub: "N* 지수는 11개국이 세대를 재생산하는 능력을 간단하게 보여 줍니다. 공식 자료에서 얻은 관측값이며 분기마다 갱신합니다.",
+    n_hero_title: "각 사회는 세대 재생산의 척도에서 어디에 있을까요?",
+    n_l1: "N*는 연령 피라미드의 아랫부분과 윗부분, 출생과 사망, 그리고 오늘의 출산력과 이전 세대의 출산력을 비교합니다.",
+    n_l2: "0.90 미만이면 재생산이 부족하고, 0.90~1.40은 균형이며, 1.40을 넘으면 과잉입니다.",
+    n_l3: "관측값(UN WPP 2024)이며 조정이 없고, 구간은 아직 잠정적입니다.",
+    n_read: "N* 읽는 법",
+    p1_l1: "체계적 나라야마 지수를 이탈리아 사례에 적용합니다: TFR 1.21, N* 0.61, PEC 구간.",
+    p1_l2: "숲의 확장을 세대 재생산 상실의 영토적 표지로 제안합니다.",
+    p1_l3: "IVAT와 능동적 글로컬화를 반전 수단으로 제안합니다.",
+    p1_note: "PDF는 개정 중이며, 2판에는 AINU의 현재 값이 반영됩니다.",
+    p2_l1: "사회는 현존 세대의 수명을 늘리는 동안 다음 세대를 낳을 능력을 잃어 갑니다.",
+    p2_l2: "지속가능한 사회적 재생산 단위(URSS)를 소개합니다.",
+    p2_l3: "N*를 확정된 척도가 아니라 검증 가능한 측정 가설로 제안합니다.",
     paper2_academia_note: "Academia.edu에서도 확인 가능: <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_academia_note: "Academia.edu에서도 확인 가능: <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · 포르투갈어 원본 DOI: <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    paper_floresta_doi_note: "포르투갈어 원본 DOI: <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
+    paper_read_en: "Read in English (PDF)",
+    paper_read_pt: "Ler em Português (PDF)",
+    papers_title: "출판물",
+    review_invite: "해당 언어 번역을 검수하거나 방법론에 대해 비평하고 싶으신가요? 다음 주소로 연락해 주세요: <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>",
+    snapshot_obs: "관측값(N*_Obs)으로, 공식 자료에서 조정 없이 산출했습니다. 구간은 잠정적입니다(F4 검정).",
+    snapshot_title: "지금 11개국의 현황",
+    wake_note: "앱은 무료 서버에서 실행됩니다. 처음 접속하면 깨어나는 데 30~60초가 걸릴 수 있습니다.",
+    zone_pea: "균형",
+    zone_pec: "나라야마 붕괴 (PEC)",
+    zone_peec: "포화",
+    zone_ta: "가속 긴장",
+    zone_tp: "인구 긴장",
   },
   it: {
-    wake_note: "L'app gira su un server gratuito: alla prima visita può impiegare 30–60 s a riattivarsi.",
     ai_translation_note: "Traduzioni realizzate con IA, non ancora riviste da madrelingua; in caso di dubbio fa fede il testo in portoghese.",
-    review_invite: "Vuoi rivedere la traduzione nella tua lingua o criticare il metodo? Scrivi a <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
-    nav_observatory: "Osservatorio",
-    nav_platform: "AINU.systems",
-    hero_eyebrow: "Termometro dell'Indice di Narayama Sistemico",
-    hero_title: "Il ritratto pubblico della capacità di ogni paese <em>di rinnovare la propria popolazione e garantire un futuro sostenibile</em>.",
-    hero_sub: "Narayama.live traduce l'Indice N* — calcolato da AINU — in una mappa semplice di 11 paesi, aggiornata trimestralmente. Per l'analisi tecnica completa dei 28 paesi del campione, vedi ainu.systems.",
-    stat_countries: "Paesi nel panorama",
-    stat_zones: "Regimi generazionali",
-    stat_follow: "Seguici",
-    about_eyebrow: "Cos'è Narayama.live",
-    about_title: "La porta pubblica dell'Indice di Narayama Sistemico",
-    about_p1: "AINU calcola, trimestre dopo trimestre, la capacità di ogni società di rinnovare le proprie generazioni — l'Indice di Narayama Sistemico (N*). Narayama.live è la porta pubblica di questa ricerca: senza gergo tecnico, mostra dove si trova ciascuno degli 11 paesi su questa scala, adesso.",
-    about_p2: "Sviluppato nel contesto di una ricerca indipendente in Economia Politica <em>Dal Dilemma di Narayama all'Oikoceno Civilizazionale</em>, narayama.live viene aggiornato ogni trimestre, con la stessa metodologia tracciabile usata nell'analisi tecnica completa su ainu.systems.",
-    formula_label: "Indice Sistemico di Narayama",
-    formula_note: "Normalizzazione per radice quadrata · Aggiornamento trimestrale · Versionamento Git tracciabile",
-    snapshot_eyebrow: "Panorama reale",
-    snapshot_obs: "Valori osservati (N*_Obs), calcolati da fonti ufficiali senza aggiustamenti. Zone provvisorie (test F4).",
-    snapshot_title: "Dove si trovano ora gli 11 paesi",
-    country_ind: "India",
-    country_fra: "Francia",
-    country_mex: "Messico",
-    country_nga: "Nigeria",
-    example_tag: "(esempio)",
-    snapshot_cta: "→ Vedi l'analisi completa dell'indice (11 paesi)",
-    country_bra: "Brasile",
     country_arg: "Argentina",
-    country_usa: "Stati Uniti",
+    country_bra: "Brasile",
     country_chn: "Cina",
+    country_fra: "Francia",
+    country_ind: "India",
     country_ita: "Italia",
     country_jpn: "Giappone",
     country_kor: "Corea del Sud",
-    zones_eyebrow: "I Cinque Regimi Generazionali",
-    zone_pec: "Collasso di Narayama (PEC)",
-    zone_ta: "Tensione Accelerata",
-    zone_pea: "Equilibrio",
-    zone_tp: "Tensione Demografica",
-    zone_peec: "Saturazione",
-    open_eyebrow: "Architettura AINU–Narayama",
-    open_title: "Laboratorio e osservatorio — separati per pubblico",
-    pillar_ainu: "L'analisi tecnica completa dei 28 paesi del campione.",
-    pillar_link_ainu: "Vedi la piattaforma tecnica →",
-    pillar_narayama: "Osservatorio pubblico. Pubblica risultati in 9 lingue. Dove i dati vengono <em>presentati</em>.",
-    papers_eyebrow: "Ricerca Pubblicata",
-    papers_title: "Pubblicazioni",
-    paper_floresta_summary: "L'Italia ha perso circa il 38% del proprio territorio a favore del bosco spontaneo — non una conquista ambientale, ma la firma geografica del collasso dell'URSS nelle città piccole e medie dell'entroterra. Questo paper applica l'Indice di Narayama Sistemico al caso italiano (TFR 1,21, N* 0,61, Zona PEC) e propone l'IVAT e la Glocalizzazione attiva come via di inversione.",
-    paper_read_pt: "Ler em Português (PDF)",
-    paper_read_en: "Read in English (PDF)",
-    paper_academia_note: "Disponibile anche su Academia.edu: <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
-    paper_floresta_doi_note: "DOI della versione originale in portoghese: <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
-    paper_narayama_summary: "Le società prolungano la vita delle generazioni esistenti mentre diventano meno capaci di produrre la successiva. L'articolo introduce l'Unità di Riproduzione Sociale Sostenibile (URSS) e propone l'Indice di Narayama (N*) come ipotesi di misurazione verificabile del nucleo demografico della capacità di rinnovamento generazionale, non come misura definitiva della sostenibilità civilizzazionale.",
-    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · DOI della versione originale in portoghese: <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    country_mex: "Messico",
+    country_nga: "Nigeria",
+    country_usa: "Stati Uniti",
+    example_tag: "(esempio)",
+    hero_eyebrow: "Termometro dell'Indice di Narayama Sistemico",
+    n_cta: "Vedi la Tabella Generazionale completa",
+    n_foot_ainu: "Ricerca e metodologia: AINU.Systems →",
+    n_foot_desc: "Osservatorio pubblico dell'Indice di Narayama Sistemico.",
+    n_hero_sub: "L'indice N* mostra, in modo semplice, la capacità di 11 paesi di rinnovare le proprie generazioni. Valori osservati da fonti ufficiali, aggiornati ogni trimestre.",
+    n_hero_title: "Dove si colloca ogni società sulla scala del rinnovamento generazionale?",
+    n_l1: "L'N* confronta la base e il vertice della piramide per età, le nascite e i decessi, e la fecondità di oggi con quella della generazione precedente.",
+    n_l2: "Sotto 0,90 il rinnovamento è insufficiente; tra 0,90 e 1,40 c'è equilibrio; sopra 1,40 c'è eccesso.",
+    n_l3: "Valori osservati (UN WPP 2024), senza aggiustamenti; le zone sono ancora provvisorie.",
+    n_read: "Come leggere l'N*",
+    p1_l1: "Applica l'Indice di Narayama Sistemico al caso italiano: TFR 1,21, N* 0,61, zona PEC.",
+    p1_l2: "Propone l'espansione del bosco come segno territoriale della perdita di riproduzione generazionale.",
+    p1_l3: "Propone IVAT e glocalizzazione attiva come inversione.",
+    p1_note: "Il PDF è in revisione: la versione 2 riporterà i valori attuali dell'AINU.",
+    p2_l1: "Le società prolungano la vita delle generazioni esistenti mentre perdono la capacità di produrre la successiva.",
+    p2_l2: "Introduce l'Unità di Riproduzione Sociale Sostenibile (URSS).",
+    p2_l3: "Propone l'N* come ipotesi di misurazione verificabile, non come misura definitiva.",
     paper2_academia_note: "Disponibile anche su Academia.edu: <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_academia_note: "Disponibile anche su Academia.edu: <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · DOI della versione originale in portoghese: <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    paper_floresta_doi_note: "DOI della versione originale in portoghese: <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
+    paper_read_en: "Read in English (PDF)",
+    paper_read_pt: "Ler em Português (PDF)",
+    papers_title: "Pubblicazioni",
+    review_invite: "Vuoi rivedere la traduzione nella tua lingua o criticare il metodo? Scrivi a <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
+    snapshot_obs: "Valori osservati (N*_Obs), calcolati da fonti ufficiali senza aggiustamenti. Zone provvisorie (test F4).",
+    snapshot_title: "Dove si trovano ora gli 11 paesi",
+    wake_note: "L'app gira su un server gratuito: alla prima visita può impiegare 30–60 s a riattivarsi.",
+    zone_pea: "Equilibrio",
+    zone_pec: "Collasso di Narayama (PEC)",
+    zone_peec: "Saturazione",
+    zone_ta: "Tensione Accelerata",
+    zone_tp: "Tensione Demografica",
   },
   zh: {
-    wake_note: "该应用运行在免费服务器上，首次访问时可能需要 30–60 秒才能唤醒。",
     ai_translation_note: "译文由人工智能生成，尚未经母语者审校；如有疑义，以葡萄牙语原文为准。",
-    review_invite: "愿意审校您所用语言的译文，或对方法提出批评吗？请写信至 <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>。",
-    nav_observatory: "观测站",
-    nav_platform: "AINU.systems",
-    hero_eyebrow: "系统性楢山指数温度计",
-    hero_title: "呈现各国<em>更新人口、可持续保障未来</em>能力的公开写照。",
-    hero_sub: "narayama.live将AINU计算的N*指数转化为11个国家的简明地图，每季度更新。样本中28个国家的完整技术分析请见ainu.systems。",
-    stat_countries: "全景中的国家",
-    stat_zones: "代际区间",
-    stat_follow: "关注我们",
-    about_eyebrow: "什么是narayama.live",
-    about_title: "系统性楢山指数的公共入口",
-    about_p1: "AINU每季度计算每个社会更新其世代的能力——系统性楢山指数（N*）。narayama.live是这项研究的公共入口：没有技术术语，展示这11个国家目前在这一量表上的位置。",
-    about_p2: "narayama.live在政治经济学独立研究《从楢山难题到文明世的宜居纪》的背景下开发，每季度更新，采用与ainu.systems完整技术分析相同的可追溯方法论。",
-    formula_label: "Narayama系统指数",
-    formula_note: "平方根标准化 · 每季度更新 · 可追溯Git版本控制",
-    snapshot_eyebrow: "实时概览",
-    snapshot_obs: "观测值（N*_Obs），依据官方来源计算，未作调整。区间为暂定（F4检验）。",
-    snapshot_title: "这11个国家目前所处的位置",
-    country_ind: "印度",
-    country_fra: "法国",
-    country_mex: "墨西哥",
-    country_nga: "尼日利亚",
-    example_tag: "(示例)",
-    snapshot_cta: "→ 查看指数完整分析（11个国家）",
-    country_bra: "巴西",
     country_arg: "阿根廷",
-    country_usa: "美国",
+    country_bra: "巴西",
     country_chn: "中国",
+    country_fra: "法国",
+    country_ind: "印度",
     country_ita: "意大利",
     country_jpn: "日本",
     country_kor: "韩国",
-    zones_eyebrow: "五大代际区间",
-    zone_pec: "楢山崩溃 (PEC)",
-    zone_ta: "加速紧张",
-    zone_pea: "均衡",
-    zone_tp: "人口紧张",
-    zone_peec: "过饱和",
-    open_eyebrow: "AINU–Narayama架构",
-    open_title: "实验室与观测站——按受众划分",
-    pillar_ainu: "样本中全部28个国家的完整技术分析。",
-    pillar_link_ainu: "查看技术平台 →",
-    pillar_narayama: "公共观测站，以9种语言发布结果，数据在此被<em>呈现</em>。",
-    papers_eyebrow: "已发表研究",
-    papers_title: "出版物",
-    paper_floresta_summary: "意大利约38%的国土已被自然扩张的森林覆盖——这并非环保成就，而是内陆中小城市URSS崩溃的地理印记。本文将系统性楢山指数应用于意大利案例（TFR 1.21，N*=0.61，PEC区），提出IVAT与积极的本土全球化作为逆转路径。",
-    paper_read_pt: "Ler em Português (PDF)",
-    paper_read_en: "Read in English (PDF)",
-    paper_academia_note: "也可在 Academia.edu 上查看：<a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
-    paper_floresta_doi_note: "葡萄牙语原版 DOI：<a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
-    paper_narayama_summary: "社会在延长现有世代寿命的同时，产出下一代的能力却在下降。本文提出可持续社会再生产单元（URSS），并将楢山指数（N*）作为衡量世代更新能力人口学核心的可检验测量假设，而非文明可持续性的最终度量。",
-    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · 葡萄牙语原版 DOI：<a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    country_mex: "墨西哥",
+    country_nga: "尼日利亚",
+    country_usa: "美国",
+    example_tag: "(示例)",
+    hero_eyebrow: "系统性楢山指数温度计",
+    n_cta: "查看完整的世代表",
+    n_foot_ainu: "研究与方法：AINU.Systems →",
+    n_foot_desc: "系统性纳拉亚马指数公共观测站。",
+    n_hero_sub: "N*指数以简明的方式呈现11个国家更新自身世代的能力。数据为来自官方来源的观测值，每季度更新。",
+    n_hero_title: "每个社会处在代际更替这把标尺的哪个位置？",
+    n_l1: "N*比较年龄金字塔的底部与顶部、出生与死亡，以及当今生育率与上一代生育率。",
+    n_l2: "低于0.90表示更替不足；0.90至1.40之间为平衡；高于1.40则为过剩。",
+    n_l3: "观测值（UN WPP 2024），未作调整；区间仍为暂定。",
+    n_read: "如何解读N*",
+    p1_l1: "将系统性纳拉亚马指数应用于意大利：TFR 1.21，N* 0.61，PEC区。",
+    p1_l2: "提出以森林扩张作为代际再生产丧失的地域标记。",
+    p1_l3: "提出以IVAT和主动全球在地化来扭转。",
+    p1_note: "PDF正在修订：第2版将采用AINU当前的数值。",
+    p2_l1: "社会延长了现有世代的寿命，却在丧失产生下一代的能力。",
+    p2_l2: "提出可持续社会再生产单元（URSS）。",
+    p2_l3: "将N*作为可检验的测量假设提出，而非定论性的度量。",
     paper2_academia_note: "也可在 Academia.edu 上查看：<a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_academia_note: "也可在 Academia.edu 上查看：<a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · 葡萄牙语原版 DOI：<a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    paper_floresta_doi_note: "葡萄牙语原版 DOI：<a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
+    paper_read_en: "Read in English (PDF)",
+    paper_read_pt: "Ler em Português (PDF)",
+    papers_title: "出版物",
+    review_invite: "愿意审校您所用语言的译文，或对方法提出批评吗？请写信至 <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>。",
+    snapshot_obs: "观测值（N*_Obs），依据官方来源计算，未作调整。区间为暂定（F4检验）。",
+    snapshot_title: "这11个国家目前所处的位置",
+    wake_note: "该应用运行在免费服务器上，首次访问时可能需要 30–60 秒才能唤醒。",
+    zone_pea: "均衡",
+    zone_pec: "楢山崩溃 (PEC)",
+    zone_peec: "过饱和",
+    zone_ta: "加速紧张",
+    zone_tp: "人口紧张",
   },
   ja: {
-    wake_note: "このアプリは無料サーバーで動作しており、初回アクセス時は起動に30〜60秒かかることがあります。",
     ai_translation_note: "翻訳はAIによるもので、ネイティブによる校閲はまだ行われていません。疑義がある場合はポルトガル語の原文が優先されます。",
-    review_invite: "お使いの言語の翻訳の校閲や、手法へのご批判をいただけませんか。連絡先：<a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>",
-    nav_observatory: "観測所",
-    nav_platform: "AINU.systems",
-    hero_eyebrow: "システミック・ナラヤマ指数の温度計",
-    hero_title: "各国が<em>人口を更新し、持続可能な形で未来を築く</em>能力を映し出す公開の肖像。",
-    hero_sub: "narayama.liveは、AINUが算出するN*指数を11か国のシンプルな地図に変換し、四半期ごとに更新します。サンプル28か国の詳細な技術分析はainu.systemsをご覧ください。",
-    stat_countries: "パノラマの国",
-    stat_zones: "世代的体制",
-    stat_follow: "フォローする",
-    about_eyebrow: "narayama.liveとは",
-    about_title: "システミック・ナラヤマ指数への公開の入口",
-    about_p1: "AINUは四半期ごとに、各社会が自らの世代を更新する能力——システミック・ナラヤマ指数（N*）——を計算します。narayama.liveはこの研究への公開の入口です：専門用語なしで、この11か国それぞれが今このスケール上のどこにいるかを示します。",
-    about_p2: "政治経済学の独立研究『ナラヤマのジレンマから文明的オイコセーンへ』の文脈で開発されたnarayama.liveは、四半期ごとに更新され、ainu.systemsの詳細な技術分析と同じ追跡可能な方法論を使用します。",
-    formula_label: "ナラヤマ・システミック指数",
-    formula_note: "平方根正規化 · 四半期更新 · 追跡可能なGitバージョン管理",
-    snapshot_eyebrow: "リアルな現状",
-    snapshot_obs: "観測値（N*_Obs）で、公的資料から調整なしで算出しています。ゾーンは暫定です（テストF4）。",
-    snapshot_title: "この11か国の現状",
-    country_ind: "インド",
-    country_fra: "フランス",
-    country_mex: "メキシコ",
-    country_nga: "ナイジェリア",
-    example_tag: "(例)",
-    snapshot_cta: "→ 指数の完全な分析を見る（11か国）",
-    country_bra: "ブラジル",
     country_arg: "アルゼンチン",
-    country_usa: "アメリカ合衆国",
+    country_bra: "ブラジル",
     country_chn: "中国",
+    country_fra: "フランス",
+    country_ind: "インド",
     country_ita: "イタリア",
     country_jpn: "日本",
     country_kor: "韓国",
-    zones_eyebrow: "5つの世代的体制",
-    zone_pec: "ナラヤマ崩壊 (PEC)",
-    zone_ta: "加速緊張",
-    zone_pea: "均衡",
-    zone_tp: "人口緊張",
-    zone_peec: "飽和",
-    open_eyebrow: "AINU–ナラヤマアーキテクチャ",
-    open_title: "ラボと観測所 — 対象読者で分離",
-    pillar_ainu: "サンプル28か国の詳細な技術分析。",
-    pillar_link_ainu: "技術プラットフォームを見る →",
-    pillar_narayama: "公開観測所。9言語で結果を公開。データが<em>提示される</em>場所。",
-    papers_eyebrow: "発表された研究",
-    papers_title: "刊行物",
-    paper_floresta_summary: "イタリアは国土の約38%を自然発生的な森林に失いました——これは環境的な成果ではなく、内陸部の中小都市におけるURSS崩壊の地理的痕跡です。本論文はシステミック・ナラヤマ指数をイタリアの事例に適用し（TFR 1.21、N*=0.61、PECゾーン）、IVATと積極的なグローカリゼーションを反転の手段として提案します。",
-    paper_read_pt: "Ler em Português (PDF)",
-    paper_read_en: "Read in English (PDF)",
-    paper_academia_note: "Academia.eduでも公開中：<a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
-    paper_floresta_doi_note: "ポルトガル語原版のDOI：<a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
-    paper_narayama_summary: "社会は現存世代の寿命を延ばす一方で、次の世代を生み出す力を弱めつつあります。本稿は持続可能な社会的再生産単位（URSS）を導入し、ナラヤマ指数（N*）を、世代更新能力の人口学的中核を測るための検証可能な測定仮説として提案します。文明的持続可能性の決定的な尺度として提示するものではありません。",
-    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · ポルトガル語原版のDOI：<a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    country_mex: "メキシコ",
+    country_nga: "ナイジェリア",
+    country_usa: "アメリカ合衆国",
+    example_tag: "(例)",
+    hero_eyebrow: "システミック・ナラヤマ指数の温度計",
+    n_cta: "世代表の全体を見る",
+    n_foot_ainu: "研究と方法論：AINU.Systems →",
+    n_foot_desc: "体系的ナラヤマ指数の公開オブザーバトリー。",
+    n_hero_sub: "N*指数は、11か国が世代を更新する力をわかりやすく示します。公的資料に基づく観測値で、四半期ごとに更新します。",
+    n_hero_title: "それぞれの社会は、世代交代の尺度のどこにいるのでしょうか。",
+    n_l1: "N*は、年齢ピラミッドの底辺と頂点、出生と死亡、そして現在の出生力と前の世代の出生力を比べます。",
+    n_l2: "0.90未満は世代交代が不足、0.90〜1.40は均衡、1.40を超えると過剰です。",
+    n_l3: "観測値（UN WPP 2024）で調整はなく、ゾーンはまだ暫定です。",
+    n_read: "N*の読み方",
+    p1_l1: "体系的ナラヤマ指数をイタリアに適用します：TFR 1.21、N* 0.61、PECゾーン。",
+    p1_l2: "森林の拡大を、世代的再生産の喪失を示す地域的な痕跡として提示します。",
+    p1_l3: "IVATと能動的なグローカル化を逆転の手段として提案します。",
+    p1_note: "PDFは改訂中で、第2版にはAINUの現在の値を反映します。",
+    p2_l1: "社会は現存世代の寿命を延ばす一方で、次の世代を生み出す力を失っています。",
+    p2_l2: "持続可能な社会的再生産単位（URSS）を提示します。",
+    p2_l3: "N*を最終的な尺度ではなく、検証可能な測定仮説として提案します。",
     paper2_academia_note: "Academia.eduでも公開中：<a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_academia_note: "Academia.eduでも公開中：<a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · ポルトガル語原版のDOI：<a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    paper_floresta_doi_note: "ポルトガル語原版のDOI：<a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
+    paper_read_en: "Read in English (PDF)",
+    paper_read_pt: "Ler em Português (PDF)",
+    papers_title: "刊行物",
+    review_invite: "お使いの言語の翻訳の校閲や、手法へのご批判をいただけませんか。連絡先：<a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>",
+    snapshot_obs: "観測値（N*_Obs）で、公的資料から調整なしで算出しています。ゾーンは暫定です（テストF4）。",
+    snapshot_title: "この11か国の現状",
+    wake_note: "このアプリは無料サーバーで動作しており、初回アクセス時は起動に30〜60秒かかることがあります。",
+    zone_pea: "均衡",
+    zone_pec: "ナラヤマ崩壊 (PEC)",
+    zone_peec: "飽和",
+    zone_ta: "加速緊張",
+    zone_tp: "人口緊張",
   },
   fi: {
-    wake_note: "Sovellus toimii ilmaisella palvelimella: ensimmäisellä käynnillä sen herääminen voi kestää 30–60 s.",
     ai_translation_note: "Käännökset on tehty tekoälyllä, eikä äidinkielinen puhuja ole vielä tarkistanut niitä; epäselvissä tapauksissa portugalinkielinen teksti on ensisijainen.",
-    review_invite: "Haluatko tarkistaa oman kielesi käännöksen tai kritisoida menetelmää? Kirjoita osoitteeseen <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
-    nav_observatory: "Observatorio",
-    nav_platform: "AINU.systems",
-    hero_eyebrow: "Systeemisen Narayama-indeksin lämpömittari",
-    hero_title: "Julkinen kuva kunkin maan kyvystä <em>uudistaa väestöään ja turvata tulevaisuutensa</em> kestävällä tavalla.",
-    hero_sub: "Narayama.live kääntää AINU:n laskeman N*-indeksin yksinkertaiseksi 11 maan kartaksi, joka päivitetään neljännesvuosittain. Otoksen kaikkien 28 maan täydellinen tekninen analyysi löytyy sivustolta ainu.systems.",
-    stat_countries: "Maat tilannekuvassa",
-    stat_zones: "Sukupolvivyöhykettä",
-    stat_follow: "Seuraa meitä",
-    about_eyebrow: "Mikä on Narayama.live",
-    about_title: "Systeemisen Narayama-indeksin julkinen portti",
-    about_p1: "AINU laskee neljännesvuosittain kunkin yhteiskunnan kyvyn uudistaa omia sukupolviaan — systeemisen Narayama-indeksin (N*). Narayama.live on tämän tutkimuksen julkinen portti: ilman teknistä ammattikieltä se näyttää, missä kukin näistä 11 maasta on tällä asteikolla juuri nyt.",
-    about_p2: "Kehitetty osana itsenäistä valtio-opin tutkimusta <em>Narayaman dilemmasta sivilisaation Oikoseeniin</em>, narayama.live päivittyy neljännesvuosittain, samalla jäljitettävällä menetelmällä kuin ainu.systemsin täydellinen tekninen analyysi.",
-    formula_label: "Systeeminen Narayama-indeksi",
-    formula_note: "Neliöjuurinormalisointi · Neljännesvuosittainen päivitys · Jäljitettävä Git-versiointi",
-    snapshot_eyebrow: "Todellinen tilannekuva",
-    snapshot_obs: "Havaitut arvot (N*_Obs), laskettu virallisista lähteistä ilman oikaisuja. Vyöhykkeet ovat alustavia (testi F4).",
-    snapshot_title: "Missä nämä 11 maata ovat nyt",
-    country_ind: "Intia",
-    country_fra: "Ranska",
-    country_mex: "Meksiko",
-    country_nga: "Nigeria",
-    example_tag: "(esimerkki)",
-    snapshot_cta: "→ Katso indeksin täydellinen analyysi (11 maata)",
-    country_bra: "Brasilia",
     country_arg: "Argentiina",
-    country_usa: "Yhdysvallat",
+    country_bra: "Brasilia",
     country_chn: "Kiina",
+    country_fra: "Ranska",
+    country_ind: "Intia",
     country_ita: "Italia",
     country_jpn: "Japani",
     country_kor: "Etelä-Korea",
-    zones_eyebrow: "Viisi sukupolvien regiimiä",
-    zone_pec: "Narayama-romahdus (PEC)",
-    zone_ta: "Kiihtyvä jännite",
-    zone_pea: "Tasapaino",
-    zone_tp: "Väestöjännite",
-    zone_peec: "Kyllästymä",
-    open_eyebrow: "AINU–Narayama-arkkitehtuuri",
-    open_title: "Laboratorio ja observatorio — erotettu kohdeyleisön mukaan",
-    pillar_ainu: "Otoksen kaikkien 28 maan täydellinen tekninen analyysi.",
-    pillar_link_ainu: "Katso tekninen alusta →",
-    pillar_narayama: "Julkinen observatorio. Julkaisee tuloksia, dokumentoi menetelmän kehitystä ja näyttää 11 maan jaksollisen kartan 9 kielellä. Missä dataa <em>esitetään</em>.",
-    papers_eyebrow: "Julkaistu tutkimus",
-    papers_title: "Julkaisut",
-    paper_floresta_summary: "Italia on menettänyt noin 38 % alueestaan spontaanille metsälle — tämä ei ole ympäristövoitto, vaan URSS:n romahduksen maantieteellinen jälki pienissä ja keskisuurissa sisämaan kaupungeissa. Tämä paperi soveltaa systeemistä Narayama-indeksiä Italian tapaukseen (TFR 1,21, N*=0,61, PEC-vyöhyke) ja ehdottaa IVAT:ia sekä aktiivista glokalisaatiota kääntymisen keinoiksi.",
-    paper_read_pt: "Ler em Português (PDF)",
-    paper_read_en: "Read in English (PDF)",
-    paper_academia_note: "Saatavilla myös Academia.edu:ssa: <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
-    paper_floresta_doi_note: "Alkuperäisen portugalinkielisen version DOI: <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
-    paper_narayama_summary: "Yhteiskunnat pidentävät nykyisten sukupolvien elinikää mutta menettävät kykyään tuottaa seuraava sukupolvi. Artikkeli esittelee kestävän sosiaalisen uusintamisen yksikön (URSS) ja ehdottaa Narayama-indeksiä (N*) testattavaksi mittaushypoteesiksi sukupolvien uusiutumiskyvyn väestötieteelliselle ytimelle — ei sivilisaation kestävyyden lopulliseksi mittariksi.",
-    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · Alkuperäisen portugalinkielisen version DOI: <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    country_mex: "Meksiko",
+    country_nga: "Nigeria",
+    country_usa: "Yhdysvallat",
+    example_tag: "(esimerkki)",
+    hero_eyebrow: "Systeemisen Narayama-indeksin lämpömittari",
+    n_cta: "Katso koko sukupolvitaulukko",
+    n_foot_ainu: "Tutkimus ja menetelmät: AINU.Systems →",
+    n_foot_desc: "Systeemisen Narayama-indeksin julkinen observatorio.",
+    n_hero_sub: "N*-indeksi näyttää yksinkertaisesti, kuinka hyvin 11 maata kykenee uusiutumaan sukupolvelta toiselle. Havaittuja arvoja virallisista lähteistä, päivitetään neljännesvuosittain.",
+    n_hero_title: "Missä kohtaa kukin yhteiskunta on sukupolvien uusiutumisen asteikolla?",
+    n_l1: "N* vertaa ikäpyramidin tyveä ja huippua, syntyneitä ja kuolleita sekä nykyistä hedelmällisyyttä edellisen sukupolven hedelmällisyyteen.",
+    n_l2: "Alle 0,90 uusiutuminen on riittämätöntä; 0,90–1,40 on tasapaino; yli 1,40 on liikaa.",
+    n_l3: "Havaittuja arvoja (UN WPP 2024) ilman oikaisuja; vyöhykkeet ovat vielä alustavia.",
+    n_read: "Näin luet N*:ää",
+    p1_l1: "Soveltaa systeemistä Narayama-indeksiä Italiaan: TFR 1,21, N* 0,61, PEC-vyöhyke.",
+    p1_l2: "Ehdottaa metsän laajenemista sukupolvien uusintamisen menetyksen alueellisena merkkinä.",
+    p1_l3: "Ehdottaa IVATia ja aktiivista glokalisaatiota käänteen keinoksi.",
+    p1_note: "PDF on tarkistettavana: versio 2 sisältää AINUn nykyiset arvot.",
+    p2_l1: "Yhteiskunnat pidentävät nykyisten sukupolvien elinikää mutta menettävät kyvyn tuottaa seuraava.",
+    p2_l2: "Esittelee kestävän sosiaalisen uusintamisen yksikön (URSS).",
+    p2_l3: "Ehdottaa N*:ää testattavaksi mittaushypoteesiksi, ei lopulliseksi mittariksi.",
     paper2_academia_note: "Saatavilla myös Academia.edu:ssa: <a href=\"https://www.academia.edu/178217203/POR_QUE_%C3%8DNDICE_NARAYAMA_Extens%C3%A3o_da_vida_e_redu%C3%A7%C3%A3o_do_potencial_geracional_custos_da_reprodu%C3%A7%C3%A3o_social_e_a_necessidade_de_uma_nova_m%C3%A9trica_demogr%C3%A1fica\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/178217509/WHY_THE_NARAYAMA_INDEX_Life_Extension_and_the_Reduction_of_Generational_Potential_Costs_of_Social_Reproduction_and_the_Need_for_a_New_Demographic_Metric\" target=\"_blank\" rel=\"noopener\">EN</a>",
-  }
+    paper_academia_note: "Saatavilla myös Academia.edu:ssa: <a href=\"https://www.academia.edu/172714304/Glocaliza%C3%A7%C3%A3o_Destru%C3%ADda_Reprodu%C3%A7%C3%A3o_Geracional_Colapsada_A_Floresta_como_L%C3%A1pide_Demogr%C3%A1fica_nas_Cidades_Pequenas_e_M%C3%A9dias_da_It%C3%A1lia\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.academia.edu/172714222/Glocalization_Collapse_and_Generational_Reproduction_Failure_in_Small_and_Medium_Italian_Cities_The_Narayama_Systemic_and_the_Forest_as_Demographic_Tombstone\" target=\"_blank\" rel=\"noopener\">EN</a>",
+    paper_doi_note: "ResearchGate: <a href=\"https://www.researchgate.net/publication/415288735_POR_QUE_O_INDICE_NARAYAMA\" target=\"_blank\" rel=\"noopener\">PT</a> · <a href=\"https://www.researchgate.net/publication/415288500_WHY_THE_NARAYAMA_INDEX\" target=\"_blank\" rel=\"noopener\">EN</a> · Alkuperäisen portugalinkielisen version DOI: <a href=\"https://doi.org/10.13140/RG.2.2.16911.55206\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.16911.55206</a>",
+    paper_floresta_doi_note: "Alkuperäisen portugalinkielisen version DOI: <a href=\"https://doi.org/10.13140/RG.2.2.29067.25122\" target=\"_blank\" rel=\"noopener\">10.13140/RG.2.2.29067.25122</a>",
+    paper_read_en: "Read in English (PDF)",
+    paper_read_pt: "Ler em Português (PDF)",
+    papers_title: "Julkaisut",
+    review_invite: "Haluatko tarkistaa oman kielesi käännöksen tai kritisoida menetelmää? Kirjoita osoitteeseen <a href=\"mailto:narayama.live@gmail.com\">narayama.live@gmail.com</a>.",
+    snapshot_obs: "Havaitut arvot (N*_Obs), laskettu virallisista lähteistä ilman oikaisuja. Vyöhykkeet ovat alustavia (testi F4).",
+    snapshot_title: "Missä nämä 11 maata ovat nyt",
+    wake_note: "Sovellus toimii ilmaisella palvelimella: ensimmäisellä käynnillä sen herääminen voi kestää 30–60 s.",
+    zone_pea: "Tasapaino",
+    zone_pec: "Narayama-romahdus (PEC)",
+    zone_peec: "Kyllästymä",
+    zone_ta: "Kiihtyvä jännite",
+    zone_tp: "Väestöjännite",
+  },
 };
 
 function setLang(lang) {
