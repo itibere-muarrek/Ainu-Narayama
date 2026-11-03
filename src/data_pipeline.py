@@ -3,8 +3,8 @@ Orquestração do cálculo de N* para os 28 países.
 
 Lê data/raw/un_wpp.csv (via src.data_loader) e grava data/processed/n_index_{ano}.csv. Valor publicado = N*_Obs (PQDF-N*,
 camada A): NGII_Obs = (Pop_Base/Pop_Topo) × (Nascimentos/Mortes), N_Base = NGII_Obs × Fator_Geracional, N* = √N_Base, sem
-nenhum ajuste. Junto vêm, só como referência, a calibração histórica do autor (colunas *_cal) e os cenários unitários
-(n_estrela_mig/ine/pol/sub) — ver src.falseability e docs/definitions.md, seção 6.
+nenhum ajuste. Junto vêm, só como referência, os cenários unitários (n_estrela_mig/ine/pol/sub) — ver
+docs/definitions.md, seção 6.
 
 Pop_Base/Pop_Topo: cada país usa o corte etário da média ponderada de sua composição de perfis
 (src.config.COMPOSICAO_PERFIL_POR_PAIS), já agregada em data/raw/un_wpp.csv por scripts/build_un_wpp_raw.py.
@@ -29,11 +29,10 @@ from src.config import (
     PAISES,
 )
 from src.data_loader import carregar_dados_un
-from src.falseability import aplicar_falseabilidade_quantitativa
 from src.indices import (
     calcular_fator_geracional,
     calcular_n_base,
-    calcular_ngii_puro,
+    calcular_ngii_obs,
     classificar_zona_5,
     normalizar_n_base,
 )
@@ -46,16 +45,14 @@ def _arred(v):
 
 
 def _linha_n(linha, tfr_ano_base, codigo: str) -> dict:
-    """Cadeia do N* de um país/ano. Valor publicado = N*_Obs (PQDF-N*, camada A, sem ajustes); `_cal` = calibração
-    histórica do autor (4 ajustes combinados); n_estrela_<mig|ine|pol|sub> = cenários unitários."""
-    ngii_obs = calcular_ngii_puro(
+    """Cadeia do N* de um país/ano. Valor publicado = N*_Obs (PQDF-N*, camada A, sem ajustes);
+    n_estrela_<mig|ine|pol|sub> = cenários unitários."""
+    ngii_obs = calcular_ngii_obs(
         pop_base=linha["pop_base"], pop_topo=linha["pop_topo"], nascimentos=linha["nascimentos"], mortes=linha["mortes"]
     )
     fg = calcular_fator_geracional(tfr_atual=linha["tfr"], tfr_25_anos_atras=tfr_ano_base)
     n_base = calcular_n_base(ngii_obs, fg)
     ajustes = AJUSTES_FALSEABILIDADE_POR_PAIS[codigo]
-    ngii_cal = aplicar_falseabilidade_quantitativa(ngii_obs, ajustes) if ngii_obs is not None else None
-    n_base_cal = calcular_n_base(ngii_cal, fg)
     out = {
         "codigo": codigo,
         "n_base": _arred(n_base),
@@ -63,10 +60,6 @@ def _linha_n(linha, tfr_ano_base, codigo: str) -> dict:
         "ngii_obs": _arred(ngii_obs),
         "fator_geracional": _arred(fg),
         "status": classificar_zona_5(n_base),
-        "ngii_cal": _arred(ngii_cal),
-        "n_base_cal": _arred(n_base_cal),
-        "n_estrela_cal": _arred(normalizar_n_base(n_base_cal)),
-        "status_cal": classificar_zona_5(n_base_cal),
     }
     for sufixo, chave in CENARIOS_PQDF.items():
         nb_k = calcular_n_base(ngii_obs * (1 - ajustes[chave]) if ngii_obs is not None else None, fg)
@@ -89,10 +82,8 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
         DataFrame com uma linha por país (só os países com dados em
         ambos os anos), colunas: codigo, n_base, n_estrela, farol,
         ngii_obs, fator_geracional, fator_alocativo, status, populacao
-        (valor publicado = N*_Obs, PQDF-N*) e, como referência, a
-        calibração histórica do autor (ngii_cal, n_base_cal,
-        n_estrela_cal, status_cal) e os cenários unitários
-        n_estrela_mig/ine/pol/sub. `farol` e `fator_alocativo` ficam
+        (valor publicado = N*_Obs, PQDF-N*) e, como referência, os
+        cenários unitários n_estrela_mig/ine/pol/sub. `farol` e `fator_alocativo` ficam
         None nesta fase. Também grava o resultado em
         data/processed/n_index_{ano}.csv.
     """
@@ -137,7 +128,7 @@ def executar_pipeline_historico(
     data/raw/un_wpp_historico.csv (ver scripts/build_historico_raw.py).
 
     Mesma cadeia de cálculo de `executar_pipeline_completo`, repetida
-    pra cada ano de `anos`: NGII_Bruto -> NGII_Puro (falseabilidade) ->
+    pra cada ano de `anos`: NGII_Obs ->
     N_Base -> N* (normalizado). Cada ano usa seu próprio ano-25 pra
     calcular o Fator_Geracional — o CSV de origem precisa ter uma
     linha de TFR pra esse ano-25 (não precisa ter pop_base/pop_topo:
@@ -153,8 +144,7 @@ def executar_pipeline_historico(
 
     Returns:
         DataFrame com uma linha por (país, ano), colunas: codigo, ano,
-        n_base, n_estrela (N*_Obs) e n_base_cal, n_estrela_cal (calibração
-        histórica do autor). Também grava o resultado em
+        n_base, n_estrela (N*_Obs). Também grava o resultado em
         data/processed/n_index_historico.csv.
     """
     anos = anos or ANOS_ALVO_HISTORICO
@@ -178,7 +168,7 @@ def executar_pipeline_historico(
                 continue
 
             linha_n = _linha_n(linha, df_base.loc[codigo, "tfr"], codigo)
-            resultados.append({"codigo": codigo, "ano": ano, **{k: linha_n[k] for k in ("n_base", "n_estrela", "n_base_cal", "n_estrela_cal")}})
+            resultados.append({"codigo": codigo, "ano": ano, **{k: linha_n[k] for k in ("n_base", "n_estrela")}})
 
     resultado_df = pd.DataFrame(resultados).sort_values(["codigo", "ano"]).reset_index(drop=True)
 

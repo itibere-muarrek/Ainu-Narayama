@@ -308,7 +308,7 @@ BLOCOS = ["demografia", "consumo", "multiplicadores", "valorizacao", "cobertura"
 GLOSS_EN = {
     "Descendentes (Prometidos)": ("Descendants (Promised)", "Base cohort (young population), with an age cutoff specific to each country. In the V1_1 thesis: Prometidos."),
     "Estruturadores": ("Builders (Estruturadores)", "Cohort of intermediate ages; corresponds to the thesis's Generational Provider (reference ages 25 to 65)."),
-    "Ascendentes (Legadores)": ("Ascendants (Legators)", "Top cohort (older population). The term 'Legadores' (those who leave a legacy) was confirmed by the author on 2026-11-01."),
+    "Ascendentes (Legadores)": ("Ascendants (Legators)", "Top cohort (older population)."),
     "URSS (Unidade de Reprodução Social Sustentável)": ("URSS (Sustainable Social Reproduction Unit)", "Functional structure, private, family and civil in character, that takes effective responsibility for forming Relational Human Capital (CHR) and for generational continuity. A primary civilizational asset, not a welfare beneficiary. URSS condition: Active, Fulfilled or Inactive, by an observable criterion independent of employment status."),
     "CHR (Capital Humano Relacional)": ("CHR (Relational Human Capital)", "The professionalizing and socializing formation that parents provide to their children. Irreplaceable, inelastic, unpaid."),
     "UDE (Unidade Demográfica de Estado)": ("UDE (State Demographic Unit)", "The real set of URSS existing at a given moment; belonging requires effective responsibility for forming and sustaining at least one descendant aged 0 to 25, biological or adopted. Economic reading: Total Investment in UDE = NTA(0-25) + NTA(25-65) restricted to Providers in a URSS (the second term has no consolidated source)."),
@@ -320,7 +320,7 @@ GLOSS_EN = {
     "AFI (Ativo de Formação Intergeracional)": ("AFI (Intergenerational Formation Asset)", "The investment Builders make in food, housing, health, education, clothing, transport, protection, development, daily care and unpaid accompaniment and education. In this research it is measured operationally (private spending on the Descendants cohort, net of transfers, plus the value of care time); the formulas remain an unapproved proposal."),
     "Dividendo Intergeracional": ("Intergenerational Dividend", "A partial return to Builders for investing in forming new generations. It is not a wage, a full reimbursement of spending or conventional assistance. A Narayama proposal; here only simulated in cost."),
     "IFVI (Incentivos Fiscais à Valorização Intergeracional)": ("IFVI (Tax Incentives for Intergenerational Valorization)", "Tax benefits to agents that provide goods, services and infrastructure that lower costs and improve the sustainability of URSS. Distinct from the AFI and the Dividend."),
-    "N* (Índice de Narayama Sistêmico)": ("N* (Systemic Narayama Index)", "N* = square root of N_Base, with N_Base = NGII_puro × Generational Factor. Zones: PEC < 0.71; Accelerated Tension 0.71–0.90; PEA 0.90–1.40; Population Tension 1.40–2.00; PEEC ≥ 2.00."),
+    "N* (Índice de Narayama Sistêmico)": ("N* (Systemic Narayama Index)", "N* = square root of N_Base, with N_Base = NGII_Obs × Generational Factor. Zones: PEC < 0.71; Accelerated Tension 0.71–0.90; PEA 0.90–1.40; Population Tension 1.40–2.00; PEEC ≥ 2.00."),
     "PQDF-N*": ("PQDF-N*", "Quality, Decomposition and Falsifiability Protocol for the N*: the observed N* (N*_Obs) is always published; adjustments for migration, inertia, policies and under-registration are separate scenarios (N*_k)."),
 }
 

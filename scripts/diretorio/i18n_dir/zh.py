@@ -83,7 +83,7 @@ D = {
     "GLOSS": {
         "Descendentes (Prometidos)": ("Descendentes (Prometidos)", "基础队列(年轻人口),年龄界限因国家而异。在论文 V1_1 中称 Prometidos。"),
         "Estruturadores": ("Estruturadores", "中间年龄的队列;对应论文中的代际供养者(参考年龄 25 至 65 岁)。"),
-        "Ascendentes (Legadores)": ("Ascendentes (Legadores)", "顶层队列(老年人口)。“Legadores”(留下遗产的人)一词由作者于 2026-11-01 确定。"),
+        "Ascendentes (Legadores)": ("Ascendentes (Legadores)", "顶层队列(老年人口)。"),
         "URSS (Unidade de Reprodução Social Sustentável)": ("URSS(可持续社会再生产单元)", "具有私人、家庭和公民性质的功能性结构,对关系性人力资本(CHR)的形成和代际延续承担实际责任。它是首要的文明资产,而非福利的受益者。URSS 状态:活跃、已完成或不活跃,依据与就业状况无关的可观察标准。"),
         "CHR (Capital Humano Relacional)": ("CHR(关系性人力资本)", "父母对子女进行的职业养成与社会化教育。不可替代、缺乏弹性且无报酬。"),
         "UDE (Unidade Demográfica de Estado)": ("UDE(国家人口单元)", "某一时刻实际存在的 URSS 的集合;对至少一名 0 至 25 岁的子女(亲生或收养)的养成和抚养承担实际责任者属于其中。经济学解读:UDE 总投资 = NTA(0-25) + 仅限于 URSS 中供养者的 NTA(25-65)(第二项尚无确定的来源)。"),
@@ -95,7 +95,7 @@ D = {
         "AFI (Ativo de Formação Intergeracional)": ("AFI(代际养成资产)", "Estruturadores 在食品、住房、健康、教育、服装、交通、保护、发展、日常照护以及无报酬陪伴和教育上的投入。本研究以操作性方式衡量(Descendentes 队列的私人支出扣除转移后,加上照护时间的价值);公式仍是未获批准的提议。"),
         "Dividendo Intergeracional": ("代际红利", "对 Estruturadores 培养新一代的投入给予的部分回报。它不是工资,不是对支出的全额报销,也不是传统救助。这是 Narayama 的提议;这里只模拟其成本。"),
         "IFVI (Incentivos Fiscais à Valorização Intergeracional)": ("IFVI(代际价值化税收激励)", "对提供能降低 URSS 成本、增强其可持续性的商品、服务和基础设施的主体给予的税收优惠。有别于 AFI 和红利。"),
-        "N* (Índice de Narayama Sistêmico)": ("N*(系统性纳拉亚马指数)", "N* = N_Base 的平方根,N_Base = NGII_puro × 代际系数。区间:PEC < 0.71;加速紧张 0.71–0.90;PEA 0.90–1.40;人口紧张 1.40–2.00;PEEC ≥ 2.00。"),
+        "N* (Índice de Narayama Sistêmico)": ("N*(系统性纳拉亚马指数)", "N* = N_Base 的平方根,N_Base = NGII_Obs × 代际系数。区间:PEC < 0.71;加速紧张 0.71–0.90;PEA 0.90–1.40;人口紧张 1.40–2.00;PEEC ≥ 2.00。"),
         "PQDF-N*": ("PQDF-N*", "N* 的质量、分解与可证伪性协议:观测的 N*(N*_Obs)始终公布;对迁移、惯性、政策和漏报的调整是单独的情景(N*_k)。"),
     },
 }

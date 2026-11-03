@@ -11,8 +11,8 @@
  },
  {
   "termo": "Ascendentes (Legadores)",
-  "definicao": "Coorte de topo (população idosa). Termo 'Legadores' confirmado pelo autor em 2026-11-01; a tese V1_1 ainda escreve 'Legatários'.",
-  "fonte": "Decisão do autor, 2026-11-01"
+  "definicao": "Coorte de topo (população idosa).",
+  "fonte": "Terminologia do autor"
  },
  {
   "termo": "URSS (Unidade de Reprodução Social Sustentável)",
@@ -71,7 +71,7 @@
  },
  {
   "termo": "N* (Índice de Narayama Sistêmico)",
-  "definicao": "N* = raiz quadrada de N_Base, com N_Base = NGII_puro × Fator_Geracional. Zonas: PEC < 0,71; Tensão Acelerada 0,71–0,90; PEA 0,90–1,40; Tensão Populacional 1,40–2,00; PEEC ≥ 2,00.",
+  "definicao": "N* = raiz quadrada de N_Base, com N_Base = NGII_Obs × Fator_Geracional. Zonas: PEC < 0,71; Tensão Acelerada 0,71–0,90; PEA 0,90–1,40; Tensão Populacional 1,40–2,00; PEEC ≥ 2,00.",
   "fonte": "EcoPol V1_1, seções V.II e 9-A.3"
  },
  {

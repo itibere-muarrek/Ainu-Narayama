@@ -17,7 +17,7 @@ python scripts/diretorio/exportar_diretorio.py [caminho_da_planilha]
 - Instrumentos: publicável só com fonte L1; "misto" (L1 + L2) sai como `publicavel_com_ressalva`; L2, fontes secundárias
   e nível indeterminado ficam retidos; status "A confirmar", "Lacuna" ou "n/d" viram lacuna.
 - Evidências: A, L, P publicáveis; B retida (página não aberta); N vira lacuna.
-- Fichas: campos que citam L2 saem retidos. **N\* consolidado fica de fora do público** até o N\*_Obs (PQDF-N\*) ser recalculado.
+- Fichas: campos que citam L2 saem retidos. O único N\* das fichas é o **N\*_Obs** (PQDF-N\*), lido de `data/processed/n_index_2024.csv`.
 - `Auditoria_Pendencias` só no privado.
 - `overrides_nivel.json`: decisões manuais de nível por instrumento (chave `ISO|nome do instrumento`), com motivo.
 

@@ -10,8 +10,7 @@ Anexo 9 — PQDF-N\*). Definições: [`docs/definitions.md`](docs/definitions.md
 
 - **N\*_Obs** (valor observado, das fontes oficiais, sem ajustes): `N*_Obs = √(NGII_Obs × Fator_Geracional)`, com
   `NGII_Obs = (Pop_Base / Pop_Topo) × (Nascimentos / Mortes)`.
-- **Cenários** separados (migração, inércia, políticas, sub-registro) e a calibração histórica do autor (`N*_cal`),
-  só como referência.
+- **Cenários** separados (migração, inércia, políticas, sub-registro), só como referência.
 - **Zonas provisórias**: o teste F4 do protocolo mostra ordenação estável, mas zona sensível a escolhas metodológicas
   ([`docs/testes_pqdf_n_estrela.md`](docs/testes_pqdf_n_estrela.md)).
 - **Farol / Fator_Alocativo**: pendentes (dependem de National Transfer Accounts). Nenhum valor provisório é publicado.
@@ -73,7 +72,7 @@ Variáveis secretas (`AINU_USERS`, `AINU_SYSTEMS_PASSWORD`, `AINU_LEGACY_USER`) 
 
 ## Estrutura
 
-- `src/` — cálculo (`indices.py`, `falseability.py`, `data_pipeline.py`, `projecao.py`), login, textos em 9 idiomas
+- `src/` — cálculo (`indices.py`, `data_pipeline.py`, `projecao.py`), login, textos em 9 idiomas
 - `scripts/` — coleta de dados e `scripts/diretorio/` (exportação, páginas, conferência de links, fontes e números)
 - `app/ainu_systems/`, `app/narayama_live/` — apps Streamlit
 - `landing/` — páginas estáticas e PDFs dos papers

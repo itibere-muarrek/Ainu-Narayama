@@ -83,7 +83,7 @@ D = {
     "GLOSS": {
         "Descendentes (Prometidos)": ("Descendentes (Prometidos)", "기초 코호트(젊은 인구)로, 연령 기준은 국가마다 다릅니다. 논문 V1_1에서는 Prometidos."),
         "Estruturadores": ("Estruturadores", "중간 연령 코호트. 논문의 세대 제공자(기준 연령 25~65세)에 해당합니다."),
-        "Ascendentes (Legadores)": ("Ascendentes (Legadores)", "상위 코호트(고령 인구). 'Legadores'(유산을 남기는 사람)라는 용어는 저자가 2026-11-01에 확정했습니다."),
+        "Ascendentes (Legadores)": ("Ascendentes (Legadores)", "상위 코호트(고령 인구)."),
         "URSS (Unidade de Reprodução Social Sustentável)": ("URSS(지속가능한 사회재생산 단위)", "관계적 인적자본(CHR)의 형성과 세대 연속성에 실질적 책임을 지는, 사적·가족적·시민적 성격의 기능적 구조. 복지 수혜자가 아니라 일차적 문명 자산입니다. URSS 조건: 활성, 완수 또는 비활성이며, 고용 상태와 무관한 관찰 가능한 기준으로 정합니다."),
         "CHR (Capital Humano Relacional)": ("CHR(관계적 인적자본)", "부모가 자녀에게 제공하는 직업 형성과 사회화 교육. 대체할 수 없고, 비탄력적이며, 무보수입니다."),
         "UDE (Unidade Demográfica de Estado)": ("UDE(국가 인구 단위)", "특정 시점에 존재하는 URSS의 실제 집합. 0~25세의 직계 또는 입양 자녀를 최소 1명 형성하고 부양할 실질적 책임을 지는 사람이 속합니다. 경제적 해석: UDE 총투자 = NTA(0-25) + URSS에 속한 제공자로 한정한 NTA(25-65) (두 번째 항은 확정된 출처가 없습니다)."),
@@ -95,7 +95,7 @@ D = {
         "AFI (Ativo de Formação Intergeracional)": ("AFI(세대 간 형성 자산)", "Estruturadores가 식품, 주거, 보건, 교육, 의류, 교통, 보호, 발달, 일상 돌봄, 무보수 동반과 교육에 하는 투자. 이 연구에서는 운영적으로 측정합니다(이전을 뺀 Descendentes 코호트 민간 지출 + 돌봄 시간의 가치). 공식은 승인되지 않은 제안으로 남아 있습니다."),
         "Dividendo Intergeracional": ("세대 간 배당", "새 세대를 키우는 투자에 대해 Estruturadores에게 주는 부분적 보상. 임금도, 지출의 전액 환급도, 전통적 복지도 아닙니다. Narayama의 제안이며, 여기서는 비용만 시뮬레이션합니다."),
         "IFVI (Incentivos Fiscais à Valorização Intergeracional)": ("IFVI(세대 간 가치화 세제 인센티브)", "URSS의 비용을 낮추고 지속가능성을 높이는 재화·서비스·인프라를 제공하는 주체에 대한 세제 혜택. AFI 및 배당과 구별됩니다."),
-        "N* (Índice de Narayama Sistêmico)": ("N*(체계적 나라야마 지수)", "N* = N_Base의 제곱근, N_Base = NGII_puro × 세대 계수. 구간: PEC < 0.71, 가속 긴장 0.71–0.90, PEA 0.90–1.40, 인구 긴장 1.40–2.00, PEEC ≥ 2.00."),
+        "N* (Índice de Narayama Sistêmico)": ("N*(체계적 나라야마 지수)", "N* = N_Base의 제곱근, N_Base = NGII_Obs × 세대 계수. 구간: PEC < 0.71, 가속 긴장 0.71–0.90, PEA 0.90–1.40, 인구 긴장 1.40–2.00, PEEC ≥ 2.00."),
         "PQDF-N*": ("PQDF-N*", "N*의 품질, 분해, 반증가능성 규약: 관측 N*(N*_Obs)는 항상 공개하며, 이주·관성·정책·과소등록 조정은 별도의 시나리오(N*_k)입니다."),
     },
 }

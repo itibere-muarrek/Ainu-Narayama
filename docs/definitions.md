@@ -13,11 +13,11 @@ N*  (N*_Obs)  = √N_Base
 ```
 
 O valor publicado é sempre o **N\*_Obs**: calculado direto das fontes oficiais, sem hipóteses contrafactuais
-(PQDF-N\*, camada A). Os quatro ajustes da calibração histórica do autor entram **só como cenários separados** (seção 6).
+(PQDF-N\*, camada A). Os quatro ajustes do protocolo entram **só como cenários separados** (seção 6).
 
 Exemplo (Brasil, 2024, UN WPP 2024): NGII_Obs = 2,9493; Fator_Geracional = 0,6913; N_Base = 2,0387; **N\*_Obs = 1,4278**.
 
-Implementação: `src/indices.py` (`calcular_ngii_puro` calcula a razão do NGII, `calcular_n_base`, `normalizar_n_base`),
+Implementação: `src/indices.py` (`calcular_ngii_obs` calcula a razão do NGII, `calcular_n_base`, `normalizar_n_base`),
 `src/data_pipeline.py` (`executar_pipeline_completo`, `executar_pipeline_historico`).
 
 ## 2. Entradas
@@ -60,9 +60,9 @@ Camadas do protocolo (EcoPol V1_1, Anexo 9):
 - **A — Observada:** NGII_Obs, N_Base e N\*_Obs, das fontes oficiais. É o valor publicado.
 - **B — Corrigida:** correção documentada de completude registral. Não implementada (exige fonte e coeficiente por país).
 - **C — Decomposta:** cenários separados para migração, inércia, políticas e conjuntura. Implementados como cenários
-  unitários `N*_k = √(NGII_Obs × (1 − a_k) × Fator_Geracional)` (colunas `n_estrela_mig/ine/pol/sub`) e como calibração
-  histórica combinada `N*_cal` (colunas `*_cal`), com os valores de `AJUSTES_FALSEABILIDADE_POR_PAIS` em `src/config.py`.
-  Esses valores são **calibração do autor**, sem fonte automatizável; não são estimativas.
+  unitários `N*_k = √(NGII_Obs × (1 − a_k) × Fator_Geracional)` (colunas `n_estrela_mig/ine/pol/sub`), com os valores de
+  `AJUSTES_FALSEABILIDADE_POR_PAIS` em `src/config.py`. Esses valores são **dados pelo autor**, sem fonte automatizável;
+  não são estimativas.
 - **D — Estrutural:** exige evidência de nível A ou B. Não reportada.
 - **E — Falsificável:** testes F1–F9. Execução e limites em [`testes_pqdf_n_estrela.md`](testes_pqdf_n_estrela.md).
 

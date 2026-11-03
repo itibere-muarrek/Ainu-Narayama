@@ -6,9 +6,9 @@ pública e minimalista está em app/narayama_live/app.py (11 países).
 
 Dados:
 - data/processed/n_index_2024.csv: snapshot 2024, uma linha por país: codigo, n_base, n_estrela, farol, ngii_obs,
-  fator_geracional, fator_alocativo, status, populacao (valores observados, N*_Obs) e, como referência, ngii_cal, n_base_cal,
-  n_estrela_cal, status_cal e os cenários n_estrela_mig/ine/pol/sub.
-- data/processed/n_index_historico.csv: série histórica (codigo, ano, n_base, n_estrela, n_base_cal, n_estrela_cal).
+  fator_geracional, fator_alocativo, status, populacao (valores observados, N*_Obs) e, como referência, os cenários
+  n_estrela_mig/ine/pol/sub.
+- data/processed/n_index_historico.csv: série histórica (codigo, ano, n_base, n_estrela).
 Nome/perfil/região dos países vêm de src.config.PAISES; a TFR 2024 vem de docs/paises_perfil.csv.
 
 `n_base` é o valor demográfico observado (N_Base_Obs); `n_estrela` é o N*_Obs (√n_base). A zona (`status`) é classificada com
@@ -231,7 +231,6 @@ if not df_filtrado.empty:
             "n_base": "N_Base",
             "farol": _col_farol,
             "ngii_obs": "NGII_Obs",
-            "n_estrela_cal": "N*_cal",
             "fator_geracional": "Fator_Ger",
             "fator_alocativo": "Fator_Aloc",
         }
@@ -239,7 +238,7 @@ if not df_filtrado.empty:
 
     colunas_exibidas = [
         c
-        for c in [_col_pais, "N*", "N_Base", _col_farol, "NGII_Obs", "Fator_Ger", "Fator_Aloc", "N*_cal", _col_status]
+        for c in [_col_pais, "N*", "N_Base", _col_farol, "NGII_Obs", "Fator_Ger", "Fator_Aloc", _col_status]
         if c in df_tabela.columns
     ]
 
@@ -255,8 +254,7 @@ if not df_filtrado.empty:
         df_tabela[colunas_exibidas].style.apply(colorir_por_zona, axis=1),
         use_container_width=True,
     )
-    if {"status", "status_cal"}.issubset(df.columns):
-        st.caption(t("n_obs_nota", lang, n=int((df["status"] != df["status_cal"]).sum()), total=len(df)))
+    st.caption(t("n_obs_nota", lang))
 else:
     st.write(t("nenhum_pais_filtro", lang))
 

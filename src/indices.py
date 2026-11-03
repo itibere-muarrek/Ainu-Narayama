@@ -13,14 +13,14 @@ import math
 from typing import Optional
 
 
-def calcular_ngii_puro(
+def calcular_ngii_obs(
     pop_base: float,
     pop_topo: float,
     nascimentos: float,
     mortes: float,
 ) -> Optional[float]:
     """
-    Calcula o NGII_puro (Potência Geracional — Pilar 1 da Flor de Narayama).
+    Calcula o NGII_Obs (Potência Geracional — Pilar 1 da Flor de Narayama).
 
     Mede a capacidade real de uma sociedade gerar, formar e sustentar
     os futuros provedores: combina o peso relativo da coorte formadora
@@ -28,7 +28,7 @@ def calcular_ngii_puro(
     período.
 
     Fórmula (Anexo 1, A1.2 — faixas etárias da Seção V.III):
-        NGII_puro = (Pop_Base / Pop_Topo) × (Nascimentos / Mortes)
+        NGII_Obs = (Pop_Base / Pop_Topo) × (Nascimentos / Mortes)
 
     Args:
         pop_base: População da coorte formadora, em milhões. Faixa
@@ -43,23 +43,18 @@ def calcular_ngii_puro(
         mortes: Mortes anuais, em milhões.
 
     Returns:
-        Valor do NGII_puro (adimensional), ou None se pop_topo ou
+        Valor do NGII_Obs (adimensional), ou None se pop_topo ou
         mortes forem zero.
 
-    Exemplo (ilustrativo — não reproduz a calibração oficial da tese,
-    cujos dados brutos de entrada não são publicados no texto):
-        >>> calcular_ngii_puro(pop_base=65.0, pop_topo=110.0, nascimentos=2.7, mortes=1.6)
+    Exemplo (ilustrativo, com números inventados):
+        >>> calcular_ngii_obs(pop_base=65.0, pop_topo=110.0, nascimentos=2.7, mortes=1.6)
         0.9971590909090909
 
     Nota:
-        O valor de entrada deve ser o NGII já depurado pelo Protocolo
-        de Falseabilidade (Anexo 9 — ver src/falseability.py), que
-        transforma o NGII_Bruto em NGII_Puro removendo distorções
-        (imigração compensatória, políticas natalistas temporárias,
-        choques conjunturais, inércia demográfica e substituição
-        civilizacional). A tese não especifica nenhum passo de
-        normalização adicional — valores muito altos em países
-        jovens/alta fecundidade são esperados (ver docs/definitions.md).
+        O NGII_Obs é calculado das fontes oficiais, sem ajustes contrafactuais
+        (PQDF-N*, camada A). A tese não especifica nenhum passo de normalização
+        adicional — valores muito altos em países jovens/alta fecundidade são
+        esperados (ver docs/definitions.md).
     """
     if pop_topo == 0 or mortes == 0:
         return None
@@ -100,11 +95,11 @@ def calcular_fator_geracional(tfr_atual: float, tfr_25_anos_atras: float) -> Opt
     return tfr_atual / tfr_25_anos_atras
 
 
-def calcular_n_base(ngii_puro: Optional[float], fator_geracional: Optional[float]) -> Optional[float]:
+def calcular_n_base(ngii_obs: Optional[float], fator_geracional: Optional[float]) -> Optional[float]:
     """
     Calcula o N* (Índice de Narayama Sistêmico), em sua forma base (N_Base).
 
-    Combina a Potência Geracional presente (NGII_puro) com a tendência
+    Combina a Potência Geracional presente (NGII_Obs) com a tendência
     geracional de fecundidade (Fator_Geracional). Ambos os componentes
     são de natureza puramente demográfica (estoque × trajetória); por
     isso se multiplicam diretamente, sem mistura com o Fator_Alocativo
@@ -112,7 +107,7 @@ def calcular_n_base(ngii_puro: Optional[float], fator_geracional: Optional[float
     componente — ver calcular_fator_alocativo).
 
     Fórmula (V.II / Capítulo 3):
-        N*(i,t) = N_Base(i,t) = NGII_puro(i,t) × Fator_Geracional(i,t)
+        N*(i,t) = N_Base(i,t) = NGII_Obs(i,t) × Fator_Geracional(i,t)
 
     Classificação de zonas (Tabela 4 / Anexo 8 — convenção adotada
     neste projeto, ver docs/definitions.md para a nota sobre a
@@ -123,21 +118,21 @@ def calcular_n_base(ngii_puro: Optional[float], fator_geracional: Optional[float
         N_Base < 0.50          -> Colapso de Narayama (PEC)
 
     Args:
-        ngii_puro: Resultado de calcular_ngii_puro().
+        ngii_obs: Resultado de calcular_ngii_obs().
         fator_geracional: Resultado de calcular_fator_geracional().
 
     Returns:
-        Valor do N* / N_Base (adimensional), ou None se ngii_puro ou
+        Valor do N* / N_Base (adimensional), ou None se ngii_obs ou
         fator_geracional forem None.
 
     Exemplo:
-        >>> calcular_n_base(ngii_puro=1.02, fator_geracional=0.748)
+        >>> calcular_n_base(ngii_obs=1.02, fator_geracional=0.748)
         0.76296
     """
-    if ngii_puro is None or fator_geracional is None:
+    if ngii_obs is None or fator_geracional is None:
         return None
 
-    return ngii_puro * fator_geracional
+    return ngii_obs * fator_geracional
 
 
 def calcular_fator_alocativo(nta_0_25: float, nta_65_mais: float) -> Optional[float]:
@@ -246,29 +241,13 @@ def classificar_zona_5(n_base: Optional[float]) -> Optional[str]:
 
 def normalizar_n_base(n_base: Optional[float]) -> Optional[float]:
     """
-    Normaliza o N_Base para o N* reportado publicamente (decisão de
-    2026-07-09).
+    Normaliza o N_Base para o N* reportado publicamente.
 
-    A tese nunca definiu um passo de normalização pro N_Base (ver
-    docs/definitions.md, seção 8) — mesmo após a composição ponderada
-    de perfis e o Protocolo de Falseabilidade quantitativo, países
-    jovens/alta fecundidade (RD Congo, Arábia Saudita, Etiópia, Egito,
-    Nigéria) ainda produziam N_Base entre ~6,6 e ~11,6, sem
-    plausibilidade física.
-
-    Três métodos foram comparados com os dados reais dos 28 países
-    antes de escolher este:
-    - Truncamento (min/max hard-cap): gera empates — 5 países colavam
-      no teto, 3 no piso, perdendo diferenciação real entre eles.
-    - Divisão pela mediana da amostra: não limita nada (o maior
-      permanecia em ~10x a mediana).
-    - Raiz quadrada (escolhida): preserva a ordenação total (nenhum
-      empate), não exige nenhuma constante arbitrária, e mantém
-      N_Base=1 como ponto fixo (sqrt(1)=1).
-
-    Diferente de outras lacunas documentadas neste projeto, esta
-    normalização está sendo formalizada pelo próprio autor como parte
-    da tese (não é uma extensão só do projeto).
+    O N_Base não tem teto natural (países jovens/alta fecundidade chegam a valores
+    de uma ordem de grandeza acima de 1); a raiz quadrada preserva a ordenação
+    total (sem empates), não exige nenhuma constante arbitrária e mantém
+    N_Base = 1 como ponto fixo (sqrt(1) = 1). A normalização é formalizada pelo
+    próprio autor como parte da tese.
 
     Os limiares de zona (Tabela 4/Anexo 8) foram recalculados na mesma
     escala — ver src.config.LIMIARES_SIMPLES_NORMALIZADOS. A

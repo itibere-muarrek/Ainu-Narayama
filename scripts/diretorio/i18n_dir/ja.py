@@ -83,7 +83,7 @@ D = {
     "GLOSS": {
         "Descendentes (Prometidos)": ("Descendentes (Prometidos)", "基礎となるコホート(若い人口)で、年齢の区切りは国ごとに異なります。論文 V1_1 では Prometidos。"),
         "Estruturadores": ("Estruturadores", "中間年齢のコホート。論文の世代提供者(基準年齢25〜65歳)に対応します。"),
-        "Ascendentes (Legadores)": ("Ascendentes (Legadores)", "上位のコホート(高齢人口)。「Legadores」(遺産を残す人)という用語は、著者が2026-11-01に確定しました。"),
+        "Ascendentes (Legadores)": ("Ascendentes (Legadores)", "上位のコホート(高齢人口)。"),
         "URSS (Unidade de Reprodução Social Sustentável)": ("URSS(持続可能な社会再生産単位)", "関係的人的資本(CHR)の形成と世代の連続性に実効的な責任を負う、私的・家族的・市民的な性格の機能的構造。福祉の受益者ではなく、第一次の文明的資産です。URSS の状態:活動、完了、非活動のいずれかで、就労状況とは無関係に観察可能な基準で定めます。"),
         "CHR (Capital Humano Relacional)": ("CHR(関係的人的資本)", "親が子どもに行う、職業形成と社会化の教育。代替できず、非弾力的で、無報酬です。"),
         "UDE (Unidade Demográfica de Estado)": ("UDE(国家人口単位)", "ある時点に存在する URSS の実際の集合。0〜25歳の実子または養子を少なくとも1人、形成し扶養する実効的な責任を負う人が属します。経済的な読み方:UDE への総投資 = NTA(0-25) + URSS に属する提供者に限った NTA(25-65)(第2項には確定した出典がありません)。"),
@@ -95,7 +95,7 @@ D = {
         "AFI (Ativo de Formação Intergeracional)": ("AFI(世代間形成資産)", "Estruturadores が食料、住居、保健、教育、衣類、交通、保護、発達、日常のケア、無報酬の付き添いと教育に行う投資。この研究では運用上の定義で測ります(移転を除いた Descendentes コホートの民間支出 + ケア時間の価値)。計算式は未承認の提案のままです。"),
         "Dividendo Intergeracional": ("世代間配当", "新しい世代を育てる投資に対して Estruturadores に支払う部分的な見返り。賃金でも、支出の全額払い戻しでも、従来型の扶助でもありません。Narayama の提案で、ここでは費用だけをシミュレーションします。"),
         "IFVI (Incentivos Fiscais à Valorização Intergeracional)": ("IFVI(世代間価値化のための税制優遇)", "URSS の費用を下げ持続可能性を高める財・サービス・インフラを提供する主体への税制上の優遇。AFI や配当とは別物です。"),
-        "N* (Índice de Narayama Sistêmico)": ("N*(体系的ナラヤマ指数)", "N* = N_Base の平方根、N_Base = NGII_puro × 世代係数。区分:PEC < 0.71、加速的緊張 0.71–0.90、PEA 0.90–1.40、人口的緊張 1.40–2.00、PEEC ≥ 2.00。"),
+        "N* (Índice de Narayama Sistêmico)": ("N*(体系的ナラヤマ指数)", "N* = N_Base の平方根、N_Base = NGII_Obs × 世代係数。区分:PEC < 0.71、加速的緊張 0.71–0.90、PEA 0.90–1.40、人口的緊張 1.40–2.00、PEEC ≥ 2.00。"),
         "PQDF-N*": ("PQDF-N*", "N* の品質・分解・反証可能性プロトコル:観測された N*(N*_Obs)は常に公表し、移住・慣性・政策・過少登録の調整は別のシナリオ(N*_k)とします。"),
     },
 }

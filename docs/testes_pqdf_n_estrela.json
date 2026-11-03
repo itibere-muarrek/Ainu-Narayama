@@ -1,5 +1,5 @@
 {
-  "data": "2026-11-02",
+  "data": "2026-11-03",
   "ano_referencia": 2024,
   "aviso": "Sensibilidades de F4 e leitura de F5 definidas junto com a execução, não pré-registradas: valem como diagnóstico, não como confirmação nem refutação formal. Resultados de F1–F9 não executados constam como tal.",
   "F1": {
@@ -89,26 +89,6 @@
           "MEX",
           "ZAF"
         ]
-      },
-      "calibração histórica combinada (N*_cal)": {
-        "spearman": 0.9955,
-        "concordancia_de_zonas": 0.5,
-        "paises_que_mudam_de_zona": [
-          "BRA",
-          "CHL",
-          "CHN",
-          "DEU",
-          "FRA",
-          "GBR",
-          "IND",
-          "IRN",
-          "MAR",
-          "MEX",
-          "POL",
-          "RUS",
-          "SWE",
-          "ZAF"
-        ]
       }
     },
     "atende_o_criterio": {
@@ -117,10 +97,9 @@
       "cenário migratorio (N*_mig)": false,
       "cenário inercia (N*_ine)": false,
       "cenário politicas (N*_pol)": false,
-      "cenário subregistro (N*_sub)": false,
-      "calibração histórica combinada (N*_cal)": false
+      "cenário subregistro (N*_sub)": false
     },
-    "resultado": "falha em: cortes etários -1 ano; cenário migratorio (N*_mig); cenário inercia (N*_ine); cenário politicas (N*_pol); cenário subregistro (N*_sub); calibração histórica combinada (N*_cal)",
+    "resultado": "falha em: cortes etários -1 ano; cenário migratorio (N*_mig); cenário inercia (N*_ine); cenário politicas (N*_pol); cenário subregistro (N*_sub)",
     "decisao_prevista_pelo_protocolo": "Publicar zonas como provisórias."
   },
   "F5": {
@@ -145,7 +124,7 @@
       }
     },
     "resultado": "indeterminado",
-    "motivo": "O limiar de 'extensas' não está definido e o teste de redundância da inércia exige o estimador do ajuste (modelo com e sem o tamanho da coorte reprodutiva), que o repositório não tem: os ajustes são valores calibrados, não estimados."
+    "motivo": "O limiar de 'extensas' não está definido e o teste de redundância da inércia exige o estimador do ajuste (modelo com e sem o tamanho da coorte reprodutiva), que o repositório não tem: os ajustes são valores dados pelo autor, não estimados."
   },
   "nao_executados": {
     "F2": "Validade convergente: exige especificações pré-registradas e medidas demográficas externas definidas; não há registro prévio.",

@@ -29,7 +29,6 @@ Render (build + hospedagem, redeploy automático)
 | Repositório | `github.com/itibere-muarrek/Ainu-Narayama` |
 | Branch de produção | `main` |
 | Commit atual | `26a33b5` |
-| Histórico anterior (v4.0, FastAPI/Railway, abandonado) | preservado na tag `archive/v4.0-railway` |
 | CI | `.github/workflows/ci.yml` — roda a cada push/PR em `main`: instala dependências, valida os 28 países (`config.py` ↔ `paises_perfil.csv`), roda `test_calculo_brasil.py`. Não faz deploy (Render já redesploya sozinho). |
 | Bot de coleta de dados | `.github/workflows/atualizar_dados.yml` (novo, 2026-07-13) — cron mensal (dia 1, 03:00 UTC) + disparo manual (`workflow_dispatch`). Roda `scripts/build_un_wpp_raw.py` e `scripts/build_migracao_raw.py`; **só abre um Pull Request se algo mudou** — nunca commita direto em `main`, nunca redesploya sozinho. Revisão humana continua obrigatória antes do merge. |
 
@@ -106,7 +105,7 @@ Dois domínios, ambos gerenciados via **Advanced DNS** da própria Namecheap
 | Domínio | Registros DNS | Observação |
 |---|---|---|
 | `ainu.systems` | CNAME `www` → `ainu-systems.onrender.com`; A `@` → `216.24.57.1` | Configuração direta, sem troca de nameservers |
-| `narayama.live` | CNAME `www` → `narayama-live.onrender.com`; A `@` → `216.24.57.1` | Precisou trocar nameservers de `ns1-4.vercel-dns.com` (sobra de config. anterior) para `Namecheap BasicDNS` antes dos registros funcionarem |
+| `narayama.live` | CNAME `www` → `narayama-live.onrender.com`; A `@` → `216.24.57.1` | Precisou trocar nameservers de `ns1-4.vercel-dns.com` para `Namecheap BasicDNS` antes dos registros funcionarem |
 
 SSL (Let's Encrypt) emitido automaticamente pelo Render após a validação do
 DNS — sem ação manual além de criar os registros acima.
@@ -133,8 +132,7 @@ Ainu.Narayama/
 │   ├── config.py                 # 28 países, limiares, faixas etárias por perfil
 │   ├── data_loader.py             # leitura/validação de CSVs brutos
 │   ├── data_pipeline.py           # orquestra o cálculo de N* (Fase 2a: só UN WPP)
-│   ├── indices.py                 # fórmulas: NGII, Fator_Geracional, N*, Fator_Alocativo
-│   └── falseability.py            # Protocolo de Falseabilidade (7 testes, Anexo 9)
+│   └── indices.py                 # fórmulas: NGII, Fator_Geracional, N*, Fator_Alocativo
 ├── app/
 │   ├── ainu_systems/app.py      # plataforma restrita (28 países, gate de senha)
 │   ├── narayama_live/app.py     # plataforma pública (8 países destaque)

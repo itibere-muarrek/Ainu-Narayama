@@ -830,10 +830,6 @@
    "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
   },
   "disponibilidade_de_dados": {
-   "N* (pipeline 2024)": {
-    "texto": "0.49",
-    "verificacao": null
-   },
    "Demografia anual (WPP local)": {
     "texto": "1950–2101 (L)",
     "verificacao": null
@@ -879,7 +875,14 @@
     "verificacao": "P"
    }
   },
-  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+  "n_star_obs": {
+   "texto": "0.61",
+   "valor": 0.6079,
+   "ano": 2024,
+   "natureza": "DER",
+   "zona_provisoria": "Colapso de Narayama (PEC)",
+   "fonte": "AINU.Systems (UN WPP 2024, variante média); PQDF-N*, camada A, sem ajustes"
+  }
  },
  {
   "iso": "KOR",
@@ -1095,10 +1098,6 @@
    "motivo": "sem tabela de insumo-produto nesta rodada"
   },
   "disponibilidade_de_dados": {
-   "N* (pipeline 2024)": {
-    "texto": "0.37",
-    "verificacao": null
-   },
    "Demografia anual (WPP local)": {
     "texto": "1950–2101 (L)",
     "verificacao": null
@@ -1144,7 +1143,14 @@
     "verificacao": "P"
    }
   },
-  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+  "n_star_obs": {
+   "texto": "0.46",
+   "valor": 0.4562,
+   "ano": 2024,
+   "natureza": "DER",
+   "zona_provisoria": "Colapso de Narayama (PEC)",
+   "fonte": "AINU.Systems (UN WPP 2024, variante média); PQDF-N*, camada A, sem ajustes"
+  }
  },
  {
   "iso": "JPN",
@@ -1376,10 +1382,6 @@
    "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
   },
   "disponibilidade_de_dados": {
-   "N* (pipeline 2024)": {
-    "texto": "0.43",
-    "verificacao": null
-   },
    "Demografia anual (WPP local)": {
     "texto": "1950–2101 (L)",
     "verificacao": null
@@ -1425,7 +1427,14 @@
     "verificacao": "P"
    }
   },
-  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+  "n_star_obs": {
+   "texto": "0.54",
+   "valor": 0.5364,
+   "ano": 2024,
+   "natureza": "DER",
+   "zona_provisoria": "Colapso de Narayama (PEC)",
+   "fonte": "AINU.Systems (UN WPP 2024, variante média); PQDF-N*, camada A, sem ajustes"
+  }
  },
  {
   "iso": "MEX",
@@ -2258,10 +2267,6 @@
    "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
   },
   "disponibilidade_de_dados": {
-   "N* (pipeline 2024)": {
-    "texto": "1.67",
-    "verificacao": null
-   },
    "Demografia anual (WPP local)": {
     "texto": "1950–2101 (L)",
     "verificacao": null
@@ -2307,7 +2312,14 @@
     "verificacao": "P"
    }
   },
-  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+  "n_star_obs": {
+   "texto": "2.05",
+   "valor": 2.054,
+   "ano": 2024,
+   "natureza": "DER",
+   "zona_provisoria": "Saturação por Excesso de Contingente (PEEC)",
+   "fonte": "AINU.Systems (UN WPP 2024, variante média); PQDF-N*, camada A, sem ajustes"
+  }
  },
  {
   "iso": "ARG",
@@ -3140,10 +3152,6 @@
    "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
   },
   "disponibilidade_de_dados": {
-   "N* (pipeline 2024)": {
-    "texto": "1.06",
-    "verificacao": null
-   },
    "Demografia anual (WPP local)": {
     "texto": "1950–2101 (L)",
     "verificacao": null
@@ -3189,7 +3197,14 @@
     "verificacao": "P"
    }
   },
-  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+  "n_star_obs": {
+   "texto": "1.25",
+   "valor": 1.2529,
+   "ano": 2024,
+   "natureza": "DER",
+   "zona_provisoria": "Ponto de Equilíbrio Autossustentável (PEA)",
+   "fonte": "AINU.Systems (UN WPP 2024, variante média); PQDF-N*, camada A, sem ajustes"
+  }
  },
  {
   "iso": "BRA",
@@ -4022,10 +4037,6 @@
    "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
   },
   "disponibilidade_de_dados": {
-   "N* (pipeline 2024)": {
-    "texto": "1.17",
-    "verificacao": null
-   },
    "Demografia anual (WPP local)": {
     "texto": "1950–2101 (L)",
     "verificacao": null
@@ -4071,7 +4082,14 @@
     "verificacao": "P"
    }
   },
-  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+  "n_star_obs": {
+   "texto": "1.43",
+   "valor": 1.4278,
+   "ano": 2024,
+   "natureza": "DER",
+   "zona_provisoria": "Tensão Populacional",
+   "fonte": "AINU.Systems (UN WPP 2024, variante média); PQDF-N*, camada A, sem ajustes"
+  }
  },
  {
   "iso": "USA",
@@ -4903,10 +4921,6 @@
    "fonte": "P7_Incremento_Crianca (derivada de P3_Empregos_Temporal e *_Cenarios_Emp)"
   },
   "disponibilidade_de_dados": {
-   "N* (pipeline 2024)": {
-    "texto": "0.96",
-    "verificacao": null
-   },
    "Demografia anual (WPP local)": {
     "texto": "1950–2101 (L)",
     "verificacao": null
@@ -4952,7 +4966,14 @@
     "verificacao": "P"
    }
   },
-  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+  "n_star_obs": {
+   "texto": "1.15",
+   "valor": 1.1465,
+   "ano": 2024,
+   "natureza": "DER",
+   "zona_provisoria": "Ponto de Equilíbrio Autossustentável (PEA)",
+   "fonte": "AINU.Systems (UN WPP 2024, variante média); PQDF-N*, camada A, sem ajustes"
+  }
  },
  {
   "iso": "IND",
@@ -5459,10 +5480,6 @@
    "motivo": "sem tabela de insumo-produto nesta rodada"
   },
   "disponibilidade_de_dados": {
-   "N* (pipeline 2024)": {
-    "texto": "1.37",
-    "verificacao": null
-   },
    "Demografia anual (WPP local)": {
     "texto": "1950–2101 (L)",
     "verificacao": null
@@ -5508,7 +5525,14 @@
     "verificacao": "P"
    }
   },
-  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+  "n_star_obs": {
+   "texto": "1.71",
+   "valor": 1.7118,
+   "ano": 2024,
+   "natureza": "DER",
+   "zona_provisoria": "Tensão Populacional",
+   "fonte": "AINU.Systems (UN WPP 2024, variante média); PQDF-N*, camada A, sem ajustes"
+  }
  },
  {
   "iso": "NGA",
@@ -5728,10 +5752,6 @@
    "motivo": "sem tabela de insumo-produto nesta rodada"
   },
   "disponibilidade_de_dados": {
-   "N* (pipeline 2024)": {
-    "texto": "2.58",
-    "verificacao": null
-   },
    "Demografia anual (WPP local)": {
     "texto": "1950–2101 (L)",
     "verificacao": null
@@ -5777,7 +5797,14 @@
     "verificacao": "P"
    }
   },
-  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+  "n_star_obs": {
+   "texto": "3.36",
+   "valor": 3.3614,
+   "ano": 2024,
+   "natureza": "DER",
+   "zona_provisoria": "Saturação por Excesso de Contingente (PEEC)",
+   "fonte": "AINU.Systems (UN WPP 2024, variante média); PQDF-N*, camada A, sem ajustes"
+  }
  },
  {
   "iso": "FRA",
@@ -5993,10 +6020,6 @@
    "motivo": "sem tabela de insumo-produto nesta rodada"
   },
   "disponibilidade_de_dados": {
-   "N* (pipeline 2024)": {
-    "texto": "0.75",
-    "verificacao": null
-   },
    "Demografia anual (WPP local)": {
     "texto": "1950–2101 (L)",
     "verificacao": null
@@ -6042,7 +6065,14 @@
     "verificacao": "P"
    }
   },
-  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+  "n_star_obs": {
+   "texto": "0.91",
+   "valor": 0.9093,
+   "ano": 2024,
+   "natureza": "DER",
+   "zona_provisoria": "Ponto de Equilíbrio Autossustentável (PEA)",
+   "fonte": "AINU.Systems (UN WPP 2024, variante média); PQDF-N*, camada A, sem ajustes"
+  }
  },
  {
   "iso": "CHN",
@@ -6259,10 +6289,6 @@
    "motivo": "sem tabela de insumo-produto nesta rodada"
   },
   "disponibilidade_de_dados": {
-   "N* (pipeline 2024)": {
-    "texto": "0.59",
-    "verificacao": null
-   },
    "Demografia anual (WPP local)": {
     "texto": "1950–2101 (L)",
     "verificacao": null
@@ -6308,6 +6334,13 @@
     "verificacao": "P"
    }
   },
-  "n_star_pendente": "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+  "n_star_obs": {
+   "texto": "0.74",
+   "valor": 0.7368,
+   "ano": 2024,
+   "natureza": "DER",
+   "zona_provisoria": "Tensão Acelerada",
+   "fonte": "AINU.Systems (UN WPP 2024, variante média); PQDF-N*, camada A, sem ajustes"
+  }
  }
 ]

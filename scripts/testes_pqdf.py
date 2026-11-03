@@ -93,7 +93,6 @@ for d in (-1, 1):
     avaliar(f"cortes etários {d:+d} ano", pd.Series({c: n_com_cortes(c, d) for c in paises}))
 for suf, chave in CENARIOS_PQDF.items():
     avaliar(f"cenário {chave} (N*_{suf})", snap[f"n_estrela_{suf}"])
-avaliar("calibração histórica combinada (N*_cal)", snap["n_estrela_cal"])
 
 fica_ok = {
     k: v["spearman"] >= 0.85 and v["concordancia_de_zonas"] >= 0.80 for k, v in sens.items()
@@ -120,7 +119,7 @@ res["F5"] = {
     "por_ajuste_isolado": reducao,
     "resultado": "indeterminado",
     "motivo": "O limiar de 'extensas' não está definido e o teste de redundância da inércia exige o estimador do ajuste (modelo com e sem "
-              "o tamanho da coorte reprodutiva), que o repositório não tem: os ajustes são valores calibrados, não estimados.",
+              "o tamanho da coorte reprodutiva), que o repositório não tem: os ajustes são valores dados pelo autor, não estimados.",
 }
 
 # ---------------------------------------------------------------- não executados

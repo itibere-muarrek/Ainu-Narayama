@@ -16,12 +16,13 @@ Regras do filtro (documentadas também em meta.json):
   - evidências (P1_Disponibilidade): publicáveis A, L e P; B é retido (página
     não aberta); N vai para as lacunas.
   - campos das fichas: retidos se o texto cita nível L2.
-  - N*: retido do conjunto público enquanto o N*_Obs (PQDF-N*) não for
-    recalculado; a planilha só tem o N* consolidado com a calibração histórica do autor.
+  - N*: as fichas públicas trazem só o N*_Obs (PQDF-N*), lido de data/processed/n_index_2024.csv;
+    os valores de N* da planilha não são exportados.
   - auditoria interna (Auditoria_Pendencias): só no conjunto privado.
 """
 from __future__ import annotations
 
+import csv
 import hashlib
 import json
 import re
@@ -111,7 +112,7 @@ CAMPOS_P6 = {
 GLOSSARIO = [
     ("Descendentes (Prometidos)", "Coorte de base (população jovem), com corte de idade próprio de cada país. Na tese V1_1: Prometidos.", "AINU.Systems; EcoPol V1_1 (tabela de perfis)"),
     ("Estruturadores", "Coorte de idades intermediárias; corresponde ao Provedor Geracional da tese (referência de 25 a 65 anos).", "AINU.Systems; EcoPol V1_1"),
-    ("Ascendentes (Legadores)", "Coorte de topo (população idosa). Termo 'Legadores' confirmado pelo autor em 2026-11-01; a tese V1_1 ainda escreve 'Legatários'.", "Decisão do autor, 2026-11-01"),
+    ("Ascendentes (Legadores)", "Coorte de topo (população idosa).", "Terminologia do autor"),
     ("URSS (Unidade de Reprodução Social Sustentável)", "Estrutura funcional de caráter privado, familiar e civil que assume responsabilidade efetiva pela formação de Capital Humano Relacional (CHR) e pela continuidade geracional. Ativo civilizacional primário, não beneficiária de política social. Condição URSS: Ativa, Cumprida ou Inativa, por critério observável e independente da situação laboral.", "EcoPol V1_1, tabela V.I; src/i18n.py; Leia-me da planilha"),
     ("CHR (Capital Humano Relacional)", "A formação profissionalizante e socializante que os pais exercem sobre os filhos. Insubstituível, inelástica, sem remuneração.", "src/i18n.py"),
     ("UDE (Unidade Demográfica de Estado)", "O conjunto real das URSS existentes num dado momento; pertence a ela quem exerce responsabilidade efetiva pela formação e sustentação de ao menos um descendente de 0 a 25 anos, biológico ou adotivo. Leitura econômica: Investimento Total em UDE = NTA(0-25) + NTA(25-65) restrito aos Provedores em URSS (segundo termo sem fonte consolidada).", "EcoPol V1_1, seção 4.6"),
@@ -123,7 +124,7 @@ GLOSSARIO = [
     ("AFI (Ativo de Formação Intergeracional)", "Investimento que os Estruturadores realizam em alimentação, habitação, saúde, educação, vestuário, transporte, proteção, desenvolvimento, cuidado cotidiano e acompanhamento e educação não remunerados. Nesta pesquisa é medido de forma operacional (gasto privado com a coorte de Descendentes, líquido de transferências, mais o valor do tempo de cuidado); as fórmulas seguem como proposta não aprovada.", "Protocolo v2.3 (seção A de Prompt 4)"),
     ("Dividendo Intergeracional", "Retorno parcial aos Estruturadores pelo investimento na formação de novas gerações. Não é salário, restituição integral dos gastos nem assistência convencional. Proposta do Narayama; aqui só simulado em custo.", "Protocolo v2.3"),
     ("IFVI (Incentivos Fiscais à Valorização Intergeracional)", "Benefícios tributários a agentes que ofereçam bens, serviços e infraestruturas que reduzam os custos e ampliem a sustentabilidade das URSS. Distinto do AFI e do Dividendo.", "Protocolo v2.3 (seção C de Prompt 4)"),
-    ("N* (Índice de Narayama Sistêmico)", "N* = raiz quadrada de N_Base, com N_Base = NGII_puro × Fator_Geracional. Zonas: PEC < 0,71; Tensão Acelerada 0,71–0,90; PEA 0,90–1,40; Tensão Populacional 1,40–2,00; PEEC ≥ 2,00.", "EcoPol V1_1, seções V.II e 9-A.3"),
+    ("N* (Índice de Narayama Sistêmico)", "N* = raiz quadrada de N_Base, com N_Base = NGII_Obs × Fator_Geracional. Zonas: PEC < 0,71; Tensão Acelerada 0,71–0,90; PEA 0,90–1,40; Tensão Populacional 1,40–2,00; PEEC ≥ 2,00.", "EcoPol V1_1, seções V.II e 9-A.3"),
     ("PQDF-N*", "Protocolo de Qualidade, Decomposição e Falseabilidade do N*: o N*_Obs é sempre publicado; ajustes de migração, inércia, políticas e sub-registro são cenários separados (N*_k).", "EcoPol V1_1, Anexo 9"),
 ]
 
@@ -337,12 +338,6 @@ def construir(wb):
         c = coortes[iso]
         f["coortes"] = {"composicao_perfis": c[2], "descendentes": c[3], "estruturadores": c[4], "ascendentes": c[5],
                         "ano_referencia": 2025, "fonte": "P1_Coortes_Narayama"}
-        a = amostra[iso]
-        f["n_star"] = {
-            "valor_plano_v5": a[2], "valor_pipeline_2024": a[4], "zona_sigla": a[3], "zona": ZONAS.get(a[3], a[3]),
-            "natureza": "CONSOLIDADO_CAL",
-            "aviso": "N* consolidado com a calibração histórica do autor. Não é o N*_Obs do PQDF-N*.",
-        }
         i = colunas[iso]
         for bloco, itens in CAMPOS_P6.items():
             f[bloco] = {}
@@ -361,6 +356,8 @@ def construir(wb):
         cr = comp_por_iso[iso]
         f["disponibilidade_de_dados"] = {}
         for k in range(2, len(comp_cab)):
+            if str(comp_cab[k]).startswith("N* ("):
+                continue
             t = texto(cr[k])
             m = re.match(r"\[([A-Z])\]\s*", t or "")
             f["disponibilidade_de_dados"][str(comp_cab[k])] = {"texto": t, "verificacao": m.group(1) if m else None}
@@ -505,11 +502,22 @@ def construir(wb):
     return fichas, evidencias, legenda_verif, ids_citados, sem_registro, instrumentos, socx, nao_enc, auditoria, avisos, fontes
 
 
+def n_star_obs(iso: str) -> dict:
+    """N*_Obs (PQDF-N*, camada A, sem ajustes) do país, de data/processed/n_index_2024.csv."""
+    with open(RAIZ / "data" / "processed" / "n_index_2024.csv", encoding="utf-8", newline="") as fh:
+        linha = next(r for r in csv.DictReader(fh) if r["codigo"] == iso)
+    v = float(linha["n_estrela"])
+    return {
+        "texto": f"{v:.2f}", "valor": v, "ano": 2024, "natureza": "DER",
+        "zona_provisoria": linha["status"],
+        "fonte": "AINU.Systems (UN WPP 2024, variante média); PQDF-N*, camada A, sem ajustes",
+    }
+
+
 def filtrar_ficha(f: dict) -> dict:
-    """Versão pública da ficha: sem N* consolidado e sem campos citando L2."""
+    """Versão pública da ficha: N* = N*_Obs e sem campos citando L2."""
     g = json.loads(json.dumps(f))
-    g.pop("n_star", None)
-    g["n_star_pendente"] = "N*_Obs (PQDF-N*) ainda não recalculado; N* consolidado do pipeline retido."
+    g["n_star_obs"] = n_star_obs(f["iso"])
     for bloco in ("cobertura", "demografia", "consumo", "multiplicadores", "valorizacao"):
         for k, reg in g[bloco].items():
             if reg.get("nivel") == "L2":
@@ -638,7 +646,7 @@ def main():
         "contagens": {"paises": len(fichas), "evidencias": contagem(evid), "instrumentos": contagem(instr),
                       "ids_citados": len(ids_cit), "ids_citados_sem_registro_em_P1": len(sem_reg), "fontes": {k: sum(1 for f in fontes if f["url_status"] == k) for k in ("registrado", "a_registrar", "nao_aplicavel")}},
         "filtro": __doc__.split("Regras do filtro")[1].strip(),
-        "avisos": avisos + ["Termos: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores); a tese V1_1 ainda usa Legatários."],
+        "avisos": avisos + ["Termos: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores)."],
         "publicacao": "Nada deste conjunto foi publicado. Uso interno até a fase 1 e a decisão do autor.",
         "autoria": "Itiberê L. G. C. Muarrek (pesquisa independente; AINU.Systems / Narayama)",
     }

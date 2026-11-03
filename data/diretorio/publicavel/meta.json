@@ -35,9 +35,9 @@
    "nao_aplicavel": 59
   }
  },
- "filtro": "(documentadas também em meta.json):\n  - instrumentos: publicável só com fonte L1; \"misto\" (L1 + L2) sai como\n    \"publicavel_com_ressalva\"; L2, \"A confirmar\" e indeterminado ficam retidos.\n  - evidências (P1_Disponibilidade): publicáveis A, L e P; B é retido (página\n    não aberta); N vai para as lacunas.\n  - campos das fichas: retidos se o texto cita nível L2.\n  - N*: retido do conjunto público enquanto o N*_Obs (PQDF-N*) não for\n    recalculado; hoje a planilha só tem o N* consolidado do pipeline (v9.0).\n  - auditoria interna (Auditoria_Pendencias): só no conjunto privado.",
+ "filtro": "(documentadas também em meta.json):\n  - instrumentos: publicável só com fonte L1; \"misto\" (L1 + L2) sai como\n    \"publicavel_com_ressalva\"; L2, \"A confirmar\" e indeterminado ficam retidos.\n  - evidências (P1_Disponibilidade): publicáveis A, L e P; B é retido (página\n    não aberta); N vai para as lacunas.\n  - campos das fichas: retidos se o texto cita nível L2.\n  - N*: as fichas públicas trazem só o N*_Obs (PQDF-N*), lido de data/processed/n_index_2024.csv;\n    os valores de N* da planilha não são exportados.\n  - auditoria interna (Auditoria_Pendencias): só no conjunto privado.",
  "avisos": [
-  "Termos: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores); a tese V1_1 ainda usa Legatários."
+  "Termos: Descendentes (Prometidos), Estruturadores, Ascendentes (Legadores)."
  ],
  "publicacao": "Nada deste conjunto foi publicado. Uso interno até a fase 1 e a decisão do autor.",
  "autoria": "Itiberê L. G. C. Muarrek (pesquisa independente; AINU.Systems / Narayama)",

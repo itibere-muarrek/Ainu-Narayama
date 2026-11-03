@@ -44,7 +44,7 @@ from src.config import (
 from src.indices import (
     calcular_fator_geracional,
     calcular_n_base,
-    calcular_ngii_puro,
+    calcular_ngii_obs,
     classificar_zona_5,
     normalizar_n_base,
 )
@@ -238,7 +238,7 @@ def projetar(
 def n_estrela_serie(res: Resultado, composicao: Optional[dict] = None) -> dict:
     """Série anual do N* e seus componentes para o resultado de `projetar`.
 
-    Valor observado (PQDF-N*, camada A): sem ajustes de falseabilidade — o N*
+    Valor observado (PQDF-N*, camada A): sem ajustes — o N*
     da trajetória é o N*_Obs. Fator_Geracional(t) = TFR(t)/TFR(t-25): usa a TFR da ONU para
     anos < 2024 e a do cenário a partir de 2024.
     """
@@ -251,7 +251,7 @@ def n_estrela_serie(res: Resultado, composicao: Optional[dict] = None) -> dict:
     pop_topo = tot[topo_min:, :].sum(axis=0) / 1000.0
     n_est, n_base_l, ngii_b, fg_l = [], [], [], []
     for k, ano in enumerate(anos):
-        bruto = calcular_ngii_puro(pop_base[k], pop_topo[k], res.nascimentos[k] / 1000.0, res.obitos[k] / 1000.0)
+        bruto = calcular_ngii_obs(pop_base[k], pop_topo[k], res.nascimentos[k] / 1000.0, res.obitos[k] / 1000.0)
         ano_ant = ano - CICLO
         tfr_ant = res.tfr[ano_ant - anos[0]] if ano_ant >= anos[0] else tfr_historico(res.pais, ano_ant)
         fg = calcular_fator_geracional(res.tfr[k], tfr_ant)

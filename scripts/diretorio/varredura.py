@@ -58,7 +58,7 @@ for arq in sorted(PUB.glob("*.json")):
 paises = ler(PUB / "paises.json")
 for p in paises:
     if "n_star" in p:
-        erro(f"{p['iso']}: N* consolidado na ficha publicável")
+        erro(f"{p['iso']}: campo n_star (N* antigo) na ficha publicável")
     for bloco in ("cobertura", "demografia", "consumo", "multiplicadores", "valorizacao"):
         for k, reg in p[bloco].items():
             if reg.get("nivel") == "L2" and not reg.get("retido"):

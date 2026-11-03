@@ -2,7 +2,7 @@
 Configurações centrais do projeto AINU.Systems.
 
 Contém o cadastro dos 28 países da amostra, os limiares do Índice de Narayama Sistêmico (N*), a composição de perfis
-estruturais, os ajustes da calibração histórica do autor (usados só nos cenários e em N*_cal) e os caminhos de dados.
+estruturais, os ajustes dos cenários PQDF-N* (usados só nos cenários unitários) e os caminhos de dados.
 
 Fonte: pesquisa independente "Do Dilema de Narayama ao Oicoceno Civilizacional" (V1_1).
 """
@@ -69,7 +69,7 @@ LIMIARES_SIMPLES = {
 LIMIAR_PEEC_TFR = 2.8  # diagnosticado por TFR, não por N*
 
 # Constantes equivalentes a LIMIARES_SIMPLES, mantidas porque
-# src/indices.py e src/falseability.py já as importam por nome.
+# src/indices.py já as importa por nome.
 LIMIAR_EXPANSAO_FORTE = LIMIARES_SIMPLES["expansao_forte"]
 LIMIAR_PEA_INFERIOR = LIMIARES_SIMPLES["pea"]
 LIMIAR_TENSAO_INFERIOR = LIMIARES_SIMPLES["pec"]
@@ -132,7 +132,7 @@ FAROL_INTERPRETACAO = {
 }
 
 # Constantes equivalentes a FATOR_ALOCATIVO_LIMIARES, mantidas porque
-# src/indices.py e src/falseability.py já as importam por nome.
+# src/indices.py já as importa por nome.
 FATOR_ALOCATIVO_SUPERIOR = FATOR_ALOCATIVO_LIMIARES["superior"]
 FATOR_ALOCATIVO_INFERIOR = FATOR_ALOCATIVO_LIMIARES["inferior"]
 
@@ -154,7 +154,7 @@ FORMULAS = {
 # Faixas de Pop_Base/Pop_Topo por perfil: Tabela 14 (5 níveis) para todos os
 # 28 países, calibrando os cortes etários por perfil individualmente
 # em vez da faixa binária da Seção V.III (A/B vs. C/D/E). A fórmula
-# do NGII_puro usa a versão de 2 componentes do Anexo 1 (2026-07-02)
+# do NGII_Obs usa a versão de 2 componentes do Anexo 1 (2026-07-02)
 # — o terceiro fator de escolaridade do Capítulo 5 continua removido.
 #
 # pop_base_max: idade máxima da coorte formadora (Prometidos/Ativo Primário)
@@ -310,12 +310,10 @@ PAISES = {
 }
 
 # ---------------------------------------------------------------------------
-# Ajustes da calibração histórica do autor (4 ajustes multiplicativos)
+# Ajustes dos cenários PQDF-N* (4 ajustes multiplicativos)
 # ---------------------------------------------------------------------------
-# Valores por país fornecidos pelo autor, sem fonte automatizável. NÃO entram no valor publicado (N*_Obs): servem aos cenários
-# unitários (n_estrela_mig/ine/pol/sub) e à calibração combinada (*_cal) — ver ajustes_da_cadeia e docs/definitions.md, seção 6.
-#
-#   NGII_cal = NGII_Obs × (1-migratorio) × (1-inercia) × (1-politicas) × (1-subregistro)
+# Valores por país fornecidos pelo autor, sem fonte automatizável. NÃO entram no valor publicado (N*_Obs): servem só aos
+# cenários unitários (n_estrela_mig/ine/pol/sub) — ver docs/definitions.md, seção 6.
 
 AJUSTES_FALSEABILIDADE_POR_PAIS = {
     "SAU": {"migratorio": 0.22, "inercia": 0.12, "politicas": 0.12, "subregistro": 0.06},
@@ -348,29 +346,14 @@ AJUSTES_FALSEABILIDADE_POR_PAIS = {
     "JPN": {"migratorio": 0.08, "inercia": 0.18, "politicas": 0.04, "subregistro": 0.13},
 }
 
-# Não há faixa de aceitação para a redução total (PQDF-N*): aqui só se valida o domínio [0, 1) e se registra a redução composta.
-REDUCAO_TOTAL_CAL_POR_PAIS: dict[str, float] = {}
 for _codigo, _ajustes in AJUSTES_FALSEABILIDADE_POR_PAIS.items():
     assert all(0 <= v < 1 for v in _ajustes.values()), f"ajuste fora de [0,1) em {_codigo}: {_ajustes}"
-    REDUCAO_TOTAL_CAL_POR_PAIS[_codigo] = 1 - (
-        (1 - _ajustes["migratorio"])
-        * (1 - _ajustes["inercia"])
-        * (1 - _ajustes["politicas"])
-        * (1 - _ajustes["subregistro"])
-    )
 del _codigo, _ajustes
 
 # PQDF-N* (EcoPol V1_1, Anexo 9, camada A): o N* publicado é o N*_Obs, calculado das fontes oficiais sem
-# nenhum ajuste contrafactual: N*_Obs = √(NGII_Obs × F_Geracional), com NGII_Obs = NGII_Bruto. Os 4 ajustes
-# acima entram só como CENÁRIOS separados (N*_k = √(NGII_Obs × (1−a_k) × F_Geracional)) e como calibração
-# histórica combinada (colunas *_cal), nunca como valor publicado.
-AJUSTES_NULOS = {"migratorio": 0.0, "inercia": 0.0, "politicas": 0.0, "subregistro": 0.0}
+# nenhum ajuste contrafactual: N*_Obs = √(NGII_Obs × F_Geracional). Os 4 ajustes acima entram só como CENÁRIOS
+# separados: N*_k = √(NGII_Obs × (1−a_k) × F_Geracional).
 CENARIOS_PQDF = {"mig": "migratorio", "ine": "inercia", "pol": "politicas", "sub": "subregistro"}
-
-
-def ajustes_da_cadeia(pais: str) -> dict:
-    """Ajustes aplicados ao valor PUBLICADO (N*_Obs): nenhum. A calibração histórica fica em *_cal."""
-    return AJUSTES_NULOS
 
 # ---------------------------------------------------------------------------
 # Plataformas (Anexo 14 — Glossário Técnico, "AINU")
