@@ -122,40 +122,49 @@ ITENS = {
     },
     "narayama-live": {
         "pt": [
+            "Costa Rica incluída no painel (agora 12 países): N*_Obs 2024 de 1,32, em equilíbrio.",
             "Coreia do Sul: perfil estrutural revisto de C80/D20 para C50/D50 (regra de TFT por fonte); N*_Obs 2024 de 0,456 para 0,484, ainda em PEC. Os demais países ficam como estavam.",
-            "Costa Rica e Paraguai entraram no ainu.systems (fora deste painel de 11 países).",
+            "Paraguai entrou no ainu.systems (fora deste painel).",
         ],
         "en": [
+            "Costa Rica added to the panel (now 12 countries): 2024 N*_Obs of 1.32, in the equilibrium zone.",
             "South Korea: structural profile revised from C80/D20 to C50/D50 (fertility-by-source rule); 2024 N*_Obs from 0.456 to 0.484, still PEC. The other countries are unchanged.",
-            "Costa Rica and Paraguay were added to ainu.systems (outside this 11-country panel).",
+            "Paraguay was added to ainu.systems (outside this panel).",
         ],
         "es": [
+            "Costa Rica incluida en el panel (ahora 12 países): N*_Obs 2024 de 1,32, en equilibrio.",
             "Corea del Sur: perfil estructural revisado de C80/D20 a C50/D50 (regla de TFR por fuente); N*_Obs 2024 de 0,456 a 0,484, aún PEC. Los demás países no cambian.",
-            "Costa Rica y Paraguay se añadieron a ainu.systems (fuera de este panel de 11 países).",
+            "Paraguay se añadió a ainu.systems (fuera de este panel).",
         ],
         "fr": [
+            "Costa Rica ajouté au panneau (désormais 12 pays) : N*_Obs 2024 de 1,32, en zone d’équilibre.",
             "Corée du Sud : profil structurel révisé de C80/D20 à C50/D50 (règle de TFR par source) ; N*_Obs 2024 de 0,456 à 0,484, toujours PEC. Les autres pays sont inchangés.",
-            "Le Costa Rica et le Paraguay ont été ajoutés à ainu.systems (hors de ce panneau de 11 pays).",
+            "Le Paraguay a été ajouté à ainu.systems (hors de ce panneau).",
         ],
         "ko": [
+            "코스타리카가 패널에 추가되었습니다(이제 12개국): 2024년 N*_Obs 1.32, 균형 구간.",
             "한국: 구조 프로파일을 C80/D20에서 C50/D50으로 수정(출처별 TFR 규칙); 2024년 N*_Obs 0.456 → 0.484, 여전히 PEC. 다른 국가는 그대로입니다.",
-            "코스타리카와 파라과이는 ainu.systems에 추가되었습니다(이 11개국 패널에는 포함되지 않음).",
+            "파라과이는 ainu.systems에 추가되었습니다(이 패널에는 포함되지 않음).",
         ],
         "it": [
+            "Costa Rica aggiunta al pannello (ora 12 paesi): N*_Obs 2024 di 1,32, in zona di equilibrio.",
             "Corea del Sud: profilo strutturale rivisto da C80/D20 a C50/D50 (regola del TFR per fonte); N*_Obs 2024 da 0,456 a 0,484, ancora PEC. Gli altri paesi restano invariati.",
-            "Costa Rica e Paraguay sono stati aggiunti a ainu.systems (fuori da questo pannello di 11 paesi).",
+            "Il Paraguay è stato aggiunto a ainu.systems (fuori da questo pannello).",
         ],
         "zh": [
+            "哥斯达黎加已加入面板（现为 12 个国家）：2024 年 N*_Obs 为 1.32，处于均衡区。",
             "韩国：结构类型由 C80/D20 修订为 C50/D50（分来源生育率规则）；2024 年 N*_Obs 由 0.456 变为 0.484，仍为 PEC。其他国家不变。",
-            "哥斯达黎加和巴拉圭已加入 ainu.systems（不在本页的 11 国面板内）。",
+            "巴拉圭已加入 ainu.systems（不在此面板内）。",
         ],
         "ja": [
+            "コスタリカをパネルに追加（12か国に）：2024年のN*_Obsは1.32で、均衡ゾーン。",
             "韓国：構造プロファイルをC80/D20からC50/D50に見直し（出典別TFR規則）。2024年のN*_Obsは0.456から0.484で、PECのまま。他の国は変更なし。",
-            "コスタリカとパラグアイは ainu.systems に追加されました（この11か国のパネルの対象外）。",
+            "パラグアイはainu.systemsに追加されました（このパネルには含まれません）。",
         ],
         "fi": [
+            "Costa Rica lisätty paneeliin (nyt 12 maata): N*_Obs 2024 1,32, tasapainovyöhykkeellä.",
             "Etelä-Korea: rakenneprofiili tarkistettu C80/D20:sta C50/D50:ksi (lähdekohtainen TFR-sääntö); N*_Obs 2024 0,456 → 0,484, edelleen PEC. Muut maat ennallaan.",
-            "Costa Rica ja Paraguay lisättiin ainu.systems-sivustoon (tämän 11 maan paneelin ulkopuolella).",
+            "Paraguay lisättiin ainu.systems-sivustoon (tämän paneelin ulkopuolella).",
         ],
     },
 }

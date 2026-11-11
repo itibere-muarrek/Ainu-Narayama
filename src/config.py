@@ -395,6 +395,10 @@ PAISES_DESTAQUE_NARAYAMA_LIVE = ["ARG", "BRA", "CHN", "IND", "KOR", "USA", "ITA"
 # México (1,67, Tensão Populacional), Nigéria (2,58, PEEC).
 PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE = ["FRA", "MEX", "NGA"]
 
+# Acrescentado ao painel do narayama.live em 2026-11-11 a pedido do autor (12 países no total). Fica numa lista à parte para
+# não alterar os "mesmos 11 países" do panorama do ainu.systems (test_projecao.py).
+PAISES_ADICIONAIS_NARAYAMA_LIVE = ["CRI"]
+
 # ---------------------------------------------------------------------------
 # Código DDI (discagem internacional) — Tabela Geracional (Seção 9-A.7)
 # ---------------------------------------------------------------------------

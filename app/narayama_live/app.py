@@ -1,7 +1,7 @@
 """
 narayama.live — interface pública e minimalista do Índice de Narayama Sistêmico.
 
-Mostra os mesmos 11 países do ainu.systems (8 destaque: Argentina, Brasil, China, Coreia do Sul, EUA, Índia, Itália, Japão; mais
+Mostra os 11 países do ainu.systems mais a Costa Rica (12 no total) (8 destaque: Argentina, Brasil, China, Coreia do Sul, EUA, Índia, Itália, Japão; mais
 França, México e Nigéria, marcados "exemplo", que cobrem as 5 zonas). Análise técnica dos 30 países: app/ainu_systems/app.py.
 
 Fonte de dados: data/processed/n_index_2024.csv (colunas codigo, n_base, n_estrela, farol, status). O N* mostrado é o N*_Obs
@@ -32,6 +32,7 @@ from src.config import (
     DATA_RAW_DIR,
     LIMIARES_5_ZONAS_NORMALIZADOS,
     PAISES,
+    PAISES_ADICIONAIS_NARAYAMA_LIVE,
     PAISES_DESTAQUE_NARAYAMA_LIVE,
     PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE,
 )
@@ -112,13 +113,13 @@ with st.expander(t("como_ler_nstar_expander_label", lang)):
 @st.cache_data
 def carregar_destaques() -> pd.DataFrame:
     """Carrega o snapshot 2024 do N*: os 8 países destaque + 3 exemplos
-    pedagógicos (ver docstring do módulo) — 11 países no total."""
+    pedagógicos (ver docstring do módulo) + Costa Rica (2026-11-11) — 12 países no total."""
     caminho = DATA_PROCESSED_DIR / "n_index_2024.csv"
     if not caminho.exists():
         return pd.DataFrame()
 
     df = pd.read_csv(caminho)
-    _codigos = PAISES_DESTAQUE_NARAYAMA_LIVE + PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE
+    _codigos = PAISES_DESTAQUE_NARAYAMA_LIVE + PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE + PAISES_ADICIONAIS_NARAYAMA_LIVE
     df = df[df["codigo"].isin(_codigos)].copy()
     df["eh_exemplo"] = df["codigo"].isin(PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE)
 
@@ -248,7 +249,7 @@ if {"status", "n_estrela", "codigo", "nome", "populacao"}.issubset(df.columns):
 
 st.header(t("n_star_header_destaque", lang))
 
-# Os mesmos 11 países do ainu.systems (8 destaque + 3 exemplos pedagógicos, que ganham a tag "exemplo" no nome).
+# Os 11 países do ainu.systems mais a Costa Rica (8 destaque + 3 exemplos pedagógicos, que ganham a tag "exemplo" no nome).
 _df_destaque_oficial = df.copy()
 if "eh_exemplo" in _df_destaque_oficial.columns:
     _tag = t("exemplo_pedagogico_tag", lang)
