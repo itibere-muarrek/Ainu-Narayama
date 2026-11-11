@@ -66,7 +66,7 @@ simulação a composição fica **fixa** mesmo quando a TFR muda muito.
 ## Dados e validação
 
 - `scripts/build_projecao_inputs.py` → `data/processed/projecao_inputs.npz`
-  (28 países, ~5 MB, versionado). Lê os dumps da ONU em `data/raw/_cache`:
+  (30 países, ~5 MB, versionado). Lê os dumps da ONU em `data/raw/_cache`:
   `proj.csv.gz` (população por idade), `deaths_proj.csv.gz` (óbitos por idade),
   `fertility_age5.csv.gz` (fecundidade por idade), `demographic_indicators.csv.gz`.
 - `scripts/validar_projecao.py` → `docs/validacao_projecao.md` (relatório) e
@@ -83,8 +83,8 @@ simulação a composição fica **fixa** mesmo quando a TFR muda muito.
   números publicados e é decisão do autor.
 - `python test_projecao.py` — testes que rodam só com o repositório.
 
-Ampliar de 11 para os 28 países: editar `PAISES_SIMULACAO` na página (os
-insumos já cobrem os 28).
+A página já mostra os 11 países do panorama mais Costa Rica e Paraguai. Ampliar para os 30: editar
+`PAISES_SIMULACAO` na página (os insumos já cobrem os 30).
 
 ## Acesso (beta: Visitor1..Visitor6)
 

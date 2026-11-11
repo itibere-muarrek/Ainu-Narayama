@@ -16,7 +16,7 @@ GitHub (código + dados pequenos)
    ▼
 Render (build + hospedagem, redeploy automático)
    │
-   ├── ainu-systems  → ainu.systems     (plataforma restrita, 28 países)
+   ├── ainu-systems  → ainu.systems     (plataforma restrita, 30 países)
    └── narayama-live → narayama.live    (plataforma pública, 8 países)
         │
         └── DNS gerenciado na Namecheap
@@ -29,7 +29,7 @@ Render (build + hospedagem, redeploy automático)
 | Repositório | `github.com/itibere-muarrek/Ainu-Narayama` |
 | Branch de produção | `main` |
 | Commit atual | `26a33b5` |
-| CI | `.github/workflows/ci.yml` — roda a cada push/PR em `main`: instala dependências, valida os 28 países (`config.py` ↔ `paises_perfil.csv`), roda `test_calculo_brasil.py`. Não faz deploy (Render já redesploya sozinho). |
+| CI | `.github/workflows/ci.yml` — roda a cada push/PR em `main`: instala dependências, valida os 30 países (`config.py` ↔ `paises_perfil.csv`), roda `test_calculo_brasil.py`. Não faz deploy (Render já redesploya sozinho). |
 | Bot de coleta de dados | `.github/workflows/atualizar_dados.yml` (novo, 2026-07-13) — cron mensal (dia 1, 03:00 UTC) + disparo manual (`workflow_dispatch`). Roda `scripts/build_un_wpp_raw.py` e `scripts/build_migracao_raw.py`; **só abre um Pull Request se algo mudou** — nunca commita direto em `main`, nunca redesploya sozinho. Revisão humana continua obrigatória antes do merge. |
 
 Não há workflow de deploy no GitHub Actions — nem Render nem (se algum dia
@@ -129,20 +129,20 @@ usado tanto localmente quanto pelo `buildCommand` do Render.
 ```
 Ainu.Narayama/
 ├── src/                        # motor de cálculo (sem dependência de Streamlit)
-│   ├── config.py                 # 28 países, limiares, faixas etárias por perfil
+│   ├── config.py                 # 30 países, limiares, faixas etárias por perfil
 │   ├── data_loader.py             # leitura/validação de CSVs brutos
 │   ├── data_pipeline.py           # orquestra o cálculo de N* (Fase 2a: só UN WPP)
 │   └── indices.py                 # fórmulas: NGII, Fator_Geracional, N*, Fator_Alocativo
 ├── app/
-│   ├── ainu_systems/app.py      # plataforma restrita (28 países, gate de senha)
+│   ├── ainu_systems/app.py      # plataforma restrita (30 países, gate de senha)
 │   ├── narayama_live/app.py     # plataforma pública (8 países destaque)
 │   └── requirements.txt
 ├── data/
-│   ├── raw/un_wpp.csv           # painel real UN WPP (28 países, 1999+2024), commitado
+│   ├── raw/un_wpp.csv           # painel real UN WPP (30 países, 1999+2024), commitado
 │   └── processed/n_index_2024.csv  # saída do pipeline, commitado
 ├── docs/
 │   ├── definitions.md           # fórmulas, decisões, inconsistências da tese, roadmap
-│   ├── paises_perfil.csv        # referência dos 28 países (espelha src/config.py)
+│   ├── paises_perfil.csv        # referência dos 30 países (espelha src/config.py)
 │   └── infraestrutura.md        # este documento
 ├── test_calculo_brasil.py       # script de sanidade manual
 ├── render.yaml                  # Blueprint dos 2 serviços
@@ -157,8 +157,8 @@ vazios.
 
 | Fonte | Status | Uso |
 |---|---|---|
-| UN World Population Prospects 2024 | ✅ Integrada, dados reais (28 países, idade simples 1999+2024) | NGII_Obs, Fator_Geracional |
-| OECD Social Expenditure Database | ⏳ Planejada (Fase 2b) | Fator_Alocativo/farol — cobertura parcial (só ~15 dos 28 países são OCDE) |
+| UN World Population Prospects 2024 | ✅ Integrada, dados reais (30 países, idade simples 1999+2024) | NGII_Obs, Fator_Geracional |
+| OECD Social Expenditure Database | ⏳ Planejada (Fase 2b) | Fator_Alocativo/farol — cobertura parcial (só ~15 dos 30 países são OCDE) |
 | National Transfer Accounts (NTA) | ⏳ Planejada (Fase 2b) | Fator_Alocativo (fonte alternativa/complementar à OECD) |
 | UNESCO / World Bank Education Stats | ⏳ Planejada (Fase 2b) | Versão expandida do NGII (fator de escolaridade) |
 

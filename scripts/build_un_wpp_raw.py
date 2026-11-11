@@ -80,7 +80,7 @@ def _baixar_se_necessario(nome: str, url: str) -> Path:
 
 
 def _extrair_populacao_por_idade(caminho_gz: Path, ano: int) -> pd.DataFrame:
-    """Lê o CSV gzipado em chunks, filtrando só os 28 países e o ano alvo."""
+    """Lê o CSV gzipado em chunks, filtrando só os 30 países e o ano alvo."""
     partes = []
     with gzip.open(caminho_gz, "rt", encoding="utf-8-sig") as f:
         for chunk in pd.read_csv(f, usecols=USECOLS, chunksize=500_000, low_memory=False):

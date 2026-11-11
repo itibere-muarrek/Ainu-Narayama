@@ -1,5 +1,5 @@
 """
-Orquestração do cálculo de N* para os 28 países.
+Orquestração do cálculo de N* para os 30 países.
 
 Lê data/raw/un_wpp.csv (via src.data_loader) e grava data/processed/n_index_{ano}.csv. Valor publicado = N*_Obs (PQDF-N*,
 camada A): NGII_Obs = (Pop_Base/Pop_Topo) × (Nascimentos/Mortes), N_Base = NGII_Obs × Fator_Geracional, N* = √N_Base, sem
@@ -52,7 +52,7 @@ def _linha_n(linha, tfr_ano_base, codigo: str) -> dict:
     )
     fg = calcular_fator_geracional(tfr_atual=linha["tfr"], tfr_25_anos_atras=tfr_ano_base)
     n_base = calcular_n_base(ngii_obs, fg)
-    ajustes = AJUSTES_FALSEABILIDADE_POR_PAIS[codigo]
+    ajustes = AJUSTES_FALSEABILIDADE_POR_PAIS.get(codigo)  # None => países acrescentados depois (CRI, PRY)
     out = {
         "codigo": codigo,
         "n_base": _arred(n_base),
@@ -62,6 +62,9 @@ def _linha_n(linha, tfr_ano_base, codigo: str) -> dict:
         "status": classificar_zona_5(n_base),
     }
     for sufixo, chave in CENARIOS_PQDF.items():
+        if ajustes is None:
+            out[f"n_estrela_{sufixo}"] = None
+            continue
         nb_k = calcular_n_base(ngii_obs * (1 - ajustes[chave]) if ngii_obs is not None else None, fg)
         out[f"n_estrela_{sufixo}"] = _arred(normalizar_n_base(nb_k))
     return out
@@ -69,7 +72,7 @@ def _linha_n(linha, tfr_ano_base, codigo: str) -> dict:
 
 def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> pd.DataFrame:
     """
-    Calcula o N*_Obs (NGII_Obs x Fator_Geracional, raiz quadrada) para os 28
+    Calcula o N*_Obs (NGII_Obs x Fator_Geracional, raiz quadrada) para os 30
     países da amostra, usando dados da UN WPP para `ano` e `ano - 25`.
 
     Args:
@@ -98,9 +101,6 @@ def executar_pipeline_completo(ano: int, caminho_un: Optional[Path] = None) -> p
     for codigo in PAISES:
         if codigo not in df_ano.index or codigo not in df_base.index:
             continue
-        if codigo not in AJUSTES_FALSEABILIDADE_POR_PAIS:
-            continue
-
         linha = df_ano.loc[codigo]
 
         linha_n = _linha_n(linha, df_base.loc[codigo, "tfr"], codigo)
@@ -160,9 +160,6 @@ def executar_pipeline_historico(
         for codigo in PAISES:
             if codigo not in df_ano.index or codigo not in df_base.index:
                 continue
-            if codigo not in AJUSTES_FALSEABILIDADE_POR_PAIS:
-                continue
-
             linha = df_ano.loc[codigo]
             if pd.isna(linha["pop_base"]) or pd.isna(linha["pop_topo"]):
                 continue

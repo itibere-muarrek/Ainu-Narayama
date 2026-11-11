@@ -1,6 +1,6 @@
 # AINU.Systems — Observatório de Sustentabilidade Intergeracional
 
-Cálculo do Índice de Narayama Sistêmico (N\*) para 28 economias, projeção de população por coorte e o Diretório
+Cálculo do Índice de Narayama Sistêmico (N\*) para 30 economias, projeção de população por coorte e o Diretório
 "Contas Nacionais por Nascimentos" (dados levantados e testados, e simulações como suposições para pesquisadores).
 
 Implementação computacional da pesquisa independente "Do Dilema de Narayama ao Oicoceno Civilizacional" (V1_1,
@@ -19,7 +19,7 @@ Anexo 9 — PQDF-N\*). Definições: [`docs/definitions.md`](docs/definitions.md
 
 | Plataforma | Acesso | Conteúdo |
 |---|---|---|
-| `ainu.systems` (landing) e app `ainu-systems` | landing pública; app com login individual | 28 países, Tabela Geracional, Simulação, Consumo e Dividendo, Diretório |
+| `ainu.systems` (landing) e app `ainu-systems` | landing pública; app com login individual | 30 países, Tabela Geracional, Simulação, Consumo e Dividendo, Diretório |
 | `narayama.live` (landing) e app `narayama-live` | público | países destaque (8 + 3 de exemplo) |
 
 Interface em 9 idiomas (PT e EN são texto-fonte; ES, FR, IT, KO, JA, ZH e FI são traduções por IA, sem revisão nativa).

@@ -5,6 +5,7 @@ BRA,2.0387,1.4278,,2.9493,0.6913,,Tensão Populacional,211.999,1.3394,1.3164,1.3
 CHL,0.9546,0.977,,1.7372,0.5495,,Ponto de Equilíbrio Autossustentável (PEA),19.765,0.9113,0.9269,0.9422,0.9523
 CHN,0.5428,0.7368,,0.82,0.662,,Tensão Acelerada,1419.321,0.7028,0.6833,0.6912,0.7143
 COD,21.0049,4.5831,,23.5033,0.8937,,Saturação por Excesso de Contingente (PEEC),109.276,4.3479,4.2005,4.4671,4.0217
+CRI,1.5586,1.2484,,2.9331,0.5314,,Ponto de Equilíbrio Autossustentável (PEA),5.13,,,,
 DEU,0.5875,0.7665,,0.5559,1.0567,,Tensão Acelerada,84.552,0.7108,0.719,0.747,0.7431
 EGY,10.6494,3.2633,,14.0135,0.7599,,Saturação por Excesso de Contingente (PEEC),116.538,3.1301,3.0263,3.113,3.0786
 ETH,15.9706,3.9963,,27.4569,0.5817,,Saturação por Excesso de Contingente (PEEC),132.06,3.7701,3.6188,3.8539,3.6408
@@ -20,6 +21,7 @@ MAR,4.1595,2.0395,,5.4304,0.766,,Saturação por Excesso de Contingente (PEEC),3
 MEX,4.2188,2.054,,6.1623,0.6846,,Saturação por Excesso de Contingente (PEEC),130.861,1.9048,1.9377,1.9914,1.9701
 NGA,11.2989,3.3614,,15.6827,0.7205,,Saturação por Excesso de Contingente (PEEC),232.68,3.2066,3.099,3.259,3.0252
 POL,0.5369,0.7328,,0.5673,0.9464,,Tensão Acelerada,38.539,0.7028,0.6874,0.7142,0.7104
+PRY,5.7603,2.4001,,8.7509,0.6582,,Saturação por Excesso de Contingente (PEEC),6.929,,,,
 RUS,0.9566,0.978,,0.7767,1.2315,,Ponto de Equilíbrio Autossustentável (PEA),144.82,0.9175,0.907,0.9483,0.933
 SAU,16.3986,4.0495,,30.9364,0.5301,,Saturação por Excesso de Contingente (PEEC),33.963,3.5764,3.7988,3.7988,3.9262
 SWE,0.924,0.9613,,0.9672,0.9554,,Ponto de Equilíbrio Autossustentável (PEA),10.607,0.849,0.927,0.9369,0.9467

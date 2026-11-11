@@ -33,10 +33,10 @@ lang = seletor_idioma()
 exigir_login(lambda k: ts(k, lang))
 
 HORIZONTE = 2074
-# 11 países do panorama (8 destaque + 3 exemplos). Ampliar para os 28 é só
+# 11 países do panorama (8 destaque + 3 exemplos). Ampliar para os 30 é só
 # editar esta lista: os insumos de data/processed/projecao_inputs.npz já cobrem todos.
 PAISES_SIMULACAO = sorted(
-    PAISES_DESTAQUE_NARAYAMA_LIVE + PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE,
+    PAISES_DESTAQUE_NARAYAMA_LIVE + PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE + ["CRI", "PRY"],  # CRI e PRY: 2026-11-10
     key=lambda c: nome_pais(c, lang),
 )
 LIM_PEA = LIMIARES_5_ZONAS_NORMALIZADOS["tensao_acelerada"]  # 0,90: piso do PEA

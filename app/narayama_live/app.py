@@ -2,7 +2,7 @@
 narayama.live — interface pública e minimalista do Índice de Narayama Sistêmico.
 
 Mostra os mesmos 11 países do ainu.systems (8 destaque: Argentina, Brasil, China, Coreia do Sul, EUA, Índia, Itália, Japão; mais
-França, México e Nigéria, marcados "exemplo", que cobrem as 5 zonas). Análise técnica dos 28 países: app/ainu_systems/app.py.
+França, México e Nigéria, marcados "exemplo", que cobrem as 5 zonas). Análise técnica dos 30 países: app/ainu_systems/app.py.
 
 Fonte de dados: data/processed/n_index_2024.csv (colunas codigo, n_base, n_estrela, farol, status). O N* mostrado é o N*_Obs
 (`n_estrela` = √n_base, valor observado, sem ajustes — ver src.indices.normalizar_n_base e docs/definitions.md). As zonas são

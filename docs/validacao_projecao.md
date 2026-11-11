@@ -27,6 +27,8 @@ c(t) = nascimentos oficiais / (ASFR da ONU × mulheres da ONU). Perto de 1 = o m
 | FRA | 0.9996 | 1.0000 |
 | ARG | 0.9999 | 1.0000 |
 | CHL | 0.9977 | 1.0000 |
+| CRI | 0.9997 | 0.9998 |
+| PRY | 1.0008 | 1.0014 |
 | SWE | 0.9970 | 0.9994 |
 | GBR | 0.9950 | 1.0005 |
 | AUS | 0.9957 | 0.9967 |
@@ -64,6 +66,8 @@ Soma, sobre idades e sexos, do resíduo M(a,t) vs saldo migratório da ONU (milh
 | FRA | 102 | 104 | -2 |
 | ARG | 1 | 1 | 1 |
 | CHL | 20 | 20 | 0 |
+| CRI | 1 | 1 | 0 |
+| PRY | -9 | -10 | 0 |
 | SWE | 32 | 33 | -0 |
 | GBR | 219 | 221 | -2 |
 | AUS | 160 | 165 | -4 |
@@ -74,7 +78,7 @@ Soma, sobre idades e sexos, do resíduo M(a,t) vs saldo migratório da ONU (milh
 | KOR | 20 | 19 | 1 |
 | RUS | 292 | 303 | -11 |
 
-**Mediana do desvio absoluto: 3.3 mil/ano; máximo: 30 mil/ano (IND).** Antes do ajuste infantil o máximo era 124 mil/ano (NGA), concentrado na idade 1: os óbitos de idade 0 do ano-calendário incluem recém-nascidos que ainda não existiam em 1º de julho, e a coorte presente em julho enfrenta só uma fração dessa mortalidade. O resíduo é aplicado em número absoluto e igual no cenário e na base, então tende a afetar mais o nível do que a diferença entre os dois.
+**Mediana do desvio absoluto: 3.0 mil/ano; máximo: 30 mil/ano (IND).** Antes do ajuste infantil o máximo era 124 mil/ano (NGA), concentrado na idade 1: os óbitos de idade 0 do ano-calendário incluem recém-nascidos que ainda não existiam em 1º de julho, e a coorte presente em julho enfrenta só uma fração dessa mortalidade. O resíduo é aplicado em número absoluto e igual no cenário e na base, então tende a afetar mais o nível do que a diferença entre os dois.
 
 ## V3 — N* de 2024: motor vs pipeline de produção
 
@@ -138,6 +142,8 @@ Teste independente: nenhum parâmetro do motor foi ajustado a este dado.
 | FRA | 58,376 | 58,667 | +0.50% |
 | ARG | 45,272 | 45,256 | -0.03% |
 | CHL | 16,375 | 16,434 | +0.36% |
+| CRI | 4,722 | 4,723 | +0.01% |
+| PRY | 9,973 | 9,945 | -0.28% |
 | SWE | 8,954 | 9,040 | +0.97% |
 | GBR | 58,858 | 59,492 | +1.08% |
 | AUS | 25,535 | 25,820 | +1.12% |
@@ -175,6 +181,8 @@ O P_eq atual (narayama.live) usa um método mais simples: escala o total de nasc
 | FRA | 64.1 | 65.7 | +2.38% | 64.4 | +0.41% |
 | ARG | 51.3 | 52.6 | +2.61% | 51.1 | -0.38% |
 | CHL | 19.6 | 20.3 | +3.68% | 19.6 | -0.09% |
+| CRI | 5.5 | 5.7 | +3.38% | 5.5 | -0.49% |
+| PRY | 10.4 | 10.4 | +0.19% | 10.3 | -0.64% |
 | SWE | 10.0 | 10.4 | +3.37% | 10.1 | +0.85% |
 | GBR | 66.2 | 68.5 | +3.52% | 66.9 | +0.95% |
 | AUS | 28.1 | 28.9 | +2.83% | 28.4 | +0.83% |

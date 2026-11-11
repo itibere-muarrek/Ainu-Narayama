@@ -1,7 +1,7 @@
 """
 Configurações centrais do projeto AINU.Systems.
 
-Contém o cadastro dos 28 países da amostra, os limiares do Índice de Narayama Sistêmico (N*), a composição de perfis
+Contém o cadastro dos 30 países da amostra (os 28 da tese e, desde 2026-11-10, Costa Rica e Paraguai), os limiares do Índice de Narayama Sistêmico (N*), a composição de perfis
 estruturais, os ajustes dos cenários PQDF-N* (usados só nos cenários unitários) e os caminhos de dados.
 
 Fonte: pesquisa independente "Do Dilema de Narayama ao Oicoceno Civilizacional" (V1_1).
@@ -152,7 +152,7 @@ FORMULAS = {
 # Faixas etárias por Perfil Estrutural — Tabela 14 (decisão vigente)
 # ---------------------------------------------------------------------------
 # Faixas de Pop_Base/Pop_Topo por perfil: Tabela 14 (5 níveis) para todos os
-# 28 países, calibrando os cortes etários por perfil individualmente
+# 30 países, calibrando os cortes etários por perfil individualmente
 # em vez da faixa binária da Seção V.III (A/B vs. C/D/E). A fórmula
 # do NGII_Obs usa a versão de 2 componentes do Anexo 1 (2026-07-02)
 # — o terceiro fator de escolaridade do Capítulo 5 continua removido.
@@ -206,6 +206,11 @@ COMPOSICAO_PERFIL_POR_PAIS = {
     "ITA": {"C": 0.50, "D": 0.50},
     "KOR": {"C": 0.80, "D": 0.20},
     "RUS": {"C": 0.30, "D": 0.70},
+    # Acrescentados em 2026-11-10 a pedido do autor (contato com pesquisadores dos dois países). NÃO fazem parte dos 28
+    # países do Anexo 5 da tese. Composição APROVADA pelo autor em 2026-11-10: perfil único pela faixa de TFR da Tabela 14 (WPP 2024, 2024:
+    # CRI 1,32 -> C; PRY 2,42 -> B); o autor pode trocar por composição ponderada.
+    "CRI": {"C": 1.00},
+    "PRY": {"B": 1.00},
 }
 
 for _codigo, _composicao in COMPOSICAO_PERFIL_POR_PAIS.items():
@@ -247,7 +252,7 @@ def _rotulo_composicao(composicao: dict) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Cadastro dos 28 países (Anexo 5 / Seção 5.2, dados 2024)
+# Cadastro dos países (28 do Anexo 5 / Seção 5.2 + CRI e PRY, dados 2024)
 # ---------------------------------------------------------------------------
 # pop_base_min/max e pop_topo_min/max: derivados da composição do país em
 # COMPOSICAO_PERFIL_POR_PAIS via _cortes_ponderados (ver seção acima).
@@ -297,6 +302,8 @@ PAISES = {
     "FRA": _pais("França", "Europa Ocidental", "FRA"),
     "ARG": _pais("Argentina", "América do Sul", "ARG"),
     "CHL": _pais("Chile", "América do Sul", "CHL"),
+    "CRI": _pais("Costa Rica", "América do Norte", "CRI"),
+    "PRY": _pais("Paraguai", "América do Sul", "PRY"),
     "SWE": _pais("Suécia", "Europa Ocidental", "SWE"),
     "GBR": _pais("Reino Unido", "Europa Ocidental", "GBR"),
     "AUS": _pais("Austrália", "Oceania", "AUS"),
@@ -315,6 +322,8 @@ PAISES = {
 # Valores por país fornecidos pelo autor, sem fonte automatizável. NÃO entram no valor publicado (N*_Obs): servem só aos
 # cenários unitários (n_estrela_mig/ine/pol/sub) — ver docs/definitions.md, seção 6.
 
+# CRI e PRY (acrescentados em 2026-11-10) NÃO têm ajustes: os valores são fornecidos pelo autor e não há fonte
+# automatizável; sem eles os cenários unitários (n_estrela_mig/ine/pol/sub) ficam vazios, e o N*_Obs publicado não muda.
 AJUSTES_FALSEABILIDADE_POR_PAIS = {
     "SAU": {"migratorio": 0.22, "inercia": 0.12, "politicas": 0.12, "subregistro": 0.06},
     "ETH": {"migratorio": 0.11, "inercia": 0.18, "politicas": 0.07, "subregistro": 0.17},
@@ -368,7 +377,7 @@ CENARIOS_PQDF = {"mig": "migratorio", "ine": "inercia", "pol": "politicas", "sub
 # copiado do documento-fonte na data original; não é reescrita aqui.
 # ainu.systems: plataforma restrita a pesquisadores e formuladores de
 # política, com cálculos detalhados, simulações e calibração para os
-# 28 países da amostra (ver app/ainu_systems/ e app/narayama_live/).
+# 30 países da amostra (ver app/ainu_systems/ e app/narayama_live/).
 
 PAISES_DESTAQUE_NARAYAMA_LIVE = ["ARG", "BRA", "CHN", "IND", "KOR", "USA", "ITA", "JPN"]
 
@@ -396,6 +405,7 @@ CODIGO_DDI_POR_PAIS = {
     "POL": 48, "BRA": 55, "USA": 1, "CHN": 86, "FRA": 33, "ARG": 54,
     "CHL": 56, "SWE": 46, "GBR": 44, "AUS": 61, "ZAF": 27, "JPN": 81,
     "DEU": 49, "ITA": 39, "KOR": 82, "RUS": 7,
+    "CRI": 506, "PRY": 595,
 }
 
 # ---------------------------------------------------------------------------

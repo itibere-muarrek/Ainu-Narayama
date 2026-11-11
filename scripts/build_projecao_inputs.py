@@ -1,10 +1,10 @@
 """
 Constrói data/processed/projecao_inputs.npz — insumos compactos do motor de
-projeção por coorte (src/projecao.py) para os 28 países da amostra.
+projeção por coorte (src/projecao.py) para os 30 países da amostra.
 
 Por que um arquivo em data/processed (e não data/raw): data/raw/* não vai pro
 git (os dumps da UN têm ~60-300 MB), então o Render não enxerga. Este script
-filtra só os 28 países e só o que o motor usa (alguns MB), e o resultado é
+filtra só os 30 países e só o que o motor usa (alguns MB), e o resultado é
 versionado.
 
 Fontes (UN WPP 2024, variante Medium, cache em data/raw/_cache):

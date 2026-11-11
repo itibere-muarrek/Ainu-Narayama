@@ -95,7 +95,7 @@ def _baixar_se_necessario(nome: str, url: str) -> Path:
 
 
 def _extrair_populacao_por_idade(caminho_gz: Path, anos: list) -> pd.DataFrame:
-    """Lê o CSV gzipado em chunks, filtrando só os 28 países e os anos-alvo."""
+    """Lê o CSV gzipado em chunks, filtrando só os 30 países e os anos-alvo."""
     if not anos:
         return pd.DataFrame(columns=USECOLS_IDADE)
     partes = []

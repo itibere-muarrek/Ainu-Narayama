@@ -107,7 +107,7 @@ def validar_dados(df_un: pd.DataFrame, df_oecd: pd.DataFrame) -> Tuple[bool, Lis
     Valida os DataFrames UN e OECD.
 
     Verifica: (1) colunas obrigatórias presentes, (2) ausência de
-    valores nulos (NaN) nas colunas obrigatórias, (3) presença dos 28
+    valores nulos (NaN) nas colunas obrigatórias, (3) presença dos
     países da amostra (src.config.PAISES) em cada DataFrame.
 
     Args:

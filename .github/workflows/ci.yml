@@ -2,7 +2,7 @@ name: CI
 
 # Não faz deploy — Render redesploya sozinho a cada push (ver
 # render.yaml). Este workflow só valida que o código ainda importa
-# corretamente e que os dados de referência (28 países) continuam
+# corretamente e que os dados de referência (30 países) continuam
 # consistentes antes de qualquer push chegar ao Render.
 
 on:
@@ -24,14 +24,14 @@ jobs:
       - name: Instalar dependências
         run: pip install -r app/requirements.txt
 
-      - name: Checagem de regressão (28 países, config/CSV sincronizados)
+      - name: Checagem de regressão (30 países, config/CSV sincronizados)
         run: |
           python -c "
           import pandas as pd
           from src.config import PAISES
           from src.indices import calcular_ngii_obs, calcular_fator_geracional, calcular_n_base, classificar_zona_5, normalizar_n_base
 
-          assert len(PAISES) == 28, f'esperado 28 paises, encontrado {len(PAISES)}'
+          assert len(PAISES) == 30, f'esperado 30 paises (28 da tese + CRI e PRY), encontrado {len(PAISES)}'
 
           df = pd.read_csv('docs/paises_perfil.csv')
           assert set(df['codigo']) == set(PAISES.keys()), 'docs/paises_perfil.csv e src/config.py divergem'

@@ -65,7 +65,7 @@ CODIGO_ISO_NUMERICO = {
     "NGA": 566, "ETH": 231, "COD": 180, "VNM": 704, "IND": 356, "IDN": 360,
     "IRN": 364, "SAU": 682, "MAR": 504, "EGY": 818, "THA": 764, "MEX": 484,
     "POL": 616, "BRA": 76, "USA": 840, "CHN": 156, "FRA": 250, "ARG": 32,
-    "CHL": 152, "SWE": 752, "GBR": 826, "AUS": 36, "ZAF": 710, "JPN": 392,
+    "CHL": 152, "CRI": 188, "PRY": 600, "SWE": 752, "GBR": 826, "AUS": 36, "ZAF": 710, "JPN": 392,
     "DEU": 276, "ITA": 380, "KOR": 410, "RUS": 643,
 }
 

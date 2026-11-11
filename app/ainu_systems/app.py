@@ -1,7 +1,7 @@
 """
 ainu.systems — plataforma restrita a pesquisadores e formuladores de política.
 
-Cálculos detalhados e os componentes do N* (NGII_Obs, Fator_Geracional, Fator_Alocativo) para os 28 países da amostra. A versão
+Cálculos detalhados e os componentes do N* (NGII_Obs, Fator_Geracional, Fator_Alocativo) para os 30 países da amostra. A versão
 pública e minimalista está em app/narayama_live/app.py (11 países).
 
 Dados:
@@ -263,10 +263,10 @@ else:
 # -----------------------------------------------------------------------
 # Trocado de Fator_Alocativo pra Fator_Geracional em 2026-07-21: o
 # usuário reportou o gráfico "não carregando" — não era bug de
-# renderização, era fator_alocativo com 0/28 países preenchidos (NTA
+# renderização, era fator_alocativo com 0/30 países preenchidos (NTA
 # ainda não integrado, ver farol_gap_caption). Fator_Geracional é o
 # outro componente real do N_Base (N_Base = NGII_Obs × Fator_Geracional),
-# sempre disponível pros 28 países — ver src/indices.py:calcular_n_base.
+# sempre disponível pros 30 países — ver src/indices.py:calcular_n_base.
 
 st.header(t("scatter_header", lang))
 st.caption(t("scatter_caption_leitura", lang))
