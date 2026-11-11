@@ -159,7 +159,7 @@ FORMULAS = {
 #
 # pop_base_max: idade máxima da coorte formadora (Prometidos/Ativo Primário)
 # pop_topo_min: idade mínima da coorte legadora (dependente idosa)
-# Nenhum dos 28 países do Anexo 5 é classificado como Perfil E.
+# Só o Japão usa Perfil E (composição D60/E40); nenhum país é Perfil E puro.
 
 FAIXAS_ETARIAS_POR_PERFIL_TABELA14 = {
     "A": {"pop_base_max": 16, "pop_topo_min": 44, "tfr_min": 4.0, "tfr_max": None},

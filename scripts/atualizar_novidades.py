@@ -221,6 +221,13 @@ def aplicar(site: str, caminho: Path) -> None:
         s = s[: m.end()] + chaves_idioma(site, lang, ident) + s[m.end():]
 
     caminho.write_bytes(s.replace("\n", nl).encode("utf-8"))
+
+    # sitemap.xml: a data de modificação acompanha a data das novidades
+    mapa = caminho.parent / "sitemap.xml"
+    if mapa.exists():
+        x = mapa.read_bytes().decode("utf-8")
+        x = re.sub(r"<lastmod>[^<]*</lastmod>", f"<lastmod>{DATA.isoformat()}</lastmod>", x)
+        mapa.write_bytes(x.encode("utf-8"))
     print("ok", site, caminho.relative_to(RAIZ))
 
 
