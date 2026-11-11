@@ -1,4 +1,4 @@
-# Testes F1–F9 do PQDF-N* — execução de 2026-11-03
+# Testes F1–F9 do PQDF-N* — execução de 2026-11-11
 
 > Sensibilidades de F4 e leitura de F5 definidas junto com a execução, não pré-registradas: valem como diagnóstico, não como confirmação nem refutação formal. Resultados de F1–F9 não executados constam como tal.
 
@@ -18,12 +18,12 @@
 
 | Sensibilidade | Spearman | Concordância de zonas | Países que mudam de zona |
 |---|---|---|---|
-| cortes etários -1 ano | 0.999 | 71% | BRA, CHN, FRA, IRN, MAR, MEX, POL, ZAF |
-| cortes etários +1 ano | 0.999 | 96% | THA |
-| cenário migratorio (N*_mig) | 0.996 | 64% | BRA, CHN, FRA, GBR, IRN, MAR, MEX, POL, SWE, ZAF |
-| cenário inercia (N*_ine) | 0.994 | 71% | BRA, CHN, FRA, IRN, MAR, MEX, POL, ZAF |
-| cenário politicas (N*_pol) | 0.998 | 79% | BRA, CHN, FRA, IRN, MAR, MEX |
-| cenário subregistro (N*_sub) | 0.996 | 79% | BRA, FRA, IRN, MAR, MEX, ZAF |
+| cortes etários -1 ano | 0.999 | 73% | BRA, CHN, FRA, IRN, MAR, MEX, POL, ZAF |
+| cortes etários +1 ano | 0.999 | 93% | CRI, THA |
+| cenário migratorio (N*_mig) | 0.995 | 63% | BRA, CHN, CRI, FRA, GBR, IRN, MAR, MEX, POL, SWE, ZAF |
+| cenário inercia (N*_ine) | 0.994 | 70% | BRA, CHN, CRI, FRA, IRN, MAR, MEX, POL, ZAF |
+| cenário politicas (N*_pol) | 0.997 | 77% | BRA, CHN, CRI, FRA, IRN, MAR, MEX |
+| cenário subregistro (N*_sub) | 0.996 | 77% | BRA, CRI, FRA, IRN, MAR, MEX, ZAF |
 
 Decisão prevista pelo protocolo quando F4 falha: Publicar zonas como provisórias.
 
@@ -31,9 +31,9 @@ Decisão prevista pelo protocolo quando F4 falha: Publicar zonas como provisóri
 
 | Ajuste | Países que mudam de zona | Redução mediana do N* |
 |---|---|---|
-| migratorio | 10 | 5.66% |
-| inercia | 8 | 6.72% |
-| politicas | 6 | 3.05% |
-| subregistro | 6 | 3.56% |
+| migratorio | 11 | 5.66% |
+| inercia | 9 | 6.72% |
+| politicas | 7 | 3.05% |
+| subregistro | 7 | 3.56% |
 
 Motivo da indeterminação: O limiar de 'extensas' não está definido e o teste de redundância da inércia exige o estimador do ajuste (modelo com e sem o tamanho da coorte reprodutiva), que o repositório não tem: os ajustes são valores dados pelo autor, não estimados.

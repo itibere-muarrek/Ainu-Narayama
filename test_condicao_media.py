@@ -13,7 +13,7 @@ def test_cri_pry_no_cadastro_e_no_n_index():
     assert {"CRI", "PRY"} <= set(PAISES) and len(PAISES) == 30
     n = pd.read_csv(DATA_PROCESSED_DIR / "n_index_2024.csv").set_index("codigo")
     assert len(n) == 30
-    assert abs(n.loc["CRI", "n_estrela"] - 1.2484) < 1e-3 and abs(n.loc["PRY", "n_estrela"] - 2.4001) < 1e-3
+    assert abs(n.loc["CRI", "n_estrela"] - 1.3229) < 1e-3 and abs(n.loc["PRY", "n_estrela"] - 2.4001) < 1e-3
     assert pd.isna(n.loc["CRI", "n_estrela_mig"])  # sem ajustes de cenário: não inventados
 
 
@@ -51,7 +51,7 @@ def test_traducoes_da_pagina_completas():
             assert "N*" not in texto.replace("N\\*", ""), f"{chave}/{lg}: asterisco do N* sem escape"
         assert (tcm("cm_nota_idioma", lg) == "") == (lg == "pt"), lg
         assert tcm("cm_ler", lg).count("\n") == 3, f"cm_ler/{lg}: devem ser 4 itens"
-        assert "CRI = C" in tcm("cm_aviso", lg) and "2026-11-10" in tcm("cm_aviso", lg)
+        assert "CRI = C50/D50" in tcm("cm_aviso", lg) and "2026-11-10" in tcm("cm_aviso", lg)
 
 
 if __name__ == "__main__":

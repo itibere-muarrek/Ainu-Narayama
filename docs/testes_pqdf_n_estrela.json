@@ -1,5 +1,5 @@
 {
-  "data": "2026-11-03",
+  "data": "2026-11-11",
   "ano_referencia": 2024,
   "aviso": "Sensibilidades de F4 e leitura de F5 definidas junto com a execução, não pré-registradas: valem como diagnóstico, não como confirmação nem refutação formal. Resultados de F1–F9 não executados constam como tal.",
   "F1": {
@@ -16,8 +16,8 @@
     "criterio": "Spearman < 0,85 ou concordância de zonas < 80% nas sensibilidades definidas",
     "sensibilidades": {
       "cortes etários -1 ano": {
-        "spearman": 0.9989,
-        "concordancia_de_zonas": 0.7143,
+        "spearman": 0.9991,
+        "concordancia_de_zonas": 0.7333,
         "paises_que_mudam_de_zona": [
           "BRA",
           "CHN",
@@ -30,18 +30,20 @@
         ]
       },
       "cortes etários +1 ano": {
-        "spearman": 0.9989,
-        "concordancia_de_zonas": 0.9643,
+        "spearman": 0.9987,
+        "concordancia_de_zonas": 0.9333,
         "paises_que_mudam_de_zona": [
+          "CRI",
           "THA"
         ]
       },
       "cenário migratorio (N*_mig)": {
-        "spearman": 0.996,
-        "concordancia_de_zonas": 0.6429,
+        "spearman": 0.9952,
+        "concordancia_de_zonas": 0.6333,
         "paises_que_mudam_de_zona": [
           "BRA",
           "CHN",
+          "CRI",
           "FRA",
           "GBR",
           "IRN",
@@ -53,11 +55,12 @@
         ]
       },
       "cenário inercia (N*_ine)": {
-        "spearman": 0.994,
-        "concordancia_de_zonas": 0.7143,
+        "spearman": 0.9938,
+        "concordancia_de_zonas": 0.7,
         "paises_que_mudam_de_zona": [
           "BRA",
           "CHN",
+          "CRI",
           "FRA",
           "IRN",
           "MAR",
@@ -67,11 +70,12 @@
         ]
       },
       "cenário politicas (N*_pol)": {
-        "spearman": 0.9978,
-        "concordancia_de_zonas": 0.7857,
+        "spearman": 0.9973,
+        "concordancia_de_zonas": 0.7667,
         "paises_que_mudam_de_zona": [
           "BRA",
           "CHN",
+          "CRI",
           "FRA",
           "IRN",
           "MAR",
@@ -79,10 +83,11 @@
         ]
       },
       "cenário subregistro (N*_sub)": {
-        "spearman": 0.9962,
-        "concordancia_de_zonas": 0.7857,
+        "spearman": 0.9958,
+        "concordancia_de_zonas": 0.7667,
         "paises_que_mudam_de_zona": [
           "BRA",
+          "CRI",
           "FRA",
           "IRN",
           "MAR",
@@ -107,19 +112,19 @@
     "criterio": "mudanças extensas de zona, ou ajuste de inércia redundante com Pop_Base/Pop_Topo (o protocolo não fixa limiar numérico)",
     "por_ajuste_isolado": {
       "migratorio": {
-        "paises_que_mudam_de_zona": 10,
+        "paises_que_mudam_de_zona": 11,
         "reducao_mediana_do_N*_%": 5.66
       },
       "inercia": {
-        "paises_que_mudam_de_zona": 8,
+        "paises_que_mudam_de_zona": 9,
         "reducao_mediana_do_N*_%": 6.72
       },
       "politicas": {
-        "paises_que_mudam_de_zona": 6,
+        "paises_que_mudam_de_zona": 7,
         "reducao_mediana_do_N*_%": 3.05
       },
       "subregistro": {
-        "paises_que_mudam_de_zona": 6,
+        "paises_que_mudam_de_zona": 7,
         "reducao_mediana_do_N*_%": 3.56
       }
     },

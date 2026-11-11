@@ -207,9 +207,11 @@ COMPOSICAO_PERFIL_POR_PAIS = {
     "KOR": {"C": 0.80, "D": 0.20},
     "RUS": {"C": 0.30, "D": 0.70},
     # Acrescentados em 2026-11-10 a pedido do autor (contato com pesquisadores dos dois países). NÃO fazem parte dos 28
-    # países do Anexo 5 da tese. Composição APROVADA pelo autor em 2026-11-10: perfil único pela faixa de TFR da Tabela 14 (WPP 2024, 2024:
-    # CRI 1,32 -> C; PRY 2,42 -> B); o autor pode trocar por composição ponderada.
-    "CRI": {"C": 1.00},
+    # países do Anexo 5 da tese. PRY: perfil único pela faixa de TFR da Tabela 14 (WPP 2024: 2,42 -> B).
+    # CRI: 2026-11-10 entrou como C100 (WPP 2024: 1,32 -> C); em 2026-11-11 o autor trocou para C50/D50 (julgamento dele: INEC
+    # ~1,2 já na faixa D, CEPAL/ONU 1,32 na fronteira, ocupação 65+ baixa; ver docs/privado/Perfil_CRI_base_de_dados.md).
+    # Qualquer mistura entre C70/D30 e C30/D70 dá os mesmos cortes (22/61). Composição fixa no tempo.
+    "CRI": {"C": 0.50, "D": 0.50},
     "PRY": {"B": 1.00},
 }
 

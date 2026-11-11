@@ -1,7 +1,7 @@
 """
 Bloco "Última atualização / Novo:" abaixo do logo das duas landings (ainu.systems e narayama.live), em 9 idiomas.
 
-Como usar: ao publicar uma mudança, edite DATA e ITENS abaixo (uma lista curta e objetiva por site, em todos os
+Como usar: ao publicar uma mudança, edite DATA_SITE e ITENS abaixo (uma lista curta e objetiva por site, em todos os
 idiomas) e rode  python scripts/atualizar_novidades.py . O script reescreve só os trechos marcados com NOV nos dois
 index.html (CSS, bloco HTML sob o logo e as chaves nov_* de cada idioma); é idempotente.
 
@@ -20,7 +20,8 @@ PAGINAS = {
     "narayama-live": RAIZ / "landing" / "narayama-live" / "index.html",
 }
 
-DATA = date(2026, 11, 10)
+# data por site: narayama.live só muda de data quando muda de fato (a Costa Rica não está nos 11 países do painel)
+DATA_SITE = {"ainu-systems": date(2026, 11, 11), "narayama-live": date(2026, 11, 10)}
 IDIOMAS = ["pt", "en", "es", "fr", "ko", "it", "zh", "ja", "fi"]
 
 # --------------------------------------------------------------------------- textos fixos
@@ -40,8 +41,8 @@ ROTULO = {  # por site: "Novo:" quando há novidade própria; "Atualizado:" quan
 }
 
 
-def data_fmt(lang: str) -> str:
-    d = DATA
+def data_fmt(lang: str, site: str) -> str:
+    d = DATA_SITE[site]
     mes_en = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][d.month - 1]
     return {
         "pt": f"{d.day:02d}/{d.month:02d}/{d.year}", "es": f"{d.day:02d}/{d.month:02d}/{d.year}",
@@ -56,46 +57,55 @@ def data_fmt(lang: str) -> str:
 ITENS = {
     "ainu-systems": {
         "pt": [
+            "Costa Rica: perfil estrutural passou de C100 para C50/D50 (julgamento do autor); N*_Obs 2024 de 1,25 para 1,32, ainda na zona de equilíbrio.",
             "Mais 2 países incluídos (Costa Rica e Paraguai): o índice N* agora cobre 30 países.",
             "Página “Condição média” (colaboradores): fecundidade a 2,1 contra a tendência da ONU, de 2024 a 2099.",
             "A simulação por coorte inclui Costa Rica e Paraguai.",
         ],
         "en": [
+            "Costa Rica: structural profile changed from C100 to C50/D50 (author’s judgment); 2024 N*_Obs from 1.25 to 1.32, still in the equilibrium zone.",
             "2 more countries added (Costa Rica and Paraguay): the N* index now covers 30 countries.",
             "New “Average condition” page (collaborators): fertility at 2.1 vs. the UN trend, 2024–2099.",
             "The cohort simulation now includes Costa Rica and Paraguay.",
         ],
         "es": [
+            "Costa Rica: el perfil estructural pasó de C100 a C50/D50 (juicio del autor); N*_Obs 2024 de 1,25 a 1,32, aún en la zona de equilibrio.",
             "2 países más incluidos (Costa Rica y Paraguay): el índice N* ahora cubre 30 países.",
             "Nueva página «Condición media» (colaboradores): fecundidad de 2,1 frente a la tendencia de la ONU, de 2024 a 2099.",
             "La simulación por cohortes incluye Costa Rica y Paraguay.",
         ],
         "fr": [
+            "Costa Rica : le profil structurel passe de C100 à C50/D50 (jugement de l’auteur) ; N*_Obs 2024 de 1,25 à 1,32, toujours en zone d’équilibre.",
             "2 pays de plus inclus (Costa Rica et Paraguay) : l’indice N* couvre désormais 30 pays.",
             "Nouvelle page « Condition moyenne » (collaborateurs) : fécondité à 2,1 contre la tendance de l’ONU, de 2024 à 2099.",
             "La simulation par cohortes inclut le Costa Rica et le Paraguay.",
         ],
         "ko": [
+            "코스타리카: 구조 프로파일을 C100에서 C50/D50으로 변경(저자 판단); 2024년 N*_Obs 1.25 → 1.32, 여전히 균형 구간.",
             "국가 2개 추가(코스타리카, 파라과이): N* 지수가 이제 30개국을 다룹니다.",
             "새 페이지 ‘평균 조건’(협력자용): 출산율 2.1과 유엔 추세 비교, 2024–2099년.",
             "코호트 시뮬레이션에 코스타리카와 파라과이가 포함됩니다.",
         ],
         "it": [
+            "Costa Rica: il profilo strutturale passa da C100 a C50/D50 (giudizio dell’autore); N*_Obs 2024 da 1,25 a 1,32, ancora nella zona di equilibrio.",
             "2 paesi in più inclusi (Costa Rica e Paraguay): l’indice N* copre ora 30 paesi.",
             "Nuova pagina «Condizione media» (collaboratori): fecondità a 2,1 contro la tendenza dell’ONU, dal 2024 al 2099.",
             "La simulazione per coorti include Costa Rica e Paraguay.",
         ],
         "zh": [
+            "哥斯达黎加：结构类型由 C100 改为 C50/D50（作者判断）；2024 年 N*_Obs 由 1.25 变为 1.32，仍处于均衡区。",
             "新增 2 个国家（哥斯达黎加和巴拉圭）：N* 指数现涵盖 30 个国家。",
             "新页面“平均状况”（合作者）：生育率 2.1 与联合国趋势对比，2024–2099 年。",
             "分队列模拟已包含哥斯达黎加和巴拉圭。",
         ],
         "ja": [
+            "コスタリカ：構造プロファイルをC100からC50/D50に変更（著者判断）。2024年のN*_Obsは1.25から1.32で、均衡ゾーンのまま。",
             "2か国を追加（コスタリカとパラグアイ）：N* 指数は30か国になりました。",
             "新ページ「平均的条件」（協力者向け）：出生率 2.1 と国連トレンドの比較（2024〜2099年）。",
             "コホート別シミュレーションにコスタリカとパラグアイを追加。",
         ],
         "fi": [
+            "Costa Rica: rakenneprofiili muutettu C100:sta C50/D50:ksi (kirjoittajan arvio); N*_Obs 2024 1,25 → 1,32, edelleen tasapainovyöhykkeellä.",
             "Mukaan 2 uutta maata (Costa Rica ja Paraguay): N*-indeksi kattaa nyt 30 maata.",
             "Uusi sivu ”Keskimääräinen tila” (yhteistyökumppaneille): hedelmällisyys 2,1:ssä verrattuna YK:n trendiin, 2024–2099.",
             "Kohorttisimulaatio sisältää nyt Costa Rican ja Paraguayn.",
@@ -174,7 +184,7 @@ def bloco_html(site: str) -> str:
     return (
         "<!-- NOV-BEGIN -->\n"
         '    <div class="novidades">\n'
-        f'      <p class="nov-data" data-i18n="nov_ultima">{ULTIMA["pt"]}{data_fmt("pt")}</p>\n'
+        f'      <p class="nov-data" data-i18n="nov_ultima">{ULTIMA["pt"]}{data_fmt("pt", site)}</p>\n'
         f'      <p class="nov-rotulo" data-i18n="nov_novo">{ROTULO[site]["pt"]}</p>\n'
         f'      <ul class="nov-lista" data-i18n="nov_lista">{lista_html(ITENS[site]["pt"])}</ul>\n'
         "    </div>\n"
@@ -187,7 +197,7 @@ def chaves_idioma(site: str, lang: str, ident: str) -> str:
     return "".join(
         f"{ident}{k}: {j(v)}, // NOV\n"
         for k, v in (
-            ("nov_ultima", ULTIMA[lang] + data_fmt(lang)),
+            ("nov_ultima", ULTIMA[lang] + data_fmt(lang, site)),
             ("nov_novo", ROTULO[site][lang]),
             ("nov_lista", lista_html(ITENS[site][lang])),
         )
@@ -226,7 +236,7 @@ def aplicar(site: str, caminho: Path) -> None:
     mapa = caminho.parent / "sitemap.xml"
     if mapa.exists():
         x = mapa.read_bytes().decode("utf-8")
-        x = re.sub(r"<lastmod>[^<]*</lastmod>", f"<lastmod>{DATA.isoformat()}</lastmod>", x)
+        x = re.sub(r"<lastmod>[^<]*</lastmod>", f"<lastmod>{DATA_SITE[site].isoformat()}</lastmod>", x)
         mapa.write_bytes(x.encode("utf-8"))
     print("ok", site, caminho.relative_to(RAIZ))
 

@@ -105,6 +105,8 @@ Teste de **consistência**, não de validação independente: o motor e o pipeli
 | FRA | 0.9093 | 0.9093 | -0.00% |
 | ARG | 1.2529 | 1.2530 | +0.00% |
 | CHL | 0.9770 | 0.9769 | -0.01% |
+| CRI | 1.3229 | 1.3234 | +0.04% |
+| PRY | 2.4001 | 2.4010 | +0.04% |
 | SWE | 0.9613 | 0.9614 | +0.01% |
 | GBR | 0.9667 | 0.9667 | -0.00% |
 | AUS | 1.3267 | 1.3267 | +0.00% |
@@ -115,7 +117,7 @@ Teste de **consistência**, não de validação independente: o motor e o pipeli
 | KOR | 0.4562 | 0.4561 | -0.01% |
 | RUS | 0.9780 | 0.9780 | +0.00% |
 
-**Maior diferença relativa: 0.03%.**
+**Maior diferença relativa: 0.04%.**
 
 ## V4 — Sem migração vs variante "Zero migration" da ONU (população 2074, milhares)
 

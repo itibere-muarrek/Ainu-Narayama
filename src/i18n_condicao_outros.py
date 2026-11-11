@@ -30,7 +30,7 @@ _LANG: dict[str, dict[str, str]] = {
             f"su llegada a la zona de equilibrio es una comprobación de coherencia del índice y **no** evidencia de sostenibilidad. "
             f"Las razones Ascendentes/Estruturadores y Estruturadores por persona de 80+ (cuidador potencial, no efectivo) son "
             f"las medidas que no derivan del {_N}. Costa Rica y Paraguay se añadieron el 2026-11-10 con un perfil único según el "
-            f"tramo de TFR (CRI = C, PRY = B), aprobado por el autor."
+            f"tramo de TFR (CRI = C50/D50 (2026-11-11), PRY = B), aprobado por el autor."
         ),
         "cm_alvo": "TFR objetivo de la Meta",
         "cm_rampa": "Años hasta alcanzar el objetivo",
@@ -82,7 +82,7 @@ _LANG: dict[str, dict[str, str]] = {
             f"dans la zone d'équilibre est donc un contrôle de cohérence de l'indice et **non** une preuve de soutenabilité. Les "
             f"rapports Ascendentes/Estruturadores et Estruturadores par personne de 80 ans et plus (aidant potentiel, non effectif) "
             f"sont les mesures qui ne dérivent pas du {_N}. Le Costa Rica et le Paraguay ont été ajoutés le 2026-11-10 avec un profil "
-            f"unique selon la tranche de TFR (CRI = C, PRY = B), approuvé par l'auteur."
+            f"unique selon la tranche de TFR (CRI = C50/D50 (2026-11-11), PRY = B), approuvé par l'auteur."
         ),
         "cm_alvo": "TFR cible",
         "cm_rampa": "Années pour atteindre la cible",
@@ -133,7 +133,7 @@ _LANG: dict[str, dict[str, str]] = {
             f"arrivo nella zona di equilibrio è un controllo di coerenza dell'indice e **non** una prova di sostenibilità. I rapporti "
             f"Ascendentes/Estruturadores e Estruturadores per persona di 80+ anni (caregiver potenziale, non effettivo) sono le misure "
             f"che non derivano dall'{_N}. Costa Rica e Paraguay sono stati aggiunti il 2026-11-10 con un profilo unico per fascia di "
-            f"TFR (CRI = C, PRY = B), approvato dall'autore."
+            f"TFR (CRI = C50/D50 (2026-11-11), PRY = B), approvato dall'autore."
         ),
         "cm_alvo": "TFR obiettivo",
         "cm_rampa": "Anni per raggiungere l'obiettivo",
@@ -183,7 +183,7 @@ _LANG: dict[str, dict[str, str]] = {
             f"**Tutkiva ja ehdollinen, ei ennuste.** {_N} riippuu TFR:stä ja ikärakenteesta, joten sen saapuminen tasapainovyöhykkeelle "
             f"on indeksin johdonmukaisuustarkistus eikä **todiste** kestävyydestä. Suhdeluvut Ascendentes/Estruturadores ja "
             f"Estruturadores yli 80-vuotiasta kohti (potentiaalinen, ei todellinen hoivaaja) ovat mittareita, jotka eivät johdu "
-            f"{_N}:sta. Costa Rica ja Paraguay lisättiin 2026-11-10 yhdellä TFR-luokan mukaisella profiililla (CRI = C, PRY = B), "
+            f"{_N}:sta. Costa Rica ja Paraguay lisättiin 2026-11-10 yhdellä TFR-luokan mukaisella profiililla (CRI = C50/D50 (2026-11-11), PRY = B), "
             f"jonka tekijä on hyväksynyt."
         ),
         "cm_alvo": "Tavoitteen TFR",
@@ -234,7 +234,7 @@ _LANG: dict[str, dict[str, str]] = {
             f"**探索的かつ条件付きであり、予測ではありません。** {_N} は TFR と年齢構造に依存するため、均衡ゾーンへの到達は指数の"
             f"整合性チェックであって、持続可能性の**証拠ではありません**。Ascendentes/Estruturadores の比率と、80歳以上1人あたりの "
             f"Estruturadores(潜在的であり実際ではない介護者)が、{_N} から導かれない指標です。コスタリカとパラグアイは 2026-11-10 に、"
-            f"TFR 帯ごとの単一プロファイル(CRI = C、PRY = B)で追加され、著者が承認しました。"
+            f"TFR 帯ごとの単一プロファイル(CRI = C50/D50 (2026-11-11)、 PRY = B)で追加され、著者が承認しました。"
         ),
         "cm_alvo": "目標シナリオの TFR",
         "cm_rampa": "目標到達までの年数",
@@ -284,7 +284,7 @@ _LANG: dict[str, dict[str, str]] = {
             f"**탐색적이며 조건부이고, 예측이 아닙니다.** {_N}는 TFR과 연령 구조에 좌우되므로, 균형 구간에 도달하는 것은 지수의 "
             f"정합성 점검일 뿐 지속가능성의 **증거가 아닙니다**. Ascendentes/Estruturadores 비율과 80세 이상 1인당 Estruturadores"
             f"(잠재적이며 실제가 아닌 돌봄 인력)는 {_N}에서 파생되지 않는 지표입니다. 코스타리카와 파라과이는 2026-11-10에 "
-            f"TFR 구간별 단일 프로파일(CRI = C, PRY = B)로 추가되었으며 저자가 승인했습니다."
+            f"TFR 구간별 단일 프로파일(CRI = C50/D50 (2026-11-11), PRY = B)로 추가되었으며 저자가 승인했습니다."
         ),
         "cm_alvo": "목표 시나리오의 TFR",
         "cm_rampa": "목표 도달까지의 연수",
@@ -332,7 +332,7 @@ _LANG: dict[str, dict[str, str]] = {
         "cm_aviso": (
             f"**探索性且有条件,不是预测。** {_N} 取决于 TFR 和年龄结构,因此它进入均衡区只是指数的一致性检验,**不是**可持续性的证据。"
             f"Ascendentes/Estruturadores 之比,以及每位80岁及以上老人对应的 Estruturadores 数(潜在而非实际的照护者),才是不由 {_N} "
-            f"推导出的指标。哥斯达黎加和巴拉圭于 2026-11-10 按 TFR 区间采用单一档案(CRI = C,PRY = B)加入,已获作者批准。"
+            f"推导出的指标。哥斯达黎加和巴拉圭于 2026-11-10 按 TFR 区间采用单一档案(CRI = C50/D50 (2026-11-11), PRY = B)加入,已获作者批准。"
         ),
         "cm_alvo": "目标情景的 TFR",
         "cm_rampa": "达到目标所需年数",

@@ -29,13 +29,13 @@ TX: dict[str, dict[str, str]] = {
             "**Exploratório e condicional, não previsão.** O N\\* depende da TFT e da estrutura etária; por isso sua chegada à zona de "
             "equilíbrio é uma checagem de coerência do índice e **não** evidência de sustentabilidade. As razões Ascendentes/Estruturador "
             "e Estruturadores por pessoa de 80+ (cuidador potencial, não efetivo) são as medidas que não derivam do N\\*. "
-            "Costa Rica e Paraguai foram acrescentados em 2026-11-10 com perfil único pela faixa de TFT (CRI = C, PRY = B), aprovado pelo autor."
+            "Costa Rica e Paraguai foram acrescentados em 2026-11-10 com perfil único pela faixa de TFT (CRI = C50/D50 (2026-11-11), PRY = B), aprovado pelo autor."
         ),
         "en": (
             "**Exploratory and conditional, not a forecast.** N\\* depends on fertility and age structure, so its arrival in the "
             "equilibrium zone is a coherence check of the index and **not** evidence of sustainability. The Ascendentes/Estruturadores "
             "ratio and Estruturadores per person aged 80+ (potential, not actual caregivers) are the measures that do not derive from N\\*. "
-            "Costa Rica and Paraguay were added on 2026-11-10 with a single profile by fertility band (CRI = C, PRY = B), approved by the author."
+            "Costa Rica and Paraguay were added on 2026-11-10 with a single profile by fertility band (CRI = C50/D50 (2026-11-11), PRY = B), approved by the author."
         ),
     },
     "cm_alvo": {"pt": "TFT-alvo da Meta", "en": "Target TFR"},
