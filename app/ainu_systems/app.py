@@ -2,7 +2,7 @@
 ainu.systems — plataforma restrita a pesquisadores e formuladores de política.
 
 Cálculos detalhados e os componentes do N* (NGII_Obs, Fator_Geracional, Fator_Alocativo) para os 30 países da amostra. A versão
-pública e minimalista está em app/narayama_live/app.py (11 países).
+pública e minimalista está em app/narayama_live/app.py (12 países).
 
 Dados:
 - data/processed/n_index_2024.csv: snapshot 2024, uma linha por país: codigo, n_base, n_estrela, farol, ngii_obs,

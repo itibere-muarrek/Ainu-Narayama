@@ -57,6 +57,8 @@ def data_fmt(lang: str, site: str) -> str:
 ITENS = {
     "ainu-systems": {
         "pt": [
+            "Costa Rica no panorama (agora 12 países, igual ao narayama.live); card da Coreia do Sul corrigido para 0,48.",
+            "Costa Rica no panorama (agora 12 países, igual ao narayama.live); card da Coreia do Sul corrigido para 0,48.",
             "Itália (C50/D50 → C30/D70) e Coreia do Sul (C80/D20 → C50/D50): perfis revistos pela regra de TFT por fonte; N*_Obs 2024 da Coreia 0,456 → 0,484 (Itália inalterado).",
             "Costa Rica: perfil estrutural passou de C100 para C50/D50 (julgamento do autor); N*_Obs 2024 de 1,25 para 1,32, ainda na zona de equilíbrio.",
             "Mais 2 países incluídos (Costa Rica e Paraguai): o índice N* agora cobre 30 países.",
@@ -64,6 +66,8 @@ ITENS = {
             "A simulação por coorte inclui Costa Rica e Paraguai.",
         ],
         "en": [
+            "Costa Rica added to the overview (now 12 countries, same as narayama.live); South Korea’s card corrected to 0.48.",
+            "Costa Rica added to the overview (now 12 countries, same as narayama.live); South Korea’s card corrected to 0.48.",
             "Italy (C50/D50 → C30/D70) and South Korea (C80/D20 → C50/D50): profiles revised by the fertility-by-source rule; Korea’s 2024 N*_Obs 0.456 → 0.484 (Italy unchanged).",
             "Costa Rica: structural profile changed from C100 to C50/D50 (author’s judgment); 2024 N*_Obs from 1.25 to 1.32, still in the equilibrium zone.",
             "2 more countries added (Costa Rica and Paraguay): the N* index now covers 30 countries.",
@@ -71,6 +75,8 @@ ITENS = {
             "The cohort simulation now includes Costa Rica and Paraguay.",
         ],
         "es": [
+            "Costa Rica en el panorama (ahora 12 países, igual que narayama.live); tarjeta de Corea del Sur corregida a 0,48.",
+            "Costa Rica en el panorama (ahora 12 países, igual que narayama.live); tarjeta de Corea del Sur corregida a 0,48.",
             "Italia (C50/D50 → C30/D70) y Corea del Sur (C80/D20 → C50/D50): perfiles revisados con la regla de TFR por fuente; N*_Obs 2024 de Corea 0,456 → 0,484 (Italia sin cambios).",
             "Costa Rica: el perfil estructural pasó de C100 a C50/D50 (juicio del autor); N*_Obs 2024 de 1,25 a 1,32, aún en la zona de equilibrio.",
             "2 países más incluidos (Costa Rica y Paraguay): el índice N* ahora cubre 30 países.",
@@ -78,6 +84,8 @@ ITENS = {
             "La simulación por cohortes incluye Costa Rica y Paraguay.",
         ],
         "fr": [
+            "Costa Rica ajouté au panorama (désormais 12 pays, comme narayama.live) ; carte de la Corée du Sud corrigée à 0,48.",
+            "Costa Rica ajouté au panorama (désormais 12 pays, comme narayama.live) ; carte de la Corée du Sud corrigée à 0,48.",
             "Italie (C50/D50 → C30/D70) et Corée du Sud (C80/D20 → C50/D50) : profils révisés selon la règle de TFR par source ; N*_Obs 2024 de la Corée 0,456 → 0,484 (Italie inchangée).",
             "Costa Rica : le profil structurel passe de C100 à C50/D50 (jugement de l’auteur) ; N*_Obs 2024 de 1,25 à 1,32, toujours en zone d’équilibre.",
             "2 pays de plus inclus (Costa Rica et Paraguay) : l’indice N* couvre désormais 30 pays.",
@@ -85,6 +93,8 @@ ITENS = {
             "La simulation par cohortes inclut le Costa Rica et le Paraguay.",
         ],
         "ko": [
+            "코스타리카가 개요에 추가되었습니다(narayama.live와 같은 12개국); 한국 카드는 0.48로 수정되었습니다.",
+            "코스타리카가 개요에 추가되었습니다(narayama.live와 같은 12개국); 한국 카드는 0.48로 수정되었습니다.",
             "이탈리아(C50/D50 → C30/D70)와 한국(C80/D20 → C50/D50): 출처별 TFR 규칙으로 프로파일 수정; 한국 2024년 N*_Obs 0.456 → 0.484(이탈리아 변동 없음).",
             "코스타리카: 구조 프로파일을 C100에서 C50/D50으로 변경(저자 판단); 2024년 N*_Obs 1.25 → 1.32, 여전히 균형 구간.",
             "국가 2개 추가(코스타리카, 파라과이): N* 지수가 이제 30개국을 다룹니다.",
@@ -92,6 +102,8 @@ ITENS = {
             "코호트 시뮬레이션에 코스타리카와 파라과이가 포함됩니다.",
         ],
         "it": [
+            "Costa Rica nel quadro (ora 12 paesi, come narayama.live); scheda della Corea del Sud corretta a 0,48.",
+            "Costa Rica nel quadro (ora 12 paesi, come narayama.live); scheda della Corea del Sud corretta a 0,48.",
             "Italia (C50/D50 → C30/D70) e Corea del Sud (C80/D20 → C50/D50): profili rivisti con la regola del TFR per fonte; N*_Obs 2024 della Corea 0,456 → 0,484 (Italia invariata).",
             "Costa Rica: il profilo strutturale passa da C100 a C50/D50 (giudizio dell’autore); N*_Obs 2024 da 1,25 a 1,32, ancora nella zona di equilibrio.",
             "2 paesi in più inclusi (Costa Rica e Paraguay): l’indice N* copre ora 30 paesi.",
@@ -99,6 +111,8 @@ ITENS = {
             "La simulazione per coorti include Costa Rica e Paraguay.",
         ],
         "zh": [
+            "哥斯达黎加加入概览（现为 12 个国家，与 narayama.live 一致）；韩国卡片更正为 0.48。",
+            "哥斯达黎加加入概览（现为 12 个国家，与 narayama.live 一致）；韩国卡片更正为 0.48。",
             "意大利（C50/D50 → C30/D70）和韩国（C80/D20 → C50/D50）：按分来源生育率规则修订类型；韩国 2024 年 N*_Obs 0.456 → 0.484（意大利不变）。",
             "哥斯达黎加：结构类型由 C100 改为 C50/D50（作者判断）；2024 年 N*_Obs 由 1.25 变为 1.32，仍处于均衡区。",
             "新增 2 个国家（哥斯达黎加和巴拉圭）：N* 指数现涵盖 30 个国家。",
@@ -106,6 +120,8 @@ ITENS = {
             "分队列模拟已包含哥斯达黎加和巴拉圭。",
         ],
         "ja": [
+            "コスタリカを概況に追加（narayama.liveと同じ12か国）。韓国のカードを0.48に修正。",
+            "コスタリカを概況に追加（narayama.liveと同じ12か国）。韓国のカードを0.48に修正。",
             "イタリア（C50/D50 → C30/D70）と韓国（C80/D20 → C50/D50）：出典別TFR規則でプロファイルを見直し。韓国の2024年N*_Obsは0.456→0.484（イタリアは変更なし）。",
             "コスタリカ：構造プロファイルをC100からC50/D50に変更（著者判断）。2024年のN*_Obsは1.25から1.32で、均衡ゾーンのまま。",
             "2か国を追加（コスタリカとパラグアイ）：N* 指数は30か国になりました。",
@@ -113,6 +129,8 @@ ITENS = {
             "コホート別シミュレーションにコスタリカとパラグアイを追加。",
         ],
         "fi": [
+            "Costa Rica lisätty yleiskuvaan (nyt 12 maata, kuten narayama.livessa); Etelä-Korean kortti korjattu arvoon 0,48.",
+            "Costa Rica lisätty yleiskuvaan (nyt 12 maata, kuten narayama.livessa); Etelä-Korean kortti korjattu arvoon 0,48.",
             "Italia (C50/D50 → C30/D70) ja Etelä-Korea (C80/D20 → C50/D50): profiilit tarkistettu lähdekohtaisella TFR-säännöllä; Korean N*_Obs 2024 0,456 → 0,484 (Italia ennallaan).",
             "Costa Rica: rakenneprofiili muutettu C100:sta C50/D50:ksi (kirjoittajan arvio); N*_Obs 2024 1,25 → 1,32, edelleen tasapainovyöhykkeellä.",
             "Mukaan 2 uutta maata (Costa Rica ja Paraguay): N*-indeksi kattaa nyt 30 maata.",

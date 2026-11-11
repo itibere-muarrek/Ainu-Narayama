@@ -33,7 +33,7 @@ lang = seletor_idioma()
 exigir_login(lambda k: ts(k, lang))
 
 HORIZONTE = 2074
-# 11 países do panorama (8 destaque + 3 exemplos). Ampliar para os 30 é só
+# Países do panorama (8 destaque + 3 exemplos; a Costa Rica, no painel desde 2026-11-11, vem na lista a seguir). Ampliar para os 30 é só
 # editar esta lista: os insumos de data/processed/projecao_inputs.npz já cobrem todos.
 PAISES_SIMULACAO = sorted(
     PAISES_DESTAQUE_NARAYAMA_LIVE + PAISES_EXEMPLO_ZONAS_NARAYAMA_LIVE + ["CRI", "PRY"],  # CRI e PRY: 2026-11-10
