@@ -56,47 +56,47 @@ def data_fmt(lang: str) -> str:
 ITENS = {
     "ainu-systems": {
         "pt": [
-            "Costa Rica e Paraguai no índice N*: agora são 30 países.",
+            "Mais 2 países incluídos (Costa Rica e Paraguai): o índice N* agora cobre 30 países.",
             "Página “Condição média” (colaboradores): fecundidade a 2,1 contra a tendência da ONU, de 2024 a 2099.",
             "A simulação por coorte inclui Costa Rica e Paraguai.",
         ],
         "en": [
-            "Costa Rica and Paraguay added to the N* index: now 30 countries.",
+            "2 more countries added (Costa Rica and Paraguay): the N* index now covers 30 countries.",
             "New “Average condition” page (collaborators): fertility at 2.1 vs. the UN trend, 2024–2099.",
             "The cohort simulation now includes Costa Rica and Paraguay.",
         ],
         "es": [
-            "Costa Rica y Paraguay en el índice N*: ahora son 30 países.",
+            "2 países más incluidos (Costa Rica y Paraguay): el índice N* ahora cubre 30 países.",
             "Nueva página «Condición media» (colaboradores): fecundidad de 2,1 frente a la tendencia de la ONU, de 2024 a 2099.",
             "La simulación por cohortes incluye Costa Rica y Paraguay.",
         ],
         "fr": [
-            "Costa Rica et Paraguay dans l’indice N* : 30 pays désormais.",
+            "2 pays de plus inclus (Costa Rica et Paraguay) : l’indice N* couvre désormais 30 pays.",
             "Nouvelle page « Condition moyenne » (collaborateurs) : fécondité à 2,1 contre la tendance de l’ONU, de 2024 à 2099.",
             "La simulation par cohortes inclut le Costa Rica et le Paraguay.",
         ],
         "ko": [
-            "N* 지수에 코스타리카와 파라과이 추가: 이제 30개국입니다.",
+            "국가 2개 추가(코스타리카, 파라과이): N* 지수가 이제 30개국을 다룹니다.",
             "새 페이지 ‘평균 조건’(협력자용): 출산율 2.1과 유엔 추세 비교, 2024–2099년.",
             "코호트 시뮬레이션에 코스타리카와 파라과이가 포함됩니다.",
         ],
         "it": [
-            "Costa Rica e Paraguay nell’indice N*: ora sono 30 paesi.",
+            "2 paesi in più inclusi (Costa Rica e Paraguay): l’indice N* copre ora 30 paesi.",
             "Nuova pagina «Condizione media» (collaboratori): fecondità a 2,1 contro la tendenza dell’ONU, dal 2024 al 2099.",
             "La simulazione per coorti include Costa Rica e Paraguay.",
         ],
         "zh": [
-            "N* 指数新增哥斯达黎加和巴拉圭：现为 30 个国家。",
+            "新增 2 个国家（哥斯达黎加和巴拉圭）：N* 指数现涵盖 30 个国家。",
             "新页面“平均状况”（合作者）：生育率 2.1 与联合国趋势对比，2024–2099 年。",
             "分队列模拟已包含哥斯达黎加和巴拉圭。",
         ],
         "ja": [
-            "N* 指数にコスタリカとパラグアイを追加：30か国になりました。",
+            "2か国を追加（コスタリカとパラグアイ）：N* 指数は30か国になりました。",
             "新ページ「平均的条件」（協力者向け）：出生率 2.1 と国連トレンドの比較（2024〜2099年）。",
             "コホート別シミュレーションにコスタリカとパラグアイを追加。",
         ],
         "fi": [
-            "Costa Rica ja Paraguay N*-indeksissä: nyt 30 maata.",
+            "Mukaan 2 uutta maata (Costa Rica ja Paraguay): N*-indeksi kattaa nyt 30 maata.",
             "Uusi sivu ”Keskimääräinen tila” (yhteistyökumppaneille): hedelmällisyys 2,1:ssä verrattuna YK:n trendiin, 2024–2099.",
             "Kohorttisimulaatio sisältää nyt Costa Rican ja Paraguayn.",
         ],
