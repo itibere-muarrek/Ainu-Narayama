@@ -20,8 +20,8 @@ PAGINAS = {
     "narayama-live": RAIZ / "landing" / "narayama-live" / "index.html",
 }
 
-# data por site: narayama.live só muda de data quando muda de fato (a Costa Rica não está nos 11 países do painel)
-DATA_SITE = {"ainu-systems": date(2026, 11, 11), "narayama-live": date(2026, 11, 10)}
+# data por site: cada um só muda de data quando muda de fato
+DATA_SITE = {"ainu-systems": date(2026, 11, 11), "narayama-live": date(2026, 11, 11)}
 IDIOMAS = ["pt", "en", "es", "fr", "ko", "it", "zh", "ja", "fi"]
 
 # --------------------------------------------------------------------------- textos fixos
@@ -57,54 +57,63 @@ def data_fmt(lang: str, site: str) -> str:
 ITENS = {
     "ainu-systems": {
         "pt": [
+            "Itália (C50/D50 → C30/D70) e Coreia do Sul (C80/D20 → C50/D50): perfis revistos pela regra de TFT por fonte; N*_Obs 2024 da Coreia 0,456 → 0,484 (Itália inalterado).",
             "Costa Rica: perfil estrutural passou de C100 para C50/D50 (julgamento do autor); N*_Obs 2024 de 1,25 para 1,32, ainda na zona de equilíbrio.",
             "Mais 2 países incluídos (Costa Rica e Paraguai): o índice N* agora cobre 30 países.",
             "Página “Condição média” (colaboradores): fecundidade a 2,1 contra a tendência da ONU, de 2024 a 2099.",
             "A simulação por coorte inclui Costa Rica e Paraguai.",
         ],
         "en": [
+            "Italy (C50/D50 → C30/D70) and South Korea (C80/D20 → C50/D50): profiles revised by the fertility-by-source rule; Korea’s 2024 N*_Obs 0.456 → 0.484 (Italy unchanged).",
             "Costa Rica: structural profile changed from C100 to C50/D50 (author’s judgment); 2024 N*_Obs from 1.25 to 1.32, still in the equilibrium zone.",
             "2 more countries added (Costa Rica and Paraguay): the N* index now covers 30 countries.",
             "New “Average condition” page (collaborators): fertility at 2.1 vs. the UN trend, 2024–2099.",
             "The cohort simulation now includes Costa Rica and Paraguay.",
         ],
         "es": [
+            "Italia (C50/D50 → C30/D70) y Corea del Sur (C80/D20 → C50/D50): perfiles revisados con la regla de TFR por fuente; N*_Obs 2024 de Corea 0,456 → 0,484 (Italia sin cambios).",
             "Costa Rica: el perfil estructural pasó de C100 a C50/D50 (juicio del autor); N*_Obs 2024 de 1,25 a 1,32, aún en la zona de equilibrio.",
             "2 países más incluidos (Costa Rica y Paraguay): el índice N* ahora cubre 30 países.",
             "Nueva página «Condición media» (colaboradores): fecundidad de 2,1 frente a la tendencia de la ONU, de 2024 a 2099.",
             "La simulación por cohortes incluye Costa Rica y Paraguay.",
         ],
         "fr": [
+            "Italie (C50/D50 → C30/D70) et Corée du Sud (C80/D20 → C50/D50) : profils révisés selon la règle de TFR par source ; N*_Obs 2024 de la Corée 0,456 → 0,484 (Italie inchangée).",
             "Costa Rica : le profil structurel passe de C100 à C50/D50 (jugement de l’auteur) ; N*_Obs 2024 de 1,25 à 1,32, toujours en zone d’équilibre.",
             "2 pays de plus inclus (Costa Rica et Paraguay) : l’indice N* couvre désormais 30 pays.",
             "Nouvelle page « Condition moyenne » (collaborateurs) : fécondité à 2,1 contre la tendance de l’ONU, de 2024 à 2099.",
             "La simulation par cohortes inclut le Costa Rica et le Paraguay.",
         ],
         "ko": [
+            "이탈리아(C50/D50 → C30/D70)와 한국(C80/D20 → C50/D50): 출처별 TFR 규칙으로 프로파일 수정; 한국 2024년 N*_Obs 0.456 → 0.484(이탈리아 변동 없음).",
             "코스타리카: 구조 프로파일을 C100에서 C50/D50으로 변경(저자 판단); 2024년 N*_Obs 1.25 → 1.32, 여전히 균형 구간.",
             "국가 2개 추가(코스타리카, 파라과이): N* 지수가 이제 30개국을 다룹니다.",
             "새 페이지 ‘평균 조건’(협력자용): 출산율 2.1과 유엔 추세 비교, 2024–2099년.",
             "코호트 시뮬레이션에 코스타리카와 파라과이가 포함됩니다.",
         ],
         "it": [
+            "Italia (C50/D50 → C30/D70) e Corea del Sud (C80/D20 → C50/D50): profili rivisti con la regola del TFR per fonte; N*_Obs 2024 della Corea 0,456 → 0,484 (Italia invariata).",
             "Costa Rica: il profilo strutturale passa da C100 a C50/D50 (giudizio dell’autore); N*_Obs 2024 da 1,25 a 1,32, ancora nella zona di equilibrio.",
             "2 paesi in più inclusi (Costa Rica e Paraguay): l’indice N* copre ora 30 paesi.",
             "Nuova pagina «Condizione media» (collaboratori): fecondità a 2,1 contro la tendenza dell’ONU, dal 2024 al 2099.",
             "La simulazione per coorti include Costa Rica e Paraguay.",
         ],
         "zh": [
+            "意大利（C50/D50 → C30/D70）和韩国（C80/D20 → C50/D50）：按分来源生育率规则修订类型；韩国 2024 年 N*_Obs 0.456 → 0.484（意大利不变）。",
             "哥斯达黎加：结构类型由 C100 改为 C50/D50（作者判断）；2024 年 N*_Obs 由 1.25 变为 1.32，仍处于均衡区。",
             "新增 2 个国家（哥斯达黎加和巴拉圭）：N* 指数现涵盖 30 个国家。",
             "新页面“平均状况”（合作者）：生育率 2.1 与联合国趋势对比，2024–2099 年。",
             "分队列模拟已包含哥斯达黎加和巴拉圭。",
         ],
         "ja": [
+            "イタリア（C50/D50 → C30/D70）と韓国（C80/D20 → C50/D50）：出典別TFR規則でプロファイルを見直し。韓国の2024年N*_Obsは0.456→0.484（イタリアは変更なし）。",
             "コスタリカ：構造プロファイルをC100からC50/D50に変更（著者判断）。2024年のN*_Obsは1.25から1.32で、均衡ゾーンのまま。",
             "2か国を追加（コスタリカとパラグアイ）：N* 指数は30か国になりました。",
             "新ページ「平均的条件」（協力者向け）：出生率 2.1 と国連トレンドの比較（2024〜2099年）。",
             "コホート別シミュレーションにコスタリカとパラグアイを追加。",
         ],
         "fi": [
+            "Italia (C50/D50 → C30/D70) ja Etelä-Korea (C80/D20 → C50/D50): profiilit tarkistettu lähdekohtaisella TFR-säännöllä; Korean N*_Obs 2024 0,456 → 0,484 (Italia ennallaan).",
             "Costa Rica: rakenneprofiili muutettu C100:sta C50/D50:ksi (kirjoittajan arvio); N*_Obs 2024 1,25 → 1,32, edelleen tasapainovyöhykkeellä.",
             "Mukaan 2 uutta maata (Costa Rica ja Paraguay): N*-indeksi kattaa nyt 30 maata.",
             "Uusi sivu ”Keskimääräinen tila” (yhteistyökumppaneille): hedelmällisyys 2,1:ssä verrattuna YK:n trendiin, 2024–2099.",
@@ -113,39 +122,39 @@ ITENS = {
     },
     "narayama-live": {
         "pt": [
-            "Dados da ONU (WPP 2024) reprocessados: os 11 países desta página mantêm os mesmos valores de N*_Obs.",
+            "Coreia do Sul: perfil estrutural revisto de C80/D20 para C50/D50 (regra de TFT por fonte); N*_Obs 2024 de 0,456 para 0,484, ainda em PEC. Os demais países ficam como estavam.",
             "Costa Rica e Paraguai entraram no ainu.systems (fora deste painel de 11 países).",
         ],
         "en": [
-            "UN data (WPP 2024) reprocessed: the 11 countries on this page keep the same N*_Obs values.",
+            "South Korea: structural profile revised from C80/D20 to C50/D50 (fertility-by-source rule); 2024 N*_Obs from 0.456 to 0.484, still PEC. The other countries are unchanged.",
             "Costa Rica and Paraguay were added to ainu.systems (outside this 11-country panel).",
         ],
         "es": [
-            "Datos de la ONU (WPP 2024) reprocesados: los 11 países de esta página mantienen los mismos valores de N*_Obs.",
+            "Corea del Sur: perfil estructural revisado de C80/D20 a C50/D50 (regla de TFR por fuente); N*_Obs 2024 de 0,456 a 0,484, aún PEC. Los demás países no cambian.",
             "Costa Rica y Paraguay se añadieron a ainu.systems (fuera de este panel de 11 países).",
         ],
         "fr": [
-            "Données de l’ONU (WPP 2024) retraitées : les 11 pays de cette page gardent les mêmes valeurs de N*_Obs.",
+            "Corée du Sud : profil structurel révisé de C80/D20 à C50/D50 (règle de TFR par source) ; N*_Obs 2024 de 0,456 à 0,484, toujours PEC. Les autres pays sont inchangés.",
             "Le Costa Rica et le Paraguay ont été ajoutés à ainu.systems (hors de ce panneau de 11 pays).",
         ],
         "ko": [
-            "유엔 데이터(WPP 2024) 재처리: 이 페이지의 11개국 N*_Obs 값은 그대로입니다.",
+            "한국: 구조 프로파일을 C80/D20에서 C50/D50으로 수정(출처별 TFR 규칙); 2024년 N*_Obs 0.456 → 0.484, 여전히 PEC. 다른 국가는 그대로입니다.",
             "코스타리카와 파라과이는 ainu.systems에 추가되었습니다(이 11개국 패널에는 포함되지 않음).",
         ],
         "it": [
-            "Dati dell’ONU (WPP 2024) rielaborati: gli 11 paesi di questa pagina mantengono gli stessi valori di N*_Obs.",
+            "Corea del Sud: profilo strutturale rivisto da C80/D20 a C50/D50 (regola del TFR per fonte); N*_Obs 2024 da 0,456 a 0,484, ancora PEC. Gli altri paesi restano invariati.",
             "Costa Rica e Paraguay sono stati aggiunti a ainu.systems (fuori da questo pannello di 11 paesi).",
         ],
         "zh": [
-            "联合国数据（WPP 2024）已重新处理：本页 11 个国家的 N*_Obs 数值不变。",
+            "韩国：结构类型由 C80/D20 修订为 C50/D50（分来源生育率规则）；2024 年 N*_Obs 由 0.456 变为 0.484，仍为 PEC。其他国家不变。",
             "哥斯达黎加和巴拉圭已加入 ainu.systems（不在本页的 11 国面板内）。",
         ],
         "ja": [
-            "国連データ（WPP 2024）を再処理：このページの11か国の N*_Obs 値は変わりません。",
+            "韓国：構造プロファイルをC80/D20からC50/D50に見直し（出典別TFR規則）。2024年のN*_Obsは0.456から0.484で、PECのまま。他の国は変更なし。",
             "コスタリカとパラグアイは ainu.systems に追加されました（この11か国のパネルの対象外）。",
         ],
         "fi": [
-            "YK:n tiedot (WPP 2024) käsitelty uudelleen: tämän sivun 11 maan N*_Obs-arvot pysyvät samoina.",
+            "Etelä-Korea: rakenneprofiili tarkistettu C80/D20:sta C50/D50:ksi (lähdekohtainen TFR-sääntö); N*_Obs 2024 0,456 → 0,484, edelleen PEC. Muut maat ennallaan.",
             "Costa Rica ja Paraguay lisättiin ainu.systems-sivustoon (tämän 11 maan paneelin ulkopuolella).",
         ],
     },

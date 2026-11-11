@@ -19,7 +19,7 @@ def test_cri_pry_no_cadastro_e_no_n_index():
 
 def test_28_paises_originais_nao_mudaram():
     n = pd.read_csv(DATA_PROCESSED_DIR / "n_index_2024.csv").set_index("codigo")
-    assert abs(n.loc["ITA", "n_estrela"] - 0.608) < 1e-3 and abs(n.loc["KOR", "n_estrela"] - 0.456) < 1e-3
+    assert abs(n.loc["ITA", "n_estrela"] - 0.608) < 1e-3 and abs(n.loc["KOR", "n_estrela"] - 0.4842) < 1e-3  # KOR: C80/D20 -> C50/D50 em 2026-11-11 (0,456 antes)
 
 
 def test_tabela_condicao_formato_e_valores_conhecidos():
@@ -29,7 +29,7 @@ def test_tabela_condicao_formato_e_valores_conhecidos():
     r = resumo_2099(df).set_index("pais")
     # valores da exploração de 2026-11-10 (TFT -> 2,1 em 25 anos, mantida)
     assert abs(r.loc["ITA", "n_2099_meta"] - 1.01) < 0.01 and abs(r.loc["ITA", "a_e_2099_meta"] - 0.72) < 0.01
-    assert abs(r.loc["KOR", "a_e_2099_tendencia"] - 1.45) < 0.01
+    assert abs(r.loc["KOR", "a_e_2099_tendencia"] - 1.40) < 0.01
     # a Meta não piora a razão Ascendentes/Estruturador em 2099 nesses países de TFT baixa
     assert (r["a_e_2099_meta"] < r["a_e_2099_tendencia"]).all()
     # 2024 é igual nos dois cenários (a rampa começa depois)

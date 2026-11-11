@@ -203,8 +203,10 @@ COMPOSICAO_PERFIL_POR_PAIS = {
     "ZAF": {"B": 0.80, "C": 0.20},
     "JPN": {"D": 0.60, "E": 0.40},
     "DEU": {"C": 0.20, "D": 0.80},
-    "ITA": {"C": 0.50, "D": 0.50},
-    "KOR": {"C": 0.80, "D": 0.20},
+    # ITA e KOR: 2026-11-11, autor aplicou a regra de TFT por fonte (ver docs/privado/Compendio_perfis_estruturais.md):
+    # ITA C50/D50 -> C30/D70 (cortes 22/61, iguais: N* não muda); KOR C80/D20 -> C50/D50 (cortes 21/60 -> 22/61).
+    "ITA": {"C": 0.30, "D": 0.70},
+    "KOR": {"C": 0.50, "D": 0.50},
     "RUS": {"C": 0.30, "D": 0.70},
     # Acrescentados em 2026-11-10 a pedido do autor (contato com pesquisadores dos dois países). NÃO fazem parte dos 28
     # países do Anexo 5 da tese. PRY: perfil único pela faixa de TFR da Tabela 14 (WPP 2024: 2,42 -> B).

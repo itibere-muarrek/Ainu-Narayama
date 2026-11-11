@@ -114,7 +114,7 @@ Teste de **consistência**, não de validação independente: o motor e o pipeli
 | JPN | 0.5364 | 0.5364 | +0.00% |
 | DEU | 0.7665 | 0.7665 | -0.01% |
 | ITA | 0.6079 | 0.6079 | +0.01% |
-| KOR | 0.4562 | 0.4561 | -0.01% |
+| KOR | 0.4842 | 0.4841 | -0.02% |
 | RUS | 0.9780 | 0.9780 | +0.00% |
 
 **Maior diferença relativa: 0.04%.**
