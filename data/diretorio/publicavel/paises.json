@@ -3,12 +3,12 @@
   "iso": "ITA",
   "nome": "Itália",
   "coortes": {
-   "composicao_perfis": "C50 D50",
+   "composicao_perfis": "C30 D70",
    "descendentes": "0–22",
    "estruturadores": "23–60",
    "ascendentes": "61+",
    "ano_referencia": 2025,
-   "fonte": "P1_Coortes_Narayama"
+   "fonte": "src/config.py (composição de perfis, decisão do autor)"
   },
   "cobertura": {
    "classe_provisoria": {
@@ -888,12 +888,12 @@
   "iso": "KOR",
   "nome": "Coreia do Sul",
   "coortes": {
-   "composicao_perfis": "C80 D20",
-   "descendentes": "0–21",
-   "estruturadores": "22–59",
-   "ascendentes": "60+",
+   "composicao_perfis": "C30 D70",
+   "descendentes": "0–22",
+   "estruturadores": "23–60",
+   "ascendentes": "61+",
    "ano_referencia": 2025,
-   "fonte": "P1_Coortes_Narayama"
+   "fonte": "src/config.py (composição de perfis, decisão do autor)"
   },
   "cobertura": {
    "classe_provisoria": {
@@ -930,34 +930,36 @@
     "natureza": "OBS"
    },
    "pop_2025_pct": {
-    "texto": "17 / 55 / 28",
+    "texto": "18 / 56 / 27",
     "valor": [
-     17.0,
-     55.0,
-     28.0
+     18.0,
+     56.0,
+     27.0
     ],
     "natureza": "DER"
    },
    "asc_estr_2025": {
-    "texto": "0.52",
-    "valor": 0.52,
+    "texto": "0.48",
+    "valor": 0.48,
     "natureza": "DER"
    },
    "asc_estr_2075_tft_constante": {
-    "texto": "1.85",
-    "valor": 1.85,
-    "natureza": "PROJ"
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "PROJ",
+    "nota": "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
    },
    "asc_estr_2075_wpp": {
-    "texto": "1.62",
-    "valor": 1.62,
+    "texto": "1.55",
+    "valor": 1.55,
     "natureza": "PROJ"
    },
    "dependencia_2025_2075_wpp": {
-    "texto": "0.82 → 1.97",
+    "texto": "0.80 → 1.91",
     "valor": [
-     0.82,
-     1.97
+     0.8,
+     1.91
     ],
     "natureza": "PROJ"
    },
@@ -972,35 +974,41 @@
     "natureza": "PROJ"
    },
    "carga_estr_2075_wpp": {
-    "texto": "116",
-    "valor": 116.0,
-    "natureza": "PROJ"
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "PROJ",
+    "nota": "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
    },
    "carga_estr_2075_tft_constante": {
-    "texto": "80",
-    "valor": 80.0,
-    "natureza": "PROJ"
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "PROJ",
+    "nota": "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
    },
    "carga_estr_2075_rapida": {
-    "texto": "195",
-    "valor": 195.0,
-    "natureza": "PROJ"
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "PROJ",
+    "nota": "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
    }
   },
   "consumo": {
    "cfcc_total_pct_desc_estr_asc": {
-    "texto": "16.7 / 50.6 / 32.7",
-    "valor": [
-     16.7,
-     50.6,
-     32.7
-    ],
-    "natureza": "EST"
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST",
+    "nota": "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
    },
    "desc_privado_pesos_nta": {
-    "texto": "15.8",
-    "valor": 15.8,
-    "natureza": "EST"
+    "texto": "—",
+    "valor": null,
+    "lacuna": true,
+    "natureza": "EST",
+    "nota": "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
    },
    "desc_privado_microdados_ancorados": {
     "texto": "—",

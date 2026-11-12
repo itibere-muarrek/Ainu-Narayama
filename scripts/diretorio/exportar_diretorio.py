@@ -32,6 +32,9 @@ from pathlib import Path
 
 import openpyxl
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import coortes_motor  # noqa: E402
+
 RAIZ = Path(__file__).resolve().parents[2]
 SAIDA = RAIZ / "data" / "diretorio"
 PLANILHA_PADRAO = Path(r"C:\Users\LENOVO\Documents\i'M thinker\Papers\Paper 3 NTA\Matrizes_Operacionais_NTA_URSS_Narayama_v2.xlsx")
@@ -361,6 +364,7 @@ def construir(wb):
             t = texto(cr[k])
             m = re.match(r"\[([A-Z])\]\s*", t or "")
             f["disponibilidade_de_dados"][str(comp_cab[k])] = {"texto": t, "verificacao": m.group(1) if m else None}
+        coortes_motor.aplicar(f)  # cortes e rótulo da composição vêm de src/config.py (a planilha pode estar atrás)
         fichas.append(f)
 
     # ---------- evidências ----------
