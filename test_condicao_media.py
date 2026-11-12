@@ -19,7 +19,7 @@ def test_cri_pry_no_cadastro_e_no_n_index():
 
 def test_28_paises_originais_nao_mudaram():
     n = pd.read_csv(DATA_PROCESSED_DIR / "n_index_2024.csv").set_index("codigo")
-    assert abs(n.loc["ITA", "n_estrela"] - 0.608) < 1e-3 and abs(n.loc["KOR", "n_estrela"] - 0.4842) < 1e-3  # KOR: C80/D20 -> C50/D50 em 2026-11-11 (0,456 antes)
+    assert abs(n.loc["ITA", "n_estrela"] - 0.608) < 1e-3 and abs(n.loc["KOR", "n_estrela"] - 0.4842) < 1e-3  # KOR: C80/D20 -> C50/D50 -> C30/D70 em 2026-11-11 (0,456 antes; C50/D50 e C30/D70 têm os mesmos cortes 22/61)
 
 
 def test_tabela_condicao_formato_e_valores_conhecidos():
