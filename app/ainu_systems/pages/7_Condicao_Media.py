@@ -3,7 +3,7 @@ ainu.systems — Condição média em TFT de reposição (exploratório).
 
 Página só para usuários logados. Compara a Tendência da ONU com uma Meta (TFT -> alvo, padrão 2,1) nos ciclos de 25 anos,
 com N*, razão Ascendentes/Estruturador e Estruturadores por pessoa de 80+. Cálculo em src/condicao_media.py (motor
-src/projecao.py). Hipótese H8 do plano do Paper 3 (v5.4). Cenário condicional, não previsão.
+src/projecao.py). Hipótese H8 do plano do Paper 3. Cenário condicional, não previsão.
 """
 
 import sys
@@ -29,7 +29,7 @@ exigir_login(lambda k: ts(k, lang))
 
 VIRGULA = lang in {"pt", "es", "fr", "it", "fi"}
 COR_C, COR_B = "#1f77b4", "#7f7f7f"
-PAISES_PAPER3 = ["NGA", "MEX", "IND", "BRA", "ARG", "USA", "FRA", "CHN", "ITA", "JPN", "KOR"]
+PAISES_PAPER3 = ["ITA", "KOR", "CRI"]  # amostra do Paper 3 (decisão do autor, 2026-11-11)
 
 st.title(tcm("cm_titulo", lang))
 if tcm("cm_nota_idioma", lang):
@@ -111,7 +111,7 @@ st.subheader(tcm("cm_graf_titulo", lang))
 sel = st.multiselect(
     tcm("cm_graf_paises", lang),
     options=sorted(PAISES.keys(), key=lambda c: nome_pais(c, lang)),
-    default=["ITA", "KOR", "MEX"],
+    default=["ITA", "KOR", "CRI"],
     format_func=lambda c: nome_pais(c, lang),
 )
 

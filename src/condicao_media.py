@@ -11,7 +11,7 @@ ciclos de 25 anos (2024, 2049, 2074, 2099), e devolve, por país/cenário/ano:
   E_80               Estruturadores por pessoa de 80+ (cuidador POTENCIAL, não cuidador efetivo);
   pop, D, E, A       populações em milhões.
 
-Cenário ≠ previsão. Hipótese H8 do plano do Paper 3 (v5.4): resultado exploratório, limiares ainda não pré-registrados.
+Cenário ≠ previsão. Hipótese H8 do plano do Paper 3: resultado exploratório, limiares ainda não pré-registrados.
 """
 
 from __future__ import annotations
