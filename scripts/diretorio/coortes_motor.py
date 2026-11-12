@@ -5,8 +5,9 @@ Motivo: a ficha lia a composição e os cortes da planilha de análises (fora do
   - o bloco "coortes" passa a vir de src/config.py;
   - os campos demográficos que o motor reproduz exatamente (conferido contra as fichas de Itália e de Coreia com os cortes antigos)
     são recalculados com os cortes vigentes (pop_2025_pct, razões A/E, dependência, Estruturadores e Descendentes em 2075);
-  - os campos que dependiam dos cortes antigos e que o motor não reproduz (CFCc por coorte, parcela privada dos Descendentes,
-    carga por Estruturador) viram lacuna, com nota, em vez de mostrar número calculado com outros cortes.
+  - o CFCc por coorte é recalculado com a NTA pública (data/raw/nta_perfis_C_YL_S.csv; src/nta_derivados.py), população da ONU de 2025 e os cortes vigentes;
+  - os campos que dependiam dos cortes antigos e que o repositório não reproduz (parcela privada dos Descendentes, carga por Estruturador,
+    A/E em 2075 com TFT constante) viram lacuna, com nota do motivo, em vez de mostrar número calculado com outros cortes.
 
 Uso:  python scripts/diretorio/coortes_motor.py   (corrige data/diretorio/publicavel/paises.json e privado/paises.json, se existirem)
 Também é chamado por exportar_diretorio.py para que uma nova exportação não desfaça o ajuste."""
@@ -23,9 +24,15 @@ warnings.filterwarnings("ignore")
 
 NOTA = "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
 DEPENDEM_DOS_CORTES = {
-    "demografia": ("asc_estr_2075_tft_constante", "carga_estr_2075_wpp","carga_estr_2075_tft_constante", "carga_estr_2075_rapida"),
+    "demografia": ("asc_estr_2075_tft_constante", "carga_estr_2075_wpp", "carga_estr_2075_tft_constante", "carga_estr_2075_rapida"),
     "consumo": ("cfcc_total_pct_desc_estr_asc", "desc_privado_pesos_nta"),
 }
+NOTA_TFT_CONSTANTE = "cenário de TFT constante da planilha não reproduzido no repositório; a recalcular"
+NOTA_CARGA = "definição de carga por Estruturador da planilha não reproduzida no repositório; a recalcular"
+NOTA_PRIVADO = "exige separar consumo privado e público da NTA, o que os perfis do repositório não trazem; a recalcular"
+NOTA_ESPECIFICA = {("demografia", "asc_estr_2075_tft_constante"): NOTA_TFT_CONSTANTE, ("demografia", "carga_estr_2075_wpp"): NOTA_CARGA,
+                   ("demografia", "carga_estr_2075_tft_constante"): NOTA_CARGA, ("demografia", "carga_estr_2075_rapida"): NOTA_CARGA,
+                   ("consumo", "desc_privado_pesos_nta"): NOTA_PRIVADO}
 
 
 def rotulo(composicao: dict) -> str:
@@ -59,6 +66,29 @@ def demografia_do_motor(iso: str, bm: int, tm: int) -> dict:
     }
 
 
+def _reparar(ficha: dict, iso: str) -> bool:
+    """Passos idempotentes sobre lacunas deixadas pelo ajuste de cortes: notas específicas e CFCc recalculado com a NTA pública."""
+    mudou = False
+    for (bloco, chave), nota in NOTA_ESPECIFICA.items():
+        reg = ficha[bloco].get(chave)
+        if reg is not None and reg.get("lacuna") and reg.get("nota") == NOTA:
+            reg["nota"] = nota
+            mudou = True
+    reg = ficha["consumo"].get("cfcc_total_pct_desc_estr_asc")
+    if reg is not None and reg.get("lacuna") and reg.get("nota") == NOTA:
+        from src.nta_derivados import cfcc_por_coorte
+
+        cf = cfcc_por_coorte(iso)
+        if cf is not None:
+            pct = [round(x, 1) for x in cf["pct"]]
+            ficha["consumo"]["cfcc_total_pct_desc_estr_asc"] = {
+                "texto": " / ".join(f"{x:.1f}" for x in pct), "valor": pct, "natureza": "EST",
+                "fonte": f"NTA {cf['ano_perfil']} (ntaccounts.org) × população da ONU de {cf['ano_pop']}; cortes de src/config.py",
+                "nota": "método do repositório (src/nta_derivados.py); a ficha anterior usava pesos da NTA de 2010 e cortes anteriores (16.7 / 50.6 / 32.7)"}
+            mudou = True
+    return mudou
+
+
 def aplicar(ficha: dict) -> bool:
     """Ajusta a ficha (in place). Devolve True se algo mudou."""
     from src.config import COMPOSICAO_PERFIL_POR_PAIS, cortes_por_composicao
@@ -73,7 +103,7 @@ def aplicar(ficha: dict) -> bool:
     antigo = ficha["coortes"]
     mudou_cortes = (antigo.get("descendentes"), antigo.get("estruturadores"), antigo.get("ascendentes")) != (novo["descendentes"], novo["estruturadores"], novo["ascendentes"])
     if (antigo.get("composicao_perfis"), antigo.get("descendentes"), antigo.get("estruturadores"), antigo.get("ascendentes")) == (novo["composicao_perfis"], novo["descendentes"], novo["estruturadores"], novo["ascendentes"]):
-        return False
+        return _reparar(ficha, iso)
     ficha["coortes"] = novo
     if mudou_cortes:
         dem = demografia_do_motor(iso, bm, tm)
@@ -87,6 +117,7 @@ def aplicar(ficha: dict) -> bool:
                 reg = ficha[bloco].get(chave)
                 if reg is not None and not reg.get("lacuna") and not reg.get("retido"):
                     ficha[bloco][chave] = {"texto": "—", "valor": None, "lacuna": True, "natureza": reg.get("natureza", "EST"), "nota": NOTA}
+    _reparar(ficha, iso)
     return True
 
 

@@ -57,6 +57,7 @@ def data_fmt(lang: str, site: str) -> str:
 ITENS = {
     "ainu-systems": {
         "pt": [
+            "Diretório: fichas da Itália e da Coreia do Sul alinhadas ao perfil C30/D70; CFCc da Coreia recalculado com a NTA 2019 (campos sem método reproduzível ficam em branco, com nota).",
             "Coreia do Sul: perfil estrutural C50/D50 → C30/D70, ao lado da Itália (cortes e N* inalterados).",
             "Página “Condição média” (colaboradores): os países marcados (*) passam a ser os do Paper 3: Itália, Coreia do Sul e Costa Rica.",
             "Costa Rica no panorama (agora 12 países, igual ao narayama.live); card da Coreia do Sul corrigido para 0,48.",
@@ -67,6 +68,7 @@ ITENS = {
             "A simulação por coorte inclui Costa Rica e Paraguai.",
         ],
         "en": [
+            "Directory: Italy and South Korea profiles aligned to C30/D70; Korea’s consumption by cohort recalculated with the 2019 NTA (fields without a reproducible method are left blank, with a note).",
             "South Korea: structural profile C50/D50 → C30/D70, alongside Italy (cut-offs and N* unchanged).",
             "“Average condition” page (collaborators): the marked countries (*) are now those of Paper 3: Italy, South Korea and Costa Rica.",
             "Costa Rica added to the overview (now 12 countries, same as narayama.live); South Korea’s card corrected to 0.48.",
@@ -77,6 +79,7 @@ ITENS = {
             "The cohort simulation now includes Costa Rica and Paraguay.",
         ],
         "es": [
+            "Directorio: fichas de Italia y Corea del Sur alineadas al perfil C30/D70; consumo por cohorte de Corea recalculado con la NTA 2019 (los campos sin método reproducible quedan en blanco, con nota).",
             "Corea del Sur: perfil estructural C50/D50 → C30/D70, junto a Italia (cortes y N* sin cambios).",
             "Página «Condición media» (colaboradores): los países marcados (*) pasan a ser los del Paper 3: Italia, Corea del Sur y Costa Rica.",
             "Costa Rica en el panorama (ahora 12 países, igual que narayama.live); tarjeta de Corea del Sur corregida a 0,48.",
@@ -87,6 +90,7 @@ ITENS = {
             "La simulación por cohortes incluye Costa Rica y Paraguay.",
         ],
         "fr": [
+            "Répertoire : fiches de l’Italie et de la Corée du Sud alignées sur le profil C30/D70 ; consommation par cohorte de la Corée recalculée avec la NTA 2019 (les champs sans méthode reproductible restent vides, avec une note).",
             "Corée du Sud : profil structurel C50/D50 → C30/D70, comme l’Italie (seuils et N* inchangés).",
             "Page « Condition moyenne » (collaborateurs) : les pays marqués (*) sont désormais ceux du Paper 3 : Italie, Corée du Sud et Costa Rica.",
             "Costa Rica ajouté au panorama (désormais 12 pays, comme narayama.live) ; carte de la Corée du Sud corrigée à 0,48.",
@@ -97,6 +101,7 @@ ITENS = {
             "La simulation par cohortes inclut le Costa Rica et le Paraguay.",
         ],
         "ko": [
+            "디렉터리: 이탈리아와 한국 카드를 C30/D70 프로파일에 맞춤; 한국의 코호트별 소비를 2019년 NTA로 재계산(재현 가능한 방법이 없는 항목은 비워 두고 주석을 달았습니다).",
             "한국: 구조 프로파일 C50/D50 → C30/D70, 이탈리아와 동일(구간 경계와 N* 변동 없음).",
             "‘평균 조건’ 페이지(협력자용): 표시(*)된 국가는 이제 Paper 3의 국가인 이탈리아, 한국, 코스타리카입니다.",
             "코스타리카가 개요에 추가되었습니다(narayama.live와 같은 12개국); 한국 카드는 0.48로 수정되었습니다.",
@@ -107,6 +112,7 @@ ITENS = {
             "코호트 시뮬레이션에 코스타리카와 파라과이가 포함됩니다.",
         ],
         "it": [
+            "Directory: schede di Italia e Corea del Sud allineate al profilo C30/D70; consumo per coorte della Corea ricalcolato con la NTA 2019 (i campi senza metodo riproducibile restano vuoti, con una nota).",
             "Corea del Sud: profilo strutturale C50/D50 → C30/D70, accanto all’Italia (soglie e N* invariati).",
             "Pagina «Condizione media» (collaboratori): i paesi contrassegnati (*) sono ora quelli del Paper 3: Italia, Corea del Sud e Costa Rica.",
             "Costa Rica nel quadro (ora 12 paesi, come narayama.live); scheda della Corea del Sud corretta a 0,48.",
@@ -117,6 +123,7 @@ ITENS = {
             "La simulazione per coorti include Costa Rica e Paraguay.",
         ],
         "zh": [
+            "目录：意大利和韩国卡片对齐 C30/D70 类型；韩国分队列消费用 2019 年 NTA 重新计算（无法复现方法的字段留空并附说明）。",
             "韩国：结构类型由 C50/D50 改为 C30/D70，与意大利一致（分界线和 N* 不变）。",
             "“平均状况”页面（合作者）：标记（*）的国家现为 Paper 3 的国家：意大利、韩国和哥斯达黎加。",
             "哥斯达黎加加入概览（现为 12 个国家，与 narayama.live 一致）；韩国卡片更正为 0.48。",
@@ -127,6 +134,7 @@ ITENS = {
             "分队列模拟已包含哥斯达黎加和巴拉圭。",
         ],
         "ja": [
+            "ディレクトリ：イタリアと韓国のカードをC30/D70に統一。韓国のコホート別消費を2019年NTAで再計算（再現可能な方法がない項目は空欄とし、注記を付与）。",
             "韓国：構造プロファイルをC50/D50からC30/D70に変更し、イタリアと同じに（区分年齢とN*は変更なし）。",
             "「平均的条件」ページ（協力者向け）：印（*）の国は、Paper 3 の対象であるイタリア、韓国、コスタリカになりました。",
             "コスタリカを概況に追加（narayama.liveと同じ12か国）。韓国のカードを0.48に修正。",
@@ -137,6 +145,7 @@ ITENS = {
             "コホート別シミュレーションにコスタリカとパラグアイを追加。",
         ],
         "fi": [
+            "Hakemisto: Italian ja Etelä-Korean kortit yhdenmukaistettu C30/D70-profiiliin; Korean kohorttikohtainen kulutus laskettu uudelleen NTA 2019:llä (kentät, joille ei ole toistettavaa menetelmää, jätetty tyhjiksi huomautuksella).",
             "Etelä-Korea: rakenneprofiili C50/D50 → C30/D70, Italian rinnalle (rajat ja N* ennallaan).",
             "”Keskimääräinen tila” -sivu (yhteistyökumppaneille): merkityt (*) maat ovat nyt Paper 3:n maat: Italia, Etelä-Korea ja Costa Rica.",
             "Costa Rica lisätty yleiskuvaan (nyt 12 maata, kuten narayama.livessa); Etelä-Korean kortti korjattu arvoon 0,48.",

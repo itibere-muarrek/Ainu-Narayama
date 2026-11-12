@@ -948,7 +948,7 @@
     "valor": null,
     "lacuna": true,
     "natureza": "PROJ",
-    "nota": "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
+    "nota": "cenário de TFT constante da planilha não reproduzido no repositório; a recalcular"
    },
    "asc_estr_2075_wpp": {
     "texto": "1.55",
@@ -978,37 +978,41 @@
     "valor": null,
     "lacuna": true,
     "natureza": "PROJ",
-    "nota": "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
+    "nota": "definição de carga por Estruturador da planilha não reproduzida no repositório; a recalcular"
    },
    "carga_estr_2075_tft_constante": {
     "texto": "—",
     "valor": null,
     "lacuna": true,
     "natureza": "PROJ",
-    "nota": "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
+    "nota": "definição de carga por Estruturador da planilha não reproduzida no repositório; a recalcular"
    },
    "carga_estr_2075_rapida": {
     "texto": "—",
     "valor": null,
     "lacuna": true,
     "natureza": "PROJ",
-    "nota": "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
+    "nota": "definição de carga por Estruturador da planilha não reproduzida no repositório; a recalcular"
    }
   },
   "consumo": {
    "cfcc_total_pct_desc_estr_asc": {
-    "texto": "—",
-    "valor": null,
-    "lacuna": true,
+    "texto": "21.0 / 54.3 / 24.8",
+    "valor": [
+     21.0,
+     54.3,
+     24.8
+    ],
     "natureza": "EST",
-    "nota": "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
+    "fonte": "NTA 2019 (ntaccounts.org) × população da ONU de 2025; cortes de src/config.py",
+    "nota": "método do repositório (src/nta_derivados.py); a ficha anterior usava pesos da NTA de 2010 e cortes anteriores (16.7 / 50.6 / 32.7)"
    },
    "desc_privado_pesos_nta": {
     "texto": "—",
     "valor": null,
     "lacuna": true,
     "natureza": "EST",
-    "nota": "calculado com cortes etários anteriores; a recalcular com os cortes vigentes"
+    "nota": "exige separar consumo privado e público da NTA, o que os perfis do repositório não trazem; a recalcular"
    },
    "desc_privado_microdados_ancorados": {
     "texto": "—",

@@ -32,6 +32,7 @@ data/processed/*
 !data/raw/migracao_un.csv
 !data/raw/un_wpp_historico.csv
 !data/raw/convergencia_un.csv
+!data/raw/nta_perfis_C_YL_S.csv
 !data/processed/n_index_2024.csv
 !data/processed/n_index_historico.csv
 !data/processed/projecao_inputs.npz
