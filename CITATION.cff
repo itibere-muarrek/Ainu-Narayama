@@ -14,14 +14,14 @@ abstract: >-
   Motor de projeção demográfica por coortes (UN WPP 2024, variante média) e painel do
   Índice de Narayama Sistêmico observado (N*_Obs) para 30 países, com a composição de
   perfis estruturais usada para definir os cortes etários. Pesquisa independente.
+version: "0.1.0"
+date-released: "2026-11-14"
 keywords:
   - demografia
   - fecundidade
   - gerações
   - National Transfer Accounts
   - Índice de Narayama Sistêmico
-# Quando o depósito no Zenodo for publicado, acrescentar aqui:
+# Quando o depósito no Zenodo for publicado, acrescentar aqui o DOI (e atualizar version e date-released se houver nova versão):
 #   doi: "10.5281/zenodo.XXXXXXX"
-#   version: "x.y.z"
-#   date-released: "AAAA-MM-DD"
 # e, se houver, o ORCID do autor em authors[0].orcid.
