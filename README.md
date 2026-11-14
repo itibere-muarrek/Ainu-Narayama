@@ -86,5 +86,10 @@ F6, F7, F8 e F9 não executados; farol sem dado; traduções sem revisão nativa
 
 ## Licença
 
-Fase de prototipagem de uma pesquisa independente em Economia Política, em andamento. Todos os direitos reservados — ver
-`LICENSE`. Uso, adaptação ou colaboração acadêmica requerem autorização prévia do autor.
+Fase de prototipagem de uma pesquisa independente em Economia Política, em andamento.
+
+- Código-fonte: licença MIT (`LICENSE`).
+- Dados derivados e documentação: CC BY 4.0 (`LICENSE-DATA.md`).
+- Dados de terceiros (ONU, NTA, OCDE, OIT e outras fontes): termos de cada fonte, em `THIRD_PARTY_DATA.md`.
+- Logotipos e identidade visual (AINU, Narayama): todos os direitos reservados.
+- Como citar: `CITATION.cff`.

@@ -1,16 +1,27 @@
+MIT License
+
 Copyright (c) 2026 Itiberê L. G. C. Muarrek
 
-Todos os direitos reservados.
+Este arquivo cobre o CÓDIGO-FONTE deste repositório (src/, app/, scripts/, tests/ e
+os arquivos test_*.py). Os dados derivados e a documentação têm licença própria
+(LICENSE-DATA.md), e os dados de terceiros seguem os termos de cada fonte
+(THIRD_PARTY_DATA.md). Logotipos e identidade visual (AINU, Narayama) não estão
+cobertos: todos os direitos reservados.
 
-Este repositório contém o código-fonte e a documentação técnica do
-projeto AINU-Narayama, implementação computacional de uma tese de
-doutorado em Economia Política ("Do Dilema de Narayama ao Oicoceno
-Civilizacional") ainda em fase de prototipagem e construção
-metodológica.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Nenhuma parte deste código, dados ou documentação pode ser usada,
-copiada, modificada, publicada, distribuída, sublicenciada ou
-vendida sem autorização prévia e por escrito do autor.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Pedidos de uso, adaptação, colaboração acadêmica ou citação devem
-ser dirigidos ao autor antes de qualquer utilização.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

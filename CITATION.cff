@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Se você usar este software ou estes dados, cite-os como abaixo."
+title: "AINU.Systems: motor demográfico por coortes e painel do N*_Obs (30 países)"
+type: software
+authors:
+  - family-names: Muarrek
+    given-names: "Itiberê L. G. C."
+repository-code: "https://github.com/itibere-muarrek/Ainu-Narayama"
+url: "https://ainu.systems"
+license:
+  - MIT
+  - CC-BY-4.0
+abstract: >-
+  Motor de projeção demográfica por coortes (UN WPP 2024, variante média) e painel do
+  Índice de Narayama Sistêmico observado (N*_Obs) para 30 países, com a composição de
+  perfis estruturais usada para definir os cortes etários. Pesquisa independente.
+keywords:
+  - demografia
+  - fecundidade
+  - gerações
+  - National Transfer Accounts
+  - Índice de Narayama Sistêmico
+# Quando o depósito no Zenodo for publicado, acrescentar aqui:
+#   doi: "10.5281/zenodo.XXXXXXX"
+#   version: "x.y.z"
+#   date-released: "AAAA-MM-DD"
+# e, se houver, o ORCID do autor em authors[0].orcid.

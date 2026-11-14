@@ -77,3 +77,6 @@ data/diretorio/*
 
 # Material restrito ao administrador (nunca vai para o repositorio publico)
 docs/privado/
+
+# Configuração local de ferramentas (caminhos e permissões da máquina do autor)
+.claude/settings.local.json
