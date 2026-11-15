@@ -27,6 +27,18 @@ def test_perfis_nta_e_cfcc_por_coorte():
         assert all(abs(a - b) < 0.2 for a, b in zip(r["pct"], esperado)), (iso, r["pct"])
 
 
+def test_perfil_do_japao_2019_do_ipss():
+    """Japão: consumo e renda do trabalho de 2019 (IPSS v3.0). A janela de superávit (renda > consumo) fica a 1 ano dos cortes 24/63."""
+    ano_c, c = perfil("JPN", "C")
+    ano_y, yl = perfil("JPN", "YL")
+    assert ano_c == ano_y == 2019 and len(c) == len(yl) == 101
+    assert abs(c[40] - 2427200) < 1 and abs(yl[40] - 4199700) < 1       # 242,72 e 419,97 (10 mil ienes) da tabela do IPSS
+    sup = [i for i in range(101) if c[i] - yl[i] < 0]
+    assert (sup[0], sup[-1]) == (24, 61), (sup[0], sup[-1])
+    r = cfcc_por_coorte("JPN")
+    assert abs(sum(r["pct"]) - 100) < 1e-6 and r["ano_perfil"] == 2019
+
+
 def test_metodo_reproduz_a_ficha_da_italia_em_1_ponto():
     """Validação do método: com a NTA 2008, o resultado fica a 1 ponto percentual da ficha da Itália (cortes inalterados)."""
     r = cfcc_por_coorte("ITA")["pct"]
