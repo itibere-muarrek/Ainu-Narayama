@@ -2450,7 +2450,10 @@ function setLang(lang) {
   const saved = localStorage.getItem('ainu_lang');
   const browser = navigator.language?.slice(0,2);
   const supported = Object.keys(i18n);
-  const lang = supported.includes(saved) ? saved
+  // ?lang=en (ou outro idioma) no endereço tem prioridade sobre o idioma salvo e o do navegador
+  const pedido = new URLSearchParams(location.search).get('lang');
+  const lang = supported.includes(pedido) ? pedido
+              : supported.includes(saved) ? saved
               : supported.includes(browser) ? browser
               : 'pt';
   document.getElementById('langSelect').value = lang;

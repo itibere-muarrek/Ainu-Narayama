@@ -1,3 +1,2 @@
-# Perfis da NTA: sem licença de redistribuição identificada (ver THIRD_PARTY_DATA.md).
-# Fora dos pacotes de release (git archive / Zenodo) até haver autorização da rede NTA.
-data/raw/nta_perfis_C_YL_S.csv export-ignore
+# (vazio) O CSV dos perfis da NTA (data/raw/nta_perfis_C_YL_S.csv) entra nos pacotes de release:
+# redistribuição autorizada por e-mail de Andrew Mason, da rede NTA, em 14/11/2026 (ver THIRD_PARTY_DATA.md).
