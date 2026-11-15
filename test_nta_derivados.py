@@ -19,7 +19,7 @@ FICHAS = {f["iso"]: f for f in json.loads((RAIZ / "data" / "diretorio" / "public
 
 def test_perfis_nta_e_cfcc_por_coorte():
     ano, c = perfil("KOR", "C")
-    assert ano == 2019 and len(c) == 101 and c[0] > 0
+    assert ano == 2024 and len(c) == 101 and c[0] > 0   # KOSIS (série oficial 2010–2024), e não o 2019 antigo do portal NTA
     assert perfil("CRI", "C") is None and cfcc_por_coorte("PRY") is None  # sem perfil NTA público no repositório
     for iso, esperado in (("KOR", [21.0, 54.3, 24.8]), ("ITA", [17.4, 48.2, 34.5])):
         r = cfcc_por_coorte(iso)
@@ -53,6 +53,7 @@ def test_ficha_da_coreia_e_da_italia_alinhadas_ao_config():
     k = FICHAS["KOR"]
     cf = k["consumo"]["cfcc_total_pct_desc_estr_asc"]
     assert cf["natureza"] == "EST" and abs(sum(cf["valor"]) - 100) < 0.2 and not cf.get("lacuna") and "nota" in cf
+    assert cf["fonte"].startswith("KOSIS") and "2024" in cf["fonte"]
     for bloco, chave in coortes_motor.NOTA_ESPECIFICA:
         reg = k[bloco][chave]
         assert reg.get("lacuna") and reg["nota"] == coortes_motor.NOTA_ESPECIFICA[(bloco, chave)], (bloco, chave)

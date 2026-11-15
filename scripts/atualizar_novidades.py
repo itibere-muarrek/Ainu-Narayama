@@ -21,7 +21,7 @@ PAGINAS = {
 }
 
 # data por site: cada um só muda de data quando muda de fato
-DATA_SITE = {"ainu-systems": date(2026, 11, 14), "narayama-live": date(2026, 11, 11)}
+DATA_SITE = {"ainu-systems": date(2026, 11, 15), "narayama-live": date(2026, 11, 11)}
 IDIOMAS = ["pt", "en", "es", "fr", "ko", "it", "zh", "ja", "fi"]
 
 # --------------------------------------------------------------------------- textos fixos
@@ -57,6 +57,7 @@ def data_fmt(lang: str, site: str) -> str:
 ITENS = {
     "ainu-systems": {
         "pt": [
+            "Perfis da NTA atualizados: Coreia do Sul pelo KOSIS (2024, série oficial) e Japão pelo IPSS (2019, versão 3.0); fichas dos dois com o consumo por coorte recalculado.",
             "Paper 3 publicado como working paper: texto integral, versão resumida e artigo em PDF, em português e inglês (DOI do texto integral no Zenodo).",
             "Diretório: fichas da Itália e da Coreia do Sul alinhadas ao perfil C30/D70; CFCc da Coreia recalculado com a NTA 2019 (campos sem método reproduzível ficam em branco, com nota).",
             "Coreia do Sul: perfil estrutural C50/D50 → C30/D70, ao lado da Itália (cortes e N* inalterados).",
@@ -69,6 +70,7 @@ ITENS = {
             "A simulação por coorte inclui Costa Rica e Paraguai.",
         ],
         "en": [
+            "NTA profiles updated: South Korea from KOSIS (2024, official series) and Japan from IPSS (2019, version 3.0); both country sheets with consumption by cohort recalculated.",
             "Paper 3 published as a working paper: full text, abridged version and article as PDFs, in Portuguese and English (full-text DOI on Zenodo).",
             "Directory: Italy and South Korea profiles aligned to C30/D70; Korea’s consumption by cohort recalculated with the 2019 NTA (fields without a reproducible method are left blank, with a note).",
             "South Korea: structural profile C50/D50 → C30/D70, alongside Italy (cut-offs and N* unchanged).",
@@ -81,6 +83,7 @@ ITENS = {
             "The cohort simulation now includes Costa Rica and Paraguay.",
         ],
         "es": [
+            "Perfiles de la NTA actualizados: Corea del Sur desde KOSIS (2024, serie oficial) y Japón desde el IPSS (2019, versión 3.0); las fichas de ambos con el consumo por cohorte recalculado.",
             "Paper 3 publicado como working paper: texto completo, versión resumida y artículo en PDF, en portugués e inglés (DOI del texto completo en Zenodo).",
             "Directorio: fichas de Italia y Corea del Sur alineadas al perfil C30/D70; consumo por cohorte de Corea recalculado con la NTA 2019 (los campos sin método reproducible quedan en blanco, con nota).",
             "Corea del Sur: perfil estructural C50/D50 → C30/D70, junto a Italia (cortes y N* sin cambios).",
@@ -93,6 +96,7 @@ ITENS = {
             "La simulación por cohortes incluye Costa Rica y Paraguay.",
         ],
         "fr": [
+            "Profils NTA mis à jour : Corée du Sud depuis KOSIS (2024, série officielle) et Japon depuis l’IPSS (2019, version 3.0) ; fiches des deux pays avec la consommation par cohorte recalculée.",
             "Paper 3 publié comme working paper : texte intégral, version abrégée et article en PDF, en portugais et en anglais (DOI du texte intégral sur Zenodo).",
             "Répertoire : fiches de l’Italie et de la Corée du Sud alignées sur le profil C30/D70 ; consommation par cohorte de la Corée recalculée avec la NTA 2019 (les champs sans méthode reproductible restent vides, avec une note).",
             "Corée du Sud : profil structurel C50/D50 → C30/D70, comme l’Italie (seuils et N* inchangés).",
@@ -105,6 +109,7 @@ ITENS = {
             "La simulation par cohortes inclut le Costa Rica et le Paraguay.",
         ],
         "ko": [
+            "NTA 프로파일 갱신: 한국은 KOSIS(2024, 공식 계열), 일본은 IPSS(2019, 버전 3.0); 두 나라 카드의 코호트별 소비를 다시 계산했습니다.",
             "Paper 3을 워킹페이퍼로 공개: 전문, 요약본, 일반 독자용 글을 포르투갈어와 영어 PDF로 제공(전문 DOI는 Zenodo).",
             "디렉터리: 이탈리아와 한국 카드를 C30/D70 프로파일에 맞춤; 한국의 코호트별 소비를 2019년 NTA로 재계산(재현 가능한 방법이 없는 항목은 비워 두고 주석을 달았습니다).",
             "한국: 구조 프로파일 C50/D50 → C30/D70, 이탈리아와 동일(구간 경계와 N* 변동 없음).",
@@ -117,6 +122,7 @@ ITENS = {
             "코호트 시뮬레이션에 코스타리카와 파라과이가 포함됩니다.",
         ],
         "it": [
+            "Profili NTA aggiornati: Corea del Sud da KOSIS (2024, serie ufficiale) e Giappone dall’IPSS (2019, versione 3.0); schede dei due paesi con il consumo per coorte ricalcolato.",
             "Paper 3 pubblicato come working paper: testo integrale, versione ridotta e articolo in PDF, in portoghese e inglese (DOI del testo integrale su Zenodo).",
             "Directory: schede di Italia e Corea del Sud allineate al profilo C30/D70; consumo per coorte della Corea ricalcolato con la NTA 2019 (i campi senza metodo riproducibile restano vuoti, con una nota).",
             "Corea del Sud: profilo strutturale C50/D50 → C30/D70, accanto all’Italia (soglie e N* invariati).",
@@ -129,6 +135,7 @@ ITENS = {
             "La simulazione per coorti include Costa Rica e Paraguay.",
         ],
         "zh": [
+            "NTA 剖面已更新：韩国采用 KOSIS（2024，官方序列），日本采用 IPSS（2019，3.0 版）；两国国家卡片的分队列消费已重新计算。",
             "Paper 3 以工作论文形式发布：全文、精简版和科普文章（PDF），提供葡萄牙语和英语版本（全文 DOI 见 Zenodo）。",
             "目录：意大利和韩国卡片对齐 C30/D70 类型；韩国分队列消费用 2019 年 NTA 重新计算（无法复现方法的字段留空并附说明）。",
             "韩国：结构类型由 C50/D50 改为 C30/D70，与意大利一致（分界线和 N* 不变）。",
@@ -141,6 +148,7 @@ ITENS = {
             "分队列模拟已包含哥斯达黎加和巴拉圭。",
         ],
         "ja": [
+            "NTAプロファイルを更新：韓国はKOSIS（2024年、公式系列）、日本はIPSS（2019年、バージョン3.0）。両国のカードのコホート別消費を再計算しました。",
             "Paper 3 をワーキングペーパーとして公開：全文、要約版、一般向け記事をポルトガル語と英語のPDFで提供（全文のDOIはZenodo）。",
             "ディレクトリ：イタリアと韓国のカードをC30/D70に統一。韓国のコホート別消費を2019年NTAで再計算（再現可能な方法がない項目は空欄とし、注記を付与）。",
             "韓国：構造プロファイルをC50/D50からC30/D70に変更し、イタリアと同じに（区分年齢とN*は変更なし）。",
@@ -153,6 +161,7 @@ ITENS = {
             "コホート別シミュレーションにコスタリカとパラグアイを追加。",
         ],
         "fi": [
+            "NTA-profiilit päivitetty: Etelä-Korea KOSIS:sta (2024, virallinen sarja) ja Japani IPSS:stä (2019, versio 3.0); molempien maiden kortit laskettu uudelleen kohorttikohtaisen kulutuksen osalta.",
             "Paper 3 julkaistu working paperina: koko teksti, tiivistetty versio ja artikkeli PDF-tiedostoina portugaliksi ja englanniksi (koko tekstin DOI Zenodossa).",
             "Hakemisto: Italian ja Etelä-Korean kortit yhdenmukaistettu C30/D70-profiiliin; Korean kohorttikohtainen kulutus laskettu uudelleen NTA 2019:llä (kentät, joille ei ole toistettavaa menetelmää, jätetty tyhjiksi huomautuksella).",
             "Etelä-Korea: rakenneprofiili C50/D50 → C30/D70, Italian rinnalle (rajat ja N* ennallaan).",

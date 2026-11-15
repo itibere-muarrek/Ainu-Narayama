@@ -2,7 +2,7 @@
 Derivados da NTA pública (National Transfer Accounts, ntaccounts.org) com o motor do AINU.Systems.
 
 Fonte dos perfis: data/raw/nta_perfis_C_YL_S.csv (perfis por idade "Smooth Mean" de consumo C, renda do trabalho YL e poupança S; ver docs/nta_perfis_fonte.md).
-Exceção: as linhas de consumo e renda do trabalho do Japão (2019) vêm do IPSS (versão 3.0), sem a suavização do portal; ver docs/nta_perfis_fonte.md.
+Exceções: as linhas de consumo e renda do trabalho do Japão (2019, IPSS v3.0) e da Coreia do Sul (2024, KOSIS) vêm de fontes nacionais, sem a suavização do portal; ver docs/nta_perfis_fonte.md.
 Os cortes etários vêm de src/config.py (composição de perfis) e a população por idade, do motor (UN WPP 2024, variante média). Nada daqui depende de arquivos
 fora do repositório.
 

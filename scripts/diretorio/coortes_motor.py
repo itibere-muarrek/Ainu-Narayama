@@ -36,8 +36,9 @@ NOTA_ESPECIFICA = {("demografia", "asc_estr_2075_tft_constante"): NOTA_TFT_CONST
 
 
 # países cujo CFCc da ficha passa a ser calculado com a NTA pública do repositório (ver src/nta_derivados.py)
-RECALCULAR_CFCC_COM_NTA = {"JPN"}
-FONTE_NTA = {"JPN": "IPSS, NTA do Japão, ano fiscal de {ano}, versão 3.0"}
+RECALCULAR_CFCC_COM_NTA = {"JPN", "KOR"}
+FONTE_NTA = {"JPN": "IPSS, NTA do Japão, ano fiscal de {ano}, versão 3.0",
+             "KOR": "KOSIS (KOSTAT), NTA da Coreia do Sul, {ano}"}
 
 
 def rotulo(composicao: dict) -> str:
@@ -94,17 +95,17 @@ def _reparar(ficha: dict, iso: str) -> bool:
     # fichas cujo CFCc vinha da planilha (cortes já alinhados ao config) e que passam a usar a NTA pública do repositório
     if iso in RECALCULAR_CFCC_COM_NTA:
         reg = ficha["consumo"].get("cfcc_total_pct_desc_estr_asc")
-        if reg is not None and not reg.get("lacuna") and not str(reg.get("fonte", "")).startswith(("NTA ", "IPSS")):
-            from src.nta_derivados import cfcc_por_coorte
+        from src.nta_derivados import cfcc_por_coorte
 
-            cf = cfcc_por_coorte(iso)
-            if cf is not None:
+        cf = cfcc_por_coorte(iso)
+        if reg is not None and not reg.get("lacuna") and cf is not None:
+            fonte_nta = FONTE_NTA.get(iso, "NTA {ano} (ntaccounts.org)").format(ano=cf["ano_perfil"])
+            if not str(reg.get("fonte", "")).startswith(fonte_nta):      # idempotente: só reescreve se a fonte ainda não é a do perfil vigente
                 pct = [round(x, 1) for x in cf["pct"]]
-                fonte_nta = FONTE_NTA.get(iso, "NTA {ano} (ntaccounts.org)").format(ano=cf["ano_perfil"])
                 ficha["consumo"]["cfcc_total_pct_desc_estr_asc"] = {
                     "texto": " / ".join(f"{x:.1f}" for x in pct), "valor": pct, "natureza": "EST",
                     "fonte": f"{fonte_nta} × população da ONU de {cf['ano_pop']}; cortes de src/config.py",
-                    "nota": f"método do repositório (src/nta_derivados.py); a ficha anterior vinha da planilha ({reg.get('texto')})"}
+                    "nota": f"método do repositório (src/nta_derivados.py); valor anterior da ficha: {reg.get('texto')}"}
                 mudou = True
     return mudou
 

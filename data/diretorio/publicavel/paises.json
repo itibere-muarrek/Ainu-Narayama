@@ -997,15 +997,15 @@
   },
   "consumo": {
    "cfcc_total_pct_desc_estr_asc": {
-    "texto": "21.0 / 54.3 / 24.8",
+    "texto": "21.1 / 54.2 / 24.8",
     "valor": [
-     21.0,
-     54.3,
+     21.1,
+     54.2,
      24.8
     ],
     "natureza": "EST",
-    "fonte": "NTA 2019 (ntaccounts.org) × população da ONU de 2025; cortes de src/config.py",
-    "nota": "método do repositório (src/nta_derivados.py); a ficha anterior usava pesos da NTA de 2010 e cortes anteriores (16.7 / 50.6 / 32.7)"
+    "fonte": "KOSIS (KOSTAT), NTA da Coreia do Sul, 2024 × população da ONU de 2025; cortes de src/config.py",
+    "nota": "método do repositório (src/nta_derivados.py); valor anterior da ficha: 21.0 / 54.3 / 24.8"
    },
    "desc_privado_pesos_nta": {
     "texto": "—",
