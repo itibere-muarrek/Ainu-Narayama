@@ -1268,13 +1268,15 @@
   },
   "consumo": {
    "cfcc_total_pct_desc_estr_asc": {
-    "texto": "18.0 / 43.4 / 38.5",
+    "texto": "17.9 / 41.7 / 40.4",
     "valor": [
-     18.0,
-     43.4,
-     38.5
+     17.9,
+     41.7,
+     40.4
     ],
-    "natureza": "EST"
+    "natureza": "EST",
+    "fonte": "IPSS, NTA do Japão, ano fiscal de 2019, versão 3.0 × população da ONU de 2025; cortes de src/config.py",
+    "nota": "método do repositório (src/nta_derivados.py); a ficha anterior vinha da planilha (18.0 / 43.4 / 38.5)"
    },
    "desc_privado_pesos_nta": {
     "texto": "14.6",

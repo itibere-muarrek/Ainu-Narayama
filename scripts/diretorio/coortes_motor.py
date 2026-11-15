@@ -35,6 +35,11 @@ NOTA_ESPECIFICA = {("demografia", "asc_estr_2075_tft_constante"): NOTA_TFT_CONST
                    ("consumo", "desc_privado_pesos_nta"): NOTA_PRIVADO}
 
 
+# países cujo CFCc da ficha passa a ser calculado com a NTA pública do repositório (ver src/nta_derivados.py)
+RECALCULAR_CFCC_COM_NTA = {"JPN"}
+FONTE_NTA = {"JPN": "IPSS, NTA do Japão, ano fiscal de {ano}, versão 3.0"}
+
+
 def rotulo(composicao: dict) -> str:
     return " ".join(f"{k}{round(v * 100)}" for k, v in sorted(composicao.items()) if v > 0)
 
@@ -86,6 +91,21 @@ def _reparar(ficha: dict, iso: str) -> bool:
                 "fonte": f"NTA {cf['ano_perfil']} (ntaccounts.org) × população da ONU de {cf['ano_pop']}; cortes de src/config.py",
                 "nota": "método do repositório (src/nta_derivados.py); a ficha anterior usava pesos da NTA de 2010 e cortes anteriores (16.7 / 50.6 / 32.7)"}
             mudou = True
+    # fichas cujo CFCc vinha da planilha (cortes já alinhados ao config) e que passam a usar a NTA pública do repositório
+    if iso in RECALCULAR_CFCC_COM_NTA:
+        reg = ficha["consumo"].get("cfcc_total_pct_desc_estr_asc")
+        if reg is not None and not reg.get("lacuna") and not str(reg.get("fonte", "")).startswith(("NTA ", "IPSS")):
+            from src.nta_derivados import cfcc_por_coorte
+
+            cf = cfcc_por_coorte(iso)
+            if cf is not None:
+                pct = [round(x, 1) for x in cf["pct"]]
+                fonte_nta = FONTE_NTA.get(iso, "NTA {ano} (ntaccounts.org)").format(ano=cf["ano_perfil"])
+                ficha["consumo"]["cfcc_total_pct_desc_estr_asc"] = {
+                    "texto": " / ".join(f"{x:.1f}" for x in pct), "valor": pct, "natureza": "EST",
+                    "fonte": f"{fonte_nta} × população da ONU de {cf['ano_pop']}; cortes de src/config.py",
+                    "nota": f"método do repositório (src/nta_derivados.py); a ficha anterior vinha da planilha ({reg.get('texto')})"}
+                mudou = True
     return mudou
 
 

@@ -58,6 +58,12 @@ def test_ficha_da_coreia_e_da_italia_alinhadas_ao_config():
         assert reg.get("lacuna") and reg["nota"] == coortes_motor.NOTA_ESPECIFICA[(bloco, chave)], (bloco, chave)
 
 
+def test_ficha_do_japao_usa_o_perfil_2019_do_ipss():
+    cf = FICHAS["JPN"]["consumo"]["cfcc_total_pct_desc_estr_asc"]
+    assert cf["fonte"].startswith("IPSS") and "2019" in cf["fonte"] and abs(sum(cf["valor"]) - 100) < 0.2 and not cf.get("lacuna")
+    assert all(abs(a - b) < 0.2 for a, b in zip(cf["valor"], cfcc_por_coorte("JPN")["pct"]))
+
+
 def test_ajuste_das_fichas_e_idempotente():
     for iso, ficha in FICHAS.items():
         assert coortes_motor.aplicar(copy.deepcopy(ficha)) is False, iso
