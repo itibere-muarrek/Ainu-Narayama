@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O emprego que nascerá — método | AINU.Systems</title>
+  <meta name="description" content="Base lógica, conceitual e matemática do working paper 'O emprego que nascerá' (The job that will be born): como o estudo raciocina e como calcula. Estudo exploratório.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="../Ainu.png">
+  <link rel="canonical" href="https://ainu.systems/metodo-paper3/">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
+    :root { --ink:#0D1B2A; --ink-soft:#3D5166; --sky:#1B6CA8; --glow:#6E92A8; --paper:#F7F9FB; --divider:#D8E4EE; --white:#FFFFFF;
+            --f-body:'Inter', system-ui, sans-serif; --f-mono:'JetBrains Mono','Courier New',monospace; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:var(--f-body); color:var(--ink); background:var(--paper); line-height:1.65; }
+    nav { position:sticky; top:0; z-index:5; background:var(--white); border-bottom:1px solid var(--divider); display:flex; align-items:center; justify-content:space-between; padding:.7rem 1.2rem; }
+    .nav-logo { font-family:var(--f-mono); letter-spacing:.14em; font-size:.8rem; color:var(--sky); text-decoration:none; }
+    .nav-right a { font-size:.85rem; color:var(--ink-soft); text-decoration:none; margin-left:1rem; }
+    .nav-right a:hover, .nav-right a.on { color:var(--sky); }
+    .nav-right a.on { font-weight:600; }
+    main { max-width:820px; margin:0 auto; padding:2rem 1.2rem 4rem; }
+    .eyebrow { font-family:var(--f-mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--glow); margin:0; }
+    h1 { font-size:clamp(1.7rem,4.5vw,2.4rem); line-height:1.2; margin:.4rem 0 .6rem; }
+    h2 { font-size:1.4rem; margin:2.6rem 0 .6rem; padding-top:1.2rem; border-top:1px solid var(--divider); }
+    h3 { font-size:1.05rem; margin:1.7rem 0 .3rem; }
+    p, li { color:var(--ink-soft); }
+    .lead { font-size:1.08rem; color:var(--ink); }
+    .aviso { background:#EAF2F9; border-left:4px solid var(--sky); padding:.8rem 1rem; border-radius:6px; margin:1.2rem 0; color:var(--ink); font-size:.95rem; }
+    .aviso.suave { background:#F1F5F8; border-left-color:var(--glow); }
+    pre.f { font-family:var(--f-mono); font-size:.86rem; background:var(--white); border:1px solid var(--divider); border-radius:8px; padding:.8rem 1rem; overflow-x:auto; color:var(--ink); line-height:1.7; margin:.6rem 0 .8rem; }
+    table { border-collapse:collapse; width:100%; font-size:.92rem; margin:.7rem 0 1rem; background:var(--white); }
+    th, td { border:1px solid var(--divider); padding:.45rem .6rem; text-align:left; vertical-align:top; }
+    th { background:#EAF2F9; color:var(--ink); }
+    .tag { font-family:var(--f-mono); font-size:.7rem; background:#EAF2F9; color:var(--sky); padding:.1rem .45rem; border-radius:4px; margin-right:.4rem; }
+    ol, ul { padding-left:1.3rem; }
+    .num { font-family:var(--f-mono); font-weight:500; color:var(--sky); }
+    .nota { font-size:.88rem; color:var(--ink-soft); }
+    a { color:var(--sky); }
+    footer { max-width:820px; margin:0 auto; padding:0 1.2rem 3rem; font-size:.85rem; color:var(--ink-soft); }
+    [data-lang] { display:none; }
+    html[lang="pt"] [data-lang="pt"], html[lang="en"] [data-lang="en"] { display:block; }
+    html[lang="pt"] span[data-lang="pt"], html[lang="en"] span[data-lang="en"] { display:inline; }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../">AINU.SYSTEMS</a>
+  <div class="nav-right">
+    <a href="../#publicacoes"><span data-lang="pt">Publicações</span><span data-lang="en">Publications</span></a>
+    <a id="lp" href="?lang=pt">PT</a><a id="le" href="?lang=en">EN</a>
+  </div>
+</nav>
+
+<main>
+<!-- =========================================================== PORTUGUÊS -->
+<div data-lang="pt">
+  <p class="eyebrow">Paper 3 · Método</p>
+  <h1>O emprego que nascerá: como o estudo raciocina e como calcula</h1>
+  <p class="lead">Base lógica, conceitual e matemática do working paper <em>The job that will be born / O emprego que nascerá</em> (versão 2.6), em linguagem direta, sem exigir a leitura do texto integral.</p>
+  <div class="aviso">Estudo <strong>exploratório</strong>, sem pré-registro e com valores <strong>preliminares</strong>. Esta página resume o método; o texto completo, as ressalvas e as fontes estão no working paper (<a href="https://doi.org/10.5281/zenodo.24226127" target="_blank" rel="noopener">DOI 10.5281/zenodo.24226127</a>) e valem em caso de dúvida. Pesquisa independente do AINU.Systems Research.</div>
+
+  <h2>1. Base lógica e conceitual</h2>
+
+  <h3>1.1 A pergunta</h3>
+  <p>Sob quais condições a manutenção do N* na zona de equilíbrio, combinada ao reconhecimento do investimento das URSS, permite que o consumo gerado pelos nascimentos adicionais se converta em emprego, renda do trabalho e bem-estar material para as três coortes ao longo do tempo?</p>
+
+  <h3>1.2 O circuito em quatro passos</h3>
+  <ol>
+    <li><strong>Nascimento:</strong> cada criança é um novo consumidor, com um perfil de consumo conhecido por idade (alimentação, cuidado, educação, saúde, habitação).</li>
+    <li><strong>Demanda:</strong> esse consumo é demanda final na economia; pelas tabelas insumo-produto, ela ativa cadeias produtivas domésticas.</li>
+    <li><strong>Emprego:</strong> a atividade gerada sustenta empregos brutos, um <em>teto de demanda</em>, que só vira emprego líquido se houver capacidade ociosa e pouco deslocamento de outros gastos.</li>
+    <li><strong>Retorno:</strong> a criança vira, adiante, trabalhador e contribuinte, mas esse retorno é coletivo. O custo de formá-la é, em grande parte, privado e recai sobre os pais, e o circuito só se completa se parte do retorno chegar a quem investiu.</li>
+  </ol>
+
+  <h3>1.3 As três coortes</h3>
+  <table>
+    <tr><th>Coorte</th><th>Idades</th><th>Papel no circuito</th></tr>
+    <tr><td>Descendentes</td><td>do nascimento até 22 anos</td><td>Consomem mais do que produzem; recebem transferências.</td></tr>
+    <tr><td>Estruturadores</td><td>23 a 60 anos</td><td>Concentram a renda do trabalho e financiam as duas pontas.</td></tr>
+    <tr><td>Ascendentes</td><td>61 anos ou mais</td><td>Consomem mais do que produzem; recebem sobretudo transferências públicas.</td></tr>
+  </table>
+  <p class="nota">Os cortes vêm de uma composição de perfis estruturais A a E (cortes A 16/44, B 18/55, C 21/60, D 23/62, E 25/65), com arredondamento ao inteiro mais próximo. Itália e Coreia do Sul usam C30/D70 e Costa Rica, C50/D50, o que dá 22 e 61 nos três países. A composição é julgamento do autor, e o paper testa a sensibilidade a ela.</p>
+
+  <h3>1.4 A URSS</h3>
+  <p>A <strong>Unidade de Reprodução Social Sustentável (URSS)</strong> é a unidade observável que investe na formação das novas gerações, independentemente de seu vínculo com o emprego. Classifica-se como Ativa, Cumprida ou Inativa. A pergunta que o estudo faz é quem recebe o retorno desse investimento.</p>
+
+  <h3>1.5 O N*: o que é e o que não é</h3>
+  <p>O <strong>Índice de Narayama Sistêmico (N*)</strong> situa o ponto de partida demográfico de cada país: combina a razão entre a coorte formadora e a ascendente, a razão nascimentos/mortes e a variação da fecundidade em 25 anos. Por construção ele depende só de fecundidade e de estrutura etária, de modo que sua trajetória é <strong>uma identidade demográfica, e não evidência</strong>. As conclusões do estudo se apoiam em variáveis que não derivam dele: empregos, valor adicionado, renda do trabalho, razão de suporte e Estruturadores por pessoa de 80 anos ou mais.</p>
+  <table>
+    <tr><th>Zona</th><th>N*</th></tr>
+    <tr><td>Colapso de Narayama (PEC)</td><td>abaixo de 0,71</td></tr>
+    <tr><td>Tensão Acelerada</td><td>0,71 a 0,90</td></tr>
+    <tr><td>Ponto de Equilíbrio Autossustentável (PEA)</td><td>0,90 a 1,40</td></tr>
+  </table>
+  <p class="nota">As zonas são <strong>provisórias</strong>: no protocolo de qualidade e falseabilidade (PQDF-N*), o teste de robustez F4 não é satisfeito. A ordenação dos países é estável, mas a zona de vários países muda com pequenas escolhas.</p>
+
+  <h3>1.6 As hipóteses</h3>
+  <ul>
+    <li><span class="tag">H1</span> Cada criança adicional eleva o consumo dos Descendentes conforme o perfil etário de consumo.</li>
+    <li><span class="tag">H2</span> O consumo adicional sustenta empregos brutos; o emprego líquido depende de capacidade ociosa e deslocamento.</li>
+    <li><span class="tag">H3</span> A renda agregada dos Estruturadores só ultrapassa a Tendência depois que as novas coortes entram no mercado: uma <strong>curva em J</strong>, cujo vale é o custo arcado pelos pais.</li>
+    <li><span class="tag">H4</span> Poupança: efeito de longo prazo indeterminado.</li>
+    <li><span class="tag">H5</span> A razão de suporte econômica é maior na Meta, no longo prazo.</li>
+    <li><span class="tag">H6</span> A oferta potencial de cuidadores depende da fecundidade; a demanda (80 anos ou mais) quase não muda entre cenários até 2099.</li>
+    <li><span class="tag">H8</span> Com TFT em torno de 2,1 a estrutura etária se estabiliza, talvez em patamar pior que o de 2024 (hipótese exploratória, estratificada por país).</li>
+  </ul>
+  <p class="nota">Os limiares de refutação de H1, H3, H5 e H8 ainda serão fixados e pré-registrados antes da estimação econômica; esta versão não os fixa.</p>
+
+  <h3>1.7 O que o estudo não afirma</h3>
+  <ul>
+    <li>Não afirma que a reposição seja suficiente, nem que o custo explique a baixa fecundidade.</li>
+    <li>Não é previsão: os cenários são condicionais e usam um único conjunto de hipóteses.</li>
+    <li>Os empregos calculados são <strong>brutos</strong> (teto de demanda), e não líquidos.</li>
+    <li>Não mede o tempo de cuidado nem a produção não remunerada; o ônus privado registrado é, por isso, um limite inferior do custo real.</li>
+    <li>Com três países, escolhidos depois da exploração demográfica, a comparação é descritiva; não há relação estatística entre N* e resultados.</li>
+  </ul>
+
+  <h2>2. Base matemática</h2>
+  <p>Notação: <span class="num">a</span> é a idade, <span class="num">t</span> o ano, <span class="num">P(a,t)</span> a população por idade simples (UN WPP 2024, variante média), <span class="num">C(a)</span> o consumo total por pessoa (privado e público) e <span class="num">YL(a)</span> a renda do trabalho por pessoa, ambos dos perfis por idade das National Transfer Accounts (NTA).</p>
+
+  <h3>2.1 O N* observado</h3>
+<pre class="f">NGII_Obs = (Pop_Base ÷ Pop_Topo) × (Nascimentos ÷ Mortes)
+F        = TFT(t) ÷ TFT(t − 25)
+N*_Obs   = √( NGII_Obs × F )</pre>
+  <p class="nota">Pop_Base é a população até o primeiro corte etário (coorte formadora) e Pop_Topo, a população a partir do segundo (coorte ascendente). A raiz quadrada preserva a ordenação e mantém 1 como ponto fixo. Como F compara a fecundidade de hoje com a de 25 anos antes, ele penaliza a queda de uma geração para a outra e premia a alta recente (na Costa Rica, sob a Meta, F vai de 0,53 em 2024 a 1,59 em 2049 e volta a 1,00 quando a TFT para de mudar).</p>
+
+  <h3>2.2 Os cenários demográficos</h3>
+<pre class="f">Tendência:  TFT(t) = projeção da ONU (WPP 2024, variante média)
+Meta:       TFT(t) = TFT₀ + (2,1 − TFT₀) × min(1, (t − 2024) ÷ 25)</pre>
+  <p class="nota">Só a fecundidade muda: mortalidade e migração seguem a projeção da ONU. A população por idade e sexo vem de um modelo de coortes; um único cenário, sem intervalo de incerteza.</p>
+
+  <h3>2.3 Consumo por coorte (CFCc)</h3>
+<pre class="f">CFCc(k, t) = Σ C(a) · P(a, t)     para a na coorte k
+participação(k) = CFCc(k) ÷ Σ_k CFCc(k)</pre>
+
+  <h3>2.4 Consumo médio de um Descendente</h3>
+<pre class="f">C̄_D = [ c_D ÷ c̄ ] × [ Consumo_ICIO ÷ População_total ]
+      c_D = CFCc(Descendentes) ÷ P(Descendentes)      c̄ = Σ CFCc ÷ Σ P</pre>
+  <p class="nota">A razão <span class="num">c_D ÷ c̄</span> (perfil NTA × população) mede o consumo de uma criança relativamente à média; ela é aplicada ao consumo total da economia (tabela insumo-produto ICIO 2019, em US$).</p>
+
+  <h3>2.5 Emprego bruto por criança</h3>
+<pre class="f">J(0)  = C̄_D × e ÷ 1.000.000
+J(δ)  = (1 − δ) × J(0)</pre>
+  <p><span class="num">e</span> é a intensidade de emprego do consumo (pessoas ocupadas por US$ milhão de consumo final, direto e indireto, doméstico), calculada com a ICIO 2019 e o ILOSTAT, com intensidade uniforme dentro de cada seção. <span class="num">δ</span> é o deslocamento de outros gastos; δ = 0 dá o teto de demanda.</p>
+  <div class="aviso suave"><strong>Exemplo (Coreia do Sul, paper v2.6):</strong> C̄_D = US$ 19.890 e e = 15,1 empregos por US$ milhão, logo J(0) = 19.890 × 15,1 ÷ 1.000.000 ≈ <strong>0,30</strong> emprego bruto por criança por ano. Pelo mesmo método: Itália ≈ 0,19 e Costa Rica ≈ 0,20.</div>
+
+  <h3>2.6 O ciclo completo de um casal (ilustração)</h3>
+<pre class="f">J_casal  = n × J(0)                n = número de filhos (n = 2 ⇒ ≈ 0,5)
+r        = duração da fase dos pais ÷ duração da fase dos filhos = 38 ÷ 23 ≈ 1,65
+J_ciclo  = J_casal × (1 + r)       ⇒ entre ≈ 1,3 (r exato) e ≈ 1,5 (r = 2, simplificação)</pre>
+  <p class="nota">A unidade é o <strong>posto-ano</strong> ao longo do ciclo, e não empregos simultâneos. É uma ilustração contábil do autor, e não um resultado estimado.</p>
+
+  <h3>2.7 Déficit do ciclo de vida e custo de um filho</h3>
+<pre class="f">LCD(a)        = C(a) − YL(a)
+custo_filho   = média de LCD(a) para a = 0 … 22  ÷  renda média de um Estruturador (23 … 60)</pre>
+  <p class="nota">No paper v2.6, o custo médio de um filho equivale a 62% (Itália, NTA 2008), 79% (Coreia do Sul, NTA 2019) e 60% (Costa Rica, NTA 2013) da renda anual de um Estruturador, durante 23 anos. A atualização da Coreia para o KOSIS 2024 está prevista para a versão 2.7 (com o perfil de 2024 a razão fica perto de 82%).</p>
+
+  <h3>2.8 A curva em J da renda dos Estruturadores</h3>
+<pre class="f">YL_E(t)  = Σ YL(a) · P(a, t)    para a = 23 … 60
+ΔYL(t)   = [ YL_E^Meta(t) − YL_E^Tend(t) ] − Σ [ P^Meta(a,t) − P^Tend(a,t) ] · LCD(a)    para a = 0 … 22
+resultado = ΔYL(t) ÷ YL_E^Tend(t)</pre>
+  <p class="nota">O primeiro termo é a diferença de renda por haver mais Estruturadores; o segundo é o custo das crianças adicionais, cobrado integralmente aos Estruturadores (limite superior). A renda por idade é constante (sem produtividade, participação ou desemprego). O <em>retorno da demanda</em>, o gasto com a criança que vira renda de terceiros, entra como um abatimento do custo, também como teto. O vale fica entre −5% e −20% e dura mais de quatro décadas.</p>
+
+  <h3>2.9 Quem financia o consumo de cada coorte (Costa Rica)</h3>
+<pre class="f">C(a) = YL(a) + transferências públicas líquidas + transferências privadas líquidas + reasignação por ativos</pre>
+  <p class="nota">Com o arquivo CNT_CR2013 do CCP-UCR (colones correntes): o consumo dos Descendentes é financiado por transferências privadas (61,4%), públicas (26,3%), renda própria (9,2%) e ativos (3,1%).</p>
+
+  <h3>2.10 Limites do cálculo</h3>
+  <ul>
+    <li>Valores médios, e não marginais; sem economias de escala no domicílio.</li>
+    <li>Empregos em pessoas ocupadas (formais e informais), e não em equivalentes de tempo integral; intensidade uniforme por seção da ISIC.</li>
+    <li>ICIO 2019, e não matrizes nacionais; perfis NTA de anos diferentes (Itália 2008, Coreia do Sul 2019, Costa Rica 2013) e suavizados.</li>
+    <li>O gradiente de custo por número de filhos é uma extrapolação linear e <strong>falha</strong> como estimativa de gasto para três ou mais filhos.</li>
+  </ul>
+
+  <h2>3. O que vem a seguir nesta página</h2>
+  <p>As próximas etapas deste trabalho no ainu.systems são a <strong>base de cálculos realizada</strong> (tabelas de resultados, entradas e fontes) e um <strong>simulador</strong> da parte econômica. Enquanto isso, o motor demográfico, o N* e a simulação por coorte já estão no <a href="../">ainu.systems</a>, com código e dados abertos em <a href="https://github.com/itibere-muarrek/Ainu-Narayama" target="_blank" rel="noopener">github.com/itibere-muarrek/Ainu-Narayama</a>. As rotinas dos cálculos econômicos ainda não estão publicadas.</p>
+</div>
+
+<!-- =========================================================== ENGLISH -->
+<div data-lang="en">
+  <p class="eyebrow">Paper 3 · Method</p>
+  <h1>The job that will be born: how the study reasons and calculates</h1>
+  <p class="lead">The logical, conceptual and mathematical basis of the working paper <em>The job that will be born / O emprego que nascerá</em> (version 2.6), in plain language, without requiring the full text.</p>
+  <div class="aviso">An <strong>exploratory</strong> study, not pre-registered, with <strong>preliminary</strong> values. This page summarizes the method; the full text, caveats and sources are in the working paper (<a href="https://doi.org/10.5281/zenodo.24226127" target="_blank" rel="noopener">DOI 10.5281/zenodo.24226127</a>) and prevail in case of doubt. Independent research by AINU.Systems Research.</div>
+
+  <h2>1. Logical and conceptual basis</h2>
+
+  <h3>1.1 The question</h3>
+  <p>Under what conditions can keeping N* in the equilibrium zone, combined with recognition of the URSS's investment, allow the consumption generated by additional births to become employment, labor income and material well-being for all three cohorts over time?</p>
+
+  <h3>1.2 The circuit in four steps</h3>
+  <ol>
+    <li><strong>Birth:</strong> each child is a new consumer, with a known consumption profile by age (food, care, education, health, housing).</li>
+    <li><strong>Demand:</strong> this consumption is final demand in the economy; through input-output tables, it activates domestic production chains.</li>
+    <li><strong>Employment:</strong> the resulting activity supports gross jobs, a <em>demand ceiling</em> that becomes net employment only with idle capacity and little displacement of other spending.</li>
+    <li><strong>Return:</strong> the child later becomes a worker and taxpayer, but that return is collective. The cost of raising the child is largely private and falls on the parents, and the circuit is complete only if part of the return reaches those who invested.</li>
+  </ol>
+
+  <h3>1.3 The three cohorts</h3>
+  <table>
+    <tr><th>Cohort</th><th>Ages</th><th>Role in the circuit</th></tr>
+    <tr><td>Descendants</td><td>birth to 22</td><td>Consume more than they produce; receive transfers.</td></tr>
+    <tr><td>Structurers</td><td>23 to 60</td><td>Concentrate labor income and finance both ends.</td></tr>
+    <tr><td>Ascendants</td><td>61 or older</td><td>Consume more than they produce; receive mainly public transfers.</td></tr>
+  </table>
+  <p class="nota">The cutoffs come from a composition of structural profiles A to E (cutoffs A 16/44, B 18/55, C 21/60, D 23/62, E 25/65), rounded to the nearest integer. Italy and South Korea use C30/D70 and Costa Rica C50/D50, which gives 22 and 61 in all three countries. The composition is the author's judgment, and the paper tests sensitivity to it.</p>
+
+  <h3>1.4 The URSS</h3>
+  <p>The <strong>Sustainable Social Reproduction Unit (URSS, from the Portuguese acronym)</strong> is the observable unit that invests in forming new generations, regardless of its link to employment. It is classified as Active, Fulfilled or Inactive. The question the study asks is who receives the return on that investment.</p>
+
+  <h3>1.5 N*: what it is and what it is not</h3>
+  <p>The <strong>Narayama Systemic Index (N*)</strong> establishes each country's demographic starting point: it combines the ratio of the forming cohort to the ascending one, the births-to-deaths ratio and the change in fertility over 25 years. By construction it depends only on fertility and age structure, so its trajectory is <strong>a demographic identity, not evidence</strong>. The study's conclusions rest on variables that do not derive from it: jobs, value added, labor income, the support ratio and Structurers per person aged 80 or older.</p>
+  <table>
+    <tr><th>Zone</th><th>N*</th></tr>
+    <tr><td>Narayama Collapse (PEC)</td><td>below 0.71</td></tr>
+    <tr><td>Accelerated Tension</td><td>0.71 to 0.90</td></tr>
+    <tr><td>Self-Sustaining Equilibrium Point (PEA)</td><td>0.90 to 1.40</td></tr>
+  </table>
+  <p class="nota">The zones are <strong>provisional</strong>: under the quality and falsifiability protocol (PQDF-N*), the F4 robustness test is not met. Country rankings are stable, but the zone of several countries changes with small choices.</p>
+
+  <h3>1.6 The hypotheses</h3>
+  <ul>
+    <li><span class="tag">H1</span> Each additional child raises Descendants' consumption according to the age profile of consumption.</li>
+    <li><span class="tag">H2</span> Additional consumption supports gross jobs; net employment depends on idle capacity and displacement.</li>
+    <li><span class="tag">H3</span> Structurers' aggregate labor income overtakes the Trend only after the new cohorts enter the labor market: a <strong>J-curve</strong> whose trough is the cost borne by parents.</li>
+    <li><span class="tag">H4</span> Saving: long-run effect indeterminate.</li>
+    <li><span class="tag">H5</span> The economic support ratio is higher under the Target in the long run.</li>
+    <li><span class="tag">H6</span> The potential supply of caregivers depends on fertility; demand (aged 80 or older) barely changes across scenarios through 2099.</li>
+    <li><span class="tag">H8</span> With TFR around 2.1 the age structure stabilizes, perhaps at a level worse than in 2024 (exploratory, stratified by country).</li>
+  </ul>
+  <p class="nota">The rejection thresholds for H1, H3, H5 and H8 will be set and preregistered before the economic estimation; this version does not set them.</p>
+
+  <h3>1.7 What the study does not claim</h3>
+  <ul>
+    <li>It does not claim that replacement fertility is sufficient, or that cost explains low fertility.</li>
+    <li>It is not a forecast: the scenarios are conditional and use a single set of assumptions.</li>
+    <li>The jobs calculated are <strong>gross</strong> (a demand ceiling), not net.</li>
+    <li>It does not measure care time or unpaid production; the recorded private burden is therefore a lower bound on the real cost.</li>
+    <li>With three countries, chosen after the demographic exploration, the comparison is descriptive; there is no statistical relationship between N* and outcomes.</li>
+  </ul>
+
+  <h2>2. Mathematical basis</h2>
+  <p>Notation: <span class="num">a</span> is age, <span class="num">t</span> the year, <span class="num">P(a,t)</span> the population by single year of age (UN WPP 2024, medium variant), <span class="num">C(a)</span> total consumption per person (private and public) and <span class="num">YL(a)</span> labor income per person, both from the age profiles of the National Transfer Accounts (NTA).</p>
+
+  <h3>2.1 The observed N*</h3>
+<pre class="f">NGII_Obs = (Pop_Base ÷ Pop_Top) × (Births ÷ Deaths)
+F        = TFR(t) ÷ TFR(t − 25)
+N*_Obs   = √( NGII_Obs × F )</pre>
+  <p class="nota">Pop_Base is the population up to the first age cutoff (forming cohort) and Pop_Top the population from the second cutoff on (ascending cohort). The square root preserves the ordering and keeps 1 as a fixed point. Because F compares today's fertility with that of 25 years earlier, it penalizes a fall from one generation to the next and rewards a recent rise (in Costa Rica, under the Target, F goes from 0.53 in 2024 to 1.59 in 2049 and returns to 1.00 once TFR stops changing).</p>
+
+  <h3>2.2 The demographic scenarios</h3>
+<pre class="f">Trend:   TFR(t) = UN projection (WPP 2024, medium variant)
+Target:  TFR(t) = TFR₀ + (2.1 − TFR₀) × min(1, (t − 2024) ÷ 25)</pre>
+  <p class="nota">Only fertility changes: mortality and migration follow the UN projection. Population by age and sex comes from a cohort-component model; a single scenario, with no uncertainty interval.</p>
+
+  <h3>2.3 Consumption by cohort (CFCc)</h3>
+<pre class="f">CFCc(k, t) = Σ C(a) · P(a, t)     for a in cohort k
+share(k)   = CFCc(k) ÷ Σ_k CFCc(k)</pre>
+
+  <h3>2.4 Average consumption of one Descendant</h3>
+<pre class="f">C̄_D = [ c_D ÷ c̄ ] × [ ICIO_consumption ÷ Total_population ]
+      c_D = CFCc(Descendants) ÷ P(Descendants)      c̄ = Σ CFCc ÷ Σ P</pre>
+  <p class="nota">The ratio <span class="num">c_D ÷ c̄</span> (NTA profile × population) measures a child's consumption relative to the average; it is applied to the economy's total consumption (ICIO 2019 input-output table, in US$).</p>
+
+  <h3>2.5 Gross jobs per child</h3>
+<pre class="f">J(0)  = C̄_D × e ÷ 1,000,000
+J(δ)  = (1 − δ) × J(0)</pre>
+  <p><span class="num">e</span> is the employment intensity of consumption (employed persons per US$ million of final consumption, direct and indirect, domestic), computed with ICIO 2019 and ILOSTAT, with uniform intensity within each section. <span class="num">δ</span> is the displacement of other spending; δ = 0 gives the demand ceiling.</p>
+  <div class="aviso suave"><strong>Example (South Korea, paper v2.6):</strong> C̄_D = US$ 19,890 and e = 15.1 jobs per US$ million, so J(0) = 19,890 × 15.1 ÷ 1,000,000 ≈ <strong>0.30</strong> gross jobs per child per year. By the same method: Italy ≈ 0.19 and Costa Rica ≈ 0.20.</div>
+
+  <h3>2.6 A couple's full cycle (illustration)</h3>
+<pre class="f">J_couple = n × J(0)                n = number of children (n = 2 ⇒ ≈ 0.5)
+r        = length of the parents' phase ÷ length of the children's phase = 38 ÷ 23 ≈ 1.65
+J_cycle  = J_couple × (1 + r)      ⇒ between ≈ 1.3 (exact r) and ≈ 1.5 (r = 2, simplification)</pre>
+  <p class="nota">The unit is the <strong>job-year</strong> over the cycle, not simultaneous jobs. It is the author's accounting illustration, not an estimated result.</p>
+
+  <h3>2.7 Life-cycle deficit and the cost of a child</h3>
+<pre class="f">LCD(a)        = C(a) − YL(a)
+cost_of_child = mean of LCD(a) for a = 0 … 22  ÷  average income of a Structurer (23 … 60)</pre>
+  <p class="nota">In paper v2.6, the average cost of one child equals 62% (Italy, NTA 2008), 79% (South Korea, NTA 2019) and 60% (Costa Rica, NTA 2013) of a Structurer's annual income, for 23 years. Updating South Korea to KOSIS 2024 is planned for version 2.7 (with the 2024 profile the ratio is close to 82%).</p>
+
+  <h3>2.8 The J-curve of Structurers' income</h3>
+<pre class="f">YL_E(t)  = Σ YL(a) · P(a, t)    for a = 23 … 60
+ΔYL(t)   = [ YL_E^Target(t) − YL_E^Trend(t) ] − Σ [ P^Target(a,t) − P^Trend(a,t) ] · LCD(a)    for a = 0 … 22
+result   = ΔYL(t) ÷ YL_E^Trend(t)</pre>
+  <p class="nota">The first term is the income difference from having more Structurers; the second is the cost of the additional children, charged entirely to Structurers (an upper bound). Income by age is held constant (no productivity, participation or unemployment changes). The <em>demand return</em>, spending on the child that becomes third parties' income, enters as an offset to the cost, also as a ceiling. The trough lies between −5% and −20% and lasts more than four decades.</p>
+
+  <h3>2.9 Who finances each cohort's consumption (Costa Rica)</h3>
+<pre class="f">C(a) = YL(a) + net public transfers + net private transfers + asset reallocations</pre>
+  <p class="nota">With the CNT_CR2013 file from CCP-UCR (current colones): Descendants' consumption is financed by private transfers (61.4%), public transfers (26.3%), own income (9.2%) and assets (3.1%).</p>
+
+  <h3>2.10 Limits of the calculation</h3>
+  <ul>
+    <li>Averages, not marginal values; no economies of scale in the household.</li>
+    <li>Jobs in employed persons (formal and informal), not full-time equivalents; uniform intensity by ISIC section.</li>
+    <li>ICIO 2019, not national matrices; NTA profiles from different years (Italy 2008, South Korea 2019, Costa Rica 2013) and smoothed.</li>
+    <li>The cost gradient by number of children is a linear extrapolation and <strong>fails</strong> as an expenditure estimate for three or more children.</li>
+  </ul>
+
+  <h2>3. What comes next on this page</h2>
+  <p>The next stages of this work on ainu.systems are the <strong>calculation base</strong> (results tables, inputs and sources) and a <strong>simulator</strong> for the economic part. In the meantime, the demographic engine, N* and the cohort simulation are already on <a href="../">ainu.systems</a>, with open code and data at <a href="https://github.com/itibere-muarrek/Ainu-Narayama" target="_blank" rel="noopener">github.com/itibere-muarrek/Ainu-Narayama</a>. The routines for the economic calculations are not yet published.</p>
+</div>
+</main>
+
+<footer>
+  <p><span data-lang="pt">Itiberê L. G. C. Muarrek · AINU.Systems Research (pesquisa independente) · Atualizado em 17/11/2026 · Licença do texto: CC BY-NC-ND 4.0.</span><span data-lang="en">Itiberê L. G. C. Muarrek · AINU.Systems Research (independent research) · Updated 17 Nov 2026 · Text license: CC BY-NC-ND 4.0.</span></p>
+</footer>
+
+<script>
+(function () {
+  var pedido = new URLSearchParams(location.search).get('lang');
+  var salvo = null; try { salvo = localStorage.getItem('ainu_lang'); } catch (e) {}
+  var nav = (navigator.language || 'pt').slice(0, 2);
+  function normaliza(l) { return l === 'pt' ? 'pt' : (l ? 'en' : null); }
+  var lang = normaliza(pedido) || normaliza(salvo) || (nav === 'pt' ? 'pt' : 'en');
+  document.documentElement.lang = lang;
+  document.getElementById('l' + lang[0]).className = 'on';
+  document.title = lang === 'pt' ? 'O emprego que nascerá — método | AINU.Systems' : 'The job that will be born — method | AINU.Systems';
+})();
+</script>
+</body>
+</html>
