@@ -112,3 +112,15 @@ Só a TFR varia; ajustes de falseabilidade constantes; composição de perfis
 fixa; cenário condicional; TFR é medida de período (sem efeito de calendário);
 P_eq público do narayama.live usa método mais simples (sem eco); controle de
 acesso simples (sem recuperação de senha nem 2FA).
+
+## Emprego por criança e curva em J (Paper 3, página 8)
+
+Página `app/ainu_systems/pages/8_Emprego_por_Crianca.py` (só para usuários logados), cálculo em `src/emprego_paper3.py`, testes em `test_emprego_paper3.py`.
+Parte econômica do working paper "O emprego que nascerá": empregos brutos por criança adicional (consumo médio de um Descendente × intensidade de emprego da ICIO 2019),
+ciclo do casal e curva em J da renda dos Estruturadores (renda na Meta menos na Tendência, menos o custo das crianças adicionais pelo déficit do ciclo de vida de 0 a 22 anos).
+Controles: país, TFT-alvo, anos de rampa, deslocamento de outros gastos, número de filhos e retorno da demanda. Método e fórmulas: https://ainu.systems/metodo-paper3/ ; valores do paper: .../calculos/.
+
+- **Itália** (NTA 2008, portal) reproduz o paper (fundo −10,3% em 2059; volta a superar a Tendência em 2078). **Coreia do Sul** usa o perfil KOSIS 2024, então difere do paper v2.6 (NTA 2019 antiga): fundo −20,9% em 2060, contra −19,7% em 2059.
+- **Costa Rica**: o perfil por idade do CCP-UCR não é redistribuído; a página usa parâmetros agregados (razão custo/renda e razão de consumo, perfis planos). A aproximação fica a cerca de 0,4 ponto percentual do vale do paper.
+- As constantes derivadas da ICIO 2019 e do ILOSTAT (consumo por pessoa, intensidade de emprego, retorno da demanda) são valores do paper em `PARAMETROS`; os arquivos brutos não estão no repositório.
+- Empregos são tetos de demanda (brutos); o custo é limite superior; cenário condicional, não previsão.

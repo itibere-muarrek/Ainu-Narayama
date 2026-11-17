@@ -21,7 +21,7 @@ PAGINAS = {
 }
 
 # data por site: cada um só muda de data quando muda de fato
-DATA_SITE = {"ainu-systems": date(2026, 11, 15), "narayama-live": date(2026, 11, 11)}
+DATA_SITE = {"ainu-systems": date(2026, 11, 17), "narayama-live": date(2026, 11, 11)}
 IDIOMAS = ["pt", "en", "es", "fr", "ko", "it", "zh", "ja", "fi"]
 
 # --------------------------------------------------------------------------- textos fixos
@@ -57,6 +57,7 @@ def data_fmt(lang: str, site: str) -> str:
 ITENS = {
     "ainu-systems": {
         "pt": [
+            "Paper 3: simulador de empregos por criança e curva em J no app (Itália, Coreia do Sul e Costa Rica), com páginas públicas de método e de cálculos.",
             "Perfis da NTA atualizados: Coreia do Sul pelo KOSIS (2024, série oficial) e Japão pelo IPSS (2019, versão 3.0); fichas dos dois com o consumo por coorte recalculado.",
             "Paper 3 publicado como working paper: texto integral, versão resumida e artigo em PDF, em português e inglês (DOI do texto integral no Zenodo).",
             "Diretório: fichas da Itália e da Coreia do Sul alinhadas ao perfil C30/D70; CFCc da Coreia recalculado com a NTA 2019 (campos sem método reproduzível ficam em branco, com nota).",
@@ -70,6 +71,7 @@ ITENS = {
             "A simulação por coorte inclui Costa Rica e Paraguai.",
         ],
         "en": [
+            "Paper 3: simulator of jobs per child and the J-curve in the app (Italy, South Korea and Costa Rica), with public method and calculations pages.",
             "NTA profiles updated: South Korea from KOSIS (2024, official series) and Japan from IPSS (2019, version 3.0); both country sheets with consumption by cohort recalculated.",
             "Paper 3 published as a working paper: full text, abridged version and article as PDFs, in Portuguese and English (full-text DOI on Zenodo).",
             "Directory: Italy and South Korea profiles aligned to C30/D70; Korea’s consumption by cohort recalculated with the 2019 NTA (fields without a reproducible method are left blank, with a note).",
@@ -83,6 +85,7 @@ ITENS = {
             "The cohort simulation now includes Costa Rica and Paraguay.",
         ],
         "es": [
+            "Paper 3: simulador de empleos por niño y curva en J en la app (Italia, Corea del Sur y Costa Rica), con páginas públicas de método y de cálculos.",
             "Perfiles de la NTA actualizados: Corea del Sur desde KOSIS (2024, serie oficial) y Japón desde el IPSS (2019, versión 3.0); las fichas de ambos con el consumo por cohorte recalculado.",
             "Paper 3 publicado como working paper: texto completo, versión resumida y artículo en PDF, en portugués e inglés (DOI del texto completo en Zenodo).",
             "Directorio: fichas de Italia y Corea del Sur alineadas al perfil C30/D70; consumo por cohorte de Corea recalculado con la NTA 2019 (los campos sin método reproducible quedan en blanco, con nota).",
@@ -96,6 +99,7 @@ ITENS = {
             "La simulación por cohortes incluye Costa Rica y Paraguay.",
         ],
         "fr": [
+            "Paper 3 : simulateur d’emplois par enfant et courbe en J dans l’application (Italie, Corée du Sud et Costa Rica), avec des pages publiques de méthode et de calculs.",
             "Profils NTA mis à jour : Corée du Sud depuis KOSIS (2024, série officielle) et Japon depuis l’IPSS (2019, version 3.0) ; fiches des deux pays avec la consommation par cohorte recalculée.",
             "Paper 3 publié comme working paper : texte intégral, version abrégée et article en PDF, en portugais et en anglais (DOI du texte intégral sur Zenodo).",
             "Répertoire : fiches de l’Italie et de la Corée du Sud alignées sur le profil C30/D70 ; consommation par cohorte de la Corée recalculée avec la NTA 2019 (les champs sans méthode reproductible restent vides, avec une note).",
@@ -109,6 +113,7 @@ ITENS = {
             "La simulation par cohortes inclut le Costa Rica et le Paraguay.",
         ],
         "ko": [
+            "Paper 3: 앱에 자녀당 일자리와 J자 곡선 시뮬레이터 추가(이탈리아, 한국, 코스타리카), 방법과 계산을 담은 공개 페이지 포함.",
             "NTA 프로파일 갱신: 한국은 KOSIS(2024, 공식 계열), 일본은 IPSS(2019, 버전 3.0); 두 나라 카드의 코호트별 소비를 다시 계산했습니다.",
             "Paper 3을 워킹페이퍼로 공개: 전문, 요약본, 일반 독자용 글을 포르투갈어와 영어 PDF로 제공(전문 DOI는 Zenodo).",
             "디렉터리: 이탈리아와 한국 카드를 C30/D70 프로파일에 맞춤; 한국의 코호트별 소비를 2019년 NTA로 재계산(재현 가능한 방법이 없는 항목은 비워 두고 주석을 달았습니다).",
@@ -122,6 +127,7 @@ ITENS = {
             "코호트 시뮬레이션에 코스타리카와 파라과이가 포함됩니다.",
         ],
         "it": [
+            "Paper 3: simulatore di posti di lavoro per figlio e curva a J nell’app (Italia, Corea del Sud e Costa Rica), con pagine pubbliche di metodo e di calcoli.",
             "Profili NTA aggiornati: Corea del Sud da KOSIS (2024, serie ufficiale) e Giappone dall’IPSS (2019, versione 3.0); schede dei due paesi con il consumo per coorte ricalcolato.",
             "Paper 3 pubblicato come working paper: testo integrale, versione ridotta e articolo in PDF, in portoghese e inglese (DOI del testo integrale su Zenodo).",
             "Directory: schede di Italia e Corea del Sud allineate al profilo C30/D70; consumo per coorte della Corea ricalcolato con la NTA 2019 (i campi senza metodo riproducibile restano vuoti, con una nota).",
@@ -135,6 +141,7 @@ ITENS = {
             "La simulazione per coorti include Costa Rica e Paraguay.",
         ],
         "zh": [
+            "Paper 3：应用中新增每个孩子就业岗位与 J 形曲线模拟器（意大利、韩国和哥斯达黎加），并附公开的方法与计算页面。",
             "NTA 剖面已更新：韩国采用 KOSIS（2024，官方序列），日本采用 IPSS（2019，3.0 版）；两国国家卡片的分队列消费已重新计算。",
             "Paper 3 以工作论文形式发布：全文、精简版和科普文章（PDF），提供葡萄牙语和英语版本（全文 DOI 见 Zenodo）。",
             "目录：意大利和韩国卡片对齐 C30/D70 类型；韩国分队列消费用 2019 年 NTA 重新计算（无法复现方法的字段留空并附说明）。",
@@ -148,6 +155,7 @@ ITENS = {
             "分队列模拟已包含哥斯达黎加和巴拉圭。",
         ],
         "ja": [
+            "Paper 3：アプリに子ども1人あたりの雇用とJカーブのシミュレーターを追加（イタリア、韓国、コスタリカ）。方法と計算の公開ページも用意しました。",
             "NTAプロファイルを更新：韓国はKOSIS（2024年、公式系列）、日本はIPSS（2019年、バージョン3.0）。両国のカードのコホート別消費を再計算しました。",
             "Paper 3 をワーキングペーパーとして公開：全文、要約版、一般向け記事をポルトガル語と英語のPDFで提供（全文のDOIはZenodo）。",
             "ディレクトリ：イタリアと韓国のカードをC30/D70に統一。韓国のコホート別消費を2019年NTAで再計算（再現可能な方法がない項目は空欄とし、注記を付与）。",
@@ -161,6 +169,7 @@ ITENS = {
             "コホート別シミュレーションにコスタリカとパラグアイを追加。",
         ],
         "fi": [
+            "Paper 3: sovellukseen lisätty simulaattori lasta kohti syntyville työpaikoille ja J-käyrälle (Italia, Etelä-Korea ja Costa Rica) sekä julkiset menetelmä- ja laskentasivut.",
             "NTA-profiilit päivitetty: Etelä-Korea KOSIS:sta (2024, virallinen sarja) ja Japani IPSS:stä (2019, versio 3.0); molempien maiden kortit laskettu uudelleen kohorttikohtaisen kulutuksen osalta.",
             "Paper 3 julkaistu working paperina: koko teksti, tiivistetty versio ja artikkeli PDF-tiedostoina portugaliksi ja englanniksi (koko tekstin DOI Zenodossa).",
             "Hakemisto: Italian ja Etelä-Korean kortit yhdenmukaistettu C30/D70-profiiliin; Korean kohorttikohtainen kulutus laskettu uudelleen NTA 2019:llä (kentät, joille ei ole toistettavaa menetelmää, jätetty tyhjiksi huomautuksella).",
