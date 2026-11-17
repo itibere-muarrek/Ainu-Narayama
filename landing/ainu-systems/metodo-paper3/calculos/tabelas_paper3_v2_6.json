@@ -1,0 +1,2516 @@
+{
+ "paper": "The job that will be born / O emprego que nascerá",
+ "versao": "2.6",
+ "doi": "10.5281/zenodo.24226127",
+ "aviso": "Valores preliminares de um estudo exploratório; empregos são tetos de demanda (brutos). Mesmos números das 26 tabelas do working paper v2.6.",
+ "tabelas": [
+  {
+   "n": 1,
+   "legenda_pt": "Amostra, posição no N* e dados disponíveis (N*_Obs de 2024; AINU.Systems).",
+   "legenda_en": "Sample, N* position, and available data (2024 N*_Obs; AINU.Systems).",
+   "fonte_pt": "Fonte: AINU.Systems (N*_Obs de 2024), NTA, CCP-UCR e OCDE (disponibilidade de dados).",
+   "fonte_en": "Source: AINU.Systems (2024 N*_Obs), NTA, CCP-UCR, and OECD (data availability).",
+   "cabecalho_pt": [
+    "País",
+    "N* 2024",
+    "Zona",
+    "Papel no estudo",
+    "Dados de NTA e contas"
+   ],
+   "cabecalho_en": [
+    "Country",
+    "N* 2024",
+    "Zone",
+    "Role in the study",
+    "NTA and national accounts data"
+   ],
+   "linhas_pt": [
+    [
+     "Itália",
+     "0,61",
+     "Colapso de Narayama",
+     "Piloto; contas completas por coorte",
+     "NTA 2008 (consumo, renda do trabalho, poupança); microdados SHIW; ICIO"
+    ],
+    [
+     "Coreia do Sul",
+     "0,48",
+     "Colapso de Narayama",
+     "Piloto; cenário de estresse (TFT extrema)",
+     "NTA 2019 (consumo, renda; poupança só de 2000); ICIO"
+    ],
+    [
+     "Costa Rica",
+     "1,32",
+     "Ponto de Equilíbrio Autossustentável",
+     "Terceiro caso; contraste com NTA própria",
+     "NTA própria (arquivos por idade de 1991, 2004, 2008 e 2013; a de 2018 não foi obtida); ICIO; MIP/COU 2022 e ENIGH 2018 sem acesso"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Italy",
+     "0.61",
+     "Narayama Collapse",
+     "Pilot; complete cohort accounts",
+     "NTA 2008 (consumption, labor income, saving); SHIW microdata; ICIO"
+    ],
+    [
+     "South Korea",
+     "0.48",
+     "Narayama Collapse",
+     "Pilot; stress scenario (extreme TFR)",
+     "NTA 2019 (consumption, income; saving only from 2000); ICIO"
+    ],
+    [
+     "Costa Rica",
+     "1.32",
+     "Self-Sustaining Equilibrium Point",
+     "Third case; contrast with its own NTA",
+     "Own NTA (age-specific files for 1991, 2004, 2008, and 2013; 2018 not obtained); ICIO; MIP/SUT 2022 and ENIGH 2018 unavailable"
+    ]
+   ]
+  },
+  {
+   "n": 2,
+   "legenda_pt": "Composição de perfis e cortes etários (Descendentes, Estruturadores e Ascendentes).",
+   "legenda_en": "Profile composition and age cutoffs (Descendants, Structurers, and Ascendants).",
+   "fonte_pt": "Fonte: AINU.Systems (composição de perfis definida pelo autor; Muarrek, 2026b).",
+   "fonte_en": "Source: AINU.Systems (profile composition defined by the author; Muarrek, 2026b).",
+   "cabecalho_pt": [
+    "País",
+    "Composição de perfis",
+    "Descendentes",
+    "Estruturadores",
+    "Ascendentes"
+   ],
+   "cabecalho_en": [
+    "Country",
+    "Profile composition",
+    "Descendants",
+    "Structurers",
+    "Ascendants"
+   ],
+   "linhas_pt": [
+    [
+     "Itália",
+     "C 30% + D 70%",
+     "0 a 22 anos",
+     "23 a 60 anos",
+     "61 anos ou mais"
+    ],
+    [
+     "Coreia do Sul",
+     "C 30% + D 70%",
+     "0 a 22 anos",
+     "23 a 60 anos",
+     "61 anos ou mais"
+    ],
+    [
+     "Costa Rica",
+     "C 50% + D 50%",
+     "0 a 22 anos",
+     "23 a 60 anos",
+     "61 anos ou mais"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Italy",
+     "C 30% + D 70%",
+     "Ages 0–22",
+     "Ages 23–60",
+     "Age 61 or older"
+    ],
+    [
+     "South Korea",
+     "C 30% + D 70%",
+     "Ages 0–22",
+     "Ages 23–60",
+     "Age 61 or older"
+    ],
+    [
+     "Costa Rica",
+     "C 50% + D 50%",
+     "Ages 0–22",
+     "Ages 23–60",
+     "Age 61 or older"
+    ]
+   ]
+  },
+  {
+   "n": 3,
+   "legenda_pt": "Faixa de TFT por fonte (proxy P1).",
+   "legenda_en": "TFR ranges by source (P1 proxy).",
+   "fonte_pt": "Fonte: UN WPP 2024 (variante média); CEPAL (2025); fontes nacionais como indicado.",
+   "fonte_en": "Source: UN WPP 2024 (medium variant); ECLAC (2025); national sources as indicated.",
+   "cabecalho_pt": [
+    "País",
+    "TFT 2024, ONU (WPP 2024)",
+    "TFT na projeção da ONU",
+    "Fonte nacional",
+    "Leitura"
+   ],
+   "cabecalho_en": [
+    "Country",
+    "TFR 2024, UN (WPP 2024)",
+    "TFR in UN projection",
+    "National source",
+    "Reading"
+   ],
+   "linhas_pt": [
+    [
+     "Itália",
+     "1,21",
+     "1,27 (2034), 1,34 (2049), 1,48 (2099)",
+     "ISTAT: não lida nesta versão",
+     "Abaixo de 1,3 em 2024; passa de 1,3 em 2049"
+    ],
+    [
+     "Coreia do Sul",
+     "0,73",
+     "0,86 (2034), 1,02 (2049), 1,29 (2099)",
+     "KOSTAT: não lida nesta versão",
+     "Abaixo de 1,3 em toda a projeção"
+    ],
+    [
+     "Costa Rica",
+     "1,32 (CEPAL: cruzou 2,1 em 2003 e 1,5 em 2020)",
+     "1,32 até 2034; 1,38 (2049); 1,49 (2099)",
+     "INEC: cerca de 1,2 em 2023-2024 (imprensa e artigo da UNA; PDF oficial não lido)",
+     "Fronteira C/D: 1,32 na ONU, ~1,2 no INEC"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Italy",
+     "1.21",
+     "1.27 (2034), 1.34 (2049), 1.48 (2099)",
+     "ISTAT: not read in this version",
+     "Below 1.3 in 2024; exceeds 1.3 in 2049"
+    ],
+    [
+     "South Korea",
+     "0.73",
+     "0.86 (2034), 1.02 (2049), 1.29 (2099)",
+     "KOSTAT: not read in this version",
+     "Below 1.3 throughout the projection"
+    ],
+    [
+     "Costa Rica",
+     "1.32 (ECLAC: crossed 2.1 in 2003 and 1.5 in 2020)",
+     "1.32 through 2034; 1.38 (2049); 1.49 (2099)",
+     "INEC: approximately 1.2 in 2023–2024 (press and UNA article; official PDF not read)",
+     "C/D boundary: 1.32 in UN data, approximately 1.2 in INEC"
+    ]
+   ]
+  },
+  {
+   "n": 4,
+   "legenda_pt": "Taxa de emprego por faixa etária (ILOSTAT, emprego sobre população em idade de trabalhar) e leitura da regra de 50% da taxa da idade ativa.",
+   "legenda_en": "Employment rate by age group (ILOSTAT, employment as a share of the working-age population) and assessment of the rule based on 50% of the working-age rate.",
+   "fonte_pt": "Fonte: OIT, ILOSTAT (2025); razões calculadas a partir das taxas de emprego por faixa etária.",
+   "fonte_en": "Source: ILO, ILOSTAT (2025); ratios calculated from employment rates by age group.",
+   "cabecalho_pt": [
+    "País (ano)",
+    "Idade ativa, 35 a 54 anos (média)",
+    "55 a 59 anos",
+    "60 a 64 anos",
+    "65 anos ou mais (faixa agregada)",
+    "60-64 ÷ idade ativa",
+    "65+ ÷ idade ativa",
+    "Leitura da regra de 50%"
+   ],
+   "cabecalho_en": [
+    "Country (year)",
+    "Working-age population, 35–54 (average)",
+    "Ages 55–59",
+    "Ages 60–64",
+    "Age 65 or older (aggregated group)",
+    "60–64 ÷ working-age",
+    "65+ ÷ working-age",
+    "Assessment under the 50% rule"
+   ],
+   "linhas_pt": [
+    [
+     "Itália (2025)",
+     "77,3%",
+     "70,9%",
+     "50,4%",
+     "6,1%",
+     "65%",
+     "8%",
+     "cai abaixo de 50% entre 60-64 e 65+: corte de cerca de 65 anos"
+    ],
+    [
+     "Coreia do Sul (2025)",
+     "80,1%",
+     "77,0%",
+     "66,4%",
+     "40,7%",
+     "83%",
+     "51%",
+     "65+ ainda em 51% (faixa agregada): corte de 65 anos ou mais, sem resolução"
+    ],
+    [
+     "Costa Rica",
+     "sem arquivo de faixas etárias",
+     "",
+     "",
+     "ocupação aos 65+: 17,0% (homens) e 5,2% (mulheres), julho de 2024 (ENAHO)",
+     "",
+     "",
+     "proxy não calculado"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Italy (2025)",
+     "77.3%",
+     "70.9%",
+     "50.4%",
+     "6.1%",
+     "65%",
+     "8%",
+     "Falls below 50% between ages 60–64 and 65+: cutoff at approximately age 65"
+    ],
+    [
+     "South Korea (2025)",
+     "80.1%",
+     "77.0%",
+     "66.4%",
+     "40.7%",
+     "83%",
+     "51%",
+     "65+ remains at 51% (aggregated group): cutoff at age 65 or older, exact point unresolved"
+    ],
+    [
+     "Costa Rica",
+     "No age-group file",
+     "",
+     "",
+     "Employment at age 65+: 17.0% (men) and 5.2% (women), July 2024 (ENAHO)",
+     "",
+     "",
+     "Proxy not calculated"
+    ]
+   ]
+  },
+  {
+   "n": 5,
+   "legenda_pt": "N* de 2024 e de 2099 (Tendência e Meta).",
+   "legenda_en": "N* in 2024 and 2099 (Trend and Target).",
+   "fonte_pt": "Fonte: AINU.Systems (motor demográfico, UN WPP 2024, variante média).",
+   "fonte_en": "Source: AINU.Systems (demographic model, UN WPP 2024, medium variant).",
+   "cabecalho_pt": [
+    "País",
+    "N* 2024",
+    "N* 2099 Tendência",
+    "N* 2099 Meta",
+    "Interpretação"
+   ],
+   "cabecalho_en": [
+    "Country",
+    "N* 2024",
+    "N* 2099 Trend",
+    "N* 2099 Target",
+    "Interpretation"
+   ],
+   "linhas_pt": [
+    [
+     "Costa Rica",
+     "1,32",
+     "0,38",
+     "0,88",
+     "Sai do equilíbrio (1,32 em 2024): cai para 0,80 em 2074 e assenta em 0,88, em Tensão Acelerada; melhor que a Tendência (0,38)"
+    ],
+    [
+     "Itália",
+     "0,61",
+     "0,46",
+     "1,01",
+     "Entra na zona de equilíbrio"
+    ],
+    [
+     "Coreia do Sul",
+     "0,48",
+     "0,29",
+     "0,90",
+     "Melhor que a Tendência; chega a 0,90 em 2099, na fronteira do limite do equilíbrio; vale de 0,58 em 2037"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Costa Rica",
+     "1.32",
+     "0.38",
+     "0.88",
+     "Leaves equilibrium (1.32 in 2024): falls to 0.80 in 2074 and settles at 0.88, in Accelerated Tension; better than the Trend (0.38)"
+    ],
+    [
+     "Italy",
+     "0.61",
+     "0.46",
+     "1.01",
+     "Enters the equilibrium zone"
+    ],
+    [
+     "South Korea",
+     "0.48",
+     "0.29",
+     "0.90",
+     "Better than the Trend; reaches 0.90 in 2099, at the edge of the equilibrium threshold; trough of 0.58 in 2037"
+    ]
+   ]
+  },
+  {
+   "n": 6,
+   "legenda_pt": "Trajetória por ciclo de 25 anos (2024 é igual nos dois cenários). A/E = Ascendentes ÷ Estruturadores.",
+   "legenda_en": "Trajectory in 25-year cycles (2024 is identical under both scenarios). A/E = Ascendants ÷ Structurers.",
+   "fonte_pt": "Fonte: AINU.Systems (motor demográfico, UN WPP 2024, variante média).",
+   "fonte_en": "Source: AINU.Systems (demographic model, UN WPP 2024, medium variant).",
+   "cabecalho_pt": [
+    "País",
+    "Cenário",
+    "N* 2049",
+    "N* 2074",
+    "N* 2099",
+    "A/E 2049",
+    "A/E 2074",
+    "A/E 2099"
+   ],
+   "cabecalho_en": [
+    "Country",
+    "Scenario",
+    "N* 2049",
+    "N* 2074",
+    "N* 2099",
+    "A/E 2049",
+    "A/E 2074",
+    "A/E 2099"
+   ],
+   "linhas_pt": [
+    [
+     "Costa Rica",
+     "Tendência",
+     "0,75",
+     "0,44",
+     "0,38",
+     "0,62",
+     "1,07",
+     "1,20"
+    ],
+    [
+     "Costa Rica",
+     "Meta",
+     "1,31",
+     "0,80",
+     "0,88",
+     "0,61",
+     "0,90",
+     "0,78"
+    ],
+    [
+     "Itália",
+     "Tendência",
+     "0,46",
+     "0,45",
+     "0,46",
+     "1,01",
+     "1,04",
+     "1,06"
+    ],
+    [
+     "Itália",
+     "Meta",
+     "0,81",
+     "0,80",
+     "1,01",
+     "1,01",
+     "0,88",
+     "0,72"
+    ],
+    [
+     "Coreia do Sul",
+     "Tendência",
+     "0,36",
+     "0,26",
+     "0,29",
+     "1,06",
+     "1,53",
+     "1,40"
+    ],
+    [
+     "Coreia do Sul",
+     "Meta",
+     "0,93",
+     "0,62",
+     "0,90",
+     "1,05",
+     "1,14",
+     "0,75"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Costa Rica",
+     "Trend",
+     "0.75",
+     "0.44",
+     "0.38",
+     "0.62",
+     "1.07",
+     "1.20"
+    ],
+    [
+     "Costa Rica",
+     "Target",
+     "1.31",
+     "0.80",
+     "0.88",
+     "0.61",
+     "0.90",
+     "0.78"
+    ],
+    [
+     "Italy",
+     "Trend",
+     "0.46",
+     "0.45",
+     "0.46",
+     "1.01",
+     "1.04",
+     "1.06"
+    ],
+    [
+     "Italy",
+     "Target",
+     "0.81",
+     "0.80",
+     "1.01",
+     "1.01",
+     "0.88",
+     "0.72"
+    ],
+    [
+     "South Korea",
+     "Trend",
+     "0.36",
+     "0.26",
+     "0.29",
+     "1.06",
+     "1.53",
+     "1.40"
+    ],
+    [
+     "South Korea",
+     "Target",
+     "0.93",
+     "0.62",
+     "0.90",
+     "1.05",
+     "1.14",
+     "0.75"
+    ]
+   ]
+  },
+  {
+   "n": 7,
+   "legenda_pt": "Razão A/E em 2024 e em 2099.",
+   "legenda_en": "A/E ratio in 2024 and 2099.",
+   "fonte_pt": "Fonte: AINU.Systems (motor demográfico, UN WPP 2024, variante média).",
+   "fonte_en": "Source: AINU.Systems (demographic model, UN WPP 2024, medium variant).",
+   "cabecalho_pt": [
+    "País",
+    "A/E 2024",
+    "A/E 2099 Tendência",
+    "A/E 2099 Meta",
+    "Variação Meta vs 2024"
+   ],
+   "cabecalho_en": [
+    "Country",
+    "A/E 2024",
+    "A/E 2099 Trend",
+    "A/E 2099 Target",
+    "Target change vs. 2024"
+   ],
+   "linhas_pt": [
+    [
+     "Costa Rica",
+     "0,31",
+     "1,20",
+     "0,78",
+     "+0,48"
+    ],
+    [
+     "Itália",
+     "0,61",
+     "1,06",
+     "0,72",
+     "+0,11"
+    ],
+    [
+     "Coreia do Sul",
+     "0,46",
+     "1,40",
+     "0,75",
+     "+0,29"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Costa Rica",
+     "0.31",
+     "1.20",
+     "0.78",
+     "+0.48"
+    ],
+    [
+     "Italy",
+     "0.61",
+     "1.06",
+     "0.72",
+     "+0.11"
+    ],
+    [
+     "South Korea",
+     "0.46",
+     "1.40",
+     "0.75",
+     "+0.29"
+    ]
+   ]
+  },
+  {
+   "n": 8,
+   "legenda_pt": "Estruturadores por pessoa de 80 anos ou mais (E/80+).",
+   "legenda_en": "Structurers per person aged 80 or older (E/80+).",
+   "fonte_pt": "Fonte: AINU.Systems (motor demográfico, UN WPP 2024, variante média).",
+   "fonte_en": "Source: AINU.Systems (demographic model, UN WPP 2024, medium variant).",
+   "cabecalho_pt": [
+    "País",
+    "E/80+ 2024",
+    "E/80+ 2099 Meta",
+    "Queda relativa"
+   ],
+   "cabecalho_en": [
+    "Country",
+    "E/80+ 2024",
+    "E/80+ 2099 Target",
+    "Relative decline"
+   ],
+   "linhas_pt": [
+    [
+     "Costa Rica",
+     "20,6",
+     "2,8",
+     "-86%"
+    ],
+    [
+     "Itália",
+     "6,4",
+     "3,1",
+     "-51%"
+    ],
+    [
+     "Coreia do Sul",
+     "11,9",
+     "2,7",
+     "-78%"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Costa Rica",
+     "20.6",
+     "2.8",
+     "-86%"
+    ],
+    [
+     "Italy",
+     "6.4",
+     "3.1",
+     "-51%"
+    ],
+    [
+     "South Korea",
+     "11.9",
+     "2.7",
+     "-78%"
+    ]
+   ]
+  },
+  {
+   "n": 9,
+   "legenda_pt": "Decomposição do N* da Costa Rica na Meta: (Pop_Base ÷ Pop_Topo) × (Nascimentos ÷ Óbitos) × F.",
+   "legenda_en": "Decomposition of Costa Rica’s N* under the Target: (Pop_Base ÷ Pop_Top) × (Births ÷ Deaths) × F.",
+   "fonte_pt": "Fonte: AINU.Systems (motor demográfico, UN WPP 2024, variante média).",
+   "fonte_en": "Source: AINU.Systems (demographic model, UN WPP 2024, medium variant).",
+   "cabecalho_pt": [
+    "Ano",
+    "TFT",
+    "Base ÷ Topo",
+    "Nasc. ÷ Óbitos",
+    "F",
+    "N*",
+    "Zona"
+   ],
+   "cabecalho_en": [
+    "Year",
+    "TFR",
+    "Base ÷ Top",
+    "Births ÷ Deaths",
+    "F",
+    "N*",
+    "Zone"
+   ],
+   "linhas_pt": [
+    [
+     "2024",
+     "1,32",
+     "1,84",
+     "1,80",
+     "0,53",
+     "1,32",
+     "Ponto de Equilíbrio Autossustentável"
+    ],
+    [
+     "2049",
+     "2,10",
+     "0,85",
+     "1,27",
+     "1,59",
+     "1,31",
+     "Ponto de Equilíbrio Autossustentável"
+    ],
+    [
+     "2074",
+     "2,10",
+     "0,68",
+     "0,95",
+     "1,00",
+     "0,80",
+     "Tensão Acelerada"
+    ],
+    [
+     "2099",
+     "2,10",
+     "0,79",
+     "0,99",
+     "1,00",
+     "0,88",
+     "Tensão Acelerada"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "2024",
+     "1.32",
+     "1.84",
+     "1.80",
+     "0.53",
+     "1.32",
+     "Self-Sustaining Equilibrium Point"
+    ],
+    [
+     "2049",
+     "2.10",
+     "0.85",
+     "1.27",
+     "1.59",
+     "1.31",
+     "Self-Sustaining Equilibrium Point"
+    ],
+    [
+     "2074",
+     "2.10",
+     "0.68",
+     "0.95",
+     "1.00",
+     "0.80",
+     "Accelerated Tension"
+    ],
+    [
+     "2099",
+     "2.10",
+     "0.79",
+     "0.99",
+     "1.00",
+     "0.88",
+     "Accelerated Tension"
+    ]
+   ]
+  },
+  {
+   "n": 10,
+   "legenda_pt": "Costa Rica: menor N* entre 2030 e 2100 (e anos com N* abaixo de 0,90), por TFT-alvo e duração da rampa.",
+   "legenda_en": "Costa Rica: minimum N* between 2030 and 2100 (and years with N* below 0.90), by target TFR and ramp duration.",
+   "fonte_pt": "Fonte: AINU.Systems (motor demográfico com ajustes locais; UN WPP 2024).",
+   "fonte_en": "Source: AINU.Systems (demographic model with local adjustments; UN WPP 2024).",
+   "cabecalho_pt": [
+    "TFT-alvo",
+    "Rampa de 25 anos",
+    "Rampa de 15 anos",
+    "Rampa de 10 anos"
+   ],
+   "cabecalho_en": [
+    "Target TFR",
+    "25-year ramp",
+    "15-year ramp",
+    "10-year ramp"
+   ],
+   "linhas_pt": [
+    [
+     "2,10",
+     "0,80 (36)",
+     "0,85 (30)",
+     "0,88 (13)"
+    ],
+    [
+     "2,20",
+     "0,86 (17)",
+     "0,93 (0)",
+     "0,96 (0)"
+    ],
+    [
+     "2,30",
+     "0,93 (0)",
+     "1,02 (0)",
+     "1,05 (0)"
+    ],
+    [
+     "2,35",
+     "0,96 (0)",
+     "1,05 (0)",
+     "1,10 (0)"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "2.10",
+     "0.80 (36)",
+     "0.85 (30)",
+     "0.88 (13)"
+    ],
+    [
+     "2.20",
+     "0.86 (17)",
+     "0.93 (0)",
+     "0.96 (0)"
+    ],
+    [
+     "2.30",
+     "0.93 (0)",
+     "1.02 (0)",
+     "1.05 (0)"
+    ],
+    [
+     "2.35",
+     "0.96 (0)",
+     "1.05 (0)",
+     "1.10 (0)"
+    ]
+   ]
+  },
+  {
+   "n": 11,
+   "legenda_pt": "N* em 2099 e anos com N* abaixo de 0,90 (2030-2100), por via, com TFT em 2,1.",
+   "legenda_en": "N* in 2099 and years with N* below 0.90 (2030–2100), by pathway, with TFR at 2.1.",
+   "fonte_pt": "Fonte: AINU.Systems (motor demográfico com ajustes locais; UN WPP 2024).",
+   "fonte_en": "Source: AINU.Systems (demographic model with local adjustments; UN WPP 2024).",
+   "cabecalho_pt": [
+    "Via",
+    "Costa Rica N* 2099",
+    "Costa Rica anos < 0,90",
+    "Coreia do Sul N* 2099",
+    "Coreia do Sul anos < 0,90"
+   ],
+   "cabecalho_en": [
+    "Pathway",
+    "Costa Rica N* 2099",
+    "Costa Rica years < 0.90",
+    "South Korea N* 2099",
+    "South Korea years < 0.90"
+   ],
+   "linhas_pt": [
+    [
+     "Base (TFT 2,1 em 25 anos; migração da ONU)",
+     "0,88",
+     "36",
+     "0,90",
+     "67"
+    ],
+    [
+     "Migração adicional de +0,2% da população por ano (adultos de 20 a 39 anos)",
+     "0,94",
+     "18",
+     "1,01",
+     "51"
+    ],
+    [
+     "Migração adicional de +0,4% da população por ano",
+     "0,99",
+     "0",
+     "1,09",
+     "37"
+    ],
+    [
+     "Nascimentos 4 anos mais cedo (calendário da fecundidade)",
+     "0,87",
+     "37",
+     "0,94",
+     "67"
+    ],
+    [
+     "Corte dos Ascendentes em 65 anos (definição, não alavanca)",
+     "0,95",
+     "22",
+     "0,97",
+     "61"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Base (TFR 2.1 in 25 years; UN migration)",
+     "0.88",
+     "36",
+     "0.90",
+     "67"
+    ],
+    [
+     "Additional migration of +0.2% of the population per year (adults aged 20–39)",
+     "0.94",
+     "18",
+     "1.01",
+     "51"
+    ],
+    [
+     "Additional migration of +0.4% of the population per year",
+     "0.99",
+     "0",
+     "1.09",
+     "37"
+    ],
+    [
+     "Births 4 years earlier (fertility timing)",
+     "0.87",
+     "37",
+     "0.94",
+     "67"
+    ],
+    [
+     "Ascendant cutoff at age 65 (definition, not a lever)",
+     "0.95",
+     "22",
+     "0.97",
+     "61"
+    ]
+   ]
+  },
+  {
+   "n": 12,
+   "legenda_pt": "Costa Rica: N* por composição de perfis (Meta = TFT para 2,1 em 25 anos; Tendência = ONU).",
+   "legenda_en": "Costa Rica: N* by profile composition (Target = TFR converging to 2.1 in 25 years; Trend = UN projection).",
+   "fonte_pt": "Fonte: AINU.Systems (motor demográfico, UN WPP 2024, variante média).",
+   "fonte_en": "Source: AINU.Systems (demographic model, UN WPP 2024, medium variant).",
+   "cabecalho_pt": [
+    "Composição",
+    "Cortes",
+    "N* 2024 (Tend.)",
+    "N* 2049 (Tend.)",
+    "N* 2099 (Tend.)",
+    "N* 2024 (Meta)",
+    "N* 2074 (Meta)",
+    "N* 2099 (Meta)"
+   ],
+   "cabecalho_en": [
+    "Composition",
+    "Cutoffs",
+    "N* 2024 (Trend)",
+    "N* 2049 (Trend)",
+    "N* 2099 (Trend)",
+    "N* 2024 (Target)",
+    "N* 2074 (Target)",
+    "N* 2099 (Target)"
+   ],
+   "linhas_pt": [
+    [
+     "C100 (alternativa)",
+     "21/60",
+     "1,25",
+     "0,72",
+     "0,37",
+     "1,25",
+     "0,77",
+     "0,85"
+    ],
+    [
+     "C50/D50 (adotada)",
+     "22/61",
+     "1,32",
+     "0,75",
+     "0,38",
+     "1,32",
+     "0,80",
+     "0,88"
+    ],
+    [
+     "D100",
+     "23/62",
+     "1,40",
+     "0,79",
+     "0,40",
+     "1,40",
+     "0,84",
+     "0,92"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "C100 (alternative)",
+     "21/60",
+     "1.25",
+     "0.72",
+     "0.37",
+     "1.25",
+     "0.77",
+     "0.85"
+    ],
+    [
+     "C50/D50 (adopted)",
+     "22/61",
+     "1.32",
+     "0.75",
+     "0.38",
+     "1.32",
+     "0.80",
+     "0.88"
+    ],
+    [
+     "D100",
+     "23/62",
+     "1.40",
+     "0.79",
+     "0.40",
+     "1.40",
+     "0.84",
+     "0.92"
+    ]
+   ]
+  },
+  {
+   "n": 13,
+   "legenda_pt": "Itália e Coreia do Sul: N* por composição de perfis (Meta = TFT para 2,1 em 25 anos).",
+   "legenda_en": "Italy and South Korea: N* by profile composition (Target = TFR converging to 2.1 in 25 years).",
+   "fonte_pt": "Fonte: AINU.Systems (motor demográfico, UN WPP 2024, variante média).",
+   "fonte_en": "Source: AINU.Systems (demographic model, UN WPP 2024, medium variant).",
+   "cabecalho_pt": [
+    "País",
+    "Composição",
+    "Cortes",
+    "N* 2024",
+    "N* 2099 (Tend.)",
+    "Menor N* 2030-2100 (Meta)",
+    "N* 2099 (Meta)",
+    "Anos < 0,90 (Meta)"
+   ],
+   "cabecalho_en": [
+    "Country",
+    "Composition",
+    "Cutoffs",
+    "N* 2024",
+    "N* 2099 (Trend)",
+    "Minimum N* 2030–2100 (Target)",
+    "N* 2099 (Target)",
+    "Years < 0.90 (Target)"
+   ],
+   "linhas_pt": [
+    [
+     "Itália",
+     "C50/D50 (alternativa)",
+     "22/61",
+     "0,608",
+     "0,46",
+     "0,59",
+     "1,007",
+     "52"
+    ],
+    [
+     "Itália",
+     "C30/D70 (adotada)",
+     "22/61",
+     "0,608",
+     "0,46",
+     "0,59",
+     "1,007",
+     "52"
+    ],
+    [
+     "Itália",
+     "D100",
+     "23/62",
+     "0,640",
+     "0,48",
+     "0,63",
+     "1,049",
+     "50"
+    ],
+    [
+     "Coreia do Sul",
+     "C80/D20 (alternativa)",
+     "21/60",
+     "0,456",
+     "0,28",
+     "0,55",
+     "0,866",
+     "71"
+    ],
+    [
+     "Coreia do Sul",
+     "C30/D70 (adotada; mesmos cortes e N* que C50/D50)",
+     "22/61",
+     "0,484",
+     "0,29",
+     "0,58",
+     "0,902",
+     "67"
+    ],
+    [
+     "Coreia do Sul",
+     "D100",
+     "23/62",
+     "0,516",
+     "0,30",
+     "0,61",
+     "0,940",
+     "63"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Italy",
+     "C50/D50 (alternative)",
+     "22/61",
+     "0.608",
+     "0.46",
+     "0.59",
+     "1.007",
+     "52"
+    ],
+    [
+     "Italy",
+     "C30/D70 (adopted)",
+     "22/61",
+     "0.608",
+     "0.46",
+     "0.59",
+     "1.007",
+     "52"
+    ],
+    [
+     "Italy",
+     "D100",
+     "23/62",
+     "0.640",
+     "0.48",
+     "0.63",
+     "1.049",
+     "50"
+    ],
+    [
+     "South Korea",
+     "C80/D20 (alternative)",
+     "21/60",
+     "0.456",
+     "0.28",
+     "0.55",
+     "0.866",
+     "71"
+    ],
+    [
+     "South Korea",
+     "C30/D70 (adopted; same cutoffs and N* as C50/D50)",
+     "22/61",
+     "0.484",
+     "0.29",
+     "0.58",
+     "0.902",
+     "67"
+    ],
+    [
+     "South Korea",
+     "D100",
+     "23/62",
+     "0.516",
+     "0.30",
+     "0.61",
+     "0.940",
+     "63"
+    ]
+   ]
+  },
+  {
+   "n": 14,
+   "legenda_pt": "Costa Rica: cálculo preliminar com o ICIO 2019, com Itália, Coreia do Sul e México (referência) para comparação.",
+   "legenda_en": "Costa Rica: preliminary calculation using ICIO 2019, compared with Italy, South Korea, and Mexico (reference).",
+   "fonte_pt": "Fonte: OCDE (ICIO 2019) e OIT (ILOSTAT).",
+   "fonte_en": "Source: OECD (ICIO 2019) and ILO (ILOSTAT).",
+   "cabecalho_pt": [
+    "Indicador",
+    "Valor",
+    "Observação"
+   ],
+   "cabecalho_en": [
+    "Indicator",
+    "Value",
+    "Note"
+   ],
+   "linhas_pt": [
+    [
+     "VADc médio por US$ de consumo final",
+     "0,716",
+     "45 indústrias"
+    ],
+    [
+     "Emprego por US$ milhão de consumo final",
+     "25,7 pessoas",
+     "ILOSTAT + ICIO"
+    ],
+    [
+     "Conteúdo importado direto (vestuário e calçado)",
+     "≈ 49%",
+     "Elevado"
+    ],
+    [
+     "VADc México (referência)",
+     "0,727",
+     ""
+    ],
+    [
+     "Emprego México",
+     "34,0",
+     ""
+    ],
+    [
+     "VADc Itália",
+     "0,725",
+     ""
+    ],
+    [
+     "Emprego Itália",
+     "9,3",
+     ""
+    ],
+    [
+     "VADc Coreia do Sul",
+     "0,724",
+     ""
+    ],
+    [
+     "Emprego Coreia do Sul",
+     "15,1",
+     ""
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Average VADc per US$ of final consumption",
+     "0.716",
+     "45 industries"
+    ],
+    [
+     "Employment per US$ million of final consumption",
+     "25.7 persons",
+     "ILOSTAT + ICIO"
+    ],
+    [
+     "Direct imported content (apparel and footwear)",
+     "≈ 49%",
+     "High"
+    ],
+    [
+     "VADc Mexico (reference)",
+     "0.727",
+     ""
+    ],
+    [
+     "Employment Mexico",
+     "34.0",
+     ""
+    ],
+    [
+     "VADc Italy",
+     "0.725",
+     ""
+    ],
+    [
+     "Employment Italy",
+     "9.3",
+     ""
+    ],
+    [
+     "VADc South Korea",
+     "0.724",
+     ""
+    ],
+    [
+     "Employment South Korea",
+     "15.1",
+     ""
+    ]
+   ]
+  },
+  {
+   "n": 15,
+   "legenda_pt": "Emprego total por componente da demanda final (ICIO 2019 e ILOSTAT) e atribuição da exportação ao consumo.",
+   "legenda_en": "Total employment by final-demand component (ICIO 2019 and ILOSTAT) and attribution of exports to consumption.",
+   "fonte_pt": "Fonte: OCDE (ICIO 2019) e OIT (ILOSTAT).",
+   "fonte_en": "Source: OECD (ICIO 2019) and ILO (ILOSTAT).",
+   "cabecalho_pt": [
+    "País (ICIO 2019)",
+    "Famílias",
+    "Governo",
+    "Investimento",
+    "Exportações",
+    "Piso: consumo (famílias + governo)",
+    "Teto: piso + exportação que paga importação de consumo",
+    "Exportação ÷ importação"
+   ],
+   "cabecalho_en": [
+    "Country (ICIO 2019)",
+    "Households",
+    "Government",
+    "Investment",
+    "Exports",
+    "Floor: consumption (households + government)",
+    "Ceiling: floor + exports financing consumption imports",
+    "Exports ÷ imports"
+   ],
+   "linhas_pt": [
+    [
+     "Itália",
+     "40,2%",
+     "21,0%",
+     "14,0%",
+     "24,9%",
+     "61%",
+     "74%",
+     "1,09"
+    ],
+    [
+     "Coreia do Sul",
+     "39,2%",
+     "16,5%",
+     "21,0%",
+     "23,4%",
+     "56%",
+     "64%",
+     "1,06"
+    ],
+    [
+     "Costa Rica",
+     "44,9%",
+     "13,0%",
+     "11,1%",
+     "31,0%",
+     "58%",
+     "76%",
+     "1,08"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Italy",
+     "40.2%",
+     "21.0%",
+     "14.0%",
+     "24.9%",
+     "61%",
+     "74%",
+     "1.09"
+    ],
+    [
+     "South Korea",
+     "39.2%",
+     "16.5%",
+     "21.0%",
+     "23.4%",
+     "56%",
+     "64%",
+     "1.06"
+    ],
+    [
+     "Costa Rica",
+     "44.9%",
+     "13.0%",
+     "11.1%",
+     "31.0%",
+     "58%",
+     "76%",
+     "1.08"
+    ]
+   ]
+  },
+  {
+   "n": 16,
+   "legenda_pt": "Consumo Final por Coorte (CFCc), derivado de NTA: Itália (2008), Coreia do Sul (2019) e Costa Rica (2013).",
+   "legenda_en": "Cohort Final Consumption (CFCc), derived from NTA: Italy (2008), South Korea (2019), and Costa Rica (2013).",
+   "fonte_pt": "Fonte: NTA (ntaccounts.org; CCP-UCR) e UN WPP 2024.",
+   "fonte_en": "Source: NTA (ntaccounts.org; CCP-UCR) and UN WPP 2024.",
+   "cabecalho_pt": [
+    "País",
+    "Ano de referência",
+    "Descendentes",
+    "Estruturadores",
+    "Ascendentes",
+    "Fonte / status"
+   ],
+   "cabecalho_en": [
+    "Country",
+    "Reference year",
+    "Descendants",
+    "Structurers",
+    "Ascendants",
+    "Source / status"
+   ],
+   "linhas_pt": [
+    [
+     "Itália",
+     "2008",
+     "210,3 bi € (19,4%)",
+     "573,2 bi € (52,8%)",
+     "301,7 bi € (27,8%)",
+     "NTA 2008 (consumo total, privado e público; perfil suavizado) × população da ONU (WPP 2024) em 2008; cortes 0-22, 23-60, 61+; total 1.085,2 bi €; derivado de dados em disco"
+    ],
+    [
+     "Coreia do Sul",
+     "2019",
+     "270,7 tri won (24,5%)",
+     "624,8 tri won (56,6%)",
+     "209,2 tri won (18,9%)",
+     "NTA 2019 (consumo total, privado e público; perfil suavizado) × população da ONU (WPP 2024) em 2019; cortes 0-22, 23-60, 61+; total 1.104,8 tri won; derivado de dados em disco"
+    ],
+    [
+     "Costa Rica",
+     "2013",
+     "5,92 tri de colones (31,5%)",
+     "10,56 tri de colones (56,2%)",
+     "2,32 tri de colones (12,3%)",
+     "NTA do CCP-UCR (arquivo CNT_CR2013; consumo total, colones correntes, perfil por idade) × população da ONU (WPP 2024) em 2013; cortes 0-22, 23-60, 61+; total 18,80 tri de colones; a soma confere com o total do próprio arquivo (diferença de 0,2%)"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Italy",
+     "2008",
+     "€210.3 billion (19.4%)",
+     "€573.2 billion (52.8%)",
+     "€301.7 billion (27.8%)",
+     "NTA 2008 (total consumption, private and public; smoothed profile) × UN population (WPP 2024) in 2008; cutoffs 0–22, 23–60, 61+; total €1,085.2 billion; derived from the author's data files"
+    ],
+    [
+     "South Korea",
+     "2019",
+     "KRW 270.7 trillion (24.5%)",
+     "KRW 624.8 trillion (56.6%)",
+     "KRW 209.2 trillion (18.9%)",
+     "NTA 2019 (total consumption, private and public; smoothed profile) × UN population (WPP 2024) in 2019; cutoffs 0–22, 23–60, 61+; total KRW 1,104.8 trillion; derived from the author's data files"
+    ],
+    [
+     "Costa Rica",
+     "2013",
+     "CRC 5.92 trillion (31.5%)",
+     "CRC 10.56 trillion (56.2%)",
+     "CRC 2.32 trillion (12.3%)",
+     "CCP-UCR NTA (file CNT_CR2013; total consumption, current colones, age profile) × UN population (WPP 2024) in 2013; cutoffs 0–22, 23–60, 61+; total CRC 18.80 trillion; the sum matches the file's own total (0.2% difference)"
+    ]
+   ]
+  },
+  {
+   "n": 17,
+   "legenda_pt": "Participação das coortes na população e no consumo, e consumo per capita (Itália, Coreia do Sul e Costa Rica).",
+   "legenda_en": "Cohort shares of population and consumption, and per capita consumption (Italy, South Korea, and Costa Rica).",
+   "fonte_pt": "Fonte: NTA (ntaccounts.org; CCP-UCR) e UN WPP 2024.",
+   "fonte_en": "Source: NTA (ntaccounts.org; CCP-UCR) and UN WPP 2024.",
+   "cabecalho_pt": [
+    "País (ano do perfil)",
+    "Coorte",
+    "Idades",
+    "% da população",
+    "% do consumo",
+    "Consumo per capita"
+   ],
+   "cabecalho_en": [
+    "Country (profile year)",
+    "Cohort",
+    "Ages",
+    "% of population",
+    "% of consumption",
+    "Per capita consumption"
+   ],
+   "linhas_pt": [
+    [
+     "Itália (2008)",
+     "Descendentes",
+     "0 a 22",
+     "22,0%",
+     "19,4%",
+     "16.024 €"
+    ],
+    [
+     "Itália (2008)",
+     "Estruturadores",
+     "23 a 60",
+     "53,2%",
+     "52,8%",
+     "18.097 €"
+    ],
+    [
+     "Itália (2008)",
+     "Ascendentes",
+     "61 a 100",
+     "24,8%",
+     "27,8%",
+     "20.433 €"
+    ],
+    [
+     "Coreia do Sul (2019)",
+     "Descendentes",
+     "0 a 22",
+     "21,5%",
+     "24,5%",
+     "24,3 milhões de won"
+    ],
+    [
+     "Coreia do Sul (2019)",
+     "Estruturadores",
+     "23 a 60",
+     "58,0%",
+     "56,6%",
+     "20,8 milhões de won"
+    ],
+    [
+     "Coreia do Sul (2019)",
+     "Ascendentes",
+     "61 a 100",
+     "20,5%",
+     "18,9%",
+     "19,7 milhões de won"
+    ],
+    [
+     "Costa Rica (2013)",
+     "Descendentes",
+     "0 a 22",
+     "37,2%",
+     "31,5%",
+     "3,37 milhões de colones"
+    ],
+    [
+     "Costa Rica (2013)",
+     "Estruturadores",
+     "23 a 60",
+     "51,7%",
+     "56,2%",
+     "4,33 milhões de colones"
+    ],
+    [
+     "Costa Rica (2013)",
+     "Ascendentes",
+     "61 a 100",
+     "11,1%",
+     "12,3%",
+     "4,45 milhões de colones"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Italy (2008)",
+     "Descendants",
+     "0–22",
+     "22.0%",
+     "19.4%",
+     "€16,024"
+    ],
+    [
+     "Italy (2008)",
+     "Structurers",
+     "23–60",
+     "53.2%",
+     "52.8%",
+     "€18,097"
+    ],
+    [
+     "Italy (2008)",
+     "Ascendants",
+     "61–100",
+     "24.8%",
+     "27.8%",
+     "€20,433"
+    ],
+    [
+     "South Korea (2019)",
+     "Descendants",
+     "0–22",
+     "21.5%",
+     "24.5%",
+     "KRW 24.3 million"
+    ],
+    [
+     "South Korea (2019)",
+     "Structurers",
+     "23–60",
+     "58.0%",
+     "56.6%",
+     "KRW 20.8 million"
+    ],
+    [
+     "South Korea (2019)",
+     "Ascendants",
+     "61–100",
+     "20.5%",
+     "18.9%",
+     "KRW 19.7 million"
+    ],
+    [
+     "Costa Rica (2013)",
+     "Descendants",
+     "0–22",
+     "37.2%",
+     "31.5%",
+     "CRC 3.37 million"
+    ],
+    [
+     "Costa Rica (2013)",
+     "Structurers",
+     "23–60",
+     "51.7%",
+     "56.2%",
+     "CRC 4.33 million"
+    ],
+    [
+     "Costa Rica (2013)",
+     "Ascendants",
+     "61–100",
+     "11.1%",
+     "12.3%",
+     "CRC 4.45 million"
+    ]
+   ]
+  },
+  {
+   "n": 18,
+   "legenda_pt": "VADc e emprego por unidade de consumo e por criança adicional (Descendentes).",
+   "legenda_en": "VADc and employment per unit of consumption and per additional child (Descendants).",
+   "fonte_pt": "Fonte: OCDE (ICIO 2019), OIT (ILOSTAT), NTA e Diretório do AINU.Systems.",
+   "fonte_en": "Source: OECD (ICIO 2019), ILO (ILOSTAT), NTA, and AINU.Systems Directory.",
+   "cabecalho_pt": [
+    "País",
+    "VADc por US$ de consumo",
+    "Emprego por US$ milhão",
+    "Emprego bruto por criança adicional/ano (ICIO + NTA)",
+    "Fonte"
+   ],
+   "cabecalho_en": [
+    "Country",
+    "VADc per US$ of consumption",
+    "Employment per US$ million",
+    "Gross jobs per additional child/year (ICIO + NTA)",
+    "Source"
+   ],
+   "linhas_pt": [
+    [
+     "Itália",
+     "0,725",
+     "9,3",
+     "0,186 (Diretório: 0,251)",
+     "ICIO 2019; Diretório (natureza EST; limite superior)"
+    ],
+    [
+     "Coreia do Sul",
+     "0,724",
+     "15,1",
+     "0,300",
+     "ICIO 2019; perfil NTA 2019"
+    ],
+    [
+     "Costa Rica",
+     "0,716",
+     "25,7",
+     "0,202 (faixa 0,184 a 0,202)",
+     "ICIO 2019; razão 0-22 ÷ média da NTA 2013 (CCP-UCR)"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Italy",
+     "0.725",
+     "9.3",
+     "0.186 (Directory: 0.251)",
+     "ICIO 2019; Directory (EST nature; upper bound)"
+    ],
+    [
+     "South Korea",
+     "0.724",
+     "15.1",
+     "0.300",
+     "ICIO 2019; NTA 2019 profile"
+    ],
+    [
+     "Costa Rica",
+     "0.716",
+     "25.7",
+     "0.202 (range 0.184 to 0.202)",
+     "ICIO 2019; 0–22 ÷ average ratio from NTA 2013 (CCP-UCR)"
+    ]
+   ]
+  },
+  {
+   "n": 19,
+   "legenda_pt": "Emprego bruto e líquido sob diferentes graus de deslocamento (por criança adicional e por ano; teto de demanda).",
+   "legenda_en": "Gross and net employment under different levels of displacement (per additional child per year; demand ceiling).",
+   "fonte_pt": "Fonte: OCDE (ICIO 2019), OIT (ILOSTAT), NTA e Diretório do AINU.Systems.",
+   "fonte_en": "Source: OECD (ICIO 2019), ILO (ILOSTAT), NTA, and AINU.Systems Directory.",
+   "cabecalho_pt": [
+    "País (método)",
+    "Consumo médio por Descendente por ano",
+    "Emprego bruto por criança/ano (0% de deslocamento)",
+    "50% de deslocamento",
+    "100% de deslocamento",
+    "Observação"
+   ],
+   "cabecalho_en": [
+    "Country (method)",
+    "Average annual consumption per Descendant",
+    "Gross jobs per child/year (0% displacement)",
+    "50% displacement",
+    "100% displacement",
+    "Note"
+   ],
+   "linhas_pt": [
+    [
+     "Itália (Diretório)",
+     "23.396 € de 2022",
+     "0,251",
+     "0,133",
+     "0,0155",
+     "Diretório (EST), tabela nacional; limite superior, sem produção futura da criança"
+    ],
+    [
+     "Itália (ICIO + NTA)",
+     "20.045 US$ de 2019",
+     "0,186",
+     "0,093",
+     "não calculado",
+     "teste do método nos três países: 26% abaixo do Diretório"
+    ],
+    [
+     "Coreia do Sul (ICIO + NTA)",
+     "19.890 US$ de 2019",
+     "0,300",
+     "0,150",
+     "não calculado",
+     "perfil NTA 2019; consumo de um Descendente 14% acima da média"
+    ],
+    [
+     "Costa Rica (ICIO + NTA)",
+     "7.869 US$ de 2019",
+     "0,202",
+     "0,101",
+     "não calculado",
+     "razão 0-22 ÷ média = 0,85 (NTA 2013, CCP-UCR); com o perfil de 2008 (0,77): 0,184"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Italy (Directory)",
+     "€23,396 (2022)",
+     "0.251",
+     "0.133",
+     "0.0155",
+     "Directory (EST), national table; upper bound, without the child's future production"
+    ],
+    [
+     "Italy (ICIO + NTA)",
+     "US$20,045 (2019)",
+     "0.186",
+     "0.093",
+     "not calculated",
+     "method test applied to the three countries: 26% below the Directory"
+    ],
+    [
+     "South Korea (ICIO + NTA)",
+     "US$19,890 (2019)",
+     "0.300",
+     "0.150",
+     "not calculated",
+     "NTA 2019 profile; a Descendant's consumption is 14% above the average"
+    ],
+    [
+     "Costa Rica (ICIO + NTA)",
+     "US$7,869 (2019)",
+     "0.202",
+     "0.101",
+     "not calculated",
+     "0–22 ÷ average ratio = 0.85 (NTA 2013, CCP-UCR); with the 2008 profile (0.77): 0.184"
+    ]
+   ]
+  },
+  {
+   "n": 20,
+   "legenda_pt": "Razões demográficas-chave (síntese).",
+   "legenda_en": "Key demographic ratios (summary).",
+   "fonte_pt": "Fonte: AINU.Systems (motor demográfico, UN WPP 2024, variante média).",
+   "fonte_en": "Source: AINU.Systems (demographic model, UN WPP 2024, medium variant).",
+   "cabecalho_pt": [
+    "País",
+    "A/E 2024",
+    "A/E 2099 Meta",
+    "E/80+ 2024",
+    "E/80+ 2099 Meta",
+    "N* 2099 Meta"
+   ],
+   "cabecalho_en": [
+    "Country",
+    "A/E 2024",
+    "A/E 2099 Target",
+    "E/80+ 2024",
+    "E/80+ 2099 Target",
+    "N* 2099 Target"
+   ],
+   "linhas_pt": [
+    [
+     "Costa Rica",
+     "0,31",
+     "0,78",
+     "20,6",
+     "2,8",
+     "0,88"
+    ],
+    [
+     "Itália",
+     "0,61",
+     "0,72",
+     "6,4",
+     "3,1",
+     "1,01"
+    ],
+    [
+     "Coreia do Sul",
+     "0,46",
+     "0,75",
+     "11,9",
+     "2,7",
+     "0,90"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Costa Rica",
+     "0.31",
+     "0.78",
+     "20.6",
+     "2.8",
+     "0.88"
+    ],
+    [
+     "Italy",
+     "0.61",
+     "0.72",
+     "6.4",
+     "3.1",
+     "1.01"
+    ],
+    [
+     "South Korea",
+     "0.46",
+     "0.75",
+     "11.9",
+     "2.7",
+     "0.90"
+    ]
+   ]
+  },
+  {
+   "n": 21,
+   "legenda_pt": "Renda agregada do trabalho dos Estruturadores (23 a 60 anos), Meta e Tendência, com renda por idade constante (2024 = 100 na Tendência).",
+   "legenda_en": "Aggregate labor income of Structurers (ages 23–60), Target and Trend, with labor income by age held constant (2024 = 100 under the Trend).",
+   "fonte_pt": "Fonte: NTA (variável YL) e AINU.Systems (motor demográfico, UN WPP 2024).",
+   "fonte_en": "Source: NTA (YL variable) and AINU.Systems (demographic model, UN WPP 2024).",
+   "cabecalho_pt": [
+    "País (perfil de renda do trabalho)",
+    "Meta, índice com 2024 = 100 (2049 / 2074 / 2099)",
+    "Tendência, índice (2049 / 2074 / 2099)",
+    "Meta acima da Tendência (2074 / 2099)",
+    "Diferença chega a 1% / 5% / 10% em",
+    "Mínimo da Meta (ano)"
+   ],
+   "cabecalho_en": [
+    "Country (labor-income profile)",
+    "Target, index with 2024 = 100 (2049 / 2074 / 2099)",
+    "Trend, index (2049 / 2074 / 2099)",
+    "Target above Trend (2074 / 2099)",
+    "Difference reaches 1% / 5% / 10% in",
+    "Target minimum (year)"
+   ],
+   "linhas_pt": [
+    [
+     "Itália (YL 2008)",
+     "73 / 65 / 73",
+     "73 / 56 / 47",
+     "15% / 54%",
+     "2056 / 2065 / 2070",
+     "65 (2072)"
+    ],
+    [
+     "Coreia do Sul (YL 2019)",
+     "68 / 50 / 55",
+     "68 / 38 / 27",
+     "32% / 105%",
+     "2055 / 2061 / 2065",
+     "50 (2072)"
+    ],
+    [
+     "Costa Rica (YL 2013)",
+     "97 / 82 / 85",
+     "97 / 69 / 52",
+     "18% / 62%",
+     "2055 / 2063 / 2068",
+     "82 (2079)"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Italy (YL 2008)",
+     "73 / 65 / 73",
+     "73 / 56 / 47",
+     "15% / 54%",
+     "2056 / 2065 / 2070",
+     "65 (2072)"
+    ],
+    [
+     "South Korea (YL 2019)",
+     "68 / 50 / 55",
+     "68 / 38 / 27",
+     "32% / 105%",
+     "2055 / 2061 / 2065",
+     "50 (2072)"
+    ],
+    [
+     "Costa Rica (YL 2013)",
+     "97 / 82 / 85",
+     "97 / 69 / 52",
+     "18% / 62%",
+     "2055 / 2063 / 2068",
+     "82 (2079)"
+    ]
+   ]
+  },
+  {
+   "n": 22,
+   "legenda_pt": "Renda do trabalho dos Estruturadores na Meta menos na Tendência, líquida do custo das crianças adicionais (déficit do ciclo de vida, 0 a 22 anos), sem e com o retorno da demanda.",
+   "legenda_en": "Structurers’ labor income under the Target minus the Trend, net of the cost of additional children (life-cycle deficit, ages 0–22), with and without demand return.",
+   "fonte_pt": "Fonte: NTA, OCDE (ICIO 2019), OIT (ILOSTAT) e AINU.Systems (motor demográfico).",
+   "fonte_en": "Source: NTA, OECD (ICIO 2019), ILO (ILOSTAT), and AINU.Systems (demographic model).",
+   "cabecalho_pt": [
+    "País",
+    "Custo médio de uma criança ÷ renda de um Estruturador",
+    "Sem retorno da demanda: fundo (ano); volta a ser positiva em",
+    "Com retorno da demanda (teto): fundo (ano); volta a ser positiva em",
+    "Retorno da demanda ÷ custo",
+    "Diferença líquida em 2099 (sem / com retorno)"
+   ],
+   "cabecalho_en": [
+    "Country",
+    "Average cost of one child ÷ Structurer's income",
+    "Without demand return: trough (year); turns positive in",
+    "With demand return (ceiling): trough (year); turns positive in",
+    "Demand return ÷ cost",
+    "Net difference in 2099 (without / with return)"
+   ],
+   "linhas_pt": [
+    [
+     "Itália",
+     "62%",
+     "-10,3% (2059); 2078",
+     "-5,1% (2055); 2069",
+     "45%",
+     "22% / 36%"
+    ],
+    [
+     "Coreia do Sul",
+     "79%",
+     "-19,7% (2059); 2077",
+     "-9,1% (2056); 2068",
+     "47%",
+     "34% / 67%"
+    ],
+    [
+     "Costa Rica",
+     "60%",
+     "-8,8% (2057); 2075",
+     "-4,7% (2054); 2067",
+     "40%",
+     "28% / 42%"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Italy",
+     "62%",
+     "-10.3% (2059); 2078",
+     "-5.1% (2055); 2069",
+     "45%",
+     "22% / 36%"
+    ],
+    [
+     "South Korea",
+     "79%",
+     "-19.7% (2059); 2077",
+     "-9.1% (2056); 2068",
+     "47%",
+     "34% / 67%"
+    ],
+    [
+     "Costa Rica",
+     "60%",
+     "-8.8% (2057); 2075",
+     "-4.7% (2054); 2067",
+     "40%",
+     "28% / 42%"
+    ]
+   ]
+  },
+  {
+   "n": 23,
+   "legenda_pt": "Financiamento do consumo de cada coorte (Costa Rica, NTA 2013, CCP-UCR; % do consumo da coorte).",
+   "legenda_en": "Financing of each cohort’s consumption (Costa Rica, NTA 2013, CCP-UCR; % of cohort consumption).",
+   "fonte_pt": "Fonte: CCP-UCR (CNT_CR2013).",
+   "fonte_en": "Source: CCP-UCR (CNT_CR2013).",
+   "cabecalho_pt": [
+    "Coorte (Costa Rica, 2013)",
+    "Consumo (tri de colones)",
+    "Renda do trabalho",
+    "Transferências públicas líquidas",
+    "Transferências privadas líquidas",
+    "Realocação por ativos"
+   ],
+   "cabecalho_en": [
+    "Cohort (Costa Rica, 2013)",
+    "Consumption (CRC trillion)",
+    "Labor income",
+    "Net public transfers",
+    "Net private transfers",
+    "Asset reallocations"
+   ],
+   "linhas_pt": [
+    [
+     "Descendentes",
+     "5,92",
+     "9,2%",
+     "26,3%",
+     "61,4%",
+     "3,1%"
+    ],
+    [
+     "Estruturadores",
+     "10,56",
+     "116,6%",
+     "-25,0%",
+     "-31,7%",
+     "40,1%"
+    ],
+    [
+     "Ascendentes",
+     "2,32",
+     "26,2%",
+     "54,4%",
+     "-11,0%",
+     "30,4%"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Descendants",
+     "5.92",
+     "9.2%",
+     "26.3%",
+     "61.4%",
+     "3.1%"
+    ],
+    [
+     "Structurers",
+     "10.56",
+     "116.6%",
+     "-25.0%",
+     "-31.7%",
+     "40.1%"
+    ],
+    [
+     "Ascendants",
+     "2.32",
+     "26.2%",
+     "54.4%",
+     "-11.0%",
+     "30.4%"
+    ]
+   ]
+  },
+  {
+   "n": 24,
+   "legenda_pt": "Curva em J da Costa Rica com o ônus medido pela NTA (renda dos Estruturadores, Meta menos Tendência, líquida do custo).",
+   "legenda_en": "Costa Rica’s J-curve with the NTA-measured burden (Structurers’ labor income, Target minus Trend, net of cost).",
+   "fonte_pt": "Fonte: CCP-UCR (CNT_CR2013) e AINU.Systems (motor demográfico).",
+   "fonte_en": "Source: CCP-UCR (CNT_CR2013) and AINU.Systems (demographic model).",
+   "cabecalho_pt": [
+    "Custo considerado (Costa Rica, NTA 2013)",
+    "Fundo (% da renda dos Estruturadores na Tendência; ano)",
+    "Volta a ser positiva em",
+    "Anos com diferença negativa",
+    "Diferença líquida em 2074 / 2099"
+   ],
+   "cabecalho_en": [
+    "Cost considered (Costa Rica, NTA 2013)",
+    "Trough (% of Structurers' income under Trend; year)",
+    "Turns positive in",
+    "Years with negative difference",
+    "Net difference in 2074 / 2099"
+   ],
+   "linhas_pt": [
+    [
+     "Só transferências privadas líquidas das crianças",
+     "-5,4% (2055)",
+     "2069",
+     "44",
+     "6% / 39%"
+    ],
+    [
+     "Privadas mais a parcela pública paga pelos Estruturadores (80%)",
+     "-7,9% (2057)",
+     "2073",
+     "48",
+     "1% / 31%"
+    ],
+    [
+     "Déficit total do ciclo de vida das crianças, sem retorno da demanda",
+     "-8,8% (2057)",
+     "2075",
+     "50",
+     "0% / 28%"
+    ],
+    [
+     "Déficit total, com retorno da demanda (teto)",
+     "-4,7% (2054)",
+     "2067",
+     "42",
+     "7% / 42%"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Net private transfers to children only",
+     "-5.4% (2055)",
+     "2069",
+     "44",
+     "6% / 39%"
+    ],
+    [
+     "Private plus the public share paid by Structurers (80%)",
+     "-7.9% (2057)",
+     "2073",
+     "48",
+     "1% / 31%"
+    ],
+    [
+     "Total life-cycle deficit of children, without demand return",
+     "-8.8% (2057)",
+     "2075",
+     "50",
+     "0% / 28%"
+    ],
+    [
+     "Total deficit, with demand return (ceiling)",
+     "-4.7% (2054)",
+     "2067",
+     "42",
+     "7% / 42%"
+    ]
+   ]
+  },
+  {
+   "n": 25,
+   "legenda_pt": "Referência do custo crescente com o número de filhos (extrapolação linear do custo médio da NTA; não é gasto real).",
+   "legenda_en": "Reference for rising costs with the number of children (linear extrapolation of average NTA cost; not actual expenditure).",
+   "fonte_pt": "Fonte: NTA e CCP-UCR; extrapolação linear do custo médio (referência, e não gasto).",
+   "fonte_en": "Source: NTA and CCP-UCR; linear extrapolation of average cost (reference, not expenditure).",
+   "cabecalho_pt": [
+    "Base de custo",
+    "Filhos",
+    "Custo acumulado (anos de renda de um Estruturador)",
+    "Pico anual (% da renda do casal)",
+    "% da renda do trabalho do casal na vida de trabalho"
+   ],
+   "cabecalho_en": [
+    "Cost basis",
+    "Children",
+    "Cumulative cost (years of a Structurer's income)",
+    "Annual peak (% of couple's income)",
+    "% of couple's labor income over working life"
+   ],
+   "linhas_pt": [
+    [
+     "Costa Rica, transferência privada (linear)",
+     "1",
+     "9,4",
+     "25%",
+     "12%"
+    ],
+    [
+     "",
+     "2",
+     "18,7",
+     "50%",
+     "25%"
+    ],
+    [
+     "",
+     "3",
+     "28,1",
+     "74%",
+     "37%"
+    ],
+    [
+     "",
+     "4",
+     "37,4",
+     "96%",
+     "49%"
+    ],
+    [
+     "Costa Rica, privada, renda na idade dos pais e escala da raiz quadrada",
+     "1",
+     "9,4",
+     "22%",
+     "14%"
+    ],
+    [
+     "",
+     "2",
+     "17,2",
+     "40%",
+     "25%"
+    ],
+    [
+     "",
+     "3",
+     "24,1",
+     "55%",
+     "35%"
+    ],
+    [
+     "",
+     "4",
+     "30,3",
+     "67%",
+     "44%"
+    ],
+    [
+     "Costa Rica, privada + 80% da pública (linear)",
+     "1",
+     "12,6",
+     "33%",
+     "17%"
+    ],
+    [
+     "",
+     "2",
+     "25,2",
+     "67%",
+     "33%"
+    ],
+    [
+     "",
+     "3",
+     "37,8",
+     "99%",
+     "50%"
+    ],
+    [
+     "",
+     "4",
+     "50,4",
+     "131%",
+     "66%"
+    ],
+    [
+     "Itália, déficit total do ciclo de vida (linear)",
+     "1",
+     "14,3",
+     "41%",
+     "19%"
+    ],
+    [
+     "",
+     "2",
+     "28,5",
+     "80%",
+     "38%"
+    ],
+    [
+     "",
+     "3",
+     "42,8",
+     "116%",
+     "56%"
+    ],
+    [
+     "",
+     "4",
+     "57,1",
+     "151%",
+     "75%"
+    ],
+    [
+     "Coreia do Sul, déficit total do ciclo de vida (linear)",
+     "1",
+     "18,1",
+     "59%",
+     "24%"
+    ],
+    [
+     "",
+     "2",
+     "36,1",
+     "117%",
+     "48%"
+    ],
+    [
+     "",
+     "3",
+     "54,2",
+     "170%",
+     "71%"
+    ],
+    [
+     "",
+     "4",
+     "72,3",
+     "218%",
+     "95%"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Costa Rica, private transfer (linear)",
+     "1",
+     "9.4",
+     "25%",
+     "12%"
+    ],
+    [
+     "",
+     "2",
+     "18.7",
+     "50%",
+     "25%"
+    ],
+    [
+     "",
+     "3",
+     "28.1",
+     "74%",
+     "37%"
+    ],
+    [
+     "",
+     "4",
+     "37.4",
+     "96%",
+     "49%"
+    ],
+    [
+     "Costa Rica, private, income at parents' ages and square-root scale",
+     "1",
+     "9.4",
+     "22%",
+     "14%"
+    ],
+    [
+     "",
+     "2",
+     "17.2",
+     "40%",
+     "25%"
+    ],
+    [
+     "",
+     "3",
+     "24.1",
+     "55%",
+     "35%"
+    ],
+    [
+     "",
+     "4",
+     "30.3",
+     "67%",
+     "44%"
+    ],
+    [
+     "Costa Rica, private + 80% of public (linear)",
+     "1",
+     "12.6",
+     "33%",
+     "17%"
+    ],
+    [
+     "",
+     "2",
+     "25.2",
+     "67%",
+     "33%"
+    ],
+    [
+     "",
+     "3",
+     "37.8",
+     "99%",
+     "50%"
+    ],
+    [
+     "",
+     "4",
+     "50.4",
+     "131%",
+     "66%"
+    ],
+    [
+     "Italy, total life-cycle deficit (linear)",
+     "1",
+     "14.3",
+     "41%",
+     "19%"
+    ],
+    [
+     "",
+     "2",
+     "28.5",
+     "80%",
+     "38%"
+    ],
+    [
+     "",
+     "3",
+     "42.8",
+     "116%",
+     "56%"
+    ],
+    [
+     "",
+     "4",
+     "57.1",
+     "151%",
+     "75%"
+    ],
+    [
+     "South Korea, total life-cycle deficit (linear)",
+     "1",
+     "18.1",
+     "59%",
+     "24%"
+    ],
+    [
+     "",
+     "2",
+     "36.1",
+     "117%",
+     "48%"
+    ],
+    [
+     "",
+     "3",
+     "54.2",
+     "170%",
+     "71%"
+    ],
+    [
+     "",
+     "4",
+     "72.3",
+     "218%",
+     "95%"
+    ]
+   ]
+  },
+  {
+   "n": 26,
+   "legenda_pt": "Custo e retorno por criança (Costa Rica, NTA 2013).",
+   "legenda_en": "Cost and return per child (Costa Rica, NTA 2013).",
+   "fonte_pt": "Fonte: CCP-UCR (CNT_CR2013) e OCDE (ICIO 2019).",
+   "fonte_en": "Source: CCP-UCR (CNT_CR2013) and OECD (ICIO 2019).",
+   "cabecalho_pt": [
+    "Item (Costa Rica, NTA 2013)",
+    "Valor",
+    "Quem arca ou recebe"
+   ],
+   "cabecalho_en": [
+    "Item (Costa Rica, NTA 2013)",
+    "Value",
+    "Who bears or receives it"
+   ],
+   "linhas_pt": [
+    [
+     "Custo privado por criança de 0 a 22 anos",
+     "41% da renda de um Estruturador por ano",
+     "Os pais"
+    ],
+    [
+     "Custo público que recai sobre os Estruturadores",
+     "mais 14% da renda de um Estruturador por ano",
+     "Os Estruturadores (impostos)"
+    ],
+    [
+     "Retorno privado: transferências privadas líquidas dos Ascendentes",
+     "-11,0% do consumo dos 61+ (-1,9% a partir dos 75)",
+     "Praticamente nulo para os pais"
+    ],
+    [
+     "Retorno público: transferências públicas aos Ascendentes",
+     "54,4% do consumo dos 61+; perfil por idade, e não por número de filhos",
+     "Coletivo, não individualizado"
+    ],
+    [
+     "Retorno da demanda (o gasto vira renda de terceiros)",
+     "40% do custo (teto)",
+     "Terceiros, via renda do trabalho"
+    ]
+   ],
+   "linhas_en": [
+    [
+     "Private cost per child aged 0–22",
+     "41% of a Structurer's income per year",
+     "The parents"
+    ],
+    [
+     "Public cost borne by Structurers",
+     "an additional 14% of a Structurer's income per year",
+     "The Structurers (taxes)"
+    ],
+    [
+     "Private return: net private transfers from Ascendants",
+     "-11.0% of consumption at ages 61+ (-1.9% from age 75)",
+     "Practically nil for the parents"
+    ],
+    [
+     "Public return: public transfers to Ascendants",
+     "54.4% of consumption at ages 61+; age profile, not by number of children",
+     "Collective, not individualized"
+    ],
+    [
+     "Demand return (spending becomes third parties' income)",
+     "40% of the cost (ceiling)",
+     "Third parties, via labor income"
+    ]
+   ]
+  }
+ ]
+}
