@@ -27,6 +27,12 @@ def test_perfis_nta_e_cfcc_por_coorte():
         assert all(abs(a - b) < 0.2 for a, b in zip(r["pct"], esperado)), (iso, r["pct"])
 
 
+def test_costa_rica_tem_so_valores_agregados():
+    assert perfil("CRI", "C") is None                       # o perfil por idade do CCP-UCR não está no repositório
+    r = cfcc_por_coorte("CRI")
+    assert r["pct"] == [31.5, 56.2, 12.3] and abs(sum(r["pct"]) - 100) < 1e-9 and r["cortes"] == (22, 61) and r["ano_pop"] == 2013
+
+
 def test_perfil_do_japao_2019_do_ipss():
     """Japão: consumo e renda do trabalho de 2019 (IPSS v3.0). A janela de superávit (renda > consumo) fica a 1 ano dos cortes 24/63."""
     ano_c, c = perfil("JPN", "C")

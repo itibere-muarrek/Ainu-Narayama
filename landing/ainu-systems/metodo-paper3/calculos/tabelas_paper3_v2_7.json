@@ -1,8 +1,8 @@
 {
  "paper": "The job that will be born / O emprego que nascerá",
- "versao": "2.6",
+ "versao": "2.7",
  "doi": "10.5281/zenodo.24226127",
- "aviso": "Valores preliminares de um estudo exploratório; empregos são tetos de demanda (brutos). Mesmos números das 26 tabelas do working paper v2.6.",
+ "aviso": "Valores preliminares de um estudo exploratório; empregos são tetos de demanda (brutos). Mesmos números das 26 tabelas do working paper v2.7.",
  "tabelas": [
   {
    "n": 1,
@@ -37,7 +37,7 @@
      "0,48",
      "Colapso de Narayama",
      "Piloto; cenário de estresse (TFT extrema)",
-     "NTA 2019 (consumo, renda; poupança só de 2000); ICIO"
+     "KOSIS 2024 (consumo, renda do trabalho; poupança só de 2000, do portal NTA); ICIO"
     ],
     [
      "Costa Rica",
@@ -60,7 +60,7 @@
      "0.48",
      "Narayama Collapse",
      "Pilot; stress scenario (extreme TFR)",
-     "NTA 2019 (consumption, income; saving only from 2000); ICIO"
+     "KOSIS 2024 (consumption, labor income; saving only from 2000, from the NTA portal); ICIO"
     ],
     [
      "Costa Rica",
@@ -1353,10 +1353,10 @@
   },
   {
    "n": 16,
-   "legenda_pt": "Consumo Final por Coorte (CFCc), derivado de NTA: Itália (2008), Coreia do Sul (2019) e Costa Rica (2013).",
-   "legenda_en": "Cohort Final Consumption (CFCc), derived from NTA: Italy (2008), South Korea (2019), and Costa Rica (2013).",
-   "fonte_pt": "Fonte: NTA (ntaccounts.org; CCP-UCR) e UN WPP 2024.",
-   "fonte_en": "Source: NTA (ntaccounts.org; CCP-UCR) and UN WPP 2024.",
+   "legenda_pt": "Consumo Final por Coorte (CFCc), derivado de NTA: Itália (2008), Coreia do Sul (2024) e Costa Rica (2013).",
+   "legenda_en": "Cohort Final Consumption (CFCc), derived from NTA: Italy (2008), South Korea (2024), and Costa Rica (2013).",
+   "fonte_pt": "Fonte: NTA (ntaccounts.org; KOSIS; CCP-UCR) e UN WPP 2024.",
+   "fonte_en": "Source: NTA (ntaccounts.org; KOSIS; CCP-UCR) and UN WPP 2024.",
    "cabecalho_pt": [
     "País",
     "Ano de referência",
@@ -1384,11 +1384,11 @@
     ],
     [
      "Coreia do Sul",
-     "2019",
-     "270,7 tri won (24,5%)",
-     "624,8 tri won (56,6%)",
-     "209,2 tri won (18,9%)",
-     "NTA 2019 (consumo total, privado e público; perfil suavizado) × população da ONU (WPP 2024) em 2019; cortes 0-22, 23-60, 61+; total 1.104,8 tri won; derivado de dados em disco"
+     "2024",
+     "324,6 tri won (21,5%)",
+     "823,7 tri won (54,6%)",
+     "360,9 tri won (23,9%)",
+     "KOSIS 2024 (consumo total, privado e público; sem suavização) × população da ONU (WPP 2024) em 2024; cortes 0-22, 23-60, 61+; total 1.509,2 tri won; derivado de dados em disco"
     ],
     [
      "Costa Rica",
@@ -1410,11 +1410,11 @@
     ],
     [
      "South Korea",
-     "2019",
-     "KRW 270.7 trillion (24.5%)",
-     "KRW 624.8 trillion (56.6%)",
-     "KRW 209.2 trillion (18.9%)",
-     "NTA 2019 (total consumption, private and public; smoothed profile) × UN population (WPP 2024) in 2019; cutoffs 0–22, 23–60, 61+; total KRW 1,104.8 trillion; derived from the author's data files"
+     "2024",
+     "KRW 324.6 trillion (21.5%)",
+     "KRW 823.7 trillion (54.6%)",
+     "KRW 360.9 trillion (23.9%)",
+     "KOSIS 2024 (total consumption, private and public; unsmoothed profile) × UN population (WPP 2024) in 2024; cutoffs 0–22, 23–60, 61+; total KRW 1,509.2 trillion; derived from the author's data files"
     ],
     [
      "Costa Rica",
@@ -1430,8 +1430,8 @@
    "n": 17,
    "legenda_pt": "Participação das coortes na população e no consumo, e consumo per capita (Itália, Coreia do Sul e Costa Rica).",
    "legenda_en": "Cohort shares of population and consumption, and per capita consumption (Italy, South Korea, and Costa Rica).",
-   "fonte_pt": "Fonte: NTA (ntaccounts.org; CCP-UCR) e UN WPP 2024.",
-   "fonte_en": "Source: NTA (ntaccounts.org; CCP-UCR) and UN WPP 2024.",
+   "fonte_pt": "Fonte: NTA (ntaccounts.org; KOSIS; CCP-UCR) e UN WPP 2024.",
+   "fonte_en": "Source: NTA (ntaccounts.org; KOSIS; CCP-UCR) and UN WPP 2024.",
    "cabecalho_pt": [
     "País (ano do perfil)",
     "Coorte",
@@ -1474,28 +1474,28 @@
      "20.433 €"
     ],
     [
-     "Coreia do Sul (2019)",
+     "Coreia do Sul (2024)",
      "Descendentes",
      "0 a 22",
+     "18,0%",
      "21,5%",
-     "24,5%",
-     "24,3 milhões de won"
+     "34,8 milhões de won"
     ],
     [
-     "Coreia do Sul (2019)",
+     "Coreia do Sul (2024)",
      "Estruturadores",
      "23 a 60",
-     "58,0%",
-     "56,6%",
-     "20,8 milhões de won"
+     "56,1%",
+     "54,6%",
+     "28,4 milhões de won"
     ],
     [
-     "Coreia do Sul (2019)",
+     "Coreia do Sul (2024)",
      "Ascendentes",
      "61 a 100",
-     "20,5%",
-     "18,9%",
-     "19,7 milhões de won"
+     "25,9%",
+     "23,9%",
+     "27,0 milhões de won"
     ],
     [
      "Costa Rica (2013)",
@@ -1548,28 +1548,28 @@
      "€20,433"
     ],
     [
-     "South Korea (2019)",
+     "South Korea (2024)",
      "Descendants",
      "0–22",
+     "18.0%",
      "21.5%",
-     "24.5%",
-     "KRW 24.3 million"
+     "KRW 34.8 million"
     ],
     [
-     "South Korea (2019)",
+     "South Korea (2024)",
      "Structurers",
      "23–60",
-     "58.0%",
-     "56.6%",
-     "KRW 20.8 million"
+     "56.1%",
+     "54.6%",
+     "KRW 28.4 million"
     ],
     [
-     "South Korea (2019)",
+     "South Korea (2024)",
      "Ascendants",
      "61–100",
-     "20.5%",
-     "18.9%",
-     "KRW 19.7 million"
+     "25.9%",
+     "23.9%",
+     "KRW 27.0 million"
     ],
     [
      "Costa Rica (2013)",
@@ -1602,7 +1602,7 @@
    "legenda_pt": "VADc e emprego por unidade de consumo e por criança adicional (Descendentes).",
    "legenda_en": "VADc and employment per unit of consumption and per additional child (Descendants).",
    "fonte_pt": "Fonte: OCDE (ICIO 2019), OIT (ILOSTAT), NTA e Diretório do AINU.Systems.",
-   "fonte_en": "Source: OECD (ICIO 2019), ILO (ILOSTAT), NTA, and AINU.Systems Directory.",
+   "fonte_en": "Source: OECD (ICIO 2019), ILO (ILOSTAT), NTA, KOSIS, and AINU.Systems Directory.",
    "cabecalho_pt": [
     "País",
     "VADc por US$ de consumo",
@@ -1629,8 +1629,8 @@
      "Coreia do Sul",
      "0,724",
      "15,1",
-     "0,300",
-     "ICIO 2019; perfil NTA 2019"
+     "0,314",
+     "ICIO 2019; perfil KOSIS 2024"
     ],
     [
      "Costa Rica",
@@ -1652,8 +1652,8 @@
      "South Korea",
      "0.724",
      "15.1",
-     "0.300",
-     "ICIO 2019; NTA 2019 profile"
+     "0.314",
+     "ICIO 2019; KOSIS 2024 profile"
     ],
     [
      "Costa Rica",
@@ -1669,7 +1669,7 @@
    "legenda_pt": "Emprego bruto e líquido sob diferentes graus de deslocamento (por criança adicional e por ano; teto de demanda).",
    "legenda_en": "Gross and net employment under different levels of displacement (per additional child per year; demand ceiling).",
    "fonte_pt": "Fonte: OCDE (ICIO 2019), OIT (ILOSTAT), NTA e Diretório do AINU.Systems.",
-   "fonte_en": "Source: OECD (ICIO 2019), ILO (ILOSTAT), NTA, and AINU.Systems Directory.",
+   "fonte_en": "Source: OECD (ICIO 2019), ILO (ILOSTAT), NTA, KOSIS, and AINU.Systems Directory.",
    "cabecalho_pt": [
     "País (método)",
     "Consumo médio por Descendente por ano",
@@ -1705,11 +1705,11 @@
     ],
     [
      "Coreia do Sul (ICIO + NTA)",
-     "19.890 US$ de 2019",
-     "0,300",
-     "0,150",
+     "20.804 US$ de 2019",
+     "0,314",
+     "0,157",
      "não calculado",
-     "perfil NTA 2019; consumo de um Descendente 14% acima da média"
+     "perfil KOSIS 2024; consumo de um Descendente 19% acima da média"
     ],
     [
      "Costa Rica (ICIO + NTA)",
@@ -1739,11 +1739,11 @@
     ],
     [
      "South Korea (ICIO + NTA)",
-     "US$19,890 (2019)",
-     "0.300",
-     "0.150",
+     "US$20,804 (2019)",
+     "0.314",
+     "0.157",
      "not calculated",
-     "NTA 2019 profile; a Descendant's consumption is 14% above the average"
+     "KOSIS 2024 profile; a Descendant's consumption is 19% above the average"
     ],
     [
      "Costa Rica (ICIO + NTA)",
@@ -1834,8 +1834,8 @@
    "n": 21,
    "legenda_pt": "Renda agregada do trabalho dos Estruturadores (23 a 60 anos), Meta e Tendência, com renda por idade constante (2024 = 100 na Tendência).",
    "legenda_en": "Aggregate labor income of Structurers (ages 23–60), Target and Trend, with labor income by age held constant (2024 = 100 under the Trend).",
-   "fonte_pt": "Fonte: NTA (variável YL) e AINU.Systems (motor demográfico, UN WPP 2024).",
-   "fonte_en": "Source: NTA (YL variable) and AINU.Systems (demographic model, UN WPP 2024).",
+   "fonte_pt": "Fonte: NTA e KOSIS (variável YL) e AINU.Systems (motor demográfico, UN WPP 2024).",
+   "fonte_en": "Source: NTA and KOSIS (YL variable) and AINU.Systems (demographic model, UN WPP 2024).",
    "cabecalho_pt": [
     "País (perfil de renda do trabalho)",
     "Meta, índice com 2024 = 100 (2049 / 2074 / 2099)",
@@ -1862,12 +1862,12 @@
      "65 (2072)"
     ],
     [
-     "Coreia do Sul (YL 2019)",
+     "Coreia do Sul (YL 2024)",
      "68 / 50 / 55",
      "68 / 38 / 27",
-     "32% / 105%",
+     "31% / 104%",
      "2055 / 2061 / 2065",
-     "50 (2072)"
+     "50 (2074)"
     ],
     [
      "Costa Rica (YL 2013)",
@@ -1888,12 +1888,12 @@
      "65 (2072)"
     ],
     [
-     "South Korea (YL 2019)",
+     "South Korea (YL 2024)",
      "68 / 50 / 55",
      "68 / 38 / 27",
-     "32% / 105%",
+     "31% / 104%",
      "2055 / 2061 / 2065",
-     "50 (2072)"
+     "50 (2074)"
     ],
     [
      "Costa Rica (YL 2013)",
@@ -1909,8 +1909,8 @@
    "n": 22,
    "legenda_pt": "Renda do trabalho dos Estruturadores na Meta menos na Tendência, líquida do custo das crianças adicionais (déficit do ciclo de vida, 0 a 22 anos), sem e com o retorno da demanda.",
    "legenda_en": "Structurers’ labor income under the Target minus the Trend, net of the cost of additional children (life-cycle deficit, ages 0–22), with and without demand return.",
-   "fonte_pt": "Fonte: NTA, OCDE (ICIO 2019), OIT (ILOSTAT) e AINU.Systems (motor demográfico).",
-   "fonte_en": "Source: NTA, OECD (ICIO 2019), ILO (ILOSTAT), and AINU.Systems (demographic model).",
+   "fonte_pt": "Fonte: NTA, KOSIS, OCDE (ICIO 2019), OIT (ILOSTAT) e AINU.Systems (motor demográfico).",
+   "fonte_en": "Source: NTA, KOSIS, OECD (ICIO 2019), ILO (ILOSTAT), and AINU.Systems (demographic model).",
    "cabecalho_pt": [
     "País",
     "Custo médio de uma criança ÷ renda de um Estruturador",
@@ -1938,11 +1938,11 @@
     ],
     [
      "Coreia do Sul",
-     "79%",
-     "-19,7% (2059); 2077",
-     "-9,1% (2056); 2068",
-     "47%",
-     "34% / 67%"
+     "83%",
+     "-20,9% (2060); 2081",
+     "-9,8% (2057); 2069",
+     "46%",
+     "30% / 64%"
     ],
     [
      "Costa Rica",
@@ -1964,11 +1964,11 @@
     ],
     [
      "South Korea",
-     "79%",
-     "-19.7% (2059); 2077",
-     "-9.1% (2056); 2068",
-     "47%",
-     "34% / 67%"
+     "83%",
+     "-20.9% (2060); 2081",
+     "-9.8% (2057); 2069",
+     "46%",
+     "30% / 64%"
     ],
     [
      "Costa Rica",
@@ -2140,8 +2140,8 @@
    "n": 25,
    "legenda_pt": "Referência do custo crescente com o número de filhos (extrapolação linear do custo médio da NTA; não é gasto real).",
    "legenda_en": "Reference for rising costs with the number of children (linear extrapolation of average NTA cost; not actual expenditure).",
-   "fonte_pt": "Fonte: NTA e CCP-UCR; extrapolação linear do custo médio (referência, e não gasto).",
-   "fonte_en": "Source: NTA and CCP-UCR; linear extrapolation of average cost (reference, not expenditure).",
+   "fonte_pt": "Fonte: NTA, KOSIS e CCP-UCR; extrapolação linear do custo médio (referência, e não gasto).",
+   "fonte_en": "Source: NTA, KOSIS, and CCP-UCR; linear extrapolation of average cost (reference, not expenditure).",
    "cabecalho_pt": [
     "Base de custo",
     "Filhos",
@@ -2272,30 +2272,30 @@
     [
      "Coreia do Sul, déficit total do ciclo de vida (linear)",
      "1",
-     "18,1",
-     "59%",
-     "24%"
+     "19,1",
+     "60%",
+     "25%"
     ],
     [
      "",
      "2",
-     "36,1",
-     "117%",
-     "48%"
+     "38,3",
+     "116%",
+     "50%"
     ],
     [
      "",
      "3",
-     "54,2",
-     "170%",
-     "71%"
+     "57,4",
+     "171%",
+     "76%"
     ],
     [
      "",
      "4",
-     "72,3",
-     "218%",
-     "95%"
+     "76,6",
+     "224%",
+     "101%"
     ]
    ],
    "linhas_en": [
@@ -2414,30 +2414,30 @@
     [
      "South Korea, total life-cycle deficit (linear)",
      "1",
-     "18.1",
-     "59%",
-     "24%"
+     "19.1",
+     "60%",
+     "25%"
     ],
     [
      "",
      "2",
-     "36.1",
-     "117%",
-     "48%"
+     "38.3",
+     "116%",
+     "50%"
     ],
     [
      "",
      "3",
-     "54.2",
-     "170%",
-     "71%"
+     "57.4",
+     "171%",
+     "76%"
     ],
     [
      "",
      "4",
-     "72.3",
-     "218%",
-     "95%"
+     "76.6",
+     "224%",
+     "101%"
     ]
    ]
   },

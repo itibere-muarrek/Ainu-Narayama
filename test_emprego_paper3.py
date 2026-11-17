@@ -12,7 +12,8 @@ from src import emprego_paper3 as E
 
 def test_empregos_por_crianca_batem_com_o_paper():
     assert abs(E.emprego_por_crianca("ITA")["j0"] - 0.186) < 0.002           # paper: 0,186
-    assert abs(E.emprego_por_crianca("KOR", razao=E.RAZAO_KOR_PAPER_V2_6)["j0"] - 0.300) < 0.002   # paper: 0,300 (razão 1,14)
+    assert abs(E.emprego_por_crianca("KOR")["j0"] - 0.314) < 0.002           # paper v2.7: 0,314 (KOSIS 2024)
+    assert abs(E.emprego_por_crianca("KOR", razao=E.RAZAO_KOR_PAPER_V2_6)["j0"] - 0.300) < 0.002   # paper v2.6: 0,300 (razão 1,14, NTA 2019 do portal)
     assert abs(E.emprego_por_crianca("CRI")["j0"] - 0.202) < 0.002           # paper: 0,202
     j = E.emprego_por_crianca("ITA", deslocamento=0.5)
     assert abs(j["j"] - 0.5 * j["j0"]) < 1e-12
@@ -33,9 +34,10 @@ def test_curva_j_da_italia_reproduz_o_paper():
 
 
 def test_curva_j_da_coreia_com_o_perfil_kosis_2024():
-    s = E.curva_j("KOR")                    # regressão com o perfil KOSIS 2024 (o paper v2.6, com a NTA 2019 antiga, dá -19,7% em 2059)
+    s = E.curva_j("KOR")                    # paper v2.7: -20,9% em 2060; volta a superar a Tendência em 2081 (o v2.6, com a NTA 2019 do portal, dava -19,7% em 2059)
     assert abs(s.fundo_pct - (-20.88)) < 0.1 and s.ano_fundo == 2060 and s.ano_cruza == 2081
-    assert -19.7 > s.fundo_pct > -22                                        # mais fundo que o paper, mas da mesma ordem
+    c = E.curva_j("KOR", retorno=E.PARAMETROS["KOR"]["retorno_demanda"])    # paper v2.7: -9,8% em 2057; 2069
+    assert abs(c.fundo_pct - (-9.84)) < 0.1 and c.ano_fundo == 2057 and c.ano_cruza == 2069
 
 
 def test_costa_rica_agregada_fica_perto_do_paper():

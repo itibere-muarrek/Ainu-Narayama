@@ -24,8 +24,8 @@ from src.projecao import tfr_onu
 
 PAISES = ["ITA", "KOR", "CRI"]
 SITE = "https://ainu.systems/metodo-paper3/"
-# valores do paper v2.6 (meta de 2,1 em 25 anos; sem retorno | com retorno da demanda): fundo %, ano do fundo, ano em que volta a superar a Tendência
-PAPER = {"ITA": ((-10.3, 2059, 2078), (-5.1, 2055, 2069)), "KOR": ((-19.7, 2059, 2077), (-9.1, 2056, 2068)), "CRI": ((-8.8, 2057, 2075), (-4.7, 2054, 2067))}
+# valores do paper v2.7 (meta de 2,1 em 25 anos; sem retorno | com retorno da demanda): fundo %, ano do fundo, ano em que volta a superar a Tendência
+PAPER = {"ITA": ((-10.3, 2059, 2078), (-5.1, 2055, 2069)), "KOR": ((-20.9, 2060, 2081), (-9.8, 2057, 2069)), "CRI": ((-8.8, 2057, 2075), (-4.7, 2054, 2067))}
 
 TEXTOS = {
     "pt": {
@@ -45,14 +45,14 @@ TEXTOS = {
         "casal": "Um casal com {n} filhos sustenta cerca de **{jc:.2f}** posto de trabalho por ano pela demanda das crianças. O ciclo completo (fase dos pais, "
                  "{r:.2f} vez a dos filhos) chega a **{ce:.2f}** posto-ano (e a {c2:.2f} se a fase dos pais for tomada como o dobro). É posto-ano ao longo do ciclo, não empregos simultâneos, "
                  "e é uma ilustração contábil, não um resultado estimado.",
-        "razao_kor": "Coreia do Sul: a razão de consumo (Descendente ÷ média) é **{r:.2f}** com o perfil KOSIS 2024; o paper v2.6, com a NTA 2019 antiga, usa 1,14 e obtém 0,30.",
+        "razao_kor": "Coreia do Sul: a razão de consumo (Descendente ÷ média) é **{r:.2f}** com o perfil KOSIS 2024, o mesmo do paper v2.7 (o v2.6, com a NTA 2019 do portal, usava 1,14 e obtinha 0,30).",
         "h_j": "2. Curva em J da renda dos Estruturadores", "j_leg": "Diferença líquida entre a Meta e a Tendência (% da renda dos Estruturadores na Tendência)",
         "j_net": "Líquida do custo das crianças", "j_gross": "Só o efeito de haver mais Estruturadores", "ano": "Ano",
         "m_fundo": "Fundo da curva", "m_ano_fundo": "Ano do fundo", "m_cruza": "Volta a superar a Tendência em", "m_neg": "Anos de diferença negativa", "m_2074": "Em 2074", "m_2099": "Em 2099",
         "nunca": "não no horizonte",
         "cri_nota": ("Costa Rica: o perfil por idade do CCP-UCR não é redistribuído, então a curva usa parâmetros agregados (perfis planos). A aproximação fica a cerca de 0,4 ponto "
                      "percentual do vale do paper, que usa o perfil completo."),
-        "paper_exp": "Valores do paper v2.6 (Meta de 2,1 em 25 anos)", "paper_cols": ["País", "Sem retorno: fundo (ano; volta em)", "Com retorno da demanda: fundo (ano; volta em)"],
+        "paper_exp": "Valores do paper v2.7 (Meta de 2,1 em 25 anos)", "paper_cols": ["País", "Sem retorno: fundo (ano; volta em)", "Com retorno da demanda: fundo (ano; volta em)"],
         "limites": ("**Limites.** Valores médios, não marginais; empregos em pessoas ocupadas, com intensidade uniforme por seção; ICIO 2019 e perfis NTA suavizados; renda por idade constante "
                     "(sem produtividade); um único cenário, sem intervalo de incerteza. O custo cobrado aos Estruturadores é um limite superior, e o retorno da demanda também é um teto. "
                     "O gradiente de custo por número de filhos não é usado aqui porque falha como estimativa de gasto."),
@@ -75,14 +75,14 @@ TEXTOS = {
         "casal": "A couple with {n} children supports about **{jc:.2f}** jobs per year through the children's demand. The full cycle (the parents' phase, "
                  "{r:.2f} times the children's) reaches **{ce:.2f}** job-years (and {c2:.2f} if the parents' phase is taken as twice as long). It is job-years over the cycle, not simultaneous jobs, "
                  "and an accounting illustration, not an estimated result.",
-        "razao_kor": "South Korea: the consumption ratio (Descendant ÷ average) is **{r:.2f}** with the KOSIS 2024 profile; paper v2.6, with the earlier 2019 NTA, uses 1.14 and gets 0.30.",
+        "razao_kor": "South Korea: the consumption ratio (Descendant ÷ average) is **{r:.2f}** with the KOSIS 2024 profile, the same as in paper v2.7 (v2.6, with the 2019 profile from the NTA portal, used 1.14 and got 0.30).",
         "h_j": "2. J-curve of Structurers' income", "j_leg": "Net difference between the Target and the Trend (% of Structurers' income under the Trend)",
         "j_net": "Net of the cost of children", "j_gross": "Only the effect of having more Structurers", "ano": "Year",
         "m_fundo": "Trough", "m_ano_fundo": "Year of the trough", "m_cruza": "Overtakes the Trend in", "m_neg": "Years of negative difference", "m_2074": "In 2074", "m_2099": "In 2099",
         "nunca": "not within the horizon",
         "cri_nota": ("Costa Rica: the age profile from CCP-UCR is not redistributed, so the curve uses aggregate parameters (flat profiles). The approximation lies about 0.4 percentage points "
                      "from the paper's trough, which uses the full profile."),
-        "paper_exp": "Paper v2.6 values (Target of 2.1 in 25 years)", "paper_cols": ["Country", "No return: trough (year; overtakes in)", "With demand return: trough (year; overtakes in)"],
+        "paper_exp": "Paper v2.7 values (Target of 2.1 in 25 years)", "paper_cols": ["Country", "No return: trough (year; overtakes in)", "With demand return: trough (year; overtakes in)"],
         "limites": ("**Limits.** Averages, not marginal values; jobs in employed persons, with uniform intensity by section; ICIO 2019 and smoothed NTA profiles; income by age held constant "
                     "(no productivity); a single scenario, with no uncertainty interval. The cost charged to Structurers is an upper bound, and the demand return is also a ceiling. "
                     "The cost gradient by number of children is not used here because it fails as an expenditure estimate."),

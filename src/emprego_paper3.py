@@ -22,12 +22,12 @@ import numpy as np
 from src.config import COMPOSICAO_PERFIL_POR_PAIS, cortes_por_composicao
 from src.projecao import projetar, trajetoria_tfr
 
-# Constantes derivadas (valores do paper v2.6; ver a página de cálculos). pc_medio_usd = consumo final por pessoa da ICIO 2019 (US$); inten = empregos
+# Constantes derivadas (valores do paper v2.7; ver a página de cálculos). pc_medio_usd = consumo final por pessoa da ICIO 2019 (US$); inten = empregos
 # por US$ milhão de consumo final (ICIO 2019 + ILOSTAT, direto e indireto, doméstico); razao_desc_media = consumo por pessoa de um Descendente dividido
 # pelo consumo médio por pessoa (perfil NTA x população); retorno_demanda = parcela do custo de um filho que volta como renda de terceiros (teto).
 PARAMETROS = {
     "ITA": {"pc_medio_usd": 22790.8176, "inten": 9.2560, "razao_desc_media": 0.8795, "ano_razao": 2008, "retorno_demanda": 0.452},
-    "KOR": {"pc_medio_usd": 17447.1544, "inten": 15.0692, "razao_desc_media": None, "ano_razao": 2024, "retorno_demanda": 0.471},   # razão: calculada (KOSIS 2024); paper v2.6: 1,14 (NTA 2019)
+    "KOR": {"pc_medio_usd": 17447.1544, "inten": 15.0692, "razao_desc_media": None, "ano_razao": 2024, "retorno_demanda": 0.4615},   # razão: calculada com o perfil KOSIS 2024 (paper v2.7); o v2.6 usava 1,14 (NTA 2019 do portal) e retorno 0,471
     "CRI": {"pc_medio_usd": 9304.721, "inten": 25.7088, "razao_desc_media": 0.8457, "ano_razao": 2013, "retorno_demanda": 0.398,
             "custo_renda": {"total": 0.602, "privado": 0.410, "privado_publico": 0.551}},                                              # CNT_CR2013 (CCP-UCR), agregados
 }

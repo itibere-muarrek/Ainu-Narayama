@@ -53,11 +53,17 @@ def perfil(iso: str, var: str = "C"):
     return ano, out
 
 
+# Costa Rica: o perfil por idade do CCP-UCR (CNT_CR2013) não é redistribuído. Entram só os valores agregados do working paper v2.6 (Tabela 16: consumo total por coorte,
+# cortes 0–22 / 23–60 / 61+, população da ONU de 2013), com o ano de população indicado.
+CFCC_AGREGADO = {"CRI": {"pct": [31.5, 56.2, 12.3], "ano_perfil": 2013, "ano_pop": 2013, "cortes": (22, 61)}}
+
+
 def cfcc_por_coorte(iso: str, ano_pop: int = 2025):
-    """Participação (%) de [Descendentes, Estruturadores, Ascendentes] no consumo total, ou None se não houver perfil NTA."""
+    """Participação (%) de [Descendentes, Estruturadores, Ascendentes] no consumo total, ou None se não houver perfil NTA.
+    Costa Rica: valores agregados do paper (ano_pop = 2013, sem recalcular para outros anos)."""
     p = perfil(iso, "C")
     if p is None:
-        return None
+        return dict(CFCC_AGREGADO[iso]) if iso in CFCC_AGREGADO else None
     ano_perfil, c = p
     bm, tm = cortes_por_composicao(COMPOSICAO_PERFIL_POR_PAIS[iso])
     pop = projetar(iso).pop.sum(axis=0)[:, ano_pop - ANO_BASE]
