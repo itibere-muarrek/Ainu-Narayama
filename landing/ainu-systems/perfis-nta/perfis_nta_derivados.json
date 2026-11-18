@@ -1,0 +1,447 @@
+{
+ "gerado_em": "2026-11-18",
+ "fonte": "National Transfer Accounts Project (ntaccounts.org); IPSS (Japão); KOSIS (Coreia do Sul)",
+ "observacao": "Estimativas do AINU.Systems: cortes etários por Perfil e população da ONU de 2025; perfis em moeda local nominal, 5 algarismos significativos.",
+ "paises": [
+  {
+   "iso": "ARG",
+   "ano_c_yl": 2016,
+   "ano_poupanca": null,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "C85/D15",
+   "corte_descendentes_ate": 21,
+   "corte_ascendentes_desde": 60,
+   "cfcc_pct": [
+    25.3,
+    55.1,
+    19.6
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    29,
+    58
+   ],
+   "inicio_menos_corte_desc": 8,
+   "fim_menos_corte_asc": -2
+  },
+  {
+   "iso": "AUS",
+   "ano_c_yl": 2016,
+   "ano_poupanca": null,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "C100",
+   "corte_descendentes_ate": 21,
+   "corte_ascendentes_desde": 60,
+   "cfcc_pct": [
+    22.3,
+    49.9,
+    27.8
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    26,
+    59
+   ],
+   "inicio_menos_corte_desc": 5,
+   "fim_menos_corte_asc": -1
+  },
+  {
+   "iso": "BRA",
+   "ano_c_yl": 2008,
+   "ano_poupanca": 1996,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "B30/C40/D30",
+   "corte_descendentes_ate": 21,
+   "corte_ascendentes_desde": 59,
+   "cfcc_pct": [
+    18.7,
+    61.9,
+    19.4
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    30,
+    55
+   ],
+   "inicio_menos_corte_desc": 9,
+   "fim_menos_corte_asc": -4
+  },
+  {
+   "iso": "CHL",
+   "ano_c_yl": 2018,
+   "ano_poupanca": 1997,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "C100",
+   "corte_descendentes_ate": 21,
+   "corte_ascendentes_desde": 60,
+   "cfcc_pct": [
+    20.3,
+    56.4,
+    23.3
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    27,
+    59
+   ],
+   "inicio_menos_corte_desc": 6,
+   "fim_menos_corte_asc": -1
+  },
+  {
+   "iso": "CHN",
+   "ano_c_yl": 2014,
+   "ano_poupanca": null,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "B25/C60/D15",
+   "corte_descendentes_ate": 21,
+   "corte_ascendentes_desde": 59,
+   "cfcc_pct": [
+    28.5,
+    49.7,
+    21.8
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    21,
+    56
+   ],
+   "inicio_menos_corte_desc": 0,
+   "fim_menos_corte_asc": -3
+  },
+  {
+   "iso": "DEU",
+   "ano_c_yl": 2008,
+   "ano_poupanca": 2003,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "C20/D80",
+   "corte_descendentes_ate": 23,
+   "corte_ascendentes_desde": 62,
+   "cfcc_pct": [
+    16.8,
+    49.4,
+    33.8
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    26,
+    58
+   ],
+   "inicio_menos_corte_desc": 3,
+   "fim_menos_corte_asc": -4
+  },
+  {
+   "iso": "FRA",
+   "ano_c_yl": 2011,
+   "ano_poupanca": null,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "C80/D20",
+   "corte_descendentes_ate": 21,
+   "corte_ascendentes_desde": 60,
+   "cfcc_pct": [
+    20.5,
+    45.4,
+    34.1
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    25,
+    58
+   ],
+   "inicio_menos_corte_desc": 4,
+   "fim_menos_corte_asc": -2
+  },
+  {
+   "iso": "IDN",
+   "ano_c_yl": 2005,
+   "ano_poupanca": null,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "B100",
+   "corte_descendentes_ate": 18,
+   "corte_ascendentes_desde": 55,
+   "cfcc_pct": [
+    25.0,
+    57.8,
+    17.1
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    29,
+    57
+   ],
+   "inicio_menos_corte_desc": 11,
+   "fim_menos_corte_asc": 2
+  },
+  {
+   "iso": "IND",
+   "ano_c_yl": 2004,
+   "ano_poupanca": 2004,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "B100",
+   "corte_descendentes_ate": 18,
+   "corte_ascendentes_desde": 55,
+   "cfcc_pct": [
+    21.9,
+    58.7,
+    19.4
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    26,
+    59
+   ],
+   "inicio_menos_corte_desc": 8,
+   "fim_menos_corte_asc": 4
+  },
+  {
+   "iso": "ITA",
+   "ano_c_yl": 2008,
+   "ano_poupanca": 2008,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "C30/D70",
+   "corte_descendentes_ate": 22,
+   "corte_ascendentes_desde": 61,
+   "cfcc_pct": [
+    17.4,
+    48.2,
+    34.5
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    27,
+    58
+   ],
+   "inicio_menos_corte_desc": 5,
+   "fim_menos_corte_asc": -3
+  },
+  {
+   "iso": "JPN",
+   "ano_c_yl": 2019,
+   "ano_poupanca": 2004,
+   "fonte": "IPSS (2019, v3.0)",
+   "equipe": null,
+   "composicao_perfis": "D60/E40",
+   "corte_descendentes_ate": 24,
+   "corte_ascendentes_desde": 63,
+   "cfcc_pct": [
+    17.9,
+    41.7,
+    40.4
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    24,
+    61
+   ],
+   "inicio_menos_corte_desc": 0,
+   "fim_menos_corte_asc": -2
+  },
+  {
+   "iso": "KOR",
+   "ano_c_yl": 2024,
+   "ano_poupanca": 2000,
+   "fonte": "KOSIS (2024)",
+   "equipe": null,
+   "composicao_perfis": "C30/D70",
+   "corte_descendentes_ate": 22,
+   "corte_ascendentes_desde": 61,
+   "cfcc_pct": [
+    21.1,
+    54.2,
+    24.8
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    28,
+    60
+   ],
+   "inicio_menos_corte_desc": 6,
+   "fim_menos_corte_asc": -1
+  },
+  {
+   "iso": "MEX",
+   "ano_c_yl": 2014,
+   "ano_poupanca": 2004,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "B40/C60",
+   "corte_descendentes_ate": 20,
+   "corte_ascendentes_desde": 58,
+   "cfcc_pct": [
+    26.0,
+    58.0,
+    16.0
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    45,
+    46
+   ],
+   "inicio_menos_corte_desc": 25,
+   "fim_menos_corte_asc": -12
+  },
+  {
+   "iso": "NGA",
+   "ano_c_yl": 2016,
+   "ano_poupanca": null,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "A35/B40/C25",
+   "corte_descendentes_ate": 18,
+   "corte_ascendentes_desde": 52,
+   "cfcc_pct": [
+    39.7,
+    49.1,
+    11.2
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    29,
+    62
+   ],
+   "inicio_menos_corte_desc": 11,
+   "fim_menos_corte_asc": 10
+  },
+  {
+   "iso": "POL",
+   "ano_c_yl": 2012,
+   "ano_poupanca": 2012,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "B30/C70",
+   "corte_descendentes_ate": 20,
+   "corte_ascendentes_desde": 59,
+   "cfcc_pct": [
+    17.9,
+    51.3,
+    30.9
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    27,
+    55
+   ],
+   "inicio_menos_corte_desc": 7,
+   "fim_menos_corte_asc": -4
+  },
+  {
+   "iso": "RUS",
+   "ano_c_yl": 2016,
+   "ano_poupanca": null,
+   "fonte": "Portal NTA",
+   "equipe": "M. Denisenko, V. Kozlov",
+   "composicao_perfis": "C30/D70",
+   "corte_descendentes_ate": 22,
+   "corte_ascendentes_desde": 61,
+   "cfcc_pct": [
+    23.9,
+    51.2,
+    24.9
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    24,
+    55
+   ],
+   "inicio_menos_corte_desc": 2,
+   "fim_menos_corte_asc": -6
+  },
+  {
+   "iso": "SWE",
+   "ano_c_yl": 2006,
+   "ano_poupanca": 2003,
+   "fonte": "Portal NTA",
+   "equipe": "N. Adjei, T. Lindh, G. Öberg",
+   "composicao_perfis": "C100",
+   "corte_descendentes_ate": 21,
+   "corte_ascendentes_desde": 60,
+   "cfcc_pct": [
+    23.5,
+    44.9,
+    31.6
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    26,
+    63
+   ],
+   "inicio_menos_corte_desc": 5,
+   "fim_menos_corte_asc": 3
+  },
+  {
+   "iso": "THA",
+   "ano_c_yl": 2017,
+   "ano_poupanca": null,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "B80/C20",
+   "corte_descendentes_ate": 19,
+   "corte_ascendentes_desde": 56,
+   "cfcc_pct": [
+    18.5,
+    53.1,
+    28.4
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    25,
+    57
+   ],
+   "inicio_menos_corte_desc": 6,
+   "fim_menos_corte_asc": 1
+  },
+  {
+   "iso": "USA",
+   "ano_c_yl": 2011,
+   "ano_poupanca": null,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "C20/D80",
+   "corte_descendentes_ate": 23,
+   "corte_ascendentes_desde": 62,
+   "cfcc_pct": [
+    22.7,
+    47.2,
+    30.1
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    29,
+    59
+   ],
+   "inicio_menos_corte_desc": 6,
+   "fim_menos_corte_asc": -3
+  },
+  {
+   "iso": "ZAF",
+   "ano_c_yl": 2005,
+   "ano_poupanca": null,
+   "fonte": "Portal NTA",
+   "equipe": null,
+   "composicao_perfis": "B80/C20",
+   "corte_descendentes_ate": 19,
+   "corte_ascendentes_desde": 56,
+   "cfcc_pct": [
+    23.2,
+    61.1,
+    15.7
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    30,
+    59
+   ],
+   "inicio_menos_corte_desc": 11,
+   "fim_menos_corte_asc": 3
+  }
+ ]
+}
