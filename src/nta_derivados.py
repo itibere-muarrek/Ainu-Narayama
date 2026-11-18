@@ -26,7 +26,10 @@ from src.projecao import ANO_BASE, projetar
 
 ARQUIVO = Path(__file__).resolve().parent.parent / "data" / "raw" / "nta_perfis_C_YL_S.csv"
 NOME_NTA = {"ARG": "Argentina", "BRA": "Brazil", "CHN": "China", "FRA": "France", "IND": "India", "ITA": "Italy", "JPN": "Japan",
-            "MEX": "Mexico", "NGA": "Nigeria", "KOR": "South Korea", "USA": "US"}
+            "MEX": "Mexico", "NGA": "Nigeria", "KOR": "South Korea", "USA": "US",
+            # incluídos em 18/11/2026 (portal NTA, último ano de cada país; ver docs/nta_perfis_fonte.md)
+            "RUS": "Russia", "SWE": "Sweden", "THA": "Thailand", "AUS": "Australia", "POL": "Poland", "ZAF": "South Africa",
+            "IDN": "Indonesia", "DEU": "Germany", "CHL": "Chile"}
 
 
 def _ler() -> dict:

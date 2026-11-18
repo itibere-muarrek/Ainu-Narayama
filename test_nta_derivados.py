@@ -76,6 +76,33 @@ def test_ajuste_das_fichas_e_idempotente():
         assert coortes_motor.aplicar(copy.deepcopy(ficha)) is False, iso
 
 
+NOVOS_NTA = {  # incluídos em 18/11/2026 (portal NTA); participação (%) de Descendentes/Estruturadores/Ascendentes no consumo, população da ONU de 2025
+    "RUS": (2016, [23.9, 51.2, 24.9]), "SWE": (2006, [23.5, 44.9, 31.6]), "THA": (2017, [18.5, 53.1, 28.4]), "AUS": (2016, [22.3, 49.9, 27.8]),
+    "POL": (2012, [17.9, 51.3, 30.9]), "ZAF": (2005, [23.2, 61.1, 15.7]), "IDN": (2005, [25.0, 57.8, 17.1]), "DEU": (2008, [16.8, 49.4, 33.8]),
+    "CHL": (2018, [20.3, 56.4, 23.3]),
+}
+
+
+def test_nove_paises_do_portal_nta():
+    """Perfis de consumo (C) e renda do trabalho (YL) dos 9 países incluídos em 18/11/2026: ano, forma, soma de 100% e janela de superávit do ciclo de vida."""
+    for iso, (ano, esperado) in NOVOS_NTA.items():
+        ano_c, c = perfil(iso, "C")
+        ano_y, yl = perfil(iso, "YL")
+        assert ano_c == ano_y == ano and len(c) == len(yl) == 101 and (c > 0).all() and (yl >= -0.01 * yl.max()).all(), iso   # a suavização do portal admite valores negativos ínfimos
+        assert yl[:10].max() < 0.01 * yl.max(), iso                     # sem renda do trabalho de crianças (valores ínfimos aceitos)
+        sup = [i for i in range(101) if yl[i] > c[i]]
+        assert 20 <= sup[0] <= 31 and 55 <= sup[-1] <= 64, (iso, sup[0], sup[-1])   # superávit do ciclo de vida entre ~24 e ~63 anos
+        r = cfcc_por_coorte(iso)
+        assert abs(sum(r["pct"]) - 100) < 1e-6 and r["ano_perfil"] == ano, iso
+        assert all(abs(a - b) < 0.2 for a, b in zip(r["pct"], esperado)), (iso, r["pct"], esperado)
+
+
+def test_nove_paises_tem_a_poupanca_quando_o_portal_a_traz():
+    assert perfil("SWE", "S")[0] == 2003 and perfil("POL", "S")[0] == 2012 and perfil("DEU", "S")[0] == 2003 and perfil("CHL", "S")[0] == 1997
+    for iso in ("RUS", "THA", "AUS", "ZAF", "IDN"):
+        assert perfil(iso, "S") is None, iso                             # o portal não tem poupança "Smooth Mean" desses países
+
+
 if __name__ == "__main__":
     for nome, fn in list(globals().items()):
         if nome.startswith("test_") and callable(fn):
