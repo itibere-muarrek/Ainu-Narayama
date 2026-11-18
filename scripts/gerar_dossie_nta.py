@@ -1,5 +1,5 @@
 """
-Gera o PDF curto de apresentação dos perfis NTA de 20 países (PT e EN), a partir dos mesmos números da página pública
+Gera o PDF curto de apresentação dos perfis NTA de 21 países (PT e EN), a partir dos mesmos números da página pública
 (scripts/gerar_perfis_nta.py): resumo, curvas por idade, parcela das coortes, janela de superávit, fontes e atribuição.
 
 Saídas:  landing/ainu-systems/perfis-nta/perfis-nta-apresentacao-pt.pdf  e  ...-en.pdf
@@ -71,9 +71,9 @@ def png(svg_bytes: bytes, destino: Path, dpi: int = 170) -> None:
 
 TEXTO = {
     "pt": {
-        "t": "Perfis NTA por idade de 20 países", "sub": "Apresentação dos dados ampliados · AINU.Systems · 18 de novembro de 2026",
+        "t": "Perfis NTA por idade de 21 países", "sub": "Apresentação dos dados ampliados · AINU.Systems · 18 de novembro de 2026",
         "resumo_h": "O que foi acrescentado",
-        "resumo": ["Perfis por idade de consumo (C), renda do trabalho (YL) e, quando existe, poupança (S) de <b>20 países</b>: os 11 que já estavam no repositório e <b>9 novos</b> do portal National Transfer Accounts (Rússia, Suécia, Tailândia, Austrália, Polônia, África do Sul, Indonésia, Alemanha e Chile), no último ano de cada um.",
+        "resumo": ["Perfis por idade de consumo (C), renda do trabalho (YL) e, quando existe, poupança (S) de <b>21 países</b>: os 11 que já estavam no repositório e <b>10 novos</b> do portal National Transfer Accounts (Rússia, Suécia, Tailândia, Austrália, Polônia, África do Sul, Indonésia, Alemanha, Chile e Costa Rica), no último ano de cada um.",
                    "Para cada país, estimamos a <b>parcela de cada coorte</b> (Descendentes, Estruturadores e Ascendentes) no consumo total e a <b>janela do ciclo de vida</b> em que a renda do trabalho supera o consumo, comparada aos cortes etários que o AINU.Systems usa.",
                    "Tudo é reprodutível: código, testes e dados estão no repositório público; a página interativa traz as curvas, as tabelas e os arquivos para conferência."],
         "links_h": "Para verificar",
@@ -85,15 +85,15 @@ TEXTO = {
         "janela_n": "Hipótese de trabalho: o ciclo de vida só vira superávit alguns anos depois do corte dos Descendentes e termina perto do corte dos Ascendentes. Cuidado: a janela bruta depende do nível relativo das curvas (México 2014: razão agregada de 0,46, janela de 45–46 anos; os dados conferem com o portal).",
         "fontes_h": "Fontes, atribuição e limites",
         "fontes": ["National Transfer Accounts Project, ntaccounts.org (acessado em novembro de 2026), tipo \"Smooth Mean\". Uso comparativo: Lee, R.; Mason, A. (eds.) (2011), <i>Population Aging and the Generational Economy</i>, Edward Elgar.",
-                   "Japão: IPSS (ano fiscal 2019, v3.0). Coreia do Sul: KOSIS, tabela DT_1NTA2003 (2024). Equipes nacionais indicadas pelo portal: Rússia, M. Denisenko e V. Kozlov; Suécia, N. Adjei, T. Lindh e G. Öberg.",
+                   "Japão: IPSS (ano fiscal 2019, v3.0). Coreia do Sul: KOSIS, tabela DT_1NTA2003 (2024). Equipes nacionais indicadas pelo portal: Rússia, M. Denisenko e V. Kozlov; Suécia, N. Adjei, T. Lindh e G. Öberg; Costa Rica, P. Jiménez-Fontana.",
                    "Valores arredondados a 5 algarismos significativos, em moeda local nominal. Perfis suavizados de um ano que pode diferir do ano da população; a última idade do perfil é estendida às idades acima; consumo total (privado e público). As parcelas e janelas são <b>estimativas exploratórias</b> do AINU.Systems, sem revisão por pares.",
-                   "Os 9 países novos foram incluídos em 18/11/2026 com a atribuição que o portal pede; correções ou pedidos de retirada são bem-vindos (issues no repositório)."],
+                   "Os 10 países novos foram incluídos em 18/11/2026 com a atribuição que o portal pede; correções ou pedidos de retirada são bem-vindos (issues no repositório)."],
         "rod": "Itiberê L. G. C. Muarrek · AINU.Systems Research (pesquisa independente)",
     },
     "en": {
-        "t": "NTA age profiles of 20 countries", "sub": "Presentation of the expanded data · AINU.Systems · 18 November 2026",
+        "t": "NTA age profiles of 21 countries", "sub": "Presentation of the expanded data · AINU.Systems · 18 November 2026",
         "resumo_h": "What was added",
-        "resumo": ["Age profiles of consumption (C), labor income (YL) and, where available, saving (S) for <b>20 countries</b>: the 11 already in the repository and <b>9 new</b> ones from the National Transfer Accounts portal (Russia, Sweden, Thailand, Australia, Poland, South Africa, Indonesia, Germany and Chile), in each country's latest year.",
+        "resumo": ["Age profiles of consumption (C), labor income (YL) and, where available, saving (S) for <b>21 countries</b>: the 11 already in the repository and <b>10 new</b> ones from the National Transfer Accounts portal (Russia, Sweden, Thailand, Australia, Poland, South Africa, Indonesia, Germany, Chile and Costa Rica), in each country's latest year.",
                    "For each country we estimate <b>each cohort's share</b> (Descendants, Structurers and Ascendants) of total consumption and the <b>life-cycle window</b> in which labor income exceeds consumption, compared with the age cut-offs AINU.Systems uses.",
                    "Everything is reproducible: code, tests and data are in the public repository; the interactive page offers the curves, tables and files for verification."],
         "links_h": "To verify",
@@ -105,9 +105,9 @@ TEXTO = {
         "janela_n": "Working hypothesis: the life cycle turns to surplus a few years after the Descendants cut-off and ends near the Ascendants cut-off. Caution: the raw window depends on the relative level of the curves (Mexico 2014: aggregate ratio of 0.46, window of ages 45–46; the data match the portal).",
         "fontes_h": "Sources, attribution and limits",
         "fontes": ["National Transfer Accounts Project, ntaccounts.org (accessed November 2026), type \"Smooth Mean\". For comparative use: Lee, R.; Mason, A. (eds.) (2011), <i>Population Aging and the Generational Economy</i>, Edward Elgar.",
-                   "Japan: IPSS (fiscal year 2019, v3.0). South Korea: KOSIS, table DT_1NTA2003 (2024). National teams listed by the portal: Russia, M. Denisenko and V. Kozlov; Sweden, N. Adjei, T. Lindh and G. Öberg.",
+                   "Japan: IPSS (fiscal year 2019, v3.0). South Korea: KOSIS, table DT_1NTA2003 (2024). National teams listed by the portal: Russia, M. Denisenko and V. Kozlov; Sweden, N. Adjei, T. Lindh and G. Öberg; Costa Rica, P. Jiménez-Fontana.",
                    "Values rounded to 5 significant digits, in nominal local currency. Smoothed profiles of one year that may differ from the population year; the last age of the profile is extended to older ages; total consumption (private and public). Shares and windows are <b>exploratory estimates</b> by AINU.Systems, not peer reviewed.",
-                   "The 9 new countries were added on 18 Nov 2026 with the attribution the portal requests; corrections or removal requests are welcome (issues in the repository)."],
+                   "The 10 new countries were added on 18 Nov 2026 with the attribution the portal requests; corrections or removal requests are welcome (issues in the repository)."],
         "rod": "Itiberê L. G. C. Muarrek · AINU.Systems Research (independent research)",
     },
 }

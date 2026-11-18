@@ -1,5 +1,5 @@
 """
-Testes da página pública "Perfis NTA por idade de 20 países" (scripts/gerar_perfis_nta.py), 2026-11-18.
+Testes da página pública "Perfis NTA por idade de 21 países" (scripts/gerar_perfis_nta.py), 2026-11-18.
 Rodar da raiz do repositório:  python test_perfis_nta.py
 """
 
@@ -17,9 +17,9 @@ from src.nta_derivados import cfcc_por_coorte
 PAGINA = g.PAGINA
 
 
-def test_vinte_paises_com_valores_coerentes():
+def test_vinte_e_um_paises_com_valores_coerentes():
     ls = g.calcular()
-    assert [l["iso"] for l in ls] == g.PAISES and len(ls) == 20
+    assert [l["iso"] for l in ls] == g.PAISES and len(ls) == 21
     for l in ls:
         assert abs(sum(l["cfcc_pct"]) - 100) < 0.2 and all(x > 0 for x in l["cfcc_pct"]), l["iso"]
         assert l["cfcc_pct"] == [round(x, 1) for x in cfcc_por_coorte(l["iso"])["pct"]], l["iso"]
@@ -34,12 +34,12 @@ def test_pagina_gerada_esta_em_dia_e_traz_a_atribuicao():
         assert nome_pais(iso, "pt") in html and nome_pais(iso, "en") in html, iso
     for trecho in ("Denisenko", "Adjei", "Lee, R.; Mason, A.", "ntaccounts.org", "IPSS", "KOSIS", "estimativas", "estimates", "Costa Rica"):
         assert trecho in html, trecho
-    assert 'data-lang="pt"' in html and 'data-lang="en"' in html and html.count("<svg") == 40
+    assert 'data-lang="pt"' in html and 'data-lang="en"' in html and html.count("<svg") == 42
 
 
 def test_json_derivado_e_pdfs():
     d = json.loads((PAGINA / "perfis_nta_derivados.json").read_text(encoding="utf-8"))
-    assert len(d["paises"]) == 20 and all("curvas_norm" not in p for p in d["paises"])
+    assert len(d["paises"]) == 21 and all("curvas_norm" not in p for p in d["paises"])
     assert {p["iso"] for p in d["paises"]} == set(g.PAISES)
     for lang in ("pt", "en"):
         pdf = PAGINA / f"perfis-nta-apresentacao-{lang}.pdf"

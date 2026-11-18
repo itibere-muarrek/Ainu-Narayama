@@ -1,5 +1,5 @@
 """
-Gera a página pública "Perfis NTA por idade de 20 países" (PT/EN) e o JSON com os valores derivados.
+Gera a página pública "Perfis NTA por idade de 21 países" (PT/EN) e o JSON com os valores derivados.
 
 Saídas:
   landing/ainu-systems/perfis-nta/index.html
@@ -31,9 +31,9 @@ from src.nta_derivados import cfcc_por_coorte, perfil
 
 HOJE = date(2026, 11, 18)
 PAGINA = RAIZ / "landing" / "ainu-systems" / "perfis-nta"
-PAISES = ["ARG", "AUS", "BRA", "CHL", "CHN", "DEU", "FRA", "IDN", "IND", "ITA", "JPN", "KOR", "MEX", "NGA", "POL", "RUS", "SWE", "THA", "USA", "ZAF"]
+PAISES = ["ARG", "AUS", "BRA", "CHL", "CHN", "CRI", "DEU", "FRA", "IDN", "IND", "ITA", "JPN", "KOR", "MEX", "NGA", "POL", "RUS", "SWE", "THA", "USA", "ZAF"]
 FONTE_NACIONAL = {"JPN": "IPSS (2019, v3.0)", "KOR": "KOSIS (2024)"}
-EQUIPE = {"RUS": "M. Denisenko, V. Kozlov", "SWE": "N. Adjei, T. Lindh, G. Öberg"}
+EQUIPE = {"RUS": "M. Denisenko, V. Kozlov", "SWE": "N. Adjei, T. Lindh, G. Öberg", "CRI": "P. Jiménez-Fontana"}
 URL_CSV = "https://github.com/itibere-muarrek/Ainu-Narayama/blob/main/data/raw/nta_perfis_C_YL_S.csv"
 URL_FONTES = "https://github.com/itibere-muarrek/Ainu-Narayama/blob/main/docs/nta_perfis_fonte.md"
 URL_TERCEIROS = "https://github.com/itibere-muarrek/Ainu-Narayama/blob/main/THIRD_PARTY_DATA.md"
@@ -181,13 +181,13 @@ CSS = """
 
 TEXTOS = {
     "pt": {
-        "titulo": "Perfis NTA por idade de 20 países | AINU.Systems",
-        "desc": "Consumo e renda do trabalho por idade de 20 países (National Transfer Accounts), parcela de cada coorte no consumo e janela de superávit do ciclo de vida. Estudo exploratório.",
+        "titulo": "Perfis NTA por idade de 21 países | AINU.Systems",
+        "desc": "Consumo e renda do trabalho por idade de 21 países (National Transfer Accounts), parcela de cada coorte no consumo e janela de superávit do ciclo de vida. Estudo exploratório.",
         "eyebrow": "National Transfer Accounts · Perfis por idade",
-        "h1": "Perfis NTA por idade de 20 países",
-        "lead": "Consumo e renda do trabalho por idade de 20 países, vindos do portal National Transfer Accounts (e, para o Japão e a Coreia do Sul, das fontes nacionais), com a parcela de cada coorte (Descendentes, Estruturadores e Ascendentes) no consumo e a janela do ciclo de vida em que a renda do trabalho supera o consumo.",
+        "h1": "Perfis NTA por idade de 21 países",
+        "lead": "Consumo e renda do trabalho por idade de 21 países, vindos do portal National Transfer Accounts (e, para o Japão e a Coreia do Sul, das fontes nacionais), com a parcela de cada coorte (Descendentes, Estruturadores e Ascendentes) no consumo e a janela do ciclo de vida em que a renda do trabalho supera o consumo.",
         "aviso": "<strong>Estudo exploratório.</strong> Os perfis são os publicados pelas equipes nacionais, em moeda local nominal, com valores arredondados a 5 algarismos significativos. As parcelas por coorte e as janelas são <strong>estimativas</strong> do AINU.Systems (cortes etários por Perfil estrutural e população da ONU de 2025), sem revisão por pares.",
-        "a_h": "A. Cobertura", "a_p": "Países, anos e fontes. Os 9 países incluídos em 18/11/2026 (Rússia, Suécia, Tailândia, Austrália, Polônia, África do Sul, Indonésia, Alemanha e Chile) usam o último ano disponível no portal.",
+        "a_h": "A. Cobertura", "a_p": "Países, anos e fontes. Os 10 países incluídos em 18/11/2026 (Rússia, Suécia, Tailândia, Austrália, Polônia, África do Sul, Indonésia, Alemanha, Chile e Costa Rica) usam o último ano disponível no portal.",
         "b_h": "B. Curvas por idade", "b_p": "Consumo C(a) e renda do trabalho YL(a) divididos pela média da renda do trabalho de 30 a 49 anos de cada país (prática usual da NTA), para comparar as formas entre moedas. As linhas tracejadas mostram os cortes etários dos coortes usados pelo AINU.Systems. Eixo horizontal: idade; valores acima de 2 são cortados.",
         "leg": '<span class="legenda"><i class="c"></i>consumo C <i class="y"></i>renda do trabalho YL <i class="k"></i>cortes dos coortes</span>',
         "c_h": "C. Quem consome: parcela de cada coorte", "c_p": "Participação (%) no consumo total (privado e público) de Descendentes, Estruturadores e Ascendentes: perfil NTA × população da ONU de 2025, com os cortes etários de cada país.",
@@ -197,9 +197,9 @@ TEXTOS = {
         "e_li": [
             "<strong>Fonte:</strong> National Transfer Accounts Project, <a href='https://ntaccounts.org/' target='_blank' rel='noopener'>ntaccounts.org</a> (acessado em novembro de 2026), tipo \"Smooth Mean\". Para uso comparativo: Lee, R.; Mason, A. (eds.) (2011), <em>Population Aging and the Generational Economy</em>, Edward Elgar.",
             "<strong>Japão:</strong> consumo e renda do trabalho do IPSS (ano fiscal 2019, versão 3.0): National Institute of Population and Social Security Research (2025). <strong>Coreia do Sul:</strong> KOSIS, tabela DT_1NTA2003 (2024), por orientação da rede NTA.",
-            "<strong>Equipes nacionais</strong> indicadas pelo portal: Rússia, M. Denisenko e V. Kozlov; Suécia, N. Adjei, T. Lindh e G. Öberg. Nos demais países o portal não indica a equipe no arquivo; citar o portal NTA.",
+            "<strong>Equipes nacionais</strong> indicadas pelo portal: Rússia, M. Denisenko e V. Kozlov; Suécia, N. Adjei, T. Lindh e G. Öberg; Costa Rica, P. Jiménez-Fontana. Nos demais países o portal não indica a equipe no arquivo; citar o portal NTA.",
             "<strong>Limites:</strong> perfil suavizado de um ano que pode diferir do ano da população; a última idade do perfil (80, 85, 90, 95 ou 100 anos) é estendida às idades acima; consumo total, sem separar privado e público; moeda local nominal; estimativas, não observações.",
-            "<strong>Costa Rica</strong> não está nesta página: o perfil por idade do CCP-UCR não é redistribuído.",
+            "<strong>Costa Rica</strong> (2013): o perfil do portal, com a população da ONU de 2013 e cortes 0–22 / 23–60 / 61+, reproduz as participações do Paper 3 (31,5 / 56,2 / 12,3 %); a tabela acima usa a população de 2025, como nos demais países. Os arquivos originais do CCP-UCR não são redistribuídos.",
             "Correções ou pedidos de retirada de qualquer país: abra uma <em>issue</em> em <a href='https://github.com/itibere-muarrek/Ainu-Narayama/issues' target='_blank' rel='noopener'>github.com/itibere-muarrek/Ainu-Narayama</a>.",
         ],
         "down": "Dados e conferência",
@@ -208,13 +208,13 @@ TEXTOS = {
         "rodape": f"Itiberê L. G. C. Muarrek · AINU.Systems Research (pesquisa independente) · Atualizado em {HOJE.day:02d}/{HOJE.month:02d}/{HOJE.year}.",
     },
     "en": {
-        "titulo": "NTA age profiles of 20 countries | AINU.Systems",
-        "desc": "Consumption and labor income by age for 20 countries (National Transfer Accounts), each cohort's share of consumption and the life-cycle surplus window. Exploratory study.",
+        "titulo": "NTA age profiles of 21 countries | AINU.Systems",
+        "desc": "Consumption and labor income by age for 21 countries (National Transfer Accounts), each cohort's share of consumption and the life-cycle surplus window. Exploratory study.",
         "eyebrow": "National Transfer Accounts · Age profiles",
-        "h1": "NTA age profiles of 20 countries",
-        "lead": "Consumption and labor income by age for 20 countries, from the National Transfer Accounts portal (and, for Japan and South Korea, from the national sources), with each cohort's share of consumption (Descendants, Structurers and Ascendants) and the life-cycle window in which labor income exceeds consumption.",
+        "h1": "NTA age profiles of 21 countries",
+        "lead": "Consumption and labor income by age for 21 countries, from the National Transfer Accounts portal (and, for Japan and South Korea, from the national sources), with each cohort's share of consumption (Descendants, Structurers and Ascendants) and the life-cycle window in which labor income exceeds consumption.",
         "aviso": "<strong>Exploratory study.</strong> The profiles are those published by the national teams, in nominal local currency, with values rounded to 5 significant digits. The cohort shares and windows are AINU.Systems <strong>estimates</strong> (age cut-offs by structural Profile and 2025 UN population), not peer reviewed.",
-        "a_h": "A. Coverage", "a_p": "Countries, years and sources. The 9 countries added on 18 Nov 2026 (Russia, Sweden, Thailand, Australia, Poland, South Africa, Indonesia, Germany and Chile) use the latest year available in the portal.",
+        "a_h": "A. Coverage", "a_p": "Countries, years and sources. The 10 countries added on 18 Nov 2026 (Russia, Sweden, Thailand, Australia, Poland, South Africa, Indonesia, Germany, Chile and Costa Rica) use the latest year available in the portal.",
         "b_h": "B. Age curves", "b_p": "Consumption C(a) and labor income YL(a) divided by each country's mean labor income at ages 30–49 (the usual NTA practice), so shapes can be compared across currencies. Dashed lines show the cohort age cut-offs used by AINU.Systems. Horizontal axis: age; values above 2 are clipped.",
         "leg": '<span class="legenda"><i class="c"></i>consumption C <i class="y"></i>labor income YL <i class="k"></i>cohort cut-offs</span>',
         "c_h": "C. Who consumes: each cohort's share", "c_p": "Share (%) of total consumption (private and public) of Descendants, Structurers and Ascendants: NTA profile × 2025 UN population, with each country's age cut-offs.",
@@ -224,9 +224,9 @@ TEXTOS = {
         "e_li": [
             "<strong>Source:</strong> National Transfer Accounts Project, <a href='https://ntaccounts.org/' target='_blank' rel='noopener'>ntaccounts.org</a> (accessed November 2026), type \"Smooth Mean\". For comparative use: Lee, R.; Mason, A. (eds.) (2011), <em>Population Aging and the Generational Economy</em>, Edward Elgar.",
             "<strong>Japan:</strong> consumption and labor income from IPSS (fiscal year 2019, version 3.0): National Institute of Population and Social Security Research (2025). <strong>South Korea:</strong> KOSIS, table DT_1NTA2003 (2024), as advised by the NTA network.",
-            "<strong>National teams</strong> listed by the portal: Russia, M. Denisenko and V. Kozlov; Sweden, N. Adjei, T. Lindh and G. Öberg. For the other countries the portal file does not name the team; cite the NTA portal.",
+            "<strong>National teams</strong> listed by the portal: Russia, M. Denisenko and V. Kozlov; Sweden, N. Adjei, T. Lindh and G. Öberg; Costa Rica, P. Jiménez-Fontana. For the other countries the portal file does not name the team; cite the NTA portal.",
             "<strong>Limits:</strong> smoothed profile of one year that may differ from the population year; the last age of the profile (80, 85, 90, 95 or 100) is extended to older ages; total consumption, private and public together; nominal local currency; estimates, not observations.",
-            "<strong>Costa Rica</strong> is not on this page: the CCP-UCR age profile is not redistributed.",
+            "<strong>Costa Rica</strong> (2013): the portal profile, with the 2013 UN population and cut-offs 0–22 / 23–60 / 61+, reproduces the shares in Paper 3 (31.5 / 56.2 / 12.3%); the table above uses the 2025 population, as for the other countries. The original CCP-UCR files are not redistributed.",
             "Corrections or removal requests for any country: open an issue at <a href='https://github.com/itibere-muarrek/Ainu-Narayama/issues' target='_blank' rel='noopener'>github.com/itibere-muarrek/Ainu-Narayama</a>.",
         ],
         "down": "Data and verification",

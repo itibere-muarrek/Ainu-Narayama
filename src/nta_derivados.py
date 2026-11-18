@@ -29,7 +29,9 @@ NOME_NTA = {"ARG": "Argentina", "BRA": "Brazil", "CHN": "China", "FRA": "France"
             "MEX": "Mexico", "NGA": "Nigeria", "KOR": "South Korea", "USA": "US",
             # incluídos em 18/11/2026 (portal NTA, último ano de cada país; ver docs/nta_perfis_fonte.md)
             "RUS": "Russia", "SWE": "Sweden", "THA": "Thailand", "AUS": "Australia", "POL": "Poland", "ZAF": "South Africa",
-            "IDN": "Indonesia", "DEU": "Germany", "CHL": "Chile"}
+            "IDN": "Indonesia", "DEU": "Germany", "CHL": "Chile",
+            # incluída em 18/11/2026 (portal NTA, perfil de 2013, Smooth Mean; equipe do CCP-UCR)
+            "CRI": "Costa Rica"}
 
 
 def _ler() -> dict:
@@ -56,17 +58,17 @@ def perfil(iso: str, var: str = "C"):
     return ano, out
 
 
-# Costa Rica: o perfil por idade do CCP-UCR (CNT_CR2013) não é redistribuído. Entram só os valores agregados do working paper v2.6 (Tabela 16: consumo total por coorte,
-# cortes 0–22 / 23–60 / 61+, população da ONU de 2013), com o ano de população indicado.
+# Costa Rica: o working paper v2.6 (Tabela 16) usou o perfil do CCP-UCR (CNT_CR2013) com a população da ONU de 2013 e cortes 0–22 / 23–60 / 61+.
+# Desde 18/11/2026 o perfil por idade vem do portal NTA (mesmo ano, 2013) e reproduz esses valores (31,49 / 56,18 / 12,33 %). O agregado do paper fica como referência de validação.
 CFCC_AGREGADO = {"CRI": {"pct": [31.5, 56.2, 12.3], "ano_perfil": 2013, "ano_pop": 2013, "cortes": (22, 61)}}
 
 
 def cfcc_por_coorte(iso: str, ano_pop: int = 2025):
     """Participação (%) de [Descendentes, Estruturadores, Ascendentes] no consumo total, ou None se não houver perfil NTA.
-    Costa Rica: valores agregados do paper (ano_pop = 2013, sem recalcular para outros anos)."""
+    Costa Rica: o perfil do portal (2013) reproduz o agregado do paper (CFCC_AGREGADO), que usa a população de 2013."""
     p = perfil(iso, "C")
     if p is None:
-        return dict(CFCC_AGREGADO[iso]) if iso in CFCC_AGREGADO else None
+        return None
     ano_perfil, c = p
     bm, tm = cortes_por_composicao(COMPOSICAO_PERFIL_POR_PAIS[iso])
     pop = projetar(iso).pop.sum(axis=0)[:, ano_pop - ANO_BASE]

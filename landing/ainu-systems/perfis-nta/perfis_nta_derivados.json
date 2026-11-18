@@ -114,6 +114,28 @@
    "fim_menos_corte_asc": -3
   },
   {
+   "iso": "CRI",
+   "ano_c_yl": 2013,
+   "ano_poupanca": 2013,
+   "fonte": "Portal NTA",
+   "equipe": "P. Jiménez-Fontana",
+   "composicao_perfis": "C50/D50",
+   "corte_descendentes_ate": 22,
+   "corte_ascendentes_desde": 61,
+   "cfcc_pct": [
+    24.8,
+    56.7,
+    18.6
+   ],
+   "ano_populacao": 2025,
+   "superavit": [
+    28,
+    56
+   ],
+   "inicio_menos_corte_desc": 6,
+   "fim_menos_corte_asc": -5
+  },
+  {
    "iso": "DEU",
    "ano_c_yl": 2008,
    "ano_poupanca": 2003,

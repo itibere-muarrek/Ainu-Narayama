@@ -12,7 +12,7 @@ RAIZ = Path(__file__).resolve().parent
 sys.path.insert(0, str(RAIZ / "scripts" / "diretorio"))
 
 import coortes_motor
-from src.nta_derivados import cfcc_por_coorte, perfil
+from src.nta_derivados import CFCC_AGREGADO, cfcc_por_coorte, perfil
 
 FICHAS = {f["iso"]: f for f in json.loads((RAIZ / "data" / "diretorio" / "publicavel" / "paises.json").read_text(encoding="utf-8"))}
 
@@ -20,17 +20,26 @@ FICHAS = {f["iso"]: f for f in json.loads((RAIZ / "data" / "diretorio" / "public
 def test_perfis_nta_e_cfcc_por_coorte():
     ano, c = perfil("KOR", "C")
     assert ano == 2024 and len(c) == 101 and c[0] > 0   # KOSIS (série oficial 2010–2024), e não o 2019 antigo do portal NTA
-    assert perfil("CRI", "C") is None and cfcc_por_coorte("PRY") is None  # sem perfil NTA público no repositório
+    assert perfil("PRY", "C") is None and cfcc_por_coorte("PRY") is None  # sem perfil NTA público no repositório
     for iso, esperado in (("KOR", [21.0, 54.3, 24.8]), ("ITA", [17.4, 48.2, 34.5])):
         r = cfcc_por_coorte(iso)
         assert abs(sum(r["pct"]) - 100) < 1e-6 and r["cortes"] == (22, 61)
         assert all(abs(a - b) < 0.2 for a, b in zip(r["pct"], esperado)), (iso, r["pct"])
 
 
-def test_costa_rica_tem_so_valores_agregados():
-    assert perfil("CRI", "C") is None                       # o perfil por idade do CCP-UCR não está no repositório
-    r = cfcc_por_coorte("CRI")
-    assert r["pct"] == [31.5, 56.2, 12.3] and abs(sum(r["pct"]) - 100) < 1e-9 and r["cortes"] == (22, 61) and r["ano_pop"] == 2013
+def test_costa_rica_pelo_portal_reproduz_o_paper():
+    """Costa Rica (incluída em 18/11/2026): perfil de 2013 do portal NTA (equipe do CCP-UCR). Com a população da ONU de 2013 e cortes 22/61, o resultado
+    foi 31,49 / 56,18 / 12,33 % (conferido em 18/11 com hist.csv.gz fora do repositório), igual ao agregado do paper (31,5 / 56,2 / 12,3)."""
+    ano_c, c = perfil("CRI", "C")
+    ano_y, yl = perfil("CRI", "YL")
+    assert ano_c == ano_y == perfil("CRI", "S")[0] == 2013 and len(c) == len(yl) == 101 and (c > 0).all() and (yl >= -0.01 * yl.max()).all()
+    assert yl[:10].max() < 0.01 * yl.max()
+    sup = [i for i in range(101) if yl[i] > c[i]]
+    assert (sup[0], sup[-1]) == (28, 56), (sup[0], sup[-1])
+    assert CFCC_AGREGADO["CRI"]["pct"] == [31.5, 56.2, 12.3] and CFCC_AGREGADO["CRI"]["ano_pop"] == 2013
+    r = cfcc_por_coorte("CRI")                                             # população da ONU de 2025
+    assert abs(sum(r["pct"]) - 100) < 1e-6 and r["cortes"] == (22, 61) and r["ano_perfil"] == 2013
+    assert all(abs(a - b) < 0.2 for a, b in zip(r["pct"], [24.8, 56.7, 18.6])), r["pct"]
 
 
 def test_perfil_do_japao_2019_do_ipss():
